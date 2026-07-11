@@ -1,18 +1,17 @@
-name: Publish Edition
+name: Publish Site
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - '.github/workflows/publish.yml'
   workflow_dispatch:
-    inputs:
-      edition_label:
-        description: 'Edition label (e.g. 2026-W27)'
-        required: true
-        type: string
 
 jobs:
-  publish:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
       pages: write
       id-token: write
 
@@ -22,21 +21,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          cache: pip
-
-      - name: Install dependencies
-        run: pip install -r pipeline/requirements.txt
-
-      - name: Assemble edition
-        env:
-          EDITION_LABEL: ${{ inputs.edition_label }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python pipeline/assemble.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
