@@ -1,6 +1,6 @@
 {
   "2e55597db578743a": {
     "source_id": "lib-compose-multiplatform",
-    "summary": "Across seven dev builds this week, Compose Multiplatform advanced two parallel trains: the 1.12.10-alpha01 line (dev4413 through dev4443) heading toward the next minor, and the 1.12.0-beta02 line stabilizing the imminent stable release. The changes were incremental — layout and rendering fixes across iOS and Desktop, plus compiler-plugin and runtime tweaks — with no API-visible features. The tag above is the head of the alpha train; the beta builds are folded in below."
+    "summary": "Seven dev builds across the 1.12.10-alpha01 and 1.12.0-beta02 lines. Changes: layout and rendering fixes on iOS and Desktop, compiler-plugin and runtime fixes, and assorted bug and stability fixes. No new APIs or user-facing features."
   }
 }

@@ -2,12 +2,17 @@ from datetime import date
 
 
 def filter_articles(articles: list, start: date, end: date) -> list:
-    """Keep articles whose date falls within [start, end] inclusive."""
+    """Keep articles whose date falls within [start, end] inclusive.
+
+    Articles flagged `dead` (e.g. deleted/removed at the source) are excluded —
+    the record stays in state for the audit trail but never renders.
+    """
     start_s = start.isoformat()
     end_s = end.isoformat()
     return [
         a for a in articles
         if a.get("date") and start_s <= a["date"] <= end_s
+        and not a.get("dead")
     ]
 
 

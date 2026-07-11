@@ -84,6 +84,15 @@ def test_filter_articles_keeps_window():
     assert [a["id"] for a in result] == ["a", "b"]
 
 
+def test_filter_articles_skips_dead():
+    articles = [
+        {"id": "a", "date": "2026-07-07", "topics": []},
+        {"id": "b", "date": "2026-07-07", "topics": [], "dead": True},
+    ]
+    result = filter_articles(articles, date(2026, 7, 6), date(2026, 7, 12))
+    assert [a["id"] for a in result] == ["a"]
+
+
 def test_score_articles_sums_topic_scores():
     articles = [{"id": "a", "topics": ["kotlin", "compose"], "date": "2026-07-07"}]
     scores = {"kotlin": 100.0, "compose": 80.0}

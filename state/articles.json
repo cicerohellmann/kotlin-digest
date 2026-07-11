@@ -1923,7 +1923,9 @@
     "summary": "Reddit thread on handling string resources in Compose Multiplatform, comparing the Compose Multiplatform resource API, Lyricist, and Moko Resources for localized strings across targets.",
     "topics": [
       "compose-multiplatform"
-    ]
+    ],
+    "dead": true,
+    "dead_reason": "deleted by author at source (reddit)"
   },
   {
     "id": "5833d7e3b55aaca8",
