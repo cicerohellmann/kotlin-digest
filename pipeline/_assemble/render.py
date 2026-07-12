@@ -1,6 +1,20 @@
 import json
 from datetime import date, datetime
 
+from pygments import highlight as _pyg_highlight
+from pygments.formatters import HtmlFormatter
+from pygments.lexers import KotlinLexer
+
+_KT_LEXER = KotlinLexer()
+_KT_FORMATTER = HtmlFormatter(nowrap=True, classprefix="k-")
+
+
+def highlight_kotlin(code: str) -> str:
+    """Syntax-highlight a Kotlin snippet into token <span>s (also HTML-escapes,
+    so generics like <Any> survive). Classes are prefixed `k-` to match the
+    .snap-code .k-* palette in template.html."""
+    return _pyg_highlight(code, _KT_LEXER, _KT_FORMATTER).rstrip("\n")
+
 SPARK_CHARS = "▁▂▃▄▅▆▇█"
 DATA_MARKER = "// @@DIGEST_DATA@@"
 OFFICIAL_SOURCE_IDS = {"kotlin-blog", "android-developers-blog", "android-developers-medium", "jetbrains-blog"}
@@ -108,7 +122,7 @@ def build_data_block(
             if a.get("code_snippet"):
                 snap_js = "{{ label:{}, code:{} }}".format(
                     json.dumps(a.get("snippet_label", "")),
-                    json.dumps(a.get("code_snippet", "")),
+                    json.dumps(highlight_kotlin(a.get("code_snippet", ""))),
                 )
 
             # Rollup: folded-in changelog builds + optional synthesized digest.

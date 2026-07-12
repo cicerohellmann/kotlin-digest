@@ -308,7 +308,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "A developer built a self-hosted Salesforce debug logging tool to work around the 24-hour trace flag limit. Not Android or Kotlin related.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "733fc0f6eb92c1f9",
@@ -423,7 +425,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Privacy-focused newsletter covering memory allocation and tracking techniques. Not directly relevant to Android or Kotlin development.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "6ac213246922e436",
@@ -449,7 +453,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Meta-commentary on ranking articles by quality rather than engagement metrics in developer newsletters. Discusses editorial tradeoffs in curated developer content.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "84a6587d84335b27",
@@ -461,7 +467,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Arabic-language consumer guide for Xiaomi USB drivers. Off-topic for Android development.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "non-english, no-kotlin-signal"
   },
   {
     "id": "2ea24b5faa20ead0",
@@ -473,7 +481,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Flutter development workflow article for Ubuntu. Not relevant to Kotlin or Android native development.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "off-topic:flutter"
   },
   {
     "id": "641b208927df7e95",
@@ -499,7 +509,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Spanish-language consumer preview of Samsung Galaxy Unpacked July 2026. Not developer content.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "1868596beb976e22",
@@ -1727,7 +1739,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Indonesian personal writing, not developer content.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "ee6448dd823fff67",
@@ -1739,7 +1753,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "APK download promotion for a third-party client app. Spam, not developer content.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "spam/non-dev"
   },
   {
     "id": "47182d51b330c6f4",
@@ -1789,7 +1805,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Consumer guide for accessing a streaming service. Off-topic.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "cfcf9627900bdbb8",
@@ -1801,7 +1819,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Monolithic vs microservices architecture comparison for Expo React Native apps. Not relevant to Kotlin or native Android development.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "2da7bc37018e2592",
@@ -1813,7 +1833,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Promotional content about AI courses. Off-topic.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "241316d7c0c99487",
@@ -1837,7 +1859,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Game app download promotion. Spam, not developer content.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "spam/non-dev, no-kotlin-signal"
   },
   {
     "id": "d4c85e8c3e2cad53",
@@ -2024,7 +2048,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Game app download promotion. Spam, not developer content.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "spam/non-dev"
   },
   {
     "id": "b74064c935f01138",
@@ -2036,7 +2062,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Game app download promotion. Spam, not developer content.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "spam/non-dev, no-kotlin-signal"
   },
   {
     "id": "a93fb2f09ab9c82c",
@@ -2197,7 +2225,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Bengali-language article about using Firebase for Android app backends. Limited to Bengali-speaking developers.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "non-english, no-kotlin-signal"
   },
   {
     "id": "c619472eab1e1994",
@@ -2650,7 +2680,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Personal productivity comparison between Windows and macOS. Off-topic for Android development.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "f16ba7880aff1a99",
@@ -2662,7 +2694,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Consumer guide on file management for media-heavy mobile devices. Not developer content.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "638848ba8ecbbfdd",
@@ -2674,7 +2708,9 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Business article estimating cost to build a digital wallet app. Not Android developer content.",
-    "topics": []
+    "topics": [],
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "e21ada8071630396",
@@ -2794,7 +2830,9 @@
     "source_id": "medium-kotlin-tag",
     "excerpt": "“Give the agent access to the terminal and the file system, and it will handle everything” sounds great right up until the moment the… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "f90a0e944f5f5a5a",
@@ -2804,7 +2842,9 @@
     "source_id": "medium-android-tag",
     "excerpt": "Every API has a limit. Without rate limiting, one bad actor — or one bug in your app — can take down your server for everyone. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "c1e65879031934c8",
@@ -2814,7 +2854,9 @@
     "source_id": "medium-android-tag",
     "excerpt": "This is part of a series on building production real-time communication apps with Flutter and Matrix. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "off-topic:flutter, no-kotlin-signal"
   },
   {
     "id": "131fb382114ac2c0",
@@ -2824,7 +2866,9 @@
     "source_id": "medium-android-tag",
     "excerpt": "This is part of a series on building production real-time communication apps with Flutter and Matrix. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "off-topic:flutter, no-kotlin-signal"
   },
   {
     "id": "e83630fdcf8c7db3",
@@ -2834,7 +2878,9 @@
     "source_id": "medium-android-tag",
     "excerpt": "Ten mistakes that were quietly murdering my frame rate, and the exact fixes that got me back to a locked 60. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "off-topic:flutter, no-kotlin-signal"
   },
   {
     "id": "9386704100c9bb95",
@@ -2844,7 +2890,9 @@
     "source_id": "medium-android-tag",
     "excerpt": "Ik786 Game Overview Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "spam/non-dev, no-kotlin-signal"
   },
   {
     "id": "09a459b7e17a3e71",
@@ -2854,7 +2902,9 @@
     "source_id": "medium-android-tag",
     "excerpt": "899U Game APK Download 2026 — Safe Guide for Pakistan Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "spam/non-dev, no-kotlin-signal"
   },
   {
     "id": "f4ddfe094a11d10a",
@@ -2864,7 +2914,9 @@
     "source_id": "medium-android-tag",
     "excerpt": "Aku tidak masalah jika tidak harus memiliki mu. Namun, bisakah kau tetap disini? Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "no-kotlin-signal"
   },
   {
     "id": "5729a680cea2eb47",
@@ -2874,7 +2926,9 @@
     "source_id": "medium-android-tag",
     "excerpt": "Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "spam/non-dev, no-kotlin-signal"
   },
   {
     "id": "af9d05c20c1a4a48",

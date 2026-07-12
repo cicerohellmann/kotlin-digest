@@ -6,7 +6,7 @@ from datetime import date
 from pipeline._assemble.dates import edition_to_dates
 from pipeline._assemble.scores import lookup_scores_at
 from pipeline._assemble.articles import filter_articles, score_articles, assign_col, cluster_articles
-from pipeline._assemble.render import spark_from_history, inject_data, build_data_block
+from pipeline._assemble.render import spark_from_history, inject_data, build_data_block, highlight_kotlin
 
 
 # ── dates ────────────────────────────────────────────────────────────────────
@@ -84,10 +84,11 @@ def test_filter_articles_keeps_window():
     assert [a["id"] for a in result] == ["a", "b"]
 
 
-def test_filter_articles_skips_dead():
+def test_filter_articles_skips_dead_and_low_quality():
     articles = [
         {"id": "a", "date": "2026-07-07", "topics": []},
         {"id": "b", "date": "2026-07-07", "topics": [], "dead": True},
+        {"id": "c", "date": "2026-07-07", "topics": [], "low_quality": True},
     ]
     result = filter_articles(articles, date(2026, 7, 6), date(2026, 7, 12))
     assert [a["id"] for a in result] == ["a"]
@@ -246,6 +247,15 @@ def test_build_data_block_valid_js_structure():
     assert "abc123" in block
     assert "c12" in block
     assert "official" in block  # kotlin-blog is an official source
+
+
+def test_highlight_kotlin_tokens_and_escapes_generics():
+    out = highlight_kotlin('val backStack = mutableStateListOf<Any>(Home)')
+    assert 'class="k-' in out                 # produced prefixed token spans (colorable)
+    assert '&lt;' in out and '&gt;' in out     # generics HTML-escaped, not eaten
+    assert '<Any>' not in out                  # raw angle brackets gone
+    assert 'class="k-kd"' in out               # 'val' tokenized as a keyword
+    assert '>Any</span>' in out                # 'Any' preserved as a token
 
 
 def test_build_data_block_emits_rollup():
