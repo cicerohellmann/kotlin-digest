@@ -84,10 +84,11 @@ def test_filter_articles_keeps_window():
     assert [a["id"] for a in result] == ["a", "b"]
 
 
-def test_filter_articles_skips_dead():
+def test_filter_articles_skips_dead_and_low_quality():
     articles = [
         {"id": "a", "date": "2026-07-07", "topics": []},
         {"id": "b", "date": "2026-07-07", "topics": [], "dead": True},
+        {"id": "c", "date": "2026-07-07", "topics": [], "low_quality": True},
     ]
     result = filter_articles(articles, date(2026, 7, 6), date(2026, 7, 12))
     assert [a["id"] for a in result] == ["a"]
