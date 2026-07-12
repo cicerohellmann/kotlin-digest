@@ -41,7 +41,7 @@ ROOT = Path(__file__).parent.parent
 ARTICLES_FILE = ROOT / "state" / "articles.json"
 
 HTTP_HEADERS = {
-    "User-Agent": "KotlinDigest/1.0 (+https://github.com/kotlin-digest/weekly)"
+    "User-Agent": "KotlinDigest/1.0 (+https://github.com/cicerohellmann/kotlin-digest)"
 }
 
 

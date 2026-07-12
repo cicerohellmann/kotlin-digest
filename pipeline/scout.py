@@ -44,7 +44,7 @@ KOTLIN_ANDROID_KEYWORDS = {
 KEYWORD_FILTER_SOURCE_IDS = {"jetbrains-blog"}
 
 HTTP_HEADERS = {
-    "User-Agent": "KotlinDigest/1.0 (+https://github.com/kotlin-digest/weekly)"
+    "User-Agent": "KotlinDigest/1.0 (+https://github.com/cicerohellmann/kotlin-digest)"
 }
 
 
