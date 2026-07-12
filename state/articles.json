@@ -206,7 +206,8 @@
     "topics": [
       "android-api",
       "jetpack"
-    ]
+    ],
+    "paywalled": true
   },
   {
     "id": "a1f001c02053cbc4",
@@ -1604,7 +1605,8 @@
     "summary": "Deep dive into RecyclerView's architecture covering the LayoutManager draw cycle, view recycling lifecycle, and how the ViewHolder pattern interacts with the drawing pipeline. Useful for debugging custom LayoutManagers.",
     "topics": [
       "android-api"
-    ]
+    ],
+    "paywalled": true
   },
   {
     "id": "23261d1d3dc24681",
@@ -1664,7 +1666,8 @@
     "topics": [
       "kmp",
       "android-api"
-    ]
+    ],
+    "paywalled": true
   },
   {
     "id": "add2083c62c6a659",
@@ -1695,7 +1698,8 @@
     "summary": "Roundup of Jetpack Compose updates through 2026 including predictive back gesture support, shared element transitions graduating to stable, and upcoming lazy layout improvements. Also previews what's on the Compose roadmap.",
     "topics": [
       "compose"
-    ]
+    ],
+    "paywalled": true
   },
   {
     "id": "d249f2b33cf44ed3",
@@ -1712,7 +1716,8 @@
       "k2-compiler"
     ],
     "code_snippet": "// before\nfun loadProfile(session: UserSession, db: AppDatabase): UserProfile {\n    return db.users.find { it.id == session.userId }\n}\n\n// Kotlin 2.4: context parameters\ncontext(session: UserSession, db: AppDatabase)\nfun loadProfile(): UserProfile {\n    return db.users.find { it.id == session.userId }\n}",
-    "snippet_label": "CONTEXT PARAMS"
+    "snippet_label": "CONTEXT PARAMS",
+    "paywalled": true
   },
   {
     "id": "6399fc6d6898c939",
@@ -2213,7 +2218,8 @@
     "topics": [
       "viewmodel",
       "android-api"
-    ]
+    ],
+    "paywalled": true
   },
   {
     "id": "7b03966a0c45a51c",

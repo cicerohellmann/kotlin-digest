@@ -506,6 +506,18 @@
       padding: 0.1rem 0.4rem;
       border-radius: 2px;
     }
+    .badge-paywall {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      background: var(--chip-bg);
+      color: var(--ink-muted);
+      border: 1px solid var(--rule);
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+      cursor: help;
+    }
 
     .art-title {
       font-family: 'Charter', 'Bitstream Charter', Georgia, serif;
@@ -869,6 +881,7 @@ function articleCard(a) {
       <span class="source-tag ${a.stype}">${a.source}</span>
       <span class="art-date">${a.date}</span>
       ${a.isNew ? '<span class="badge-new">New</span>' : ''}
+      ${a.paywalled ? '<span class="badge-paywall" title="Member-only story — requires a paid Medium account">🔒 Member-only</span>' : ''}
     </div>
     <h3 class="art-title"><a href="${a.url}" target="_blank" rel="noopener noreferrer" onclick="if(this.getAttribute('href')==='#')event.preventDefault()">${a.title}</a></h3>
     <p class="art-summary">${a.summary}</p>

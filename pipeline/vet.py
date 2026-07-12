@@ -21,6 +21,8 @@ import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
+import httpx
+
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
 
@@ -131,21 +133,131 @@ def _window_articles(articles, start, end):
     return [a for a in articles if a.get("date") and s <= a["date"] <= e]
 
 
+# ── Liveness + paywall re-check (network) ─────────────────────────────────────
+# Definitive signals only: a URL is marked dead/paywalled only on an unambiguous
+# response. Transient errors (timeout / 429 / 5xx / bot-challenge 403) are
+# 'inconclusive' and never change state, so a blip never removes a good article.
+
+_UA_BROWSER = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+               "(KHTML, like Gecko) Chrome/122.0 Safari/537.36")
+_UA_BOT = "KotlinDigest/1.0 (+https://github.com/cicerohellmann/kotlin-digest)"
+_DEAD_HTTP = {404, 410}
+
+
+def check_reddit(url: str, client: httpx.Client):
+    """Reddit deletion via the post's .json (needs a reachable/authorised Reddit;
+    from datacenter IPs Reddit serves a 403 bot-challenge → inconclusive)."""
+    jurl = url.rstrip("/") + "/.json"
+    try:
+        r = client.get(jurl, headers={"User-Agent": _UA_BOT})
+    except Exception:
+        return "inconclusive", "fetch-error"
+    if r.status_code in _DEAD_HTTP:
+        return "dead", f"http-{r.status_code}"
+    if r.status_code != 200:
+        return "inconclusive", f"http-{r.status_code}"
+    try:
+        post = r.json()[0]["data"]["children"][0]["data"]
+    except Exception:
+        return "inconclusive", "unparseable"
+    if (post.get("removed_by_category") in {"deleted", "author", "moderator", "reddit"}
+            or post.get("selftext") in {"[removed]", "[deleted]"}
+            or post.get("author") == "[deleted]"):
+        return "dead", f"reddit-{post.get('removed_by_category') or 'deleted'}"
+    return "alive", "ok"
+
+
+def check_medium(url: str, client: httpx.Client):
+    """Medium member-only paywall via the embedded schema flags."""
+    try:
+        r = client.get(url, headers={"User-Agent": _UA_BROWSER})
+    except Exception:
+        return "inconclusive", "fetch-error"
+    if r.status_code in _DEAD_HTTP:
+        return "dead", f"http-{r.status_code}"
+    if r.status_code != 200:
+        return "inconclusive", f"http-{r.status_code}"
+    t = r.text
+    if '"isAccessibleForFree":false' in t or '"isLocked":true' in t:
+        return "paywalled", "medium-member-only"
+    return "alive", "ok"
+
+
+# Medium-hosted domains (medium.com + custom domains) share the paywall/schema
+# markers and need a GET — a HEAD 404 on them is a false positive.
+_MEDIUM_HOSTS = ("medium.com", "proandroiddev.com", "itnext.io", "betterprogramming.pub")
+
+
+def _is_medium(sid: str, url: str) -> bool:
+    return "medium" in sid or sid == "proandroiddev" or any(h in url for h in _MEDIUM_HOSTS)
+
+
+def check_liveness(article: dict, client: httpx.Client):
+    sid, url = article.get("source_id", ""), article.get("url", "")
+    if "reddit" in sid:
+        return check_reddit(url, client)
+    if _is_medium(sid, url):
+        return check_medium(url, client)
+    # Other sources (blogs, changelogs): deletion is rare and HEAD/GET status is
+    # unreliable (redirects, CDN quirks), so don't risk false positives here.
+    return "alive", "skipped-generic"
+
+
 def write_atomic(path, data):
     tmp = path.with_suffix(".tmp")
     tmp.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     tmp.rename(path)
 
 
+def cmd_liveness(args, articles, window):
+    """Re-check rendered articles for deletion (dead) and Medium paywall."""
+    rendered = [a for a in window
+                if a.get("summarized") and a.get("topics") and not a.get("dead")]
+    results = defaultdict(list)
+    with httpx.Client(timeout=20, follow_redirects=True) as client:
+        for a in rendered:
+            status, reason = check_liveness(a, client)
+            results[status].append((a["id"], a["title"][:55], reason, a["source_id"]))
+
+    print(f"  Liveness re-check: {len(rendered)} rendered articles\n")
+    for status in ("dead", "paywalled", "inconclusive", "alive"):
+        items = results.get(status, [])
+        print(f"  {status}: {len(items)}")
+        if status in ("dead", "paywalled"):
+            for _id, title, reason, sid in items:
+                print(f"      · [{sid}] {title}  ({reason})")
+    print()
+
+    if args.apply:
+        dead_ids = {i for i, _, _, _ in results.get("dead", [])}
+        pay_ids = {i for i, _, _, _ in results.get("paywalled", [])}
+        d = p = 0
+        for a in articles:
+            if a["id"] in dead_ids:
+                a["dead"], a["dead_reason"] = True, "liveness re-check (deleted/removed)"
+                d += 1
+            if a["id"] in pay_ids:
+                a["paywalled"] = True
+                p += 1
+        write_atomic(ARTICLES_FILE, articles)
+        print(f"  applied: {d} dead, {p} paywalled")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--edition", required=True)
-    ap.add_argument("--apply", action="store_true", help="write low_quality flags back to state")
+    ap.add_argument("--apply", action="store_true", help="write flags back to state")
+    ap.add_argument("--liveness", action="store_true",
+                    help="network re-check for deleted (dead) + Medium paywall instead of junk scan")
     args = ap.parse_args()
 
     start, end = edition_to_dates(args.edition)
     articles = json.loads(ARTICLES_FILE.read_text(encoding="utf-8"))
     window = _window_articles(articles, start, end)
+
+    if args.liveness:
+        cmd_liveness(args, articles, window)
+        return
 
     flagged = []
     by_source = defaultdict(list)

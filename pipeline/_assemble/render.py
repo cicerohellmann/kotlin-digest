@@ -145,7 +145,7 @@ def build_data_block(
             article_blocks.append(
                 "      {{ id:{}, col:{},\n"
                 "        title:{},\n"
-                "        url:{}, source:{}, stype:{}, date:{}, isNew:{},\n"
+                "        url:{}, source:{}, stype:{}, date:{}, isNew:{}, paywalled:{},\n"
                 "        topics:{},\n"
                 "        summary:{},\n"
                 "        snap:{},\n"
@@ -156,6 +156,7 @@ def build_data_block(
                     json.dumps(a["url"]), json.dumps(source_name),
                     json.dumps(stype), json.dumps(date_str),
                     "true" if is_new else "false",
+                    "true" if a.get("paywalled") else "false",
                     topics_js,
                     json.dumps(summary),
                     snap_js,
