@@ -3078,7 +3078,9 @@
     "source_id": "medium-android-tag",
     "excerpt": "PAK5D Game is a modern entertainment platform designed for Pakistani users who enjoy mobile and desktop gaming experiences. It offers… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "spam/non-dev, no-kotlin-signal"
   },
   {
     "id": "6ffb3763da69e071",
@@ -3098,7 +3100,9 @@
     "source_id": "medium-android-tag",
     "excerpt": "يعتبر محاكي PPSSPP طفرة تقنية حقيقية لعشاق الألعاب؛ حيث يمنحك القدرة Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "non-english, no-kotlin-signal"
   },
   {
     "id": "01c4db12e93692b3",
@@ -3108,7 +3112,9 @@
     "source_id": "medium-android-tag",
     "excerpt": "يواجه ملايين اللاعبين حول العالم تحدياً كبيراً عند محاولة تشغيل الألعاب Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "low_quality": true,
+    "low_quality_reason": "non-english, no-kotlin-signal"
   },
   {
     "id": "7ce820bcf976cc9f",
