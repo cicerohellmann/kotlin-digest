@@ -52,10 +52,16 @@ def main() -> None:
 
     clusters = topics_config.get("clusters", [])
     source_type_map = {s["id"]: s.get("type", "blog") for s in sources_config.get("sources", [])}
+    # Sources marked `render: false` (e.g. Reddit) feed the topic bible but are
+    # never rendered as articles — the site can't reliably read/summarize them.
+    no_render_sources = {
+        s["id"] for s in sources_config.get("sources", [])
+        if not s.get("render", True)
+    }
 
     scores = lookup_scores_at(bible, end)
 
-    week_articles = filter_articles(articles, start, end)
+    week_articles = filter_articles(articles, start, end, no_render_sources)
 
     # Collapse high-frequency changelog sources to their single newest release,
     # folding the rest into a rollup on the survivor card.

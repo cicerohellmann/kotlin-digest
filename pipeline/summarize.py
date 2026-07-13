@@ -35,14 +35,46 @@ import sys
 from pathlib import Path
 
 import httpx
+import yaml
 from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).parent.parent
 ARTICLES_FILE = ROOT / "state" / "articles.json"
+SOURCES_FILE = ROOT / "sources" / "sources.yml"
 
 HTTP_HEADERS = {
     "User-Agent": "KotlinDigest/1.0 (+https://github.com/cicerohellmann/kotlin-digest)"
 }
+
+# Content gate: an article is only summarized if we have real text behind it —
+# either a fetched body or a substantive ingest excerpt. Otherwise the model
+# would be summarizing a bare title and inventing detail. MIN_EXCERPT_WORDS
+# matches fetch_content's 80-word container heuristic.
+MIN_CONTENT_WORDS = 60
+MIN_EXCERPT_WORDS = 80
+
+
+def _wordcount(s: str) -> int:
+    return len((s or "").split())
+
+
+def _has_usable_content(content: str, excerpt: str) -> bool:
+    """True if there's real source text to summarize (fetched body OR excerpt)."""
+    body_ok = (
+        not content.startswith("[fetch error")
+        and not content.startswith("[no content extracted]")
+        and _wordcount(content) >= MIN_CONTENT_WORDS
+    )
+    return body_ok or _wordcount(excerpt) >= MIN_EXCERPT_WORDS
+
+
+def no_render_sources() -> set:
+    """Source ids marked `render: false` — signal-only feeds (e.g. Reddit) that
+    are never summarized or rendered as articles."""
+    if not SOURCES_FILE.exists():
+        return set()
+    sc = yaml.safe_load(SOURCES_FILE.read_text(encoding="utf-8"))
+    return {s["id"] for s in sc.get("sources", []) if not s.get("render", True)}
 
 
 def fetch_content(url: str) -> str:
@@ -86,9 +118,21 @@ def write_atomic(path: Path, data: object) -> None:
 
 
 def cmd_fetch() -> None:
-    """Fetch content for unsummarized articles, print JSON queue to stdout."""
+    """Fetch content for unsummarized articles, print JSON queue to stdout.
+
+    Skips `render: false` sources (signal-only, never rendered). Articles with
+    no usable content — neither a fetchable body nor a substantive excerpt — are
+    flagged `unfetchable` in state and left out of the queue, so the model is
+    never asked to summarize a bare title (which produces fabricated detail).
+    """
     articles = json.loads(ARTICLES_FILE.read_text(encoding="utf-8"))
-    pending = [a for a in articles if not a.get("summarized")]
+    skip_sources = no_render_sources()
+    pending = [
+        a for a in articles
+        if not a.get("summarized")
+        and not a.get("unfetchable")
+        and a.get("source_id") not in skip_sources
+    ]
 
     if not pending:
         print("[]")
@@ -97,9 +141,30 @@ def cmd_fetch() -> None:
     print(f"Fetching content for {len(pending)} articles...", file=sys.stderr)
 
     queue = []
+    flagged = 0
+    transient = 0
     for i, article in enumerate(pending):
         print(f"  [{i+1}/{len(pending)}] {article['title'][:70]}", file=sys.stderr, flush=True)
         content = fetch_content(article["url"])
+        excerpt = article.get("excerpt", "")
+        if not _has_usable_content(content, excerpt):
+            if content.startswith("[fetch error"):
+                # Transient network failure (timeout / connection reset / one-off
+                # 5xx). Do NOT persist a flag — leave the article unsummarized so a
+                # later run retries it. Mirrors vet.py's "transient → never change
+                # state" rule; only a definitive empty read benches an article.
+                transient += 1
+                print(f"      ↳ skipped this run: fetch error (will retry)", file=sys.stderr)
+                continue
+            # Definitive: the page was read but had no usable body, and the
+            # excerpt is too thin to summarize. Bench permanently so we never
+            # fabricate detail from a bare title. Reference into `articles`, so
+            # this mutation persists on the write below.
+            article["unfetchable"] = True
+            article["unfetchable_reason"] = "no-content"
+            flagged += 1
+            print(f"      ↳ skipped: no usable content (unfetchable)", file=sys.stderr)
+            continue
         queue.append({
             "id": article["id"],
             "title": article["title"],
@@ -109,6 +174,12 @@ def cmd_fetch() -> None:
             "excerpt": article.get("excerpt", ""),
             "content": content,
         })
+
+    if flagged:
+        write_atomic(ARTICLES_FILE, articles)
+        print(f"Flagged {flagged} article(s) as unfetchable (no usable content).", file=sys.stderr)
+    if transient:
+        print(f"{transient} article(s) had a transient fetch error — left for retry.", file=sys.stderr)
 
     print(json.dumps(queue, indent=2, ensure_ascii=False))
     print(f"\nDone. Pipe output to a file and pass to an agent for summarization.", file=sys.stderr)

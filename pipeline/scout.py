@@ -281,23 +281,59 @@ def scout_via_scrape(source: dict, last_date: datetime, existing_ids: set) -> li
     return new_articles
 
 
+def _title_from_soup(soup: BeautifulSoup, url: str) -> str:
+    og = soup.find("meta", property="og:title")
+    if og and og.get("content", "").strip():
+        return og["content"].strip()
+    if soup.title and soup.title.string:
+        return soup.title.string.strip()
+    # Fallback: readable path from URL
+    path = urlparse(url).path.rstrip("/").split("/")[-1]
+    return path.replace("-", " ").replace("_", " ").strip() or url
+
+
 def fetch_title(url: str) -> str:
     """Fetch page title for a URL. Returns URL path as fallback."""
     try:
         with httpx.Client(timeout=8, follow_redirects=True, headers=HTTP_HEADERS) as client:
             resp = client.get(url)
             resp.raise_for_status()
-        soup = BeautifulSoup(resp.text, "html.parser")
-        og = soup.find("meta", property="og:title")
-        if og and og.get("content", "").strip():
-            return og["content"].strip()
-        if soup.title and soup.title.string:
-            return soup.title.string.strip()
+        return _title_from_soup(BeautifulSoup(resp.text, "html.parser"), url)
     except Exception:
-        pass
-    # Fallback: readable path from URL
-    path = urlparse(url).path.rstrip("/").split("/")[-1]
-    return path.replace("-", " ").replace("_", " ").strip() or url
+        path = urlparse(url).path.rstrip("/").split("/")[-1]
+        return path.replace("-", " ").replace("_", " ").strip() or url
+
+
+def fetch_link_meta(url: str) -> tuple:
+    """One fetch → (title, date, date_uncertain, fetch_ok) for a shared link.
+
+    A link shared in Slack is a candidate magazine article and must be dated by
+    its OWN page, never by when it was mentioned. Reuses the same date priority
+    chain as scraped sources (`extract_date_from_html`). If the page has no
+    detectable publish date — as homepages, videos, raw source files, and paper
+    abstracts do not — `date` is None and `date_uncertain` is True, so it never
+    renders (filter_articles requires an in-window date).
+
+    `fetch_ok` distinguishes a *definitive* read (page loaded; caller may trust
+    a None date as "genuinely undated") from a *transient* failure (timeout /
+    connection reset / bot-block). On a transient failure the caller must NOT
+    persist a None date — the link should be left for a later crawl to retry,
+    or a one-off blip would permanently drop a legit article. Uses a browser UA
+    because these are arbitrary third-party article hosts (Medium-family, etc.)
+    that serve differently to a bot UA.
+    """
+    try:
+        with httpx.Client(timeout=8, follow_redirects=True, headers=SLACK_BROWSER_HEADERS) as client:
+            resp = client.get(url)
+            resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "html.parser")
+        title = _title_from_soup(soup, url)
+        date, date_uncertain = extract_date_from_html(soup, url)
+        return title, date, date_uncertain, True
+    except Exception:
+        path = urlparse(url).path.rstrip("/").split("/")[-1]
+        fallback = path.replace("-", " ").replace("_", " ").strip() or url
+        return fallback, None, True, False
 
 
 SLACK_SKIP_DOMAINS = {
@@ -365,15 +401,22 @@ def scout_slack_channel(source: dict, last_date: datetime, existing_ids: set) ->
                     if uid in existing_ids:
                         continue
 
-                    title = fetch_title(link)
+                    # Date the article by its OWN page, never by the Slack post
+                    # time. No real date → date=None → never renders.
+                    title, date, date_uncertain, fetch_ok = fetch_link_meta(link)
+                    if not fetch_ok:
+                        # Transient fetch failure — skip without recording so a
+                        # later crawl retries it (uid stays out of existing_ids).
+                        # Never persist a null date on a blip.
+                        continue
                     articles.append({
                         "id": uid,
                         "title": title,
                         "url": link,
-                        "date": sent_dt.strftime("%Y-%m-%d"),
+                        "date": date.strftime("%Y-%m-%d") if date else None,
                         "source_id": source["id"],
                         "excerpt": body[:400].strip(),
-                        "date_uncertain": False,
+                        "date_uncertain": date_uncertain,
                         "summarized": False,
                     })
                     existing_ids.add(uid)

@@ -1,20 +1,27 @@
 from datetime import date
 
 
-def filter_articles(articles: list, start: date, end: date) -> list:
+def filter_articles(articles: list, start: date, end: date,
+                    no_render_sources: set = None) -> list:
     """Keep articles whose date falls within [start, end] inclusive.
 
-    Articles flagged `dead` (deleted/removed at source) or `low_quality`
-    (junk/off-topic/spam) are excluded — the record stays in state for the
-    audit trail but never renders.
+    Articles flagged `dead` (deleted/removed at source), `low_quality`
+    (junk/off-topic/spam), or `unfetchable` (no usable content could be read,
+    so it was never summarized) are excluded — the record stays in state for
+    the audit trail but never renders. Articles from `no_render_sources`
+    (sources marked `render: false`, e.g. Reddit — signal-only feeds for the
+    bible) are likewise kept in state but never rendered.
     """
     start_s = start.isoformat()
     end_s = end.isoformat()
+    no_render = no_render_sources or set()
     return [
         a for a in articles
         if a.get("date") and start_s <= a["date"] <= end_s
         and not a.get("dead")
         and not a.get("low_quality")
+        and not a.get("unfetchable")
+        and a.get("source_id") not in no_render
     ]
 
 

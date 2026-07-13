@@ -512,20 +512,22 @@ sources:
     url: "https://www.reddit.com/r/androiddev/"
     rss: "https://www.reddit.com/r/androiddev/.rss"
     type: discussion
+    render: false
     language: en
     cadence_days: 1
     topics: [android, kotlin]
-    notes: "High volume, mixed quality. Used for topic signal and trending discussion detection, not as article source."
+    notes: "High volume, mixed quality. Topic signal only (feeds bible), never rendered as articles — the site's bot UA gets a 403 from Reddit, so posts can't be read/summarized (render: false)."
 
   - id: reddit-kotlin
     name: "r/Kotlin"
     url: "https://www.reddit.com/r/Kotlin/"
     rss: "https://www.reddit.com/r/Kotlin/.rss"
     type: discussion
+    render: false
     language: en
     cadence_days: 1
     topics: [kotlin]
-    notes: "Topic signal only."
+    notes: "Topic signal only (feeds bible), never rendered as articles (render: false)."
 
   # ════════════════════════════════════════════════════════════════════════════
   # NEEDS VERIFICATION — Placeholder, confirm feed URLs before enabling

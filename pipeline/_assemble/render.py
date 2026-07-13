@@ -95,7 +95,6 @@ def build_data_block(
     lines.append("")
 
     # CHAPTERS
-    week_start_str = start.isoformat()
     chapter_blocks = []
     for ch in chapters:
         # use first article's top topic history as chapter spark proxy
@@ -110,7 +109,6 @@ def build_data_block(
 
         article_blocks = []
         for a in ch["articles"]:
-            is_new = a.get("date", "") >= week_start_str
             src_id = a.get("source_id", "")
             src_type = source_type_map.get(src_id, "blog")
             stype = _stype(src_id, src_type)
@@ -145,7 +143,7 @@ def build_data_block(
             article_blocks.append(
                 "      {{ id:{}, col:{},\n"
                 "        title:{},\n"
-                "        url:{}, source:{}, stype:{}, date:{}, isNew:{}, paywalled:{},\n"
+                "        url:{}, source:{}, stype:{}, date:{}, paywalled:{},\n"
                 "        topics:{},\n"
                 "        summary:{},\n"
                 "        snap:{},\n"
@@ -155,7 +153,6 @@ def build_data_block(
                     json.dumps(a["title"]),
                     json.dumps(a["url"]), json.dumps(source_name),
                     json.dumps(stype), json.dumps(date_str),
-                    "true" if is_new else "false",
                     "true" if a.get("paywalled") else "false",
                     topics_js,
                     json.dumps(summary),

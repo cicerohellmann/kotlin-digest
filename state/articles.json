@@ -2394,271 +2394,290 @@
     "id": "a6172a28a9a432f5",
     "title": "Overview of Android CLI  |  Android Studio  |  Android Developers",
     "url": "https://developer.android.com/tools/agents/android-cli",
-    "date": "2026-07-04",
+    "date": null,
     "source_id": "slack-android",
     "excerpt": "Any agent should be able to do that via the <https://developer.android.com/tools/agents/android-cli|android cli>",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Discussion in the Kotlin Slack Android channel linking to the Android Studio CLI overview docs, covering command-line build invocation, lint, and device management without opening the IDE.",
     "topics": [
       "android-developers"
-    ]
+    ],
+    "date_corrected_from": "2026-07-04"
   },
   {
     "id": "c7f3ea477f50f0c6",
     "title": "Code of conduct and guidelines for Kotlin Slack | Kotlin",
     "url": "https://kotlinlang.org/docs/slack-code-of-conduct.html#basic-usage-guidelines",
-    "date": "2026-07-08",
+    "date": null,
     "source_id": "slack-android",
     "excerpt": "&gt; • Please refrain from cross-posting the same message on multiple channels. It is considered spamming.\n<https://kotlinlang.org/docs/slack-code-of-conduct.html#basic-usage-guidelines|https://kotlinlang.org/docs/slack-code-of-conduct.html#basic-usage-guidelines>",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Link to the Kotlin Slack community code of conduct. Informational, no technical content.",
-    "topics": []
+    "topics": [],
+    "date_corrected_from": "2026-07-08"
   },
   {
     "id": "b922d5893eae1659",
     "title": "Compose + Tauri",
     "url": "https://gist.github.com/terrakok/bb876b257adfdedffdd6fda98457c8ce",
-    "date": "2026-07-03",
+    "date": null,
     "source_id": "slack-compose",
     "excerpt": "*How to Shrink Your Compose Desktop App by 10x* :pirate_flag::smile:\n\n<https://gist.github.com/terrakok/bb876b257adfdedffdd6fda98457c8ce|gist.github.com/terrakok/bb876b257adfdedffdd6fda98457c8ce>",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack discussion sharing Compose + Tauri integration experiments, exploring whether Compose for Web can power the frontend of a Tauri desktop app.",
     "topics": [
       "compose",
       "kotlin-js"
-    ]
+    ],
+    "date_corrected_from": "2026-07-03"
   },
   {
     "id": "43578a0623c0ffa6",
     "title": "CMP 5121",
     "url": "https://youtrack.jetbrains.com/issue/CMP-5121/",
-    "date": "2026-07-03",
+    "date": null,
     "source_id": "slack-compose",
     "excerpt": "&gt; Size Optimization via ProGuard\nNot related to Tauri, but I'm curious why ProGuard was chosen over R8. There was discussion about it and the benefits over ProGuard a while ago (<https://youtrack.jetbrains.com/issue/CMP-5121/|CMP-5121>), but that never seemed to go anywhere.",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack thread discussing Compose Multiplatform issue 5121, tracking a rendering inconsistency between Android and Desktop targets in the 1.12 beta.",
     "topics": [
       "compose-multiplatform"
-    ]
+    ],
+    "date_corrected_from": "2026-07-03"
   },
   {
     "id": "1a60d0d963388b32",
     "title": "Home | Kobweb",
     "url": "https://kobweb.varabyte.com/",
-    "date": "2026-07-07",
+    "date": null,
     "source_id": "slack-compose",
     "excerpt": "<https://kobweb.varabyte.com/|kobweb.varabyte.com>",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack Compose channel linking to Kobweb, a Kotlin/JS web framework built on Compose for Web. Discussion covers its suitability for production use and server-side rendering support.",
     "topics": [
       "kotlin-js",
       "compose"
-    ]
+    ],
+    "date_corrected_from": "2026-07-07"
   },
   {
     "id": "4a3f2f7f882abacc",
     "title": "Kilua",
     "url": "https://kilua.dev/",
-    "date": "2026-07-07",
+    "date": null,
     "source_id": "slack-compose",
     "excerpt": "There is also <#C06UAH52PA7> • <https://kilua.dev/|kilua.dev>",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack Compose channel sharing Kilua, a Kotlin/JS UI framework with reactive state management. Positioned as an alternative to Compose for Web for teams preferring a more traditional component model.",
     "topics": [
       "kotlin-js"
-    ]
+    ],
+    "date_corrected_from": "2026-07-07"
   },
   {
     "id": "17e8b028d0f65684",
     "title": "GitHub - youniqx/time: Simplify GitLab time tracking!",
     "url": "https://github.com/youniqx/time",
-    "date": "2026-07-07",
+    "date": null,
     "source_id": "slack-compose",
     "excerpt": "Yes, you can do that without a problem. I host a CMP project on GitLab &amp; GitHub pages.\nThe biggest downside is the big size of the wasm build and the therefor resulting loading times of the site. So I would not do it for a simple portfolio website.\n\nFor reference: <https://github.com/youniqx/time|github.com/youniqx/time>",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack link to a GitLab time tracking tool. Off-topic for Android/Kotlin development.",
-    "topics": []
+    "topics": [],
+    "date_corrected_from": "2026-07-07"
   },
   {
     "id": "49b455f5fcc4ddca",
     "title": "KotlinProject",
     "url": "https://pablichjenkov.github.io/daily-agenda-view/",
-    "date": "2026-07-07",
+    "date": null,
     "source_id": "slack-compose",
     "excerpt": "Not sure what is special about a portfolio website, but in general you can host a CMP web on GitHub pages.\nThis page is CMP: <https://pablichjenkov.github.io/daily-agenda-view/|https://pablichjenkov.github.io/daily-agenda-view/>",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack link to a KotlinProject resource. Insufficient context to summarize.",
-    "topics": []
+    "topics": [],
+    "date_corrected_from": "2026-07-07"
   },
   {
     "id": "85c31c2187897914",
     "title": "Kotlin Multiplatform Libraries (KMP) – Explore 3900+ | Klibs.io",
     "url": "https://klibs.io/?query=Webview",
-    "date": "2026-07-06",
+    "date": null,
     "source_id": "slack-multiplatform",
     "excerpt": "<https://klibs.io/?query=Webview|https://klibs.io/?query=Webview>",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack Multiplatform channel linking to klibs.io, a searchable directory of 3900+ Kotlin Multiplatform libraries. Useful for discovering KMP-compatible alternatives to Android-only dependencies.",
     "topics": [
       "kmp"
-    ]
+    ],
+    "date_corrected_from": "2026-07-06"
   },
   {
     "id": "3872357e5627a202",
     "title": "nav3-recipes/sharedUI/src/commonMain/kotlin/com/example/nav3recipes/results/event/ResultEventBus.kt at master · terrakok/nav3-recipes",
     "url": "https://github.com/terrakok/nav3-recipes/blob/master/sharedUI/src/commonMain/kotlin/com/example/nav3recipes/results/event/ResultEventBus.kt",
-    "date": "2026-07-08",
+    "date": null,
     "source_id": "slack-multiplatform",
     "excerpt": "Will the *Nav3* Compose Multiplatform artifact eventually get/expose `ResultEventBus` to facilitate returning results or was this functionality intentionally omitted and left up to the developer? The <https://github.com/terrakok/nav3-recipes/blob/master/sharedUI/src/commonMain/kotlin/com/example/nav3recipes/results/event/ResultEventBus.kt|terrakok/nav3-recipe> repo appears to have copied the Resul",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack Multiplatform discussion sharing a nav3-recipes example showing ResultEventBus for passing results between navigation destinations in a type-safe way using Navigation 3 and KMP shared code.",
     "topics": [
       "kmp",
       "navigation"
-    ]
+    ],
+    "date_corrected_from": "2026-07-08"
   },
   {
     "id": "55973da8f22093bc",
     "title": "ResultEventBus.kt",
     "url": "https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:navigation3/navigation3-runtime/src/commonMain/kotlin/androidx/navigation3/runtime/result/ResultEventBus.kt?q=file:androidx%2Fnavigation3%2Fruntime%2Fresult%2FResultEventBus.kt%20class:androidx.navigation3.runtime.result.ResultEventBus",
-    "date": "2026-07-08",
+    "date": null,
     "source_id": "slack-multiplatform",
     "excerpt": "Will the *Nav3* Compose Multiplatform artifact eventually get/expose `ResultEventBus` to facilitate returning results or was this functionality intentionally omitted and left up to the developer? The <https://github.com/terrakok/nav3-recipes/blob/master/sharedUI/src/commonMain/kotlin/com/example/nav3recipes/results/event/ResultEventBus.kt|terrakok/nav3-recipe> repo appears to have copied the Resul",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Direct link to the ResultEventBus.kt implementation from the nav3-recipes repository, showing how to implement a type-safe event bus for navigation result passing in KMP with Navigation 3.",
     "topics": [
       "kmp",
       "navigation"
-    ]
+    ],
+    "date_corrected_from": "2026-07-08"
   },
   {
     "id": "ea01b4f2709b46c4",
     "title": "Asynchronous method invocation - Wikipedia",
     "url": "https://en.wikipedia.org/wiki/Asynchronous_method_invocation",
-    "date": "2026-07-06",
+    "date": null,
     "source_id": "slack-coroutines",
     "excerpt": "I just want to make sure that people don't reach out to `future` too eagerly. The main purpose of both kotlinx.coroutines as well as virtual threads, is to get rid of <https://en.wikipedia.org/wiki/Asynchronous_method_invocation|asynchronous functions> (AKA, a function that schedules work, and returns before that work might be done).\nAnd `future` is one such example.\nIt's slightly better than your",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack Coroutines channel linking to a Wikipedia article on asynchronous method invocation as background reading on the concurrency patterns that coroutines abstract over.",
     "topics": [
       "coroutines"
-    ]
+    ],
+    "date_corrected_from": "2026-07-06"
   },
   {
     "id": "2837761c281bd9f6",
     "title": "Wout Werkman - Virtual Threads vs. Coroutines in 2026: Is Java Finally There?",
     "url": "https://youtu.be/FFLyTKJlyJw?si=1g-ngiHPEO2TzdZM&t=595",
-    "date": "2026-07-06",
+    "date": null,
     "source_id": "slack-coroutines",
     "excerpt": "It sounds like in your situation, you cannot feasibly preserve structured concurrency. Meaning you will need to introduce asynchronous functions, which also introduces the list of problems I talked about. (if you're curious about why I keep saying asynchronous functions are so bad, you can watch <https://youtu.be/FFLyTKJlyJw?si=1g-ngiHPEO2TzdZM&amp;t=595|this starting from 9:55>).\n\nThe best way to",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack Coroutines channel sharing an article comparing Virtual Threads (Project Loom) with Kotlin Coroutines in 2026, evaluating whether Java's virtual threads close the gap for reactive backend development.",
     "topics": [
       "coroutines",
       "kotlin-backend"
-    ]
+    ],
+    "date_corrected_from": "2026-07-06"
   },
   {
     "id": "774f7412d1a369d1",
     "title": "Roman Elizarov — Lock-Free Algorithms for Kotlin Coroutines (Part 1)",
     "url": "https://www.youtube.com/watch?v=W2dOOBN1OQI",
-    "date": "2026-07-09",
+    "date": null,
     "source_id": "slack-coroutines",
     "excerpt": "<https://www.youtube.com/watch?v=W2dOOBN1OQI|2017 video pt 1>\n<https://www.youtube.com/watch?v=iQsN_IDUTSc|2017 video pt 2>\n<https://arxiv.org/abs/2211.04986|2022 paper>",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Roman Elizarov's foundational talk on lock-free algorithms underlying Kotlin Coroutines, covering the compare-and-swap primitives and atomic operations used in the coroutine scheduler and Channel implementation.",
     "topics": [
       "coroutines",
       "kotlin"
-    ]
+    ],
+    "date_corrected_from": "2026-07-09"
   },
   {
     "id": "1d8fe9e8b99e3b04",
     "title": "Fast and Scalable Channels in Kotlin Coroutines",
     "url": "https://arxiv.org/abs/2211.04986",
-    "date": "2026-07-09",
+    "date": null,
     "source_id": "slack-coroutines",
     "excerpt": "<https://www.youtube.com/watch?v=W2dOOBN1OQI|2017 video pt 1>\n<https://www.youtube.com/watch?v=iQsN_IDUTSc|2017 video pt 2>\n<https://arxiv.org/abs/2211.04986|2022 paper>",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Research paper linked in the Kotlin Coroutines Slack channel covering the design of fast, scalable channels using lock-free segment queues — the data structure behind Kotlin's Channel implementation.",
     "topics": [
       "coroutines",
       "kotlin"
-    ]
+    ],
+    "date_corrected_from": "2026-07-09"
   },
   {
     "id": "e4ed313f3057342a",
     "title": "Switch Kotlin Multiplatform project from CocoaPods to SwiftPM dependencies with Junie | Kotlin Multiplatform",
     "url": "https://kotl.in/kmp-pods-to-spm-junie-slack",
-    "date": "2026-07-04",
+    "date": null,
     "source_id": "slack-announcements",
     "excerpt": ":hammer_and_wrench: Switch your Kotlin Multiplatform project from CocoaPods to SwiftPM dependencies with Junie.\n\nWorking with a KMP module that relies on CocoaPods dependencies and planning to try the experimental SwiftPM import integration?\n\n<https://kotl.in/kmp-pods-to-spm-junie-slack|This step-by-step guide> shows how to use Junie and a Kotlin AI skill to assist the migration process.\n\nYou’ll l",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "JetBrains Slack announcement linking to a tutorial for migrating KMP projects from CocoaPods to Swift Package Manager dependencies using Junie. Covers the automated migration steps and manual fallback for complex pods.",
     "topics": [
       "kmp",
       "ios-interop"
-    ]
+    ],
+    "date_corrected_from": "2026-07-04"
   },
   {
     "id": "0c3c4d769419e0a5",
     "title": "Introducing the Kotlin Benchmark for AI Coding Agents - The JetBrains Blog",
     "url": "https://kotl.in/benchmark-slack",
-    "date": "2026-07-09",
+    "date": null,
     "source_id": "slack-announcements",
     "excerpt": ":kotlin-intensifies-purple:*<https://kotl.in/benchmark-slack|Introducing the Kotlin Benchmark>* \n\nAn open, reproducible benchmark for evaluating AI coding agents on Kotlin software engineering tasks.\nIt uses 105 issues from active open-source Kotlin repositories, validated by each project’s own test suite. Beyond resolution scores, the leaderboard reports average token consumption and latency, so",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack announcements channel re-sharing the JetBrains blog post on the new Kotlin Benchmark for AI coding agents.",
     "topics": [
       "kotlin"
-    ]
+    ],
+    "date_corrected_from": "2026-07-09"
   },
   {
     "id": "6de00979f0b70390",
     "title": "Add ability to generate dump from jar files ABI Tools",
     "url": "https://youtrack.jetbrains.com/issue/KT-80313/Add-ability-to-generate-dump-from-jar-files-ABI-Tools",
-    "date": "2026-07-09",
+    "date": null,
     "source_id": "slack-gradle",
     "excerpt": "I found this issue <https://youtrack.jetbrains.com/issue/KT-80313/Add-ability-to-generate-dump-from-jar-files-ABI-Tools|https://youtrack.jetbrains.com/issue/KT-80313/Add-ability-to-generate-dump-from-jar-files-ABI-Tools> but the commit did not change any Gradle files",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "Kotlin Slack Gradle channel linking to an ABI Tools proposal to add the ability to generate API dump from JAR files rather than requiring source compilation, speeding up ABI compatibility checks.",
     "topics": [
       "gradle",
       "build-logic"
-    ]
+    ],
+    "date_corrected_from": "2026-07-09"
   },
   {
     "id": "bdb410bb91bda9d5",
     "title": "Incremental build",
     "url": "https://docs.gradle.org/9.6.1/userguide/incremental_build.html#sec:disable-state-tracking",
-    "date": "2026-07-05",
+    "date": null,
     "source_id": "slack-ksp",
     "excerpt": "After upgrading my project to use Gradle 9.6.1 I have a strange problem:\n```* What went wrong:\nExecution failed for task ':front:kspCommonMainKotlinMetadata' (registered by plugin 'org.jetbrains.kotlin.multiplatform').\n&gt; Cannot access output property 'kspConfig.kotlinOutputDir' of task ':front:kspCommonMainKotlinMetadata'. Accessing unreadable inputs or outputs is not supported. Declare the tas",
-    "date_uncertain": false,
+    "date_uncertain": true,
     "summarized": true,
     "summary": "KSP Slack discussion on incremental build behavior, covering how KSP determines which processors need to rerun and current limitations in multi-round incremental processing.",
     "topics": [
       "ksp",
       "gradle"
-    ]
+    ],
+    "date_corrected_from": "2026-07-05"
   },
   {
     "id": "fceb2d915391891d",
