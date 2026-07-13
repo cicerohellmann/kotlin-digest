@@ -6,7 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzE4MTcxQSIvPjx0ZXh0IHg9IjMiIHk9IjI0IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjRTA2MDIwIj5LPC90ZXh0Pjx0ZXh0IHg9IjE3IiB5PSIyNCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxOSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0YzRURFMiI+RDwvdGV4dD48L3N2Zz4K">
   <title>About & Contributing — Kotlin Digest</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="design.css">
   <script>if(document.cookie.includes('kd_night=1'))document.documentElement.dataset.night='1';</script>
   <style>
@@ -50,7 +50,7 @@
       border-bottom: 3px double var(--ink);
     }
     .masthead-sub {
-      font-family: 'Lora', serif;
+      font-family: 'Charter', 'Bitstream Charter', Georgia, serif;
       font-style: italic;
       font-size: 1rem;
       color: var(--ink-muted);
@@ -95,7 +95,7 @@
 
     /* BODY COPY */
     .content p {
-      font-family: 'Lora', serif;
+      font-family: 'Charter', 'Bitstream Charter', Georgia, serif;
       font-size: 1rem;
       line-height: 1.8;
       color: var(--ink-mid);
@@ -132,7 +132,7 @@
     /* LISTS */
     .content ul { margin: 0.5rem 0 1rem 0; list-style: none; }
     .content ul li {
-      font-family: 'Lora', serif;
+      font-family: 'Charter', 'Bitstream Charter', Georgia, serif;
       font-size: 1rem;
       line-height: 1.75;
       color: var(--ink-mid);
@@ -258,10 +258,10 @@
       <span class="section-glyph">§</span>
       <h2 class="section-title">What this is</h2>
     </div>
-    <p>Kotlin Digest scouts the Kotlin and Android ecosystem — official blogs, library releases, conference talks, individual developer writing — and assembles it into a weekly, chapter-structured edition hosted on GitHub Pages.</p>
+    <p>I built Kotlin Digest to make it easy for me to keep up with the Kotlin and Android world — what's changing, what people are talking about — without doom-scrolling a dozen feeds. Every week it scouts the ecosystem — official blogs, library releases, conference talks, individual developer writing — and assembles it into a chapter-structured edition hosted on GitHub Pages. It's an early version, and I'm still figuring a lot out.</p>
     <p>Chapters are ordered by a living <strong>Topic Bible</strong>: a scored, decaying keyword graph that reflects what the community is actually talking about right now. Topics trending hard this week appear first. Topics fading appear later, or disappear until the discussion picks back up.</p>
     <p>The site is a static page. Your reading preferences — which chapters you want, which you don't, which keywords to surface or suppress — are stored in a browser cookie. Lose the cookie, lose nothing important. The default is the full magazine.</p>
-    <p>This project is entirely open source. The pipeline that generates it, the sources it draws from, the topics it tracks, and the site itself are all in this repository. Everything is a PR.</p>
+    <p>The whole thing is open source. The pipeline that generates it, the sources it draws from, the topics it tracks, and the site itself are all in one repository — <a href="https://github.com/cicerohellmann/kotlin-digest">github.com/cicerohellmann/kotlin-digest</a>. Everything is a PR.</p>
   </div>
 
   <div class="section">
@@ -270,26 +270,25 @@
       <h2 class="section-title">Editorial philosophy</h2>
     </div>
     <div class="callout">
-      <p>This is the most important part of this document. Read it before contributing a source.</p>
+      <p>This is the most important part of this page. Read it before contributing a source.</p>
     </div>
-    <p><strong>We draw from primary sources only.</strong></p>
-    <p>A primary source is someone writing their own thoughts: a developer publishing a post-mortem, a library author announcing a release, a conference speaker sharing what they learned, an engineer documenting a pattern they discovered in production. These are people forming opinions and sharing them — raw signal from inside the ecosystem.</p>
-    <p>We do not ingest newsletters, link roundups, or digest publications — including well-regarded ones. This is a deliberate architectural decision, not a slight against the people who produce them.</p>
-    <p>Here is why it matters technically: our Topic Bible derives its scores from the content we ingest. If we ingest a newsletter that has already curated this week's Kotlin news, the Bible scores what the newsletter editor decided was important — not what the community actually wrote about. One newsletter mentioning a topic once carries the same weight as twenty engineers independently writing about it. The signal degrades. The magazine becomes a reflection of other magazines.</p>
-    <p>We also do not feed from competitor digest publishers for the same reason: we would end up showing the same thing they show, ordered the same way, because we derived our sense of importance from theirs. The whole point of building our own scoring system is to see the ecosystem on its own terms.</p>
-    <p class="sub-label">What we look for in a source</p>
+    <p><strong>I prioritise primary sources.</strong> A primary source is someone writing their own thoughts: a developer publishing a post-mortem, a library author announcing a release, a conference speaker sharing what they learned, an engineer documenting a pattern they found in production. That's the raw signal I want — people forming opinions and sharing them.</p>
+    <p><strong>I don't render newsletters, link roundups, or digest publications</strong> — including well-regarded ones. It's a deliberate choice, not a slight against the people who make them. Here's why it matters technically: the Topic Bible derives its scores from what I ingest. If I ingested a newsletter that had already curated this week's Kotlin news, the Bible would score what that editor decided was important — not what the community actually wrote about. One newsletter mentioning a topic once would carry the same weight as twenty engineers independently writing about it. The magazine would become a reflection of other magazines. Same reason I don't pull articles from other digest publishers: I'd just end up showing what they show, ordered the way they order it.</p>
+    <p><strong>Community discussion is used for signal only.</strong> I do watch high-traffic places like the Kotlin Slack and a couple of subreddits — but only to detect <em>what topics are trending</em>, never as articles. A link someone pastes into Slack isn't an article: it's a mention, with no reliable publish date, often pointing at a homepage, a video, or a paper. Those feed the Topic Bible's sense of what's hot; they never appear as cards.</p>
+    <p><strong>Open aggregator feeds (like Medium tags) are ingested, then filtered.</strong> They're noisy, so everything from them is vetted for real, on-topic, readable, this-week content before it can appear. Anything I can't actually open and date as a genuine article is dropped rather than published.</p>
+    <p class="sub-label">What I look for in a source</p>
     <ul>
       <li>Writes original content — analysis, tutorials, announcements, opinions, release notes</li>
       <li>Has an identifiable author or organization</li>
-      <li>Publishes with datestamps we can parse</li>
-      <li>Has been active within its own cadence in the last 90 days</li>
+      <li>Publishes with datestamps I can parse — an article is dated by its own page, never by when it was mentioned</li>
+      <li>Has been active within its own cadence recently</li>
     </ul>
-    <p class="sub-label">What disqualifies a source</p>
+    <p class="sub-label">What disqualifies a source as an article feed</p>
     <ul>
       <li>Newsletters, roundups, and link aggregators — regardless of quality or reputation</li>
       <li>Sites that primarily re-publish or summarize content from elsewhere without original analysis</li>
       <li>Digest-format publications</li>
-      <li>Sites without parseable publication dates, making freshness detection impossible</li>
+      <li>Sites without parseable publication dates — I can't verify freshness, so it can't be published</li>
     </ul>
   </div>
 
@@ -298,7 +297,11 @@
       <span class="section-glyph">§</span>
       <h2 class="section-title">Contributing</h2>
     </div>
-    <p>Every part of this project is a pull request. Here is what you can contribute.</p>
+    <div class="callout">
+      <p><strong>The whole project lives here:</strong> <a href="https://github.com/cicerohellmann/kotlin-digest">github.com/cicerohellmann/kotlin-digest</a></p>
+      <p>Fork it, open an issue, or send a pull request. Everything below is just a file in that repo.</p>
+    </div>
+    <p>A few ways to help:</p>
 
     <p class="sub-label">Add a source</p>
     <p>Open <code>sources/sources.yml</code> and add an entry:</p>
@@ -306,14 +309,15 @@
   name: "Human-readable name"
   url: "https://example.com/"
   rss: "https://example.com/feed/"   # strongly preferred
-  type: blog                 # blog | conference | changelog | discussion
+  type: blog                 # blog | conference | changelog
   language: en
   cadence_days: 14
   topics: [kotlin, compose]</code></pre>
-    <p>Open a PR. In the description, include one sentence on why this source adds something the existing list doesn't. If the source has an RSS or Atom feed, include it — the pipeline will always prefer a feed over scraping.</p>
+    <p>Open a PR. In the description, include one sentence on why this source adds something the existing list doesn't. If the source has an RSS or Atom feed, include it — the pipeline always prefers a feed over scraping.</p>
+    <p>Note: <code>discussion</code> feeds (e.g. Reddit) and <code>slack-mirror</code> channels are ingested for <strong>topic signal only</strong> — they shape what's trending but never render as articles, so they aren't held to the article bar above.</p>
 
     <p class="sub-label">Report a dead source</p>
-    <p>If a source has gone quiet, open a PR removing it from <code>sources/sources.yml</code>. Include the last known article URL and date in the PR description so we have a record. The daily pipeline will eventually flag it automatically, but a human eye catches edge cases.</p>
+    <p>If a source has gone quiet, open a PR removing it from <code>sources/sources.yml</code>. Include the last known article URL and date in the PR description so there's a record. The daily pipeline will eventually flag it automatically, but a human eye catches edge cases.</p>
 
     <p class="sub-label">Add a topic</p>
     <p>Open <code>topics/topics.yml</code> and add to the seed list or to the appropriate cluster. The pipeline auto-discovers new topics from article content, but curated seeds start with better placement:</p>
@@ -321,7 +325,7 @@
   label: "Human Label"</code></pre>
 
     <p class="sub-label">Improve the site</p>
-    <p>The site lives in <code>site/index.html</code> — a single self-contained static page with no build step. Open a PR with before/after screenshots if you're making a visual change.</p>
+    <p>The site is generated: <code>assemble.py</code> renders <code>site/template.html</code> (plus the current edition's data) into <code>site/index.html</code>. Edit <strong><code>template.html</code>, not <code>index.html</code></strong> — <code>index.html</code> is a build output and gets overwritten. Open a PR with before/after screenshots for visual changes.</p>
 
     <p class="sub-label">Change the scoring constants</p>
     <p>The Topic Bible's decay rate, source weights, and emergence threshold live in <code>topics/topics.yml</code> under <code>scoring:</code>. If you have data suggesting different constants would produce a better representation of community activity, open a PR with your reasoning.</p>
@@ -335,7 +339,7 @@
     <div class="pipeline">
       <div class="pipeline-step">
         <span class="pipeline-name">scout.py</span>
-        <span class="pipeline-desc">Fetch sources, detect new articles by publication date, update source health. Runs daily via GitHub Actions at 06:00 UTC.</span>
+        <span class="pipeline-desc">Fetch sources, detect new articles by their own publication date (never by when a link was mentioned), update source health. Runs daily via GitHub Actions at 06:00 UTC.</span>
       </div>
       <div class="pipeline-step">
         <span class="pipeline-name">bible.py</span>
@@ -343,7 +347,7 @@
       </div>
       <div class="pipeline-step">
         <span class="pipeline-name">summarize.py</span>
-        <span class="pipeline-desc">Agent-driven: fetch article content, summarize in 2–3 sentences, tag to topic bible, optionally extract a code snippet.</span>
+        <span class="pipeline-desc">Agent-driven: fetch each article, and only if it has real readable content, summarize it in 2–3 sentences, tag to the topic bible, optionally extract a code snippet. Anything unreadable is dropped, never summarized from the title.</span>
       </div>
       <div class="pipeline-step">
         <span class="pipeline-name">assemble.py</span>
@@ -373,8 +377,8 @@
       <span class="section-glyph">§</span>
       <h2 class="section-title">License &amp; questions</h2>
     </div>
-    <p>MIT. Take the pipeline, the site, the structure. Build your own digest for your own community. We only ask that you don't call it Kotlin Digest.</p>
-    <p>Open an issue on <a href="https://github.com/cicerohellmann/kotlin-digest">GitHub</a>, or find us in the Kotlin Slack in <code>#general</code>.</p>
+    <p>MIT. Take the pipeline, the site, the structure. Build your own digest for your own community. I only ask that you don't call it Kotlin Digest.</p>
+    <p>The best way to reach me is to open an issue on <a href="https://github.com/cicerohellmann/kotlin-digest">GitHub</a>.</p>
   </div>
 
 </div>
