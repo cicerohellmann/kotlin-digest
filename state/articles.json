@@ -3220,5 +3220,495 @@
     "excerpt": "submitted by /u/meowterspace [link] [comments]",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "fbca3ea4063f5cf6",
+    "title": "Part 3: Database Migrations That Won’t Crash Production: From AutoMigrations to Programmatic…",
+    "url": "https://medium.com/@sivavishnu0705/part-3-database-migrations-that-wont-crash-production-from-automigrations-to-programmatic-632473e4f3c1?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "From AutoMigrations to programmatic transforms — how to migrate Jetpack Room databases without losing data or crashing on launch. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d70c542358c08a6c",
+    "title": "What is the architectural difference between KMP and Flutter?",
+    "url": "https://medium.com/@crpoudyal/what-is-the-architectural-difference-between-kmp-and-flutter-aec1c5f82f80?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "The primary architectural difference between Kotlin Multiplatform (KMP) and Flutter lies in their approach to code sharing: KMP focuses on… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f9dd375efa545419",
+    "title": "Fakes vs Mocks in Testing",
+    "url": "https://medium.com/@dhananjaydy/fakes-vs-mocks-in-testing-08ec776742d9?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "One topic in the Android community that often lacks clarity is the use of fakes and mocks in testing. Some developers strongly prefer one… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "584214f01ef001ae",
+    "title": "Building a Simple Dice Roller App with Jetpack Compose",
+    "url": "https://medium.com/@ananyapraveen.shetty/building-a-simple-dice-roller-app-with-jetpack-compose-9701fc3b741f?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "In this project, I built a simple Android Dice Roller application using Kotlin and Jetpack Compose. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8baa296252e554c5",
+    "title": "Android System Design: Understanding Clean Architecture",
+    "url": "https://medium.com/@nematengg/android-system-design-understanding-clean-architecture-479f242a81f6?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "If you’ve been building Android apps for a while, you’ve probably encountered code like this: Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1815f605ca90029a",
+    "title": "Compose’s new Styles API split my modifier chain in two",
+    "url": "https://stevie658jjh.medium.com/composes-new-styles-api-split-my-modifier-chain-in-two-65bb561dbe54?source=rss------kotlin-5",
+    "date": "2026-07-12",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "For years, one modifier chain mixed how a thing looks with what it does. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d327aa2038d42fd7",
+    "title": "Introduction to Kotlin: Why Every Android Developer Should Learn It",
+    "url": "https://techdynasty.medium.com/introduction-to-kotlin-why-every-android-developer-should-learn-it-de2ffd396397?source=rss------kotlin-5",
+    "date": "2026-07-12",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Android development has evolved significantly over the last decade. While Java laid the foundation, Kotlin has become the language that… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2f670f3a90d85892",
+    "title": "Biometric Authentication sebagai Mekanisme Keamanan pada Aplikasi Android Modern",
+    "url": "https://medium.com/@myhikmal000/biometric-authentication-sebagai-mekanisme-keamanan-pada-aplikasi-android-modern-d47966bc5848?source=rss------kotlin-5",
+    "date": "2026-07-12",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Fitur biometrik dapat diintegrasikan ke aplikasi yang dibangun dengan Compose untuk meningkatkan keamanan dan pengalaman pengguna Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "63644831c409c7e5",
+    "title": "Ciri Ciri Viagra Usa Asli 081225577768 — Distributor Viagra Pfizer Original",
+    "url": "https://medium.com/@henkyshop123/ciri-ciri-viagra-usa-asli-081225577768-distributor-viagra-pfizer-original-52fcfa846dd9?source=rss------kotlin-5",
+    "date": "2026-07-12",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Distributor Viagra asli USA merupakan salah satu sarana dalam mendapatkan kenikmatan dalam berhubungan sebuah rumah tangga. Ada banyak… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c62ca3c3da429d63",
+    "title": "Part 2: Stop Bundling Your Database: Modularizing Room for Clean Architecture",
+    "url": "https://medium.com/@sivavishnu0705/part-2-stop-bundling-your-database-modularizing-room-for-clean-architecture-f35e5ac14ce6?source=rss------kotlin-5",
+    "date": "2026-07-12",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Split your monolithic Room setup into entities, DAOs, and a sealed core module to fix slow builds and enforce real boundaries. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7c409f5069eb5284",
+    "title": "Image Anarchy v2.0 All Android images Work in One Tool",
+    "url": "https://medium.com/@uch0686/image-anarchy-v2-0-all-android-images-work-in-one-tool-716bfe1dd283?source=rss------android-5",
+    "date": "2026-07-13",
+    "source_id": "medium-android-tag",
+    "excerpt": "Download Link: https://go.cyberslinks.com/r.php?id=fbjqMG Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2d353086a7dbdc81",
+    "title": "Adsterra in 2026: Why Publishers Are Choosing It Over Traditional Ad Networks\nHome Adsterra in…",
+    "url": "https://medium.com/@md7493654/adsterra-in-2026-why-publishers-are-choosing-it-over-traditional-ad-networks-home-adsterra-in-2b9063980e57?source=rss------android-5",
+    "date": "2026-07-13",
+    "source_id": "medium-android-tag",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "70ad9f7a4b29e6eb",
+    "title": "Leverage the essentials: Jetpack Compose best practices",
+    "url": "https://medium.com/@subhadipdhn/leverage-the-essentials-jetpack-compose-best-practices-64c069d6b062?source=rss------android-5",
+    "date": "2026-07-13",
+    "source_id": "medium-android-tag",
+    "excerpt": "Migrated article from https://learndroid.hashnode.dev/leverage-the-essentials-jetpack-compose-best-practices[13th July ‘26] Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b04014c426774349",
+    "title": "How I Discovered a Premium Bypass Vulnerability in Spotify — And What Happened Next\nA first-time…",
+    "url": "https://medium.com/@nikhilgarg6176/how-i-discovered-a-premium-bypass-vulnerability-in-spotify-and-what-happened-next-a-first-time-748e2fda7a39?source=rss------android-5",
+    "date": "2026-07-13",
+    "source_id": "medium-android-tag",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "dba6aa803e55153d",
+    "title": "@Nothing Phone 4b Review and Specification",
+    "url": "https://medium.com/@99techpost/nothing-phone-4b-review-and-specification-c58a367e4e66?source=rss------android-5",
+    "date": "2026-07-13",
+    "source_id": "medium-android-tag",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "701063f16a74e494",
+    "title": "[Android] 알림 권한을 거부했더니 온보딩이 처음부터 다시 시작됐다 — (Process Death, SavedStateHandle)",
+    "url": "https://medium.com/@teumteumeat/android-%EC%95%8C%EB%A6%BC-%EA%B6%8C%ED%95%9C%EC%9D%84-%EA%B1%B0%EB%B6%80%ED%96%88%EB%8D%94%EB%8B%88-%EC%98%A8%EB%B3%B4%EB%94%A9%EC%9D%B4-%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EB%8B%A4%EC%8B%9C-%EC%8B%9C%EC%9E%91%EB%90%90%EB%8B%A4-process-death-savedstatehandle-2a1066b4e14a?source=rss------android-5",
+    "date": "2026-07-13",
+    "source_id": "medium-android-tag",
+    "excerpt": "안녕하세요! AI 맞춤형 퀴즈를 통해 여러분의 출퇴근 시간을 지식으로 틈틈이 채우는 서비스, 틈틈잇의 백엔드 개발자 K입니다. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2579d964ff23a030",
+    "title": "I Waited More Than 30 Years for This Moment: AI Finally Removed the Biggest Barrier Between My…",
+    "url": "https://medium.com/@sandunmathugama/i-waited-more-than-30-years-for-this-moment-ai-finally-removed-the-biggest-barrier-between-my-368909b76e92?source=rss------android-5",
+    "date": "2026-07-13",
+    "source_id": "medium-android-tag",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c2b06211ebeda700",
+    "title": "BLE Advertiser Now Simulates the 5 Real-World BLE Systems Developers Actually Build For",
+    "url": "https://miniiot.medium.com/ble-advertiser-now-simulates-the-5-real-world-ble-systems-developers-actually-build-for-f7b509b9a5e5?source=rss------android-5",
+    "date": "2026-07-13",
+    "source_id": "medium-android-tag",
+    "excerpt": "From retail beacons to patient monitors, here’s how live manufacturer data updates in BLE Advertiser let you test against the same… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9dc6878f0f6aba01",
+    "title": "Introducing Live Manufacturer Data Updates Without Restarting BLE Advertising : BLE Advertiser(GATT…",
+    "url": "https://bleadvertiserapp.medium.com/introducing-live-manufacturer-data-updates-without-restarting-ble-advertising-ble-advertiser-gatt-0d1f1fe5004a?source=rss------android-5",
+    "date": "2026-07-13",
+    "source_id": "medium-android-tag",
+    "excerpt": "How BLE Advertiser now lets you change what a device is broadcasting without ever touching stop or start. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6574021ead428343",
+    "title": "حل مشكلة خروج محاكي PPSSPP في نظام HyperOS",
+    "url": "https://fadyali.medium.com/%D8%AD%D9%84-%D9%85%D8%B4%D9%83%D9%84%D8%A9-%D8%AE%D8%B1%D9%88%D8%AC-%D9%85%D8%AD%D8%A7%D9%83%D9%8A-ppsspp-%D9%81%D9%8A-%D9%86%D8%B8%D8%A7%D9%85-hyperos-00a2a907fd6b?source=rss------android-5",
+    "date": "2026-07-13",
+    "source_id": "medium-android-tag",
+    "excerpt": "مع إطلاق شاومي لواجهتها الجديدة كلياً، واجه مقتنو هواتف شاومي، Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8beee7f404d0dc84",
+    "title": "2.3.0-alpha.2",
+    "url": "https://github.com/arrow-kt/arrow/releases/tag/2.3.0-alpha.2",
+    "date": "2026-07-12",
+    "source_id": "lib-arrow",
+    "excerpt": "What's Changed Resolve returnType more lazily in Arrow Optics by @serras in #3943 Full Changelog : 2.3.0-alpha.1...2.3.0-alpha.2",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3e70e66b2efaa0f8",
+    "title": "Exploiting PackageInstaller parsing: A 974-byte modern Android 14 PoC.",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uuom29/exploiting_packageinstaller_parsing_a_974byte/",
+    "date": "2026-07-12",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I’ve been exploring the absolute structural floor of the Android APK format. By leveraging hasCode=\"false\" and surgically optimizing the ASN.1 DER encoding of the V2 signature, I’ve managed to get a compliant Android 14 app down to 974 bytes. The system treats it as a first-class app, and it’s fully installable on a stock Android 14 device. It’s an exercise in how much the PackageManager trusts the headers versus what it semantically validates. You can find the repo and the byte-by-byte breakdow",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e38303e9c06c936f",
+    "title": "[Showcase] haptify — a Dart CLI that turns audio files into iOS + Android haptics (and can do it at runtime too)",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uv56th/showcase_haptify_a_dart_cli_that_turns_audio/",
+    "date": "2026-07-13",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I kept hitting the same wall: designing haptics means hand-authoring them in a GUI, and nothing fit into a Flutter build where I just want to drop a .wav in → get haptics out → commit the result. So I built haptify — a pure-Dart CLI + library, now on pub.dev. Why another haptics tool? The dedicated audio→haptic tools exist; they just don't fit mobile Flutter work: Lofelt Studio — the mobile-focused one — was acquired by Meta and sunset in July 2022. Meta Haptics Studio is alive and does audio→ha",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "be2bb40517d3f7e7",
+    "title": "Bridging the gap between Android Dev and UI/UX",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uv4xqa/bridging_the_gap_between_android_dev_and_uiux/",
+    "date": "2026-07-13",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Having worked in the Android industry for a few years, I’ve noticed a major pattern: many brilliant developers write incredible code but rarely focus on the UI/UX or visual design of their apps. This design gap often holds developers back from landing high-paying freelance gigs, where clients heavily prioritize a beautiful, clean, and modern user interface. Realizing this, I spent the last few months deeply focusing on both my coding architecture and my visual design skills. To put everything in",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3a971c60ac01e0ed",
+    "title": "I built sadb – A smart Bash wrapper for ADB to fix the endless adb -s copy-pasting",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uv3lex/i_built_sadb_a_smart_bash_wrapper_for_adb_to_fix/",
+    "date": "2026-07-13",
+    "source_id": "reddit-androiddev",
+    "excerpt": "https://i.redd.it/ncv56fxlyxch1.gif https://i.redd.it/9h96iakmyxch1.gif Hey devs, If you regularly work with multiple Android devices or emulators, you probably know the pain of copying and pasting device serials every time you run adb devices followed by adb -s <serial> <command> . To solve this, I created sadb (Smart ADB) , a lightweight, zero-dependency Bash tool that acts as an enhanced wrapper for ADB. ✨ Key Features: Smart Device Selection : When multiple devices are plugged in, it automat",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e62aa47e7f180748",
+    "title": "How to handle storage management for Android Studio?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uv1qhe/how_to_handle_storage_management_for_android/",
+    "date": "2026-07-13",
+    "source_id": "reddit-androiddev",
+    "excerpt": "https://preview.redd.it/0sie1thafxch1.png?width=1017&format=png&auto=webp&s=57089630e8a6aa332849214950f8cac8ec31da88 Hey everyone, I am running into a severe storage bottleneck on my primary drive which is why I'm not able to run my emulator... and wanted to ask how you all manage the massive space requirements for native Android development? I have tried to separate the SDK, Android Studio and .android folder (which contains all my emulators, in total i have 2 emulators). All this folders are i",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8f94e6688df8cabf",
+    "title": "Building an open-source Compose Multiplatform image comparison library — looking for API and architecture feedback",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uuf1kq/building_an_opensource_compose_multiplatform/",
+    "date": "2026-07-12",
+    "source_id": "reddit-androiddev",
+    "excerpt": "submitted by /u/usman0769 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e7f46849244389f1",
+    "title": "[Partnership] Looking for Android Developer(s) — Revenue Share, No Upfront Fee",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uur5my/partnership_looking_for_android_developers/",
+    "date": "2026-07-12",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hi all, I have an established Google Play Console business account and I'm looking to partner with Android developer(s) on a revenue-share basis — no upfront payment, but we split profits from apps we publish together. What I bring: Verified Google Play Console business account with USA LLC. ASO/marketing support, ad network setup, budget for user acquisition, app ideas/market research, etc. What I'm looking for: Developer(s) who can build and maintain Android apps (native, Kotlin, or Flutter — ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "399133d432535631",
+    "title": "Kdrant — an idiomatic, coroutine-first Kotlin client for Qdrant (the official one is Java-clunky)",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1uulwij/kdrant_an_idiomatic_coroutinefirst_kotlin_client/",
+    "date": "2026-07-12",
+    "source_id": "reddit-kotlin",
+    "excerpt": "I've been doing RAG on the JVM and kept hitting the same wall: Qdrant's official client is well-built for Java , but painful from Kotlin — every call returns a ListenableFuture you .get() (blocking) or bridge, requests are protobuf builders, scroll is manual pagination, and it drags ~21 MB of grpc-netty onto your classpath. So I built Kdrant — the client I actually wanted to write Kotlin against: suspend everywhere, no ListenableFuture type-safe DSLs for collections, points, payloads and filters",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "24d6710f5efedb70",
+    "title": "Building an open-source Compose Multiplatform image comparison library — looking for API and architecture feedback",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1uud2qj/building_an_opensource_compose_multiplatform/",
+    "date": "2026-07-12",
+    "source_id": "reddit-kotlin",
+    "excerpt": "Hi everyone, I've been building my first open-source Kotlin Multiplatform library called CompareKit. The goal is to provide a reusable before/after image comparison component that works with Compose Multiplatform using a single shared implementation. Current features Before/After image comparison Horizontal draggable slider Custom thumb Custom divider Custom labels Material 3 friendly Android support iOS support 100% shared Compose code (no platform-specific implementation) Example API: BeforeAf",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6a68fb42c69cc237",
+    "title": "Tend: An offline-first, open-source personal CRM to help you stay in touch with family and friends.",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1ut6opu/tend_an_offlinefirst_opensource_personal_crm_to/",
+    "date": "2026-07-11",
+    "source_id": "reddit-kotlin",
+    "excerpt": "# Tend: Beta 1 Release We are currently in Beta, but the core features are built and ready for testing! Built with Compose. **Here is what you can do in this release:** * **Connections:** Add contacts with their notes, social links, and relationship context. * **Custom Reminders:** Set your own check-in frequencies and get daily notifications so you never accidentally let a relationship drift. * **Important Dates:** Track birthdays and anniversaries with annual reminders. * **Home Dashboard:** S",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "339a033a2551ce50",
+    "title": "other than for initial adoption, why has Kotlin not overtaken JAVA yet?",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1usm5z4/other_than_for_initial_adoption_why_has_kotlin/",
+    "date": "2026-07-10",
+    "source_id": "reddit-kotlin",
+    "excerpt": "... submitted by /u/ShallotPuzzled9326 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e432a9a787c20274",
+    "title": "GPT 5.6 sol or Opus 4.8/Fable for android kotlin",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1utlpfo/gpt_56_sol_or_opus_48fable_for_android_kotlin/",
+    "date": "2026-07-11",
+    "source_id": "reddit-kotlin",
+    "excerpt": "submitted by /u/brookm291 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e3185721a8032eff",
+    "title": "Speed up your high-traffic KMP endpoints by 66% using 50% less memory—without touching your legacy APIs",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1usb4zf/speed_up_your_hightraffic_kmp_endpoints_by_66/",
+    "date": "2026-07-10",
+    "source_id": "reddit-kotlin",
+    "excerpt": "Hi everyone, In high-throughput Kotlin Multiplatform backends (Ktor) and mobile apps, JSON serialization is often a major bottleneck for CPU cycles and Garbage Collector (GC) pressure. Standard serializers convert raw byte streams into intermediate Strings/Chars, doing string comparisons and map/key lookups that trigger constant allocations. To address this, we’ve been working on Ghost —a compile-time, byte-first JSON serializer built for Kotlin Multiplatform (supporting JVM, Android, iOS, and N",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e80de9d3bd7c56fa",
+    "title": "Compose DND update with Kanban Demo",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1urwlly/compose_dnd_update_with_kanban_demo/",
+    "date": "2026-07-09",
+    "source_id": "reddit-kotlin",
+    "excerpt": "Hello All, just released Compose DND v0.5.0, this is the biggest update so far with a lot of new features and improvements: - Add axis-locked drag - Add drag handle - Add dragAutoScroll modifier - Reorder animation improvements - Docs and Sample rework with new Kanban demo - And a lot more... Web live demo: https://mohamedrejeb.github.io/compose-dnd/demo/ Release notes: https://github.com/MohamedRejeb/compose-dnd/releases/tag/v0.5.0 submitted by /u/mohamedbenrjeb [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7f597fd9ce393f59",
+    "title": "coroutines, definition is it accurate?",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1us98ee/coroutines_definition_is_it_accurate/",
+    "date": "2026-07-10",
+    "source_id": "reddit-kotlin",
+    "excerpt": "what i always thought concurrency/asynchronous/parraleleism was, is functions that do side effects, ie speaking to another computer, fetchinig user input from screen, speaking to tpu, and functions usually return something, but with these functions that do side effects, they return a promise that they will return somehing, becuase they wait for the real thing. so to not block the thread the function returns something immediately, a promise and then goes to do the actual thing ie a network reques",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2df5f591e33385ac",
+    "title": "We just released the initial version of Enriched Markdown for native Android 🚀",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1urrzz1/we_just_released_the_initial_version_of_enriched/",
+    "date": "2026-07-09",
+    "source_id": "reddit-kotlin",
+    "excerpt": "Our goal is to provide a clean, modern approach to handling Markdown directly within the native Android UI stack, making content feel like a first-party, integrated part of your app's UI. Highlights: ⚡️ Native Performance – uses the highly efficient MD4C parser under the hood and renders using 100% native Android text components and spans (zero WebViews). 📦 Core CommonMark – full compliance with the standard CommonMark specification out of the box. 📱 Native Interactions – retains standard Androi",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "db853ba6c78b9e24",
+    "title": "Introducing the Kotlin Benchmark for AI coding agents",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1uqsinr/introducing_the_kotlin_benchmark_for_ai_coding/",
+    "date": "2026-07-08",
+    "source_id": "reddit-kotlin",
+    "excerpt": "The Kotlin Benchmark is an open, reproducible benchmark for evaluating AI coding agents on Kotlin software engineering tasks. It uses 105 issues from active open-source Kotlin repositories, validated by each project’s own test suite. Beyond resolution scores, the leaderboard reports average token consumption and latency, so you can weigh each setup on cost and speed, not just correctness. This is our first iteration. Newer models are already being evaluated, with updated results coming soon. See",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ee76b653608539af",
+    "title": "At what point does a DI framework actually earn its keep? We shipped a KMP app on a hand-wired composition root instead.",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1urtkmi/at_what_point_does_a_di_framework_actually_earn/",
+    "date": "2026-07-09",
+    "source_id": "reddit-kotlin",
+    "excerpt": "We built a Kotlin Multiplatform app (Android / iOS / Desktop) and deliberately skipped Koin/Metro/Dagger. Dependencies are wired by hand: constructor injection, one composition root per platform entry point, singletons created once. No plugin, no KSP, no annotations. The payoff we didn't expect: the dependency graph is just ordinary Kotlin you can \"go to definition\" through. No magic, no runtime registry, a forgotten wiring is a compile error instead of a crash. Bonus — it turned out to be far e",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "be3e296389974889",
+    "title": "Kotlin as a part time language ?",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1urita1/kotlin_as_a_part_time_language/",
+    "date": "2026-07-09",
+    "source_id": "reddit-kotlin",
+    "excerpt": "Is it possible to part time learn kotlin for android apps , while mainly getting deeper and better in another main language ? I have no idea of how much effort kotlin for android development needs when already knowing java basics (only basics, little oop) Is learning android development similar enough to java that i could learn it without giving it 100% or even 50% focus . With a goal : building an app that gets user input and saves it and manipulate it f.e for a grocery list. Beginner programm.",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7a19eaaa27a0e0ca",
+    "title": "Entirely Kotlin-Based SysML v2 tool (w/ Compose, Spring, Installer)",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1uqp8re/entirely_kotlinbased_sysml_v2_tool_w_compose/",
+    "date": "2026-07-08",
+    "source_id": "reddit-kotlin",
+    "excerpt": "Hi all, We (I and my team) are working on tools and methods for SE -- based entirely on Kotlin. Some Kotlin features interesting for everyone include: Combination of Kotlin (migrating front-tend step by step to KMP) Spring Boot Compose Desktop Java-Installer that generates Windows, Mac Applications. Kotlin DSL for writing Grammar and semantic actions nicely, e.g., https://preview.redd.it/3vdmhli5kzbh1.png?width=1521&format=png&auto=webp&s=01365d93b102d4ede1f9749f90f953ad889b07fe Particular focus",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e3c6b9309b03e343",
+    "title": "Gradle Plugin for embedding KDoc inside generated typescript definitions",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1uq7a61/gradle_plugin_for_embedding_kdoc_inside_generated/",
+    "date": "2026-07-07",
+    "source_id": "reddit-kotlin",
+    "excerpt": "submitted by /u/PhilosopherGlum4224 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "47646a1703ec2eaf",
+    "title": "I ported Kotlin's List/Set/Map API to PHP 8.4, what would you have done differently and why? Curious what I could improve for v0.2",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1upsw9o/i_ported_kotlins_listsetmap_api_to_php_84_what/",
+    "date": "2026-07-07",
+    "source_id": "reddit-kotlin",
+    "excerpt": "submitted by /u/haelexuis [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2dc751f6c527064f",
+    "title": "rootkt: a pure Kotlin library for reading CERN ROOT files",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1uppgvu/rootkt_a_pure_kotlin_library_for_reading_cern/",
+    "date": "2026-07-07",
+    "source_id": "reddit-kotlin",
+    "excerpt": "Hi Kotliners, I'm an MSc student working on particle flow reconstruction for FCC-ee at CERN. Sharing a side project that grew out of that work. rootkt is an attempt at a pure Kotlin implementation for reading ROOT binary files — no C++ bindings, no JNI, no ROOT installation required. Still early and rough in places, but functional for basic cases. Motivation: JVM-based HEP tooling doesn't have a straightforward way to read .root files without wrapping the C++ library or shelling out to PyROOT. I",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c41a5656f2b89a3f",
+    "title": "I built a fully offline notification filter for Android (Kotlin + Rust/JNI + on-device ML) because every \"smart filter\" app ships your OTPs to a cloud server",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1upp8wu/i_built_a_fully_offline_notification_filter_for/",
+    "date": "2026-07-07",
+    "source_id": "reddit-kotlin",
+    "excerpt": "submitted by /u/Imbatmanfromyear69bc [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0b3b07ad545a353b",
+    "title": "Sidstuga 2.0.8 — offline downloads, catch-up TV and rebuilt Cloud Sync (BYO-playlist IPTV player for Android TV, Fire TV & mobile)",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1upwcbx/sidstuga_208_offline_downloads_catchup_tv_and/",
+    "date": "2026-07-07",
+    "source_id": "reddit-kotlin",
+    "excerpt": "submitted by /u/hfml85 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "134bdca06295df97",
+    "title": "Advice to Kotlin Multiplatform newbies",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1uq78th/advice_to_kotlin_multiplatform_newbies/",
+    "date": "2026-07-07",
+    "source_id": "reddit-kotlin",
+    "excerpt": "For you that is coming to play with KMP, I hope you never need touch XCFramework. KMP is great and its goals is right but as any other multiplatform solution, you won't have a good life. Avoid as much as possible keep you Kotlin version up to date if you aren't a \"Kotlin Core\" framework driven. Any third-party library added to your project will be a headache. As expected, latest releases improved XCFramework only. It isn't available in previous releases of course. Are you mixing Swift and Kotlin",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "993fc703fc6634ee",
+    "title": "I built kUML — a Kotlin-native UML/SysML tool designed from day one for the LLM era",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1up3pv0/i_built_kuml_a_kotlinnative_umlsysml_tool/",
+    "date": "2026-07-06",
+    "source_id": "reddit-kotlin",
+    "excerpt": "Hey everyone, I've spent twenty years writing UML and SysML in automotive R&D — Car2x, autonomous-driving validation, safety-critical embedded systems. In every team I've worked with, the same workflow runs on repeat: Draw the diagram in Enterprise Architect or MagicDraw. Export PNG. Paste into Confluence or a Word deliverable. Six weeks later, rename the class in the code. Forget the diagram exists. Eight months later, somebody in review asks which version is binding. Nobody knows. This isn't a",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ba1d8f12fee41d14",
+    "title": "Learned Android (Kotlin, Compose) + Spring Boot backend, now scared AI is making it pointless",
+    "url": "https://www.reddit.com/r/Kotlin/comments/1upjk8c/learned_android_kotlin_compose_spring_boot/",
+    "date": "2026-07-07",
+    "source_id": "reddit-kotlin",
+    "excerpt": "submitted by /u/timepass_0o0 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
