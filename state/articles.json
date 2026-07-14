@@ -3710,5 +3710,325 @@
     "excerpt": "submitted by /u/timepass_0o0 [link] [comments]",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "f963651d1fdb6ccf",
+    "title": "What’s New in ReSharper 2026.2 for VS Code-compatible editors",
+    "url": "https://blog.jetbrains.com/dotnet/2026/07/13/rs-vsc-2026-2/",
+    "date": "2026-07-13",
+    "source_id": "jetbrains-blog",
+    "excerpt": "The last couple of months have been busy ones for ReSharper across VS Code and compatible editors. Between the 2026.1 and 2026.2 releases, we’ve been steadily sharpening the everyday .NET experience – from tracing how your data flows, to navigating call chains, to keeping your project structure front and center. This post is a tour […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c63bda1dcedbc940",
+    "title": "Debugging for .NET in VS Code and Cursor: The #1 Requested Feature Is Here",
+    "url": "https://blog.jetbrains.com/dotnet/2026/07/13/rs-vsc-debugging/",
+    "date": "2026-07-13",
+    "source_id": "jetbrains-blog",
+    "excerpt": "For over a year, the most consistent question from our users and community has been clear: When will the ReSharper extension support debugging? We heard you. And with the 2026.2 release, the first version of the debugger is now live. Built on the same core debugging engine that powers JetBrains Rider, this implementation is optimized […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "38bd434b691afbc9",
+    "title": "Seven Claude Code commands, one Kotlin Multiplatform app on Android and iOS",
+    "url": "https://proandroiddev.com/seven-claude-code-commands-one-kotlin-multiplatform-app-on-android-and-ios-cb01e920a3e6?source=rss----c72404660798---4",
+    "date": "2026-07-13",
+    "source_id": "proandroiddev",
+    "excerpt": "The full KMPilot walkthrough: an Android + iOS app from seven Claude Code commands, every prompt and timing included Two features, two platforms, one Kotlin Multiplatform codebase. You need Claude Code and a template that keeps the architecture from drifting. The same build on both platforms: gallery, artwork detail, artists, and the empty Favorites tab. One Kotlin Multiplatform codebase. This post is the whole build with nothing cut from the record: Loupe , an art gallery for the Art Institute ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "59ce2c6309888ee4",
+    "title": "Kotlin Multiplatform: Why KMP Matters for Modern Mobile Development",
+    "url": "https://medium.com/@ys.yogendra22/kotlin-multiplatform-why-kmp-matters-for-modern-mobile-development-3a9a8ee64e9d?source=rss------kotlin-5",
+    "date": "2026-07-14",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Mobile teams often build the same feature twice: once for Android and once for iOS. The UI may be different, but the core logic is usually… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1892a1e64fd93ed4",
+    "title": "Android UI Performance (Part 2): Preserving Object Identity via State Hoisting",
+    "url": "https://medium.com/@ilhamp.dev/android-ui-performance-part-2-preserving-object-identity-via-state-hoisting-ebed07e2576f?source=rss------kotlin-5",
+    "date": "2026-07-14",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "In the previous part, I explored recomposition and also mentioned Stability in Jetpack Compose. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d3d7d10aa2b1d8f4",
+    "title": "Unreachable statements in Kotlin cause warnings, not errors",
+    "url": "https://alonso-delarte.medium.com/unreachable-statements-in-kotlin-cause-warnings-not-errors-2ccfc6df54f3?source=rss------kotlin-5",
+    "date": "2026-07-14",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "When a path of execution in a Java project is absolutely unreachable, the compiler issues an error, which your integrated development… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1b9fcce4fa7fc933",
+    "title": "Building a design system with Compose’s new Styles API",
+    "url": "https://stevie658jjh.medium.com/building-a-design-system-with-composes-new-styles-api-572cdf95f79b?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "A hands-on tour: a custom button from a bare Box, press and disabled states with animation, a small family of button styles, and theme… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d2d3993123426175",
+    "title": "[MM’s] Engineering Weekly #68 — Java’s Next Chapter",
+    "url": "https://marconak-matej.medium.com/mms-engineering-weekly-68-java-s-next-chapter-e83c95e0a961?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "From JVM evolution to Spring AI patterns and developer tooling Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2799e08ed2a0cfb8",
+    "title": "Setting Up Kotlin Development Environment: A Complete Beginner’s Guide",
+    "url": "https://techdynasty.medium.com/setting-up-kotlin-development-environment-a-complete-beginners-guide-d6131bcd3216?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Before you can start building Android apps or writing Kotlin programs, you need a proper development environment. While the setup process… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "35394002c7b43bc5",
+    "title": "Clean Architecture vs. Google’s Recommended Android Architecture",
+    "url": "https://medium.com/@nasiri97/clean-architecture-vs-googles-recommended-android-architecture-a1b7954f2a5f?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "“Google’s recommended Android architecture” is a clean architecture, but it is not Clean Architecture. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a470b02c82777393",
+    "title": "Writing Your First Custom Layout in Compose",
+    "url": "https://christophybarth.medium.com/writing-your-first-custom-layout-in-compose-bda067bc172c?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Row, Column, and Box handle almost everything you'll ever need to arrange on screen. But every so often you hit a design that none of them… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "123016a8936720ba",
+    "title": "Part 4: Beyond CRUD: Advanced Relationships, Atomic Transactions, and Paging 3 in Room",
+    "url": "https://medium.com/@sivavishnu0705/part-4-beyond-crud-advanced-relationships-atomic-transactions-and-paging-3-in-room-81b221b8eca5?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Why nesting @Relation five levels deep and calling it clean architecture quietly destroys performance and consistency Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "33d9e9f9fcd512b4",
+    "title": "Mobile Terse | Android (English)",
+    "url": "https://medium.com/@zbiyikli1/mobile-terse-android-english-fb52f13089af?source=rss------kotlin-5",
+    "date": "2026-07-13",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "“This is a roadmap, not a tutorial — you need to study each topic in depth on your own.” Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1b60cf3e2db6c6d8",
+    "title": "unlimited movies / series trick",
+    "url": "https://medium.com/@terry021ks/unlimited-movies-series-trick-91c4c594bf54?source=rss------android-5",
+    "date": "2026-07-14",
+    "source_id": "medium-android-tag",
+    "excerpt": "🎬 Unlimited FREE Movies, Web Series, Anime & Entertainment | PannerPlay Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "244ab3a0108e9931",
+    "title": "Want to Smoke Less? Start by Understanding When You Smoke",
+    "url": "https://medium.com/@jonesrnick123456/want-to-smoke-less-start-by-understanding-when-you-smoke-1f55c42b4fb5?source=rss------android-5",
+    "date": "2026-07-14",
+    "source_id": "medium-android-tag",
+    "excerpt": "Cigarette tracking can reveal triggers, spacing, and patterns you may not notice day to day. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d68c675fabf5ee80",
+    "title": "This 3 apps that make my Pixel much more fun to use",
+    "url": "https://medium.com/@BitMavrick/this-3-apps-that-make-my-pixel-much-more-fun-to-use-d18e9a84d6aa?source=rss------android-5",
+    "date": "2026-07-14",
+    "source_id": "medium-android-tag",
+    "excerpt": "The Google Play is home to a massive library of mobile applications, covering every genre under the sun. Some apps are designed with… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "94a5569ac1d34ab9",
+    "title": "One Script to Set Up Everything",
+    "url": "https://medium.com/@srivardhanjalan/one-script-to-set-up-everything-ae8bcea2d649?source=rss------android-5",
+    "date": "2026-07-14",
+    "source_id": "medium-android-tag",
+    "excerpt": "Zero to Shipped · 01 — your machine, your accounts, and the Apple Silicon trap that eats evenings. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c42658771a91594d",
+    "title": "How Senior Android Developers Review Pull Requests?",
+    "url": "https://halilozel1903.medium.com/how-senior-android-developers-review-pull-requests-cf8257c8f0d9?source=rss------android-5",
+    "date": "2026-07-14",
+    "source_id": "medium-android-tag",
+    "excerpt": "A pull request can compile, pass CI, and still introduce the next production incident. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f2048cc2fdecf586",
+    "title": "Why are people losing trust in society?",
+    "url": "https://khanafsar55991.medium.com/why-are-people-losing-trust-in-society-a34f10853abf?source=rss------android-5",
+    "date": "2026-07-14",
+    "source_id": "medium-android-tag",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1e3c86d9f8561a47",
+    "title": "How to Notice Smartphone Display Problems Early",
+    "url": "https://medium.com/@mrauf.gbob/how-to-notice-smartphone-display-problems-early-65bc30b821e1?source=rss------android-5",
+    "date": "2026-07-14",
+    "source_id": "medium-android-tag",
+    "excerpt": "A phone display rarely fails without warning. Small changes in brightness, touch response, or color can appear long before the issue… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "94fe7d2381934910",
+    "title": "8888 Game Official App Download Register & Play in Pakistan",
+    "url": "https://medium.com/@pkrgames845/8888-game-official-app-download-register-play-in-pakistan-2d1f40f3531e?source=rss------android-5",
+    "date": "2026-07-14",
+    "source_id": "medium-android-tag",
+    "excerpt": "Online gaming has become one of the fastest-growing entertainment activities across Pakistan during the past few years. People now prefer… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4e76e2f36bf0ef22",
+    "title": "3R3r Game APK Download Latest Version 2026 — Complete Guide",
+    "url": "https://medium.com/@nayapakapk93/3r3r-game-apk-download-latest-version-2026-complete-guide-da33741c3bb1?source=rss------android-5",
+    "date": "2026-07-14",
+    "source_id": "medium-android-tag",
+    "excerpt": "A Quick Look Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "424f60cf27bff661",
+    "title": "How to Install Android APK Games Safely: A Complete Beginner’s Guide (2026)",
+    "url": "https://medium.com/@ghulam649649/how-to-install-android-apk-games-safely-a-complete-beginners-guide-2026-86ba8202c165?source=rss------android-5",
+    "date": "2026-07-14",
+    "source_id": "medium-android-tag",
+    "excerpt": "How to Install Android APK Games Safely: A Complete Beginner’s Guide (2026) Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "676a82fb29de91f1",
+    "title": "v1.12.10-alpha01+dev4462: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4462",
+    "date": "2026-07-14",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4462 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4462 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4462 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4462",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "21c20cd6fc145c5a",
+    "title": "Pros & Cons of \"Releases not signed by Play\"",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uvhkd6/pros_cons_of_releases_not_signed_by_play/",
+    "date": "2026-07-13",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I recently noticed something while reviewing my app's publishing settings on Google Play. With the introduction of \"Protected with Play\" (previously called App Integrity and Signing Services ), I see that although my app is successfully published and downloadable from Google Play, it’s not marked as \"signed by Play\" . My current setup: I’m using a signing key generated by Android Studio (the default keystore created during project setup). Based on this, I’m assuming that means my app isn’t being",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3e7a79317ad7219c",
+    "title": "Creator subscriptions like Twitch/Patreon on iOS & Android",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uvzi54/creator_subscriptions_like_twitchpatreon_on_ios/",
+    "date": "2026-07-14",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I'm designing a live streaming app where users can subscribe to individual creators for $9.99/month . A user should be able to subscribe to multiple creators simultaneously (similar to Twitch or YouTube Channel Memberships), and each subscription should auto-renew independently. The challenge is scalability. We may eventually have 100k+ creators , so creating a separate App Store / Google Play subscription product for every creator doesn't seem practical. I recently came across Apple's Advanced ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b614ae40fbc0da8d",
+    "title": "Google's new developer registration requirements could affect Android's openness",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uvlcn5/googles_new_developer_registration_requirements/",
+    "date": "2026-07-13",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Found this campaign today: Keep Android Open. It discusses the impact of Google's new developer registration requirements on independent developers, FOSS projects, and alternative app distribution. submitted by /u/Thennate [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1af94391bcaa3665",
+    "title": "An Android use case for large static lookup tables: Chinese Telegraph Code",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uv9nb7/an_android_use_case_for_large_static_lookup/",
+    "date": "2026-07-13",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hi everyone! Recently, I added Chinese Telegraph Code support to an Android app I maintain. I couldn’t find this functionality in any of the Morse code apps I checked, and it seemed like an interesting engineering challenge: supporting large static character tables while keeping lookup performance fast and the impact on app size minimal. The feature now supports: • Mainland Chinese, Simplified • Mainland Chinese, Simplified — short digit mode • Taiwanese Traditional Chinese • Taiwanese Tradition",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4f85500e40771c64",
+    "title": "When do we get targetSdk requirement for API level 36?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uv6tt5/when_do_we_get_targetsdk_requirement_for_api/",
+    "date": "2026-07-13",
+    "source_id": "reddit-androiddev",
+    "excerpt": "So, in recent years Google has been announcing sometimes around May how on 31.08. new minimal requirement for targetSdk by App Store will apply. This year I don't see any official announcement. This page didn't get updated: https://developer.android.com/google/play/requirements/target-sdk Nor this: https://support.google.com/googleplay/android-developer/answer/11926878 Nor this: https://apilevels.com/ (although this one is not official, afaik, but they are pretty updated all the times) Does anyo",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "55bac3a8fd619176",
+    "title": "Help compiling llama.cpp with Vulkan for Android (Snapdragon 8 Elite / Adreno 750) — need `vulkan-shaders-gen` built for macOS ARM64 host",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uvdvdv/help_compiling_llamacpp_with_vulkan_for_android/",
+    "date": "2026-07-13",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I'm building an Android app that runs GGUF models on-device via llama.cpp. CPU-only works at ~15-20 tok/s on a Samsung S25 Ultra (Snapdragon 8 Elite). I want GPU acceleration via Vulkan. What I have: - M1 MacBook Air (ARM64) + Android NDK 27 + CMake + Ninja - Windows PC (x86-64) with same toolchain - Vulkan SDK installed on both, `glslc` and `glslangValidator` found by CMake - SPIRV-Headers installed via Homebrew The error: Building for Android ARM64 target fails at the `vulkan-shaders-gen` step",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c1f3be09c690a93c",
+    "title": "Android app rejection submission",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uv6bib/android_app_rejection_submission/",
+    "date": "2026-07-13",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hello Reddit, Can anyone help me understand this? Google rejected our organization’s loan app submission because of a Financial Services policy violation related to the Financial Features Declaration. The app is being developed by a third-party company. When I reviewed the declaration form, I noticed that “Personal Loan Direct Lender” had been selected. However, the form then requires us to provide details of the lending partners we work with. The problem is that we don’t have any lending partne",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "33c7a199f06913f5",
+    "title": "I designed the icon for my Android app using only the brush tool and paint bucket tool. What do you think?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uvcc7r/i_designed_the_icon_for_my_android_app_using_only/",
+    "date": "2026-07-13",
+    "source_id": "reddit-androiddev",
+    "excerpt": "submitted by /u/Min0119 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
