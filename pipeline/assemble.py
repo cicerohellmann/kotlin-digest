@@ -27,6 +27,7 @@ from pipeline._assemble.dates import edition_to_dates
 from pipeline._assemble.scores import lookup_scores_at
 from pipeline._assemble.articles import filter_articles, score_articles, cluster_articles
 from pipeline._assemble.render import build_data_block, inject_data
+from pipeline._assemble.comics import select_comics, comics_needed, COMIC_EVERY
 from pipeline.rollup import collapse, load_rollups, write_queue
 
 
@@ -98,6 +99,12 @@ def main() -> None:
     total_arts = sum(len(ch["articles"]) for ch in chapters)
     print(f"  {len(chapters)} chapters, {total_arts} placed articles")
 
+    # Comic interludes: one up top + one per COMIC_EVERY cards, no repeats.
+    needed = comics_needed([len(ch["articles"]) for ch in chapters])
+    comics = select_comics(args.edition, needed)
+    print(f"  {len(comics)}/{needed} comic interludes "
+          f"({'pool exhausted' if len(comics) < needed else 'from pool'})")
+
     data_block = build_data_block(
         edition=args.edition,
         start=start,
@@ -106,6 +113,8 @@ def main() -> None:
         bible=bible,
         source_type_map=source_type_map,
         clusters=clusters,
+        comics=comics,
+        comic_every=COMIC_EVERY,
     )
     html = inject_data(template, data_block)
 

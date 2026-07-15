@@ -67,6 +67,8 @@ def build_data_block(
     bible: dict,
     source_type_map: dict,
     clusters: list,
+    comics: list = None,
+    comic_every: int = 14,
 ) -> str:
     lines = ["// ══ DATA ════════════════════════════════════════════════════════════════════", ""]
 
@@ -92,6 +94,23 @@ def build_data_block(
             "  {{ name:{}, score:{}, spark:{} }}".format(json.dumps(tid), score, json.dumps(sp))
         )
     lines.append("const TRENDING_DATA = [\n" + ",\n".join(trending_items) + "\n];")
+    lines.append("")
+
+    # COMICS — interludes: one before the mag, one after every `comic_every` cards
+    comic_items = []
+    for c in (comics or []):
+        comic_items.append(
+            "  {{ img:{}, alt:{}, title:{}, permalink:{}, artist:{}, source:{} }}".format(
+                json.dumps(c.get("img", "")),
+                json.dumps(c.get("alt", "")),
+                json.dumps(c.get("title", "")),
+                json.dumps(c.get("permalink", "")),
+                json.dumps(c.get("artist", "")),
+                json.dumps(c.get("source", "")),
+            )
+        )
+    lines.append("const COMICS = [\n" + ",\n".join(comic_items) + "\n];")
+    lines.append("const COMIC_EVERY = {};".format(int(comic_every)))
     lines.append("")
 
     # CHAPTERS
