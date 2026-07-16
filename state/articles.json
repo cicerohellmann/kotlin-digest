@@ -4390,5 +4390,265 @@
     "excerpt": "Hey Android devs 👋 We've added both Text-to-Speech and Speech-to-Text to our inference engine! Your local LLM setup can now speak and listen, fully offline. Text-to-Speech Load a TTS model and synthesize: val tts = Tts.load( source = \"hf://NobodyWho/Kokoro-82M\", voice = \"bf_emma\", language = \"en-gb\", ) val wav = tts.synthesize(text = \"Hello from NobodyWho!\") File(\"out.wav\").writeBytes(wav) You get WAV bytes back ready to save or play. Two backends: Kokoro (lightweight 24kHz) and Supertonic (mult",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "f649ce2b9636a41f",
+    "title": "JetBrains GameDev Days 2026 – Call for Speakers",
+    "url": "https://blog.jetbrains.com/dotnet/2026/07/15/jetbrains-gamedev-days-2026-call-for-speakers/",
+    "date": "2026-07-15",
+    "source_id": "jetbrains-blog",
+    "excerpt": "JetBrains GameDev Day is back! Join us online on September 28, 2026, for a day dedicated to game development, practical engineering, tools, workflows, and the people building games across the world. We’re looking for speakers who are excited to share their knowledge, experience, lessons learned, tools, or creative approaches with the gamedev community. About GameDev […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "be3f60c5a442a9bd",
+    "title": "On-Device AI Series (Part 3): MediaPipe Tasks",
+    "url": "https://proandroiddev.com/on-device-ai-series-part-3-mediapipe-tasks-634bd1fd0692?source=rss----c72404660798---4",
+    "date": "2026-07-15",
+    "source_id": "proandroiddev",
+    "excerpt": "ML Kit gives you Google’s models. MediaPipe gives you the pipeline. In Part 1 we reached for ML Kit because it’s turnkey: add a dependency, pass an InputImage, get a structured result. That covers a huge slice of everyday mobile AI. But every team eventually hits a wall ML Kit can’t scale past — you need a specific TFLite model, or you need to chain several tasks into one feature that no single ML Kit API exposes. That’s exactly where MediaPipe Tasks lives. It’s the layer directly beneath ML Kit",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2957d1c6ce7e3700",
+    "title": "Teaching a Kotlin Chess Engine to Debug Itself",
+    "url": "https://proandroiddev.com/teaching-a-kotlin-chess-engine-to-debug-itself-c31696282c86?source=rss----c72404660798---4",
+    "date": "2026-07-15",
+    "source_id": "proandroiddev",
+    "excerpt": "Two independent sources of truth as judges, a coding agent as the mechanic — how to architect any logic module so an agent can test it, localize bugs, and fix them autonomously, with the constraints baked into the build, not the prompt. The Problem: The Silent Failures of Game State A modern mobile application can look perfectly correct on screen while the underlying business logic is subtly compromised. In a chess app, a piece might glide smoothly across a Compose UI, but a rare edge case — a s",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e21995c1b47951a9",
+    "title": "Jetpack Compose Setup: A Beginner’s Guide to Creating Your First Compose Project",
+    "url": "https://medium.com/@vaibhavi.rana99/jetpack-compose-setup-a-beginners-guide-to-creating-your-first-compose-project-f08e3ef71acd?source=rss------kotlin-5",
+    "date": "2026-07-16",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Learn how to create your first Jetpack Compose project, understand the project structure, preview composables, and integrate Compose into… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b3a62b7b087c6238",
+    "title": "Android System Design: How Data Flows Through Your Application",
+    "url": "https://medium.com/@nematengg/android-system-design-how-data-flows-through-your-application-89b907448055?source=rss------kotlin-5",
+    "date": "2026-07-16",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "In the previous articles of this Android System Design series, we discussed: Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8b2aa8e884c102c0",
+    "title": "As we celebrate the 15th anniversary of Kotlin, let’s not forget its Scala roots",
+    "url": "https://alonso-delarte.medium.com/as-we-celebrate-the-15th-anniversary-of-kotlin-lets-not-forget-its-scala-roots-251f9eb3377b?source=rss------kotlin-5",
+    "date": "2026-07-15",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Photo by Uljana Vasiljeva on Unsplash Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "381305ef04dace18",
+    "title": "I shipped an Android app in 3 days without knowing Kotlin",
+    "url": "https://medium.com/@kisst/i-shipped-an-android-app-in-3-days-without-knowing-kotlin-2cd3ca2b15f5?source=rss------kotlin-5",
+    "date": "2026-07-15",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "The story of Link Clear, a real, offline, zero-permission URL cleaner with 733 tracking rules built in, that I designed on day 0, tweaked… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d1d80bffe1799d7d",
+    "title": "Kotlin Architecture Tests: Why Konture Exists - Part 2/3",
+    "url": "https://medium.com/@leducbao/kotlin-architecture-tests-why-konture-exists-4ac92a4dd3ba?source=rss------kotlin-5",
+    "date": "2026-07-15",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Kotlin architecture has two views of the same architecture: the Gradle graph that decides what can link, and the Kotlin source model that… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9472a571cf00bfa9",
+    "title": "Kotlin Architecture Tests: What They Are and Why They Matter - Part 1/3",
+    "url": "https://medium.com/@leducbao/kotlin-architecture-tests-what-they-are-and-why-they-matter-389ce9a1204c?source=rss------kotlin-5",
+    "date": "2026-07-15",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "A Kotlin project can compile, pass its unit tests, satisfy its linter, and still become structurally harder to change. Architecture tests… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "15a10729501c247b",
+    "title": "Operators in Kotlin Explained: A Complete Guide for Beginners",
+    "url": "https://techdynasty.medium.com/operators-in-kotlin-explained-a-complete-guide-for-beginners-5f87748a3e49?source=rss------kotlin-5",
+    "date": "2026-07-15",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Operators are one of the most fundamental building blocks of any programming language. Whether you’re calculating a total bill, comparing… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "87e632494453c42c",
+    "title": "Ship Your Android App to Testers Automatically: A Complete GitHub Actions + Firebase App…",
+    "url": "https://medium.com/@jrevanth101/ship-your-android-app-to-testers-automatically-a-complete-github-actions-firebase-app-02def952a492?source=rss------kotlin-5",
+    "date": "2026-07-15",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Build a signed release APK in the cloud and share it with your testers with just one click . This step-by-step guide is beginner-friendly… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "221e93d4abe15685",
+    "title": "Beyond fromJson(): How Production Apps Architect Their Parsing Layer",
+    "url": "https://medium.com/@sivavishnu0705/beyond-fromjson-how-production-apps-architect-their-parsing-layer-eb08e0ff45fe?source=rss------kotlin-5",
+    "date": "2026-07-15",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Why serialization is a system design problem — not a utility call — and how apps build boundaries before failures reach ViewModels. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f08d05ea5022bdf9",
+    "title": "Intrinsic Measurements, Demystified",
+    "url": "https://christophybarth.medium.com/intrinsic-measurements-demystified-5ccb914e3492?source=rss------kotlin-5",
+    "date": "2026-07-15",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Here’s a layout problem that looks trivial and isn’t. You have two pieces of text side by side with a vertical divider between them, and… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f237a9f38e9b1fc4",
+    "title": "Why Does Your iPhone Need 4x More Storage Than Android for the Exact Same App?",
+    "url": "https://medium.com/@aayushmanranjan24/why-does-your-iphone-need-4x-more-storage-than-android-for-the-exact-same-app-5091cbd20182?source=rss------android-5",
+    "date": "2026-07-16",
+    "source_id": "medium-android-tag",
+    "excerpt": "Open Instagram on an iPhone and check its footprint. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c550bd2fca67cb47",
+    "title": "Beyond Conversations: Why Walrus Memory Could Be the Missing Layer for AI Agents",
+    "url": "https://medium.com/@kantara6652/beyond-conversations-why-walrus-memory-could-be-the-missing-layer-for-ai-agents-4edf5fb4b1c8?source=rss------android-5",
+    "date": "2026-07-16",
+    "source_id": "medium-android-tag",
+    "excerpt": "Artificial intelligence is becoming part of everyday life. We use Al to write emails, summarize documents, brainstorm ideas, and even help… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7199a13857bf8aa6",
+    "title": "Prompt Engineering for Mobile Developers: How to Write Good Prompts",
+    "url": "https://medium.com/@anandgaur2207/prompt-engineering-for-mobile-developers-how-to-write-good-prompts-ae9a245ced0b?source=rss------android-5",
+    "date": "2026-07-16",
+    "source_id": "medium-android-tag",
+    "excerpt": "If you are a mobile developer in 2026, you are already using AI every single day. Maybe you ask it to fix a crash, write a Compose screen… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9ad23bc88b08ff2a",
+    "title": "Tc 777 Game APK Download for Android (2026) — Complete Guide",
+    "url": "https://medium.com/@nayapakapk93/tc-777-game-apk-download-for-android-2026-complete-guide-bf769fd277c7?source=rss------android-5",
+    "date": "2026-07-16",
+    "source_id": "medium-android-tag",
+    "excerpt": "Overview Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "43f7f8b7d76909f9",
+    "title": "One Tap, Three Machines: How Android Views, Flutter, and Compose Actually Render Your UI",
+    "url": "https://medium.com/@angelinaballerina/one-tap-three-machines-how-android-views-flutter-and-compose-actually-render-your-ui-ad31c30ec279?source=rss------android-5",
+    "date": "2026-07-16",
+    "source_id": "medium-android-tag",
+    "excerpt": "Android Native vs Flutter vs KMP — a series comparing how the three mobile stacks solve the same problems differently. Part 1: rendering… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "24fd448ec3c3aa45",
+    "title": "“Ditch the Jam: Why This 3D GPS App is Your Best Road Trip Partner”",
+    "url": "https://medium.com/@MZTECHOFFICIAL/ditch-the-jam-why-this-3d-gps-app-is-your-best-road-trip-partner-771a30c6f0e5?source=rss------android-5",
+    "date": "2026-07-16",
+    "source_id": "medium-android-tag",
+    "excerpt": "In today’s fast-paced world, getting from point A to point B shouldn’t be a headache. Whether you are commuting to work or exploring a new… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "04b11a3ab91823f6",
+    "title": "تشغيل ألعاب الأندرويد على الكمبيوتر بدون محاكي",
+    "url": "https://fadyali.medium.com/%D8%AA%D8%B4%D8%BA%D9%8A%D9%84-%D8%A3%D9%84%D8%B9%D8%A7%D8%A8-%D8%A7%D9%84%D8%A3%D9%86%D8%AF%D8%B1%D9%88%D9%8A%D8%AF-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%83%D9%85%D8%A8%D9%8A%D9%88%D8%AA%D8%B1-%D8%A8%D8%AF%D9%88%D9%86-%D9%85%D8%AD%D8%A7%D9%83%D9%8A-69ab39dfcbb0?source=rss------android-5",
+    "date": "2026-07-16",
+    "source_id": "medium-android-tag",
+    "excerpt": "هل سئمت من تجمد شاشة كمبيوترك واستهلاك الـ RAM بالكامل في كل مرة Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c55ba2f6c0d44b64",
+    "title": "Pak998 Game: Is This Pakistan’s Most Talked-About Earning App in 2026?",
+    "url": "https://medium.com/@raheelrahii12343/pak998-game-is-this-pakistans-most-talked-about-earning-app-in-2026-7ab0e94fab78?source=rss------android-5",
+    "date": "2026-07-15",
+    "source_id": "medium-android-tag",
+    "excerpt": "Every year, new earning apps appear in Pakistan, promising users an easy way to make money from their smartphones. Some disappear after a… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e81555a62b47db85",
+    "title": "15 July 2026 Artifact Wave",
+    "url": "https://commonsware.com/blog/2026/07/15/jetpack-artifact-wave.html",
+    "date": "2026-07-15",
+    "source_id": "commonsware",
+    "excerpt": "Here is what we got as new Jetpack artifacts this week!",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "196a192af461d46b",
+    "title": "v1.12.10-alpha01+dev4484: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4484",
+    "date": "2026-07-16",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4484 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4484 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4484 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4484",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c304a22ce9c503dc",
+    "title": "v1.12.0-beta03+dev4483: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.0-beta03%2Bdev4483",
+    "date": "2026-07-16",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.0-beta03+dev4483 org.jetbrains.androidx.lifecycle:lifecycle-*:2.11.1+dev4483",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "bfce10fd07cae4fd",
+    "title": "When Flows Won't Cut It",
+    "url": "https://www.reddit.com/r/androiddev/comments/1ux8sva/when_flows_wont_cut_it/",
+    "date": "2026-07-15",
+    "source_id": "reddit-androiddev",
+    "excerpt": "submitted by /u/TypeProjection [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d06d996a7ded289e",
+    "title": "Can ADB grant Accessibility, Location, and Notification Permissions permanently without device owner?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1ux71ez/can_adb_grant_accessibility_location_and/",
+    "date": "2026-07-15",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hi everyone, Is there any way, using ADB, to grant or enable the required Accessibility service, Location permission, and Notification permission/access for an Android app, and prevent the user from revoking the permissions or disabling the services afterward? Configuring the app as the Device Owner is not an option in this case. Thanks in advance. submitted by /u/Rich_You6957 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
