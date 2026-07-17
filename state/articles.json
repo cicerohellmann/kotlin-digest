@@ -4650,5 +4650,315 @@
     "excerpt": "Hi everyone, Is there any way, using ADB, to grant or enable the required Accessibility service, Location permission, and Notification permission/access for an Android app, and prevent the user from revoking the permissions or disabling the services afterward? Configuring the app as the Device Owner is not an option in this case. Thanks in advance. submitted by /u/Rich_You6957 [link] [comments]",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "81302fcba0046a7e",
+    "title": "What’s New in IntelliJ IDEA 2026.2",
+    "url": "https://blog.jetbrains.com/idea/2026/07/intellij-idea-2026-2/",
+    "date": "2026-07-16",
+    "source_id": "jetbrains-blog",
+    "excerpt": "IntelliJ IDEA 2026.2 is here! This version brings updates designed to streamline your workflows and help you confidently adopt the latest innovations across the Java ecosystem.  You can download this latest release from our website or update to it directly from inside the IDE, via the free Toolbox App, or using snap packages for Ubuntu. Explore the What’s […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9c47c1165bebb500",
+    "title": "CLion 2026.2 Is Here",
+    "url": "https://blog.jetbrains.com/clion/2026/07/2026-2-release/",
+    "date": "2026-07-16",
+    "source_id": "jetbrains-blog",
+    "excerpt": "With a debugger skill for AI agents, debug profiles for simplified debugger configuration, and support for C++26 reflection. CLion 2026.2 is now available. This latest version of the JetBrains IDE for C and C++ includes the following key features: You can download CLion 2026.2 from the link below, via the Toolbox App, or as a […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "79ff48d56c46f1fb",
+    "title": "GoLand 2026.2 Is Now Available!",
+    "url": "https://blog.jetbrains.com/go/2026/07/16/goland-2026-2-is-now-available/",
+    "date": "2026-07-16",
+    "source_id": "jetbrains-blog",
+    "excerpt": "GoLand 2026.2 is all about helping you understand and improve your Go applications with less effort. This release introduces the new Go Optimization tool window, bringing profiling, escape analysis, and struct optimization into a single workflow. You can now profile regular Go applications without additional setup, analyze production profiles, monitor CPU and memory usage in […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "61dcec15f66045c9",
+    "title": "Code in Space: Redefining Tech Creation with AI and XR",
+    "url": "https://blog.jetbrains.com/research/2026/07/ai-and-xr-future/",
+    "date": "2026-07-16",
+    "source_id": "jetbrains-blog",
+    "excerpt": "The main message Advances in AI are already single-handedly changing how we interact with technologies. This moment might become the first interaction revolution in roughly 60 years, since the mouse-and-windowing paradigm crystallized in the 1970s and 1980s. For us at JetBrains, the most interesting part of this interaction is related to code. LLMs have introduced […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9a5edb9d7702ac5b",
+    "title": "ActivityNotFoundException in Android: How to Reproduce and Fix It",
+    "url": "https://proandroiddev.com/activitynotfoundexception-in-android-how-to-reproduce-and-fix-it-8977c223e53b?source=rss----c72404660798---4",
+    "date": "2026-07-17",
+    "source_id": "proandroiddev",
+    "excerpt": "A real debugging technique using an AOSP emulator Activities are one of the fundamental building blocks of an Android application. Every app has at least one activity as its entry point. While ActivityNotFoundException is easy to fix, reproducing it during development can be surprisingly difficult. In this article, I'll show you both. What is ActivityNotFoundException? When we try to start an activity through Intent and an activity to execute that particular action is not found on the Android de",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4eb71d71252e8be3",
+    "title": "I Built a Jelly-Like FAB Menu for Jetpack Compose",
+    "url": "https://proandroiddev.com/i-built-a-jelly-like-fab-menu-for-jetpack-compose-42e9f65f6576?source=rss----c72404660798---4",
+    "date": "2026-07-17",
+    "source_id": "proandroiddev",
+    "excerpt": "How I built a jelly-like FAB menu from scratch: no shaders, just Jetpack Compose Canvas and Animatable API Source: https://dribbble.com/shots/3908815-Floating-button Most expanding Floating Action Button menus animate the buttons . I wanted to animate the button itself . The inspiration came from a Dribbble animation where the main FAB didn’t simply reveal more actions, it stretched toward them, wobbled as they emerged, and settled back into place like a soft blob of jelly. It looked playful, bu",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "116fc7504e14f08b",
+    "title": "Multi-Module Build Economics: Designing API vs. Implementation Boundaries to Survive 50+ Dev Teams",
+    "url": "https://proandroiddev.com/multi-module-build-economics-designing-api-vs-implementation-boundaries-to-survive-50-dev-teams-464e6ddeabeb?source=rss----c72404660798---4",
+    "date": "2026-07-17",
+    "source_id": "proandroiddev",
+    "excerpt": "By Senior Software Engineer @ Google Image custom-generated by the author. 1. The Micro-Economics of Gradle Build Graphs At five developers, your build system is invisible. At 50+ developers across 10 distinct feature squads, your Gradle build graph is either an accelerator or your single largest payroll drain. Most Android teams react to scaling pain by creating more modules. They split a monolith into 30 feature modules, connect them via api dependencies, and express surprise when incremental ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "980413422b6d2a64",
+    "title": "Understanding Backing Fields in Kotlin: The Hidden Storage Behind Properties",
+    "url": "https://medium.com/@nematengg/understanding-backing-fields-in-kotlin-the-hidden-storage-behind-properties-465f3e966552?source=rss------kotlin-5",
+    "date": "2026-07-17",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "If you’ve been writing Kotlin for a while, you’ve probably come across the special identifier field or heard that \"extension properties… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "79718f9406db0c15",
+    "title": "Jetpack Compose Navigation: A Practical Guide for Android Developers",
+    "url": "https://medium.com/@apoorvrathore699/jetpack-compose-navigation-a-practical-guide-for-android-developers-61b9265209d6?source=rss------kotlin-5",
+    "date": "2026-07-17",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Jetpack Compose Navigation Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1547c19bafa08031",
+    "title": "Testing an LLM Agent Like I Test Kotlin Code",
+    "url": "https://proandroiddev.com/testing-an-llm-agent-like-i-test-kotlin-code-50849842ead7?source=rss------kotlin-5",
+    "date": "2026-07-17",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "How I stopped eyeballing LLM output and started scoring it like a unit test — a Kotlin/JVM agent host, a Python eval harness, and the bug… Continue reading on ProAndroidDev »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5127497c0ac8a84b",
+    "title": "From Android-Dependent to Platform-Agnostic: The 3 Modern Android Library Categories",
+    "url": "https://medium.com/@chron.vas/from-android-dependent-to-platform-agnostic-the-3-modern-android-library-categories-77eb80afbbe3?source=rss------kotlin-5",
+    "date": "2026-07-16",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Over the past decade of building Android libraries, I’ve realized they differ not just by what they do, but by how tightly they’re coupled… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d0fe45e91b2db02f",
+    "title": "Kotlin Architecture Tests with Konture: A Practical Guide - Part 3/3",
+    "url": "https://proandroiddev.com/kotlin-architecture-tests-with-konture-a-practical-guide-part-3-3-1f36ebe685db?source=rss------kotlin-5",
+    "date": "2026-07-16",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Set up a dedicated architecture-test module, add Konture, and grow a small suite of structural rules that protects the boundaries your… Continue reading on ProAndroidDev »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "76241cabc9c9b7f9",
+    "title": "O Guia do Mochileiro das Galáxias Para Devs Android Que Querem Virar Pleno",
+    "url": "https://lucas-marciano.medium.com/o-guia-do-mochileiro-das-gal%C3%A1xias-para-devs-android-que-querem-virar-pleno-425a44e38a49?source=rss------kotlin-5",
+    "date": "2026-07-16",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Não Entre em Pânico Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "abe48af3016d68fe",
+    "title": "Control Flow in Kotlin: Mastering if, when, for, while, and do-while",
+    "url": "https://techdynasty.medium.com/control-flow-in-kotlin-mastering-if-when-for-while-and-do-while-d0c7f46e5f54?source=rss------kotlin-5",
+    "date": "2026-07-16",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Every program makes decisions and repeats tasks. Whether you’re validating a login form, displaying a list of products, or retrying a… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "63f09e798e7f021e",
+    "title": "A monitoring SDK shouldn’t crash your app or slow it down",
+    "url": "https://medium.com/kotzilla/a-monitoring-sdk-shouldnt-crash-your-app-or-slow-it-down-1066cd6bac44?source=rss------kotlin-5",
+    "date": "2026-07-16",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "A monitoring SDK is meant to help you catch crashes and slowdowns in your app. It should never be the cause of them. Continue reading on Kotzilla »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "35a97e298689d32a",
+    "title": "The Best Architecture for KMP Apps, and When Not to Use It. Part 2",
+    "url": "https://medium.com/@pristalovpavel/the-best-architecture-for-kmp-apps-and-when-not-to-use-it-part-2-c39fa4ce4f7e?source=rss------kotlin-5",
+    "date": "2026-07-16",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "In the first part we covered the philosophy of KMP, looked at how the architecture can evolve as a project grows, and explained why you… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e3d29dbe88e47e24",
+    "title": "Your Smartphone Is Under Attack: Here’s How It Defends Itself",
+    "url": "https://medium.com/@sangeethabakkashetti/your-smartphone-is-under-attack-heres-how-it-defends-itself-6dbc950de11f?source=rss------android-5",
+    "date": "2026-07-17",
+    "source_id": "medium-android-tag",
+    "excerpt": "Every day, your smartphone faces hidden threats—and quietly stops them before they reach you. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "199d1dbc5fc580b0",
+    "title": "UL111 Game Download APK — Complete Guide for Login & Claims",
+    "url": "https://medium.com/@nayapakapk93/ul111-game-download-apk-complete-guide-for-login-claims-02bc7e9f490c?source=rss------android-5",
+    "date": "2026-07-17",
+    "source_id": "medium-android-tag",
+    "excerpt": "UL111 Game is an online entertainment platform created for people who enjoy playing different games on Android phones and personal… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "272d344c5bb6df96",
+    "title": "Flutter Scheduling Notifications at Times That Change Every Day: Part 2 -The Budget",
+    "url": "https://medium.com/@abied.abiad/flutter-scheduling-notifications-at-times-that-change-every-day-part-2-the-budget-d3a2eafa1f68?source=rss------android-5",
+    "date": "2026-07-17",
+    "source_id": "medium-android-tag",
+    "excerpt": "11 Days on iOS, 89 on Android: Sizing a Notification Window Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b226f7bda5cf7470",
+    "title": "AI Fundamentals Every Mobile Developer Should Know in 2026",
+    "url": "https://medium.com/@anandgaur2207/ai-fundamentals-every-mobile-developer-should-know-in-2026-a2c53bdc7bee?source=rss------android-5",
+    "date": "2026-07-17",
+    "source_id": "medium-android-tag",
+    "excerpt": "A few months ago, one of the developers in my community asked me a simple question: “Anand, I build Android apps. Do I really need to… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "97d9c059e96b04cb",
+    "title": "Why “GPS EARTH SATELLITE VIEW MAP” is the Only Map App You Need in 2026",
+    "url": "https://medium.com/@MZTECHOFFICIAL/why-gps-earth-satellite-view-map-is-the-only-map-app-you-need-in-2026-cb51009bc257?source=rss------android-5",
+    "date": "2026-07-17",
+    "source_id": "medium-android-tag",
+    "excerpt": "Why install separate apps for navigation, checking your speed, and finding addresses when one lightweight app can do it all? Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "31bf8bcd26f0a9b4",
+    "title": "欧盟 vs. 安卓：监管机构是不是太低估现代消费者了？",
+    "url": "https://medium.com/@yhteong/%E6%AC%A7%E7%9B%9F-vs-%E5%AE%89%E5%8D%93-%E7%9B%91%E7%AE%A1%E6%9C%BA%E6%9E%84%E6%98%AF%E4%B8%8D%E6%98%AF%E5%A4%AA%E4%BD%8E%E4%BC%B0%E7%8E%B0%E4%BB%A3%E6%B6%88%E8%B4%B9%E8%80%85%E4%BA%86-b5214dfd9e49?source=rss------android-5",
+    "date": "2026-07-17",
+    "source_id": "medium-android-tag",
+    "excerpt": "欧盟在科技反垄断战争中开辟了最新的战线 Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "43beff65069c098b",
+    "title": "रोजाना कम से कम सात से आठ घंटे की अच्छी नींद लें और खुद को हाइड्रेटेड रखने के लिए दिन भर भरपूर पानी…",
+    "url": "https://medium.com/@saurabhbaba1449/%E0%A4%B0%E0%A5%8B%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%BE-%E0%A4%95%E0%A4%AE-%E0%A4%B8%E0%A5%87-%E0%A4%95%E0%A4%AE-%E0%A4%B8%E0%A4%BE%E0%A4%A4-%E0%A4%B8%E0%A5%87-%E0%A4%86%E0%A4%A0-%E0%A4%98%E0%A4%82%E0%A4%9F%E0%A5%87-%E0%A4%95%E0%A5%80-%E0%A4%85%E0%A4%9A%E0%A5%8D%E0%A4%9B%E0%A5%80-%E0%A4%A8%E0%A5%80%E0%A4%82%E0%A4%A6-%E0%A4%B2%E0%A5%87%E0%A4%82-%E0%A4%94%E0%A4%B0-%E0%A4%96%E0%A5%81%E0%A4%A6-%E0%A4%95%E0%A5%8B-%E0%A4%B9%E0%A4%BE%E0%A4%87%E0%A4%A1%E0%A5%8D%E0%A4%B0%E0%A5%87%E0%A4%9F%E0%A5%87%E0%A4%A1-%E0%A4%B0%E0%A4%96%E0%A4%A8%E0%A5%87-%E0%A4%95%E0%A5%87-%E0%A4%B2%E0%A4%BF%E0%A4%8F-%E0%A4%A6%E0%A4%BF%E0%A4%A8-%E0%A4%AD%E0%A4%B0-%E0%A4%AD%E0%A4%B0%E0%A4%AA%E0%A5%82%E0%A4%B0-%E0%A4%AA%E0%A4%BE%E0%A4%A8%E0%A5%80-278454fcfc9d?source=rss------android-5",
+    "date": "2026-07-17",
+    "source_id": "medium-android-tag",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f2b46c5658ecdbfc",
+    "title": "8/28: What Really Happens When You Tap Your App Icon",
+    "url": "https://medium.com/@promode7/8-28-what-really-happens-when-you-tap-your-app-icon-4c28108cf3dd?source=rss------android-5",
+    "date": "2026-07-17",
+    "source_id": "medium-android-tag",
+    "excerpt": "ActivityManagerService and the real launch sequence Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7eeaeee7f3c433b7",
+    "title": "v1.12.10-alpha01+dev4492: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4492",
+    "date": "2026-07-17",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4492 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4492 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4492 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4492",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a0de72b9066ee440",
+    "title": "2.3.0-alpha.3",
+    "url": "https://github.com/arrow-kt/arrow/releases/tag/2.3.0-alpha.3",
+    "date": "2026-07-16",
+    "source_id": "lib-arrow",
+    "excerpt": "What's Changed Compatibility with result4K 3.0 by @serras in #3945 Make prismFoci lazier in resolution by @serras in #3947 Full Changelog : 2.3.0-alpha.2...2.3.0-alpha.3",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2218514c979c9ede",
+    "title": "The 16 ms frame budget, and the three things that steal it besides your own UI",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uygi2q/the_16_ms_frame_budget_and_the_three_things_that/",
+    "date": "2026-07-16",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Most frame-perf advice is about your own work: keep layouts shallow, keep binds cheap, don't recompose unstable types. That's half of it. The other half is time that gets stolen out of the frame by something else running on, or blocking, the main thread. I kept running into the same three culprits, so I wrote them up. Short version: GC pauses. The collector needs short stop-the-world moments. You can't turn GC off, but allocation on the hot path (new lists, capturing lambdas, boxing, per-row str",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ca1d59aa89d810d3",
+    "title": "[Request for Feedback] Android On-Device GenAI APIs",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uy9qw1/request_for_feedback_android_ondevice_genai_apis/",
+    "date": "2026-07-16",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I'm the Product Lead for On-Device AI APIs at Google (linkedin.com/in/davidpchou, dpchou@google.com ) and we're trying to connect with Android developers on their core needs and pain points. If you have 10m, would you be able to fill out our developer needs survey here? https://forms.gle/AnyrXFtByk6gQpMW7 This would be a great help to us as we flesh out our roadmap! Thank you so much!! submitted by /u/No_Quote_6331 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "87eb526bac74b15c",
+    "title": "Android Studio Quail 4 Canary 1 now available",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uy3nnh/android_studio_quail_4_canary_1_now_available/",
+    "date": "2026-07-16",
+    "source_id": "reddit-androiddev",
+    "excerpt": "submitted by /u/androidtoolsbot [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9926ab397fc604b7",
+    "title": "How widely is Jetpack Compose used in production, and are teams actually migrating legacy apps?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uxsk7c/how_widely_is_jetpack_compose_used_in_production/",
+    "date": "2026-07-16",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I recently came across an Android job listing, apparently from Disney, that specifically asked for strong Jetpack Compose skills. Itmade me wonder how common Compose really is in day-to-day Android development now. Are you currently using Compose in production? For existing XML/View-based projects, is your team actively migrating to Compose,using it only for new screens, or avoiding migration because the cost and risk aren't worth it? Learning Compose itself seems manageable. The harder question",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "48026a8c8463911d",
+    "title": "Tips for \"iOS-like\" animations on Android without subscription-based tools?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uxwre8/tips_for_ioslike_animations_on_android_without/",
+    "date": "2026-07-16",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hey all, I'm an Android dev, and I've been obsessed lately with improving the \"feel\" of my app (specifically micro-interactions like stamp/tap effects). I really love the polish in apps like Letterboxd or other iOS staples, but I'm struggling to replicate that without getting trapped in expensive animation SaaS subscriptions. I have the design assets (I use Affinity), but I'm looking for the most efficient, cost-effective way to get those into the app. Does anyone here have a \"go-to\" workflow fo",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
