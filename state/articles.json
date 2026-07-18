@@ -4960,5 +4960,255 @@
     "excerpt": "Hey all, I'm an Android dev, and I've been obsessed lately with improving the \"feel\" of my app (specifically micro-interactions like stamp/tap effects). I really love the polish in apps like Letterboxd or other iOS staples, but I'm struggling to replicate that without getting trapped in expensive animation SaaS subscriptions. I have the design assets (I use Affinity), but I'm looking for the most efficient, cost-effective way to get those into the app. Does anyone here have a \"go-to\" workflow fo",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "e7154b35acd865cf",
+    "title": "Kotlin Turns 15: Celebrate the Kotlin Effect",
+    "url": "https://blog.jetbrains.com/kotlin/2026/07/kotlin-turns-15-celebrate-the-kotlin-effect/",
+    "date": "2026-07-17",
+    "source_id": "kotlin-blog",
+    "excerpt": "🎉 Kotlin turns 15! 🎉 For 15 years, you’ve helped shape Kotlin into the language it is today. Whether you’ve built apps, contributed to the ecosystem, taught others, or simply chosen Kotlin for your next project – thank you for being part of the journey. Today, we’re celebrating Kotlin and the people who have made […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8373195d53ce8914",
+    "title": "The 120Hz Trap: Debugging Infinite Recomposition and Silent Deep Link Failures on ColorOS",
+    "url": "https://proandroiddev.com/the-120hz-trap-debugging-infinite-recomposition-and-silent-deep-link-failures-on-coloros-bceb3a320e11?source=rss----c72404660798---4",
+    "date": "2026-07-17",
+    "source_id": "proandroiddev",
+    "excerpt": "How a single mid-range Oppo device exposed two bugs that had been hiding in our codebase all along. Introduction As Android developers move to declarative UIs with Jetpack Compose — often coexisting with legacy Epoxy screens — device-specific quirks have a way of exposing problems that were sitting quietly in “stable” code the whole time. In a recent rollout, we hit a critical incident on one specific device: the Oppo F31 Pro 5G , a 6.57-inch 120Hz AMOLED mid-ranger running ColorOS 15 (Android 1",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "cc87c3fdc709c51f",
+    "title": "Kotlin Architecture Tests: Why Konture Exists - Part 2/3",
+    "url": "https://proandroiddev.com/kotlin-architecture-tests-why-konture-exists-4ac92a4dd3ba?source=rss----c72404660798---4",
+    "date": "2026-07-17",
+    "source_id": "proandroiddev",
+    "excerpt": "Kotlin architecture has two views of the same architecture: the Gradle graph that decides what can link, and the Kotlin source model that decides what the code actually says. Konture exists to test both. Consider a rule from an Android project: Presentation code must not expose transport DTOs in screen state or UI-facing APIs. That rule can fail in two different places. It can fail in the build graph when the presentation module is wired directly to a transport module: // feature/profile/present",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "41ebfff8fd3ce57b",
+    "title": "Kotlin Architecture Tests: What They Are and Why They Matter - Part 1/3",
+    "url": "https://proandroiddev.com/kotlin-architecture-tests-what-they-are-and-why-they-matter-389ce9a1204c?source=rss----c72404660798---4",
+    "date": "2026-07-17",
+    "source_id": "proandroiddev",
+    "excerpt": "A Kotlin project can compile, pass its unit tests, satisfy its linter, and still become structurally harder to change. Architecture tests exist for that gap. Most verification tools answer local questions. The compiler asks whether the code is valid Kotlin. A linter asks whether a file follows local style and quality rules. Unit tests ask whether a function or component behaves as expected. Those checks are necessary. They are not the same as asking whether the system still has the shape the tea",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c6791770a74d2424",
+    "title": "Mobile Terse | Kotlin (English)",
+    "url": "https://medium.com/@zbiyikli1/mobile-terse-kotlin-english-b0a89f08a816?source=rss------kotlin-5",
+    "date": "2026-07-18",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "“This is a roadmap — you need to dive deep into each topic on your own” Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4cb733c7d703a5f8",
+    "title": "Mobile Terse | Kotlin (Türkçe)",
+    "url": "https://medium.com/@zbiyikli1/mobile-terse-kotlin-t%C3%BCrk%C3%A7e-b3ef8cd267fc?source=rss------kotlin-5",
+    "date": "2026-07-18",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "“Bu bir yol haritasıdır, her başlığı ayrı ayrı derinlemesine çalışman gerekir” Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d4c194b66ad097c6",
+    "title": "5 Kotlin Features Every Android Developer Should Actually Be Using",
+    "url": "https://medium.com/@amirdorri/5-kotlin-features-every-android-developer-should-actually-be-using-b715c2c1a357?source=rss------kotlin-5",
+    "date": "2026-07-18",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Part 1 of a series on Kotlin features that quietly make your code better Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "14977fb2f11502f7",
+    "title": "Functions in Kotlin: Everything You Need to Know",
+    "url": "https://techdynasty.medium.com/functions-in-kotlin-everything-you-need-to-know-8afbd8939f65?source=rss------kotlin-5",
+    "date": "2026-07-17",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Functions are the building blocks of every Kotlin application. Whether you’re displaying user information, calculating discounts… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e13516347f5ab2ca",
+    "title": "Clean Architecture: A Blueprint for Scalable Android Apps",
+    "url": "https://medium.com/@radhikaramoliya/clean-architecture-a-blueprint-for-scalable-android-apps-58bfbe8a714a?source=rss------kotlin-5",
+    "date": "2026-07-17",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Say goodbye to massive Activities and hello to maintainable, adaptive, and robust Android development. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ba4f0c407f03a10d",
+    "title": "Building AI features isn’t scary",
+    "url": "https://medium.com/yazio-engineering/building-ai-features-isnt-scary-92817564e364?source=rss------kotlin-5",
+    "date": "2026-07-17",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "TLDR: Define the interface in the app, iterate locally with Koog, move the logic to the backend when it’s done. Continue reading on Yazio Engineering »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ec83402d6c4b21af",
+    "title": "Jetpack Compose Fundamentals: Understanding Text, Image, Button, TextField, and State Management",
+    "url": "https://medium.com/@vaibhavi.rana99/jetpack-compose-fundamentals-understanding-text-image-button-textfield-and-state-management-36ad5f4ab92e?source=rss------kotlin-5",
+    "date": "2026-07-17",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "If you’re starting your Android development journey with Jetpack Compose, understanding composables and state management is the first… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b7ac5cc086e4bbc2",
+    "title": "Kotlin Coroutines: Part 2 — Contexts, Dispatchers, and Thread Switching",
+    "url": "https://medium.com/@fachrizalmrsln/kotlin-coroutines-part-2-contexts-dispatchers-and-thread-switching-344e1d54f3be?source=rss------kotlin-5",
+    "date": "2026-07-17",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "In the Part 1, we left our lonely chef in a much better place. No more staring blankly at a boiling pot, no more hiring a thousand chefs… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "90d4e2d51babf8f0",
+    "title": "Aku Gemar Menulis, Bu",
+    "url": "https://ziiizae.medium.com/aku-gemar-menulis-bu-f4a44dd1e1bb?source=rss------android-5",
+    "date": "2026-07-18",
+    "source_id": "medium-android-tag",
+    "excerpt": "Namun, mengapa hal yang ku cinta dianggap remah? Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ad883590b8af1b44",
+    "title": "Play4Tune Game Guide to Download APK (Latest V1.10) and Earn",
+    "url": "https://medium.com/@nayapakapk93/play4tune-game-guide-to-download-apk-latest-v1-10-and-earn-5fd1bc30d682?source=rss------android-5",
+    "date": "2026-07-18",
+    "source_id": "medium-android-tag",
+    "excerpt": "Play4Tune Game is an Online gaming platform that continue to become more popular because it offer convenient entertainment that users can… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3ba8430c765df7aa",
+    "title": "User-Space Mastery: From printf() to write() — Understanding How C Library Functions Become Linux…",
+    "url": "https://medium.com/@alwinaji717/user-space-mastery-from-printf-to-write-understanding-how-c-library-functions-become-linux-6541337c88e2?source=rss------android-5",
+    "date": "2026-07-18",
+    "source_id": "medium-android-tag",
+    "excerpt": "A deep, hands-on journey into glibc, user space, kernel space, system calls, dynamic linking, the System V ABI, CPU privilege transitions… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7c731858b14fbaab",
+    "title": "Understanding Android APK Structure: An In-Depth Hands-On Journey Inside Every Android Application",
+    "url": "https://medium.com/@alwinaji717/understanding-android-apk-structure-an-in-depth-hands-on-journey-inside-every-android-application-5ad88f3ae1c1?source=rss------android-5",
+    "date": "2026-07-18",
+    "source_id": "medium-android-tag",
+    "excerpt": "Learn what an APK really is, how Android packages applications, explore every important file inside an APK, understand DEX, ART, resources… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "48e9822d8774bff2",
+    "title": "How Mobile Gaming Technology Is Changing Digital Entertainment",
+    "url": "https://medium.com/@amir123ahmadi3/how-mobile-gaming-technology-is-changing-digital-entertainment-f8e0c5c0d451?source=rss------android-5",
+    "date": "2026-07-18",
+    "source_id": "medium-android-tag",
+    "excerpt": "I am passionate about mobile gaming, technology, and digital trends. I share useful guides, insights, and information about gaming… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9306b9b24ea3aa80",
+    "title": "Designed by Algorithms: The Death of Mobile OS Identity in the Age of AI",
+    "url": "https://medium.com/@gargabousamaher1/designed-by-algorithms-the-death-of-mobile-os-identity-in-the-age-of-ai-f834be57d52f?source=rss------android-5",
+    "date": "2026-07-17",
+    "source_id": "medium-android-tag",
+    "excerpt": "The visual war between iOS and Android is over and the AI algorithms won. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0372f3fd652aa726",
+    "title": "Best Free WhatsApp Spy App for Android and iPhone",
+    "url": "https://hackreveals.medium.com/best-free-whatsapp-spy-app-for-android-and-iphone-343167f59d91?source=rss------android-5",
+    "date": "2026-07-17",
+    "source_id": "medium-android-tag",
+    "excerpt": "Are you looking for the best Whatsapp Spy App to keep an eye on your loved ones or employees? If so, you have come to the right place. In… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7a75a1a8d0cc8d31",
+    "title": "Back with an update on adbt after my last post here",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uz1ujk/back_with_an_update_on_adbt_after_my_last_post/",
+    "date": "2026-07-17",
+    "source_id": "reddit-androiddev",
+    "excerpt": "About 7 months ago, I posted about adbt , a terminal UI for adb, here ( Link to that post ) I have continued using it as part of my own Android development workflow and have spent the past few months building the version worth using every day. Some of the changes in v0.2.0 : Better app management with app details, multi select, and APK extraction Improved file management with directory creation A new Input screen for sending text and key events Logcat filtering by package or PID, along with log ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "965922856f6cb66a",
+    "title": "RevenueCat or Stripe for paywalls — what do you use?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uz4q66/revenuecat_or_stripe_for_paywalls_what_do_you_use/",
+    "date": "2026-07-17",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Working on the monetization side of my Android app and trying to decide how to handle the paywall/subscriptions. For those who’ve shipped: do you go with RevenueCat, Stripe, or straight Google Play Billing? Curious what’s worked for you and why and any pain points ? Thanks in advance! submitted by /u/OkAside9843 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a666746c536a841c",
+    "title": "Who is Gradlewald?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uzoibg/who_is_gradlewald/",
+    "date": "2026-07-18",
+    "source_id": "reddit-androiddev",
+    "excerpt": "That kind of evil bad guy that crashes your app evry time you build and follows you in your dreams and put error spells on you. Like: ExpelliBuildus! NullPointerus! Cacheus Corruptus! 😄 submitted by /u/Least_Shelter8238 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9621389950a7f588",
+    "title": "Returning to Android dev after a 2-month break — review everything from scratch (Kotlin/Java basics) or just Android-specific concepts?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uzod5g/returning_to_android_dev_after_a_2month_break/",
+    "date": "2026-07-18",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hey everyone, I had to step away from Android development for about two months due to personal circumstances beyond my control. I'm ready to get back into it now, but I'm trying to figure out the most efficient way to re ramp. My question: should I go back and review core language fundamentals (Kotlin/Java basics, OOP concepts, etc.), or is it more effective to jump straight into Android specific material (Jetpack, Compose, architecture patterns, recent API changes) and let the fundamentals come",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "24c70b94812d8a83",
+    "title": "I’m building an evidence-first audit pipeline for Android apps",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uyz58j/im_building_an_evidencefirst_audit_pipeline_for/",
+    "date": "2026-07-17",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Publishing source code is good. It still leaves one blunt question hanging: did the APK people installed actually come from that code? I started SovereignDroid to make that gap inspectable rather than rhetorical. The target pipeline takes a reviewed source snapshot and an official APK, rebuilds the application twice inside a pinned environment, verifies the signer and artifact relationship, searches for known GMS and Play Integrity components, runs the official APK on clean AOSP, and produces a ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0ae07dcc00e17d86",
+    "title": "How do you deal with notification tap analytics and the system autogrouping your notifications?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uz5you/how_do_you_deal_with_notification_tap_analytics/",
+    "date": "2026-07-17",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I work at a startup. They do not want to think about notification channels, groups, categories, none of it, no matter how I try. Because iOS just naturally groups an app's notifications and when you tap on the group it expands/collapses. Unlike Android, where the summary Notification is a notification unto itself and if you tap it whilst collapsed, it will launch your app (if autogrouped) or launch whatever PendingIntent you attach to it (if you manage it yourself). My problem - I've got a heter",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
