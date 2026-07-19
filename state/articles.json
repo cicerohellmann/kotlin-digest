@@ -5210,5 +5210,245 @@
     "excerpt": "I work at a startup. They do not want to think about notification channels, groups, categories, none of it, no matter how I try. Because iOS just naturally groups an app's notifications and when you tap on the group it expands/collapses. Unlike Android, where the summary Notification is a notification unto itself and if you tap it whilst collapsed, it will launch your app (if autogrouped) or launch whatever PendingIntent you attach to it (if you manage it yourself). My problem - I've got a heter",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "f90429c0b7e0e940",
+    "title": "We Called Our App Multiplatform. 848 Lines Actually Were.",
+    "url": "https://medium.com/@shivathapaa/we-called-our-app-multiplatform-848-lines-actually-were-01d95643cb3f?source=rss------kotlin-5",
+    "date": "2026-07-19",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "The rebuild of a production KMP app to 93% measured shared code — with real numbers from both codebases. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2e57eacf73a29d96",
+    "title": "Implementing A2UI with Koog: building a generative UI",
+    "url": "https://medium.com/@sk8teurjl/implementing-a2ui-with-koog-building-a-generative-ui-26112cdb00a5?source=rss------kotlin-5",
+    "date": "2026-07-18",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "I built a space-travel booking app to test A2UI with Koog — the real discovery wasn’t the protocol, it was watching the UI rebuild itself Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8c813556b5b516f8",
+    "title": "Android App Modularization: A Practical Guide to Scalable Gradle Projects",
+    "url": "https://halilozel1903.medium.com/android-app-modularization-a-practical-guide-to-scalable-gradle-projects-4083bab2a0f5?source=rss------kotlin-5",
+    "date": "2026-07-18",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Android modularization is not about splitting every package into a Gradle module. It is about creating boundaries that make a growing app… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "df287f9deb0e5233",
+    "title": "Nullable vs Non-Nullable Types in Kotlin: Mastering Null Safety",
+    "url": "https://techdynasty.medium.com/nullable-vs-non-nullable-types-in-kotlin-mastering-null-safety-04961cb29315?source=rss------kotlin-5",
+    "date": "2026-07-18",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "If you’ve developed Android applications using Java, you’ve almost certainly encountered one of the most infamous runtime crashes… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c9cc7221552a50ba",
+    "title": "How to Create Custom Composition Locals — And When You Probably Shouldn’t",
+    "url": "https://medium.com/@shivaniaakanksha/how-to-create-custom-composition-locals-and-when-you-probably-shouldnt-153b4a59db88?source=rss------kotlin-5",
+    "date": "2026-07-18",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "> **TL;DR:** Creating your own `CompositionLocal` feels like an elegant solution to prop drilling, but most of the time it isn’t. This… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ec6936035f238269",
+    "title": "Composition Locals in Jetpack Compose: What `.current` Actually Does",
+    "url": "https://medium.com/@shivaniaakanksha/composition-locals-in-jetpack-compose-what-current-actually-does-36a78d653ad7?source=rss------kotlin-5",
+    "date": "2026-07-18",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "> TL;DR: Composition locals are scoped ambient values that flow invisibly through your composable tree without being threaded through… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "399cc6974d774e5f",
+    "title": "Building Recourse.ai: A Parametric Insurance Prototype for the Age of Agentic AI",
+    "url": "https://medium.com/@alfinohatta/building-recourse-ai-a-parametric-insurance-prototype-for-the-age-of-agentic-ai-967f1d3e29a1?source=rss------kotlin-5",
+    "date": "2026-07-18",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Every enterprise I’ve talked to in the last year has the same story: AI agents are being deployed faster than risk and compliance teams… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b2dd9b01ef75e7f2",
+    "title": "The Compose Clinic: Three Symptoms, One Patient",
+    "url": "https://medium.com/@angelinaballerina/the-compose-clinic-three-symptoms-one-patient-eb1f67e4e21d?source=rss------kotlin-5",
+    "date": "2026-07-18",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Three developers walk into the clinic. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5cc828e19528a3f9",
+    "title": "Új színfolt a hazai tech-színtéren: Így hódítja meg a TikTokot a Hometech",
+    "url": "https://medium.com/@egyember003/%C3%BAj-sz%C3%ADnfolt-a-hazai-tech-sz%C3%ADnt%C3%A9ren-%C3%ADgy-h%C3%B3d%C3%ADtja-meg-a-tiktokot-a-hometech-8c39915b4fc1?source=rss------android-5",
+    "date": "2026-07-19",
+    "source_id": "medium-android-tag",
+    "excerpt": "Egyre népszerűbbek a rövid, pörgős telefonszervizes és kütyütesztelős videók a magyar fiatalok körében. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "358d39bac8c5c769",
+    "title": "888GJ Game APK Download — Complete Login & Gameplay Guide",
+    "url": "https://medium.com/@nayapakapk93/888gj-game-apk-download-complete-login-gameplay-guide-9ca7ccde9e65?source=rss------android-5",
+    "date": "2026-07-19",
+    "source_id": "medium-android-tag",
+    "excerpt": "888GJ Game is an online game and Online gaming has become one of the fastest-growing forms of entertainment because people prefer playing… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a14d7dddb4c43106",
+    "title": "Jetpack Compose-style Modifiers in Flutter: Bringing Compile-Time Safety and Structural Caching to…",
+    "url": "https://medium.com/@bodjokowilfried29/jetpack-compose-style-modifiers-in-flutter-bringing-compile-time-safety-and-structural-caching-to-9b6726ccd85c?source=rss------android-5",
+    "date": "2026-07-19",
+    "source_id": "medium-android-tag",
+    "excerpt": "Introduction Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5fbdba28494b6619",
+    "title": "أفضل العاب ppsspp 2026: دليل تشغيلها بأعلى جرافيك",
+    "url": "https://fadyali.medium.com/%D8%A3%D9%81%D8%B6%D9%84-%D8%A7%D9%84%D8%B9%D8%A7%D8%A8-ppsspp-2026-%D8%AF%D9%84%D9%8A%D9%84-%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%87%D8%A7-%D8%A8%D8%A3%D8%B9%D9%84%D9%89-%D8%AC%D8%B1%D8%A7%D9%81%D9%8A%D9%83-efb68a10ed9d?source=rss------android-5",
+    "date": "2026-07-19",
+    "source_id": "medium-android-tag",
+    "excerpt": "على الرغم من التطور الهائل في منصات الألعاب الحديثة، إلا أن شغف ألعاب Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4fd1142c9f811e41",
+    "title": "Why 3 Patti Union Is Gaining Popularity Among Android Users in 2026",
+    "url": "https://medium.com/@asaab6280/why-3-patti-union-is-gaining-popularity-among-android-users-in-2026-7bfd8420f959?source=rss------android-5",
+    "date": "2026-07-19",
+    "source_id": "medium-android-tag",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f46dc1a7acf4f89a",
+    "title": "Why Inkwell Comic Reader Feels Smooth (and Why Nothing Else on Android Does)",
+    "url": "https://medium.com/@shubhamkokul/why-inkwell-comic-reader-feels-smooth-and-why-nothing-else-on-android-does-585f6250b260?source=rss------android-5",
+    "date": "2026-07-19",
+    "source_id": "medium-android-tag",
+    "excerpt": "I read a lot of manga. And graphic novels. And webtoons. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "529c46585a85c6b2",
+    "title": "Stop Editing, Start Writing: A Simple Step-by-Step Guide to Silencing Your Inner Critic and…",
+    "url": "https://medium.com/@zakirlashari1989/stop-editing-start-writing-a-simple-step-by-step-guide-to-silencing-your-inner-critic-and-d62f7965c24f?source=rss------android-5",
+    "date": "2026-07-19",
+    "source_id": "medium-android-tag",
+    "excerpt": "The easiest way to start writing is to completely remove the pressure of being perfect from yourself. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6ce9c1d7a3cbfc3b",
+    "title": "Measuring the LLMs for android app development",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v0ju89/measuring_the_llms_for_android_app_development/",
+    "date": "2026-07-19",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Maybe many of you may have come across Android Bench by Google. It started as an Android-specific LLM benchmark in March. But wait - why did they need a coding benchmark specific to android? The reason as I understood for the need of android specific coding benchmarks is that while general benchmarks test broad coding capabilities, Android Bench is built to evaluate how well AI models handle the unique architecture, libraries, and best practices required to build quality Android applications usi",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "292d2512095a75f0",
+    "title": "Rich Text Editor: TextKit",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v0endq/rich_text_editor_textkit/",
+    "date": "2026-07-19",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hi everyone, some days ago I just launched a new library for rich text content built in Kotlin Multiplatform that uses ProseMirror json style to load documents, you can check the library (still in alpha) and create an issue about it. This is the link : https://github.com/jjrodcast/TextKit submitted by /u/jjrodcast1 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3e5fcef526462d01",
+    "title": "How do you investigate an input-dispatch ANR in a Compose reader when you cannot reproduce it?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v0gf1x/how_do_you_investigate_an_inputdispatch_anr_in_a/",
+    "date": "2026-07-19",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I am working on a native Android reading screen built with Jetpack Compose. Play Vitals has reported an input-dispatch ANR in the reader flow, but we have not reproduced it locally. The screen advances text at a user-selected pace, persists reading progress, and transitions to a summary screen. We have started checking main-thread work, lifecycle cleanup, navigation, state updates, and whether scheduled reading updates can outlive the screen. For anyone who has diagnosed a similar issue, what is",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "628d6738b91b8b5d",
+    "title": "ktlsp: a fast language server for java and kotlin",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uzz0wk/ktlsp_a_fast_language_server_for_java_and_kotlin/",
+    "date": "2026-07-18",
+    "source_id": "reddit-androiddev",
+    "excerpt": "submitted by /u/jlgarhdez [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2dbc3a9d82a0d4b8",
+    "title": "Introducing Real time compose playground",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uzywkh/introducing_real_time_compose_playground/",
+    "date": "2026-07-18",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hi people, I have been into native android development since long. Always been searching for something new, and in this AI world, wanted to create something where AI is not involved. I have been searching for an editor, which can instantly run composables and render the UI on the fly. I didn't find one, so using Kotlin Multiplatform and Ktor, I have build a playground. Its completely native built. Sharing this not as a promotion as it is not profitable, instead, its for the community to use and ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "113f2fddc86db5e7",
+    "title": "A full offline voice agent in 1.2 GB of RAM — say a command, the phone executes it and answers in 0.9 s (demo APK + Apache-2.0 SDK)",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v07clk/a_full_offline_voice_agent_in_12_gb_of_ram_say_a/",
+    "date": "2026-07-18",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I maintain speech-android. We published a demo app that runs a complete voice-command loop locally: Silero VAD → streaming Parakeet 120M STT with end-of-utterance detection → FunctionGemma 270M for structured tool calls (LiteRT-LM) → the actual device action → streaming Pocket TTS. No network needed after the models download. Measured on a Galaxy S23 Ultra (2026-07-17), timed from the moment you stop speaking: 217 ms to the final transcript, 294 ms for the tool call (12-run mean), 179 ms to the ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b854eaa2c1a1d9d1",
+    "title": "If I want to build my own apps and games on an android phone , how I can ?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v0h969/if_i_want_to_build_my_own_apps_and_games_on_an/",
+    "date": "2026-07-19",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I don't have enough money to purchase a laptop and I want to start learning and making apps and websites. I'll purchase a laptop later when I get money until I want to continue to learn so any dev can help how to do it , please help submitted by /u/Dark_sarang [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0a3b844d8adeefae",
+    "title": "How do you currently handle regional pricing for Android apps?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uzw1dy/how_do_you_currently_handle_regional_pricing_for/",
+    "date": "2026-07-18",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hey everyone, I’m an Android Developer who builds indie apps part-time, and I wanted to optimize my subscription revenue globally. We all know that standard currency conversion in the Google Play Console doesn't reflect actual purchasing power. A $9.99 subscription might be affordable in the US, but it’s expensive in India, as an example. So I’m thinking of building a simple Android app that solves this. How it would work: 1) ​You fetch your base subscription price (e.g., USD) from Google Play C",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "17b083fefea0e124",
+    "title": "Internal testing access issue after accidentally replacing tester emails",
+    "url": "https://www.reddit.com/r/androiddev/comments/1uzt4x3/internal_testing_access_issue_after_accidentally/",
+    "date": "2026-07-18",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hi everyone, I'm new to Google Play testing, so I'm hoping someone here has seen this before. I have a small Android app for my company that we distribute through the Internal Testing track. Our staff updates the app whenever I upload a new version, and the in-app update prompt works fine. Recently, while adding a few new tester email addresses, I accidentally replaced the entire tester list instead of adding to it. As expected, the previous testers immediately lost access to the app, they could",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
