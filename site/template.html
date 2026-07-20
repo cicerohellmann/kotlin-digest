@@ -802,7 +802,8 @@
       flex: 0 0 auto;
       height: 100%;
       box-sizing: border-box;
-      padding: 1.6rem 1.7rem;
+      /* Wider side padding so the fixed nav arrows sit over the margin, not text. */
+      padding: 1.6rem 2.9rem;
       overflow: hidden;
       background: var(--paper);
       border-right: 1px solid var(--rule);
@@ -845,12 +846,14 @@
     /* navigation */
     .pr-arrow {
       position: fixed; top: 50%; transform: translateY(-50%); z-index: 40;
-      width: 42px; height: 66px; border: 1px solid var(--rule);
-      background: var(--paper-b); color: var(--ink);
+      width: 30px; height: 58px; border: 1px solid var(--rule);
+      /* Translucent panel, but the arrow glyph stays fully opaque (color, not
+         element opacity, so only the background shows the page through it). */
+      background: color-mix(in srgb, var(--paper-b) 62%, transparent); color: var(--ink);
       font-size: 1.5rem; line-height: 1; cursor: pointer; border-radius: 4px;
-      opacity: 0.9; transition: opacity 0.15s, border-color 0.15s;
+      transition: background 0.15s, border-color 0.15s;
     }
-    .pr-arrow:hover { opacity: 1; border-color: var(--ink-muted); }
+    .pr-arrow:hover { background: color-mix(in srgb, var(--paper-b) 85%, transparent); border-color: var(--ink-muted); }
     .pr-arrow[disabled] { opacity: 0.22; cursor: default; }
     .pr-prev { left: 10px; } .pr-next { right: 10px; }
     .pr-indicator {
@@ -860,8 +863,8 @@
       padding: 0.25rem 0.75rem; border-radius: 99px; letter-spacing: 0.06em;
     }
     @media (max-width: 640px) {
-      .pr-arrow { width: 34px; height: 54px; font-size: 1.2rem; }
-      .pr-page { padding: 1.1rem 1.15rem; }
+      .pr-arrow { width: 24px; height: 48px; font-size: 1.2rem; }
+      .pr-page { padding: 1.1rem 2.2rem; }
     }
 
     /* ══ READING SETTINGS — font / size applied to article prose ══ */
