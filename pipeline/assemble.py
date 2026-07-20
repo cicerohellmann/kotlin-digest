@@ -22,6 +22,7 @@ TEMPLATE_FILE = ROOT / "site" / "template.html"
 OUTPUT_FILE = ROOT / "site" / "index.html"
 EDITIONS_DIR = ROOT / "site" / "editions"
 ARCHIVE_FILE = ROOT / "site" / "archive.html"
+SOURCES_OUT = ROOT / "site" / "sources.html"
 MANIFEST_FILE = ROOT / "state" / "editions.json"
 
 sys.path.insert(0, str(ROOT))
@@ -36,6 +37,7 @@ from pipeline._assemble.archive import (
     write_edition_copy,
     upsert_manifest,
     render_archive,
+    render_sources,
 )
 
 
@@ -134,7 +136,9 @@ def main() -> None:
     html = html.replace("2026·W27", edition_display)
     html = html.replace("Kotlin Digest — 2026·W27", f"Kotlin Digest — {edition_display}")
     html = html.replace("05 JULY 2026", start.strftime("%d %B %Y").upper())
-    html = html.replace("27 articles · 8 sources", f"{total_arts} articles · {n_sources} sources")
+    # Patched separately so the template can wrap "sources" in a link to sources.html.
+    html = html.replace("27 articles", f"{total_arts} articles")
+    html = html.replace("8 sources", f"{n_sources} sources")
 
     write_atomic(OUTPUT_FILE, html)
     print(f"  Written → site/index.html")
@@ -151,6 +155,7 @@ def main() -> None:
         "sources": n_sources,
     })
     render_archive(manifest, ARCHIVE_FILE)
+    render_sources(sources_config.get("sources", []), SOURCES_OUT)
     print(f"  Archived → site/editions/{args.edition}.html · "
           f"{len(manifest)} edition(s) in archive")
 
