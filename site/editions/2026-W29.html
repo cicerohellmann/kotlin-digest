@@ -1056,6 +1056,8 @@
 <script>
 // ══ DATA ════════════════════════════════════════════════════════════════════
 
+const FEATURED_ID = "70ad9f7a4b29e6eb";
+
 const TOPICS = [
   { id:"language-core", label:"Kotlin Core" },
   { id:"ui", label:"Compose & UI" },
@@ -1656,12 +1658,23 @@ function elFromHTML(html) {
 }
 
 function coverInner(chs) {
-  const feature = chs[0].articles[0];
+  // Cover story: a pinned FEATURED_ID if that article is visible, else the
+  // top-scoring article in the top chapter.
+  let feature = chs[0].articles[0], featCh = chs[0];
+  if (typeof FEATURED_ID !== 'undefined' && FEATURED_ID) {
+    for (const ch of chs) {
+      const hit = ch.articles.find(a => a.id === FEATURED_ID);
+      if (hit) { feature = hit; featCh = ch; break; }
+    }
+  }
   const secondary = [];
-  for (let i = 1; i < chs.length && secondary.length < 4; i++)
-    if (chs[i].articles[0]) secondary.push([chs[i].articles[0], chs[i].id]);
+  for (const ch of chs) {
+    if (secondary.length >= 4) break;
+    const a = ch.articles.find(x => x.id !== feature.id);
+    if (a && ch.id !== featCh.id) secondary.push([a, ch.id]);
+  }
   return `<div class="mag-cover-inner">
-    <div class="cover-kicker">Cover Story · ${chs[0].title}</div>
+    <div class="cover-kicker">Cover Story · ${featCh.title}</div>
     ${articleCard(feature, 'cover')}
     <div class="also"><span class="lbl">Also inside this issue</span>
       ${secondary.map(([a, cid]) => `<a href="#" data-goto="${cid}"><span class="n" data-pgref="${cid}">··</span> ${a.title}</a>`).join('')}

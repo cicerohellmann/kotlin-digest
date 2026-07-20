@@ -69,8 +69,14 @@ def build_data_block(
     clusters: list,
     comics: list = None,
     comic_every: int = 14,
+    featured_id: str = "",
 ) -> str:
     lines = ["// ══ DATA ════════════════════════════════════════════════════════════════════", ""]
+
+    # FEATURED_ID — pins the cover story to a specific article id; empty falls
+    # back to the top-scoring article in the top chapter.
+    lines.append("const FEATURED_ID = {};".format(json.dumps(featured_id or "")))
+    lines.append("")
 
     # TOPICS — one entry per cluster (for the filter UI)
     topics_js = ",\n  ".join(

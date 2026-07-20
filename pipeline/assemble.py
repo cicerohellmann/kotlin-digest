@@ -24,6 +24,44 @@ EDITIONS_DIR = ROOT / "site" / "editions"
 ARCHIVE_FILE = ROOT / "site" / "archive.html"
 SOURCES_OUT = ROOT / "site" / "sources.html"
 MANIFEST_FILE = ROOT / "state" / "editions.json"
+FEATURED_FILE = ROOT / "state" / "featured.json"
+
+
+def resolve_featured(edition: str, feature_arg, week_articles: list) -> str:
+    """Return the pinned cover article id for this edition.
+
+    With --feature (an id or title substring), resolve against this edition's
+    articles and persist the choice in state/featured.json. Without it, reuse a
+    previously saved pin. Returns "" for the default score-based cover.
+    """
+    try:
+        pins = json.loads(FEATURED_FILE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        pins = {}
+
+    if feature_arg:
+        needle = feature_arg.strip().lower()
+        match = next((a for a in week_articles if a["id"] == feature_arg), None)
+        if not match:
+            hits = [a for a in week_articles if needle in a.get("title", "").lower()]
+            if len(hits) == 1:
+                match = hits[0]
+            elif len(hits) > 1:
+                print(f"  [!] --feature '{feature_arg}' matched {len(hits)} articles; "
+                      f"be more specific:")
+                for a in hits:
+                    print(f"        {a['id']}  {a.get('title','')[:70]}")
+                return pins.get(edition, "")
+        if not match:
+            print(f"  [!] --feature '{feature_arg}' matched no article in {edition}; "
+                  f"using default cover.")
+            return pins.get(edition, "")
+        pins[edition] = match["id"]
+        FEATURED_FILE.write_text(json.dumps(pins, indent=2) + "\n", encoding="utf-8")
+        print(f"  Cover pinned → {match.get('title','')[:60]} ({match['id']})")
+        return match["id"]
+
+    return pins.get(edition, "")
 
 sys.path.insert(0, str(ROOT))
 
@@ -50,6 +88,9 @@ def write_atomic(path: Path, text: str) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--edition", required=True, help="e.g. 2026-W28")
+    parser.add_argument("--feature", default=None,
+                        help="pin the cover story: an article id or a title substring. "
+                             "Saved per edition so later re-assembles keep it.")
     args = parser.parse_args()
 
     start, end = edition_to_dates(args.edition)
@@ -109,6 +150,11 @@ def main() -> None:
     total_arts = sum(len(ch["articles"]) for ch in chapters)
     print(f"  {len(chapters)} chapters, {total_arts} placed articles")
 
+    # Cover story: honour a pinned feature (--feature / state/featured.json),
+    # else the default top-scoring article in the top chapter.
+    placed = [a for ch in chapters for a in ch["articles"]]
+    featured_id = resolve_featured(args.edition, args.feature, placed)
+
     # Comic interludes: one up top + one per COMIC_EVERY cards, no repeats.
     needed = comics_needed([len(ch["articles"]) for ch in chapters])
     comics = select_comics(args.edition, needed)
@@ -125,6 +171,7 @@ def main() -> None:
         clusters=clusters,
         comics=comics,
         comic_every=COMIC_EVERY,
+        featured_id=featured_id,
     )
     html = inject_data(template, data_block)
 
