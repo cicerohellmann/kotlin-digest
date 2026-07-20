@@ -875,6 +875,13 @@
     @media (max-width: 640px) {
       .pr-arrow { width: 24px; height: 48px; font-size: 1.2rem; }
       .pr-page { padding: 1.1rem 2.2rem; }
+      /* Mobile: cap the comic with a FIXED px, no vh. vh is dynamic on mobile —
+         it changes as the address bar hides/shows while scrolling, so a
+         vh-sized comic visibly resizes as you scroll (worst in scroll mode). A
+         fixed height can't jitter, and it also keeps the paged comic within its
+         (masthead-shortened) page so the fit-to-page zoom doesn't fire. */
+      .comic-img { max-height: 300px; }
+      .comic-cap { gap: 0.55rem; margin-top: 0.7rem; }
     }
 
     /* ══ READING SETTINGS — font / size applied to article prose ══ */
