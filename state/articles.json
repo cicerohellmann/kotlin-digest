@@ -5031,5 +5031,185 @@
     "excerpt": "Hi everyone, I'm new to Google Play testing, so I'm hoping someone here has seen this before. I have a small Android app for my company that we distribute through the Internal Testing track. Our staff updates the app whenever I upload a new version, and the in-app update prompt works fine. Recently, while adding a few new tester email addresses, I accidentally replaced the entire tester list instead of adding to it. As expected, the previous testers immediately lost access to the app, they could",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "6b821046f2d56864",
+    "title": "When Should You Use Remote Compose? A Practical Guide for Android Developers",
+    "url": "https://medium.com/@androidlab/when-should-you-use-remote-compose-a-practical-guide-for-android-developers-1ab902cdf876?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Stop shipping UI updates through app store reviews — here’s the Jetpack Compose feature that changes the game. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "356591b3cf5948d0",
+    "title": "Why We Built a Kotlin Agent Harness Instead of Using One",
+    "url": "https://shukriev.medium.com/why-we-built-a-kotlin-agent-harness-instead-of-using-one-7ba6f1dd11c7?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Series: Building SoPhi — a Kotlin Agent Harness Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "95278089d77569c6",
+    "title": "Beyond inline: Mastering noinline and crossinline in Kotlin",
+    "url": "https://medium.com/@nematengg/beyond-inline-mastering-noinline-and-crossinline-in-kotlin-587a39641293?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Most Kotlin developers are familiar with inline functions. We know they improve performance by eliminating lambda allocations and reducing… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c1239da56e2cc6f9",
+    "title": "Claude Prompts for Mobile Dev — React Native, Swift & Kotlin From Component Patterns to App Store…",
+    "url": "https://medium.com/@rv5542627/claude-prompts-for-mobile-dev-react-native-swift-kotlin-from-component-patterns-to-app-store-a79844f8ce32?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Two Platforms, One Codebase, Zero Patience for Guesswork Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6d25110d8c55aed9",
+    "title": "Android System Design: Understanding the Single Source of Truth (SSOT)",
+    "url": "https://medium.com/@nematengg/android-system-design-understanding-the-single-source-of-truth-ssot-5af0fe9e10f0?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Why your app shows stale data, and how one principle fixes it: Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "52d746b42035ed86",
+    "title": "Precision Engineering: Why Android Native with Kotlin and Android Studio Remains Irreplaceable",
+    "url": "https://medium.com/@farrellmuhammad/precision-engineering-why-android-native-with-kotlin-and-android-studio-remains-irreplaceable-cf2bb0a1deb0?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Amid the cross-platform boom, direct hardware access, Jetpack Compose, and low-level performance control keep native development on the… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "424da78392fa88a1",
+    "title": "9/28: Tasks, Back Stack, and Launch Modes: Read From the Source",
+    "url": "https://medium.com/@promode7/9-28-tasks-back-stack-and-launch-modes-read-from-the-source-0ce76bd3bc05?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "The navigation model app devs keep getting wrong Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2fc6540fa1a992ba",
+    "title": "Why So Many Music Apps Still Get the Sleep Timer Wrong",
+    "url": "https://medium.com/@xmodscrack/why-so-many-music-apps-still-get-the-sleep-timer-wrong-fb7cb6d9789c?source=rss------android-5",
+    "date": "2026-07-20",
+    "source_id": "medium-android-tag",
+    "excerpt": "There’s a strange moment right before sleep when even one extra tap feels annoying. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "85ab8af06133f79d",
+    "title": "Flutter Notification: Android Alarms Don’t Fire When the App Is Closed",
+    "url": "https://medium.com/@abied.abiad/flutter-notification-android-alarms-dont-fire-when-the-app-is-closed-58df6b9a905d?source=rss------android-5",
+    "date": "2026-07-20",
+    "source_id": "medium-android-tag",
+    "excerpt": "Xiaomi, Samsung, Transsion, and the log line that explains it Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a0c82f7335937ad0",
+    "title": "Flutter Scheduling Notifications at Times That Change Every Day: Part 6 -Apple",
+    "url": "https://medium.com/@abied.abiad/flutter-scheduling-notifications-at-times-that-change-every-day-part-6-apple-cdd6ef47dd28?source=rss------android-5",
+    "date": "2026-07-20",
+    "source_id": "medium-android-tag",
+    "excerpt": "iOS Custom Notification Sound Not Playing Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "624c78bd3fdd46f7",
+    "title": "Raja Luck Android Guide 2026 — Mobile Experience & Platform.",
+    "url": "https://bdgplay.medium.com/raja-luck-android-guide-2026-mobile-experience-platform-3a6afa6c4f8d?source=rss------android-5",
+    "date": "2026-07-20",
+    "source_id": "medium-android-tag",
+    "excerpt": "Raja Luck Android Guide 2026 — Mobile Experience, Platform Overview & User Tips Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "42de62552fffa621",
+    "title": "BDG Game Android Guide 2026 — Mobile Experience & Platform Overview",
+    "url": "https://bdgplay.medium.com/bdg-game-android-guide-2026-mobile-experience-platform-overview-f359f3854c81?source=rss------android-5",
+    "date": "2026-07-20",
+    "source_id": "medium-android-tag",
+    "excerpt": "BDG Game Android Guide 2026 — Mobile Experience, Platform Overview & User Tips Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3b09191857a31928",
+    "title": "Kotlin Coroutines Deep Dive: A Practical Guide for Android Developers",
+    "url": "https://medium.com/@apoorvrathore699/kotlin-coroutines-deep-dive-a-practical-guide-for-android-developers-9f4eea10874f?source=rss------android-5",
+    "date": "2026-07-20",
+    "source_id": "medium-android-tag",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6954a8ed9050c24a",
+    "title": "Why People Download Apps but Never Open Them Again.",
+    "url": "https://medium.com/@socialaccounts_97527/why-people-download-apps-but-never-open-them-again-fb89560e363d?source=rss------android-5",
+    "date": "2026-07-20",
+    "source_id": "medium-android-tag",
+    "excerpt": "You finally convince someone to install your app. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9e8b6d32f98b4ff4",
+    "title": "SOLID Principles Explained Like You’re Building a Team (A Beginner-Friendly Guide)",
+    "url": "https://medium.com/@mr.dhiraj.kumawat/solid-principles-explained-like-youre-building-a-team-a-beginner-friendly-guide-fed896a391e4?source=rss------android-5",
+    "date": "2026-07-20",
+    "source_id": "medium-android-tag",
+    "excerpt": "If you’ve been learning Android, Java, Kotlin, or object-oriented programming, you’ve probably heard the term SOLID Principles. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1b8129ebf77f6bf0",
+    "title": "Building a Cross-Platform Qibla Experience with GeoQibla",
+    "url": "https://medium.com/@shahid.iqbal4213/building-a-cross-platform-qibla-experience-with-geoqibla-052968a548d0?source=rss------android-5",
+    "date": "2026-07-20",
+    "source_id": "medium-android-tag",
+    "excerpt": "How a small Kotlin Multiplatform library turns sensor logic, permissions, alignment, and UI into a reusable Compose experience for Android… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d64794a6e9fb6d4e",
+    "title": "v1.12.0-beta03+dev4497: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.0-beta03%2Bdev4497",
+    "date": "2026-07-20",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.0-beta03+dev4497",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2a8d4a8167961ccf",
+    "title": "Learning Compose by Google's course for beginners",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v13qbw/learning_compose_by_googles_course_for_beginners/",
+    "date": "2026-07-19",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I've been studying Compose for a little while and finishing the 3rd chapter \"Build beautiful apps\". One thing that confuses me is their expected completion time. For instance, that particular chapter is supposed to take around 3 hours to finish. However, it basically requires us to build 3 projects, and it took me about 9-10 hours to get to the latest codelab (30-day app). Am I missing smth? Am I studying wrong and too slow? What should I pay more attention to? Considering I can spend ~2 hours d",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
