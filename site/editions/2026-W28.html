@@ -1732,8 +1732,10 @@ function renderRollup(rollup) {
 }
 
 // Article card — identical markup/classes/ids to before, so filters + night mode work.
-function articleCard(a) {
-  return `<article class="article ${a.col}" id="art-${a.id}" data-topics="${a.topics.join(',')}">
+// idPrefix defaults to 'art'; the cover passes 'cover' so its copy of the feature
+// article doesn't collide with the same article's id inside its chapter.
+function articleCard(a, idPrefix = 'art') {
+  return `<article class="article ${a.col}" id="${idPrefix}-${a.id}" data-topics="${a.topics.join(',')}">
     <div class="art-meta">
       <span class="source-tag ${a.stype}">${a.source}</span>
       <span class="art-date">${a.date}</span>
@@ -1807,9 +1809,7 @@ function coverInner(chs) {
     if (chs[i].articles[0]) secondary.push([chs[i].articles[0], chs[i].id]);
   return `<div class="mag-cover-inner">
     <div class="cover-kicker">Cover Story · ${chs[0].title}</div>
-    <h3 class="art-title cover-h"><a href="${feature.url}" target="_blank" rel="noopener noreferrer">${feature.title}</a></h3>
-    <p class="art-summary cover-deck">${feature.summary}</p>
-    <div class="art-meta"><span class="source-tag ${feature.stype}">${feature.source}</span><span class="art-date">${feature.date}</span></div>
+    ${articleCard(feature, 'cover')}
     <div class="also"><span class="lbl">Also inside this issue</span>
       ${secondary.map(([a, cid]) => `<a href="#" data-goto="${cid}"><span class="n" data-pgref="${cid}">··</span> ${a.title}</a>`).join('')}
     </div></div>`;
