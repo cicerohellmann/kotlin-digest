@@ -1639,7 +1639,9 @@ function filteredChapters() {
   const kwEx = state.kwExclude ? state.kwExclude.split(/[\s,]+/).filter(Boolean) : [];
   const hasTopics = state.selected.size > 0;
   const pass = a => {
-    const text = (a.title + ' ' + a.summary).toLowerCase();
+    // Keyword filters also search the topic tags and the source, so "material"
+    // catches the material3 tag and "pro" catches ProAndroidDev.
+    const text = (a.title + ' ' + a.summary + ' ' + (a.topics || []).join(' ') + ' ' + (a.source || '')).toLowerCase();
     const matches = a.topics.some(t => state.selected.has(t));
     let topicPass = true;
     if (hasTopics) topicPass = state.mode === 'focus' ? matches : !matches;
