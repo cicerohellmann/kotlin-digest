@@ -2,5 +2,8 @@
   "2e55597db578743a": {
     "source_id": "lib-compose-multiplatform",
     "summary": "Seven dev builds across the 1.12.10-alpha01 and 1.12.0-beta02 lines. Changes: layout and rendering fixes on iOS and Desktop, compiler-plugin and runtime fixes, and assorted bug and stability fixes. No new APIs or user-facing features."
+  },
+  "ec41318879f5fdf3": {
+    "summary": "Compose Multiplatform published a run of development pre-releases this week across the 1.12.10-alpha01 and 1.12.0-beta03 lines. Each dev build ships matching artifact coordinates for the compose, material3, lifecycle, and navigation3 modules. These are nightly-style snapshots without detailed changelogs, aimed at users tracking the latest fixes ahead of stable releases."
   }
 }

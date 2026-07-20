@@ -20,6 +20,9 @@ SOURCES_FILE = ROOT / "sources" / "sources.yml"
 TOPICS_FILE = ROOT / "topics" / "topics.yml"
 TEMPLATE_FILE = ROOT / "site" / "template.html"
 OUTPUT_FILE = ROOT / "site" / "index.html"
+EDITIONS_DIR = ROOT / "site" / "editions"
+ARCHIVE_FILE = ROOT / "site" / "archive.html"
+MANIFEST_FILE = ROOT / "state" / "editions.json"
 
 sys.path.insert(0, str(ROOT))
 
@@ -29,6 +32,11 @@ from pipeline._assemble.articles import filter_articles, score_articles, cluster
 from pipeline._assemble.render import build_data_block, inject_data
 from pipeline._assemble.comics import select_comics, comics_needed, COMIC_EVERY
 from pipeline.rollup import collapse, load_rollups, write_queue
+from pipeline._assemble.archive import (
+    write_edition_copy,
+    upsert_manifest,
+    render_archive,
+)
 
 
 def write_atomic(path: Path, text: str) -> None:
@@ -118,13 +126,33 @@ def main() -> None:
     )
     html = inject_data(template, data_block)
 
-    # Patch masthead edition label and title
+    n_sources = len({a.get("source_id") for ch in chapters for a in ch["articles"] if a.get("source_id")})
+
+    # Patch masthead edition label, title, date and counts (all static in the
+    # template's placeholder W27 masthead).
     edition_display = args.edition.replace("-W", "·W")
     html = html.replace("2026·W27", edition_display)
     html = html.replace("Kotlin Digest — 2026·W27", f"Kotlin Digest — {edition_display}")
+    html = html.replace("05 JULY 2026", start.strftime("%d %B %Y").upper())
+    html = html.replace("27 articles · 8 sources", f"{total_arts} articles · {n_sources} sources")
 
     write_atomic(OUTPUT_FILE, html)
     print(f"  Written → site/index.html")
+
+    # Archive: keep a permanent copy of this edition, record it in the manifest,
+    # and regenerate the archive list. Publishing a new edition no longer
+    # destroys the previous one.
+    write_edition_copy(html, args.edition, EDITIONS_DIR)
+    manifest = upsert_manifest(MANIFEST_FILE, {
+        "edition": args.edition,
+        "start": str(start),
+        "end": str(end),
+        "articles": total_arts,
+        "sources": n_sources,
+    })
+    render_archive(manifest, ARCHIVE_FILE)
+    print(f"  Archived → site/editions/{args.edition}.html · "
+          f"{len(manifest)} edition(s) in archive")
 
 
 if __name__ == "__main__":
