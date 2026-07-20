@@ -85,17 +85,18 @@ The label appears as `▸ LABEL` above the code. It is the **title of the sneak 
 
 ## Formatting the Code
 
-The snippet is rendered in a dark-background code block. The `code` field is a **plain string with `\n` for newlines**. No markdown fences.
+The snippet is rendered in a dark-background code block. The `code_snippet` field is **plain Kotlin text with `\n` for newlines**. No markdown fences.
 
-**Syntax highlighting** is opt-in via HTML span tags:
-```
-<span class="kw">fun</span>       ← keywords: fun, val, var, class, suspend, return, when, if
-<span class="fn">myFunction</span> ← function names and composable names
-<span class="str">"text"</span>   ← string literals
-<span class="com">// comment</span> ← inline comments
-```
+**Syntax highlighting is automatic — do NOT add HTML.** The build step
+(`highlight_kotlin` in `pipeline/_assemble/render.py`) runs Pygments over the
+plain code, which HTML-escapes it and wraps tokens in the `.snap-code` palette.
+If you hand-write `<span class="kw">…</span>` tags, Pygments escapes them and they
+render as **literal text** on the card. Emit raw Kotlin only — keywords,
+function names, strings, and comments are coloured for you.
 
-Highlighting is optional but strongly recommended for snippets that would otherwise look flat. Apply it only to the most important tokens — don't tag every keyword.
+> The `<span>` examples elsewhere in this doc are historical (pre-Pygments) and
+> illustrate which tokens matter, not literal output. Never put spans in
+> `code_snippet`.
 
 **Length:** ≤10 lines. If you need more to make the point, the snippet is the wrong choice; write a stronger summary instead.
 

@@ -1,0 +1,121 @@
+# Comic pool — webcomics used as interludes in the magazine.
+#
+# One comic runs before the magazine starts, then one after roughly every 14
+# article cards (placed at the nearest chapter boundary). Comics are drawn in
+# order and never repeat across editions (see state/comics_used.json).
+#
+# LICENSING — only add comics you are allowed to embed:
+#   - xkcd (Randall Munroe): CC BY-NC 2.5 — embed with attribution + link back,
+#     non-commercial only. If Kotlin Digest ever monetises, this breaks.
+#   - Any all-rights-reserved comic (SMBC, CommitStrip, MonkeyUser, ...) needs
+#     the artist's explicit permission before it goes here.
+# Each entry must credit the artist and link to the original (permalink).
+#
+# Community PRs welcome — add an entry below (same shape).
+
+comics:
+- id: xkcd-303
+  title: Compiling
+  img: https://imgs.xkcd.com/comics/compiling.png
+  alt: '''Are you stealing those LCDs?'' ''Yeah, but I''m doing it while my code compiles.'''
+  permalink: https://xkcd.com/303/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5
+- id: xkcd-1205
+  title: Is It Worth the Time?
+  img: https://imgs.xkcd.com/comics/is_it_worth_the_time.png
+  alt: Don't forget the time you spend finding the chart to look up what you save. And the time spent
+    reading this reminder about the time spent. And the time trying to figure out if either of those actually
+    make sense. Remember, every second counts toward your life total, including these right now.
+  permalink: https://xkcd.com/1205/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5
+- id: xkcd-1319
+  title: Automation
+  img: https://imgs.xkcd.com/comics/automation.png
+  alt: '''Automating'' comes from the roots ''auto-'' meaning ''self-'', and ''mating'', meaning ''screwing''.'
+  permalink: https://xkcd.com/1319/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5
+- id: xkcd-1421
+  title: Future Self
+  img: https://imgs.xkcd.com/comics/future_self.png
+  alt: Maybe I haven't been to Iceland because I'm busy dealing with YOUR crummy code.
+  permalink: https://xkcd.com/1421/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5
+- id: xkcd-1667
+  title: Algorithms
+  img: https://imgs.xkcd.com/comics/algorithms.png
+  alt: There was a schism in 2007, when a sect advocating OpenOffice created a fork of Sunday.xlsx and
+    maintained it independently for several months. The efforts to reconcile the conflicting schedules
+    led to the reinvention, within the cells of the spreadsheet, of modern version control.
+  permalink: https://xkcd.com/1667/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5
+- id: xkcd-1739
+  title: Fixing Problems
+  img: https://imgs.xkcd.com/comics/fixing_problems.png
+  alt: '''What was the original problem you were trying to fix?'' ''Well, I noticed one of the tools I
+    was using had an inefficiency that was wasting my time.'''
+  permalink: https://xkcd.com/1739/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5
+- id: xkcd-927
+  title: Standards
+  img: https://imgs.xkcd.com/comics/standards.png
+  alt: Fortunately, the charging one has been solved now that we've all standardized on mini-USB. Or is
+    it micro-USB? Shit.
+  permalink: https://xkcd.com/927/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5
+- id: xkcd-2347
+  title: Dependency
+  img: https://imgs.xkcd.com/comics/dependency.png
+  alt: Someday ImageMagick will finally break for good and we'll have a long period of scrambling as we
+    try to reassemble civilization from the rubble.
+  permalink: https://xkcd.com/2347/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5
+- id: xkcd-1988
+  title: Containers
+  img: https://imgs.xkcd.com/comics/containers.png
+  alt: All services are microservices if you ignore most of their features.
+  permalink: https://xkcd.com/1988/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5
+- id: xkcd-844
+  title: Good Code
+  img: https://imgs.xkcd.com/comics/good_code.png
+  alt: You can either hang out in the Android Loop or the HURD loop.
+  permalink: https://xkcd.com/844/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5
+- id: xkcd-1513
+  title: Code Quality
+  img: https://imgs.xkcd.com/comics/code_quality.png
+  alt: I honestly didn't think you could even USE emoji in variable names. Or that there were so many
+    different crying ones.
+  permalink: https://xkcd.com/1513/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5
+- id: xkcd-1926
+  title: Bad Code
+  img: https://imgs.xkcd.com/comics/bad_code.png
+  alt: '"Oh my God, why did you scotch-tape a bunch of hammers together?" "It''s ok! Nothing depends on
+    this wall being destroyed efficiently."'
+  permalink: https://xkcd.com/1926/
+  artist: Randall Munroe
+  source: xkcd
+  license: CC BY-NC 2.5

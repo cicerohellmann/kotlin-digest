@@ -2,5 +2,8 @@
   "2e55597db578743a": {
     "source_id": "lib-compose-multiplatform",
     "summary": "Seven dev builds across the 1.12.10-alpha01 and 1.12.0-beta02 lines. Changes: layout and rendering fixes on iOS and Desktop, compiler-plugin and runtime fixes, and assorted bug and stability fixes. No new APIs or user-facing features."
+  },
+  "ec41318879f5fdf3": {
+    "summary": "One notable change this week — the 1.12.0-beta02 release makes isClearFocusOnMouseDownEnabled default to false. Everything else is automated nightly builds with no changelog."
   }
 }

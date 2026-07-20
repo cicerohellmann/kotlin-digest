@@ -19,6 +19,8 @@ docs/                   — architecture and design docs (read these before maki
 - `docs/architecture.md` — full 6-stage pipeline, state file schema, workflow triggers
 - `docs/topic-bible.md` — scoring model, decay constants, topic emergence rules
 - `docs/sources.md` — source health states, date detection strategies, per-type ingestion
+- `docs/rollup.md` — protocol for bulky library releases (collapse → digest → display)
+- `docs/classifier.md` — code-snippet selection criteria (plain Kotlin; build highlights via Pygments)
 
 ## Pipeline stages (implementation order)
 
