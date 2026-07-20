@@ -660,7 +660,7 @@
       text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
     .cover-h { font-size: clamp(2rem,4.5vw,3.4rem); line-height: 1.03; }
     .cover-deck { font-size: 1.05rem; margin-top: 1rem; max-width: 46ch; }
-    .mag-cover .art-meta { margin-top: 1rem; }
+    .mag-cover-inner .art-meta { margin-top: 1.75rem; }
     .also { margin-top: 2rem; border-top: 2px solid var(--ink); padding-top: 0.8rem;
       display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem 1.6rem; }
     .also .lbl { grid-column: 1/-1; font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
@@ -729,7 +729,7 @@
     .comic-img {
       /* Fit a comic to the screen like a page: cap by viewport height so it
          always fits, and by px so it stays a quick beat on large screens. */
-      max-height: min(300px, 40vh);
+      max-height: min(460px, 60vh);
       width: auto;
       max-width: 100%;
       background: #fff;               /* comics are black-on-white — keep panel white in night mode */
@@ -739,10 +739,10 @@
       border-radius: 2px;
     }
     .comic-cap {
-      margin-top: 0.9rem;
+      margin-top: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 1rem;   /* title↔credit spacing matches the credit↔joke gap below */
     }
     .comic-title {
       font-family: 'Playfair Display', 'Charter', serif;
