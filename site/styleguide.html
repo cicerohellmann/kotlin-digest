@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kotlin Digest — Design System</title>
+  <script>if(document.cookie.match(/kd_reader=[^;]*%22theme%22%3A%22night%22/)||document.cookie.indexOf('kd_night=1')>=0)document.documentElement.dataset.night='1';</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <!-- The system itself: tokens + every component style the magazine uses. -->
+  <link rel="stylesheet" href="design.css">
+  <link rel="stylesheet" href="components.css">
+  <style>
+    body { background: var(--paper); color: var(--ink); }
+    .sg-shell { display: grid; grid-template-columns: 210px 1fr; min-height: 100vh; }
+    /* ── sidebar ── */
+    .sg-nav { position: sticky; top: 0; align-self: start; height: 100vh; overflow-y: auto;
+      border-right: 1px solid var(--rule); padding: 1.6rem 1.2rem; background: var(--paper-b); }
+    .sg-nav .wm { display: block; height: 34px; margin-bottom: 0.3rem; }
+    .sg-nav .kick { font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--ink-muted); margin-bottom: 1.4rem; }
+    .sg-nav a { display: block; font-family: 'JetBrains Mono', monospace; font-size: 0.66rem;
+      color: var(--ink-mid); text-decoration: none; padding: 0.32rem 0; letter-spacing: 0.04em; }
+    .sg-nav a:hover { color: var(--accent); }
+    .sg-nav .lv { color: var(--accent); font-weight: 600; margin: 1rem 0 0.2rem; font-size: 0.56rem; letter-spacing: 0.14em; }
+    .sg-night { margin-top: 1.6rem; }
+    /* ── main ── */
+    .sg-main { padding: 2.6rem 3rem 6rem; max-width: 1000px; }
+    .sg-hero h1 { font-family: 'Playfair Display', 'Charter', serif; font-style: italic; font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; }
+    .sg-hero p { font-family: 'Charter', Georgia, serif; color: var(--ink-mid); max-width: 60ch;
+      margin-top: 0.7rem; line-height: 1.6; }
+    .sg-hero .meta { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--ink-muted); margin-top: 1rem; }
+    section.sg { border-top: 3px double var(--ink); margin-top: 3rem; padding-top: 1.2rem; }
+    .sg-h { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 0.3rem; }
+    .sg-h .n { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); font-weight: 600; }
+    .sg-h h2 { font-family: 'Playfair Display', 'Charter', serif; font-style: italic; font-weight: 700; font-size: 1.7rem; }
+    .sg-lead { font-family: 'Charter', Georgia, serif; color: var(--ink-mid); max-width: 66ch; line-height: 1.6; margin-bottom: 1.6rem; }
+    .sg-item { border: 1px solid var(--rule); border-radius: 5px; padding: 1.2rem; margin: 0.9rem 0; background: var(--paper); }
+    .sg-item > .lbl { font-family: 'JetBrains Mono', monospace; font-size: 0.56rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.8rem; display: flex; gap: 0.6rem; align-items: baseline; }
+    .sg-item > .lbl code { color: var(--accent); background: none; font-size: 0.62rem; }
+    .sg-row { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; }
+    /* swatches */
+    .sw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.7rem; }
+    .sw { border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; }
+    .sw .chip { height: 56px; }
+    .sw .txt { padding: 0.4rem 0.55rem; font-family: 'JetBrains Mono', monospace; font-size: 0.56rem; color: var(--ink-mid); }
+    .sw .txt b { display: block; color: var(--ink); font-size: 0.62rem; }
+    .sw .txt .hex { color: var(--ink-muted); }
+    /* type samples */
+    .ty { padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
+    .ty .tag { font-family: 'JetBrains Mono', monospace; font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); }
+    .ty .serif { font-family: 'Charter', Georgia, serif; font-size: 1.15rem; color: var(--ink); }
+    .ty .mono { font-family: 'JetBrains Mono', monospace; font-size: 1rem; color: var(--ink); }
+    .ty .sans { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; color: var(--ink); }
+    .ty .disp { font-family: 'Playfair Display', 'Charter', serif; font-style: italic; font-weight: 700; font-size: 1.5rem; color: var(--ink); }
+    /* demo overrides so fixed/hidden organisms show inline */
+    .sg-item .pr-arrow { position: static; transform: none; display: inline-flex; align-items: center; justify-content: center; }
+    .sg-item .settings-panel { position: static; display: block; box-shadow: none; width: 232px; }
+    .sg-item .masthead, .sg-item .filter-bar { border-left: 0; border-right: 0; }
+    .sg-item .article { max-width: 560px; }
+    .night-btn { font-family:'JetBrains Mono',monospace; font-size:0.6rem; padding:0.3rem 0.7rem; border:1px solid var(--rule); background:transparent; color:var(--ink-muted); border-radius:3px; cursor:pointer; }
+    .night-btn:hover { color: var(--ink); }
+    @media (max-width: 720px) { .sg-shell { grid-template-columns: 1fr; } .sg-nav { position: static; height: auto; } .sg-main { padding: 1.6rem 1.2rem 4rem; } }
+  </style>
+</head>
+<body>
+<div class="sg-shell">
+  <nav class="sg-nav">
+    <svg class="wm" viewBox="0 0 91 44" xmlns="http://www.w3.org/2000/svg" aria-label="Kotlin Digest">
+      <text x="0" y="40" font-family="'JetBrains Mono',monospace" font-size="40" font-weight="600" fill="var(--ink)">K</text>
+      <text x="34" y="22" font-family="'JetBrains Mono',monospace" font-size="8.5" font-weight="600" fill="var(--ink)" letter-spacing="2">OTLIN</text>
+      <text x="34" y="37" font-family="'JetBrains Mono',monospace" font-size="8.5" font-weight="400" fill="var(--ink-muted)" letter-spacing="2">DIGEST</text>
+    </svg>
+    <div class="kick">Design System</div>
+    <div class="lv">Foundations</div>
+    <a href="#color">Colour</a>
+    <a href="#type">Type</a>
+    <div class="lv">Atoms</div>
+    <a href="#tags">Tags &amp; chips</a>
+    <a href="#labels">Kickers &amp; labels</a>
+    <a href="#buttons">Buttons</a>
+    <a href="#text">Reading text</a>
+    <div class="lv">Molecules</div>
+    <a href="#meta">Meta &amp; caption</a>
+    <a href="#controls">Segmented / fields</a>
+    <div class="lv">Organisms</div>
+    <a href="#card">Article card</a>
+    <a href="#snapshot">Snapshot / rollup</a>
+    <a href="#comic">Comic interlude</a>
+    <a href="#cover">Cover</a>
+    <a href="#chrome">Masthead / filter / settings</a>
+    <div class="sg-night"><button class="night-btn" onclick="toggleNight()">☾ / ☀ theme</button></div>
+  </nav>
+
+  <main class="sg-main">
+    <header class="sg-hero">
+      <h1>The Kotlin Digest system</h1>
+      <p>An editorial component set — warm paper, ink, one hot accent; Charter for reading, JetBrains Mono for the machinery, Playfair for the display voice. Organised atoms → molecules → organisms, all drawing from the same tokens the magazine ships.</p>
+      <div class="meta">design.css tokens · components.css styles · atomic design (brad frost)</div>
+    </header>
+
+    <!-- FOUNDATIONS -->
+    <section class="sg" id="color">
+      <div class="sg-h"><span class="n">00</span><h2>Colour</h2></div>
+      <p class="sg-lead">Fifteen tokens. Light is default; <code>html[data-night="1"]</code> swaps the same names — flip the theme (sidebar) and every swatch below re-reads its live value. One accent: orange for emphasis, blue for links, green only for changelog sources.</p>
+      <div class="sg-item"><div class="lbl">design.css tokens <span class="hex" id="theme-label"></span></div>
+        <div class="sw-grid" id="swatches"></div>
+      </div>
+    </section>
+
+    <section class="sg" id="type">
+      <div class="sg-h"><span class="n">01</span><h2>Type</h2></div>
+      <p class="sg-lead">Four families, four jobs. Reading text can be re-sized by the reader (<code>--read-scale</code>: S/M/L).</p>
+      <div class="sg-item">
+        <div class="ty"><span class="tag">Charter · reading</span><div class="serif">Compose Multiplatform reaches 1.12 — shared UI across Android, iOS &amp; desktop.</div></div>
+        <div class="ty"><span class="tag">JetBrains Mono · UI &amp; labels</span><div class="mono">MEDIUM ANDROID TAG · 19 JUL · 41 ARTICLES</div></div>
+        <div class="ty"><span class="tag">DM Sans · small meta</span><div class="sans">Kotlin Blog · Android Developers · ProAndroidDev</div></div>
+        <div class="ty"><span class="tag">Playfair Display · display</span><div class="disp">§ 01 Compose &amp; UI</div></div>
+      </div>
+    </section>
+
+    <!-- ATOMS -->
+    <section class="sg" id="tags">
+      <div class="sg-h"><span class="n">02</span><h2>Tags &amp; chips <span style="font-size:0.7rem;color:var(--ink-muted);font-style:normal;">— atoms</span></h2></div>
+      <div class="sg-item"><div class="lbl">source tag <code>.source-tag</code> · variants <code>.official .changelog</code></div>
+        <div class="sg-row">
+          <span class="source-tag">Medium Android Tag</span>
+          <span class="source-tag official">Kotlin Blog</span>
+          <span class="source-tag changelog">Lib Compose Multiplatform</span>
+          <span class="badge-paywall">🔒 Member-only</span>
+        </div>
+      </div>
+      <div class="sg-item"><div class="lbl">topic tag <code>.tag</code></div>
+        <div class="art-tags sg-row"><span class="tag">compose</span><span class="tag">kotlin</span><span class="tag">kmp</span><span class="tag">material3</span></div>
+      </div>
+      <div class="sg-item"><div class="lbl">active-filter chips <code>.chip .focus-chip / .exclude-chip / .kw-chip</code></div>
+        <div class="sg-row">
+          <span class="chip-mode-label">FOCUS:</span>
+          <span class="chip focus-chip">Compose</span>
+          <span class="chip exclude-chip">Flutter</span>
+          <span class="chip kw-chip">only: gradle</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg" id="labels">
+      <div class="sg-h"><span class="n">03</span><h2>Kickers &amp; labels</h2></div>
+      <div class="sg-item"><div class="lbl">kickers <code>.cover-kicker .comic-kicker</code></div>
+        <div class="sg-row" style="gap:2rem;">
+          <span class="cover-kicker">Cover Story · Compose &amp; UI</span>
+          <span class="comic-kicker">Interlude</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg" id="buttons">
+      <div class="sg-h"><span class="n">04</span><h2>Buttons</h2></div>
+      <div class="sg-item"><div class="lbl">mode switch <code>.mode-btn</code> · nav arrows <code>.pr-arrow</code></div>
+        <div class="sg-row">
+          <div class="mode-switcher"><button class="mode-btn focus active">FOCUS</button><button class="mode-btn exclude">EXCLUDE</button></div>
+          <button class="pr-arrow">‹</button>
+          <button class="pr-arrow">›</button>
+          <button class="reset-btn">Reset all</button>
+          <button class="settings-btn">⚙ Aa</button>
+        </div>
+      </div>
+      <div class="sg-item"><div class="lbl">segmented control <code>.seg</code></div>
+        <div class="seg" style="max-width:232px;"><button class="active" data-v="serif">Serif</button><button data-v="sans">Sans</button><button data-v="mono">Mono</button></div>
+      </div>
+    </section>
+
+    <section class="sg" id="text">
+      <div class="sg-h"><span class="n">05</span><h2>Reading text</h2></div>
+      <div class="sg-item"><div class="lbl">title <code>.art-title</code> · body <code>.art-summary</code> · meta <code>.art-meta</code></div>
+        <div class="art-meta" style="margin-bottom:0.5rem;"><span class="source-tag">Medium Android Tag</span><span class="art-date">19 Jul</span></div>
+        <h3 class="art-title">Leverage the essentials: Jetpack Compose best practices</h3>
+        <p class="art-summary">A collection of Jetpack Compose best practices focused on performance — caching with <code>remember</code>, stable keys in Lazy layouts, and <code>derivedStateOf</code> to limit recomposition.</p>
+      </div>
+    </section>
+
+    <!-- MOLECULES -->
+    <section class="sg" id="meta">
+      <div class="sg-h"><span class="n">06</span><h2>Meta &amp; caption <span style="font-size:0.7rem;color:var(--ink-muted);font-style:normal;">— molecules</span></h2></div>
+      <div class="sg-item"><div class="lbl">article meta <code>.art-meta</code></div>
+        <div class="art-meta"><span class="source-tag official">Kotlin Blog</span><span class="art-date">17 Jul</span><span class="badge-paywall">🔒 Member-only</span></div>
+      </div>
+      <div class="sg-item"><div class="lbl">comic caption <code>.comic-cap</code></div>
+        <figcaption class="comic-cap"><span class="comic-title">Future Self</span><a class="comic-credit" href="#">xkcd · Randall Munroe</a></figcaption>
+      </div>
+    </section>
+
+    <section class="sg" id="controls">
+      <div class="sg-h"><span class="n">07</span><h2>Segmented &amp; fields</h2></div>
+      <div class="sg-item"><div class="lbl">settings rows <code>.set-row</code> + <code>.seg</code></div>
+        <div class="set-row"><span class="set-label">Text size</span><div class="seg"><button data-v="s">S</button><button class="active" data-v="m">M</button><button data-v="l">L</button></div></div>
+        <div class="set-row"><span class="set-label">Layout</span><div class="seg"><button class="active" data-v="paged">Paged</button><button data-v="scroll">Scroll</button></div></div>
+      </div>
+      <div class="sg-item"><div class="lbl">keyword field <code>.kw-field</code></div>
+        <div class="kw-field"><label>Only show words</label><input type="text" placeholder="gradle, plugin…"></div>
+      </div>
+    </section>
+
+    <!-- ORGANISMS -->
+    <section class="sg" id="card">
+      <div class="sg-h"><span class="n">08</span><h2>Article card <span style="font-size:0.7rem;color:var(--ink-muted);font-style:normal;">— organism</span></h2></div>
+      <div class="sg-item"><div class="lbl">card <code>.article</code> = meta + title + summary + snapshot? + tags</div>
+        <article class="article">
+          <div class="art-meta"><span class="source-tag">Medium Android Tag</span><span class="art-date">13 Jul</span></div>
+          <h3 class="art-title">Leverage the essentials: Jetpack Compose best practices</h3>
+          <p class="art-summary">A collection of Jetpack Compose best practices focused on performance. It covers caching expensive calculations, stable keys in Lazy layouts, and derivedStateOf to limit recomposition.</p>
+          <div class="snapshot">
+            <div class="snap-label">▸ Cache with remember</div>
+            <div class="snap-code"><span class="com">// after — filtered once, re-run only when list changes</span>
+<span class="kw">val</span> filteredList = <span class="fn">remember</span>(list) { list.<span class="fn">filter</span> { it.isAvailable } }</div>
+          </div>
+          <div class="art-tags"><span class="tag">compose</span><span class="tag">jetpack</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sg" id="snapshot">
+      <div class="sg-h"><span class="n">09</span><h2>Snapshot &amp; changelog rollup</h2></div>
+      <div class="sg-item"><div class="lbl">code snapshot <code>.snapshot</code> (Pygments highlights at build)</div>
+        <div class="snapshot">
+          <div class="snap-label">▸ Lifecycle-aware collect</div>
+          <div class="snap-code"><span class="com">// starts/stops with the lifecycle</span>
+<span class="kw">val</span> state <span class="kw">by</span> viewModel.uiState.<span class="fn">collectAsStateWithLifecycle</span>()</div>
+        </div>
+      </div>
+      <div class="sg-item"><div class="lbl">changelog card — digest as body + <code>.rollup-builds</code> expandable</div>
+        <article class="article">
+          <div class="art-meta"><span class="source-tag changelog">Lib Compose Multiplatform</span><span class="art-date">17 Jul</span></div>
+          <h3 class="art-title">v1.12.10-alpha01+dev4492: Details</h3>
+          <p class="art-summary">One notable change this week — the 1.12.0-beta02 release makes <code>isClearFocusOnMouseDownEnabled</code> default to false. Everything else is automated nightly builds with no changelog.</p>
+          <div class="rollup"><details class="rollup-builds"><summary>▸ Also this week · 6 more builds</summary>
+            <ul><li><a href="#">v1.12.10-alpha01+dev4484</a><span class="rollup-date">16 Jul</span></li><li><a href="#">v1.12.0-beta03+dev4483</a><span class="rollup-date">16 Jul</span></li></ul>
+          </details></div>
+          <div class="art-tags"><span class="tag">compose-multiplatform</span><span class="tag">jetbrains</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sg" id="comic">
+      <div class="sg-h"><span class="n">10</span><h2>Comic interlude</h2></div>
+      <div class="sg-item"><div class="lbl">interlude <code>.comic-interlude</code> — kicker + figure + caption + alt</div>
+        <section class="comic-interlude">
+          <div class="comic-kicker">Interlude</div>
+          <figure class="comic-figure">
+            <div style="width:220px;height:150px;background:#fff;border:1px solid var(--rule);border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:#999;">[ comic art ]</div>
+            <figcaption class="comic-cap"><span class="comic-title">Future Self</span><a class="comic-credit" href="#">xkcd · Randall Munroe</a></figcaption>
+            <p class="comic-alt">Maybe I haven't been to Iceland because I'm busy dealing with YOUR crummy code.</p>
+          </figure>
+        </section>
+      </div>
+    </section>
+
+    <section class="sg" id="cover">
+      <div class="sg-h"><span class="n">11</span><h2>Cover</h2></div>
+      <div class="sg-item"><div class="lbl">cover <code>.mag-cover-inner</code> — kicker + featured card + also-inside</div>
+        <div class="mag-cover-inner">
+          <div class="cover-kicker">Cover Story · Compose &amp; UI</div>
+          <article class="article">
+            <div class="art-meta"><span class="source-tag">Medium Android Tag</span><span class="art-date">13 Jul</span></div>
+            <h3 class="art-title">Leverage the essentials: Jetpack Compose best practices</h3>
+            <p class="art-summary">A collection of Jetpack Compose best practices focused on performance.</p>
+            <div class="art-tags"><span class="tag">compose</span><span class="tag">jetpack</span></div>
+          </article>
+          <div class="also"><span class="lbl">Also inside this issue</span>
+            <a href="#"><span class="n">10</span> Why Kotlin, Compose &amp; KMP Succeeded</a>
+            <a href="#"><span class="n">16</span> What is the difference between KMP and Flutter?</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sg" id="chrome">
+      <div class="sg-h"><span class="n">12</span><h2>Shell — masthead / filter / settings</h2></div>
+      <div class="sg-item"><div class="lbl">masthead <code>.masthead</code></div>
+        <header class="masthead">
+          <div class="masthead-top">
+            <h1 class="masthead-wordmark"><svg class="site-logo" viewBox="0 0 91 44" xmlns="http://www.w3.org/2000/svg" aria-label="Kotlin Digest"><text x="0" y="40" font-family="'JetBrains Mono',monospace" font-size="40" font-weight="600" fill="var(--ink)">K</text><text x="34" y="22" font-family="'JetBrains Mono',monospace" font-size="8.5" font-weight="600" fill="var(--ink)" letter-spacing="2">OTLIN</text><text x="34" y="37" font-family="'JetBrains Mono',monospace" font-size="8.5" font-weight="400" fill="var(--ink-muted)" letter-spacing="2">DIGEST</text></svg></h1>
+            <div class="masthead-meta"><div><strong>EDITION 2026·W29</strong></div><div>13 JULY 2026</div><div>41 articles · 8 sources</div></div>
+          </div>
+          <div class="masthead-foot"><p class="masthead-tagline">The Kotlin world, assembled weekly, for Android engineers.</p></div>
+        </header>
+      </div>
+      <div class="sg-item"><div class="lbl">settings panel <code>.settings-panel</code> (shown open)</div>
+        <div class="settings-panel open">
+          <div class="set-row"><span class="set-label">Theme</span><div class="seg"><button class="active" data-v="light">Light</button><button data-v="night">Night</button></div></div>
+          <div class="set-row"><span class="set-label">Reading font</span><div class="seg"><button class="active" data-v="serif">Serif</button><button data-v="sans">Sans</button><button data-v="mono">Mono</button></div></div>
+          <div class="set-row"><span class="set-label">Layout</span><div class="seg"><button class="active" data-v="paged">Paged</button><button data-v="scroll">Scroll</button></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  // Swatches read live token values, so they stay correct in both themes.
+  const TOKENS = ['--paper','--paper-b','--ink','--ink-mid','--ink-muted','--rule','--chip-bg','--accent','--accent-dim','--blue','--green','--focus-tint','--exclude-tint','--code-bg','--code-text'];
+  function paintSwatches() {
+    const cs = getComputedStyle(document.documentElement);
+    document.getElementById('swatches').innerHTML = TOKENS.map(t => {
+      const v = cs.getPropertyValue(t).trim();
+      return `<div class="sw"><div class="chip" style="background:${v}"></div><div class="txt"><b>${t}</b><span class="hex">${v}</span></div></div>`;
+    }).join('');
+    document.getElementById('theme-label').textContent = document.documentElement.dataset.night === '1' ? 'night' : 'light';
+  }
+  function toggleNight() {
+    const el = document.documentElement;
+    const next = el.dataset.night === '1' ? '0' : '1';
+    if (next === '1') el.dataset.night = '1'; else el.removeAttribute('data-night');
+    paintSwatches();
+  }
+  paintSwatches();
+</script>
+</body>
+</html>
