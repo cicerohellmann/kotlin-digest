@@ -1572,18 +1572,17 @@ function renderSnapshot(snap) {
   </div>`;
 }
 
+// The digest is rendered as the card body (see articleCard); here we only add
+// the expandable list of the folded builds — no separate box, no split.
 function renderRollup(rollup) {
   if (!rollup) return '';
   const builds = rollup.builds.map(b =>
     `<li><a href="${b.url}" target="_blank" rel="noopener noreferrer">${b.title}</a><span class="rollup-date">${b.date}</span></li>`
   ).join('');
-  return `<div class="rollup">
-    ${rollup.summary ? `<p class="rollup-summary">${rollup.summary}</p>` : ''}
-    <details class="rollup-builds">
+  return `<details class="rollup-builds">
       <summary>▸ Also this week · ${rollup.builds.length} more build${rollup.builds.length===1?'':'s'}</summary>
       <ul>${builds}</ul>
-    </details>
-  </div>`;
+    </details>`;
 }
 
 // Article card — identical markup/classes/ids to before, so filters + night mode work.
@@ -1597,7 +1596,7 @@ function articleCard(a, idPrefix = 'art') {
       ${a.paywalled ? '<span class="badge-paywall" title="Member-only story — requires a paid Medium account">🔒 Member-only</span>' : ''}
     </div>
     <h3 class="art-title"><a href="${a.url}" target="_blank" rel="noopener noreferrer" onclick="if(this.getAttribute('href')==='#')event.preventDefault()">${a.title}</a></h3>
-    <p class="art-summary">${a.summary}</p>
+    <p class="art-summary">${a.rollup && a.rollup.summary ? a.rollup.summary : a.summary}</p>
     ${renderSnapshot(a.snap)}
     ${renderRollup(a.rollup)}
     <div class="art-tags">${a.topics.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
