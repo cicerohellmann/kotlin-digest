@@ -249,7 +249,17 @@
       border-top: 1px solid var(--rule);
       background: var(--focus-tint);
     }
-    .filter-panel.open { display: block; }
+    /* Drops as an overlay over the magazine's top instead of pushing #digest
+       down in flow — so opening/using/resetting filters never shifts or
+       rescales the paged reader (its height is measured from a stable top). */
+    .filter-panel.open {
+      display: block;
+      position: absolute;
+      left: 0; right: 0;
+      top: 100%;
+      z-index: 10;
+      box-shadow: 0 10px 22px rgba(28,27,24,0.12);
+    }
     .filter-panel.exclude-mode { background: var(--exclude-tint); }
 
     .filter-mode-hint {
@@ -2135,6 +2145,11 @@ function togglePanel() {
 }
 
 function resetAll() {
+  // Nothing selected and no keywords → nothing to reset; don't re-paginate
+  // (which would needlessly jump the magazine back to page 1).
+  if (!state.selected.size && !state.kwInclude && !state.kwExclude
+      && !document.getElementById('kwInclude').value.trim()
+      && !document.getElementById('kwExclude').value.trim()) return;
   state.selected.clear();
   state.kwInclude = '';
   state.kwExclude = '';
