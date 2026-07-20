@@ -16,6 +16,14 @@
   --exclude-tint: #EEF2FF;
   --code-bg:      #18171A;
   --code-text:    #D4CFC6;
+
+  /* Type tokens — the three real families, one per role. Swap these to
+     re-typeset the whole magazine. --read-font (reader setting) overrides the
+     body family per-visitor. */
+  --font-ui:      'JetBrains Mono', monospace;              /* labels, tags, chrome */
+  --font-body:    'Charter', 'Bitstream Charter', Georgia, serif;  /* reading */
+  --font-meta:    'DM Sans', sans-serif;                    /* small supporting meta */
+  --font-display: 'Charter', 'Bitstream Charter', Georgia, serif;  /* chapter/comic titles (italic per-use) */
 }
 
 html[data-night="1"] {

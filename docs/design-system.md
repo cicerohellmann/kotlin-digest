@@ -41,15 +41,31 @@ Light is the default; `html[data-night="1"]` swaps the same token names.
 Rule: **one accent.** Orange carries emphasis; blue is reserved for links;
 green only marks changelog sources. Never introduce a fourth hue.
 
-### Type
-| Family | Role | Notes |
+### Type — **three real families**, tokenised into four roles
+
+The system loads **three** families (JetBrains Mono + DM Sans via Google Fonts;
+Charter is a local serif that falls back to Georgia). Every component reads a
+font **token**, so swapping a token re-typesets the whole magazine — that's what
+the style-guide editor drives.
+
+| Token | Family | Role |
 |---|---|---|
-| **Charter** (serif) | reading — summaries, decks, contents | `--read-font` lets readers swap it |
-| **JetBrains Mono** | UI chrome — labels, tags, meta, buttons, kickers | uppercase + letter-spacing for labels |
-| **DM Sans** | small sans meta (source lists, dates in places) | supporting only |
-| **Playfair Display** (italic) | display — chapter titles, comic titles | never for body |
+| `--font-ui` | **JetBrains Mono** | UI chrome — labels, tags, meta, buttons, kickers (uppercase + tracked) |
+| `--font-body` | **Charter** (serif) | reading — summaries, decks, contents; `--read-font` lets readers override it |
+| `--font-meta` | **DM Sans** | small supporting meta (source lists) |
+| `--font-display` | **Charter** italic | display — chapter titles, comic titles (italic/weight applied per-use) |
+
+> There is **no Playfair Display.** Earlier CSS declared `'Playfair Display',
+> 'Charter', serif` on chapter/comic titles, but the font was never loaded, so it
+> always rendered as Charter. That phantom is gone — `--font-display` is Charter,
+> which is what the titles have always shown.
 
 Reader scale: `--read-scale` (S 0.92 / M 1 / L 1.12) multiplies reading sizes.
+
+**Live editor:** `site/styleguide.html` exposes every colour token and the four
+font tokens as controls; edits apply to `:root` in real time across the whole
+component gallery and an app-preview slice, and **Export CSS** dumps the current
+values as a `:root` / `html[data-night="1"]` block to paste into `design.css`.
 
 ### Motion
 Page turns `0.34–0.42s cubic-bezier(.33,0,.2,1)`; micro-interactions `0.12–0.15s`.
@@ -76,7 +92,7 @@ The smallest styled elements. Cannot be broken down without losing meaning.
 | Date | `.art-date` | mono muted |
 | Reading title | `.art-title` | Charter, scales with `--read-scale` |
 | Reading body | `.art-summary` | `--read-font`, scales |
-| Display title | `.ch-title`, `.comic-title` | Playfair italic |
+| Display title | `.ch-title`, `.comic-title` | `--font-display` (Charter) italic |
 | Wordmark | `.site-logo` | the K·OTLIN DIGEST SVG lockup |
 | Rule | `border` on `--rule` | hairline / `3px double` masthead rule |
 | Buttons | `.mode-btn`, `.seg button`, `.settings-btn`, `.reset-btn`, `.pr-arrow` | mono, bordered, accent when active |
