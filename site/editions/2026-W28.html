@@ -1984,11 +1984,19 @@ function renderPager() {
   });
 
   // Contents + cover entries flip to their chapter's page (turn to page N).
+  // A jump pushes a history entry so the browser Back button / phone back
+  // gesture returns to the page you jumped from (usually the Contents).
   host.querySelectorAll('[data-goto]').forEach(elm => {
     elm.addEventListener('click', e => {
       e.preventDefault();
       const p = pager.startPage[elm.getAttribute('data-goto')];
-      if (p) goToPage(p);
+      if (!p) return;
+      const targetScreen = Math.floor((p - 1) / pager.perScreen);
+      if (targetScreen !== pager.screen) {
+        history.replaceState({ kdScreen: pager.screen }, '');   // tag origin
+        history.pushState({ kdScreen: targetScreen }, '');      // land on chapter
+      }
+      goToPage(p);
     });
   });
 
@@ -2053,11 +2061,16 @@ function renderScroll() {
   // Page numbers are meaningless when scrolling — clear the "··" placeholders.
   host.querySelectorAll('[data-pgref]').forEach(sp => sp.textContent = '');
   // Contents / cover jumps scroll to the chapter block instead of turning a page.
+  // A jump pushes a history entry so Back returns to the prior scroll position.
   host.querySelectorAll('[data-goto]').forEach(elm => {
     elm.addEventListener('click', e => {
       e.preventDefault();
       const t = document.getElementById('scroll-' + elm.getAttribute('data-goto'));
-      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (!t) return;
+      history.replaceState({ kdScrollY: window.scrollY }, '');   // tag origin
+      const top = window.scrollY + t.getBoundingClientRect().top;
+      history.pushState({ kdScrollY: top }, '');                 // land on chapter
+      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 }
@@ -2223,6 +2236,15 @@ function setupPagerListeners() {
   _pagerListenersBound = true;
   let rzT;
   window.addEventListener('resize', () => { clearTimeout(rzT); rzT = setTimeout(renderView, 160); });
+  // Back/forward: a chapter jump tagged the origin (see the data-goto handlers),
+  // so restore that screen (paged) or scroll position (scroll) instead of
+  // leaving the page.
+  window.addEventListener('popstate', e => {
+    const st = e.state;
+    if (!st) return;
+    if (typeof st.kdScreen === 'number' && state.reader.layout !== 'scroll') goToScreen(st.kdScreen);
+    else if (typeof st.kdScrollY === 'number') window.scrollTo(0, st.kdScrollY);
+  });
   document.addEventListener('keydown', e => {
     if (state.reader.layout === 'scroll') return;   // let the browser scroll natively
     if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
