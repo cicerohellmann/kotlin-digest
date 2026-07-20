@@ -3391,7 +3391,9 @@
     "topics": [
       "compose",
       "jetpack"
-    ]
+    ],
+    "code_snippet": "// before — filters on every recomposition\nLazyColumn { items(list.filter { it.isAvailable }) { ... } }\n\n// after — filtered once, re-run only when list changes\nval filteredList = remember(list) { list.filter { it.isAvailable } }\nLazyColumn { items(filteredList) { ... } }",
+    "snippet_label": "CACHE WITH REMEMBER"
   },
   {
     "id": "b04014c426774349",
@@ -4104,7 +4106,9 @@
       "coroutines",
       "compose",
       "kotlin"
-    ]
+    ],
+    "code_snippet": "// before — collects even while UI is hidden\nval state by viewModel.uiState.collectAsState()\n\n// after — starts/stops with the lifecycle\nval state by viewModel.uiState.collectAsStateWithLifecycle()",
+    "snippet_label": "LIFECYCLE-AWARE COLLECT"
   },
   {
     "id": "68501104d284217d",
@@ -4149,7 +4153,9 @@
     "summary": "Explains memory leak patterns specific to Jetpack Compose internals that are hard to diagnose with LeakCanary because the retaining object is often Compose runtime code such as the slot table, the Recomposer's observer lists, or a CompositionLocal. It focuses on how composition disposal is tied to the Composition object rather than a composable leaving the screen, and how ComposeView inside a pooled RecyclerView view holder can keep an undisposed composition alive, with ViewCompositionStrategy as the relevant control.",
     "topics": [
       "compose"
-    ]
+    ],
+    "code_snippet": "// fixes undisposed composition in pooled RecyclerView holders\ncomposeView.setViewCompositionStrategy(\n  ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed(viewLifecycleOwner)\n)",
+    "snippet_label": "DISPOSE STRATEGY"
   },
   {
     "id": "ae87910ee691a0e7",
@@ -4396,7 +4402,9 @@
       "jetbrains",
       "ios-interop",
       "testing"
-    ]
+    ],
+    "code_snippet": "// Desktop: OS theme changes now recompose callers\nval dark = isSystemInDarkTheme()\n// opt out of the 1s background poll:\nComposeUiFlags.pollSystemTheme = false",
+    "snippet_label": "POLL SYSTEM THEME"
   },
   {
     "id": "a0de72b9066ee440",
