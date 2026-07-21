@@ -5211,5 +5211,275 @@
     "excerpt": "I've been studying Compose for a little while and finishing the 3rd chapter \"Build beautiful apps\". One thing that confuses me is their expected completion time. For instance, that particular chapter is supposed to take around 3 hours to finish. However, it basically requires us to build 3 projects, and it took me about 9-10 hours to get to the latest codelab (30-day app). Am I missing smth? Am I studying wrong and too slow? What should I pay more attention to? Considering I can spend ~2 hours d",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "cf631d283ab82ec3",
+    "title": "Upcoming Changes to the Nearby Connections API",
+    "url": "https://android-developers.googleblog.com/2026/07/upcoming-changes-nearby-connections-api.html",
+    "date": "2026-07-20",
+    "source_id": "android-developers-blog",
+    "excerpt": "Posted by Wei Wang, Engineering Manager, Android BeTo User privacy and transparency are core to the Android experience. To better align with these principles, we are updating the default behavior of the Nearby Connections API regarding how it interacts with device radios. What is changing? Previously, the Nearby Connections API could automatically toggle Wi-Fi and Bluetooth radios ON to facilitate connections without explicit user intervention. Moving forward, the API will no longer automaticall",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3cf30b04840f4515",
+    "title": "rememberDecoratedNavEntries Makes rememberSaveable Work Across Multiple NavBackStacks",
+    "url": "https://proandroiddev.com/rememberdecoratednaventries-makes-remembersaveable-work-across-multiple-navbackstacks-bb7a984ef266?source=rss----c72404660798---4",
+    "date": "2026-07-20",
+    "source_id": "proandroiddev",
+    "excerpt": "How Navigation 3 preserves screen state across independent navigation stacks Image created by AI When an app has multiple tabs, each tab often needs its own navigation history. For example: Home └─ HomeBackStack Search └─ SearchBackStack Profile └─ ProfileBackStack Each tab has an independent NavBackStack. The problem is that screens inside these stacks may also contain local UI state: @Composable fun HomeScreen() { var query by rememberSaveable { mutableStateOf(\"\") } HomeContent( query = query,",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1018b347f78d9d92",
+    "title": "Kotlin Enum Classes Explained: Constructors, Functions, and Everything You Need to Know",
+    "url": "https://medium.com/@mr.dhiraj.kumawat/kotlin-enum-classes-explained-constructors-functions-and-everything-you-need-to-know-7e499f831ada?source=rss------kotlin-5",
+    "date": "2026-07-21",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "If you’ve been developing Android apps with Kotlin, you’ve probably used an enum class at least once. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4c3985542dcd385f",
+    "title": "Is Jetpack Compose Ready for Android TV Development in 2026?",
+    "url": "https://halilozel1903.medium.com/is-jetpack-compose-ready-for-android-tv-development-in-2026-781144d99fa8?source=rss------kotlin-5",
+    "date": "2026-07-21",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "A practical look at production readiness, D-pad focus, performance, Media3 integration, and Leanback migration Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e7892ede754cb7b0",
+    "title": "SDK vs. Library: What’s the Difference — and How to Build One?",
+    "url": "https://medium.com/@fatemeh.zirakit/sdk-vs-library-whats-the-difference-and-how-to-build-one-438e3ecc313c?source=rss------kotlin-5",
+    "date": "2026-07-21",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Introduction Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a6c0a58cc4c4ef08",
+    "title": "Android System Design: Building Offline-First Android Applications",
+    "url": "https://medium.com/@nematengg/android-system-design-building-offline-first-android-applications-95fc8e7a4dde?source=rss------kotlin-5",
+    "date": "2026-07-21",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Imagine you’re using your favorite messaging app on a flight. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d1a7d905e3ca83af",
+    "title": "Generate a production-grade Kotlin Multiplatform app (Compose, Room 3, Navigation 3, Koin) in one…",
+    "url": "https://medium.com/@aoreshkov/generate-a-production-grade-kotlin-multiplatform-app-compose-room-3-navigation-3-koin-in-one-9d111e62c1a1?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Starting a Kotlin Multiplatform project has a strange cost curve. The first Hello, world is cheap - the IDE's built-in wizard gives you a… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "75d457f74111fc35",
+    "title": "How Horizontal Clean Architecture Created a Room Dependency Problem",
+    "url": "https://medium.com/@nikolayv_dev/how-horizontal-clean-architecture-created-a-room-dependency-problem-60a529f417ba?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "I was splitting an Android project into feature modules. Room exposed that my clean-looking layers did not match the way the code was… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "98793806f0490842",
+    "title": "We Regretted Making Everything Reusable in Compose",
+    "url": "https://medium.com/@yadnyesh_rana/we-regretted-making-everything-reusable-in-compose-a396a8d418d1?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "One of the biggest surprises after moving to Jetpack Compose wasn’t performance. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9399c5ad64c56106",
+    "title": "[MM’s] Engineering Weekly #69 — AI Meets the Modern JVM",
+    "url": "https://marconak-matej.medium.com/mms-engineering-weekly-69-ai-meets-the-modern-jvm-7ff9498fbf65?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "From Kotlin milestones to Java AI adoption and Spring AI guardrails Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c8adc24fe7a2864b",
+    "title": "String Manipulation and Templates in Kotlin: A Complete Guide for Beginners",
+    "url": "https://techdynasty.medium.com/string-manipulation-and-templates-in-kotlin-a-complete-guide-for-beginners-d41dbfd8d244?source=rss------kotlin-5",
+    "date": "2026-07-20",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "From displaying a user’s name to formatting API responses, generating dynamic messages, validating input, and creating URLs, strings are… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8fdf2f39c3636f6f",
+    "title": "Stop using AI to generate boilerplate Android code",
+    "url": "https://medium.com/@sarim.mehdi.550/stop-using-ai-to-generate-boilerplate-android-code-f7458006ea0a?source=rss------android-5",
+    "date": "2026-07-21",
+    "source_id": "medium-android-tag",
+    "excerpt": "Use Gradle to turn AI from a code printer into a focused implementation partner Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "94fdd5ce8aa54614",
+    "title": "Android Engineers × Agora Conversational AI Hackathon",
+    "url": "https://medium.com/@anandwana/android-engineers-agora-conversational-ai-hackathon-056f5c9b9765?source=rss------android-5",
+    "date": "2026-07-21",
+    "source_id": "medium-android-tag",
+    "excerpt": "Time to win Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "49278f14f2a237d6",
+    "title": "Convert Any GIF into an Android Boot Animation in Seconds (Free Online Tool)",
+    "url": "https://medium.com/@mr.shashansoni/convert-any-gif-into-an-android-boot-animation-in-seconds-free-online-tool-871f0144a0c4?source=rss------android-5",
+    "date": "2026-07-21",
+    "source_id": "medium-android-tag",
+    "excerpt": "If you’re an Android enthusiast, ROM developer, or someone who loves customizing their device, you’ve probably wanted a unique boot… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0f85fb5bb4095790",
+    "title": "Data Structures & Algorithms for Mobile App Developers",
+    "url": "https://medium.com/@anandgaur2207/data-structures-algorithms-for-mobile-app-developers-74db0ae17376?source=rss------android-5",
+    "date": "2026-07-21",
+    "source_id": "medium-android-tag",
+    "excerpt": "As a Mobile Tech Lead, I’ve often noticed that most Data Structures & Algorithms (DSA) resources are written for general software… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3cb323db15247525",
+    "title": "Finding 12 Real Testers for Google Play Closed Testing: A Founder’s Playbook",
+    "url": "https://medium.com/@jules.sarah088/finding-12-real-testers-for-google-play-closed-testing-a-founders-playbook-f320668ade55?source=rss------android-5",
+    "date": "2026-07-21",
+    "source_id": "medium-android-tag",
+    "excerpt": "Recruitment is a social problem, not a technical one. Here’s what actually works. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f96b5a0f9046ca09",
+    "title": "Top 5 Pixel-Style Games You Should Have on Your Phone",
+    "url": "https://medium.com/@temeltimes/top-5-pixel-style-games-you-should-have-on-your-phone-c1a8576d1d8d?source=rss------android-5",
+    "date": "2026-07-21",
+    "source_id": "medium-android-tag",
+    "excerpt": "Pixel art games have made a huge comeback in recent years. Their nostalgic visuals, engaging gameplay, and lightweight performance make… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a7ed260693494483",
+    "title": "Why GPS Earth Satellite View Maps is the Ultimate Navigation Upgrade",
+    "url": "https://medium.com/@MZTECHOFFICIAL/why-gps-earth-satellite-view-maps-is-the-ultimate-navigation-upgrade-f57c54a6faf5?source=rss------android-5",
+    "date": "2026-07-21",
+    "source_id": "medium-android-tag",
+    "excerpt": "Navigating modern cities can often feel unnecessarily frustrating. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6cccea2474d5b157",
+    "title": "Matilah Kita Di Negeri yang Penuh Penghakiman Ini, Sayang",
+    "url": "https://ziiizae.medium.com/matilah-kita-di-negeri-yang-penuh-penghakiman-ini-sayang-1726720055df?source=rss------android-5",
+    "date": "2026-07-21",
+    "source_id": "medium-android-tag",
+    "excerpt": "mati, mati, matilah kita, sayang… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a110c5d52d62a053",
+    "title": "v1.12.10-alpha01+dev4500: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4500",
+    "date": "2026-07-20",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4500 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4500 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4500 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4500",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "40c8e52027d7f98e",
+    "title": "v1.12.0-beta03+dev4506: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.0-beta03%2Bdev4506",
+    "date": "2026-07-20",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.0-beta03+dev4506",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8936725c0d343a89",
+    "title": "I built a Gradle plugin to stop using AI for Android boilerplate",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v2bx1f/i_built_a_gradle_plugin_to_stop_using_ai_for/",
+    "date": "2026-07-21",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Instead of asking AI to generate an entire clean-architecture Android project, I use a Gradle plugin to generate the predictable skeleton first. It creates the base modules and wiring, then uses TOML specs to generate repetitive data , domain , presentation , di , screenshot , and UI component code. The idea is to save AI context/tokens for the implementation details that are actually product-specific. Medium: https://medium.com/@sarim.mehdi.550/stop-using-ai-to-generate-boilerplate-android-code",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e895c5ae8962b10a",
+    "title": "Advice needed: secondary touch input leaking to primary cashier app on Sunmi T3 POS - Need workaround for ads-only display",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v22kya/advice_needed_secondary_touch_input_leaking_to/",
+    "date": "2026-07-21",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hey everyone, I'm stuck with a touch driver issue on a dual-screen Sunmi T3 Android POS terminal and need advice from anyone familiar with Sunmi hardware or secondary display input mapping. We built a custom launcher app using DisplayManager and Presentation API where the main cashier interface runs on the primary display while the secondary screen loads a customer-facing web page via WebView to display promotional ads, meaning the secondary screen is strictly intended as an ads-only display wit",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "49856bc90022e72c",
+    "title": "How do solo/indie Android developers test their apps without a QA team?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v25eaf/how_do_soloindie_android_developers_test_their/",
+    "date": "2026-07-21",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I'm a solo Android developer and don't really have the budget or resources for a dedicated QA team or a large pool of beta testers. Most of the time, I test the app myself on a couple of devices, write unit tests where I can, and do phased rollouts. But I'm still worried about device-specific issues, edge cases, and bugs that only appear in real-world usage. A recent release reminded me that no matter how much I test, users can still find problems I never encountered. I'm curious how other indie",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0a45bff0071d7ba2",
+    "title": "Android Studio Quail 3 RC 2 now available",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v1mc1f/android_studio_quail_3_rc_2_now_available/",
+    "date": "2026-07-20",
+    "source_id": "reddit-androiddev",
+    "excerpt": "submitted by /u/androidtoolsbot [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ff55da88d3bcb3dc",
+    "title": "I need some UI/UX tips",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v1myf4/i_need_some_uiux_tips/",
+    "date": "2026-07-20",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hi everyone! I'm a backend developer and brand new to Android development. Design is definitely not my strong suit, but I've been giving it a shot and really enjoying it so far. I'm building an app to log workout sessions quickly and easily. I know there are tons of workout apps out there, but I didn't like the user experience in most of them due to visual clutter. I prefer something clean, minimalist, and distraction-free. My current struggle is with the screen that displays available workouts ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "06c23f2037adaca8",
+    "title": "Built a multi-module Android library exposing phone APIs as MCP tool",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v1qctn/built_a_multimodule_android_library_exposing/",
+    "date": "2026-07-20",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Working on droid-mcp, an Android SDK (min SDK 28, Kotlin 2.1) wrapping phone capabilities behind a typed tool interface so LLMs/agents can call them via MCP. The part I think is actually interesting for this sub: it's 53 independent Gradle modules, one per API surface (calendar, camera, accessibility, etc.), each depending only on a core module. Library code never requests permissions itself, every module just exposes requiredPermissions()/hasPermissions() and the host app owns the UX. Shizuku a",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
