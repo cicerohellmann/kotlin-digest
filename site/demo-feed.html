@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kotlin Digest — FEED mode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; }
+  .mode-flag { position: fixed; top: 10px; right: 10px; z-index: 50; font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; background: var(--accent); color: #fff; padding: .3rem .6rem; border-radius: 5px; }
+  .night-btn { position: fixed; top: 10px; right: 84px; z-index: 50; cursor: pointer; }
+
+  .mast { max-width: 900px; margin: 0 auto; padding: 2.2rem 1.2rem 1rem; display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2px solid var(--ink); }
+  .mast .logo { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 1.1rem; letter-spacing: .04em; }
+  .mast .logo .k { color: var(--accent); }
+  .mast .meta { font-family: 'JetBrains Mono', monospace; font-size: .6rem; color: var(--ink-muted); }
+
+  main { max-width: 900px; margin: 0 auto; padding: 0 1.2rem 5rem; }
+  .grp-h { position: sticky; top: 0; z-index: 5; background: var(--paper); display: flex; align-items: baseline; gap: .5rem; padding: .8rem 0 .35rem; border-bottom: 1px solid var(--rule); }
+  .grp-h .num { font-family: 'JetBrains Mono', monospace; font-size: .58rem; color: var(--accent); font-weight: 600; }
+  .grp-h .ttl { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: .82rem; letter-spacing: .02em; flex: 1; }
+  .grp-h .ct { font-family: 'JetBrains Mono', monospace; font-size: .54rem; color: var(--ink-muted); }
+
+  .row { display: flex; align-items: center; gap: .7rem; padding: .5rem .3rem .5rem .5rem; border-bottom: 1px solid var(--rule); cursor: pointer; border-left: 3px solid transparent; text-decoration: none; color: inherit; }
+  .row:hover { background: var(--paper-b); border-left-color: var(--tint); }
+  .row .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--tint); flex: 0 0 auto; }
+  .row .ttl { font-size: .9rem; font-weight: 500; color: var(--ink); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row .src { font-family: 'JetBrains Mono', monospace; font-size: .56rem; color: var(--ink-muted); flex: 0 0 auto; width: 140px; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row .date { font-family: 'JetBrains Mono', monospace; font-size: .56rem; color: var(--ink-muted); flex: 0 0 auto; width: 48px; text-align: right; }
+  .toolbar { max-width: 900px; margin: 0 auto; padding: .7rem 1.2rem 0; display: flex; gap: .5rem; align-items: center; }
+  .toolbar input { flex: 1; font-family: 'DM Sans', sans-serif; font-size: .82rem; padding: .45rem .7rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); color: var(--ink); outline: none; }
+  .toolbar input:focus { border-color: var(--ink-muted); }
+  .toolbar .count { font-family: 'JetBrains Mono', monospace; font-size: .58rem; color: var(--ink-muted); }
+  @media (max-width: 620px) { .row .src { width: 78px; } .row .date { display: none; } }
+</style>
+</head>
+<body>
+<button class="night-btn" onclick="document.documentElement.dataset.night = document.documentElement.dataset.night==='1'?'0':'1'">☾ night</button>
+<span class="mode-flag">Feed mode</span>
+
+<div class="mast">
+  <div class="logo"><span class="k">K</span>OTLIN DIGEST · FEED</div>
+  <div class="meta">2026·W28 · 59 articles</div>
+</div>
+<div class="toolbar">
+  <input type="text" id="q" placeholder="Filter this issue — title or source…" oninput="render(this.value)">
+  <span class="count" id="count"></span>
+</div>
+<main id="main"></main>
+
+<script src="demo-data.js"></script>
+<script>
+const pad = n => String(n).padStart(2,'0');
+const tints = ['#E06020','#B5642A','#7E8B4E','#4E7A6A','#4E6E9A','#7A5A9A','#9A4E6E','#8B6A3A','#5E6E7A'];
+function render(q){
+  q=(q||'').trim().toLowerCase();
+  let shown=0;
+  const html = KD_DEMO.map((ch,ci)=>{
+    const arts = ch.arts.filter(a=> !q || a.title.toLowerCase().includes(q) || (a.source||'').toLowerCase().includes(q));
+    if(!arts.length) return '';
+    shown += arts.length;
+    const rows = arts.map(a=>`
+      <a class="row" href="${a.url}" target="_blank" rel="noopener noreferrer" style="--tint:${tints[ci]}">
+        <span class="dot"></span>
+        <span class="ttl">${a.title}</span>
+        <span class="src">${a.source||'—'}</span>
+        <span class="date">${a.date||''}</span>
+      </a>`).join('');
+    return `<div class="grp"><div class="grp-h"><span class="num">§${pad(ci+1)}</span><span class="ttl">${ch.chapter}</span><span class="ct">${arts.length}</span></div>${rows}</div>`;
+  }).join('');
+  document.getElementById('main').innerHTML = html || '<p style="font-family:JetBrains Mono;color:var(--ink-muted);padding:2rem 0">No matches.</p>';
+  document.getElementById('count').textContent = shown+' shown';
+}
+render('');
+</script>
+</body>
+</html>
