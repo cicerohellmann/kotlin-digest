@@ -5481,5 +5481,355 @@
     "excerpt": "Working on droid-mcp, an Android SDK (min SDK 28, Kotlin 2.1) wrapping phone capabilities behind a typed tool interface so LLMs/agents can call them via MCP. The part I think is actually interesting for this sub: it's 53 independent Gradle modules, one per API surface (calendar, camera, accessibility, etc.), each depending only on a core module. Library code never requests permissions itself, every module just exposes requiredPermissions()/hasPermissions() and the host app owns the UX. Shizuku a",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "1f08c4db1e648cdc",
+    "title": "Build intelligent Android apps: Cloud and hybrid inference",
+    "url": "https://android-developers.googleblog.com/2026/07/build-intelligent-android-apps-cloud-hybrid-inference.html",
+    "date": "2026-07-21",
+    "source_id": "android-developers-blog",
+    "excerpt": "Posted by Thomas Ezan, Jolanda Verhoef, Caren Chang, Senior Developer Relations Engineers, Android Developer Relations Welcome back to the blog post series \" Build intelligent Android apps \" where we take a basic Android app and transform it into a personalized , intelligent , and agentic experience. In our previous post we explored how to build intelligent on-device features using Gemini Nano through ML Kit's Prompt API. In this post, we will look at how you can leverage Firebase AI Logic to bu",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "79a434fa3ffdb177",
+    "title": "Build intelligent Android apps: Integrate into Android's intelligence system using AppFunctions",
+    "url": "https://android-developers.googleblog.com/2026/07/build-intelligent-android-apps-appfunctions.html",
+    "date": "2026-07-21",
+    "source_id": "android-developers-blog",
+    "excerpt": "Posted by Ben Weiss, Senior Developer Relations Engineer, Android Developer Relations Welcome back to the blog post series \" Build intelligent Android apps \" where we take a basic Android app and transform it into a personalized, intelligent, and agentic experience. In our previous post , we explored how to leverage Firebase AI Logic to build cloud-hosted and hybrid AI features. Traditional mobile UIs excel at focused, hands-on tasks, and the Android intelligence system is introducing complement",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a53c1bc3c113b87e",
+    "title": "Build intelligent Android apps: Introduction to Jetpacker",
+    "url": "https://android-developers.googleblog.com/2026/07/build-intelligent-android-apps-introduction-jetpack.html",
+    "date": "2026-07-21",
+    "source_id": "android-developers-blog",
+    "excerpt": "Posted by Jolanda Verhoef, Senior Developer Relations Engineer, Android Developer Relations Building GenAI features in your app usually means navigating through various models, APIs and architecture choices: Execution location: Where does your model run? On device, in the cloud, or both? Complexity: How complex is your setup? Are you doing a single inference call or do you need a more agentic flow? In-app or Android System: Should your feature be built into your Android app or does it fit better",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a5e8d6099999316b",
+    "title": "Build intelligent Android apps: On-device inference",
+    "url": "https://android-developers.googleblog.com/2026/07/android-on-device-inference.html",
+    "date": "2026-07-21",
+    "source_id": "android-developers-blog",
+    "excerpt": "Posted by Caren Chang, Developer Relations Engineer, Android Developer Relations Welcome back to the blog post series \" Build intelligent Android apps \" where we take a basic Android app and transform it into a personalized, intelligent, and agentic experience. In our previous post we introduced Jetpacker , the demo app we'll use throughout this series. In this blog post, we will share how you can use Gemini Nano through ML Kit’s Prompt API to build intelligent on-device features. Building intel",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3c5ac448a462823c",
+    "title": "What’s new: Air gets more agents, local models, and Java/Kotlin code intelligence",
+    "url": "https://blog.jetbrains.com/air/2026/07/what-s-new-air-gets-more-agents-local-models-and-java-kotlin-code-intelligence/",
+    "date": "2026-07-21",
+    "source_id": "jetbrains-blog",
+    "excerpt": "The new release of JetBrains Air brings support for GitHub Copilot, OpenCode, Pi, Cline, and other ACP-compatible agents. It also adds IntelliJ-powered navigation and diagnostics for Java and Kotlin and runs Windows tasks in Docker containers. Try Air for Mac, Linux and Windows Bring your own agents and harnesses Air gives coding agents separate workspaces […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5477f630170c9108",
+    "title": "RubyMine 2026.2: Agentic Debugging, Native GitHub Copilot Integration, Default Symbol-Based Code Insight, and More",
+    "url": "https://blog.jetbrains.com/ruby/2026/07/rubymine-2026-2-agentic-debugging-native-github-copilot-integration-default-symbol-based-code-insight-and-more/",
+    "date": "2026-07-21",
+    "source_id": "jetbrains-blog",
+    "excerpt": "RubyMine 2026.2 is out! RubyMine 2026.2 introduces agentic debugging, native GitHub Copilot integration, AI completion with third-party providers, and symbol-based code insight enabled by default. You’ll also find improvements across the Ruby ecosystem and everyday IDE workflows. You can download RubyMine 2026.2 from our website or update via the Toolbox App. Let’s look at what’s […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b63f6996d9ffce1a",
+    "title": "What’s New in PyCharm 2026.2",
+    "url": "https://blog.jetbrains.com/pycharm/2026/07/what-s-new-in-pycharm-2026-2/",
+    "date": "2026-07-21",
+    "source_id": "jetbrains-blog",
+    "excerpt": "In PyCharm 2026.2, you can build Python extensions with the new Rust plugin and debug them using debugpy, which is now the default engine. Running external utilities is now managed through a redesigned settings UI for uvx, while multi-project setups are supported out of the box for uv, Poetry, and Hatch workspaces. This release also […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d12eadbb98305009",
+    "title": "Introducing JetBrains Context: Repository Intelligence for Coding Agents",
+    "url": "https://blog.jetbrains.com/ai/2026/07/introducing-jetbrains-context-repository-intelligence-for-coding-agents/",
+    "date": "2026-07-21",
+    "source_id": "jetbrains-blog",
+    "excerpt": "Today, we’re launching JetBrains Context, a new repository intelligence layer that helps coding agents work more efficiently and produce higher-quality results on complex codebases. As part of the JetBrains AI for Teams and Organizations rollout, JetBrains Context is now available in early access at no additional cost with your JetBrains AI subscription. It integrates with […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d29f7e9403b37e87",
+    "title": "Busy Plugin Developers Newsletter – Q2 2026",
+    "url": "https://blog.jetbrains.com/platform/2026/07/busy-plugin-developers-newsletter-q2-2026/",
+    "date": "2026-07-21",
+    "source_id": "jetbrains-blog",
+    "excerpt": "Your quarterly dose of plugin dev news, tools, and tips from JetBrains 🧩 Marketplace Updates Internal API Usage Notifications To support the ongoing IntelliJ Platform API stabilization, JetBrains Marketplace now automatically notifies plugin authors when their plugins use internal APIs. This gives authors an opportunity to review and replace unsupported APIs before they affect plugin […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f48ac77c8000b1ed",
+    "title": "One Tap, Three Threads: Where Does the Work Actually Run?",
+    "url": "https://medium.com/@angelinaballerina/one-tap-three-threads-where-does-the-work-actually-run-fb701bad55e6?source=rss------kotlin-5",
+    "date": "2026-07-22",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Tap a button, and somewhere behind that tap, real work has to happen — parse a file, decode an image, chew through some data. Do that work… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5bab04d187a88602",
+    "title": "When Batching Backfires: How JDBC Cursors and Kotlin Sequences Gave Us an 80x Speedup",
+    "url": "https://medium.com/jeroen-rosenberg/when-batching-backfires-how-jdbc-cursors-and-kotlin-sequences-gave-us-an-80x-speedup-7adc99d90aa7?source=rss------kotlin-5",
+    "date": "2026-07-22",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "We’re building a centralized ledger gateway. This platform replaces several legacy systems for creating journal entries. It takes business… Continue reading on Jeroen Rosenberg »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4695e3284c7394e2",
+    "title": "Jetpack Compose Fundamentals — Part 5: Understanding Modifiers and Modifier Order",
+    "url": "https://medium.com/@vaibhavi.rana99/jetpack-compose-fundamentals-part-5-understanding-modifiers-and-modifier-order-698b06f03b6b?source=rss------kotlin-5",
+    "date": "2026-07-22",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "In the previous part of this series, we explored the fundamental layout composables in Jetpack Compose: Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b956554d8b271ab9",
+    "title": "Course Review: Jetpack Compose Crash Course @ Udemy",
+    "url": "https://medium.com/@saishaddai/course-review-jetpack-compose-crash-course-udemy-e65f2b80e99e?source=rss------kotlin-5",
+    "date": "2026-07-22",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Although a little bit outdated, I really enjoyed this course. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "873bba38d876d23f",
+    "title": "Reified in Kotlin: The Missing Piece Behind Runtime Generics",
+    "url": "https://medium.com/@nematengg/reified-in-kotlin-the-missing-piece-behind-runtime-generics-4623f37d16bc?source=rss------kotlin-5",
+    "date": "2026-07-22",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Ever wondered how libraries like Retrofit, Koin, and Gson let you write get<User>() or fromJson<User>() without passing User::class.java… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "fad51d5600b602b4",
+    "title": "Types and data structures in Kotlin",
+    "url": "https://medium.com/@aly.route/types-and-data-structures-in-kotlin-db6fb52fffd9?source=rss------kotlin-5",
+    "date": "2026-07-21",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Values and variables Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "927cfdb0169b4c37",
+    "title": "A timer that lives in your IDE",
+    "url": "https://soulesidibe.medium.com/a-timer-that-lives-in-your-ide-3ebe133b5043?source=rss------kotlin-5",
+    "date": "2026-07-21",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "I wanted to time-box a coding session or just to see how efficient I actually am, without ever leaving the editor. Nothing simple existed… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e1b5ca1c3637289a",
+    "title": "The Bug Hiding in Your Lists: Why an Index Is Not an Identity in Flutter, Compose, and SwiftUI",
+    "url": "https://medium.com/@paulo.e.r.moraes/the-bug-hiding-in-your-lists-why-an-index-is-not-an-identity-in-flutter-compose-and-swiftui-45c0ee3402f3?source=rss------kotlin-5",
+    "date": "2026-07-21",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "A product list seems simple: receive a collection, iterate over its elements, and create one row for each item. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "79b40a6f1c887b0e",
+    "title": "O bug escondido nas listas: por que índice não é identidade em Flutter, Compose e SwiftUI",
+    "url": "https://medium.com/@paulo.e.r.moraes/o-bug-escondido-nas-listas-por-que-%C3%ADndice-n%C3%A3o-%C3%A9-identidade-em-flutter-compose-e-swiftui-546e40010d75?source=rss------kotlin-5",
+    "date": "2026-07-21",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Uma lista de produtos parece simples: receber uma coleção, percorrer seus elementos e criar uma linha para cada item. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c2ad2e431dc0be52",
+    "title": "Why Free Music Apps Always Interrupt the Worst Moment",
+    "url": "https://medium.com/@xmodscrack/why-free-music-apps-always-interrupt-the-worst-moment-6dea3b5937f5?source=rss------android-5",
+    "date": "2026-07-22",
+    "source_id": "medium-android-tag",
+    "excerpt": "Free music apps do not fail because they have limits. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1866e90c70119afe",
+    "title": "Understanding Google Play Integrity API: What Those “Enabled” Options Actually Mean",
+    "url": "https://medium.com/droidstack/understanding-google-play-integrity-api-what-those-enabled-options-actually-mean-e1a27e42f481?source=rss------android-5",
+    "date": "2026-07-22",
+    "source_id": "medium-android-tag",
+    "excerpt": "If you’ve recently opened the Play Integrity API settings in the Google Play Console, you might have noticed that some options are… Continue reading on DroidStack »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3b3c6e9d502a7834",
+    "title": "I Shipped an Android App With 1 Million Downloads — Here Are the Bugs That Almost Killed It",
+    "url": "https://medium.com/@himanshugaur684/i-shipped-an-android-app-with-1-million-downloads-here-are-the-bugs-that-almost-killed-it-6124cfacc755?source=rss------android-5",
+    "date": "2026-07-22",
+    "source_id": "medium-android-tag",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "402460b8556680aa",
+    "title": "Offline AI Libraries for Android and iOS",
+    "url": "https://medium.com/@ys.yogendra22/offline-ai-libraries-for-android-and-ios-9607c1ed4706?source=rss------android-5",
+    "date": "2026-07-22",
+    "source_id": "medium-android-tag",
+    "excerpt": "Offline AI allows mobile applications to run machine-learning models directly on a device without relying on the internet. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3631bef455164a62",
+    "title": "I was tired of switching between 4 different apps just to travel, so I fixed it",
+    "url": "https://medium.com/@MZTECHOFFICIAL/i-was-tired-of-switching-between-4-different-apps-just-to-travel-so-i-fixed-it-69c67f34ce7c?source=rss------android-5",
+    "date": "2026-07-22",
+    "source_id": "medium-android-tag",
+    "excerpt": "Let’s be honest — how many apps do you open before you even step out of the house? Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f706ea2cb1c46024",
+    "title": "How to Activate an eSIM on Android: Step-by-Step Guide",
+    "url": "https://medium.com/@howtorelief/how-to-activate-an-esim-on-android-step-by-step-guide-3132a336d8f9?source=rss------android-5",
+    "date": "2026-07-22",
+    "source_id": "medium-android-tag",
+    "excerpt": "Setting up your new cellular service should always be simple. You no longer need traditional physical SIM cards for activation. This… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b7d1e51105a3d97e",
+    "title": "v1.12.10-alpha01+dev4525: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4525",
+    "date": "2026-07-22",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4525 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4525 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4525 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4525",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "22598e4381b50c97",
+    "title": "v1.12.10-alpha01+dev4519: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4519",
+    "date": "2026-07-21",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4519 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4519 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4519 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4519",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "176009e6ea633e28",
+    "title": "v1.12.0-beta03+dev4514: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.0-beta03%2Bdev4514",
+    "date": "2026-07-21",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.0-beta03+dev4514",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "622791642ae06047",
+    "title": "2.3.0-alpha.4",
+    "url": "https://github.com/arrow-kt/arrow/releases/tag/2.3.0-alpha.4",
+    "date": "2026-07-21",
+    "source_id": "lib-arrow",
+    "excerpt": "What's Changed Implement optics DSL for generics in compiler plugin by @serras in #3951 Make Arrow Optics compiler plug-in work in the presence of @Serializable by @serras in #3954 Full Changelog : 2.3.0-alpha.3...2.3.0-alpha.4",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c8bc147089005db8",
+    "title": "AGP 9.x shows tons of \"Unresolved reference\" errors in the IDE/lint, but ./gradlew build compiles with zero errors - happens only in this one project",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v378wl/agp_9x_shows_tons_of_unresolved_reference_errors/",
+    "date": "2026-07-22",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I'm hitting a strange issue that's specific to a single project. When I bump the Android Gradle Plugin from an older version to any 9.x release (tested with 9.3.0), Android Studio's editor and lint start flagging a huge number of \"Unresolved reference\" errors (100+ problems shown in the inspection gutter) across multiple Kotlin files - including files that use generated ViewBinding/DataBinding classes, Hilt-injected classes, and Room entities. The odd part: the actual Gradle build succeeds with ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7d11458ba0a0b636",
+    "title": "AndroidCompat: An open-source Android dependency compatibility verifier — looking for technical feedback",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v2kl5u/androidcompat_an_opensource_android_dependency/",
+    "date": "2026-07-21",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Android Compatability Matrix dashboard About a month ago I shared an early version of AndroidCompat here and received some valuable feedback. I've continued working on it since then, and I'd love another round of technical feedback. The original motivation came from a problem I've run into many times while upgrading Android projects. Questions like: Does this AGP version actually work with this Kotlin version? Which Gradle version is required? Which KSP version is compatible? Why does a dependen",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d776cb9dda77c2d9",
+    "title": "Liquid Glass for the Android View system — because every existing library is Compose-only",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v35h0x/liquid_glass_for_the_android_view_system_because/",
+    "date": "2026-07-22",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Every Android Liquid Glass library I could find targets Jetpack Compose. My app is still on XML layouts — like most shipping Android apps — so none of them were usable without a UI-framework migration. So I built one as a plain FrameLayout subclass. Add it to your layout, put your content inside, done. - Real SDF refraction — edge compression ring driven by a live rounded-rect SDF, follows corner radius in real time - Physical dispersion — per-channel refraction along the surface normal - Sensor",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "fd256cb4c0530631",
+    "title": "Help!!!Can not install App by Android Studio",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v2joz9/helpcan_not_install_app_by_android_studio/",
+    "date": "2026-07-21",
+    "source_id": "reddit-androiddev",
+    "excerpt": "https://preview.redd.it/dyhmf9ywbleh1.png?width=1088&format=png&auto=webp&s=0e7c161e4316e1d34313b69f88e0e7d0081406ad I’m seeing a strange issue on a Xiaomi device where Android Studio fails to install apps. After debugging, it seems related to ADB reporting incorrect system properties. Running: adb shell getprop | grep version returns a wrong Android version (the device is actually on Android 16). I suspect this might be causing compatibility checks or install failures. Has anyone run into somet",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d49e4bb333a7fbc9",
+    "title": "Using WebUSB for Android control — anyone tried this approach?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v2j7nk/using_webusb_for_android_control_anyone_tried/",
+    "date": "2026-07-21",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hi all, I’ve been experimenting with controlling Android devices directly from the browser using WebUSB + ADB. The idea is to avoid installing native apps and instead manage devices through a web interface. So far I’ve managed: - basic device connection via USB - sending ADB commands from the browser - handling multiple devices (still rough) Some challenges I’m running into: WebUSB stability across browsers performance compared to tools like scrcpy handling multiple devices efficiently security ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "040f6a1928af222d",
+    "title": "Showcase: compose-doctor - React Doctor for Android Jetpack Compose (Gradle Plugin + PR Gate + Agent Harness)",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v2hl8x/showcase_composedoctor_react_doctor_for_android/",
+    "date": "2026-07-21",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I built compose-doctor — a deterministic health check for Android Jetpack Compose, inspired by React Doctor (react.doctor). The Problem Compose linting rules exist ( detekt + compose-rules ), but they've been unbundled: scattered CLI output, no unified quality metric, and no standard harness to gate PRs or allow AI coding agents to fix findings safely. What compose-doctor does Deterministic 0–100 Score : Runs detekt + compose-rules under the hood and turns findings into a single score: score = 1",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9cf9619c388b9020",
+    "title": "I built the same feature on Android and iOS from one KMP codebase using 7 Claude Code commands",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v2fvva/i_built_the_same_feature_on_android_and_ios_from/",
+    "date": "2026-07-21",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Compose Multiplatform and Clean Architecture, one codebase, both platforms. Honestly the \"AI wrote it\" angle is the boring part. What I actually wanted was for the architecture to hold together across a dozen prompts instead of drifting, and that's the bit I kept failing at by hand. So I built KMPilot (MIT). It keeps things in line with a design to build to verify to test to review pipeline, and a hook that blocks any edit trying to skip the pipeline. I wrote up a full build of a small museum ga",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
