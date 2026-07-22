@@ -497,6 +497,15 @@ body { min-height: 100vh; }
       font-size: 0.57rem;
       color: var(--ink-muted);
     }
+    .art-byline {
+      font-family: var(--font-ui);
+      font-size: 0.57rem;
+      color: var(--ink-muted);
+    }
+    .art-byline::before {
+      content: "by ";
+      opacity: 0.6;
+    }
     .badge-paywall {
       font-family: var(--font-meta);
       font-size: 0.55rem;

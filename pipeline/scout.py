@@ -164,6 +164,23 @@ def strip_html(raw: str) -> str:
     return BeautifulSoup(raw, "html.parser").get_text(separator=" ", strip=True)
 
 
+def extract_author(entry) -> str:
+    """Best-available human author name from a feedparser entry, or "".
+
+    Prefers author_detail.name (clean), falls back to the raw author string.
+    Blogger feeds append " (noreply@blogger.com)" — strip any trailing email.
+    """
+    name = ""
+    detail = getattr(entry, "author_detail", None)
+    if isinstance(detail, dict):
+        name = (detail.get("name") or "").strip()
+    if not name:
+        name = (getattr(entry, "author", "") or "").strip()
+    # Drop a trailing "(email@host)" the way Blogger/Atom feeds format it.
+    name = re.sub(r"\s*\([^)]*@[^)]*\)\s*$", "", name).strip()
+    return name[:80]
+
+
 # ── Per-source scouting ───────────────────────────────────────────────────────
 
 def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple:
@@ -217,6 +234,7 @@ def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple
             "url": url,
             "date": date.strftime("%Y-%m-%d") if date else None,
             "source_id": sid,
+            "author": extract_author(entry),
             "excerpt": excerpt,
             "date_uncertain": date_uncertain,
             "summarized": False,

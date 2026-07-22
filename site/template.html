@@ -282,6 +282,7 @@ function articleCard(a, idPrefix = 'art') {
   return `<article class="article ${a.col}" id="${idPrefix}-${a.id}" data-topics="${a.topics.join(',')}">
     <div class="art-meta">
       <span class="source-tag ${a.stype}">${a.source}</span>
+      ${a.author ? `<span class="art-byline">${a.author}</span>` : ''}
       <span class="art-date">${a.date}</span>
       ${a.paywalled ? '<span class="badge-paywall" title="Member-only story — requires a paid Medium account">🔒 Member-only</span>' : ''}
     </div>
