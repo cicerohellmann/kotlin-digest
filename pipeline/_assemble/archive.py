@@ -22,6 +22,11 @@ def write_edition_copy(html: str, edition: str, editions_dir: Path) -> Path:
     """Write a permanent copy of the rendered edition to editions/{edition}.html."""
     editions_dir.mkdir(parents=True, exist_ok=True)
     out = editions_dir / f"{edition}.html"
+    # This archived copy has its own permanent URL — point canonical + og:url at
+    # it, not at the site root the index copy uses (og:image is left untouched).
+    edition_url = f"https://kotlindigest.com/editions/{edition}.html"
+    html = html.replace('href="https://kotlindigest.com/"', f'href="{edition_url}"')
+    html = html.replace('content="https://kotlindigest.com/"', f'content="{edition_url}"')
     tmp = out.with_suffix(".tmp")
     tmp.write_text(_inject_base(html), encoding="utf-8")
     tmp.rename(out)

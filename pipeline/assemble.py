@@ -187,6 +187,16 @@ def main() -> None:
     html = html.replace("27 articles", f"{total_arts} articles")
     html = html.replace("8 sources", f"{n_sources} sources")
 
+    # SEO / social meta — real per-edition description + canonical so link previews
+    # (WhatsApp, Slack, Twitter) show the right week instead of scraped body text.
+    meta_desc = (
+        f"Kotlin Digest {edition_display}: {total_arts} hand-picked Android, "
+        f"Kotlin, KMP and Jetpack Compose stories from {n_sources} sources, "
+        f"for the week of {start.strftime('%d %B %Y')}."
+    )
+    html = html.replace("__META_DESC__", meta_desc)
+    html = html.replace("__CANONICAL__", "https://kotlindigest.com/")
+
     write_atomic(OUTPUT_FILE, html)
     print(f"  Written → site/index.html")
 
