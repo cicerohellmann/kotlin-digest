@@ -153,7 +153,8 @@
   <span>
     <a href="about.html">About & Contributing</a> ·
     <a href="https://github.com/cicerohellmann/kotlin-digest">GitHub</a> ·
-    <a href="https://github.com/cicerohellmann/kotlin-digest/blob/main/topics/topics.yml">Topic bible</a>
+    <a href="https://github.com/cicerohellmann/kotlin-digest/blob/main/topics/topics.yml">Topic bible</a> ·
+    <a href="styleguide.html">Design system</a>
   </span>
 </footer>
 
@@ -737,6 +738,17 @@ function comicBand(c) {
 let pager = { pages: [], startPage: {}, perScreen: 1, screen: 0, screens: 1, pageW: 0 };
 const pad = x => String(x).padStart(2, '0');
 
+// The masthead + ticker are captured here at init and injected as the top of the
+// cover block, so the header lives IN the content flow (page 1 when paged, the
+// top of the feed when scrolling) instead of eating every page as fixed chrome.
+let HEADER_HTML = '';
+// Re-fill the ticker and re-sync the settings panel after each render, since the
+// cover block (which now holds them) is rebuilt on every paginate.
+function wireReaderChrome() {
+  if (document.getElementById('ticker')) renderTicker();
+  if (document.getElementById('settingsPanel')) syncSettingsUI();
+}
+
 function filteredChapters() {
   const kwIn = state.kwInclude ? state.kwInclude.split(/[\s,]+/).filter(Boolean) : [];
   const kwEx = state.kwExclude ? state.kwExclude.split(/[\s,]+/).filter(Boolean) : [];
@@ -811,7 +823,7 @@ function buildPages(outerW, outerH) {
   const pages = [], startPage = {};
   if (!chs.length) return { pages, startPage };
 
-  pages.push({ kind: 'cover', html: coverInner(chs) });
+  pages.push({ kind: 'cover', html: HEADER_HTML + coverInner(chs) });
   const tocIdx = pages.length;
   pages.push({ kind: 'toc', html: '' });   // placeholder; filled after start pages known
 
@@ -952,6 +964,7 @@ function renderPager() {
 
   pager.screens = Math.ceil(pager.pages.length / pager.perScreen);
   goToScreen(Math.min(pager.screen, pager.screens - 1));
+  wireReaderChrome();
 }
 
 function layoutPager() { setHostHeight(); renderPager(); }
@@ -982,7 +995,7 @@ function renderScroll() {
     col.appendChild(b);
   };
 
-  add('cover', coverInner(chs));
+  add('cover', HEADER_HTML + coverInner(chs));
   add('toc', tocInner(chs));
   let ci = 0, since = 0;
   if (COMICS.length) add('comic', comicBand(COMICS[ci++]));
@@ -1010,6 +1023,7 @@ function renderScroll() {
       t.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+  wireReaderChrome();
 }
 
 // Single render entry point — dispatches on the chosen reading layout.
@@ -1328,8 +1342,14 @@ function dismissLoader() {
 try {
   loadCookies();
   applyReaderDOM();
-  syncSettingsUI();
-  renderTicker();
+  // Lift the masthead + ticker out of fixed chrome into HEADER_HTML; they now
+  // render as the top of the cover block (page 1 paged / feed top). The ticker
+  // and settings panel are re-wired after each render via wireReaderChrome().
+  const _tk = document.querySelector('.ticker-wrap'), _mh = document.querySelector('.masthead');
+  HEADER_HTML = (_tk ? _tk.outerHTML : '') + (_mh ? _mh.outerHTML : '');
+  if (_tk) _tk.remove();
+  if (_mh) _mh.remove();
+
   renderTopicChecks();
   document.getElementById('kwInclude').value = state.kwInclude;
   document.getElementById('kwExclude').value = state.kwExclude;
