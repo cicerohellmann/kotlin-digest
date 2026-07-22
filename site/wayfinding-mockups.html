@@ -1,0 +1,2379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzE4MTcxQSIvPjx0ZXh0IHg9IjMiIHk9IjI0IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjRTA2MDIwIj5LPC90ZXh0Pjx0ZXh0IHg9IjE3IiB5PSIyNCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxOSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0YzRURFMiI+RDwvdGV4dD48L3N2Zz4K">
+  <title>Kotlin Digest — 2026·W28</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design.css">
+  <script>if(document.cookie.includes('kd_night=1'))document.documentElement.dataset.night='1';</script>
+  <style>
+    body { min-height: 100vh; }
+
+    /* ── TICKER — always dark, never flips ─────────────────────── */
+    .ticker-wrap {
+      background: #0F0E0C;
+      color: #C8C0B0;
+      padding: 0.45rem 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .ticker-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      padding: 0 1.5rem;
+      white-space: nowrap;
+      border-right: 1px solid #2A2820;
+      background: #0F0E0C;
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 2.5rem;
+      padding-left: 2rem;
+      animation: scroll-ticker 40s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+    }
+    .t-spark { color: var(--accent); letter-spacing: -0.04em; }
+    .t-name  { color: #C8C0B0; }
+    .t-score { color: #8B8070; }
+    @keyframes scroll-ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── LOADING GATE ────────────────────────────────────────────── */
+    #kd-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.4rem;
+      background: var(--paper);
+      transition: opacity 0.4s ease;
+    }
+    #kd-loader.kd-loaded {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .kd-loader-caption {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .kd-loader-spinner::before {
+      content: "|";
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--accent);
+      animation: kd-spin-chars 0.72s step-end infinite;
+    }
+    .kd-loader-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+    }
+    @keyframes kd-spin-chars {
+      0%   { content: "|"; }
+      25%  { content: "/"; }
+      50%  { content: "—"; }
+      75%  { content: "\\"; }
+      100% { content: "|"; }
+    }
+    .kd-noscript {
+      position: fixed; inset: 0; z-index: 10000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 2rem; text-align: center;
+      background: var(--paper); color: var(--ink);
+      font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.7;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .kd-loader-spinner::before { animation: none; content: "—"; }
+      #kd-loader { transition-duration: 0.15s; }
+    }
+
+    /* ── MASTHEAD ────────────────────────────────────────────────── */
+    .masthead {
+      padding: 1.75rem 2.5rem 1.25rem;
+      border-bottom: 3px double var(--ink);
+    }
+    .masthead-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .masthead-wordmark {
+      line-height: 1;
+    }
+    .site-logo {
+      height: clamp(2rem, 5vw, 3.75rem);
+      width: auto;
+      display: block;
+    }
+    .masthead-meta {
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+    }
+    .masthead-meta strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .masthead-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .masthead-tagline {
+      font-family: 'Charter', 'Bitstream Charter', Georgia, serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+    }
+    .masthead-stats {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── FILTER BAR ──────────────────────────────────────────────── */
+    .filter-bar {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      box-shadow: 0 2px 8px rgba(28,27,24,0.06);
+    }
+    .filter-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 2.5rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .filter-toggle-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .mode-switcher {
+      display: flex;
+      background: var(--chip-bg);
+      border-radius: 4px;
+      padding: 2px;
+      gap: 2px;
+    }
+    .mode-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      padding: 0.22rem 0.7rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 3px;
+      color: var(--ink-muted);
+      transition: background 0.15s, color 0.15s;
+    }
+    .mode-btn.active.focus   { background: var(--accent); color: #fff; }
+    .mode-btn.active.exclude { background: var(--blue);   color: #fff; }
+    .filter-active-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .filter-chevron {
+      margin-left: auto;
+      font-size: 0.65rem;
+      color: var(--ink-muted);
+      transition: transform 0.2s;
+    }
+    .filter-open .filter-chevron { transform: rotate(180deg); }
+
+    .filter-panel {
+      display: none;
+      padding: 1rem 2.5rem 1.25rem;
+      border-top: 1px solid var(--rule);
+      background: var(--focus-tint);
+    }
+    .filter-panel.open { display: block; }
+    .filter-panel.exclude-mode { background: var(--exclude-tint); }
+
+    .filter-mode-hint {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+    .filter-panel.exclude-mode .mode-btn.active { background: var(--blue); }
+
+    .topic-checks {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.5rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .topic-check-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .topic-check-label input[type="checkbox"] {
+      accent-color: var(--accent);
+      width: 13px; height: 13px;
+      flex-shrink: 0;
+    }
+    .filter-panel.exclude-mode .topic-check-label input[type="checkbox"] {
+      accent-color: var(--blue);
+    }
+
+    .keyword-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .kw-field {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .kw-field label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+      white-space: nowrap;
+    }
+    .kw-field input[type="text"] {
+      border: 1px solid var(--rule);
+      background: var(--paper);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      padding: 0.28rem 0.6rem;
+      border-radius: 3px;
+      width: 170px;
+      color: var(--ink);
+      outline: none;
+    }
+    .kw-field input[type="text"]:focus { border-color: var(--ink-muted); }
+    .reset-btn {
+      margin-left: auto;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--rule);
+      background: transparent;
+      padding: 0.28rem 0.75rem;
+      cursor: pointer;
+      border-radius: 3px;
+      color: var(--ink-muted);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .reset-btn:hover { border-color: var(--ink); color: var(--ink); }
+
+    /* active chips */
+    .active-chips {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0.35rem 2.5rem;
+      border-top: 1px solid var(--rule);
+      min-height: 2.4rem;
+    }
+    .active-chips:empty { display: none; }
+    .chip-mode-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.08em;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      padding: 0.18rem 0.5rem;
+      border-radius: 100px;
+    }
+    .chip.focus-chip   { background: #FFDAB5; color: #7A2E00; }
+    .chip.exclude-chip { background: #C8D4F8; color: #1A2C7A; }
+    .chip.kw-chip      { background: var(--chip-bg); color: var(--ink-muted); }
+
+    /* ── MAIN CONTENT ────────────────────────────────────────────── */
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0.5rem 2.5rem 0;
+    }
+
+    #no-results {
+      display: none;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    #no-results p:first-child {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--ink-muted);
+      margin-bottom: 0.5rem;
+    }
+    #no-results p:last-child {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+    }
+    #no-results a { color: var(--blue); }
+
+    /* ── CHAPTER ─────────────────────────────────────────────────── */
+    .chapter {
+      /* expand to full width of main by cancelling its horizontal padding */
+      margin-left: -2.5rem;
+      margin-right: -2.5rem;
+      padding: 2.75rem 2.5rem 2.5rem;
+      animation: fade-up 0.4s ease both;
+    }
+    .chapter + .chapter {
+      border-top: 1px solid var(--rule);
+    }
+    .chapter:nth-child(even) {
+      background: var(--paper-b);
+    }
+    .chapter.hidden { display: none; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .chapter:nth-child(1) { animation-delay: 0.05s; }
+    .chapter:nth-child(2) { animation-delay: 0.10s; }
+    .chapter:nth-child(3) { animation-delay: 0.15s; }
+    .chapter:nth-child(4) { animation-delay: 0.20s; }
+    .chapter:nth-child(5) { animation-delay: 0.25s; }
+    .chapter:nth-child(6) { animation-delay: 0.30s; }
+
+    .chapter-head {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 1.75rem;
+    }
+    .ch-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.58rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+    .ch-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.3rem;
+      font-weight: 600;
+      font-style: normal;
+      letter-spacing: -0.04em;
+      flex: 1;
+    }
+    .ch-score {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--ink-muted);
+    }
+    .ch-spark { color: var(--accent); letter-spacing: -0.03em; }
+    .ch-score-val { color: var(--ink); font-weight: 600; }
+
+    /* ── ARTICLE GRID ────────────────────────────────────────────── */
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.75rem 2rem;
+    }
+
+    .article {
+      border-top: 1px solid var(--rule);
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      transition: opacity 0.2s;
+    }
+    .article.hidden { display: none; }
+    .article.c4  { grid-column: span 4; }
+    .article.c6  { grid-column: span 6; }
+    .article.c8  { grid-column: span 8; }
+    .article.c12 { grid-column: span 12; }
+
+    @media (max-width: 900px) {
+      .article.c4, .article.c6, .article.c8 { grid-column: span 6; }
+    }
+    @media (max-width: 600px) {
+      .articles { grid-template-columns: 1fr; }
+      .article { grid-column: span 1 !important; }
+      .filter-toggle, .filter-panel, .active-chips, .masthead { padding-left: 1.25rem; padding-right: 1.25rem; }
+      main { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .chapter {
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+    }
+
+    .art-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .source-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.57rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.14rem 0.45rem;
+      border-radius: 2px;
+      border: 1px solid var(--rule);
+      color: var(--ink-muted);
+    }
+    .source-tag.official  { border-color: var(--blue);  color: var(--blue);  }
+    .source-tag.changelog { border-color: var(--green); color: var(--green); }
+    .art-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.57rem;
+      color: var(--ink-muted);
+    }
+    .badge-paywall {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      background: var(--chip-bg);
+      color: var(--ink-muted);
+      border: 1px solid var(--rule);
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+      cursor: help;
+    }
+
+    .art-title {
+      font-family: 'Charter', 'Bitstream Charter', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .art-title a { color: inherit; text-decoration: none; }
+    .art-title a:hover { color: var(--blue); }
+
+    .art-summary {
+      font-family: 'Charter', 'Bitstream Charter', Georgia, serif;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--ink-mid);
+    }
+
+    .snapshot {
+      background: var(--code-bg);
+      border-radius: 5px;
+      padding: 0.7rem 1rem;
+      overflow: hidden;
+    }
+    .snap-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.52rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.45rem;
+    }
+    .snap-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      line-height: 1.55;
+      color: var(--code-text);
+      white-space: pre;
+      overflow-x: auto;
+    }
+    /* syntax-ish coloring */
+    /* Pygments Kotlin tokens (classprefix k-) → Material Palenight */
+    .snap-code .k-c, .snap-code .k-c1, .snap-code .k-cm { color: #546E7A; font-style: italic; }
+    .snap-code .k-k, .snap-code .k-kd, .snap-code .k-kn, .snap-code .k-kc { color: #C792EA; }
+    .snap-code .k-kt { color: #FFCB6B; }
+    .snap-code .k-nc { color: #FFCB6B; }
+    .snap-code .k-nd { color: #F78C6C; }
+    .snap-code .k-nf, .snap-code .k-na { color: #82AAFF; }
+    .snap-code .k-nb { color: #89DDFF; font-style: italic; }
+    .snap-code .k-s, .snap-code .k-s1, .snap-code .k-s2, .snap-code .k-se { color: #C3E88D; }
+    .snap-code .k-si { color: #89DDFF; }
+    .snap-code .k-mi, .snap-code .k-mf { color: #F78C6C; }
+    .snap-code .k-o { color: #89DDFF; }
+    .snap-code .k-p { color: #89DDFF; }
+
+    /* rollup — folded-in changelog builds on the survivor card */
+    .rollup {
+      border-left: 2px solid var(--accent);
+      padding: 0.1rem 0 0.1rem 0.85rem;
+      margin: 0.15rem 0;
+    }
+    .rollup-summary {
+      font-family: 'Charter', 'Bitstream Charter', Georgia, serif;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--ink-mid);
+      margin: 0 0 0.5rem;
+    }
+    .rollup-builds > summary {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      cursor: pointer;
+      list-style: none;
+    }
+    .rollup-builds > summary::-webkit-details-marker { display: none; }
+    .rollup-builds ul {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .rollup-builds li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.66rem;
+    }
+    .rollup-builds li a {
+      color: var(--ink-mid);
+      text-decoration: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .rollup-builds li a:hover { color: var(--accent); }
+    .rollup-date { color: var(--ink-mid); opacity: 0.6; flex-shrink: 0; }
+
+    .art-tags {
+      display: flex;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55rem;
+      color: var(--ink-muted);
+      background: var(--chip-bg);
+      padding: 0.12rem 0.38rem;
+      border-radius: 2px;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────────── */
+    footer {
+      border-top: 2px solid var(--ink);
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62rem;
+      color: var(--ink-muted);
+    }
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ══ MAGAZINE DISTRIBUTION — cover, contents, double-page chapter spreads ══ */
+    main#digest { max-width: none; margin: 0; padding: 0; }
+    .mag-cover { min-height: 76vh; display: flex; align-items: center; justify-content: center;
+      padding: clamp(2rem,6vw,6rem); border-bottom: 1px solid var(--rule); background: var(--paper); }
+    .mag-cover-inner { max-width: 1000px; width: 100%; }
+    .cover-kicker { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .cover-h { font-size: clamp(2rem,4.5vw,3.4rem); line-height: 1.03; }
+    .cover-deck { font-size: 1.05rem; margin-top: 1rem; max-width: 46ch; }
+    .mag-cover .art-meta { margin-top: 1rem; }
+    .also { margin-top: 2rem; border-top: 2px solid var(--ink); padding-top: 0.8rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem 1.6rem; }
+    .also .lbl { grid-column: 1/-1; font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted); }
+    .also a { font-family: 'Charter','Bitstream Charter',Georgia,serif; font-weight: 600; font-size: 0.95rem;
+      line-height: 1.15; color: var(--ink); text-decoration: none; display: flex; gap: 0.5rem; }
+    .also a .n { color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; }
+    .also a:hover { color: var(--accent-dim); }
+
+    .chapter.mag-spread { display: flex; margin: 0; padding: 0; background: var(--paper);
+      border-top: none; border-bottom: 1px solid var(--rule); }
+    .chapter.mag-spread:nth-child(even) { background: var(--paper); }
+    .mag-page { width: 50%; padding: clamp(1.8rem,3vw,3.5rem); }
+    .mag-page.left { border-right: 1px solid var(--rule); }
+    .mag-folio { display: flex; align-items: baseline; gap: 0.8rem; padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--ink); margin-bottom: 1.6rem; }
+    .mag-folio .ch-title { flex: 1; }
+    .mag-folio .side { flex: 1; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+    .mag-folio .pg { font-family: 'JetBrains Mono', monospace; font-weight: 600; color: var(--accent); }
+    .mag-arts { display: flex; flex-direction: column; gap: 1.7rem; }
+    .mag-arts .article { grid-column: auto; }
+
+    .mag-toc .mag-trend { display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.2rem; }
+    .mag-toc .mag-trend .row { display: flex; justify-content: space-between; align-items: baseline;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; }
+    .mag-toc .mag-trend .row .sp { color: var(--accent-dim); letter-spacing: -0.05em; }
+    .mag-toc .cat-row { display: flex; gap: 0.9rem; align-items: baseline; padding: 0.6rem 0;
+      border-bottom: 1px solid var(--rule); }
+    .mag-toc .cat-row .pg { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-weight: 600; width: 2rem; }
+    .mag-toc .cat-row h3 { flex: 1; font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 1rem; }
+    .mag-toc .cat-row p { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--ink-muted); }
+
+    @media (max-width: 820px) {
+      .chapter.mag-spread { display: block; }
+      .mag-page { width: 100%; }
+      .mag-page.left { border-right: none; }
+      .also { grid-template-columns: 1fr; }
+    }
+
+    /* COMIC INTERLUDE — a full-width print-style break between chapters */
+    .comic-interlude {
+      background: var(--paper-b);
+      border-top: 3px double var(--ink);
+      border-bottom: 3px double var(--ink);
+      padding: 1.5rem 1.5rem 1.75rem;
+      text-align: center;
+    }
+    .comic-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+    .comic-figure {
+      margin: 0 auto;
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .comic-figure a { display: inline-block; line-height: 0; }
+    .comic-img {
+      /* Fit a comic to the screen like a page: cap by viewport height so it
+         always fits, and by px so it stays a quick beat on large screens. */
+      max-height: min(300px, 40vh);
+      width: auto;
+      max-width: 100%;
+      background: #fff;               /* comics are black-on-white — keep panel white in night mode */
+      padding: 0.75rem;
+      border: 1px solid var(--rule);
+      box-shadow: 5px 7px 0 rgba(0, 0, 0, 0.07);
+      border-radius: 2px;
+    }
+    .comic-cap {
+      margin-top: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .comic-title {
+      font-family: 'Playfair Display', 'Charter', serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--ink);
+    }
+    .comic-credit {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+    }
+    .comic-credit:hover { color: var(--accent); }
+    .comic-alt {
+      font-family: 'Charter', 'Bitstream Charter', Georgia, serif;
+      font-style: italic;
+      font-size: 0.86rem;
+      line-height: 1.55;
+      color: var(--ink-muted);
+      max-width: 46ch;
+      margin: 1rem auto 0;
+    }
+
+    /* ══ PAGED READER — fixed pages you flip through, never scroll ══ */
+    #digest { position: relative; overflow: hidden; perspective: 2200px; }
+    /* Each screen (one page, or a 2-page spread) is stacked in place and turns
+       like a sheet of paper on its hinge — the whole strip never slides. Only
+       the active screen is visible; a turn briefly shows two while one pivots. */
+    .pr-screen {
+      position: absolute; inset: 0;
+      display: flex;
+      transform-origin: right center;
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+    .pr-screen:not(.is-active) { visibility: hidden; }
+    /* Book leaf turn (2-up): a single page pivots on the centre spine while the
+       facing page stays put. Built as a throwaway overlay of cloned pages so it
+       never disturbs the real, measured screens underneath. */
+    .pr-turn { position: absolute; inset: 0; z-index: 5; transform-style: preserve-3d; }
+    .pr-turn .pr-face { position: absolute; top: 0; height: 100%; }
+    .pr-leaf {
+      position: absolute; top: 0; height: 100%; z-index: 2;
+      transform-style: preserve-3d; will-change: transform;
+      box-shadow: 0 0 38px rgba(0, 0, 0, 0.20);
+    }
+    .pr-leaf .front, .pr-leaf .back { position: absolute; inset: 0; backface-visibility: hidden; }
+    .pr-leaf .back { transform: rotateY(180deg); }
+    @media (prefers-reduced-motion: reduce) {
+      .pr-screen, .pr-leaf { transition: none !important; }
+    }
+    .pr-page {
+      flex: 0 0 auto;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 1.6rem 1.7rem;
+      overflow: hidden;
+      background: var(--paper);
+      border-right: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+    }
+    .pr-comic { margin: auto 0; text-align: center; }
+    .pr-cover { text-align: left; }
+    .pr-page.pr-comic, .pr-page.pr-cover { justify-content: center; }
+    /* article column inside a page */
+    .pr-page .mag-arts { display: flex; flex-direction: column; gap: 0.8rem; }
+    .pr-page .article { width: 100% !important; margin: 0; }
+    /* trending list on the contents page — sparks in mono so they render crisp */
+    .pr-toc .mag-trend { display: flex; flex-direction: column; gap: 0.4rem; }
+    .pr-toc .mag-trend .row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-family: 'Charter', 'Bitstream Charter', Georgia, serif; font-size: 0.92rem; color: var(--ink-mid); }
+    .pr-toc .mag-trend .row .sp { font-family: 'JetBrains Mono', monospace; color: var(--accent-dim); letter-spacing: -0.05em; font-size: 0.85rem; flex: 0 0 auto; }
+    /* clickable contents / cover entries jump to the page */
+    .pr-jump { cursor: pointer; }
+    .pr-toc .cat-row.pr-jump:hover h3 { color: var(--accent); }
+    .pr-cover .also a { cursor: pointer; }
+    /* chapter / contents folio header */
+    .pr-folio {
+      display: flex; align-items: baseline; gap: 0.6rem;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 0.4rem; margin-bottom: 0.95rem; flex: 0 0 auto;
+    }
+    .pr-folio .ch-num { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--accent); font-weight: 600; letter-spacing: 0.04em; }
+    .pr-folio .ch-title { font-family: 'Playfair Display', 'Charter', serif; font-style: italic; font-weight: 700; font-size: 1.15rem; flex: 1; line-height: 1.15; }
+    .pr-folio .ch-title .cont { font-size: 0.68rem; color: var(--ink-muted); font-style: normal; font-family: 'JetBrains Mono', monospace; }
+    .pr-folio .side { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: var(--ink-muted); letter-spacing: 0.08em; text-transform: uppercase; flex: 1; }
+    .pr-folio .pg { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--ink-muted); }
+    /* contents page */
+    .pr-toc .mag-trend { margin-bottom: 1.1rem; }
+    .pr-toc .pr-cat .cat-row { display: flex; align-items: baseline; gap: 0.7rem; padding: 0.35rem 0; border-bottom: 1px solid var(--rule); }
+    .pr-toc .pr-cat .cat-row .pg { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); min-width: 1.6rem; }
+    .pr-toc .pr-cat .cat-row h3 { font-family: 'Charter', serif; font-size: 0.95rem; flex: 1; }
+    .pr-toc .pr-cat .cat-row p { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: var(--ink-muted); }
+    /* comic fills its own page */
+    .pr-comic .comic-interlude { background: none; border: none; padding: 0; }
+    /* navigation */
+    .pr-arrow {
+      position: fixed; top: 50%; transform: translateY(-50%); z-index: 40;
+      width: 42px; height: 66px; border: 1px solid var(--rule);
+      background: var(--paper-b); color: var(--ink);
+      font-size: 1.5rem; line-height: 1; cursor: pointer; border-radius: 4px;
+      opacity: 0.9; transition: opacity 0.15s, border-color 0.15s;
+    }
+    .pr-arrow:hover { opacity: 1; border-color: var(--ink-muted); }
+    .pr-arrow[disabled] { opacity: 0.22; cursor: default; }
+    .pr-prev { left: 10px; } .pr-next { right: 10px; }
+    .pr-indicator {
+      position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 40;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--ink-muted);
+      background: var(--paper-b); border: 1px solid var(--rule);
+      padding: 0.25rem 0.75rem; border-radius: 99px; letter-spacing: 0.06em;
+    }
+    @media (max-width: 640px) {
+      .pr-arrow { width: 34px; height: 54px; font-size: 1.2rem; }
+      .pr-page { padding: 1.1rem 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOADING GATE — covers the FOUC before JS renders the digest -->
+<div id="kd-loader" role="status" aria-label="Loading">
+  <span class="kd-loader-caption">Assembling the digest…</span>
+  <span class="kd-loader-spinner" aria-hidden="true"></span>
+  <span class="kd-loader-name">kotlin-digest</span>
+</div>
+<!-- Failsafe: if the main script never runs (JS off / error), don't strand the loader -->
+<script>setTimeout(function(){var l=document.getElementById('kd-loader');if(l)l.style.display='none';},8000);</script>
+<noscript>
+  <style>#kd-loader{display:none!important}</style>
+  <div class="kd-noscript">This digest is interactive and needs JavaScript. Please open it in a web browser (Safari, Chrome) rather than a file preview.</div>
+</noscript>
+
+<!-- TREND TICKER -->
+<div class="ticker-wrap">
+  <span class="ticker-label">TRENDING</span>
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-top">
+    <h1 class="masthead-wordmark">
+      <svg class="site-logo" viewBox="0 0 91 44" xmlns="http://www.w3.org/2000/svg" aria-label="Kotlin Digest">
+        <text x="0" y="40" font-family="'JetBrains Mono',monospace" font-size="40" font-weight="600" fill="var(--ink)">K</text>
+        <text x="34" y="22" font-family="'JetBrains Mono',monospace" font-size="8.5" font-weight="600" fill="var(--ink)" letter-spacing="2">OTLIN</text>
+        <text x="34" y="37" font-family="'JetBrains Mono',monospace" font-size="8.5" font-weight="400" fill="var(--ink-muted)" letter-spacing="2">DIGEST</text>
+      </svg>
+    </h1>
+    <div class="masthead-meta">
+      <div><strong>EDITION 2026·W28</strong></div>
+      <div>05 JULY 2026</div>
+      <div>27 articles · 8 sources</div>
+    </div>
+  </div>
+  <div class="masthead-foot">
+    <p class="masthead-tagline">The Kotlin world, assembled weekly, for Android engineers.</p>
+    <span class="masthead-stats" style="display:flex;align-items:center;gap:0.75rem;">
+      <span>6 chapters · ordered by topic score · <a href="about.html" style="color:var(--blue);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.6rem;">About &amp; Contributing</a></span>
+      <button class="night-btn" id="nightBtn" onclick="toggleNight()">☾</button>
+    </span>
+  </div>
+</header>
+
+<!-- FILTER BAR -->
+<div class="filter-bar" id="filterBar">
+  <div class="filter-toggle" id="filterToggle" onclick="togglePanel()">
+    <span class="filter-toggle-label">Filter</span>
+    <div class="mode-switcher">
+      <button class="mode-btn focus active" onclick="setMode('focus',event)">FOCUS</button>
+      <button class="mode-btn exclude"      onclick="setMode('exclude',event)">EXCLUDE</button>
+    </div>
+    <span class="filter-active-count" id="activeCount"></span>
+    <span class="filter-chevron">▾</span>
+  </div>
+
+  <div class="filter-panel" id="filterPanel">
+    <p class="filter-mode-hint" id="modeHint">
+      FOCUS — select topics to show <em>only</em> those chapters.
+    </p>
+    <div class="topic-checks" id="topicChecks"></div>
+    <div class="keyword-row">
+      <div class="kw-field">
+        <label>ONLY SHOW WORDS</label>
+        <input type="text" id="kwInclude" placeholder="gradle, plugin…" oninput="applyFilters()">
+      </div>
+      <div class="kw-field">
+        <label>EXCLUDE WORDS</label>
+        <input type="text" id="kwExclude" placeholder="flutter, react…" oninput="applyFilters()">
+      </div>
+      <button class="reset-btn" onclick="resetAll()">Reset all</button>
+    </div>
+  </div>
+
+  <div class="active-chips" id="activeChips"></div>
+</div>
+
+<!-- DIGEST -->
+<main id="digest"></main>
+<div id="noResults">
+  <p>No articles match your current filters.</p>
+  <p>Try broadening your selection or <a href="#" onclick="resetAll();return false;">reset all filters</a>.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Kotlin Digest · Open source, community assembled</span>
+  <span>
+    <a href="about.html">About & Contributing</a> ·
+    <a href="https://github.com/cicerohellmann/kotlin-digest">GitHub</a> ·
+    <a href="https://github.com/cicerohellmann/kotlin-digest/blob/main/topics/topics.yml">Topic bible</a>
+  </span>
+</footer>
+
+<script>
+// ══ DATA ════════════════════════════════════════════════════════════════════
+
+const TOPICS = [
+  { id:"language-core", label:"Kotlin Core" },
+  { id:"ui", label:"Compose & UI" },
+  { id:"multiplatform", label:"KMP" },
+  { id:"di", label:"Dependency Injection" },
+  { id:"networking", label:"Networking" },
+  { id:"build", label:"Build & Tooling" },
+  { id:"platform", label:"Android Platform" },
+  { id:"architecture", label:"Architecture" },
+  { id:"backend", label:"Backend / Server" },
+  { id:"testing", label:"Testing" },
+  { id:"community", label:"Community" }
+];
+
+const TRENDING_DATA = [
+  { name:"compose-multiplatform", score:144, spark:"\u2586\u2587\u2588\u2588\u2588\u2587\u2587" },
+  { name:"compose", score:141, spark:"\u2586\u2587\u2588\u2588\u2588\u2587\u2587" },
+  { name:"kotlin", score:107, spark:"\u2585\u2587\u2588\u2588\u2588\u2587\u2587" },
+  { name:"jetbrains", score:73, spark:"\u2585\u2587\u2588\u2588\u2587\u2587\u2586" },
+  { name:"navigation", score:55, spark:"\u2585\u2587\u2588\u2588\u2588\u2587\u2587" },
+  { name:"kmp", score:51, spark:"\u2586\u2587\u2588\u2588\u2587\u2587\u2587" },
+  { name:"material3", score:46, spark:"\u2585\u2587\u2588\u2588\u2588\u2587\u2587" },
+  { name:"jetpack", score:40, spark:"\u2585\u2587\u2588\u2588\u2588\u2588\u2588" },
+  { name:"google-io", score:38, spark:"\u2584\u2587\u2588\u2588\u2588\u2587\u2587" },
+  { name:"android-developers", score:37, spark:"\u2584\u2586\u2588\u2588\u2587\u2587\u2588" },
+  { name:"clean-architecture", score:30, spark:"\u2584\u2586\u2588\u2588\u2588\u2587\u2587" },
+  { name:"testing", score:28, spark:"\u2586\u2587\u2588\u2588\u2588\u2588\u2588" },
+  { name:"architecture", score:26, spark:"\u2584\u2586\u2588\u2588\u2588\u2587\u2587" },
+  { name:"build-logic", score:24, spark:"\u2584\u2587\u2588\u2588\u2588\u2587\u2587" },
+  { name:"context-receivers", score:23, spark:"\u2584\u2586\u2588\u2588\u2587\u2587\u2586" },
+  { name:"ktor-server", score:22, spark:"\u2585\u2587\u2588\u2588\u2588\u2587\u2587" },
+  { name:"kotlin-backend", score:22, spark:"\u2584\u2586\u2588\u2588\u2588\u2587\u2587" },
+  { name:"android-auto", score:22, spark:"\u2584\u2586\u2588\u2588\u2587\u2587\u2588" },
+  { name:"ktor", score:16, spark:"\u2585\u2587\u2588\u2588\u2587\u2587\u2587" },
+  { name:"kotlin-stdlib", score:12, spark:"\u2585\u2587\u2588\u2588\u2587\u2587\u2586" }
+];
+
+const COMICS = [
+  { img:"https://imgs.xkcd.com/comics/compiling.png", alt:"'Are you stealing those LCDs?' 'Yeah, but I'm doing it while my code compiles.'", title:"Compiling", permalink:"https://xkcd.com/303/", artist:"Randall Munroe", source:"xkcd" },
+  { img:"https://imgs.xkcd.com/comics/is_it_worth_the_time.png", alt:"Don't forget the time you spend finding the chart to look up what you save. And the time spent reading this reminder about the time spent. And the time trying to figure out if either of those actually make sense. Remember, every second counts toward your life total, including these right now.", title:"Is It Worth the Time?", permalink:"https://xkcd.com/1205/", artist:"Randall Munroe", source:"xkcd" },
+  { img:"https://imgs.xkcd.com/comics/automation.png", alt:"'Automating' comes from the roots 'auto-' meaning 'self-', and 'mating', meaning 'screwing'.", title:"Automation", permalink:"https://xkcd.com/1319/", artist:"Randall Munroe", source:"xkcd" }
+];
+const COMIC_EVERY = 14;
+
+const CHAPTERS = [
+  {
+    id:"ui", title:"Compose & UI",
+    topics:["ui"], score:1186, spark:"\u2586\u2587\u2588\u2588\u2588\u2587\u2587",
+    articles:[
+      { id:"2620d1b71e543aab", col:"c12",
+        title:"Four Ways to Avoid Prop Drilling in Jetpack Compose",
+        url:"https://proandroiddev.com/four-ways-to-avoid-prop-drilling-in-jetpack-compose-50a64912c0d5?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["compose", "architecture"],
+        summary:"Four patterns for avoiding prop drilling in Jetpack Compose: CompositionLocal, ViewModel with state hoisting, event bus via shared Flow, and slot-based APIs. Each pattern is shown with a practical example and a discussion of tradeoffs.",
+        snap:{ label:"SLOT API", code:"<span class=\"k-c1\">// before: drilling through 3 levels</span>\n<span class=\"k-kd\">fun</span><span class=\"k-w\"> </span><span class=\"k-nf\">Root</span><span class=\"k-p\">(</span><span class=\"k-n\">userName</span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-kt\">String</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">Content</span><span class=\"k-p\">(</span><span class=\"k-n\">userName</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n\n<span class=\"k-c1\">// after: slot API \u2014 layout knows nothing</span>\n<span class=\"k-nd\">@Composable</span>\n<span class=\"k-kd\">fun</span><span class=\"k-w\"> </span><span class=\"k-nf\">CardLayout</span><span class=\"k-p\">(</span><span class=\"k-n\">content</span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-nd\">@Composable</span><span class=\"k-w\"> </span><span class=\"k-p\">()</span><span class=\"k-w\"> </span><span class=\"k-o\">-&gt;</span><span class=\"k-w\"> </span><span class=\"k-kt\">Unit</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-n\">Card</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">content</span><span class=\"k-p\">()</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-p\">}</span>\n<span class=\"k-c1\">// caller owns the data</span>\n<span class=\"k-n\">CardLayout</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">UserName</span><span class=\"k-p\">(</span><span class=\"k-n\">userName</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>" },
+        rollup:null
+      },
+      { id:"add2083c62c6a659", col:"c8",
+        title:"Animating Item Placement in Lazy Lists",
+        url:"https://christophybarth.medium.com/animating-item-placement-in-lazy-lists-fdeafadab9c2?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["compose", "animation"],
+        summary:"Implements animated item placement in a Compose LazyColumn using the animateItem modifier introduced in Compose 1.7, enabling smooth reorder and insert/remove animations with a single modifier call.",
+        snap:{ label:"ANIMATE ITEM", code:"<span class=\"k-n\">LazyColumn</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-n\">items</span><span class=\"k-p\">(</span><span class=\"k-n\">list</span><span class=\"k-p\">,</span><span class=\"k-w\"> </span><span class=\"k-n\">key</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-nb\">it</span><span class=\"k-p\">.</span><span class=\"k-na\">id</span><span class=\"k-w\"> </span><span class=\"k-p\">})</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">item</span><span class=\"k-w\"> </span><span class=\"k-o\">-&gt;</span>\n<span class=\"k-w\">        </span><span class=\"k-n\">ItemCard</span><span class=\"k-p\">(</span>\n<span class=\"k-w\">            </span><span class=\"k-n\">modifier</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-n\">Modifier</span><span class=\"k-p\">.</span><span class=\"k-na\">animateItem</span><span class=\"k-p\">()</span>\n<span class=\"k-w\">        </span><span class=\"k-p\">)</span>\n<span class=\"k-w\">    </span><span class=\"k-p\">}</span>\n<span class=\"k-p\">}</span>" },
+        rollup:null
+      },
+      { id:"78995ebbdaae090a", col:"c8",
+        title:"Keep UI-Only Logic in the UI with snapshotFlow",
+        url:"https://proandroiddev.com/keep-ui-only-logic-in-the-ui-with-snapshotflow-4efe34063f03?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"6 Jul", paywalled:false,
+        topics:["compose", "flows"],
+        summary:"Shows how to use snapshotFlow to bridge Compose state into coroutine flows, keeping UI-only reactive logic inside composables rather than leaking it into ViewModels. Includes comparison with collectAsState and guidance on when each pattern fits.",
+        snap:{ label:"SNAPSHOT FLOW", code:"<span class=\"k-n\">LaunchedEffect</span><span class=\"k-p\">(</span><span class=\"k-kt\">Unit</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-n\">snapshotFlow</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">listState</span><span class=\"k-p\">.</span><span class=\"k-na\">firstVisibleItemIndex</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-w\">        </span><span class=\"k-p\">.</span><span class=\"k-na\">collect</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">index</span><span class=\"k-w\"> </span><span class=\"k-o\">-&gt;</span>\n<span class=\"k-w\">            </span><span class=\"k-n\">analytics</span><span class=\"k-p\">.</span><span class=\"k-na\">logScroll</span><span class=\"k-p\">(</span><span class=\"k-n\">index</span><span class=\"k-p\">)</span>\n<span class=\"k-w\">        </span><span class=\"k-p\">}</span>\n<span class=\"k-p\">}</span>" },
+        rollup:null
+      },
+      { id:"b29eb46b5e091214", col:"c6",
+        title:"Adaptive UI in Jetpack Compose: A Practical Guide for Phones, Foldables, and Tablets",
+        url:"https://medium.com/@oluwatayo_/adaptive-ui-in-jetpack-compose-a-practical-guide-for-phones-foldables-and-tablets-49e0fc1b3286?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"10 Jul", paywalled:false,
+        topics:["compose", "adaptive-ui"],
+        summary:"Practical guide to building adaptive Jetpack Compose layouts that work across phones, foldables, and tablets using WindowSizeClass, adaptive scaffold APIs, and the navigation suite. Covers both two-pane and single-pane strategies with real code.",
+        snap:{ label:"SIZE CLASS LAYOUT", code:"<span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">widthClass</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-n\">calculateWindowSizeClass</span><span class=\"k-p\">().</span><span class=\"k-na\">widthSizeClass</span>\n<span class=\"k-k\">when</span><span class=\"k-w\"> </span><span class=\"k-p\">(</span><span class=\"k-n\">widthClass</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-n\">WindowWidthSizeClass</span><span class=\"k-p\">.</span><span class=\"k-na\">Compact</span><span class=\"k-w\">  </span><span class=\"k-o\">-&gt;</span><span class=\"k-w\"> </span><span class=\"k-n\">BottomNavLayout</span><span class=\"k-p\">()</span>\n<span class=\"k-w\">    </span><span class=\"k-n\">WindowWidthSizeClass</span><span class=\"k-p\">.</span><span class=\"k-na\">Medium</span><span class=\"k-w\">   </span><span class=\"k-o\">-&gt;</span><span class=\"k-w\"> </span><span class=\"k-n\">NavigationRailLayout</span><span class=\"k-p\">()</span>\n<span class=\"k-w\">    </span><span class=\"k-k\">else</span><span class=\"k-w\">                          </span><span class=\"k-o\">-&gt;</span><span class=\"k-w\"> </span><span class=\"k-n\">NavigationDrawerLayout</span><span class=\"k-p\">()</span>\n<span class=\"k-p\">}</span>" },
+        rollup:null
+      },
+      { id:"8b4db7767c9e7362", col:"c6",
+        title:"Why Your Jetpack Compose TV App Scrolls Fine on a Flagship and Drops Frames on Everything Else",
+        url:"https://medium.com/@rahulbaboria123/why-your-jetpack-compose-tv-app-scrolls-fine-on-a-flagship-and-drops-frames-on-everything-else-ff8c6f5ed91c?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["compose", "android-api"],
+        summary:"Investigates why a Compose TV app runs smoothly on flagship devices but drops frames on mid-range hardware, tracing the cause to over-recomposition from unscoped state reads and large shared composition trees. Fixes are applied using derivedStateOf and layout-level isolation.",
+        snap:{ label:"SETTLE DEBOUNCE", code:"<span class=\"k-n\">snapshotFlow</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-k\">if</span><span class=\"k-w\"> </span><span class=\"k-p\">(</span><span class=\"k-n\">listState</span><span class=\"k-p\">.</span><span class=\"k-na\">isScrollInProgress</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-kc\">null</span>\n<span class=\"k-w\">    </span><span class=\"k-k\">else</span><span class=\"k-w\"> </span><span class=\"k-n\">listState</span><span class=\"k-p\">.</span><span class=\"k-na\">layoutInfo</span><span class=\"k-p\">.</span><span class=\"k-na\">visibleItemsInfo</span>\n<span class=\"k-p\">}</span>\n<span class=\"k-p\">.</span><span class=\"k-na\">filterNotNull</span><span class=\"k-p\">()</span>\n<span class=\"k-p\">.</span><span class=\"k-na\">debounce</span><span class=\"k-p\">(</span><span class=\"k-m\">1</span><span class=\"k-n\">_000</span><span class=\"k-p\">)</span>\n<span class=\"k-p\">.</span><span class=\"k-na\">collect</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">items</span><span class=\"k-w\"> </span><span class=\"k-o\">-&gt;</span>\n<span class=\"k-w\">    </span><span class=\"k-n\">reportImpressions</span><span class=\"k-p\">(</span><span class=\"k-n\">items</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-c1\">// fires only after scroll settles</span>\n<span class=\"k-p\">}</span>" },
+        rollup:null
+      },
+      { id:"8160faa90eb5228f", col:"c6",
+        title:"v1.12.10-alpha01+dev4443: Details",
+        url:"https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4443", source:"Lib Compose Multiplatform", stype:"changelog", date:"10 Jul", paywalled:false,
+        topics:["compose-multiplatform"],
+        summary:"Compose Multiplatform dev build v1.12.10-alpha01+dev4443 with runtime fixes ahead of the next alpha release.",
+        snap:null,
+        rollup:{ summary:"Seven dev builds across the 1.12.10-alpha01 and 1.12.0-beta02 lines. Changes: layout and rendering fixes on iOS and Desktop, compiler-plugin and runtime fixes, and assorted bug and stability fixes. No new APIs or user-facing features.", builds:[{"title": "v1.12.10-alpha01+dev4438: Details", "date": "9 Jul", "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4438"}, {"title": "v1.12.10-alpha01+dev4434: Details", "date": "8 Jul", "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4434"}, {"title": "v1.12.10-alpha01+dev4419: Details", "date": "7 Jul", "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4419"}, {"title": "v1.12.0-beta02+dev4432: Details", "date": "7 Jul", "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.0-beta02%2Bdev4432"}, {"title": "v1.12.10-alpha01+dev4413: Details", "date": "6 Jul", "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4413"}, {"title": "v1.12.0-beta02+dev4414: Details", "date": "6 Jul", "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.0-beta02%2Bdev4414"}] }
+      },
+      { id:"207d5e085cca5af9", col:"c4",
+        title:"Jetpack Compose 2026: What\u2019s New and What\u2019s Coming Next",
+        url:"https://medium.com/@androidlab/jetpack-compose-2026-whats-new-and-what-s-coming-next-87a0e22d629a?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:true,
+        topics:["compose"],
+        summary:"Roundup of Jetpack Compose updates through 2026 including predictive back gesture support, shared element transitions graduating to stable, and upcoming lazy layout improvements. Also previews what's on the Compose roadmap.",
+        snap:null,
+        rollup:null
+      },
+      { id:"2cc7ef3e43262ccc", col:"c4",
+        title:"Stop Fighting Your Navigation Library: A Practical Guide to Jetpack Navigation 3",
+        url:"https://proandroiddev.com/stop-fighting-your-navigation-library-a-practical-guide-to-jetpack-navigation-3-dd34c70d6300?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["navigation", "jetpack"],
+        summary:"Practical guide to Jetpack Navigation 3, covering the shift from NavController to a type-safe destination-driven model. Explains how to structure back stacks, handle deep links, and avoid common patterns that fight the library's design.",
+        snap:{ label:"BACK STACK API", code:"<span class=\"k-nd\">@Serializable</span><span class=\"k-w\"> </span><span class=\"k-kd\">data</span><span class=\"k-w\"> </span><span class=\"k-kd\">object</span><span class=\"k-w\"> </span><span class=\"k-nc\">Home</span><span class=\"k-w\"> </span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-n\">Route</span>\n<span class=\"k-nd\">@Serializable</span><span class=\"k-w\"> </span><span class=\"k-kd\">data</span><span class=\"k-w\"> </span><span class=\"k-kd\">class</span><span class=\"k-w\"> </span><span class=\"k-nc\">Detail</span><span class=\"k-p\">(</span><span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">id</span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-kt\">Int</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-n\">Route</span>\n\n<span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">backStack</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-n\">remember</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">mutableStateListOf</span><span class=\"k-o\">&lt;</span><span class=\"k-kt\">Any</span><span class=\"k-o\">&gt;</span><span class=\"k-p\">(</span><span class=\"k-n\">Home</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-n\">NavDisplay</span><span class=\"k-p\">(</span><span class=\"k-n\">backStack</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-n\">backStack</span><span class=\"k-p\">,</span><span class=\"k-w\"> </span><span class=\"k-n\">entryProvider</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-n\">entryProvider</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-n\">entry</span><span class=\"k-o\">&lt;</span><span class=\"k-n\">Home</span><span class=\"k-o\">&gt;</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">HomeScreen</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">backStack</span><span class=\"k-p\">.</span><span class=\"k-na\">add</span><span class=\"k-p\">(</span><span class=\"k-n\">Detail</span><span class=\"k-p\">(</span><span class=\"k-nb\">it</span><span class=\"k-p\">))</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-w\">    </span><span class=\"k-n\">entry</span><span class=\"k-o\">&lt;</span><span class=\"k-n\">Detail</span><span class=\"k-o\">&gt;</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">DetailScreen</span><span class=\"k-p\">(</span><span class=\"k-nb\">it</span><span class=\"k-p\">.</span><span class=\"k-na\">id</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-p\">})</span>" },
+        rollup:null
+      }
+    ]
+  },
+  {
+    id:"language-core", title:"Kotlin Core",
+    topics:["language-core"], score:1066, spark:"\u2585\u2587\u2588\u2588\u2588\u2587\u2587",
+    articles:[
+      { id:"3c654d42e44bf872", col:"c12",
+        title:"Introducing the Kotlin Benchmark for AI Coding Agents",
+        url:"https://blog.jetbrains.com/kotlin/2026/07/introducing-the-kotlin-benchmark-evaluate-ai-coding-agents-on-real-world-kotlin-tasks/", source:"Kotlin Blog", stype:"official", date:"8 Jul", paywalled:false,
+        topics:["kotlin", "jetbrains"],
+        summary:"JetBrains released a Kotlin-specific benchmark suite for evaluating AI coding agents on real-world tasks including refactoring, API migration, and bug fixing. It targets models used in IntelliJ-based tools and standalone agents, providing a standardized way to compare Kotlin coding capability.",
+        snap:null,
+        rollup:null
+      },
+      { id:"4f80d437481fcac8", col:"c8",
+        title:"How to Configure an AI Agent for Your Project: Context, Rules, Skills, MCP \u2014 A Java/Kotlin Playbook",
+        url:"https://medium.com/@explyt.ai/how-to-configure-an-ai-agent-for-your-project-context-rules-skills-mcp-a-java-kotlin-playbook-7d5615e7ce12?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["kotlin", "android-developers"],
+        summary:"Playbook for configuring AI coding agents for Java/Kotlin projects, covering context injection via AGENTS.md, tool definitions, MCP server setup, and skill files. Practical guide for teams adopting agentic development workflows.",
+        snap:null,
+        rollup:null
+      },
+      { id:"733fc0f6eb92c1f9", col:"c8",
+        title:"Bitwise operators in Kotlin are provided as infix functions",
+        url:"https://alonso-delarte.medium.com/bitwise-operators-in-kotlin-are-provided-as-infix-functions-e0039a74fc6b?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["kotlin", "kotlin-stdlib"],
+        summary:"Explains Kotlin's bitwise operators (and, or, xor, shl, shr, ushr) provided as infix functions rather than symbolic operators. Shows practical usage for bitmask flags and permission checks common in Android development.",
+        snap:{ label:"INFIX BITOPS", code:"<span class=\"k-c1\">// Java (won&#39;t compile in Kotlin)</span>\n<span class=\"k-c1\">// val hash = (x &lt;&lt; 16) + (y &amp; mask)</span>\n\n<span class=\"k-c1\">// Kotlin \u2014 infix functions</span>\n<span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">hash</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-p\">(</span><span class=\"k-n\">x</span><span class=\"k-w\"> </span><span class=\"k-n\">shl</span><span class=\"k-w\"> </span><span class=\"k-m\">16</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-o\">+</span><span class=\"k-w\"> </span><span class=\"k-p\">(</span><span class=\"k-n\">y</span><span class=\"k-w\"> </span><span class=\"k-n\">and</span><span class=\"k-w\"> </span><span class=\"k-n\">mask</span><span class=\"k-p\">)</span>\n<span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">combined</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-n\">flagA</span><span class=\"k-w\"> </span><span class=\"k-n\">or</span><span class=\"k-w\"> </span><span class=\"k-n\">flagB</span>\n<span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">isSet</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-n\">flags</span><span class=\"k-w\"> </span><span class=\"k-n\">and</span><span class=\"k-w\"> </span><span class=\"k-n\">FLAG_ENABLED</span><span class=\"k-w\"> </span><span class=\"k-o\">!=</span><span class=\"k-w\"> </span><span class=\"k-m\">0</span>" },
+        rollup:null
+      },
+      { id:"d249f2b33cf44ed3", col:"c6",
+        title:"Kotlin 2.4 vs 2.3: What Actually Changed for Working Android Devs",
+        url:"https://medium.com/@androidlab/kotlin-2-4-vs-2-3-what-actually-changed-for-working-android-devs-63b7c5ea520c?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:true,
+        topics:["kotlin", "k2-compiler"],
+        summary:"Practical comparison of Kotlin 2.3 and 2.4 changes that affect day-to-day Android development, covering K2 compiler improvements, new language features, and deprecations developers need to act on.",
+        snap:{ label:"CONTEXT PARAMS", code:"<span class=\"k-c1\">// before</span>\n<span class=\"k-kd\">fun</span><span class=\"k-w\"> </span><span class=\"k-nf\">loadProfile</span><span class=\"k-p\">(</span><span class=\"k-n\">session</span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-n\">UserSession</span><span class=\"k-p\">,</span><span class=\"k-w\"> </span><span class=\"k-n\">db</span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-n\">AppDatabase</span><span class=\"k-p\">):</span><span class=\"k-w\"> </span><span class=\"k-n\">UserProfile</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-k\">return</span><span class=\"k-w\"> </span><span class=\"k-n\">db</span><span class=\"k-p\">.</span><span class=\"k-na\">users</span><span class=\"k-p\">.</span><span class=\"k-na\">find</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-nb\">it</span><span class=\"k-p\">.</span><span class=\"k-na\">id</span><span class=\"k-w\"> </span><span class=\"k-o\">==</span><span class=\"k-w\"> </span><span class=\"k-n\">session</span><span class=\"k-p\">.</span><span class=\"k-na\">userId</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-p\">}</span>\n\n<span class=\"k-c1\">// Kotlin 2.4: context parameters</span>\n<span class=\"k-n\">context</span><span class=\"k-p\">(</span><span class=\"k-n\">session</span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-n\">UserSession</span><span class=\"k-p\">,</span><span class=\"k-w\"> </span><span class=\"k-n\">db</span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-n\">AppDatabase</span><span class=\"k-p\">)</span>\n<span class=\"k-kd\">fun</span><span class=\"k-w\"> </span><span class=\"k-nf\">loadProfile</span><span class=\"k-p\">():</span><span class=\"k-w\"> </span><span class=\"k-n\">UserProfile</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-k\">return</span><span class=\"k-w\"> </span><span class=\"k-n\">db</span><span class=\"k-p\">.</span><span class=\"k-na\">users</span><span class=\"k-p\">.</span><span class=\"k-na\">find</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-nb\">it</span><span class=\"k-p\">.</span><span class=\"k-na\">id</span><span class=\"k-w\"> </span><span class=\"k-o\">==</span><span class=\"k-w\"> </span><span class=\"k-n\">session</span><span class=\"k-p\">.</span><span class=\"k-na\">userId</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-p\">}</span>" },
+        rollup:null
+      },
+      { id:"0f5f026393a8daa7", col:"c6",
+        title:"Mastering Client-Side Rate Limiting in Mobile Apps: Throttling & Debouncing in Flutter and Kotlin",
+        url:"https://md-hadi.medium.com/mastering-client-side-rate-limiting-in-mobile-apps-throttling-debouncing-in-flutter-and-kotlin-42bc15ef079d?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["kotlin", "flows", "android-api"],
+        summary:"Covers client-side rate limiting patterns in mobile apps using throttling and debouncing, with Kotlin implementations using coroutines and Flow operators. Explains how to prevent API flooding from rapid user interactions without introducing race conditions.",
+        snap:null,
+        rollup:null
+      },
+      { id:"6399fc6d6898c939", col:"c6",
+        title:"Kotlin Coroutines: Part 1 \u2014 Under the Hood",
+        url:"https://medium.com/@fachrizalmrsln/kotlin-coroutines-part-1-under-the-hood-9aa96ac4e292?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["coroutines", "kotlin"],
+        summary:"Under-the-hood explanation of Kotlin coroutines, covering continuation passing style, the coroutine state machine compiled from suspend functions, and how the dispatcher maps coroutines to threads.",
+        snap:null,
+        rollup:null
+      },
+      { id:"e720a8db674c79cb", col:"c4",
+        title:"The History of Kodee, Kotlin\u2019s Mascot",
+        url:"https://blog.jetbrains.com/research/2026/07/the-history-of-kodee/", source:"Kotlin Blog", stype:"official", date:"9 Jul", paywalled:false,
+        topics:["kotlin", "kotlinconf"],
+        summary:"JetBrains published the origin story of Kodee, Kotlin's mascot, covering the design process, community naming vote, and how the character has evolved across KotlinConf appearances. A community and branding deep dive.",
+        snap:null,
+        rollup:null
+      },
+      { id:"9e25936987bad6ea", col:"c4",
+        title:"2.3.0-alpha.1",
+        url:"https://github.com/arrow-kt/arrow/releases/tag/2.3.0-alpha.1", source:"Lib Arrow", stype:"changelog", date:"9 Jul", paywalled:false,
+        topics:["kotlin"],
+        summary:"Arrow 2.3.0-alpha.1 release adding improvements to the Raise DSL for typed error handling, new Either combinators, and updated coroutines integration. Preview of features heading toward the 2.3 stable release.",
+        snap:{ label:"RAISE KTOR QUERY", code:"<span class=\"k-c1\">// Arrow 2.3.0-alpha: QUERY verb in arrow-raise-ktor</span>\n<span class=\"k-n\">routing</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-n\">query</span><span class=\"k-o\">&lt;</span><span class=\"k-n\">UserRequest</span><span class=\"k-p\">,</span><span class=\"k-w\"> </span><span class=\"k-n\">UserResponse</span><span class=\"k-o\">&gt;</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">        </span><span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">user</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-n\">raise</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">fetchUser</span><span class=\"k-p\">(</span><span class=\"k-nb\">it</span><span class=\"k-p\">.</span><span class=\"k-na\">id</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-w\">        </span><span class=\"k-n\">respond</span><span class=\"k-p\">(</span><span class=\"k-n\">user</span><span class=\"k-p\">)</span>\n<span class=\"k-w\">    </span><span class=\"k-p\">}</span>\n<span class=\"k-p\">}</span>" },
+        rollup:null
+      }
+    ]
+  },
+  {
+    id:"community", title:"Community",
+    topics:["community"], score:972, spark:"\u2585\u2587\u2588\u2588\u2587\u2587\u2586",
+    articles:[
+      { id:"c7ac64805cc318d6", col:"c12",
+        title:"Java Annotated Monthly \u2013 July 2026",
+        url:"https://blog.jetbrains.com/idea/2026/07/java-annotated-monthly-july-2026/", source:"Jetbrains Blog", stype:"official", date:"7 Jul", paywalled:false,
+        topics:["jetbrains", "kotlin"],
+        summary:"The July 2026 Java Annotated Monthly from JetBrains covers Kotlin interop improvements, virtual thread updates in the JVM, and tooling advances in IntelliJ IDEA. It includes curated links across language, framework, and community topics.",
+        snap:null,
+        rollup:null
+      },
+      { id:"b313f24a8bde7769", col:"c8",
+        title:"JetBrains Academy \u2013 June Digest",
+        url:"https://blog.jetbrains.com/education/2026/07/09/jetbrains-academy-june-2026-2/", source:"Jetbrains Blog", stype:"official", date:"9 Jul", paywalled:false,
+        topics:["jetbrains", "kotlin"],
+        summary:"JetBrains Academy's June 2026 digest covering new Kotlin and Android learning tracks added to the platform, updated course content for Kotlin 2.x, and learner statistics.",
+        snap:null,
+        rollup:null
+      },
+      { id:"fa36fb331e7b7e93", col:"c8",
+        title:"LSP vs the full JetBrains IDE stack: what an AI agent misses without the IDE platform",
+        url:"https://medium.com/@explyt.ai/lsp-vs-the-full-jetbrains-ide-stack-what-an-ai-agent-misses-without-the-ide-platform-273a2fd1874c?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["jetbrains", "kotlin"],
+        summary:"Compares what an AI agent can access through LSP versus the full JetBrains IDE platform, highlighting capabilities like type inference across modules, refactoring context, and Kotlin-specific semantic information that LSP alone cannot provide.",
+        snap:null,
+        rollup:null
+      },
+      { id:"196355b460e89179", col:"c6",
+        title:"What\u2019s Next for TeamCity \u2013 CI/CD by JetBrains",
+        url:"https://blog.jetbrains.com/teamcity/2026/07/whats-next-for-teamcity/", source:"Jetbrains Blog", stype:"official", date:"7 Jul", paywalled:false,
+        topics:["jetbrains"],
+        summary:"JetBrains outlined its roadmap for TeamCity, focusing on AI-native CI/CD workflows where agents trigger builds, interpret failures, and propose fixes autonomously. The emphasis shifts from manual pipeline configuration toward AI-driven orchestration.",
+        snap:null,
+        rollup:null
+      },
+      { id:"93094ad57930cebe", col:"c6",
+        title:"JetBrains AI for Teams and Organizations: From Fragmented AI Usage to Coordinated Software Development",
+        url:"https://blog.jetbrains.com/blog/2026/07/07/jetbrains-ai-for-teams-and-organizations-from-fragmented-ai-usage-to-coordinated-software-development/", source:"Jetbrains Blog", stype:"official", date:"7 Jul", paywalled:false,
+        topics:["jetbrains"],
+        summary:"JetBrains is rolling out organization-level AI features including shared context, reusable agentic workflows, and cost governance across teams. The goal is to move from ad-hoc individual AI usage toward coordinated AI-assisted software production at scale.",
+        snap:null,
+        rollup:null
+      },
+      { id:"414a52d18c073ce0", col:"c6",
+        title:"AI Onboarding for Android Projects: Teaching Your Coding Agent the Architecture with AGENTS.md",
+        url:"https://medium.com/@gokbelmetehan/ai-onboarding-for-android-projects-teaching-your-coding-agent-the-architecture-with-agents-md-32fdc3ad8da4?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["android-developers", "architecture"],
+        summary:"Guide to writing AGENTS.md files for Android projects to give AI coding agents architectural context, coding conventions, and module boundaries. Covers what information actually improves agent output versus what adds noise.",
+        snap:null,
+        rollup:null
+      },
+      { id:"d4d4bdcb81e3ab7f", col:"c4",
+        title:"Evolving how LLMs are measured for Android: the next era of Android Bench",
+        url:"https://android-developers.googleblog.com/2026/07/android-bench-llm-measurement.html", source:"Android Developers Blog", stype:"official", date:"8 Jul", paywalled:false,
+        topics:["android-developers"],
+        summary:"Android Bench is expanding beyond single-model evaluations to multi-agent and agentic task benchmarks, measuring how well LLMs handle real Android development workflows like building features end-to-end. The new era focuses on practical developer-task completion rather than isolated code generation.",
+        snap:null,
+        rollup:null
+      },
+      { id:"a7051db035740859", col:"c4",
+        title:"Google Play launches the first Indie Games Fund in Africa",
+        url:"https://android-developers.googleblog.com/2026/07/Indie-Games-Fund-Africa.html", source:"Android Developers Blog", stype:"official", date:"6 Jul", paywalled:false,
+        topics:["android-developers"],
+        summary:"Google Play launched its first Indie Games Fund targeting Sub-Saharan Africa, offering funding and support to local game developers to reach global audiences. The fund is part of Play's broader initiative to grow the developer ecosystem in emerging markets.",
+        snap:null,
+        rollup:null
+      },
+      { id:"d0f085a549d408c7", col:"c4",
+        title:"The Android Interview Is No Longer About Android",
+        url:"https://medium.com/@mike.salari.dev/the-android-interview-is-no-longer-about-android-5714c003a062?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["android-developers"],
+        summary:"Argues that modern Android interviews have shifted toward system design, architecture decisions, and AI-assisted coding rather than Android API trivia. Reflects the industry shift as Kotlin and Compose have stabilized.",
+        snap:null,
+        rollup:null
+      },
+      { id:"6ac213246922e436", col:"c4",
+        title:"The Complete Guide to Android Bench: How to Choose the Right AI Coding Assistant for Android\u2026",
+        url:"https://proandroiddev.com/the-complete-guide-to-android-bench-how-to-choose-the-right-ai-coding-assistant-for-android-e071eb92882a?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["android-developers"],
+        summary:"Comparison guide for AI coding assistants evaluated specifically on Android development tasks using the Android Bench benchmark. Reviews how different models handle Compose, Gradle, and Jetpack-specific code.",
+        snap:null,
+        rollup:null
+      },
+      { id:"b10c1b703f7bf429", col:"c4",
+        title:"Automating Play Store Uploads with Fastlane Supply and Coding Agents",
+        url:"https://medium.com/@novaross/automating-play-store-uploads-with-fastlane-supply-and-coding-agents-a60466889595?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["android-developers"],
+        summary:"Walkthrough of automating Play Store uploads using Fastlane Supply combined with an AI coding agent for lane configuration and changelog generation. Shows how to set up the Fastfile and integrate with CI.",
+        snap:null,
+        rollup:null
+      }
+    ]
+  },
+  {
+    id:"platform", title:"Android Platform",
+    topics:["platform"], score:504, spark:"\u2583\u2586\u2588\u2588\u2587\u2587\u2586",
+    articles:[
+      { id:"62faf03bb27343f4", col:"c12",
+        title:"Talking to Your TV \u2014 Part 3: Now Make It Do Things",
+        url:"https://medium.com/@gtxtreme/talking-to-your-tv-part-3-now-make-it-do-things-5a92049481c7?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"10 Jul", paywalled:false,
+        topics:["android-api", "compose"],
+        summary:"Part 3 of a series on building a voice-controlled Android TV app, adding action execution so the voice agent can navigate the UI, trigger playback, and update preferences. Integrates speech recognition with Compose TV navigation.",
+        snap:null,
+        rollup:null
+      },
+      { id:"7b35dfbd55e4c9f0", col:"c8",
+        title:"Reducing Android JVM allocations for less memory pressure and faster logs",
+        url:"https://proandroiddev.com/reducing-android-jvm-allocations-for-less-memory-pressure-and-faster-logs-9bd988d905de?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["android-api", "kotlin"],
+        summary:"Deep dive into reducing JVM object allocations on Android to lower GC pressure and improve logging throughput. Covers profiling with allocation tracking, avoiding boxing in hot paths, and using object pools in Kotlin.",
+        snap:null,
+        rollup:null
+      },
+      { id:"9af187b5f4452780", col:"c8",
+        title:"BroadcastReceiver Security: 7 Mistakes Every Android Developer Should Avoid",
+        url:"https://proandroiddev.com/broadcastreceiver-security-7-mistakes-every-android-developer-should-avoid-7eeb8439b986?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"6 Jul", paywalled:true,
+        topics:["android-api", "jetpack"],
+        summary:"Documents seven BroadcastReceiver security mistakes including exported receivers without permissions, implicit intents from untrusted apps, and missing signature-level protection. Each mistake includes a vulnerable example and a secure alternative.",
+        snap:null,
+        rollup:null
+      },
+      { id:"1868596beb976e22", col:"c6",
+        title:"8 July 2026 Artifact Wave",
+        url:"https://commonsware.com/blog/2026/07/08/jetpack-artifact-wave.html", source:"Commonsware", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["android-api", "jetpack"],
+        summary:"CommonsWare's weekly artifact roundup for July 8, 2026 covering new AndroidX library releases, Kotlin updates, and third-party library changes relevant to Android developers.",
+        snap:null,
+        rollup:null
+      },
+      { id:"23261d1d3dc24681", col:"c6",
+        title:"Part 2: The Four Pillars of Android \u2014 Activities, Services, BroadcastReceivers & ContentProviders",
+        url:"https://medium.com/@mahalakshmi02cse/part-2-the-four-pillars-of-android-activities-services-broadcastreceivers-contentproviders-09d7e6949100?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["android-api", "jetpack"],
+        summary:"Explains Android's four core application components \u2014 Activities, Services, BroadcastReceivers, and ContentProviders \u2014 with lifecycle diagrams and practical examples of when to use each.",
+        snap:null,
+        rollup:null
+      },
+      { id:"4e3268874e93b0fa", col:"c6",
+        title:"July 07, 2026",
+        url:"https://developer.android.com/jetpack/androidx/versions/all-channel#july_07_2026", source:"Lib Androidx", stype:"changelog", date:"7 Jul", paywalled:false,
+        topics:["jetpack", "android-api"],
+        summary:"AndroidX release wave for July 7, 2026 including updates to Compose, Navigation, Room, and WorkManager libraries. Covers new stable and alpha releases across the Jetpack ecosystem.",
+        snap:null,
+        rollup:null
+      },
+      { id:"2abaac1180b1df94", col:"c4",
+        title:"Building a Scalable Analytics Pipeline on Android: Understanding the Architecture, Common Pitfalls\u2026",
+        url:"https://techdynasty.medium.com/building-a-scalable-analytics-pipeline-on-android-understanding-the-architecture-common-pitfalls-c604cacc26fb?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["android-api", "architecture", "workmanager", "room"],
+        summary:"Walks through building a scalable analytics event pipeline on Android, covering batching strategies, retry logic with WorkManager, offline-first event storage with Room, and schema evolution. Focuses on keeping the pipeline resilient under poor network conditions.",
+        snap:null,
+        rollup:null
+      },
+      { id:"66a516770ccc0f9b", col:"c4",
+        title:"On-Device AI Series (Part 2): Firebase AI Logic",
+        url:"https://proandroiddev.com/on-device-ai-series-part-2-firebase-ai-logic-42fc49766105?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["android-api"],
+        summary:"Part 2 of an on-device AI series focusing on Firebase AI Logic for running ML models locally on Android. Covers model quantization, Firebase ML hosting vs bundling, and integrating inference results into Compose UI.",
+        snap:null,
+        rollup:null
+      },
+      { id:"a1f001c02053cbc4", col:"c4",
+        title:"How I Found a Deadlock Inside ART That ART Itself Couldn\u2019t Dump",
+        url:"https://proandroiddev.com/how-i-found-a-deadlock-inside-art-that-art-itself-couldnt-dump-ff7b33b0334a?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"6 Jul", paywalled:false,
+        topics:["android-api"],
+        summary:"A developer traced a production deadlock to a race condition inside Android Runtime itself, unreachable by standard crash reporting because ART couldn't dump the thread state. The investigation used JDWP, custom signal handlers, and native tracing to confirm the root cause.",
+        snap:null,
+        rollup:null
+      },
+      { id:"0c5f458d8b6d93ef", col:"c4",
+        title:"The Android Crash That Only Happened on Certain Phones",
+        url:"https://proandroiddev.com/the-android-crash-that-only-happened-on-certain-phones-16ce2effe84e?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"6 Jul", paywalled:false,
+        topics:["android-api"],
+        summary:"Investigation of a crash that only reproduced on specific Android device models due to differences in manufacturer-customized ROM behavior and non-standard OEM sensor drivers. Covers the debugging process using Firebase Crashlytics, device farms, and targeted ANR analysis.",
+        snap:null,
+        rollup:null
+      },
+      { id:"8ec74f25d82aa5bc", col:"c4",
+        title:"7/28: Your Main Thread Is Literally a While-Loop",
+        url:"https://medium.com/@promode7/7-28-your-main-thread-is-literally-a-while-loop-d6da877648de?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["android-api"],
+        summary:"Explains how Android's main thread is implemented as an event loop using Looper and MessageQueue under the hood. Useful mental model for understanding ANRs, Handler timing, and why blocking the main thread causes visible stutters.",
+        snap:null,
+        rollup:null
+      },
+      { id:"1197c59b8a163265", col:"c4",
+        title:"Android\u2019de Performans Optimizasyonu: AOSP Mimarisinden Baseline Profiles\u2019a Yolculuk",
+        url:"https://medium.com/@civelekemirhann/androidde-performans-optimizasyonu-aosp-mimarisinden-baseline-profiles-a-yolculuk-3b02671ab597?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["android-api", "r8-proguard"],
+        summary:"Turkish-language article covering Android performance optimization techniques including Baseline Profiles, R8 shrinking, and rendering pipeline analysis. Limited to Turkish-speaking developers.",
+        snap:null,
+        rollup:null
+      },
+      { id:"e891986667b0cd12", col:"c4",
+        title:"# How I Found CVE-2026\u20130098: Android App Version Spoofing & Silent Installation",
+        url:"https://medium.com/@sived.codes/how-i-found-cve-2026-0098-android-app-version-spoofing-silent-installation-f8ff0742bad7?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["android-api"],
+        summary:"Write-up of CVE-2026-0098, an Android vulnerability allowing app version spoofing and silent installation via crafted package intents. Demonstrates the discovery process and responsible disclosure timeline.",
+        snap:null,
+        rollup:null
+      },
+      { id:"ca5820f07dd8f029", col:"c4",
+        title:"The Engineering Deep Dive Nobody Wrote About Android Picture-in-Picture",
+        url:"https://medium.com/@shubham536/the-engineering-deep-dive-nobody-wrote-about-android-picture-in-picture-3327a32a3c26?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["android-api"],
+        summary:"Engineering deep dive into Android Picture-in-Picture, covering how the system manages window resize animations, task stack behavior, and the PiP params API. Explains why PiP transitions can be janky and how to smooth them.",
+        snap:null,
+        rollup:null
+      },
+      { id:"641b208927df7e95", col:"c4",
+        title:"Understanding Android HAL (Hardware Abstraction Layer): A Hands-On Deep Dive from Linux Kernel\u2026",
+        url:"https://medium.com/@alwinaji717/understanding-android-hal-hardware-abstraction-layer-a-hands-on-deep-dive-from-linux-kernel-db2d1234c238?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["android-api"],
+        summary:"Hands-on deep dive into the Android Hardware Abstraction Layer (HAL), tracing how hardware interactions travel from the Linux kernel through HIDL/AIDL interfaces to the Android framework. Relevant for developers building custom device integrations or working with embedded Android.",
+        snap:null,
+        rollup:null
+      },
+      { id:"7e9f91e767ec3235", col:"c4",
+        title:"Demystifying RecyclerView Architecture: Layout, Drawing, and the View Lifecycle",
+        url:"https://medium.com/@sivavishnu0705/demystifying-recyclerview-architecture-layout-drawing-and-the-view-lifecycle-2115e83d8b88?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:true,
+        topics:["android-api"],
+        summary:"Deep dive into RecyclerView's architecture covering the LayoutManager draw cycle, view recycling lifecycle, and how the ViewHolder pattern interacts with the drawing pipeline. Useful for debugging custom LayoutManagers.",
+        snap:null,
+        rollup:null
+      },
+      { id:"6faa2d5439dc8415", col:"c4",
+        title:"AI Is Moving From the Cloud Into Your Pocket: The On-Device LLM Era on iOS and Android",
+        url:"https://medium.com/@gkhanbozkurt_86823/ai-is-moving-from-the-cloud-into-your-pocket-the-on-device-llm-era-on-ios-and-android-143b7f7b6ad4?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["android-api"],
+        summary:"Overview of the shift toward on-device LLM inference on Android and iOS, covering LiteRT, Core ML, and the developer APIs available for running quantized models locally without a network connection.",
+        snap:null,
+        rollup:null
+      },
+      { id:"c619472eab1e1994", col:"c4",
+        title:"How to Optimize Android App Performance on a Desktop Environment",
+        url:"https://medium.com/@harrywince.gbob/how-to-optimize-android-app-performance-on-a-desktop-environment-0d5ba626bdc3?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"10 Jul", paywalled:false,
+        topics:["android-api"],
+        summary:"Covers techniques for profiling and optimizing Android app performance when running on Android Desktop environments, including identifying desktop-specific rendering issues and memory pressure differences.",
+        snap:null,
+        rollup:null
+      },
+      { id:"7c7b0814e7e4c7d9", col:"c4",
+        title:"Android Wants 16KB Page Size Now And Your Flutter App Is Probably Not Ready",
+        url:"https://medium.com/@shivanibagal88/android-wants-16kb-page-size-now-and-your-flutter-app-is-probably-not-ready-52bf1a2472db?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"10 Jul", paywalled:false,
+        topics:["android-api"],
+        summary:"Android is requiring 16KB memory page alignment for apps targeting Android 15 and above, and Flutter apps are not automatically compliant. Covers how to check alignment, what breaks, and the build changes needed to produce 16KB-aligned native libraries.",
+        snap:null,
+        rollup:null
+      }
+    ]
+  },
+  {
+    id:"multiplatform", title:"KMP",
+    topics:["multiplatform"], score:269, spark:"\u2586\u2587\u2588\u2588\u2587\u2587\u2587",
+    articles:[
+      { id:"0703bd9bd6401a4e", col:"c12",
+        title:"Hand-wired DI in Kotlin Multiplatform: a composition root instead of a framework",
+        url:"https://proandroiddev.com/hand-wired-di-in-kotlin-multiplatform-a-composition-root-instead-of-a-framework-ed995fb21b19?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["kmp", "architecture"],
+        summary:"A walkthrough of implementing dependency injection in Kotlin Multiplatform using a composition root instead of a framework like Koin or Hilt. The approach gives full control over object graph construction and avoids reflection-based DI on platforms where it is limited.",
+        snap:{ label:"COMPOSITION ROOT", code:"<span class=\"k-c1\">// no annotations, no framework \u2014 plain Kotlin</span>\n<span class=\"k-kd\">class</span><span class=\"k-w\"> </span><span class=\"k-nc\">AppContainer</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">httpClient</span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-n\">HttpClient</span><span class=\"k-w\"> </span><span class=\"k-k\">by</span><span class=\"k-w\"> </span><span class=\"k-n\">lazy</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">HttpClient</span><span class=\"k-p\">()</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-w\">    </span><span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">repository</span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-n\">UserRepository</span><span class=\"k-w\"> </span><span class=\"k-k\">by</span><span class=\"k-w\"> </span><span class=\"k-n\">lazy</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">        </span><span class=\"k-n\">UserRepository</span><span class=\"k-p\">(</span><span class=\"k-n\">httpClient</span><span class=\"k-p\">)</span>\n<span class=\"k-w\">    </span><span class=\"k-p\">}</span>\n<span class=\"k-w\">    </span><span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">analytics</span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-n\">Analytics</span><span class=\"k-w\"> </span><span class=\"k-k\">by</span><span class=\"k-w\"> </span><span class=\"k-n\">lazy</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">Analytics</span><span class=\"k-p\">()</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-p\">}</span>\n\n<span class=\"k-c1\">// wired once at the entry point</span>\n<span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">container</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-n\">AppContainer</span><span class=\"k-p\">()</span>" },
+        rollup:null
+      },
+      { id:"44931c4a92b9f082", col:"c8",
+        title:"Another Way to KMP: Shared Renderers",
+        url:"https://proandroiddev.com/another-way-to-kmp-shared-renderers-0d1b66a733d7?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["kmp", "architecture"],
+        summary:"Explores a KMP architecture pattern where a shared renderer layer abstracts platform UI, allowing a single rendering pipeline across Android and iOS without requiring Compose Multiplatform. Useful for teams with existing platform-native UI but wanting shared business logic and render logic.",
+        snap:null,
+        rollup:null
+      },
+      { id:"52e1833d9734c6d3", col:"c8",
+        title:"Kotlin Multiplatform vs Native Android: Which One Should You Bet Your App On in 2026?",
+        url:"https://medium.com/@sixtinbydizora/kotlin-multiplatform-vs-native-android-which-one-should-you-bet-your-app-on-in-2026-b5356503553a?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:true,
+        topics:["kmp", "android-api"],
+        summary:"Comparison of Kotlin Multiplatform and native Android development for new projects in 2026, weighing shared code benefits against KMP's maturity for UI, navigation, and Jetpack replacements. Concludes KMP is viable for greenfield apps with experienced teams.",
+        snap:null,
+        rollup:null
+      },
+      { id:"5b79e255cf6737bf", col:"c6",
+        title:"Kotlin Multiplatform across two repos: what Xcode actually sees",
+        url:"https://proandroiddev.com/kotlin-multiplatform-across-two-repos-what-xcode-actually-sees-7b1d251c9f2b?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"8 Jul", paywalled:false,
+        topics:["kmp", "ios-interop"],
+        summary:"Explains what Xcode actually sees when consuming KMP code from a separate repo via a Swift package, including how framework headers are generated and what Kotlin symbols are visible to Swift. Covers gotchas around visibility, generics erasure, and namespace collisions.",
+        snap:null,
+        rollup:null
+      }
+    ]
+  },
+  {
+    id:"backend", title:"Backend / Server",
+    topics:["backend"], score:216, spark:"\u2584\u2586\u2588\u2588\u2588\u2587\u2587",
+    articles:[
+      { id:"e6e0a8bbe64de913", col:"c12",
+        title:"How Swiggy Migrated from protobuf-java to Square Wire",
+        url:"https://medium.com/swiggy-bytes/how-swiggy-migrated-from-protobuf-java-to-square-wire-e97d435c86d3?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"10 Jul", paywalled:false,
+        topics:["kotlin-backend", "kotlin"],
+        summary:"Swiggy's engineering team migrated from protobuf-java to Square Wire for Protocol Buffers, gaining Kotlin-idiomatic generated code, smaller binary size, and better nullability handling. The post covers the migration strategy and compatibility shims used to avoid a big-bang rewrite.",
+        snap:{ label:"WIRE MIGRATION", code:"<span class=\"k-c1\">// protobuf-java (Java Builder)</span>\n<span class=\"k-n\">CartItem</span><span class=\"k-p\">.</span><span class=\"k-na\">newBuilder</span><span class=\"k-p\">()</span>\n<span class=\"k-w\">    </span><span class=\"k-p\">.</span><span class=\"k-na\">setItemId</span><span class=\"k-p\">(</span><span class=\"k-s\">&quot;abc&quot;</span><span class=\"k-p\">).</span><span class=\"k-na\">setName</span><span class=\"k-p\">(</span><span class=\"k-s\">&quot;Burger&quot;</span><span class=\"k-p\">).</span><span class=\"k-na\">setQuantity</span><span class=\"k-p\">(</span><span class=\"k-m\">2</span><span class=\"k-p\">)</span>\n<span class=\"k-w\">    </span><span class=\"k-p\">.</span><span class=\"k-na\">build</span><span class=\"k-p\">()</span>\n\n<span class=\"k-c1\">// Square Wire (Kotlin data class)</span>\n<span class=\"k-n\">CartItem</span><span class=\"k-p\">(</span><span class=\"k-n\">item_id</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-s\">&quot;abc&quot;</span><span class=\"k-p\">,</span><span class=\"k-w\"> </span><span class=\"k-n\">name</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-s\">&quot;Burger&quot;</span><span class=\"k-p\">,</span><span class=\"k-w\"> </span><span class=\"k-n\">quantity</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-m\">2</span><span class=\"k-p\">)</span>" },
+        rollup:null
+      },
+      { id:"fceb2d915391891d", col:"c8",
+        title:"Lessons from building a Modular Monolith in Spring Boot 3",
+        url:"https://vyvyd.medium.com/lessons-from-building-a-modular-monolith-in-spring-boot-3-34607fb0cf87?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"10 Jul", paywalled:false,
+        topics:["kotlin-backend", "spring-kotlin", "architecture"],
+        summary:"Lessons learned building a Modular Monolith in Spring Boot 3 with Kotlin, covering module boundary enforcement, shared kernel patterns, and how to avoid the coupling pitfalls that make modular monoliths fail.",
+        snap:null,
+        rollup:null
+      },
+      { id:"7c88298a5ba999f9", col:"c8",
+        title:"Build AI Vector Search Apps in Kotlin with Micronaut, Exposed, Oracle JDBC/UCP, and the Oracle AI\u2026",
+        url:"https://juarezjunior.medium.com/build-ai-vector-search-apps-in-kotlin-with-micronaut-exposed-oracle-jdbc-ucp-and-the-oracle-ai-8e14c59cd877?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["kotlin-backend", "exposed"],
+        summary:"Tutorial on building AI vector search applications in Kotlin using Micronaut, the Exposed SQL framework, and Oracle JDBC with vector column support. Shows how to store and query embeddings from within a Kotlin backend service.",
+        snap:null,
+        rollup:null
+      }
+    ]
+  },
+  {
+    id:"architecture", title:"Architecture",
+    topics:["architecture"], score:43, spark:"\u2584\u2586\u2588\u2588\u2588\u2587\u2587",
+    articles:[
+      { id:"9b0a1fbc26e08fc9", col:"c12",
+        title:"Android System Design: Identifying Major Components Before Writing Any Code",
+        url:"https://medium.com/@nematengg/android-system-design-identifying-major-components-before-writing-any-code-de89b8d65c0c?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"9 Jul", paywalled:false,
+        topics:["architecture", "android-api"],
+        summary:"A system design walkthrough for Android apps, identifying major architectural components before writing any code. Covers when to use services vs WorkManager, how to define module boundaries, and structuring data flow across layers.",
+        snap:null,
+        rollup:null
+      },
+      { id:"df5db7b0a7c10d08", col:"c8",
+        title:"[Android] View and ViewModel",
+        url:"https://medium.com/@sunwonsw9561/android-view-and-viewmodel-e8caaa8c3332?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"10 Jul", paywalled:true,
+        topics:["viewmodel", "android-api"],
+        summary:"Introductory article explaining the relationship between Android Views and ViewModels, covering how ViewModel survives configuration changes and how to observe LiveData or StateFlow from a Fragment or Activity.",
+        snap:null,
+        rollup:null
+      }
+    ]
+  },
+  {
+    id:"build", title:"Build & Tooling",
+    topics:["build"], score:33, spark:"\u2585\u2586\u2587\u2588\u2588\u2587\u2587",
+    articles:[
+      { id:"9dbc51ac8d4c6de6", col:"c12",
+        title:"Scaling Android CI: From 44 \u2192 10 minutes \u2014 A Deep Dive into Build Time Optimization and Best\u2026",
+        url:"https://medium.com/swiggy-bytes/scaling-android-ci-from-44-10-minutes-a-deep-dive-into-build-time-optimization-and-best-ff93aec82f05?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"10 Jul", paywalled:false,
+        topics:["gradle", "build-logic"],
+        summary:"How a team cut Android CI build times from 44 to 10 minutes using Gradle build caching, remote cache configuration, module parallelization, and targeted test selection. Includes configuration snippets for each optimization.",
+        snap:{ label:"GRADLE CI TUNING", code:"<span class=\"k-c1\">// gradle.properties \u2014 CI tuning</span>\n<span class=\"k-n\">org</span><span class=\"k-p\">.</span><span class=\"k-na\">gradle</span><span class=\"k-p\">.</span><span class=\"k-na\">jvmargs</span><span class=\"k-o\">=-</span><span class=\"k-n\">Xmx4g</span><span class=\"k-w\"> </span><span class=\"k-o\">-</span><span class=\"k-n\">XX</span><span class=\"k-p\">:</span><span class=\"k-n\">MaxMetaspaceSize</span><span class=\"k-o\">=</span><span class=\"k-m\">512</span><span class=\"k-n\">m</span>\n<span class=\"k-n\">org</span><span class=\"k-p\">.</span><span class=\"k-na\">gradle</span><span class=\"k-p\">.</span><span class=\"k-na\">parallel</span><span class=\"k-o\">=</span><span class=\"k-kc\">true</span>\n<span class=\"k-n\">org</span><span class=\"k-p\">.</span><span class=\"k-na\">gradle</span><span class=\"k-p\">.</span><span class=\"k-na\">caching</span><span class=\"k-o\">=</span><span class=\"k-kc\">true</span>\n<span class=\"k-n\">android</span><span class=\"k-p\">.</span><span class=\"k-na\">enableBuildConfigAsBytecode</span><span class=\"k-o\">=</span><span class=\"k-kc\">true</span>\n\n<span class=\"k-c1\">// build.gradle.kts \u2014 only required variants</span>\n<span class=\"k-n\">androidComponents</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-n\">beforeVariants</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-k\">if</span><span class=\"k-w\"> </span><span class=\"k-p\">(</span><span class=\"k-nb\">it</span><span class=\"k-p\">.</span><span class=\"k-na\">name</span><span class=\"k-w\"> </span><span class=\"k-o\">!=</span><span class=\"k-w\"> </span><span class=\"k-s\">&quot;release&quot;</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-nb\">it</span><span class=\"k-p\">.</span><span class=\"k-na\">enable</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-kc\">false</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-p\">}</span>" },
+        rollup:null
+      },
+      { id:"49675c117f7b600c", col:"c8",
+        title:"2.3.10",
+        url:"https://github.com/google/ksp/releases/tag/2.3.10", source:"Lib Ksp", stype:"changelog", date:"9 Jul", paywalled:false,
+        topics:["ksp"],
+        summary:"KSP 2.3.10 release with Kotlin 2.3 compatibility updates and bug fixes for incremental processing. Drop-in update for projects already on KSP 2.x.",
+        snap:null,
+        rollup:null
+      }
+    ]
+  },
+  {
+    id:"di", title:"Dependency Injection",
+    topics:["di"], score:22, spark:"\u2584\u2585\u2587\u2588\u2588\u2588\u2587",
+    articles:[
+      { id:"d5d1c0a1f0b0f6e7", col:"c12",
+        title:"Hilt Dependency Injection in Android: A Complete Guide With Real Code",
+        url:"https://medium.com/@apoorvrathore699/hilt-dependency-injection-in-android-a-complete-guide-with-real-code-7d1d8587f38b?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"10 Jul", paywalled:false,
+        topics:["hilt", "android-api"],
+        summary:"Complete guide to Hilt dependency injection covering component hierarchy, scope annotations, ViewModel injection, and testing with HiltAndroidRule. Includes real-world patterns for multi-module projects.",
+        snap:{ label:"HILT VIEWMODEL", code:"<span class=\"k-c1\">// tightly coupled \u2014 hard to test</span>\n<span class=\"k-kd\">class</span><span class=\"k-w\"> </span><span class=\"k-nc\">UserRepository</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span>\n<span class=\"k-w\">    </span><span class=\"k-kd\">private</span><span class=\"k-w\"> </span><span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">apiService</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-n\">ApiService</span><span class=\"k-p\">()</span>\n<span class=\"k-p\">}</span>\n\n<span class=\"k-c1\">// with Hilt</span>\n<span class=\"k-nd\">@HiltViewModel</span>\n<span class=\"k-kd\">class</span><span class=\"k-w\"> </span><span class=\"k-nc\">UserViewModel</span><span class=\"k-w\"> </span><span class=\"k-nd\">@Inject</span><span class=\"k-w\"> </span><span class=\"k-k\">constructor</span><span class=\"k-p\">(</span>\n<span class=\"k-w\">    </span><span class=\"k-kd\">private</span><span class=\"k-w\"> </span><span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">repository</span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-n\">UserRepository</span>\n<span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">:</span><span class=\"k-w\"> </span><span class=\"k-n\">ViewModel</span><span class=\"k-p\">()</span>" },
+        rollup:null
+      },
+      { id:"19dfec4be63692b2", col:"c8",
+        title:"Dagger 2.60.1",
+        url:"https://github.com/google/dagger/releases/tag/dagger-2.60.1", source:"Lib Hilt Dagger", stype:"changelog", date:"6 Jul", paywalled:false,
+        topics:["hilt"],
+        summary:"Dagger 2.60.1 release with bug fixes for component factory generation and improved error messages for missing bindings. Incremental maintenance release with no new API surface.",
+        snap:null,
+        rollup:null
+      }
+    ]
+  }
+];
+
+
+let state = {
+  mode: 'focus',
+  selected: new Set(),
+  kwInclude: '',
+  kwExclude: '',
+  panelOpen: false,
+};
+
+// ══ COOKIES ══════════════════════════════════════════════════════════════════
+
+function saveCookies() {
+  const d = { mode: state.mode, selected: [...state.selected], kwInclude: state.kwInclude, kwExclude: state.kwExclude };
+  document.cookie = `digest_prefs=${encodeURIComponent(JSON.stringify(d))};max-age=${60*60*24*90};path=/`;
+}
+
+function loadCookies() {
+  const m = document.cookie.match(/digest_prefs=([^;]+)/);
+  if (!m) return;
+  try {
+    const d = JSON.parse(decodeURIComponent(m[1]));
+    state.mode      = d.mode || 'focus';
+    state.selected  = new Set(d.selected || []);
+    state.kwInclude = d.kwInclude || '';
+    state.kwExclude = d.kwExclude || '';
+  } catch(e) {}
+}
+
+// ══ RENDER ═══════════════════════════════════════════════════════════════════
+
+function renderTicker() {
+  const doubled = [...TRENDING_DATA, ...TRENDING_DATA];
+  document.getElementById('ticker').innerHTML = doubled.map(t =>
+    `<span class="ticker-item">
+      <span class="t-spark">${t.spark}</span>
+      <span class="t-name">${t.name}</span>
+      <span class="t-score">${t.score}</span>
+    </span>`
+  ).join('');
+}
+
+function renderTopicChecks() {
+  document.getElementById('topicChecks').innerHTML = TOPICS.map(t =>
+    `<label class="topic-check-label">
+      <input type="checkbox" value="${t.id}" ${state.selected.has(t.id)?'checked':''}
+             onchange="toggleTopic('${t.id}',this.checked)">
+      ${t.label}
+    </label>`
+  ).join('');
+}
+
+function esc(s) {
+  return s; // already escaped in data
+}
+
+function renderSnapshot(snap) {
+  if (!snap) return '';
+  return `<div class="snapshot">
+    <div class="snap-label">▸ ${snap.label}</div>
+    <div class="snap-code">${snap.code}</div>
+  </div>`;
+}
+
+function renderRollup(rollup) {
+  if (!rollup) return '';
+  const builds = rollup.builds.map(b =>
+    `<li><a href="${b.url}" target="_blank" rel="noopener noreferrer">${b.title}</a><span class="rollup-date">${b.date}</span></li>`
+  ).join('');
+  return `<div class="rollup">
+    ${rollup.summary ? `<p class="rollup-summary">${rollup.summary}</p>` : ''}
+    <details class="rollup-builds">
+      <summary>▸ Also this week · ${rollup.builds.length} more build${rollup.builds.length===1?'':'s'}</summary>
+      <ul>${builds}</ul>
+    </details>
+  </div>`;
+}
+
+// Article card — identical markup/classes/ids to before, so filters + night mode work.
+function articleCard(a) {
+  return `<article class="article ${a.col}" id="art-${a.id}" data-topics="${a.topics.join(',')}">
+    <div class="art-meta">
+      <span class="source-tag ${a.stype}">${a.source}</span>
+      <span class="art-date">${a.date}</span>
+      ${a.paywalled ? '<span class="badge-paywall" title="Member-only story — requires a paid Medium account">🔒 Member-only</span>' : ''}
+    </div>
+    <h3 class="art-title"><a href="${a.url}" target="_blank" rel="noopener noreferrer" onclick="if(this.getAttribute('href')==='#')event.preventDefault()">${a.title}</a></h3>
+    <p class="art-summary">${a.summary}</p>
+    ${renderSnapshot(a.snap)}
+    ${renderRollup(a.rollup)}
+    <div class="art-tags">${a.topics.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+  </article>`;
+}
+
+// A comic interlude band. The image sits on a white panel (comics are drawn
+// black-on-white, so it stays readable in night mode too). alt = the artist's
+// hover-joke, shown as a caption since hover doesn't exist on touch.
+function comicBand(c) {
+  if (!c) return '';
+  const joke = c.alt ? `<p class="comic-alt">${c.alt}</p>` : '';
+  return `<section class="comic-interlude">
+    <div class="comic-kicker">Interlude</div>
+    <figure class="comic-figure">
+      <a href="${c.permalink}" target="_blank" rel="noopener noreferrer">
+        <img class="comic-img" src="${c.img}" alt="${c.title}" loading="lazy">
+      </a>
+      <figcaption class="comic-cap">
+        <span class="comic-title">${c.title}</span>
+        <a class="comic-credit" href="${c.permalink}" target="_blank" rel="noopener noreferrer">${c.source} · ${c.artist}</a>
+      </figcaption>
+      ${joke}
+    </figure>
+  </section>`;
+}
+
+// ══ PAGED READER ═════════════════════════════════════════════════════════════
+// The magazine is a set of fixed, screen-sized pages you flip through (never
+// scroll). Content is measured and packed onto pages at load and on
+// resize/filter, so page counts + the Contents page numbers fit the device.
+// 1 page/screen on narrow devices, a 2-page spread on wide ones.
+
+let pager = { pages: [], startPage: {}, perScreen: 1, screen: 0, screens: 1, pageW: 0 };
+const pad = x => String(x).padStart(2, '0');
+
+function filteredChapters() {
+  const kwIn = state.kwInclude ? state.kwInclude.split(/[\s,]+/).filter(Boolean) : [];
+  const kwEx = state.kwExclude ? state.kwExclude.split(/[\s,]+/).filter(Boolean) : [];
+  const hasTopics = state.selected.size > 0;
+  const pass = a => {
+    const text = (a.title + ' ' + a.summary).toLowerCase();
+    const matches = a.topics.some(t => state.selected.has(t));
+    let topicPass = true;
+    if (hasTopics) topicPass = state.mode === 'focus' ? matches : !matches;
+    const kwInPass = kwIn.length === 0 || kwIn.every(k => text.includes(k));
+    const kwExPass = kwEx.length === 0 || !kwEx.some(k => text.includes(k));
+    return topicPass && kwInPass && kwExPass;
+  };
+  return CHAPTERS.map(ch => Object.assign({}, ch, { articles: ch.articles.filter(pass) }))
+                 .filter(ch => ch.articles.length);
+}
+
+function elFromHTML(html) {
+  const t = document.createElement('template');
+  t.innerHTML = html.trim();
+  return t.content.firstElementChild;
+}
+
+function coverInner(chs) {
+  const feature = chs[0].articles[0];
+  const secondary = [];
+  for (let i = 1; i < chs.length && secondary.length < 4; i++)
+    if (chs[i].articles[0]) secondary.push([chs[i].articles[0], chs[i].id]);
+  return `<div class="mag-cover-inner">
+    <div class="cover-kicker">Cover Story · ${chs[0].title}</div>
+    <h3 class="art-title cover-h"><a href="${feature.url}" target="_blank" rel="noopener noreferrer">${feature.title}</a></h3>
+    <p class="art-summary cover-deck">${feature.summary}</p>
+    <div class="art-meta"><span class="source-tag ${feature.stype}">${feature.source}</span><span class="art-date">${feature.date}</span></div>
+    <div class="also"><span class="lbl">Also inside this issue</span>
+      ${secondary.map(([a, cid]) => `<a href="#" data-goto="${cid}"><span class="n" data-pgref="${cid}">··</span> ${a.title}</a>`).join('')}
+    </div></div>`;
+}
+
+function tocInner(chs) {
+  const trend = TRENDING_DATA.slice(0, 12).map(t =>
+    `<div class="row"><span>${t.name}</span><span class="sp">${t.spark}</span></div>`).join('');
+  const cat = chs.map(ch =>
+    `<div class="cat-row pr-jump" data-goto="${ch.id}"><span class="pg" data-pgref="${ch.id}">··</span><h3>${ch.title}</h3><p>${ch.articles.length} stories</p></div>`).join('');
+  return `<div class="pr-folio"><span class="side">Trending · Contents</span><span class="pg pr-pgnum"></span></div>
+    <div class="mag-trend">${trend}</div>
+    <div class="pr-cat">${cat}</div>`;
+}
+
+function chapterHeader(ch, i, cont) {
+  return `<div class="pr-folio"><span class="ch-num">§ ${pad(i + 1)}</span>` +
+    `<h2 class="ch-title">${ch.title}${cont ? ' <span class="cont">cont.</span>' : ''}</h2>` +
+    `<span class="pg pr-pgnum"></span></div>`;
+}
+
+// Measure content into fixed pages. Chapters open on a fresh page (no orphaned
+// headers) and flow onto continuation pages; each comic is its own page.
+// Overflow is detected by comparing scrollHeight to the padded clientHeight, so
+// no hard-coded padding math. Returns {pages:[{kind,html}], startPage:{id:pageNo}}.
+function buildPages(outerW, outerH) {
+  const chs = filteredChapters();
+  const pages = [], startPage = {};
+  if (!chs.length) return { pages, startPage };
+
+  pages.push({ kind: 'cover', html: coverInner(chs) });
+  const tocIdx = pages.length;
+  pages.push({ kind: 'toc', html: '' });   // placeholder; filled after start pages known
+
+  const meas = document.createElement('div');
+  meas.className = 'pr-page';
+  meas.style.cssText = `position:absolute;left:-99999px;top:0;width:${outerW}px;height:${outerH}px;visibility:hidden;`;
+  document.body.appendChild(meas);
+  const overflows = () => meas.scrollHeight > meas.clientHeight + 1;
+
+  let ci = 0, since = 0;
+  if (COMICS.length) pages.push({ kind: 'comic', html: comicBand(COMICS[ci++]) });
+
+  chs.forEach((ch, i) => {
+    let arts, rec;
+    const openPage = (cont) => {
+      meas.innerHTML = chapterHeader(ch, i, cont) + '<div class="mag-arts"></div>';
+      arts = meas.querySelector('.mag-arts');
+      rec = { kind: 'chapter', html: '' };
+      pages.push(rec);
+      if (!cont) startPage[ch.id] = pages.length;   // 1-based page number
+    };
+    openPage(false);
+    ch.articles.forEach(a => {
+      const card = elFromHTML(articleCard(a));
+      arts.appendChild(card);
+      if (overflows() && arts.children.length > 1) {
+        arts.removeChild(card);
+        rec.html = meas.innerHTML;
+        openPage(true);
+        arts.appendChild(card);   // a single over-tall card just gets its own page
+      }
+    });
+    rec.html = meas.innerHTML;
+
+    since += ch.articles.length;
+    if (since >= COMIC_EVERY && ci < COMICS.length) {
+      pages.push({ kind: 'comic', html: comicBand(COMICS[ci++]) });
+      since = 0;
+    }
+  });
+
+  meas.remove();
+  pages[tocIdx].html = tocInner(chs);
+  return { pages, startPage };
+}
+
+function perScreenFor(w) { return w >= 900 ? 2 : 1; }
+
+function setHostHeight() {
+  const host = document.getElementById('digest');
+  const top = host.getBoundingClientRect().top;
+  const footer = document.querySelector('footer');
+  const footerH = footer ? footer.offsetHeight : 0;
+  host.style.height = Math.max(340, Math.floor(window.innerHeight - top - footerH - 8)) + 'px';
+}
+
+function renderPager() {
+  const host = document.getElementById('digest');
+  const per = perScreenFor(window.innerWidth);
+  const outerW = Math.floor(host.getBoundingClientRect().width / per);
+  const outerH = host.getBoundingClientRect().height;
+
+  const built = buildPages(outerW, outerH);
+  pager.pages = built.pages;
+  pager.startPage = built.startPage;
+  pager.perScreen = per;
+  pager.pageW = outerW;
+
+  ensureNav();
+  if (!pager.pages.length) {
+    host.innerHTML = '';
+    document.getElementById('noResults').style.display = 'block';
+    pager.screens = 1; pager.screen = 0; updateNav();
+    return;
+  }
+  document.getElementById('noResults').style.display = 'none';
+
+  host.innerHTML = '';
+  const nScreens = Math.ceil(pager.pages.length / per);
+  const allPages = [];
+  for (let s = 0; s < nScreens; s++) {
+    const screen = document.createElement('div');
+    screen.className = 'pr-screen';
+    for (let k = 0; k < per; k++) {
+      const idx = s * per + k;
+      if (idx >= pager.pages.length) break;
+      const p = pager.pages[idx];
+      const page = document.createElement('div');
+      page.className = 'pr-page pr-' + p.kind;
+      page.style.width = outerW + 'px';
+      const fit = document.createElement('div');
+      fit.className = 'pr-fit';
+      fit.innerHTML = p.html;
+      const num = fit.querySelector('.pr-pgnum');
+      if (num) num.textContent = pad(idx + 1);
+      page.appendChild(fit);
+      screen.appendChild(page);
+      allPages.push(page);
+    }
+    host.appendChild(screen);
+  }
+
+  // fill cover/contents page-number references from chapter start pages
+  host.querySelectorAll('[data-pgref]').forEach(sp => {
+    const p = pager.startPage[sp.getAttribute('data-pgref')];
+    if (p) sp.textContent = pad(p);
+  });
+
+  // Contents + cover entries flip to their chapter's page (turn to page N).
+  host.querySelectorAll('[data-goto]').forEach(elm => {
+    elm.addEventListener('click', e => {
+      e.preventDefault();
+      const p = pager.startPage[elm.getAttribute('data-goto')];
+      if (p) goToPage(p);
+    });
+  });
+
+  // Fit-to-page: any page whose content still exceeds the fixed height (short
+  // screens, the cover/contents, or an unusually tall single card) is zoomed
+  // down so it fits — the magazine never scrolls. `zoom` reflows (unlike a
+  // transform), so centering and the fit stay correct.
+  allPages.forEach(page => {
+    const fit = page.querySelector('.pr-fit');
+    const cs = getComputedStyle(page);
+    const availH = page.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    const contentH = fit.scrollHeight;
+    // small safety factor: zoom reflow can round a hair over, so leave headroom
+    if (contentH > availH + 1) fit.style.zoom = (availH / contentH * 0.98).toFixed(4);
+  });
+
+  pager.screens = Math.ceil(pager.pages.length / pager.perScreen);
+  goToScreen(Math.min(pager.screen, pager.screens - 1));
+}
+
+function layoutPager() { setHostHeight(); renderPager(); }
+
+// ── viewer / navigation ──
+function ensureNav() {
+  if (document.getElementById('pr-prev')) return;
+  const mk = (id, cls, label, txt, fn) => {
+    const b = document.createElement('button');
+    b.id = id; b.className = cls; b.setAttribute('aria-label', label); b.textContent = txt; b.onclick = fn;
+    document.body.appendChild(b); return b;
+  };
+  mk('pr-prev', 'pr-arrow pr-prev', 'Previous page', '‹', prevScreen);
+  mk('pr-next', 'pr-arrow pr-next', 'Next page', '›', nextScreen);
+  const ind = document.createElement('div'); ind.id = 'pr-ind'; ind.className = 'pr-indicator';
+  document.body.appendChild(ind);
+}
+
+// The magazine turns like a book: the target screen (or the one leaving) pivots
+// on its hinge while the other sits flat beneath — the strip never slides.
+// Only ←/→ nav animates (with a direction); layout, filtering and contents
+// jumps reposition instantly so a filter keystroke never triggers a flip.
+let _flip = null;
+const _reducedMotion = () =>
+  window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const _prScreens = () => [...document.querySelectorAll('.pr-screen')];
+
+function settleScreen(i) {
+  _prScreens().forEach((s, k) => {
+    const active = k === i;
+    s.classList.toggle('is-active', active);
+    s.style.transition = '';
+    s.style.transform = '';
+    s.style.zIndex = active ? '1' : '';
+  });
+}
+
+function endFlip() {
+  if (!_flip) return;
+  const t = _flip.target, ov = _flip.overlay;
+  _flip = null;
+  if (ov && ov.parentNode) ov.parentNode.removeChild(ov);
+  settleScreen(t);
+}
+
+function goToScreen(i, animate, dir) {
+  const target = Math.max(0, Math.min(i, Math.max(0, pager.screens - 1)));
+  if (!animate || _reducedMotion() || target === pager.screen) {
+    if (_flip) endFlip();
+    pager.screen = target;
+    settleScreen(target);
+    updateNav();
+    return;
+  }
+  if (_flip) endFlip();                       // finalize any in-flight turn first
+  const els = _prScreens();
+  if (!els[pager.screen] || !els[target]) { pager.screen = target; settleScreen(target); updateNav(); return; }
+  if (pager.perScreen >= 2) bookTurn(pager.screen, target, dir > 0);
+  else simpleFlip(pager.screen, target, dir > 0);
+  pager.screen = target;
+  updateNav();
+}
+
+// 1-up: the single page pivots on its right hinge (no spine to fold at).
+function simpleFlip(from, to, forward) {
+  const els = _prScreens();
+  const cur = els[from], nxt = els[to];
+  cur.classList.add('is-active'); nxt.classList.add('is-active');
+  const base = forward ? cur : nxt, mover = forward ? nxt : cur;
+  base.style.transition = ''; base.style.transform = 'rotateY(0deg)'; base.style.zIndex = '1';
+  mover.style.zIndex = '2';
+  mover.style.transition = 'none';
+  mover.style.transform = forward ? 'rotateY(90deg)' : 'rotateY(0deg)';
+  void mover.offsetWidth;
+  mover.style.transition = 'transform 0.34s cubic-bezier(.33, 0, .2, 1)';
+  mover.style.transform = forward ? 'rotateY(0deg)' : 'rotateY(90deg)';
+  _flip = { target: to };
+  const done = (e) => { if (e.propertyName !== 'transform') return; mover.removeEventListener('transitionend', done); endFlip(); };
+  mover.addEventListener('transitionend', done);
+}
+
+// 2-up: turn one leaf on the centre spine. The leaf carries two faces — the
+// page you're leaving on the front, the page you're turning to on the back —
+// so the facing page stays put and the fold sits in the middle, like a book.
+function clonePage(screenEl, idx, W) {
+  const src = screenEl && screenEl.children[idx];
+  const node = src ? src.cloneNode(true) : document.createElement('div');
+  if (!src) node.className = 'pr-page';
+  node.style.width = W + 'px';
+  return node;
+}
+function bookTurn(from, to, forward) {
+  const host = document.getElementById('digest');
+  const els = _prScreens();
+  const cur = els[from], oth = els[to];
+  const W = pager.pageW;
+
+  let underLeft, underRight, leafFront, leafBack, leafLeft, origin, endAngle;
+  if (forward) {
+    underLeft  = clonePage(cur, 0, W);   // facing (left) page — stays
+    underRight = clonePage(oth, 1, W);   // next right — revealed as leaf lifts
+    leafFront  = clonePage(cur, 1, W);   // current right — front of the leaf
+    leafBack   = clonePage(oth, 0, W);   // next left — back of the leaf
+    leafLeft = W; origin = 'left center'; endAngle = -180;
+  } else {
+    underLeft  = clonePage(oth, 0, W);   // prev left — revealed
+    underRight = clonePage(cur, 1, W);   // facing (right) page — stays
+    leafFront  = clonePage(cur, 0, W);   // current left — front of the leaf
+    leafBack   = clonePage(oth, 1, W);   // prev right — back of the leaf
+    leafLeft = 0; origin = 'right center'; endAngle = 180;
+  }
+
+  const overlay = document.createElement('div');
+  overlay.className = 'pr-turn';
+  const mkFace = (node, leftPx) => {
+    const f = document.createElement('div');
+    f.className = 'pr-face'; f.style.left = leftPx + 'px'; f.style.width = W + 'px';
+    f.appendChild(node); return f;
+  };
+  overlay.appendChild(mkFace(underLeft, 0));
+  overlay.appendChild(mkFace(underRight, W));
+
+  const leaf = document.createElement('div');
+  leaf.className = 'pr-leaf';
+  leaf.style.left = leafLeft + 'px'; leaf.style.width = W + 'px'; leaf.style.transformOrigin = origin;
+  const front = document.createElement('div'); front.className = 'front'; front.appendChild(leafFront);
+  const back  = document.createElement('div'); back.className = 'back';  back.appendChild(leafBack);
+  leaf.appendChild(front); leaf.appendChild(back);
+  overlay.appendChild(leaf);
+
+  els.forEach(e => e.classList.remove('is-active'));   // hide real screens under the overlay
+  host.appendChild(overlay);
+
+  leaf.style.transition = 'none'; leaf.style.transform = 'rotateY(0deg)';
+  void leaf.offsetWidth;
+  leaf.style.transition = 'transform 0.5s cubic-bezier(.4, 0, .2, 1)';
+  leaf.style.transform = 'rotateY(' + endAngle + 'deg)';
+
+  _flip = { target: to, overlay };
+  const done = (e) => { if (e.propertyName !== 'transform') return; leaf.removeEventListener('transitionend', done); endFlip(); };
+  leaf.addEventListener('transitionend', done);
+}
+function nextScreen() { goToScreen(pager.screen + 1, true, 1); }
+function prevScreen() { goToScreen(pager.screen - 1, true, -1); }
+function goToPage(pageNo) { goToScreen(Math.floor((pageNo - 1) / pager.perScreen), false); }
+function updateNav() {
+  const ind = document.getElementById('pr-ind');
+  const prev = document.getElementById('pr-prev'), next = document.getElementById('pr-next');
+  if (ind) ind.textContent = pager.pages.length ? `${pager.screen + 1} / ${pager.screens}` : '';
+  if (prev) prev.disabled = pager.screen <= 0;
+  if (next) next.disabled = pager.screen >= pager.screens - 1;
+}
+
+let _pagerListenersBound = false;
+function setupPagerListeners() {
+  if (_pagerListenersBound) return;
+  _pagerListenersBound = true;
+  let rzT;
+  window.addEventListener('resize', () => { clearTimeout(rzT); rzT = setTimeout(layoutPager, 160); });
+  document.addEventListener('keydown', e => {
+    if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); nextScreen(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prevScreen(); }
+  });
+  const host = document.getElementById('digest');
+  let x0 = null;
+  host.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  host.addEventListener('touchend', e => {
+    if (x0 == null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (dx < -45) nextScreen(); else if (dx > 45) prevScreen();
+    x0 = null;
+  }, { passive: true });
+}
+
+// ══ FILTER ═══════════════════════════════════════════════════════════════════
+
+// Filtering changes the visible set, so the magazine is re-paginated over the
+// filtered chapters (debounced for keyword typing) and jumps back to page 1.
+let _filterT;
+function applyFilters() {
+  state.kwInclude = document.getElementById('kwInclude').value.trim().toLowerCase();
+  state.kwExclude = document.getElementById('kwExclude').value.trim().toLowerCase();
+  updateChips();
+  saveCookies();
+  clearTimeout(_filterT);
+  _filterT = setTimeout(() => { pager.screen = 0; layoutPager(); }, 180);
+}
+
+function updateChips() {
+  const container = document.getElementById('activeChips');
+  const bits = [];
+  const total = state.selected.size + (state.kwInclude?1:0) + (state.kwExclude?1:0);
+
+  document.getElementById('activeCount').textContent = total > 0 ? `${total} active` : '';
+
+  if (state.selected.size > 0) {
+    bits.push(`<span class="chip-mode-label">${state.mode.toUpperCase()}:</span>`);
+    state.selected.forEach(id => {
+      const t = TOPICS.find(x => x.id === id);
+      const cls = state.mode === 'focus' ? 'focus-chip' : 'exclude-chip';
+      bits.push(`<span class="chip ${cls}">${t ? t.label : id}</span>`);
+    });
+  }
+  if (state.kwInclude) bits.push(`<span class="chip kw-chip">only: ${state.kwInclude}</span>`);
+  if (state.kwExclude) bits.push(`<span class="chip kw-chip">not: ${state.kwExclude}</span>`);
+
+  container.innerHTML = bits.join('');
+}
+
+// ══ INTERACTIONS ══════════════════════════════════════════════════════════════
+
+function toggleTopic(id, checked) {
+  checked ? state.selected.add(id) : state.selected.delete(id);
+  applyFilters();
+}
+
+function setMode(mode, e) {
+  e.stopPropagation();
+  state.mode = mode;
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  const panel = document.getElementById('filterPanel');
+  panel.classList.toggle('exclude-mode', mode === 'exclude');
+  document.getElementById('modeHint').innerHTML = mode === 'focus'
+    ? 'FOCUS — select topics to show <em>only</em> those chapters.'
+    : 'EXCLUDE — select topics to <em>hide</em> from the digest.';
+  applyFilters();
+}
+
+function togglePanel() {
+  state.panelOpen = !state.panelOpen;
+  document.getElementById('filterPanel').classList.toggle('open', state.panelOpen);
+  document.getElementById('filterToggle').classList.toggle('filter-open', state.panelOpen);
+}
+
+function resetAll() {
+  state.selected.clear();
+  state.kwInclude = '';
+  state.kwExclude = '';
+  document.getElementById('kwInclude').value = '';
+  document.getElementById('kwExclude').value = '';
+  renderTopicChecks();
+  applyFilters();
+}
+
+// ══ NIGHT MODE ════════════════════════════════════════════════════════════════
+
+function toggleNight() {
+  const next = document.documentElement.dataset.night === '1' ? '0' : '1';
+  document.documentElement.dataset.night = next;
+  document.cookie = `kd_night=${next};max-age=${60*60*24*90};path=/`;
+  document.getElementById('nightBtn').textContent = next === '1' ? '☀' : '☾';
+}
+if (document.documentElement.dataset.night === '1')
+  document.getElementById('nightBtn').textContent = '☀';
+
+// ══ INIT ══════════════════════════════════════════════════════════════════════
+// Wrapped in try/finally so that even if rendering throws, the loading gate is
+// always dismissed — a stranded full-screen loader would hide the whole page.
+// Dismiss the loading gate. Double-rAF guarantees the loader painted once so the
+// fade plays; the timeout removes it once the transition finishes (and as a
+// fallback if the transition never fires).
+function dismissLoader() {
+  const l = document.getElementById('kd-loader');
+  if (l) {
+    requestAnimationFrame(() => requestAnimationFrame(() => l.classList.add('kd-loaded')));
+    setTimeout(() => { if (l.parentNode) l.remove(); }, 900);
+  }
+}
+
+try {
+  loadCookies();
+  renderTicker();
+  renderTopicChecks();
+  document.getElementById('kwInclude').value = state.kwInclude;
+  document.getElementById('kwExclude').value = state.kwExclude;
+  document.querySelectorAll('.mode-btn').forEach(b => {
+    b.classList.toggle('active', b.classList.contains(state.mode));
+  });
+  document.getElementById('filterPanel').classList.toggle('exclude-mode', state.mode === 'exclude');
+  document.getElementById('modeHint').innerHTML = state.mode === 'focus'
+    ? 'FOCUS — select topics to show <em>only</em> those chapters.'
+    : 'EXCLUDE — select topics to <em>hide</em> from the digest.';
+  updateChips();
+  setupPagerListeners();
+  // Paginate once fonts are ready so card measurements are accurate.
+  const boot = () => {
+    try { layoutPager(); } catch (e) { console.error('pager layout failed:', e); }
+    dismissLoader();
+  };
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(boot).catch(boot);
+  else boot();
+} catch (e) {
+  console.error('Digest init failed:', e);
+  dismissLoader();
+}
+</script>
+
+<style id="mock-addon-css">
+  #mockbar { position: fixed; top: 8px; left: 50%; transform: translateX(-50%); z-index: 60;
+    display: flex; align-items: center; gap: .5rem; background: var(--paper); border: 1px solid var(--rule);
+    border-radius: 99px; padding: .3rem .4rem; box-shadow: 0 4px 18px rgba(0,0,0,.12); font-family: 'JetBrains Mono', monospace; }
+  #mockbar .grp { display: flex; gap: 2px; }
+  #mockbar .vbtn, #mockbar .cbtn { font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--ink-muted); background: transparent; border: none; padding: .32rem .6rem;
+    border-radius: 99px; cursor: pointer; white-space: nowrap; }
+  #mockbar .vbtn:hover, #mockbar .cbtn:hover { color: var(--ink); }
+  #mockbar .vbtn.on { background: var(--accent); color: #fff; font-weight: 600; }
+  #mockbar .sep { width: 1px; height: 16px; background: var(--rule); }
+  #mockbar .lbl { font-size: .5rem; color: var(--ink-muted); padding-left: .3rem; }
+
+  /* alt (static) views reuse the real .articles grid + articleCard */
+  #altHost { max-width: 1180px; margin: 0 auto; padding: 1.5rem 1.5rem 5rem; }
+  #altHost .grid-ch { margin-bottom: 2.4rem; }
+  #altHost .grid-ch-h { display: flex; align-items: baseline; gap: .6rem; border-bottom: 2px solid var(--ink);
+    padding-bottom: .4rem; margin-bottom: 1.1rem; }
+  #altHost .grid-ch-h .gnum { font-family: 'JetBrains Mono', monospace; font-size: .62rem; color: var(--accent); font-weight: 600; }
+  #altHost .grid-ch-h h2 { font-family: 'Playfair Display', Charter, serif; font-style: italic; font-weight: 700; font-size: 1.4rem; flex: 1; margin: 0; }
+  #altHost .grid-ch-h .gct { font-family: 'JetBrains Mono', monospace; font-size: .56rem; color: var(--ink-muted); }
+  /* scroll = the same cards forced to one readable column */
+  #altHost.alt-scroll { max-width: 780px; }
+  #altHost.alt-scroll .articles { grid-template-columns: 1fr !important; }
+  #altHost.alt-scroll .article { grid-column: 1 / -1 !important; }
+  /* feed = dense rows */
+  #altHost.alt-feed { max-width: 900px; }
+  #altHost.alt-feed .feed-ch { font-family: 'JetBrains Mono', monospace; font-size: .58rem; color: var(--accent);
+    border-bottom: 1px solid var(--rule); padding: .8rem 0 .3rem; margin-top: .6rem; }
+  #altHost.alt-feed .frow { display: flex; align-items: center; gap: .7rem; padding: .5rem .4rem; border-bottom: 1px solid var(--rule);
+    text-decoration: none; color: var(--ink); border-left: 3px solid transparent; }
+  #altHost.alt-feed .frow:hover { background: var(--paper-b); border-left-color: var(--accent); }
+  #altHost.alt-feed .frow .ft { flex: 1; font-family: 'DM Sans', sans-serif; font-size: .9rem; font-weight: 500;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #altHost.alt-feed .frow .fs { font-family: 'JetBrains Mono', monospace; font-size: .56rem; color: var(--ink-muted); width: 150px; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #altHost.alt-feed .frow .fd { font-family: 'JetBrains Mono', monospace; font-size: .56rem; color: var(--ink-muted); width: 48px; text-align: right; }
+  /* a card in grid/scroll: whole card clickable to FLIP to that page; title link still opens source */
+  #altHost .article { cursor: pointer; position: relative; }
+  #altHost .article .flip-here { position: absolute; top: .5rem; right: .5rem; font-family: 'JetBrains Mono', monospace;
+    font-size: .5rem; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: .05rem .3rem; opacity: 0; }
+  #altHost .article:hover .flip-here { opacity: 1; }
+
+  /* ── CHAPTER TABS chrome (mounted above the reader) ── */
+  #chtabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; background: var(--paper-b); border-top: 1px solid var(--rule);
+    display: none; align-items: stretch; overflow-x: auto; }
+  #chtabs.on { display: flex; }
+  #chtabs .ctab { flex: 0 0 auto; display: flex; align-items: center; gap: .35rem; font-family: 'DM Sans', sans-serif; font-size: .72rem;
+    color: var(--ink-muted); background: var(--paper-b); border: none; border-right: 1px solid var(--rule); border-top: 2px solid transparent;
+    padding: .5rem .8rem; cursor: pointer; white-space: nowrap; }
+  #chtabs .ctab .cn { font-family: 'JetBrains Mono', monospace; font-size: .54rem; color: var(--accent); }
+  #chtabs .ctab:hover { background: var(--paper); color: var(--ink); }
+  #chtabs .ctab.active { background: var(--paper); color: var(--ink); font-weight: 600; border-top-color: var(--accent); }
+
+  /* ── WAYFINDING: command palette ── */
+  #wf-scrim { position: fixed; inset: 0; background: rgba(0,0,0,.32); z-index: 70; display: none; align-items: flex-start; justify-content: center; padding-top: 12vh; }
+  #wf-scrim.on { display: flex; }
+  #wf-cmd { width: 90%; max-width: 540px; background: var(--paper); border: 1px solid var(--ink-muted); border-radius: 10px; box-shadow: 0 24px 60px rgba(0,0,0,.34); overflow: hidden; }
+  #wf-cmd input { width: 100%; border: none; border-bottom: 1px solid var(--rule); background: transparent; color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 1rem; padding: .8rem 1rem; outline: none; }
+  #wf-cmd .results { max-height: 50vh; overflow-y: auto; }
+  #wf-cmd .res { display: flex; align-items: baseline; gap: .5rem; padding: .5rem 1rem; cursor: pointer; }
+  #wf-cmd .res.sel { background: var(--paper-b); } #wf-cmd .res.sel .rl { color: var(--accent); }
+  #wf-cmd .res .rk { font-family: 'JetBrains Mono', monospace; font-size: .5rem; color: var(--ink-muted); border: 1px solid var(--rule); border-radius: 3px; padding: 0 .25rem; text-transform: uppercase; }
+  #wf-cmd .res .rk.ch { color: var(--accent); border-color: var(--accent); }
+  #wf-cmd .res .rl { font-family: 'DM Sans', sans-serif; font-size: .84rem; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #wf-cmd .res .rc { font-family: 'JetBrains Mono', monospace; font-size: .52rem; color: var(--ink-muted); }
+  .flashpage { animation: flashpg 1.2s ease; }
+  @keyframes flashpg { 0%,35% { background: rgba(224,96,32,.14); } 100% { background: transparent; } }
+</style>
+
+<div id="mockbar"></div>
+<div id="altHost" style="display:none"></div>
+<nav id="chtabs"></nav>
+<div id="wf-scrim"><div id="wf-cmd"><input type="text" placeholder="Jump to a chapter or article…"><div class="results"></div></div></div>
+
+<script id="mock-addon-js">
+(function(){
+  const MOCK = "wayfinding";           // 'modes' | 'tabs' | 'wayfinding'
+  const pad = n => String(n).padStart(2,'0');
+  const digest = document.getElementById('digest');
+  const noRes  = document.getElementById('noResults');
+  const alt = document.getElementById('altHost');
+  const bar = document.getElementById('mockbar');
+
+  function navEls(){ return ['pr-prev','pr-next','pr-ind'].map(id=>document.getElementById(id)).filter(Boolean); }
+  function pagedChrome(on){ navEls().forEach(e=> e.style.display = on ? '' : 'none'); }
+
+  // ---- static views built from the SAME articleCard() + .articles grid ----
+  function chHead(ch,i){ return `<div class="grid-ch-h"><span class="gnum">§ ${pad(i+1)}</span><h2>${ch.title}</h2><span class="gct">${ch.articles.length} stories</span></div>`; }
+  function gridHTML(){
+    return filteredChapters().map((ch,i)=>
+      `<section class="grid-ch">${chHead(ch,i)}<div class="articles">${ch.articles.map(a=>cardWrap(a)).join('')}</div></section>`
+    ).join('');
+  }
+  function cardWrap(a){ return articleCard(a).replace('<article class="article', '<article data-flip="'+a.id+'" data-artid="'+a.id+'" class="article'); }
+  function feedHTML(){
+    return filteredChapters().map((ch,i)=>{
+      const rows = ch.articles.map(a=>`<a class="frow" href="${a.url}" target="_blank" rel="noopener noreferrer" data-flip="${a.id}"><span class="ft">${a.title}</span><span class="fs">${a.source}</span><span class="fd">${a.date}</span></a>`).join('');
+      return `<div class="feed-ch">§${pad(i+1)} · ${ch.title} · ${ch.articles.length}</div>${rows}`;
+    }).join('');
+  }
+  function wireFlips(){
+    // click a card (not its title link) → flip to that article's real page
+    alt.querySelectorAll('[data-flip]').forEach(el=>{
+      el.addEventListener('click', e=>{
+        if (e.target.closest('a.art-title, .art-title a, a.frow')) { if(el.classList.contains('frow')) return; }
+        if (e.target.tagName==='A' && !el.classList.contains('frow')) return; // let source links open
+        if (el.classList.contains('frow')) return; // feed rows are pure links
+        e.preventDefault(); flipToArticle(el.getAttribute('data-flip'));
+      });
+    });
+    alt.querySelectorAll('.article').forEach(c=>{ if(!c.querySelector('.flip-here')){ const b=document.createElement('span'); b.className='flip-here'; b.textContent='↪ flip'; c.appendChild(b);} });
+  }
+
+  let view = 'paged';
+  function setView(v){
+    view = v;
+    bar.querySelectorAll('.vbtn').forEach(b=> b.classList.toggle('on', b.dataset.v===v));
+    if (v==='paged'){
+      alt.style.display='none'; digest.style.display=''; if(noRes) {}
+      pagedChrome(true);
+      try { layoutPager(); } catch(e){ console.error(e); }
+    } else {
+      digest.style.display='none'; pagedChrome(false);
+      alt.className = (v==='scroll'?'alt-scroll':v==='feed'?'alt-feed':'');
+      alt.innerHTML = (v==='feed') ? feedHTML() : gridHTML();
+      alt.style.display='';
+      if (v!=='feed') wireFlips();
+      window.scrollTo({top:0});
+    }
+  }
+
+  // ---- flip helpers (reuse the real pager) ----
+  function ensurePagedThen(fn){
+    if (view!=='paged'){ setView('paged'); requestAnimationFrame(()=>requestAnimationFrame(fn)); }
+    else fn();
+  }
+  function flipToArticle(id){
+    ensurePagedThen(()=>{
+      const pages=[...document.querySelectorAll('.pr-page')];
+      const idx=pages.findIndex(p=>p.querySelector('#art-'+id));
+      if(idx>=0){ goToPage(idx+1); const el=document.getElementById('art-'+id); if(el){el.classList.remove('flashpage');void el.offsetWidth;el.classList.add('flashpage');} }
+    });
+  }
+  function flipToChapter(chId){
+    ensurePagedThen(()=>{ const p = pager.startPage[chId]; if(p) goToPage(p); });
+  }
+
+  // ---- toolbar ----
+  function buildBar(){
+    const views = (MOCK==='modes')
+      ? [['paged','Paged ⇋ flip'],['grid','Grid'],['scroll','Scroll'],['feed','Feed']]
+      : [['paged','Paged ⇋ flip'],['grid','Grid']];
+    let html = '<span class="lbl">View</span><div class="grp">' +
+      views.map(([v,l])=>`<button class="vbtn" data-v="${v}">${l}</button>`).join('') + '</div>';
+    if (MOCK==='tabs') html += '<span class="sep"></span><span class="lbl">Tab style</span><div class="grp" id="tabstyle">'
+      + [['folder','Folder'],['index','Index'],['browser','Browser'],['pills','Pills']].map(([s,l])=>`<button class="cbtn" data-s="${s}">${l}</button>`).join('') + '</div>';
+    if (MOCK==='wayfinding') html += '<span class="sep"></span><div class="grp">'
+      + `<button class="cbtn" id="wf-open">⌘K Jump</button><button class="cbtn" id="wf-grid">▦ Overview</button></div>`;
+    bar.innerHTML = html;
+    bar.querySelectorAll('.vbtn').forEach(b=> b.addEventListener('click', ()=> setView(b.dataset.v)));
+    if (MOCK==='tabs'){ bar.querySelectorAll('#tabstyle .cbtn').forEach(b=> b.addEventListener('click', ()=> setTabStyle(b.dataset.s))); }
+    if (MOCK==='wayfinding'){
+      document.getElementById('wf-open').addEventListener('click', openCmd);
+      document.getElementById('wf-grid').addEventListener('click', ()=> setView('grid'));
+    }
+  }
+
+  // ---- CHAPTER TABS: tap a chapter -> its cover (start page); flip stays granular ----
+  const tabsEl = document.getElementById('chtabs');
+  function buildTabs(){
+    tabsEl.className = 'on style-folder';
+    tabsEl.innerHTML = filteredChapters().map((ch,i)=>
+      `<button class="ctab" data-ch="${ch.id}"><span class="cn">§${pad(i+1)}</span>${ch.title}</button>`
+    ).join('');
+    tabsEl.querySelectorAll('.ctab').forEach(t=> t.addEventListener('click', ()=>{ flipToChapter(t.dataset.ch); markTab(t.dataset.ch); }));
+  }
+  function markTab(chId){ tabsEl.querySelectorAll('.ctab').forEach(t=> t.classList.toggle('active', t.dataset.ch===chId)); }
+  function setTabStyle(s){ bar.querySelectorAll('#tabstyle .cbtn').forEach(b=> b.classList.toggle('on', b.dataset.s===s));
+    tabsEl.className = 'on style-'+s; injectTabStyle(s); }
+  // keep the active tab synced to the current page while flipping
+  function syncTabToPage(){
+    if (view!=='paged' || !tabsEl.classList.contains('on')) return;
+    const firstPageNo = pager.screen * pager.perScreen + 1;
+    let cur=null; const sp=pager.startPage||{};
+    filteredChapters().forEach(ch=>{ if(sp[ch.id] && sp[ch.id]<=firstPageNo) cur=ch.id; });
+    if(cur) markTab(cur);
+  }
+
+  // ---- WAYFINDING: command palette over the real reader ----
+  let CMD=[], sel=0, curList=[];
+  function buildCmd(){ CMD=[]; filteredChapters().forEach((ch,i)=>{ CMD.push({k:'ch',l:ch.title,c:ch.articles.length+' stories',ch:ch.id});
+    ch.articles.forEach(a=> CMD.push({k:'art',l:a.title,c:ch.title,id:a.id})); }); }
+  const scrim=document.getElementById('wf-scrim'), input=scrim.querySelector('input'), results=scrim.querySelector('.results');
+  function openCmd(){ scrim.classList.add('on'); input.value=''; filt(''); input.focus(); }
+  function closeCmd(){ scrim.classList.remove('on'); }
+  function filt(q){ q=q.trim().toLowerCase(); curList = q?CMD.filter(x=>x.l.toLowerCase().includes(q)||x.c.toLowerCase().includes(q)):CMD; sel=0; paint(); }
+  function paint(){ results.innerHTML=curList.slice(0,60).map((x,i)=>`<div class="res ${i===sel?'sel':''}" data-i="${i}"><span class="rk ${x.k==='ch'?'ch':''}">${x.k==='ch'?'chap':'art'}</span><span class="rl">${x.l}</span><span class="rc">${x.c}</span></div>`).join('');
+    results.querySelectorAll('.res').forEach(r=> r.addEventListener('click',()=>{ sel=+r.dataset.i; choose(); })); }
+  function choose(){ const x=curList[sel]; if(!x) return; closeCmd(); if(x.k==='ch') flipToChapter(x.ch); else flipToArticle(x.id); }
+  if (scrim){ input.addEventListener('input',e=>filt(e.target.value));
+    input.addEventListener('keydown',e=>{ if(e.key==='ArrowDown'){e.preventDefault();sel=Math.min(sel+1,Math.min(curList.length,60)-1);paint();}
+      else if(e.key==='ArrowUp'){e.preventDefault();sel=Math.max(sel-1,0);paint();}
+      else if(e.key==='Enter'){e.preventDefault();choose();} else if(e.key==='Escape'){closeCmd();} });
+    scrim.addEventListener('click',e=>{ if(e.target===scrim) closeCmd(); }); }
+
+  // tab-style CSS variants injected on demand
+  function injectTabStyle(s){
+    let st=document.getElementById('tabstyle-css'); if(!st){ st=document.createElement('style'); st.id='tabstyle-css'; document.head.appendChild(st); }
+    const base = `#chtabs{bottom:0;top:auto;flex-direction:row;}`;
+    const map = {
+      folder: `#chtabs .ctab{border-radius:8px 8px 0 0;margin-right:-1px;}`,
+      browser: ``,
+      pills: `#chtabs{gap:6px;padding:6px;background:var(--paper);}#chtabs .ctab{border:none;border-radius:99px;}#chtabs .ctab.active{background:var(--accent);color:#fff;border-top-color:transparent;}`,
+      index: `#chtabs{top:0;bottom:auto;flex-direction:column;left:auto;right:0;width:150px;overflow-y:auto;}#chtabs .ctab{border-right:none;border-bottom:1px solid var(--rule);border-top:none;border-left:2px solid transparent;justify-content:flex-start;}#chtabs .ctab.active{border-left-color:var(--accent);border-top-color:transparent;}`
+    };
+    st.textContent = base + (map[s]||'');
+  }
+
+  // ---- init after the real reader has booted (pager laid out) ----
+  function initMock(){
+    buildBar();
+    if (MOCK==='tabs'){ buildTabs(); setTabStyle('folder'); }
+    if (MOCK==='wayfinding'){ buildCmd(); }
+    setView('paged');
+    // keep tabs synced while flipping
+    if (MOCK==='tabs'){ const host=document.getElementById('digest');
+      document.addEventListener('keydown',()=> setTimeout(syncTabToPage,10));
+      host.addEventListener('click',()=> setTimeout(syncTabToPage,10));
+      window.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft'||e.key==='ArrowRight') setTimeout(syncTabToPage,360); }); }
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(()=>setTimeout(initMock,60)); else window.addEventListener('load', ()=>setTimeout(initMock,60));
+})();
+</script>
+
+</body>
+</html>
