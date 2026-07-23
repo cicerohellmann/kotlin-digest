@@ -1,6 +1,6 @@
 PYTHON := python3.11
 
-.PHONY: run scout bible fetch apply classify apply-snippets candidates assemble bundle test
+.PHONY: run scout bible fetch apply classify apply-snippets candidates assemble bundle nojs test
 
 # Automated pipeline (steps 1-2) — safe to run unattended
 run: scout bible
@@ -39,6 +39,11 @@ assemble:
 # Usage: make bundle EDITION=2026-W28
 bundle:
 	$(PYTHON) pipeline/bundle.py --edition $(EDITION)
+
+# Open the generated site in an isolated Chrome profile with JavaScript disabled.
+# Does not change your normal Chrome profile/session.
+nojs:
+	scripts/open-nojs-chrome.sh site/index.html
 
 # Show current emergence candidates
 candidates:

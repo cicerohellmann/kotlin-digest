@@ -70,6 +70,10 @@ Open a PR. In the description, include one sentence on why this source adds some
 
 If the source has an RSS or Atom feed, include it — the pipeline will always prefer a feed over scraping. If it doesn't, include a note on how article dates are detectable on the page.
 
+To test the no-JavaScript fallback locally without touching your normal Chrome
+profile, run `make nojs`. It opens `site/index.html` in a temporary Chrome
+profile with JavaScript disabled.
+
 ### Report a dead source
 
 If a source has gone quiet, open a PR removing it from `sources/sources.yml`. Include the last known article URL and date in the PR description so we have a record.
