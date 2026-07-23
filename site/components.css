@@ -98,10 +98,12 @@ body { min-height: 100vh; }
       100% { content: "|"; }
     }
     .kd-noscript {
-      position: fixed; inset: 0; z-index: 10000;
-      display: flex; align-items: center; justify-content: center;
-      padding: 2rem; text-align: center;
-      background: var(--paper); color: var(--ink);
+      margin: 1rem auto;
+      max-width: 720px;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      border: 1px solid var(--rule);
+      background: var(--paper-soft); color: var(--ink-mid);
       font-family: var(--font-ui); font-size: 0.85rem; line-height: 1.7;
     }
     @media (prefers-reduced-motion: reduce) {
@@ -731,6 +733,7 @@ body { min-height: 100vh; }
       font-size: 0.68rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      text-decoration: none;
     }
     .yt-tri {
       width: 0; height: 0;
@@ -1008,13 +1011,16 @@ body { min-height: 100vh; }
 
     /* ══ SETTINGS PANEL — gear popover in the masthead ══ */
     .settings-wrap { position: relative; }
+    .settings-wrap > summary { list-style: none; }
+    .settings-wrap > summary::-webkit-details-marker { display: none; }
     .settings-btn {
       font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600;
       padding: 0.25rem 0.55rem; border-radius: 3px; border: 1px solid var(--rule);
       background: transparent; color: var(--ink-muted); cursor: pointer; line-height: 1;
       transition: color 0.15s, border-color 0.15s;
+      display: inline-block;
     }
-    .settings-btn:hover, .settings-btn.open { color: var(--ink); border-color: var(--ink-muted); }
+    .settings-btn:hover, .settings-btn.open, .settings-wrap[open] > .settings-btn { color: var(--ink); border-color: var(--ink-muted); }
     .settings-panel {
       position: absolute; top: calc(100% + 8px); right: 0; z-index: 60;
       width: 232px; background: var(--paper-b); border: 1px solid var(--rule);
@@ -1022,7 +1028,15 @@ body { min-height: 100vh; }
       display: none;
       z-index: 300;
     }
-    .settings-panel.open { display: block; }
+    .settings-panel.open, .settings-wrap[open] > .settings-panel { display: block; }
+    .settings-noscript {
+      display: none;
+      font-family: var(--font-ui);
+      font-size: 0.62rem;
+      line-height: 1.45;
+      color: var(--ink-muted);
+      margin: 0 0 0.75rem;
+    }
     .settings-panel .set-row { margin-bottom: 0.8rem; }
     .settings-panel .set-row:last-child { margin-bottom: 0; }
     .settings-panel .set-label {

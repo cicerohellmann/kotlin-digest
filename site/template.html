@@ -53,14 +53,14 @@
 <!-- Failsafe: if the main script never runs (JS off / error), don't strand the loader -->
 <script>setTimeout(function(){var l=document.getElementById('kd-loader');if(l)l.style.display='none';},8000);</script>
 <noscript>
-  <style>#kd-loader{display:none!important}</style>
-  <div class="kd-noscript">This digest is interactive and needs JavaScript. Please open it in a web browser (Safari, Chrome) rather than a file preview.</div>
+  <style>#kd-loader{display:none!important}.settings-wrap,.filter-bar,#noResults{display:none!important}#digest{position:static!important;height:auto!important;overflow:visible!important;perspective:none!important}</style>
+  <div class="kd-noscript">Interactive filters, reader settings and page-turning need JavaScript. The full digest is readable below.</div>
 </noscript>
 
 <!-- TREND TICKER -->
 <div class="ticker-wrap">
   <span class="ticker-label">TRENDING</span>
-  <div class="ticker-track" id="ticker"></div>
+  <div class="ticker-track" id="ticker"><!-- @@DIGEST_TICKER@@ --></div>
 </div>
 
 <!-- MASTHEAD -->
@@ -84,9 +84,10 @@
     <p class="masthead-tagline">The Kotlin world, assembled weekly, for Android engineers.</p>
     <span class="masthead-stats" style="display:flex;align-items:center;gap:0.75rem;">
       <span>6 chapters · ordered by topic score · <a href="about.html" style="color:var(--blue);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:0.6rem;">About &amp; Contributing</a></span>
-      <span class="settings-wrap">
-        <button class="settings-btn" id="settingsBtn" onclick="toggleSettings(event)" aria-label="Reading settings" title="Reading settings">⚙ Aa</button>
+      <details class="settings-wrap" id="settingsWrap">
+        <summary class="settings-btn" id="settingsBtn" aria-label="Reading settings" title="Reading settings">⚙ Aa</summary>
         <div class="settings-panel" id="settingsPanel" role="menu" aria-label="Reading settings">
+          <p class="settings-noscript">These controls need JavaScript to change and remember reader preferences.</p>
           <div class="set-row">
             <span class="set-label">Theme</span>
             <div class="seg" id="segTheme">
@@ -118,7 +119,7 @@
             </div>
           </div>
         </div>
-      </span>
+      </details>
     </span>
   </div>
 </header>
@@ -157,8 +158,10 @@
 </div>
 
 <!-- DIGEST -->
-<main id="digest"></main>
-<div id="noResults">
+<main id="digest">
+<!-- @@DIGEST_STATIC@@ -->
+</main>
+<div id="noResults" style="display:none">
   <p>No articles match your current filters.</p>
   <p>Try broadening your selection or <a href="#" onclick="resetAll();return false;">reset all filters</a>.</p>
 </div>
@@ -237,7 +240,9 @@ function saveReader() {
 
 function renderTicker() {
   const doubled = [...TRENDING_DATA, ...TRENDING_DATA];
-  document.getElementById('ticker').innerHTML = doubled.map(t =>
+  const ticker = document.getElementById('ticker');
+  if (!ticker) return;
+  ticker.innerHTML = doubled.map(t =>
     `<span class="ticker-item">
       <span class="t-spark">${t.spark}</span>
       <span class="t-name">${t.name}</span>
@@ -1019,12 +1024,16 @@ function setLayout(v) { state.reader.layout = v; applyReaderDOM(); saveReader();
 
 function toggleSettings(e) {
   e.stopPropagation();
-  const open = document.getElementById('settingsPanel').classList.toggle('open');
+  const wrap = document.getElementById('settingsWrap');
+  const open = wrap ? wrap.open : document.getElementById('settingsPanel').classList.toggle('open');
+  document.getElementById('settingsPanel').classList.toggle('open', open);
   document.getElementById('settingsBtn').classList.toggle('open', open);
 }
 // Click outside the settings popover closes it.
 document.addEventListener('click', e => {
   if (e.target.closest('.settings-wrap')) return;
+  const wrap = document.getElementById('settingsWrap');
+  if (wrap) wrap.open = false;
   document.getElementById('settingsPanel').classList.remove('open');
   document.getElementById('settingsBtn').classList.remove('open');
 });
