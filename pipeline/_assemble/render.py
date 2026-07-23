@@ -5,6 +5,8 @@ from pygments import highlight as _pyg_highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import KotlinLexer
 
+from pipeline.writers import load as load_writers, slugify as writer_slug
+
 _KT_LEXER = KotlinLexer()
 _KT_FORMATTER = HtmlFormatter(nowrap=True, classprefix="k-")
 
@@ -72,6 +74,9 @@ def build_data_block(
     featured_id: str = "",
 ) -> str:
     lines = ["// ══ DATA ════════════════════════════════════════════════════════════════════", ""]
+
+    # Writers registry supplies author photos (null until a source provides one).
+    writers = load_writers()
 
     # FEATURED_ID — pins the cover story to a specific article id; empty falls
     # back to the top-scoring article in the top chapter.
@@ -165,10 +170,17 @@ def build_data_block(
             topics_js = json.dumps(a.get("topics", []))
             source_name = src_id.replace("-", " ").title()
 
+            author = a.get("author", "")
+            avatar = ""
+            if author:
+                w = writers.get(writer_slug(author))
+                if w and w.get("photo"):
+                    avatar = w["photo"]
+
             article_blocks.append(
                 "      {{ id:{}, col:{},\n"
                 "        title:{},\n"
-                "        url:{}, source:{}, stype:{}, date:{}, author:{}, paywalled:{},\n"
+                "        url:{}, source:{}, stype:{}, date:{}, author:{}, avatar:{}, paywalled:{},\n"
                 "        topics:{},\n"
                 "        summary:{},\n"
                 "        snap:{},\n"
@@ -178,7 +190,7 @@ def build_data_block(
                     json.dumps(a["title"]),
                     json.dumps(a["url"]), json.dumps(source_name),
                     json.dumps(stype), json.dumps(date_str),
-                    json.dumps(a.get("author", "")),
+                    json.dumps(author), json.dumps(avatar),
                     "true" if a.get("paywalled") else "false",
                     topics_js,
                     json.dumps(summary),

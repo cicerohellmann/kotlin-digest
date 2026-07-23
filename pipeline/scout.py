@@ -28,6 +28,9 @@ STATE_DIR = ROOT / "state"
 HEALTH_FILE = STATE_DIR / "source_health.json"
 ARTICLES_FILE = STATE_DIR / "articles.json"
 
+sys.path.insert(0, str(ROOT))
+from pipeline.writers import load as writers_load, save as writers_save, upsert as writers_upsert
+
 # ── Constants ─────────────────────────────────────────────────────────────────
 ARTICLE_WINDOW_DAYS = 90
 DEFAULT_LOOKBACK_DAYS = 7
@@ -164,11 +167,16 @@ def strip_html(raw: str) -> str:
     return BeautifulSoup(raw, "html.parser").get_text(separator=" ", strip=True)
 
 
+BOT_AUTHORS = {"dependabot", "renovate", "github-actions"}
+
+
 def extract_author(entry) -> str:
     """Best-available human author name from a feedparser entry, or "".
 
     Prefers author_detail.name (clean), falls back to the raw author string.
     Blogger feeds append " (noreply@blogger.com)" — strip any trailing email.
+    Release automation (github-actions[bot], dependabot, …) is not a writer, so
+    those are dropped — keeps both the byline and the writers registry clean.
     """
     name = ""
     detail = getattr(entry, "author_detail", None)
@@ -178,6 +186,9 @@ def extract_author(entry) -> str:
         name = (getattr(entry, "author", "") or "").strip()
     # Drop a trailing "(email@host)" the way Blogger/Atom feeds format it.
     name = re.sub(r"\s*\([^)]*@[^)]*\)\s*$", "", name).strip()
+    low = name.lower()
+    if low.endswith("[bot]") or low in BOT_AUTHORS:
+        return ""
     return name[:80]
 
 
@@ -557,6 +568,7 @@ def main() -> None:
     health: dict = json.loads(HEALTH_FILE.read_text(encoding="utf-8")) if HEALTH_FILE.exists() else {}
     articles: list[dict] = json.loads(ARTICLES_FILE.read_text(encoding="utf-8")) if ARTICLES_FILE.exists() else []
     existing_ids: set[str] = {a["id"] for a in articles}
+    writers = writers_load()
 
     cutoff = datetime.now(tz=timezone.utc) - timedelta(days=ARTICLE_WINDOW_DAYS)
 
@@ -583,6 +595,8 @@ def main() -> None:
             articles.extend(new_articles)
             existing_ids.update(a["id"] for a in new_articles)
             total_new += len(new_articles)
+            for a in new_articles:
+                writers_upsert(writers, a.get("author", ""), a.get("source_id", ""), a.get("date"))
             print(f"  +{len(new_articles)} articles")
 
         effective_last = most_recent or (last_date if last_str else None)
@@ -604,6 +618,7 @@ def main() -> None:
 
     write_atomic(HEALTH_FILE, health)
     write_atomic(ARTICLES_FILE, articles)
+    writers_save(writers)
 
     print(f"\n{'─' * 50}")
     print(f"  {total_new} new articles from {len(sources)} sources")

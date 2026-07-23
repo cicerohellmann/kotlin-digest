@@ -498,13 +498,24 @@ body { min-height: 100vh; }
       color: var(--ink-muted);
     }
     .art-byline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28em;
       font-family: var(--font-ui);
       font-size: 0.57rem;
       color: var(--ink-muted);
     }
     .art-byline::before {
-      content: "by ";
+      content: "by";
       opacity: 0.6;
+    }
+    .art-avatar {
+      width: 1.15em;
+      height: 1.15em;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--rule);
+      flex: none;
     }
     .badge-paywall {
       font-family: var(--font-meta);
