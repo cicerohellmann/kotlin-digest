@@ -283,8 +283,17 @@ function renderRollup(rollup) {
 // Article card — identical markup/classes/ids to before, so filters + night mode work.
 // idPrefix defaults to 'art'; the cover passes 'cover' so its copy of the feature
 // article doesn't collide with the same article's id inside its chapter.
+// Stable hue [0,360) from a topic name, so the same topic is always the same
+// colour (see .tag in components.css).
+function tagHue(t) {
+  let h = 0;
+  for (let i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0;
+  return h % 360;
+}
+
 function articleCard(a, idPrefix = 'art') {
-  return `<article class="article ${a.col}" id="${idPrefix}-${a.id}" data-topics="${a.topics.join(',')}">
+  const clickable = a.url && a.url !== '#';
+  return `<article class="article ${a.col}${clickable ? ' is-clickable' : ''}" id="${idPrefix}-${a.id}" data-topics="${a.topics.join(',')}"${clickable ? ` data-url="${a.url}"` : ''}>
     <div class="art-meta">
       <span class="source-tag ${a.stype}">${a.source}</span>
       ${a.author ? `<span class="art-byline">${a.avatar ? `<img class="art-avatar" src="${a.avatar}" alt="" loading="lazy">` : ''}${a.author}</span>` : ''}
@@ -295,7 +304,7 @@ function articleCard(a, idPrefix = 'art') {
     <p class="art-summary">${a.rollup && a.rollup.summary ? a.rollup.summary : a.summary}</p>
     ${renderSnapshot(a.snap)}
     ${renderRollup(a.rollup)}
-    <div class="art-tags">${a.topics.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    <div class="art-tags">${a.topics.map(t=>`<span class="tag" style="--tag-h:${tagHue(t)}">${t}</span>`).join('')}</div>
   </article>`;
 }
 
@@ -636,6 +645,54 @@ function renderView() {
   else layoutPager();
 }
 
+// Whole-card affordance: a click anywhere on a card (that isn't a real control
+// or a text selection) opens the article in a new tab; a long-press on touch
+// copies its link. Bound once via delegation so it survives re-renders.
+let _cardBound = false, _lpTimer = null, _lpFired = false;
+function bindCardInteractions() {
+  if (_cardBound) return; _cardBound = true;
+
+  document.addEventListener('click', e => {
+    if (_lpFired) { _lpFired = false; return; }   // swallow the click that follows a long-press
+    if (e.target.closest('a, button, summary, details, input, label, .settings-panel')) return;
+    if (window.getSelection && String(window.getSelection())) return;   // don't hijack text selection
+    const card = e.target.closest('.article.is-clickable');
+    if (card && card.dataset.url) window.open(card.dataset.url, '_blank', 'noopener');
+  });
+
+  const cancelLP = () => { if (_lpTimer) { clearTimeout(_lpTimer); _lpTimer = null; } };
+  document.addEventListener('touchstart', e => {
+    const card = e.target.closest('.article.is-clickable');
+    if (!card || !card.dataset.url) return;
+    cancelLP();
+    _lpTimer = setTimeout(() => { _lpTimer = null; _lpFired = true; copyLink(card.dataset.url); }, 500);
+  }, { passive: true });
+  document.addEventListener('touchend', cancelLP, { passive: true });
+  document.addEventListener('touchmove', cancelLP, { passive: true });
+}
+
+function copyLink(url) {
+  const done = () => showToast('Link copied');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(done).catch(() => fallbackCopy(url, done));
+  } else fallbackCopy(url, done);
+}
+function fallbackCopy(url, cb) {
+  const ta = document.createElement('textarea');
+  ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); cb && cb(); } catch (e) {}
+  document.body.removeChild(ta);
+}
+
+let _toastT = null;
+function showToast(msg) {
+  let t = document.getElementById('kd-toast');
+  if (!t) { t = document.createElement('div'); t.id = 'kd-toast'; document.body.appendChild(t); }
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(_toastT); _toastT = setTimeout(() => t.classList.remove('show'), 1600);
+}
+
 // ── viewer / navigation ──
 function ensureNav() {
   if (document.getElementById('pr-prev')) return;
@@ -647,7 +704,31 @@ function ensureNav() {
   mk('pr-prev', 'pr-arrow pr-prev', 'Previous page', '‹', prevScreen);
   mk('pr-next', 'pr-arrow pr-next', 'Next page', '›', nextScreen);
   const ind = document.createElement('div'); ind.id = 'pr-ind'; ind.className = 'pr-indicator';
+  ind.title = 'Jump to page';
+  ind.onclick = togglePageJump;
   document.body.appendChild(ind);
+}
+
+// Click the page indicator to open a grid of page numbers and jump straight to
+// one, instead of only stepping with the ‹ › arrows.
+function togglePageJump(e) {
+  if (e) e.stopPropagation();
+  const existing = document.getElementById('pr-jump');
+  if (existing) { existing.remove(); return; }
+  if (pager.screens <= 1) return;
+  const pop = document.createElement('div');
+  pop.id = 'pr-jump';
+  for (let s = 0; s < pager.screens; s++) {
+    const b = document.createElement('button');
+    b.textContent = s + 1;
+    if (s === pager.screen) b.className = 'is-current';
+    b.onclick = ev => { ev.stopPropagation(); goToScreen(s, false); pop.remove(); };
+    pop.appendChild(b);
+  }
+  document.body.appendChild(pop);
+  setTimeout(() => document.addEventListener('click', function h(ev) {
+    if (!pop.contains(ev.target) && ev.target.id !== 'pr-ind') { pop.remove(); document.removeEventListener('click', h); }
+  }), 0);
 }
 
 // The magazine turns like a book: the target screen (or the one leaving) pivots
@@ -966,6 +1047,7 @@ try {
     : 'EXCLUDE — select topics to <em>hide</em> from the digest.';
   updateChips();
   setupPagerListeners();
+  bindCardInteractions();
   // Paginate once fonts are ready so card measurements are accurate.
   const boot = () => {
     try { renderView(); } catch (e) { console.error('render failed:', e); }
