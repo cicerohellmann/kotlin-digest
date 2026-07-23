@@ -68,7 +68,14 @@ sys.path.insert(0, str(ROOT))
 from pipeline._assemble.dates import edition_to_dates
 from pipeline._assemble.scores import lookup_scores_at
 from pipeline._assemble.articles import filter_articles, score_articles, cluster_articles
-from pipeline._assemble.render import build_data_block, inject_data
+from pipeline._assemble.render import (
+    build_data_block,
+    build_static_digest,
+    build_ticker_html,
+    inject_data,
+    inject_static_digest,
+    inject_ticker,
+)
 from pipeline._assemble.comics import select_comics, comics_needed, COMIC_EVERY
 from pipeline.rollup import collapse, load_rollups, write_queue
 from pipeline._assemble.archive import (
@@ -174,6 +181,18 @@ def main() -> None:
         featured_id=featured_id,
     )
     html = inject_data(template, data_block)
+    html = inject_ticker(html, build_ticker_html(bible))
+    html = inject_static_digest(
+        html,
+        build_static_digest(
+            chapters=chapters,
+            source_type_map=source_type_map,
+            bible=bible,
+            featured_id=featured_id,
+            comics=comics,
+            comic_every=COMIC_EVERY,
+        ),
+    )
 
     n_sources = len({a.get("source_id") for ch in chapters for a in ch["articles"] if a.get("source_id")})
 

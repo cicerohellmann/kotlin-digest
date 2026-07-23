@@ -6,7 +6,16 @@ from datetime import date
 from pipeline._assemble.dates import edition_to_dates
 from pipeline._assemble.scores import lookup_scores_at
 from pipeline._assemble.articles import filter_articles, score_articles, assign_col, cluster_articles
-from pipeline._assemble.render import spark_from_history, inject_data, build_data_block, highlight_kotlin
+from pipeline._assemble.render import (
+    spark_from_history,
+    inject_data,
+    inject_static_digest,
+    inject_ticker,
+    build_data_block,
+    build_static_digest,
+    build_ticker_html,
+    highlight_kotlin,
+)
 
 
 # ── dates ────────────────────────────────────────────────────────────────────
@@ -200,6 +209,27 @@ def test_inject_data_raises_if_no_marker():
         inject_data("no marker here", "data")
 
 
+def test_inject_static_digest_replaces_marker():
+    template = '<main id="digest">\n<!-- @@DIGEST_STATIC@@ -->\n</main>'
+    result = inject_static_digest(template, "<p>Readable digest</p>")
+    assert "<p>Readable digest</p>" in result
+    assert "@@DIGEST_STATIC@@" not in result
+
+
+def test_inject_ticker_replaces_marker():
+    template = '<div id="ticker"><!-- @@DIGEST_TICKER@@ --></div>'
+    result = inject_ticker(template, "<span>trend</span>")
+    assert "<span>trend</span>" in result
+    assert "@@DIGEST_TICKER@@" not in result
+
+
+def test_build_ticker_html_duplicates_items_for_marquee():
+    bible = {"kotlin": {"score": 10.0, "history": [{"score": 10.0}]}}
+    html = build_ticker_html(bible)
+    assert html.count("ticker-item") == 2
+    assert "kotlin" in html
+
+
 def test_build_data_block_valid_js_structure():
     clusters = [{"id": "ui", "label": "Compose & UI", "topics": ["compose"]}]
     chapters = [
@@ -305,3 +335,79 @@ def test_build_data_block_no_rollup_is_null():
         source_type_map={"kotlin-blog": "blog"}, clusters=clusters,
     )
     assert "rollup:null" in block
+
+
+def test_build_static_digest_contains_readable_articles_and_video_link():
+    chapters = [{
+        "id": "community", "label": "Community", "score": 10.0,
+        "articles": [{
+            "id": "v1", "col": "c12", "title": "Kotlin Talk",
+            "url": "https://www.youtube.com/watch?v=bbbbbbbbbbb",
+            "source_id": "kotlin-youtube", "date": "2026-07-07",
+            "topics": ["kotlin"], "placement_score": 10.0,
+            "summary": "A Kotlin video.", "summarized": True,
+        }],
+    }]
+    bible = {"kotlin": {"score": 10.0, "history": [{"date": "2026-07-07", "score": 10.0}]}}
+    html = build_static_digest(chapters, {"kotlin-youtube": "youtube"}, bible)
+    assert 'data-static-digest="1"' in html
+    assert "Kotlin Talk" in html
+    assert "https://www.youtube.com/watch?v=bbbbbbbbbbb" in html
+    assert "<script" not in html
+
+
+def test_build_static_digest_contains_cover_and_comic_interlude():
+    chapters = [
+        {
+            "id": "core",
+            "label": "Kotlin Core",
+            "score": 80.0,
+            "articles": [{
+                "id": "a1",
+                "col": "c12",
+                "title": "Featured Kotlin Story",
+                "url": "https://example.com/a1",
+                "source_id": "kotlin-blog",
+                "date": "2026-07-07",
+                "topics": ["kotlin"],
+                "summary": "Main story.",
+            }],
+        },
+        {
+            "id": "ui",
+            "label": "Compose & UI",
+            "score": 60.0,
+            "articles": [{
+                "id": "a2",
+                "col": "c12",
+                "title": "Secondary Compose Story",
+                "url": "https://example.com/a2",
+                "source_id": "proandroiddev",
+                "date": "2026-07-08",
+                "topics": ["compose"],
+                "summary": "Secondary story.",
+            }],
+        },
+    ]
+    bible = {"kotlin": {"score": 10.0, "history": [{"score": 10.0}]}}
+    comics = [{
+        "img": "comic.png",
+        "alt": "Comic alt text.",
+        "title": "Kotlin Comic",
+        "permalink": "https://example.com/comic",
+        "artist": "Artist",
+        "source": "Comic Source",
+    }]
+    html = build_static_digest(
+        chapters,
+        {"kotlin-blog": "blog", "proandroiddev": "blog"},
+        bible,
+        featured_id="a1",
+        comics=comics,
+        comic_every=1,
+    )
+    assert "Cover Story · Kotlin Core" in html
+    assert "Featured Kotlin Story" in html
+    assert "Also inside this issue" in html
+    assert "Kotlin Comic" in html
+    assert "Comic alt text." in html
