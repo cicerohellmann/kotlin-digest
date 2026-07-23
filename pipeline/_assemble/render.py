@@ -1,4 +1,5 @@
 import json
+import re
 from datetime import date, datetime
 
 from pygments import highlight as _pyg_highlight
@@ -16,6 +17,17 @@ def highlight_kotlin(code: str) -> str:
     so generics like <Any> survive). Classes are prefixed `k-` to match the
     .snap-code .k-* palette in template.html."""
     return _pyg_highlight(code, _KT_LEXER, _KT_FORMATTER).rstrip("\n")
+
+_YT_RE = re.compile(
+    r"(?:youtu\.be/|youtube\.com/(?:watch\?v=|embed/|v/|shorts/))([A-Za-z0-9_-]{11})"
+)
+
+
+def youtube_id(url: str) -> str:
+    """Extract an 11-char YouTube id from any common URL form, else ''."""
+    m = _YT_RE.search(url or "")
+    return m.group(1) if m else ""
+
 
 SPARK_CHARS = "▁▂▃▄▅▆▇█"
 DATA_MARKER = "// @@DIGEST_DATA@@"
@@ -177,10 +189,12 @@ def build_data_block(
                 if w and w.get("photo"):
                     avatar = w["photo"]
 
+            video = youtube_id(a.get("url", ""))
+
             article_blocks.append(
                 "      {{ id:{}, col:{},\n"
                 "        title:{},\n"
-                "        url:{}, source:{}, stype:{}, date:{}, author:{}, avatar:{}, paywalled:{},\n"
+                "        url:{}, source:{}, stype:{}, date:{}, author:{}, avatar:{}, video:{}, paywalled:{},\n"
                 "        topics:{},\n"
                 "        summary:{},\n"
                 "        snap:{},\n"
@@ -190,7 +204,7 @@ def build_data_block(
                     json.dumps(a["title"]),
                     json.dumps(a["url"]), json.dumps(source_name),
                     json.dumps(stype), json.dumps(date_str),
-                    json.dumps(author), json.dumps(avatar),
+                    json.dumps(author), json.dumps(avatar), json.dumps(video),
                     "true" if a.get("paywalled") else "false",
                     topics_js,
                     json.dumps(summary),

@@ -291,6 +291,23 @@ function tagHue(t) {
   return h % 360;
 }
 
+// YouTube facade — nothing loads from youtube.com on page view. "Watch here"
+// swaps in the privacy-friendly nocookie player only on click; "Open on
+// YouTube" is a plain link that also loads nothing until the user follows it.
+function renderVideo(id) {
+  return `<div class="yt-facade" data-yt="${id}">
+    <button class="yt-play" aria-label="Play video" onclick="loadYouTube(this)">
+      <span class="yt-tri"></span><span class="yt-cap">Watch here</span>
+    </button>
+    <a class="yt-ext" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+  </div>`;
+}
+function loadYouTube(btn) {
+  const f = btn.closest('.yt-facade');
+  const id = f.dataset.yt;
+  f.innerHTML = `<iframe class="yt-frame" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+}
+
 function articleCard(a, idPrefix = 'art') {
   const clickable = a.url && a.url !== '#';
   return `<article class="article ${a.col}${clickable ? ' is-clickable' : ''}" id="${idPrefix}-${a.id}" data-topics="${a.topics.join(',')}"${clickable ? ` data-url="${a.url}"` : ''}>
@@ -302,6 +319,7 @@ function articleCard(a, idPrefix = 'art') {
     </div>
     <h3 class="art-title"><a href="${a.url}" target="_blank" rel="noopener noreferrer" onclick="if(this.getAttribute('href')==='#')event.preventDefault()">${a.title}</a></h3>
     <p class="art-summary">${a.rollup && a.rollup.summary ? a.rollup.summary : a.summary}</p>
+    ${a.video ? renderVideo(a.video) : ''}
     ${renderSnapshot(a.snap)}
     ${renderRollup(a.rollup)}
     <div class="art-tags">${a.topics.map(t=>`<span class="tag" style="--tag-h:${tagHue(t)}">${t}</span>`).join('')}</div>
