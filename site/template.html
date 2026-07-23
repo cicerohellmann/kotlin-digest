@@ -18,7 +18,10 @@
   <meta name="twitter:description" content="__META_DESC__">
   <meta name="twitter:image" content="https://kotlindigest.com/og-card.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://imgs.xkcd.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="design.css">
   <script>
   // Apply saved reading prefs before first paint (no flash). One cookie holds
@@ -309,8 +312,9 @@ function loadYouTube(btn) {
   f.innerHTML = `<iframe class="yt-frame" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 }
 
-function articleCard(a, idPrefix = 'art') {
+function articleCard(a, idPrefix = 'art', headingTag = 'h3') {
   const clickable = a.url && a.url !== '#';
+  const heading = headingTag === 'h2' ? 'h2' : 'h3';
   return `<article class="article ${a.col}${clickable ? ' is-clickable' : ''}" id="${idPrefix}-${a.id}" data-topics="${a.topics.join(',')}"${clickable ? ` data-url="${a.url}"` : ''}>
     <div class="art-meta">
       <span class="source-tag ${a.stype}">${a.source}</span>
@@ -318,7 +322,7 @@ function articleCard(a, idPrefix = 'art') {
       <span class="art-date">${a.date}</span>
       ${a.paywalled ? '<span class="badge-paywall" title="Member-only story — requires a paid Medium account">🔒 Member-only</span>' : ''}
     </div>
-    <h3 class="art-title"><a href="${a.url}" target="_blank" rel="noopener noreferrer" onclick="if(this.getAttribute('href')==='#')event.preventDefault()">${a.title}</a></h3>
+    <${heading} class="art-title"><a href="${a.url}" target="_blank" rel="noopener noreferrer" onclick="if(this.getAttribute('href')==='#')event.preventDefault()">${a.title}</a></${heading}>
     <p class="art-summary">${a.rollup && a.rollup.summary ? a.rollup.summary : a.summary}</p>
     ${a.video ? renderVideo(a.video) : ''}
     ${renderSnapshot(a.snap)}
@@ -333,11 +337,12 @@ function articleCard(a, idPrefix = 'art') {
 function comicBand(c) {
   if (!c) return '';
   const joke = c.alt ? `<p class="comic-alt">${c.alt}</p>` : '';
+  const dims = c.width && c.height ? ` width="${c.width}" height="${c.height}"` : '';
   return `<section class="comic-interlude">
     <div class="comic-kicker">Interlude</div>
     <figure class="comic-figure">
       <a href="${c.permalink}" target="_blank" rel="noopener noreferrer">
-        <img class="comic-img" src="${c.img}" alt="${c.title}" loading="lazy">
+        <img class="comic-img" src="${c.img}" alt="${c.title}" loading="lazy"${dims}>
       </a>
       <figcaption class="comic-cap">
         <span class="comic-title">${c.title}</span>
@@ -411,7 +416,7 @@ function coverInner(chs) {
   }
   return `<div class="mag-cover-inner">
     <div class="cover-kicker">Cover Story · ${featCh.title}</div>
-    ${articleCard(feature, 'cover')}
+    ${articleCard(feature, 'cover', 'h2')}
     <div class="also"><span class="lbl">Also inside this issue</span>
       ${secondary.map(([a, cid]) => `<a href="#" data-goto="${cid}"><span class="n" data-pgref="${cid}">··</span> ${a.title}</a>`).join('')}
     </div></div>`;
@@ -1067,13 +1072,18 @@ try {
   updateChips();
   setupPagerListeners();
   bindCardInteractions();
-  // Paginate once fonts are ready so card measurements are accurate.
+  // Render immediately for LCP. Paged layout gets a quiet second pass once web
+  // fonts settle, because only fixed pages depend on exact text measurement.
   const boot = () => {
     try { renderView(); } catch (e) { console.error('render failed:', e); }
     dismissLoader();
   };
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(boot).catch(boot);
-  else boot();
+  boot();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      if (document.documentElement.dataset.layout !== 'scroll') renderView();
+    }).catch(() => {});
+  }
 } catch (e) {
   console.error('Digest init failed:', e);
   dismissLoader();
