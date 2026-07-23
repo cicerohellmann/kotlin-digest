@@ -17,6 +17,8 @@ comics:
 - id: xkcd-303
   title: Compiling
   img: https://imgs.xkcd.com/comics/compiling.png
+  width: 413
+  height: 360
   alt: '''Are you stealing those LCDs?'' ''Yeah, but I''m doing it while my code compiles.'''
   permalink: https://xkcd.com/303/
   artist: Randall Munroe
@@ -25,6 +27,8 @@ comics:
 - id: xkcd-1205
   title: Is It Worth the Time?
   img: https://imgs.xkcd.com/comics/is_it_worth_the_time.png
+  width: 571
+  height: 464
   alt: Don't forget the time you spend finding the chart to look up what you save. And the time spent
     reading this reminder about the time spent. And the time trying to figure out if either of those actually
     make sense. Remember, every second counts toward your life total, including these right now.
@@ -35,6 +39,8 @@ comics:
 - id: xkcd-1319
   title: Automation
   img: https://imgs.xkcd.com/comics/automation.png
+  width: 404
+  height: 408
   alt: '''Automating'' comes from the roots ''auto-'' meaning ''self-'', and ''mating'', meaning ''screwing''.'
   permalink: https://xkcd.com/1319/
   artist: Randall Munroe
@@ -43,6 +49,8 @@ comics:
 - id: xkcd-1421
   title: Future Self
   img: https://imgs.xkcd.com/comics/future_self.png
+  width: 280
+  height: 462
   alt: Maybe I haven't been to Iceland because I'm busy dealing with YOUR crummy code.
   permalink: https://xkcd.com/1421/
   artist: Randall Munroe
@@ -51,6 +59,8 @@ comics:
 - id: xkcd-1667
   title: Algorithms
   img: https://imgs.xkcd.com/comics/algorithms.png
+  width: 740
+  height: 206
   alt: There was a schism in 2007, when a sect advocating OpenOffice created a fork of Sunday.xlsx and
     maintained it independently for several months. The efforts to reconcile the conflicting schedules
     led to the reinvention, within the cells of the spreadsheet, of modern version control.
@@ -61,6 +71,8 @@ comics:
 - id: xkcd-1739
   title: Fixing Problems
   img: https://imgs.xkcd.com/comics/fixing_problems.png
+  width: 312
+  height: 307
   alt: '''What was the original problem you were trying to fix?'' ''Well, I noticed one of the tools I
     was using had an inefficiency that was wasting my time.'''
   permalink: https://xkcd.com/1739/

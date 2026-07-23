@@ -123,13 +123,15 @@ def build_data_block(
     comic_items = []
     for c in (comics or []):
         comic_items.append(
-            "  {{ img:{}, alt:{}, title:{}, permalink:{}, artist:{}, source:{} }}".format(
+            "  {{ img:{}, alt:{}, title:{}, permalink:{}, artist:{}, source:{}, width:{}, height:{} }}".format(
                 json.dumps(c.get("img", "")),
                 json.dumps(c.get("alt", "")),
                 json.dumps(c.get("title", "")),
                 json.dumps(c.get("permalink", "")),
                 json.dumps(c.get("artist", "")),
                 json.dumps(c.get("source", "")),
+                int(c.get("width") or 0),
+                int(c.get("height") or 0),
             )
         )
     lines.append("const COMICS = [\n" + ",\n".join(comic_items) + "\n];")

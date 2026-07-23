@@ -305,3 +305,27 @@ def test_build_data_block_no_rollup_is_null():
         source_type_map={"kotlin-blog": "blog"}, clusters=clusters,
     )
     assert "rollup:null" in block
+
+
+def test_build_data_block_emits_comic_dimensions():
+    block = build_data_block(
+        edition="2026-W28",
+        start=date(2026, 7, 6),
+        end=date(2026, 7, 12),
+        chapters=[],
+        bible={},
+        source_type_map={},
+        clusters=[],
+        comics=[{
+            "img": "comic.png",
+            "alt": "Comic alt text.",
+            "title": "Kotlin Comic",
+            "permalink": "https://example.com/comic",
+            "artist": "Artist",
+            "source": "Comic Source",
+            "width": 640,
+            "height": 480,
+        }],
+    )
+    assert "width:640" in block
+    assert "height:480" in block
