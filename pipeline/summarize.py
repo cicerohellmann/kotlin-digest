@@ -147,7 +147,14 @@ def cmd_fetch() -> None:
         print(f"  [{i+1}/{len(pending)}] {article['title'][:70]}", file=sys.stderr, flush=True)
         content = fetch_content(article["url"])
         excerpt = article.get("excerpt", "")
-        if not _has_usable_content(content, excerpt):
+        is_video_metadata = article.get("media_type") == "video" and (article.get("title") or excerpt)
+        if is_video_metadata:
+            content = (
+                "YouTube video metadata from the source feed.\n"
+                f"Title: {article.get('title', '')}\n"
+                f"Description: {excerpt or '[no feed description]'}"
+            )
+        if not is_video_metadata and not _has_usable_content(content, excerpt):
             if content.startswith("[fetch error"):
                 # Transient network failure (timeout / connection reset / one-off
                 # 5xx). Do NOT persist a flag — leave the article unsummarized so a
@@ -173,6 +180,8 @@ def cmd_fetch() -> None:
             "source_id": article["source_id"],
             "excerpt": article.get("excerpt", ""),
             "content": content,
+            "media_type": article.get("media_type"),
+            "video_id": article.get("video_id"),
         })
 
     if flagged:
