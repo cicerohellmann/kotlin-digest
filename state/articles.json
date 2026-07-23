@@ -5831,5 +5831,305 @@
     "excerpt": "Compose Multiplatform and Clean Architecture, one codebase, both platforms. Honestly the \"AI wrote it\" angle is the boring part. What I actually wanted was for the architecture to hold together across a dozen prompts instead of drifting, and that's the bit I kept failing at by hand. So I built KMPilot (MIT). It keeps things in line with a design to build to verify to test to review pipeline, and a hook that blocks any edit trying to skip the pipeline. I wrote up a full build of a small museum ga",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "20c898baef7142c6",
+    "title": "Optimize your apps for the next generation of Samsung Galaxy devices",
+    "url": "https://android-developers.googleblog.com/2026/07/optimize-galaxy-screen-sizes.html",
+    "date": "2026-07-22",
+    "source_id": "android-developers-blog",
+    "excerpt": "Posted by Fahd Imtiaz, Senior Product Manager and Miguel Montemayor, Developer Relations Engineer, Android Developer Experience Today at Galaxy Unpacked, Samsung unveiled its latest lineup of foldable and wearable devices. For developers, this means that the variety of form factors, screen sizes, and device postures your app needs to support is expanding once again. With devices like the Galaxy Z Fold8, the ecosystem is expanding to include hardware with a landscape-first natural orientation and",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "62202933c9d62ee8",
+    "title": "Rider 2026.2: IDE Intelligence for AI Agents, Faster Performance, and Spectacular Game Dev Updates",
+    "url": "https://blog.jetbrains.com/dotnet/2026/07/22/rider-2026-2-release/",
+    "date": "2026-07-22",
+    "source_id": "jetbrains-blog",
+    "excerpt": "Rider 2026.2 opens up the IDE’s own intelligence to your AI coding agents, so they work from real project knowledge instead of reconstructing it from files and terminal output. A new set of agent skills covers testing, profiling, refactoring, and official Microsoft .NET workflows, and GitHub Copilot now joins the lineup as a natively integrated […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "74080321e6a95c05",
+    "title": "What’s New in RustRover 2026.2",
+    "url": "https://blog.jetbrains.com/rust/2026/07/22/whats-new-in-rustrover-2026-2/",
+    "date": "2026-07-22",
+    "source_id": "jetbrains-blog",
+    "excerpt": "RustRover 2026.2 adds endpoint discovery and route–handler navigation for axum-based projects, brings support for Ferrocene, a qualified Rust toolchain, and improves your everyday experience with macros, imports, struct creation, module paths, benchmarks, .env files, and split mode. Key Higlights Faster navigation for axum and reqwest In axum projects, route strings are the entry points to […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "404d619b23514f36",
+    "title": "One Tap, Three Machines: How Android Views, Flutter, and Compose Actually Render Your UI",
+    "url": "https://proandroiddev.com/one-tap-three-machines-how-android-views-flutter-and-compose-actually-render-your-ui-ad31c30ec279?source=rss----c72404660798---4",
+    "date": "2026-07-23",
+    "source_id": "proandroiddev",
+    "excerpt": "One state change, three rendering strategies. Android Native vs Flutter vs KMP — a series comparing how the three mobile stacks solve the same problems differently. Part 1: rendering, organized around the one question every UI framework must answer. UI frameworks are often compared as catalogues of features: this one has hot reload, that one has native look-and-feel, the third one shares code. Memorizing the catalogue is not the same as understanding it. The deeper question is always the same: w",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b7811b850d2762d4",
+    "title": "Tail Recursion in Kotlin: How the Compiler Turns Recursion into a Loop",
+    "url": "https://medium.com/@nematengg/tail-recursion-in-kotlin-how-the-compiler-turns-recursion-into-a-loop-34e026ed6015?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Recursion is one of those concepts every programmer learns early in their career. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "89c47f04b7e6597e",
+    "title": "Mastering Coroutines and Flow in Android",
+    "url": "https://medium.com/@nisarbahoo.hypersoft/mastering-coroutines-and-flow-in-android-8e633fa32424?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Async problems don’t show up immediately. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "855194cb528884b2",
+    "title": "Why Jetpack Compose?",
+    "url": "https://gaandlaneeraja.medium.com/why-jetpack-compose-6563889e69b1?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "An invitation to Google’s design meeting Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c8c9bccdcb568414",
+    "title": "Building a Modularized Android App: A Practical Guide to Clean Architecture in 2026",
+    "url": "https://medium.com/@khizarkhan8/building-a-modularized-android-app-a-practical-guide-to-clean-architecture-in-2026-01987fb697af?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Repo: khankhizar-dev/Modularization Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2b5d6c29c472d54a",
+    "title": "Stop Writing For-Loops: A Practical Guide to Kotlin’s Advanced Collection Operators",
+    "url": "https://medium.com/@ravi.pandya412/stop-writing-for-loops-a-practical-guide-to-kotlins-advanced-collection-operators-8fb6aebd0a47?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "The moment I stopped reaching for Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4a8e6d6d83c46392",
+    "title": "Offline-First Android Architecture: The Complete Engineering Guide",
+    "url": "https://tiwariashuism.medium.com/offline-first-android-architecture-the-complete-engineering-guide-be78c102c59d?source=rss------kotlin-5",
+    "date": "2026-07-22",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "How to design Android apps that treat the network as an optimization layer, not a requirement Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9ef475338df18cb4",
+    "title": "Web routing on top of Voyager in Compose Multiplatform: syncing navigation with the browser’s…",
+    "url": "https://medium.com/@zhuravl321/web-routing-on-top-of-voyager-in-compose-multiplatform-syncing-navigation-with-the-browsers-aece7387daf1?source=rss------kotlin-5",
+    "date": "2026-07-22",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "The story of how I ran into the lack of web routing for Voyager in Compose Multiplatform, came up with a solution, took some hits along… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1e0a14b3bf7e54d4",
+    "title": "Classes and Objects in Kotlin: A Complete Beginner’s Guide",
+    "url": "https://techdynasty.medium.com/classes-and-objects-in-kotlin-a-complete-beginners-guide-92c6df5d87ba?source=rss------kotlin-5",
+    "date": "2026-07-22",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Imagine you’re building an e-commerce app. Every product has a name, price, category, and stock quantity. Customers have names, email… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9b14689a2e5ad63e",
+    "title": "5 More Kotlin Features That Quietly Level Up Your Code",
+    "url": "https://medium.com/@amirdorri/5-more-kotlin-features-that-quietly-level-up-your-code-7afe3406c6d4?source=rss------kotlin-5",
+    "date": "2026-07-22",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Part 2 of a series on Kotlin features that make illegal states harder to write and boilerplate harder to justify Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ad5bd6b53a3807e7",
+    "title": "Mastering Ktor: End-to-End Guide for Android, KMP & Backend Development",
+    "url": "https://medium.com/@KaushalVasava/mastering-ktor-end-to-end-guide-for-android-kmp-backend-development-eaf1a3e242f1?source=rss------kotlin-5",
+    "date": "2026-07-22",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "How to build a shared networking layer with Ktor Client, power it with a Ktor Server backend, and consume it from Mobile apps all without… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5c9c3d3bedf52786",
+    "title": "The Silent Damage of Harsh Words",
+    "url": "https://medium.com/@moonj9670/the-silent-damage-of-harsh-words-e0d023e99348?source=rss------android-5",
+    "date": "2026-07-23",
+    "source_id": "medium-android-tag",
+    "excerpt": "Appreciation and criticism can make a person good or bad. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1e82af49ef4c3e62",
+    "title": "09370673570شماره خاله #شماره خاله# تهران #شماره خاله# اصفهان\nشماره خاله #شماره خاله# تهران #شماره…",
+    "url": "https://medium.com/@mmmcxxsm1m/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-b5699ffb5050?source=rss------android-5",
+    "date": "2026-07-23",
+    "source_id": "medium-android-tag",
+    "excerpt": "شماره خاله #شماره خاله# تهران #شماره خاله# اصفهان\nشماره خاله #شماره خاله# تهران #شماره خاله# اصفهانf\nشماره خاله #شماره خاله# تهران #شماره… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "639ebad381ddb032",
+    "title": "09370673570شماره خاله #شماره خاله# تهران #شماره خاله# اصفهان\nشماره خاله #شماره خاله# تهران #شماره…",
+    "url": "https://medium.com/@mmmcxxsm1m/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-0a379a9cda95?source=rss------android-5",
+    "date": "2026-07-23",
+    "source_id": "medium-android-tag",
+    "excerpt": "شماره خاله #شماره خاله# تهران #شماره خاله# اصفهان\nشماره خاله #شماره خاله# تهران #شماره خاله# اصفهانf\nشماره خاله #شماره خاله# تهران #شماره… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7b985109d525e547",
+    "title": "09370673570شماره خاله #شماره خاله# تهران #شماره خاله# اصفهان\nشماره خاله #شماره خاله# تهران #شماره…",
+    "url": "https://medium.com/@mmnbcxxssxc6m/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-51bdcc23b265?source=rss------android-5",
+    "date": "2026-07-23",
+    "source_id": "medium-android-tag",
+    "excerpt": "شماره خاله #شماره خاله# تهران #شماره خاله# اصفهان\nشماره خاله #شماره خاله# تهران #شماره خاله# اصفهانf\nشماره خاله #شماره خاله# تهران #شماره… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2ef96a772ad02bf7",
+    "title": "09370673570شماره خاله #شماره خاله# تهران #شماره خاله# اصفهان\nشماره خاله #شماره خاله# تهران #شماره…",
+    "url": "https://medium.com/@mmnbcxxssxc6m/09370673570%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-%D8%AE%D8%A7%D9%84%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%B4%D9%85%D8%A7%D8%B1%D9%87-42743d4387b5?source=rss------android-5",
+    "date": "2026-07-23",
+    "source_id": "medium-android-tag",
+    "excerpt": "شماره خاله #شماره خاله# تهران #شماره خاله# اصفهان\nشماره خاله #شماره خاله# تهران #شماره خاله# اصفهانf\nشماره خاله #شماره خاله# تهران #شماره… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ac6296f2c451d15e",
+    "title": "XC777 Game — Complete Guide for Game Players To Online Earn",
+    "url": "https://medium.com/@nayapakapk93/xc777-game-complete-guide-for-game-players-to-online-earn-59f9ddedee13?source=rss------android-5",
+    "date": "2026-07-23",
+    "source_id": "medium-android-tag",
+    "excerpt": "XC777 Game has become increasingly popular because people now prefer convenient entertainment directly from smartphones, tablets, laptops… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5e59445121cdacd4",
+    "title": "22 July 2026 Artifact Wave",
+    "url": "https://commonsware.com/blog/2026/07/22/jetpack-artifact-wave.html",
+    "date": "2026-07-22",
+    "source_id": "commonsware",
+    "excerpt": "Here is what we got as new Jetpack artifacts this week!",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ad840364f1eb4af5",
+    "title": "Goodbye, cw-json! Hello, kPointer!",
+    "url": "https://commonsware.com/blog/2026/07/22/goodbye-cwjson-hello-kpointer.html",
+    "date": "2026-07-22",
+    "source_id": "commonsware",
+    "excerpt": "The cw-json project has been replaced by kPointer -- learn what kPointer offers!",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "af8de8960f327ee5",
+    "title": "Shipaton is back! And r/androiddev is an official Build-in-Public community",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v4387g/shipaton_is_back_and_randroiddev_is_an_official/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hey everyone, RevenueCat is bringing back Shipaton , its annual mobile app hackathon, and r/androiddev is joining as an official Build-in-Public community . The premise is straightforward: build a new app, ship it during the hackathon window, and share what you’re working on along the way. The key requirement is that you must ship a brand-new app between August 1 through September 30, 2026 to participate. You can learn more and enter here: shipaton.com What is Shipaton? Shipaton is a mobile app ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9d6062194c6fac41",
+    "title": "I couldn't get 256 Hz ECG to render smoothly over BLE, so I ended up writing a sweep renderer",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v3ylh9/i_couldnt_get_256_hz_ecg_to_render_smoothly_over/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I built a sweep-style waveform view for Android — the bedside-monitor kind that wipes left to right instead of scrolling. Every charting library I looked at models a scrolling window, which is a different thing and looks wrong once you've watched a real monitor. MPAndroidChart also redraws through main-thread invalidate() , which was fine at 256 Hz in isolation and fell apart the moment the rest of the app did anything. SciChart handles it but it's commercial. So: SurfaceView, lockHardwareCanvas",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8b8715ccadc5cfde",
+    "title": "Cloudflare is blocking offshore Android Google Play Reviewer... any workarounds?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v3p1js/cloudflare_is_blocking_offshore_android_google/",
+    "date": "2026-07-22",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I've been submitting my new app listing for review and It keeps getting rejected even though I can access it from many different locations, but the google app reviewer keeps sending a cloudflare block page and rejecting the submission. I checked the Cloudflare setting and it seems that it's blocking bot users from foreign countries, but this is a non-negotiable due to botters. Is there any way to get around this issue? Has anyone else run into this before? All and any advice is welcome. submitte",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c7db0344ac22c155",
+    "title": "Replacing an unreliable touch-target-size rule in my Jetpack Compose accessibility scanner",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v421wi/replacing_an_unreliable_touchtargetsize_rule_in/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I have published version 2.0.0 of Compose A11y Scanner. I found that detecting visually undersized touch targets from the Compose semantics tree was unreliable because Compose may expose expanded touch bounds. This meant the existing touch-target-size rule could miss expected cases or produce confusing results. I’ve replaced it with touch-target-overlap , which checks whether the effective bounds of interactive elements intersect. Breaking changes: Removed touch-target-size Removed its related m",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "113dac5d6c85fcff",
+    "title": "Lessons learned building an open-source local LLM client using Jetpack Compose, C++ NDK (Vulkan), & SQLCipher",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v3e0k0/lessons_learned_building_an_opensource_local_llm/",
+    "date": "2026-07-22",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hi everyone, I wanted to share some technical takeaways and challenges from a native Android project I've been working on ( AnvilAI — a fully offline, native LLM runner). 1. Handling C++ NDK & Vulkan Bindings with Compose: Bridging the C++ NDK inference layer with Vulkan GPU acceleration to Jetpack Compose required a clean asynchronous pipeline. I used Kotlin Coroutines and Flow to stream token outputs from the native side directly into the Compose UI without blocking the main thread or causing ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "899f5a0550b491a0",
+    "title": "A multiplatform Flighty UI clone sample made in a day with Compose",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v3miqc/a_multiplatform_flighty_ui_clone_sample_made_in_a/",
+    "date": "2026-07-22",
+    "source_id": "reddit-androiddev",
+    "excerpt": "submitted by /u/slightly_salty [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3ad107613e69dd26",
+    "title": "I open-sourced serve-avd — stream your Android emulator to any browser with one command",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v35ka8/i_opensourced_serveavd_stream_your_android/",
+    "date": "2026-07-22",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I just open-sourced serve-avd , a small tool that puts your emulator in a browser tab: npx serve-avd → http://localhost:3200 It boots your AVD if nothing's running, streams the screen as smooth H.264, and forwards full interaction — touch/drag/fling, scroll wheel, keyboard typing, Back/Home/Recents, volume, power, theme toggle, screenshots. Tunnel the port and the emulator is usable from anywhere. How it works (no root, no on-device agent, no app instrumentation — plain Node + adb): adb exec-out",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f520699983daa31a",
+    "title": "How can I send notifications from a website to an app when the app is closed?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v397on/how_can_i_send_notifications_from_a_website_to_an/",
+    "date": "2026-07-22",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I have an Android app, which is just a WebView of a website. That website sends notifications to users. Those notifications should be sent to the Android app as a badge on the app's home screen launcher icon when the app is closed. The users need to have an account to receive those notifications because they are user-specific. Does anybody have an idea how I can do that? AI suggests Firebase Cloud Messaging. Thank you in advance. submitted by /u/AndroidDeveloper4567 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
