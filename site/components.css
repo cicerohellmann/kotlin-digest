@@ -471,23 +471,6 @@ body { min-height: 100vh; }
         padding-left: 1.25rem;
         padding-right: 1.25rem;
       }
-      /* De-cramp the masthead: stack the tagline over the stats/settings row
-         instead of squeezing them side by side at phone widths. */
-      .masthead { padding-top: 1.25rem; padding-bottom: 1rem; }
-      .masthead-top { align-items: center; }
-      .masthead-foot { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
-      .masthead-tagline { font-size: 0.85rem; }
-      .masthead-stats { flex-wrap: wrap; width: 100%; justify-content: space-between; }
-    }
-
-    /* Mobile always renders the scroll feed (paged clips overflow with no
-       scroll on touch), so the Layout toggle is moot — hide it. The trends
-       ticker drops its marquee animation and becomes a touch-swipeable strip
-       so every topic is reachable. */
-    @media (max-width: 700px) {
-      #rowLayout { display: none; }
-      .ticker-track { animation: none; }
-      .ticker-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     }
 
     .art-meta {

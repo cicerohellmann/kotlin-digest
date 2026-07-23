@@ -20,12 +20,7 @@
     if(r.font && fonts[r.font]) el.style.setProperty('--read-font', fonts[r.font]);
     var scales={s:'0.92',m:'1',l:'1.12'};
     if(r.size && scales[r.size]) el.style.setProperty('--read-scale', scales[r.size]);
-    // Narrow viewports always use the scroll feed: the paged reader packs each
-    // page to a fixed height and clips the overflow with no way to scroll it,
-    // which strands tall pages (e.g. the trends list) on phones. Set pre-paint
-    // to avoid a flash of the paged layout.
-    var narrow = window.innerWidth <= 700;
-    el.dataset.layout = (narrow || r.layout==='scroll') ? 'scroll' : 'paged';
+    el.dataset.layout = (r.layout==='scroll') ? 'scroll' : 'paged';
   })();
   </script>
   <link rel="stylesheet" href="components.css">
@@ -98,7 +93,7 @@
               <button data-v="l" onclick="setSize('l')">L</button>
             </div>
           </div>
-          <div class="set-row" id="rowLayout">
+          <div class="set-row">
             <span class="set-label">Layout</span>
             <div class="seg" id="segLayout">
               <button data-v="paged" onclick="setLayout('paged')">Paged</button>
@@ -590,22 +585,9 @@ function renderScroll() {
   });
 }
 
-// Narrow viewports are forced to the scroll feed regardless of the saved
-// preference — paged clips overflow with no scroll, so it traps content on
-// phones. The layout toggle is hidden on mobile (see #rowLayout), so this is
-// the single source of truth for what actually renders.
-const MOBILE_MAX = 700;
-function effectiveLayout() {
-  return window.innerWidth <= MOBILE_MAX ? 'scroll' : state.reader.layout;
-}
-
-// Single render entry point — dispatches on the effective reading layout.
-// Re-runs on resize/rotation (see the resize handler), so crossing the
-// breakpoint or rotating a phone switches modes correctly.
+// Single render entry point — dispatches on the chosen reading layout.
 function renderView() {
-  const layout = effectiveLayout();
-  document.documentElement.dataset.layout = layout;
-  if (layout === 'scroll') renderScroll();
+  if (state.reader.layout === 'scroll') renderScroll();
   else layoutPager();
 }
 
@@ -874,7 +856,7 @@ function applyReaderDOM() {
   if (r.theme === 'night') el.dataset.night = '1'; else el.removeAttribute('data-night');
   el.style.setProperty('--read-font', READER_FONTS[r.font]);
   el.style.setProperty('--read-scale', READER_SCALES[r.size]);
-  el.dataset.layout = (window.innerWidth <= MOBILE_MAX) ? 'scroll' : r.layout;
+  el.dataset.layout = r.layout;
 }
 
 function syncSettingsUI() {
