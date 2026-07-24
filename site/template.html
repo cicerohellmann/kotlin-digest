@@ -38,6 +38,10 @@
     // to avoid a flash of the paged layout.
     var narrow = window.innerWidth <= 700;
     el.dataset.layout = (narrow || r.layout==='scroll') ? 'scroll' : 'paged';
+    // ?nojs — preview the prerendered static digest exactly as a no-JS visitor
+    // or crawler sees it: the interactive reader is skipped (see boot) and its
+    // JS-only chrome is hidden. Set pre-paint so the controls never flash.
+    if (/[?&]nojs\b/.test(location.search)) el.dataset.nojs='1';
   })();
   </script>
   <link rel="stylesheet" href="components.css">
@@ -53,8 +57,15 @@
 <!-- Failsafe: if the main script never runs (JS off / error), don't strand the loader -->
 <script>setTimeout(function(){var l=document.getElementById('kd-loader');if(l)l.style.display='none';},8000);</script>
 <noscript>
-  <style>#kd-loader{display:none!important}</style>
-  <div class="kd-noscript">This digest is interactive and needs JavaScript. Please open it in a web browser (Safari, Chrome) rather than a file preview.</div>
+  <!-- With JS off the prerendered #digest is the whole experience: hide the
+       loader and the JS-only chrome (filter bar, settings gear) plus the top
+       ticker/masthead, which the prerendered cover already contains (the JS
+       reader normally lifts them there). No "needs JavaScript" notice — the
+       static digest reads fine on its own. -->
+  <style>
+    #kd-loader, .filter-bar, .settings-wrap,
+    body > .ticker-wrap, body > .masthead { display: none !important; }
+  </style>
 </noscript>
 
 <!-- TREND TICKER -->
@@ -172,7 +183,8 @@
     <a href="https://github.com/cicerohellmann/kotlin-digest/blob/main/topics/topics.yml">Topic bible</a> ·
     <a href="styleguide.html">Design system</a> ·
     <a href="badge.html">Get the badge</a> ·
-    <a href="tracking.html">How we track</a>
+    <a href="tracking.html">How we track</a> ·
+    <a href="?nojs">No-JS version</a>
   </span>
 </footer>
 
@@ -1044,7 +1056,10 @@ function dismissLoader() {
   }
 }
 
-try {
+if (document.documentElement.dataset.nojs === '1') {
+  // No-JS preview: leave the prerendered #digest untouched, just reveal it.
+  dismissLoader();
+} else try {
   loadCookies();
   applyReaderDOM();
   // Lift the masthead + ticker out of fixed chrome into HEADER_HTML; they now

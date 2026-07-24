@@ -490,6 +490,18 @@ body { min-height: 100vh; }
       .ticker-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     }
 
+    /* No-JS preview (?nojs) and genuine no-JS visitors get the prerendered
+       digest with the JS-only chrome hidden — the filter bar, the settings
+       gear, and the loading gate all need JavaScript to do anything. The top
+       ticker + masthead are also hidden: the JS reader normally lifts them into
+       the cover, which the prerendered #digest already contains, so the page
+       chrome copies would double up without JS. */
+    html[data-nojs] .filter-bar,
+    html[data-nojs] .settings-wrap,
+    html[data-nojs] #kd-loader,
+    html[data-nojs] body > .ticker-wrap,
+    html[data-nojs] body > .masthead { display: none !important; }
+
     .art-meta {
       display: flex;
       align-items: center;
