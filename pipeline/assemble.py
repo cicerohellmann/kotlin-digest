@@ -107,25 +107,29 @@ def build_structured_data(
     }
     for ch in chapters:
         for a in ch["articles"]:
-            item = {
-                "@type": "Article",
-                "headline": a.get("title", ""),
-                "url": a.get("url", ""),
-                "datePublished": a.get("date", ""),
-                "description": a.get("summary", ""),
-            }
             video_id = a.get("video_id")
             thumbnail = a.get("thumbnail")
-            if (a.get("media_type") == "video" or video_id) and video_id and thumbnail:
+            if video_id and thumbnail:
                 item = {
                     "@type": "VideoObject",
                     "name": a.get("title", ""),
                     "description": a.get("summary") or a.get("excerpt", ""),
-                    "uploadDate": a.get("date", ""),
                     "thumbnailUrl": thumbnail,
                     "embedUrl": f"https://www.youtube-nocookie.com/embed/{video_id}",
                     "url": a.get("url", ""),
                 }
+            else:
+                item = {
+                    "@type": "Article",
+                    "headline": a.get("title", ""),
+                    "url": a.get("url", ""),
+                    "description": a.get("summary", ""),
+                }
+            # Only emit a date when we actually have one — a null/empty
+            # datePublished/uploadDate is invalid structured data.
+            date_key = "uploadDate" if item["@type"] == "VideoObject" else "datePublished"
+            if a.get("date"):
+                item[date_key] = a["date"]
             page["hasPart"].append(item)
     return (
         '<script type="application/ld+json">'

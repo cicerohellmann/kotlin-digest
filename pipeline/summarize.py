@@ -145,15 +145,18 @@ def cmd_fetch() -> None:
     transient = 0
     for i, article in enumerate(pending):
         print(f"  [{i+1}/{len(pending)}] {article['title'][:70]}", file=sys.stderr, flush=True)
-        content = fetch_content(article["url"])
         excerpt = article.get("excerpt", "")
         is_video_metadata = article.get("media_type") == "video" and (article.get("title") or excerpt)
         if is_video_metadata:
+            # Videos summarize from the feed's own metadata — don't scrape the
+            # YouTube watch page (it has no readable article body anyway).
             content = (
                 "YouTube video metadata from the source feed.\n"
                 f"Title: {article.get('title', '')}\n"
                 f"Description: {excerpt or '[no feed description]'}"
             )
+        else:
+            content = fetch_content(article["url"])
         if not is_video_metadata and not _has_usable_content(content, excerpt):
             if content.startswith("[fetch error"):
                 # Transient network failure (timeout / connection reset / one-off
