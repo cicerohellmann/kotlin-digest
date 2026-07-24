@@ -84,6 +84,7 @@
 
   <section class="cw" id="cw"></section>
   <div class="cw-controls" id="cwControls" style="display:none">
+    <button class="cw-btn" id="cwDirBtn" onclick="cwFlipDir()">→ Across</button>
     <button class="cw-btn" onclick="cwCheck()">Check</button>
     <button class="cw-btn" onclick="cwRevealCell()">Reveal letter</button>
     <button class="cw-btn" onclick="cwRevealWord()">Reveal word</button>
@@ -110,6 +111,21 @@ let cur = { r: 0, c: 0 }, dir = 'A';
 const cellInput = {};   // "r,c" -> <input>
 const cellMeta = {};    // "r,c" -> { across:{entry}, down:{entry} }
 let ORDER = [];         // [{e, down}] in Tab order
+let _focusFired = false; // distinguishes a fresh tap from a re-tap (touch dir toggle)
+
+// Flip across<->down (button + re-tap). highlight() runs ensureDir(), which
+// reverts the flip if the cell only has one direction, so single-dir cells
+// stay put and crossing cells toggle.
+function cwFlipDir() {
+  dir = dir === 'A' ? 'D' : 'A';
+  const inp = cellInput[k(cur.r, cur.c)];
+  if (inp) inp.focus();
+  highlight();
+}
+function updateDirBtn() {
+  const b = document.getElementById('cwDirBtn');
+  if (b) b.textContent = dir === 'D' ? '↓ Down' : '→ Across';
+}
 
 function gotoWord(delta) {
   if (!ORDER.length) return;
@@ -145,8 +161,11 @@ function buildBoard() {
       const inp = document.createElement('input');
       inp.maxLength = 1; inp.autocomplete = 'off'; inp.setAttribute('aria-label', `cell ${r + 1},${c + 1}`);
       inp.dataset.r = r; inp.dataset.c = c;
-      inp.addEventListener('focus', () => { cur = { r, c }; highlight(); });
-      inp.addEventListener('mousedown', () => { if (cur.r === r && cur.c === c) toggleDir(); });
+      inp.addEventListener('focus', () => { _focusFired = true; cur = { r, c }; highlight(); });
+      // A re-tap on the already-focused cell flips direction. Focus doesn't
+      // refire on a re-tap, so no focus flag => this click is a re-tap. Works on
+      // touch (click fires) where the old mousedown/double-tap did not.
+      inp.addEventListener('click', () => { if (!_focusFired) toggleDir(); _focusFired = false; });
       inp.addEventListener('input', onInput);
       inp.addEventListener('keydown', onKeydown);
       cell.appendChild(inp);
@@ -241,6 +260,7 @@ function highlight() {
   }
   const cinp = cellInput[k(cur.r, cur.c)];
   if (cinp) cinp.parentElement.classList.add('cur');
+  updateDirBtn();
 }
 
 function step(r, c, back) {
