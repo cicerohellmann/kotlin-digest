@@ -109,6 +109,9 @@ function toggleNight() {
 }
 if (document.documentElement.dataset.night === '1') document.getElementById('nightBtn').textContent = '☀';
 
+// Always load the freshest /test on revisits (bypasses the 10-min page cache).
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+
 // ── Crossword ────────────────────────────────────────────────────────────────
 const P = window.CROSSWORD;
 const KEY = 'kd_crossword_' + (P ? P.id : 'x');
