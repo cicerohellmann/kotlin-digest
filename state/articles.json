@@ -6131,5 +6131,325 @@
     "excerpt": "I have an Android app, which is just a WebView of a website. That website sends notifications to users. Those notifications should be sent to the Android app as a badge on the app's home screen launcher icon when the app is closed. The users need to have an account to receive those notifications because they are user-specific. Does anybody have an idea how I can do that? AI suggests Firebase Cloud Messaging. Thank you in advance. submitted by /u/AndroidDeveloper4567 [link] [comments]",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "e5be994a7dcc36c9",
+    "title": "Axum Support in RustRover 2026.2: Build Web Backends Faster",
+    "url": "https://blog.jetbrains.com/rust/2026/07/23/axum-support-in-rustrover/",
+    "date": "2026-07-23",
+    "source_id": "jetbrains-blog",
+    "excerpt": "Axum support, one of the most popular web frameworks in the Rust ecosystem, is one of the highlights of the RustRover 2026.2 release. If you’re building web services, APIs, or distributed systems in Rust, this update makes it easier to navigate routes, understand request flows, and generate client calls directly from the IDE. Let’s take […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "bce502cd4a1eba5a",
+    "title": "From Cloud LLM to On-Device Whisper: Turning Speech into Structured Actions on Android",
+    "url": "https://proandroiddev.com/from-cloud-llm-to-on-device-whisper-turning-speech-into-structured-actions-on-android-19791f383f4e?source=rss----c72404660798---4",
+    "date": "2026-07-23",
+    "source_id": "proandroiddev",
+    "excerpt": "In two earlier articles I looked at the same idea from opposite ends. In Building AI features on Android with Firebase AI Logic , I built a voice feature where the app captures audio, sends it to Firebase AI Logic, and Gemini returns a structured output that maps directly to an app action. It worked nicely, but I also called out where that approach is not the best fit: sensitive data, fully offline use, and long-term usage-based pricing. In Exploring On-Device AI for Android , I went the other w",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "955982b8820b6649",
+    "title": "The 4 Ways an Android App Can Die (and a 3-Layer Defense to Survive Them)",
+    "url": "https://medium.com/@muhamadsyafii4/the-4-ways-an-android-app-can-die-and-a-3-layer-defense-to-survive-them-c8222866a837?source=rss------kotlin-5",
+    "date": "2026-07-24",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Most Android engineers only prepare for one failure mode: a crash caused by a bug. But there are actually four distinct ways an app can… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7b883a338a4fe305",
+    "title": "Kotlin Coroutines: Part 3 — Structured Concurrency & Lifecycle Mastery",
+    "url": "https://medium.com/@fachrizalmrsln/kotlin-coroutines-part-3-structured-concurrency-lifecycle-mastery-299c278d13b2?source=rss------kotlin-5",
+    "date": "2026-07-24",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "29e6f8de3c6ac00b",
+    "title": "Building a Modern Android News App with Jetpack Compose: Best Practices Without Overengineering",
+    "url": "https://medium.com/@recipesforsoftware/building-a-modern-android-news-app-with-jetpack-compose-best-practices-without-overengineering-89442c895de9?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "A practical look at MVVM, StateFlow, Hilt, Retrofit, resilient UI states, and testable Android architecture Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9c759f3f886810b0",
+    "title": "Give your AI agent the real sources of any Kotlin/Java library",
+    "url": "https://medium.com/@aoreshkov/give-your-ai-agent-the-real-sources-of-any-kotlin-java-library-c30865faeb6d?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Your AI coding assistant will confidently hand you a Kotlin method signature that does not exist. For a strongly-typed ecosystem… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "89eebbf5d45637f1",
+    "title": "Mastering BLE on Android: Part 2— Understanding the BLE Architecture",
+    "url": "https://medium.com/@mr.dhiraj.kumawat/mastering-ble-on-android-part-2-understanding-the-ble-architecture-71fd6b84bb84?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "In the previous article, we explored the fundamentals of Bluetooth Low Energy (BLE) — what it is, why it was created, its advantages… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a26cf5342d98f6cf",
+    "title": "Getting Started with Kover: Code Coverage for Kotlin and Android Projects",
+    "url": "https://medium.com/@maulanabima785/getting-started-with-kover-code-coverage-for-kotlin-and-android-projects-5dd41d4abf2e?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "When we write unit tests, it’s easy to assume our application is well tested simply because all tests pass. But passing tests don’t… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "67e5b6bfe56afc52",
+    "title": "I built my first AppFunction and hit 5 walls, here’s every fix",
+    "url": "https://trricho.medium.com/i-built-my-first-appfunction-and-hit-5-walls-heres-every-fix-266fe899c009?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a246b7962a2d3b82",
+    "title": "Replacing 573K Java Lines With Kotlin",
+    "url": "https://medium.com/it-chronicles/replacing-573k-java-lines-with-kotlin-2b9900a4995b?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "How we swapped programming languages without a roadmap freeze Continue reading on IT Chronicles »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5d3d8bf490a46279",
+    "title": "Constructors in Kotlin: Primary, Secondary Constructors, and init Blocks Explained",
+    "url": "https://techdynasty.medium.com/constructors-in-kotlin-primary-secondary-constructors-and-init-blocks-explained-b1af8189e60a?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Whenever you create an object in Kotlin, something important happens behind the scenes — the object is initialized. Properties receive… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f12f5df2740ed22b",
+    "title": "Jetpack Compose to Compose Multiplatform: Why I Finally Made the Jump",
+    "url": "https://medium.com/@sixtinbydizora/jetpack-compose-to-compose-multiplatform-why-i-finally-made-the-jump-2f6c66b0c90f?source=rss------kotlin-5",
+    "date": "2026-07-23",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "One codebase, every platform — here’s what nobody tells you about migrating your Android UI to Compose Multiplatform. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9ea1dfddd1d45bda",
+    "title": "I learned programming from the best books ever written.",
+    "url": "https://medium.com/@mike.salari.dev/i-learned-programming-from-the-best-books-ever-written-6e56c03c8c09?source=rss------android-5",
+    "date": "2026-07-24",
+    "source_id": "medium-android-tag",
+    "excerpt": "I have conducted over 500 technical interviews for mobile engineers. And for years before that, I was the candidate who did everything… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4ab33513185bc53e",
+    "title": "How Android Smartphones Are Turned into Zombies and Ad-Yield Donors: The Case of mr.Bunn,",
+    "url": "https://0trust0day.medium.com/how-android-smartphones-are-turned-into-zombies-and-ad-yield-donors-the-case-of-mr-bunn-f085c1c13507?source=rss------android-5",
+    "date": "2026-07-24",
+    "source_id": "medium-android-tag",
+    "excerpt": "When people talk about mobile cyber threats, most imagine cinematic scenarios: ransomware locking screens, banking Trojans silently… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5788ffd09da35045",
+    "title": "X Android App Update 2026: What’s New, Features & How to Update",
+    "url": "https://medium.com/@abhay.theseobyte/x-android-app-update-2026-whats-new-features-how-to-update-4e5ed1136ddd?source=rss------android-5",
+    "date": "2026-07-24",
+    "source_id": "medium-android-tag",
+    "excerpt": "The X Android App Update 2026 marks one of the biggest improvements to the platform since Twitter became X. Instead of releasing another… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "62fa5a4d1a81c077",
+    "title": "Turn Your Phone Into a Wireless Touchpad for Android TV Browsing",
+    "url": "https://deepakpk.medium.com/turn-your-phone-into-a-wireless-touchpad-for-android-tv-browsing-6abba6073049?source=rss------android-5",
+    "date": "2026-07-24",
+    "source_id": "medium-android-tag",
+    "excerpt": "Have you ever opened a web browser on your Android TV only to give up after a few minutes? Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "088ffad5d95e7d92",
+    "title": "7 Smart Ways to Browse the Web on Android TV Without Fighting Your Remote",
+    "url": "https://deepakpk.medium.com/7-smart-ways-to-browse-the-web-on-android-tv-without-fighting-your-remote-1d41cc7b2959?source=rss------android-5",
+    "date": "2026-07-24",
+    "source_id": "medium-android-tag",
+    "excerpt": "If you’ve ever tried browsing the internet on an Android TV, you probably know the frustration. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "dc05c12c66a7ca8e",
+    "title": "Understanding Activity launch modes in Android",
+    "url": "https://medium.com/@gavleaakash/understanding-activity-launch-modes-in-android-69a3f2f19fc1?source=rss------android-5",
+    "date": "2026-07-24",
+    "source_id": "medium-android-tag",
+    "excerpt": "Activity Launch modes decide how an Activity is instantiated and managed in the back stack. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7216378ab72167b4",
+    "title": "Yono Live or YONO VIP? How to Tell Similar App Names Apart",
+    "url": "https://medium.com/@playallyonos.com/yono-live-or-yono-vip-how-to-tell-similar-app-names-apart-49e6c5bb39b4?source=rss------android-5",
+    "date": "2026-07-24",
+    "source_id": "medium-android-tag",
+    "excerpt": "Why searches for “yono live” or “no vip” can lead to unrelated services — and what to verify before trusting a listing\nUpdated 24 July 2026 Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5b4f30434b785553",
+    "title": "Google’s Android XR Is Here: Here’s What Developers Need to Know",
+    "url": "https://proandroiddev.com/googles-android-xr-is-here-here-s-what-developers-need-to-know-81d0245965ae?source=rss------android-5",
+    "date": "2026-07-24",
+    "source_id": "medium-android-tag",
+    "excerpt": "From spatial multitasking on headsets to glanceable HUDs on smart glasses, spatial computing is officially coming to the Android ecosystem. Continue reading on ProAndroidDev »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c82d698dea87857c",
+    "title": "What Is a Context Window? Why Every Mobile Developer Should Understand It",
+    "url": "https://medium.com/@anandgaur2207/what-is-a-context-window-why-every-mobile-developer-should-understand-it-b189b1b55e5b?source=rss------android-5",
+    "date": "2026-07-24",
+    "source_id": "medium-android-tag",
+    "excerpt": "If you have ever added an AI chat feature to your app and noticed that the AI suddenly “forgets” what the user said ten messages ago, you… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b1056c8ad1da3b3b",
+    "title": "v1.12.10-alpha01+dev4541: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4541",
+    "date": "2026-07-24",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4541 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4541 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4541 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4541",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1b888910ee148542",
+    "title": "v1.12.10-alpha01+dev4534: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4534",
+    "date": "2026-07-23",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4534 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4534 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4534 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4534",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "899b40c97c34ef49",
+    "title": "What do you guys do while gradle build??",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v4gx81/what_do_you_guys_do_while_gradle_build/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Well I cloned an open source repo i wanted to contribute to and its fairly big project i would say ( https://github.com/wikimedia/apps-android-wikipedia ) and as im writing this post it's already 15mins the gradle is building... What do you usually do while Gradle is building?? submitted by /u/Boiniok [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3ad85edfd24f8e8f",
+    "title": "What is the official way to determine if an Android API level is still in preview?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v4i8w4/what_is_the_official_way_to_determine_if_an/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Disclaimer: used llm to draft the post, but i have provided the pointers, and done the research before drafting. Running into some confusing documentation/tooling discrepancies regarding Android platform release statuses and looking for clarification on the standard procedure. Current Situation: Android 17 documentation lists it as officially released, but navigating to individual version pages shows a preview icon on the sidebar with no explicit text status on the main page. API Levels tracks i",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9717509fe0a0d6a3",
+    "title": "Android Studio Quail 4 Canary 2 now available",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v4gcg8/android_studio_quail_4_canary_2_now_available/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "submitted by /u/androidtoolsbot [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9f3163ea281f0135",
+    "title": "[Help Needed] Google Play Console Closed Testing",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v4kkbh/help_needed_google_play_console_closed_testing/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hi fellow Android developers, This is my first time submitting an app to the Google Play Store and my app is currently in closed testing phase. When I check my Home tab within Google Play Console, it shows that my \"Installed Audience\" is 0, when I'm 100% sure that there are users who have downloaded my app and used it (they showed me screenshots). Can someone tell me what may be gone wrong that's resulting it not detecting any installation? Any tip would be appreciated! submitted by /u/jinshin9 ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c10f2feaf81903dd",
+    "title": "Account terminated for \"high risk or abuse\" — help me figure out what I did wrong",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v4gvcx/account_terminated_for_high_risk_or_abuse_help_me/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Official forum thread: https://support.google.com/googleplay/android-developer/thread/453914381/account-terminated-for-high-risk-or-abuse-%E2%80%94-no-specific-violation-ever-cited-requesting-help?hl=en&sjid=16862522153865472926-EU Timeline: Aug 2025: Developer account terminated citing \"a pattern of high risk or abuse\" (Section 8.3/10.3 DDA). My only published app: a simple currency-conversion widget. No data collection, no unusual SDKs, no monetization tricks. No specific violation was ever na",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "329161148f52f3e2",
+    "title": "Android Studio Quail 2 Patch 1 now available",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v4gcfy/android_studio_quail_2_patch_1_now_available/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "submitted by /u/androidtoolsbot [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "cb2a4383c67cc2de",
+    "title": "Cuttlefish AAOS: zero sound reaches host/browser even from stock apps",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v49n8f/cuttlefish_aaos_zero_sound_reaches_hostbrowser/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Running a Cuttlefish Android Automotive OS instance ( launch_cvd --enable_audio=true --start_webrtc_sig_server=true ... ), accessed via the WebRTC web client. Mic input works fine after enabling the sidebar mic toggle in the WebRTC client. Audio output does not: no sound reaches the browser, even from the stock \"Local Media Player\" app playing local files. i need to get the audio output to work , anyone know how? submitted by /u/Accurate-Mortgage416 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "dd874341612ad762",
+    "title": "Low weight vehicle animation on Android?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v49l0x/low_weight_vehicle_animation_on_android/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I want to build a custom launcher for my car (its android automotive based and I already figured out how to side load etc..). So the goal is to get something that looks a bit like Tesla. I have an MG4 with these specs: Resolution: 1920×720px Screen size: 10.25\" DPI: 160 MediaTek MT2712 SoC I know that just throwing a 3d model in won't work so I had the idea of using some sort of pre rendert animations. Probleme is that I have zero experience in this 3d stuff and don't really know where to start.",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0cb3341897a9fc54",
+    "title": "Do paid Meta ads work?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v4aws7/do_paid_meta_ads_work/",
+    "date": "2026-07-23",
+    "source_id": "reddit-androiddev",
+    "excerpt": "As any indie developer surely knows, marketing is incredibly boring and tedious... I’m just starting out with promoting and raising awareness for an android app, and I have some doubts about paid ads—do they actually work, or are they a waste of money? Do you know of any better or more efficient channels? The more help and recommendations, the better; nothing beats the experiences of other indie developers. submitted by /u/Pablo_AndroidDev [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
