@@ -19,7 +19,7 @@
     .night-btn { margin-left: auto; background: none; border: 1px solid #4A4840; color: var(--chip-bg); border-radius: 4px; cursor: pointer; font-size: 0.8rem; width: 28px; height: 28px; }
     html[data-night="1"] .top-nav { background: var(--paper-b); }
 
-    .content { max-width: 860px; margin: 0 auto; padding: 2rem 2.5rem 4rem; }
+    .content { max-width: 1080px; margin: 0 auto; padding: 2rem 2.5rem 4rem; }
     .content h1 { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; font-size: clamp(1.6rem, 4vw, 2.2rem); color: var(--ink); margin: 0 0 0.3rem; }
     .subtle { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin: 0 0 1.75rem; }
 
@@ -28,16 +28,19 @@
     /* Board fills the available width and caps at 34px/cell on desktop; cells
        are square (aspect-ratio) so the whole grid shrinks to fit a phone with
        no horizontal scroll. --cols is set per puzzle in JS. */
-    .cw-board-wrap { flex: 1 1 auto; min-width: 0; max-width: 100%; }
+    .cw-board-wrap { flex: 0 1 auto; min-width: 0; max-width: 100%; }
     .cw-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--ink); margin: 0 0 0.6rem; }
     .cw-grid {
       display: grid;
-      grid-template-columns: repeat(var(--cols, 10), 1fr);
+      /* Cells cap at 34px (desktop) but shrink below that when space is tight
+         (mobile), so the grid stays its natural size beside the clues on wide
+         screens and fits the viewport on narrow ones. */
+      grid-template-columns: repeat(var(--cols, 10), minmax(0, 34px));
       gap: 0;
       border: 2px solid var(--ink);
       background: var(--ink);
-      width: 100%;
-      max-width: calc(var(--cols, 10) * 34px);
+      width: fit-content;
+      max-width: 100%;
     }
     .cw-cell { position: relative; aspect-ratio: 1; min-width: 0; background: var(--paper); }
     .cw-cell.block { background: var(--ink); }
