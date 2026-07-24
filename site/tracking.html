@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzE4MTcxQSIvPjx0ZXh0IHg9IjMiIHk9IjI0IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjRTA2MDIwIj5LPC90ZXh0Pjx0ZXh0IHg9IjE3IiB5PSIyNCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxOSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0YzRURFMiI+RDwvdGV4dD48L3N2Zz4K">
+  <title>How we track — Kotlin Digest</title>
+  <meta name="description" content="Exactly what Kotlin Digest measures and how — cookieless, aggregate, no personal data. Plus the numbers, published in the open.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design.css">
+  <script>if(document.cookie.includes('kd_night=1'))document.documentElement.dataset.night='1';</script>
+  <style>
+    .top-nav { background: var(--ink); padding: 0.6rem 2.5rem; display: flex; align-items: center; gap: 1rem; }
+    .nav-back { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--chip-bg); text-decoration: none; letter-spacing: 0.06em; opacity: 0.75; transition: opacity 0.15s; }
+    .nav-back:hover { opacity: 1; }
+    .nav-sep { font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; color: #4A4840; }
+    .nav-current { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--accent); letter-spacing: 0.06em; }
+    .night-btn { margin-left: auto; background: none; border: 1px solid #4A4840; color: var(--chip-bg); border-radius: 4px; cursor: pointer; font-size: 0.8rem; width: 28px; height: 28px; }
+    html[data-night="1"] .top-nav { background: var(--paper-b); }
+    html[data-night="1"] .nav-back { color: var(--ink-mid); }
+
+    .content { max-width: 720px; margin: 0 auto; padding: 2.75rem 2.5rem 4rem; }
+    .content h1 { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; font-size: clamp(1.9rem, 5vw, 2.7rem); color: var(--ink); line-height: 1.05; margin: 0 0 0.75rem; }
+    .lede { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; color: var(--ink-mid); line-height: 1.6; margin: 0 0 2rem; max-width: 60ch; }
+    .content h2 { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); margin: 2.5rem 0 0.9rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); }
+    .content p { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--ink); line-height: 1.65; margin: 0 0 1rem; max-width: 62ch; }
+    .content a { color: var(--blue); text-decoration: none; }
+    .content a:hover { text-decoration: underline; }
+
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1rem 0 0.5rem; }
+    .cols ul { margin: 0.5rem 0 0; padding: 0; list-style: none; }
+    .cols li { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; line-height: 1.55; padding: 0.25rem 0 0.25rem 1.3rem; position: relative; color: var(--ink); }
+    .col-yes li::before { content: "✓"; position: absolute; left: 0; color: var(--green, #3E7B4F); font-weight: 700; }
+    .col-no li::before { content: "✕"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .col-title { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); }
+
+    .callout { background: var(--focus-tint); border: 1px solid var(--rule); border-radius: 8px; padding: 1rem 1.2rem; margin: 1.25rem 0; }
+    .callout p { margin: 0; font-size: 0.9rem; color: var(--ink-mid); }
+    html[data-night="1"] .callout { background: #2A2218; }
+
+    /* Live numbers slot — populated from the analytics API by the daily job. */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+    .stat { background: var(--paper-b); border: 1px solid var(--rule); border-radius: 8px; padding: 1rem 1.1rem; }
+    .stat-num { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 600; color: var(--ink); }
+    .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin-top: 0.3rem; }
+    .stats-note { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: var(--ink-muted); }
+
+    footer { border-top: 2px solid var(--ink); padding: 1.25rem 2.5rem; display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--ink-muted); }
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .top-nav, .content, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .cols { grid-template-columns: 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-back">← Kotlin Digest</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">HOW WE TRACK</span>
+  <button class="night-btn" id="nightBtn" onclick="toggleNight()">☾</button>
+</nav>
+
+<main class="content">
+  <h1>How we track</h1>
+  <p class="lede">
+    We want to know whether the digest is useful and whether it reads well on your
+    phone — nothing more. So we measure in the least invasive way we could find:
+    no cookies, no accounts, no personal data, and the numbers published right here
+    in the open.
+  </p>
+
+  <h2>The short version</h2>
+  <div class="cols">
+    <div>
+      <div class="col-title">What we collect</div>
+      <ul class="col-yes">
+        <li>Page views (which editions get read)</li>
+        <li>Where you came from (referrer)</li>
+        <li>Device type &amp; browser</li>
+        <li>Country (never finer)</li>
+        <li>Screen size bucket (to check mobile)</li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-title">What we never do</div>
+      <ul class="col-no">
+        <li>Set cookies or store anything on you</li>
+        <li>Collect names, emails, or IPs</li>
+        <li>Fingerprint your device</li>
+        <li>Track you across other sites</li>
+        <li>Sell, share, or run ads</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>How it works</h2>
+  <p>
+    We use <a href="https://www.cloudflare.com/web-analytics/" target="_blank" rel="noopener">Cloudflare Web Analytics</a>,
+    which is <strong>cookieless</strong> and privacy-first: it counts visits in aggregate without
+    identifying anyone. It's the one external request this otherwise fully self-contained
+    site makes — a small script that reports an anonymous page view and nothing else.
+  </p>
+  <div class="callout">
+    <p>
+      <strong>Don't want even that?</strong> If your browser sends
+      “Do&nbsp;Not&nbsp;Track” or Global Privacy Control, we don't load the analytics
+      script at all. Nothing to opt out of, nothing to click.
+    </p>
+  </div>
+
+  <h2>The numbers, in the open</h2>
+  <p>If we measure it, you can see it. These are the same aggregate numbers we look at:</p>
+  <div class="stats-grid" id="statsGrid">
+    <div class="stat"><div class="stat-num">—</div><div class="stat-label">Views / 30 days</div></div>
+    <div class="stat"><div class="stat-num">—</div><div class="stat-label">On mobile</div></div>
+    <div class="stat"><div class="stat-num">—</div><div class="stat-label">Top referrer</div></div>
+    <div class="stat"><div class="stat-num">—</div><div class="stat-label">Editions read</div></div>
+  </div>
+  <p class="stats-note">Refreshed daily from Cloudflare. (Live figures land once analytics is switched on.)</p>
+</main>
+
+<footer>
+  <span>Kotlin Digest · Open Source · MIT</span>
+  <span><a href="https://github.com/cicerohellmann/kotlin-digest">GitHub →</a></span>
+</footer>
+
+<script>
+function toggleNight() {
+  const next = document.documentElement.dataset.night === '1' ? '0' : '1';
+  document.documentElement.dataset.night = next;
+  document.cookie = `kd_night=${next};max-age=${60*60*24*90};path=/`;
+  document.getElementById('nightBtn').textContent = next === '1' ? '☀' : '☾';
+}
+if (document.documentElement.dataset.night === '1')
+  document.getElementById('nightBtn').textContent = '☀';
+</script>
+</body>
+</html>
