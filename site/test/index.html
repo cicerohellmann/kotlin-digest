@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzE4MTcxQSIvPjx0ZXh0IHg9IjMiIHk9IjI0IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjRTA2MDIwIj5LPC90ZXh0Pjx0ZXh0IHg9IjE3IiB5PSIyNCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxOSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0YzRURFMiI+RDwvdGV4dD48L3N2Zz4K">
+  <title>Test — Kotlin Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../design.css">
+  <script>if(document.cookie.includes('kd_night=1'))document.documentElement.dataset.night='1';</script>
+  <style>
+    .top-nav { background: var(--ink); padding: 0.6rem 2.5rem; display: flex; align-items: center; gap: 1rem; }
+    .nav-back { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--chip-bg); text-decoration: none; letter-spacing: 0.06em; opacity: 0.75; }
+    .nav-back:hover { opacity: 1; }
+    .nav-sep { font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; color: #4A4840; }
+    .nav-current { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--accent); letter-spacing: 0.06em; }
+    .night-btn { margin-left: auto; background: none; border: 1px solid #4A4840; color: var(--chip-bg); border-radius: 4px; cursor: pointer; font-size: 0.8rem; width: 28px; height: 28px; }
+    html[data-night="1"] .top-nav { background: var(--paper-b); }
+
+    .content { max-width: 860px; margin: 0 auto; padding: 2rem 2.5rem 4rem; }
+    .content h1 { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; font-size: clamp(1.6rem, 4vw, 2.2rem); color: var(--ink); margin: 0 0 0.3rem; }
+    .subtle { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin: 0 0 1.75rem; }
+
+    /* ── CROSSWORD ─────────────────────────────────────────────── */
+    .cw { display: flex; flex-wrap: wrap; gap: 1.75rem; align-items: flex-start; }
+    .cw-board-wrap { flex: 0 0 auto; }
+    .cw-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--ink); margin: 0 0 0.6rem; }
+    .cw-grid {
+      display: grid;
+      gap: 0;
+      border: 2px solid var(--ink);
+      background: var(--ink);
+      width: max-content;
+    }
+    .cw-cell { position: relative; width: 34px; height: 34px; background: var(--paper); }
+    .cw-cell.block { background: var(--ink); }
+    .cw-num { position: absolute; top: 1px; left: 2px; font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; color: var(--ink-muted); pointer-events: none; line-height: 1; }
+    .cw-cell input {
+      width: 100%; height: 100%; border: 1px solid var(--rule);
+      background: transparent; text-align: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 600;
+      color: var(--ink); text-transform: uppercase; padding: 0; caret-color: transparent;
+    }
+    .cw-cell input:focus { outline: none; }
+    .cw-cell.hl input { background: var(--focus-tint); }
+    .cw-cell.cur input { background: var(--accent); color: #1C1B18; }
+    .cw-cell.wrong input { color: #C0392B; }
+    html[data-night="1"] .cw-cell.wrong input { color: #ff8a7a; }
+    .cw-cell.right input { color: var(--green, #3E7B4F); }
+
+    .cw-clues { flex: 1 1 300px; min-width: 260px; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .cw-clue-col h3 { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; margin: 0 0 0.5rem; }
+    .cw-clue { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; line-height: 1.4; color: var(--ink); padding: 0.28rem 0.4rem; border-radius: 4px; cursor: pointer; }
+    .cw-clue:hover { background: var(--focus-tint); }
+    .cw-clue.active { background: var(--focus-tint); font-weight: 600; }
+    .cw-clue b { color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; margin-right: 0.35rem; }
+
+    .cw-controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 0; }
+    .cw-btn { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.04em; text-transform: uppercase; background: var(--paper-b); color: var(--ink-mid); border: 1px solid var(--rule); border-radius: 5px; padding: 0.4rem 0.7rem; cursor: pointer; }
+    .cw-btn:hover { border-color: var(--ink-muted); color: var(--ink); }
+    .cw-status { font-family: 'JetBrains Mono', monospace; font-size: 0.66rem; color: var(--accent); margin: 0.9rem 0 0; min-height: 1.1rem; }
+    .cw-status.win { color: var(--green, #3E7B4F); font-weight: 600; }
+
+    @media (max-width: 600px) {
+      .top-nav, .content { padding-left: 1.1rem; padding-right: 1.1rem; }
+      .cw-cell, .cw-cell input { width: 30px; height: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-back">← Kotlin Digest</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">TEST</span>
+  <button class="night-btn" id="nightBtn" onclick="toggleNight()">☾</button>
+</nav>
+
+<main class="content">
+  <h1>Test bench</h1>
+  <p class="subtle">Scratch space — not the released site. Try things here.</p>
+
+  <section class="cw" id="cw"></section>
+  <div class="cw-controls" id="cwControls" style="display:none">
+    <button class="cw-btn" onclick="cwCheck()">Check</button>
+    <button class="cw-btn" onclick="cwRevealCell()">Reveal letter</button>
+    <button class="cw-btn" onclick="cwRevealWord()">Reveal word</button>
+    <button class="cw-btn" onclick="cwRevealAll()">Reveal puzzle</button>
+    <button class="cw-btn" onclick="cwClear()">Clear</button>
+  </div>
+  <p class="cw-status" id="cwStatus"></p>
+</main>
+
+<script src="../crossword-data.js"></script>
+<script>
+function toggleNight() {
+  const next = document.documentElement.dataset.night === '1' ? '0' : '1';
+  document.documentElement.dataset.night = next;
+  document.cookie = `kd_night=${next};max-age=${60*60*24*90};path=/`;
+  document.getElementById('nightBtn').textContent = next === '1' ? '☀' : '☾';
+}
+if (document.documentElement.dataset.night === '1') document.getElementById('nightBtn').textContent = '☀';
+
+// ── Crossword ────────────────────────────────────────────────────────────────
+const P = window.CROSSWORD;
+const KEY = 'kd_crossword_' + (P ? P.id : 'x');
+let cur = { r: 0, c: 0 }, dir = 'A';
+const cellInput = {};   // "r,c" -> <input>
+const cellMeta = {};    // "r,c" -> { across:{entry}, down:{entry} }
+
+function k(r, c) { return r + ',' + c; }
+function isCell(r, c) { return P.solution[r] && P.solution[r][c] != null; }
+
+function buildBoard() {
+  const cw = document.getElementById('cw');
+  const wrap = document.createElement('div');
+  wrap.className = 'cw-board-wrap';
+  const title = document.createElement('div');
+  title.className = 'cw-title';
+  title.textContent = P.title;
+  wrap.appendChild(title);
+
+  const grid = document.createElement('div');
+  grid.className = 'cw-grid';
+  grid.style.gridTemplateColumns = `repeat(${P.cols}, 34px)`;
+  for (let r = 0; r < P.rows; r++) {
+    for (let c = 0; c < P.cols; c++) {
+      const cell = document.createElement('div');
+      cell.className = 'cw-cell';
+      if (!isCell(r, c)) { cell.classList.add('block'); grid.appendChild(cell); continue; }
+      const num = P.numbers[r][c];
+      if (num) { const s = document.createElement('span'); s.className = 'cw-num'; s.textContent = num; cell.appendChild(s); }
+      const inp = document.createElement('input');
+      inp.maxLength = 1; inp.autocomplete = 'off'; inp.setAttribute('aria-label', `cell ${r + 1},${c + 1}`);
+      inp.dataset.r = r; inp.dataset.c = c;
+      inp.addEventListener('focus', () => { cur = { r, c }; highlight(); });
+      inp.addEventListener('mousedown', () => { if (cur.r === r && cur.c === c) toggleDir(); });
+      inp.addEventListener('input', onInput);
+      inp.addEventListener('keydown', onKeydown);
+      cell.appendChild(inp);
+      cellInput[k(r, c)] = inp;
+      grid.appendChild(cell);
+    }
+  }
+  wrap.appendChild(grid);
+  cw.appendChild(wrap);
+
+  // clue map: which across/down entry each cell belongs to
+  const attach = (entry, down) => {
+    for (let i = 0; i < entry.len; i++) {
+      const r = entry.row + (down ? i : 0), c = entry.col + (down ? 0 : i);
+      cellMeta[k(r, c)] = cellMeta[k(r, c)] || {};
+      cellMeta[k(r, c)][down ? 'down' : 'across'] = entry;
+    }
+  };
+  P.across.forEach(e => attach(e, false));
+  P.down.forEach(e => attach(e, true));
+
+  cw.appendChild(buildClues());
+  document.getElementById('cwControls').style.display = 'flex';
+}
+
+function buildClues() {
+  const wrap = document.createElement('div');
+  wrap.className = 'cw-clues';
+  const col = (label, list, down) => {
+    const div = document.createElement('div');
+    div.className = 'cw-clue-col';
+    div.innerHTML = `<h3>${label}</h3>`;
+    list.forEach(e => {
+      const p = document.createElement('div');
+      p.className = 'cw-clue';
+      p.dataset.num = e.num; p.dataset.down = down ? '1' : '0';
+      p.innerHTML = `<b>${e.num}</b>${e.clue} (${e.len})`;
+      p.addEventListener('click', () => { dir = down ? 'D' : 'A'; focusCell(e.row, e.col); });
+      div.appendChild(p);
+    });
+    return div;
+  };
+  wrap.appendChild(col('Across', P.across, false));
+  wrap.appendChild(col('Down', P.down, true));
+  return wrap;
+}
+
+function curEntry() {
+  const m = cellMeta[k(cur.r, cur.c)];
+  if (!m) return null;
+  return dir === 'A' ? (m.across || m.down) : (m.down || m.across);
+}
+function toggleDir() {
+  const m = cellMeta[k(cur.r, cur.c)];
+  if (m && m.across && m.down) { dir = dir === 'A' ? 'D' : 'A'; highlight(); }
+}
+function focusCell(r, c) {
+  if (!isCell(r, c)) return;
+  cur = { r, c };
+  const inp = cellInput[k(r, c)];
+  if (inp) inp.focus();
+  highlight();
+}
+function highlight() {
+  document.querySelectorAll('.cw-cell').forEach(el => el.classList.remove('hl', 'cur'));
+  document.querySelectorAll('.cw-clue').forEach(el => el.classList.remove('active'));
+  const e = curEntry();
+  if (e) {
+    for (let i = 0; i < e.len; i++) {
+      const r = e.row + (dir === 'D' ? i : 0), c = e.col + (dir === 'D' ? 0 : i);
+      const inp = cellInput[k(r, c)];
+      if (inp) inp.parentElement.classList.add('hl');
+    }
+    const clue = document.querySelector(`.cw-clue[data-num="${e.num}"][data-down="${dir === 'D' ? 1 : 0}"]`);
+    if (clue) clue.classList.add('active');
+  }
+  const cinp = cellInput[k(cur.r, cur.c)];
+  if (cinp) cinp.parentElement.classList.add('cur');
+}
+
+function step(r, c, back) {
+  const d = back ? -1 : 1;
+  let nr = r + (dir === 'D' ? d : 0), nc = c + (dir === 'A' ? d : 0);
+  return { r: nr, c: nc };
+}
+function advance(back) {
+  const n = step(cur.r, cur.c, back);
+  if (isCell(n.r, n.c)) focusCell(n.r, n.c);
+}
+function onInput(ev) {
+  const v = ev.target.value.toUpperCase().replace(/[^A-Z]/g, '');
+  ev.target.value = v.slice(-1);
+  clearMark(ev.target);
+  save();
+  if (ev.target.value) advance(false);
+  checkWin();
+}
+function onKeydown(ev) {
+  const r = +ev.target.dataset.r, c = +ev.target.dataset.c;
+  const moves = { ArrowUp: ['D', -1], ArrowDown: ['D', 1], ArrowLeft: ['A', -1], ArrowRight: ['A', 1] };
+  if (moves[ev.key]) {
+    ev.preventDefault();
+    const [wantDir, d] = moves[ev.key];
+    if (dir !== wantDir) { dir = wantDir; highlight(); }
+    let nr = r + (wantDir === 'D' ? d : 0), nc = c + (wantDir === 'A' ? d : 0);
+    while (nr >= 0 && nr < P.rows && nc >= 0 && nc < P.cols) {
+      if (isCell(nr, nc)) { focusCell(nr, nc); break; }
+      nr += (wantDir === 'D' ? d : 0); nc += (wantDir === 'A' ? d : 0);
+    }
+  } else if (ev.key === 'Backspace') {
+    if (!ev.target.value) { ev.preventDefault(); advance(true); const p = cellInput[k(cur.r, cur.c)]; if (p) { p.value = ''; clearMark(p); save(); } }
+    else { clearMark(ev.target); }
+  } else if (ev.key === ' ' || ev.key === 'Tab' && false) {
+    ev.preventDefault(); toggleDir();
+  }
+}
+
+function clearMark(inp) { inp.parentElement.classList.remove('wrong', 'right'); }
+
+// ── controls ──
+function cwCheck() {
+  let wrong = 0, filled = 0;
+  for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+    if (!isCell(r, c)) continue;
+    const inp = cellInput[k(r, c)];
+    inp.parentElement.classList.remove('wrong', 'right');
+    if (!inp.value) continue;
+    filled++;
+    if (inp.value === P.solution[r][c]) inp.parentElement.classList.add('right');
+    else { inp.parentElement.classList.add('wrong'); wrong++; }
+  }
+  const s = document.getElementById('cwStatus');
+  s.className = 'cw-status';
+  s.textContent = filled === 0 ? 'Nothing filled in yet.' : wrong === 0 ? 'All filled cells are correct so far.' : `${wrong} incorrect cell${wrong > 1 ? 's' : ''}.`;
+}
+function cwRevealCell() {
+  const inp = cellInput[k(cur.r, cur.c)];
+  if (inp) { inp.value = P.solution[cur.r][cur.c]; clearMark(inp); save(); checkWin(); }
+}
+function cwRevealWord() {
+  const e = curEntry(); if (!e) return;
+  for (let i = 0; i < e.len; i++) {
+    const r = e.row + (dir === 'D' ? i : 0), c = e.col + (dir === 'D' ? 0 : i);
+    const inp = cellInput[k(r, c)]; if (inp) { inp.value = P.solution[r][c]; clearMark(inp); }
+  }
+  save(); checkWin();
+}
+function cwRevealAll() {
+  for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+    if (!isCell(r, c)) continue;
+    const inp = cellInput[k(r, c)]; inp.value = P.solution[r][c]; clearMark(inp);
+  }
+  save(); checkWin();
+}
+function cwClear() {
+  for (const key in cellInput) { cellInput[key].value = ''; clearMark(cellInput[key]); }
+  localStorage.removeItem(KEY);
+  document.getElementById('cwStatus').textContent = '';
+}
+
+// ── persistence ──
+function save() {
+  const rows = [];
+  for (let r = 0; r < P.rows; r++) {
+    let line = '';
+    for (let c = 0; c < P.cols; c++) line += isCell(r, c) ? (cellInput[k(r, c)].value || '.') : '#';
+    rows.push(line);
+  }
+  try { localStorage.setItem(KEY, rows.join('\n')); } catch (e) {}
+}
+function load() {
+  let saved;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  if (!saved) return;
+  const rows = saved.split('\n');
+  for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+    if (!isCell(r, c)) continue;
+    const ch = rows[r] && rows[r][c];
+    if (ch && ch !== '.' && ch !== '#') cellInput[k(r, c)].value = ch;
+  }
+}
+function checkWin() {
+  for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+    if (!isCell(r, c)) continue;
+    if (cellInput[k(r, c)].value !== P.solution[r][c]) return false;
+  }
+  const s = document.getElementById('cwStatus');
+  s.className = 'cw-status win'; s.textContent = '✓ Solved — nice.';
+  return true;
+}
+
+if (P && P.solution) {
+  buildBoard();
+  load();
+  // focus first across clue's start
+  if (P.across[0]) { dir = 'A'; focusCell(P.across[0].row, P.across[0].col); }
+  checkWin();
+} else {
+  document.getElementById('cw').textContent = 'No puzzle data (crossword-data.js missing).';
+}
+</script>
+</body>
+</html>
