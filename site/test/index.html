@@ -109,6 +109,16 @@ const KEY = 'kd_crossword_' + (P ? P.id : 'x');
 let cur = { r: 0, c: 0 }, dir = 'A';
 const cellInput = {};   // "r,c" -> <input>
 const cellMeta = {};    // "r,c" -> { across:{entry}, down:{entry} }
+let ORDER = [];         // [{e, down}] in Tab order
+
+function gotoWord(delta) {
+  if (!ORDER.length) return;
+  const e = curEntry(), down = dir === 'D';
+  let i = ORDER.findIndex(x => x.e === e && x.down === down);
+  i = i < 0 ? 0 : (i + delta + ORDER.length) % ORDER.length;
+  dir = ORDER[i].down ? 'D' : 'A';
+  focusCell(ORDER[i].e.row, ORDER[i].e.col);
+}
 
 function k(r, c) { return r + ',' + c; }
 function isCell(r, c) { return P.solution[r] && P.solution[r][c] != null; }
@@ -158,6 +168,12 @@ function buildBoard() {
   P.across.forEach(e => attach(e, false));
   P.down.forEach(e => attach(e, true));
 
+  // Ordered word list for Tab / Shift+Tab (by clue number, across before down).
+  ORDER = [
+    ...P.across.map(e => ({ e, down: false })),
+    ...P.down.map(e => ({ e, down: true })),
+  ].sort((a, b) => a.e.num - b.e.num || (a.down ? 1 : 0) - (b.down ? 1 : 0));
+
   cw.appendChild(buildClues());
   document.getElementById('cwControls').style.display = 'flex';
 }
@@ -200,7 +216,17 @@ function focusCell(r, c) {
   if (inp) inp.focus();
   highlight();
 }
+// Keep `dir` pointing at a word that actually exists under the cursor. Without
+// this, landing on a down-only cell while dir==='A' leaves every dir-based step
+// (typing, highlight, reveal word) moving horizontally into nothing.
+function ensureDir() {
+  const m = cellMeta[k(cur.r, cur.c)];
+  if (!m) return;
+  if (dir === 'D' && !m.down && m.across) dir = 'A';
+  else if (dir === 'A' && !m.across && m.down) dir = 'D';
+}
 function highlight() {
+  ensureDir();
   document.querySelectorAll('.cw-cell').forEach(el => el.classList.remove('hl', 'cur'));
   document.querySelectorAll('.cw-clue').forEach(el => el.classList.remove('active'));
   const e = curEntry();
@@ -249,7 +275,9 @@ function onKeydown(ev) {
   } else if (ev.key === 'Backspace') {
     if (!ev.target.value) { ev.preventDefault(); advance(true); const p = cellInput[k(cur.r, cur.c)]; if (p) { p.value = ''; clearMark(p); save(); } }
     else { clearMark(ev.target); }
-  } else if (ev.key === ' ' || ev.key === 'Tab' && false) {
+  } else if (ev.key === 'Tab') {
+    ev.preventDefault(); gotoWord(ev.shiftKey ? -1 : 1);
+  } else if (ev.key === ' ') {
     ev.preventDefault(); toggleDir();
   }
 }
