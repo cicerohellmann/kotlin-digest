@@ -209,7 +209,7 @@ body { min-height: 100vh; }
       color: var(--ink-muted);
       transition: background 0.15s, color 0.15s;
     }
-    .mode-btn.active.focus   { background: var(--accent); color: var(--ink); }
+    .mode-btn.active.focus   { background: var(--accent); color: #1C1B18; }
     .mode-btn.active.exclude { background: var(--blue);       color: #fff; }
     .filter-active-count {
       font-family: var(--font-ui);

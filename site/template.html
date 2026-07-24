@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://imgs.xkcd.com">
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <link id="fontcss" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="design.css">
   <script>
@@ -1094,12 +1094,23 @@ if (document.documentElement.dataset.nojs === '1') {
     try { renderView(); } catch (e) { console.error('render failed:', e); }
     dismissLoader();
   };
+  // Paged pages are packed to exact text height, so they must be re-measured
+  // once the WEB fonts are truly applied. The font CSS is loaded async (preload
+  // → stylesheet), so document.fonts.ready at boot resolves against fallback
+  // metrics — too early. Wait for the stylesheet to go live (its @font-face
+  // then exists), then for the actual fonts, and only then re-paginate.
+  const rePaginate = () => { if (document.documentElement.dataset.layout !== 'scroll') renderView(); };
+  const afterFonts = () => {
+    if (!document.fonts || !document.fonts.load) return;
+    Promise.all([
+      document.fonts.load('600 1rem "JetBrains Mono"'),
+      document.fonts.load('500 1rem "DM Sans"'),
+    ]).then(rePaginate).catch(rePaginate);
+  };
   boot();
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(() => {
-      if (document.documentElement.dataset.layout !== 'scroll') renderView();
-    }).catch(() => {});
-  }
+  const fontcss = document.getElementById('fontcss');
+  if (!fontcss || fontcss.rel === 'stylesheet') afterFonts();   // already applied (cache)
+  else fontcss.addEventListener('load', afterFonts, { once: true });
 } catch (e) {
   console.error('Digest init failed:', e);
   dismissLoader();
