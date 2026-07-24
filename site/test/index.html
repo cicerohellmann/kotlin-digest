@@ -25,7 +25,7 @@
 
     /* ── CROSSWORD ─────────────────────────────────────────────── */
     .cw { display: flex; flex-wrap: wrap; gap: 1.75rem; align-items: flex-start; }
-    .cw-board-wrap { flex: 0 0 auto; }
+    .cw-board-wrap { flex: 0 0 auto; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .cw-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--ink); margin: 0 0 0.6rem; }
     .cw-grid {
       display: grid;
