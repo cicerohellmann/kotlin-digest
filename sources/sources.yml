@@ -26,6 +26,16 @@ sources:
     cadence_days: 7
     topics: [kotlin, jetbrains, language]
 
+  - id: kotlin-youtube
+    name: "Kotlin by JetBrains — YouTube"
+    url: "https://www.youtube.com/@Kotlin"
+    channel_id: "UCP7uiEZIqci43m22KDl0sNw"
+    type: youtube
+    language: en
+    cadence_days: 14
+    topics: [kotlin, jetbrains, kmp, compose]
+    notes: "Official Kotlin channel; ingested from YouTube Atom feed derived from channel_id"
+
   - id: android-developers-blog
     name: "Android Developers Blog"
     url: "https://android-developers.googleblog.com/"

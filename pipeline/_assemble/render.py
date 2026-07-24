@@ -189,12 +189,12 @@ def build_data_block(
                 if w and w.get("photo"):
                     avatar = w["photo"]
 
-            video = youtube_id(a.get("url", ""))
+            video = a.get("video_id") or youtube_id(a.get("url", ""))
 
             article_blocks.append(
                 "      {{ id:{}, col:{},\n"
                 "        title:{},\n"
-                "        url:{}, source:{}, stype:{}, date:{}, author:{}, avatar:{}, video:{}, paywalled:{},\n"
+                "        url:{}, source:{}, stype:{}, date:{}, author:{}, avatar:{}, video:{}, media_type:{}, thumbnail:{}, paywalled:{},\n"
                 "        topics:{},\n"
                 "        summary:{},\n"
                 "        snap:{},\n"
@@ -205,6 +205,7 @@ def build_data_block(
                     json.dumps(a["url"]), json.dumps(source_name),
                     json.dumps(stype), json.dumps(date_str),
                     json.dumps(author), json.dumps(avatar), json.dumps(video),
+                    json.dumps(a.get("media_type", "")), json.dumps(a.get("thumbnail", "")),
                     "true" if a.get("paywalled") else "false",
                     topics_js,
                     json.dumps(summary),

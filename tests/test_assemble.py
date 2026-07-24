@@ -7,6 +7,7 @@ from pipeline._assemble.dates import edition_to_dates
 from pipeline._assemble.scores import lookup_scores_at
 from pipeline._assemble.articles import filter_articles, score_articles, assign_col, cluster_articles
 from pipeline._assemble.render import spark_from_history, inject_data, build_data_block, highlight_kotlin
+from pipeline.assemble import build_structured_data
 
 
 # ── dates ────────────────────────────────────────────────────────────────────
@@ -305,3 +306,44 @@ def test_build_data_block_no_rollup_is_null():
         source_type_map={"kotlin-blog": "blog"}, clusters=clusters,
     )
     assert "rollup:null" in block
+
+
+def test_build_data_block_uses_explicit_youtube_video_id():
+    clusters = [{"id": "community", "label": "Community", "topics": ["kotlin"]}]
+    chapters = [{
+        "id": "community", "label": "Community", "score": 10.0,
+        "articles": [{
+            "id": "v1", "col": "c12", "title": "Kotlin Talk",
+            "url": "https://www.youtube.com/watch?v=aaaaaaaaaaa",
+            "source_id": "kotlin-youtube", "date": "2026-07-07",
+            "topics": ["kotlin"], "placement_score": 10.0,
+            "summary": "A Kotlin video.", "summarized": True,
+            "media_type": "video", "video_id": "bbbbbbbbbbb",
+        }],
+    }]
+    bible = {"kotlin": {"score": 10.0, "history": [{"date": "2026-07-07", "score": 10.0}]}}
+    block = build_data_block(
+        edition="2026-W28", start=date(2026, 7, 6), end=date(2026, 7, 12),
+        chapters=chapters, bible=bible,
+        source_type_map={"kotlin-youtube": "youtube"}, clusters=clusters,
+    )
+    assert 'video:"bbbbbbbbbbb"' in block
+    assert 'media_type:"video"' in block
+
+
+def test_build_structured_data_emits_video_object_when_thumbnail_exists():
+    chapters = [{
+        "articles": [{
+            "title": "Kotlin Talk",
+            "url": "https://www.youtube.com/watch?v=bbbbbbbbbbb",
+            "date": "2026-07-07",
+            "summary": "A Kotlin video.",
+            "media_type": "video",
+            "video_id": "bbbbbbbbbbb",
+            "thumbnail": "https://i.ytimg.com/vi/bbbbbbbbbbb/hqdefault.jpg",
+        }]
+    }]
+    html = build_structured_data("2026·W28", "https://kotlindigest.com/", "desc", chapters)
+    assert 'application/ld+json' in html
+    assert '"@type":"VideoObject"' in html
+    assert "https://www.youtube-nocookie.com/embed/bbbbbbbbbbb" in html

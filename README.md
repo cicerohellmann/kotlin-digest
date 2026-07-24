@@ -70,6 +70,12 @@ Open a PR. In the description, include one sentence on why this source adds some
 
 If the source has an RSS or Atom feed, include it — the pipeline will always prefer a feed over scraping. If it doesn't, include a note on how article dates are detectable on the page.
 
+For YouTube channels, use `type: youtube` and either provide the channel Atom
+feed as `rss:` or provide `channel_id:` so the scout can derive it. YouTube
+sources should still be primary sources: official channels, conference channels,
+library/team channels, or individual creators publishing their own Kotlin,
+Android, Compose, or KMP videos.
+
 ### Report a dead source
 
 If a source has gone quiet, open a PR removing it from `sources/sources.yml`. Include the last known article URL and date in the PR description so we have a record.

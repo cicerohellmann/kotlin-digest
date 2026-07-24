@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzE4MTcxQSIvPjx0ZXh0IHg9IjMiIHk9IjI0IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjRTA2MDIwIj5LPC90ZXh0Pjx0ZXh0IHg9IjE3IiB5PSIyNCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxOSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0YzRURFMiI+RDwvdGV4dD48L3N2Zz4K">
   <title>Kotlin Digest — 2026·W29</title>
+  <meta name="description" content="Kotlin Digest 2026·W29: 41 hand-picked Android, Kotlin, KMP and Jetpack Compose stories from 8 sources, for the week of 13 July 2026.">
+  <link rel="canonical" href="https://kotlindigest.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kotlin Digest">
+  <meta property="og:title" content="Kotlin Digest — 2026·W29">
+  <meta property="og:description" content="Kotlin Digest 2026·W29: 41 hand-picked Android, Kotlin, KMP and Jetpack Compose stories from 8 sources, for the week of 13 July 2026.">
+  <meta property="og:url" content="https://kotlindigest.com/">
+  <meta property="og:image" content="https://kotlindigest.com/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kotlin Digest — 2026·W29">
+  <meta name="twitter:description" content="Kotlin Digest 2026·W29: 41 hand-picked Android, Kotlin, KMP and Jetpack Compose stories from 8 sources, for the week of 13 July 2026.">
+  <meta name="twitter:image" content="https://kotlindigest.com/og-card.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="design.css">
@@ -20,10 +32,16 @@
     if(r.font && fonts[r.font]) el.style.setProperty('--read-font', fonts[r.font]);
     var scales={s:'0.92',m:'1',l:'1.12'};
     if(r.size && scales[r.size]) el.style.setProperty('--read-scale', scales[r.size]);
-    el.dataset.layout = (r.layout==='scroll') ? 'scroll' : 'paged';
+    // Narrow viewports always use the scroll feed: the paged reader packs each
+    // page to a fixed height and clips the overflow with no way to scroll it,
+    // which strands tall pages (e.g. the trends list) on phones. Set pre-paint
+    // to avoid a flash of the paged layout.
+    var narrow = window.innerWidth <= 700;
+    el.dataset.layout = (narrow || r.layout==='scroll') ? 'scroll' : 'paged';
   })();
   </script>
   <link rel="stylesheet" href="components.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Kotlin Digest — 2026·W29","description":"Kotlin Digest 2026·W29: 41 hand-picked Android, Kotlin, KMP and Jetpack Compose stories from 8 sources, for the week of 13 July 2026.","url":"https://kotlindigest.com/","isPartOf":{"@type":"WebSite","name":"Kotlin Digest","url":"https://kotlindigest.com/"},"hasPart":[{"@type":"Article","headline":"Evolving Android","url":"https://medium.com/@abhaygzb15/evolving-android-9921312c9df8?source=rss------android-5","datePublished":"2026-07-19","description":"An opinion piece reflecting on how Android development has evolved over the past five years and where it is heading. The author, coming from a Flutter background, discusses the shift from XML to Jetpack Compose in 2021, the arrival of KMP and Compose Multiplatform for shared codebases, and the rise of AI-assisted coding."},{"@type":"Article","headline":"v1.12.10-alpha01+dev4492: Details","url":"https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4492","datePublished":"2026-07-17","description":"A development pre-release tag (v1.12.10-alpha01+dev4492) of Compose Multiplatform from JetBrains. It bundles versions of the core Compose, Material3, lifecycle, and navigation3 artifacts. This is an automated dev build listing with no detailed changelog."},{"@type":"Article","headline":"Building a Simple Dice Roller App with Jetpack Compose","url":"https://medium.com/@ananyapraveen.shetty/building-a-simple-dice-roller-app-with-jetpack-compose-9701fc3b741f?source=rss------kotlin-5","datePublished":"2026-07-13","description":"A beginner walkthrough of building a dice roller app in Kotlin with Jetpack Compose. It covers setting up MainActivity with setContent, storing the current dice value with remember and mutableStateOf, and using a when expression to map the rolled number (1-6) to the matching drawable image."},{"@type":"Article","headline":"I Built an AI Travel Planner for Rwanda using Google AI Studio and It Changed How I Think About…","url":"https://medium.com/@esthcarelle/i-built-an-ai-travel-planner-for-rwanda-using-google-ai-studio-and-it-changed-how-i-think-about-7b7ff70a35cc?source=rss------kotlin-5","datePublished":"2026-07-19","description":"A tutorial on using Google AI Studio to generate a Kotlin Jetpack Compose Android app, demonstrated by building an AI travel planner for Rwanda. It walks through prompting AI Studio to scaffold the app, choosing a generated UI theme, and notes that the generated apps come with Gemini configured server-side so no API key handling is needed for the prototype."},{"@type":"Article","headline":"The 120Hz Trap: Debugging Infinite Recomposition and Silent Deep Link Failures on ColorOS","url":"https://proandroiddev.com/the-120hz-trap-debugging-infinite-recomposition-and-silent-deep-link-failures-on-coloros-bceb3a320e11?source=rss----c72404660798---4","datePublished":"2026-07-17","description":"A root-cause analysis of two bugs that surfaced only on a 120Hz Oppo ColorOS device: an infinite Compose recomposition loop and a silently failing deep link. The author explains that the recomposition loop was caused by writing to MutableState during the composition phase, which the high refresh rate exposed by firing the broken loop twice as often, and covers why deep links can die on custom OEM skins."},{"@type":"Article","headline":"I Built a Jelly-Like FAB Menu for Jetpack Compose","url":"https://proandroiddev.com/i-built-a-jelly-like-fab-menu-for-jetpack-compose-42e9f65f6576?source=rss----c72404660798---4","datePublished":"2026-07-17","description":"A walkthrough of building JellyFab, an open-source Compose library that creates a jelly-like expanding Floating Action Button menu. The effect is built without shaders, using Jetpack Compose Canvas, sampled points, and the Animatable API to deform the button into a soft blob. The article covers the custom trigger button (a clickable Box rather than a FloatingActionButton), expanding mini-FAB layers, the deformable blob, and a dynamic shadow."},{"@type":"Article","headline":"Leverage the essentials: Jetpack Compose best practices","url":"https://medium.com/@subhadipdhn/leverage-the-essentials-jetpack-compose-best-practices-64c069d6b062?source=rss------android-5","datePublished":"2026-07-13","description":"A collection of Jetpack Compose best practices focused on performance. It covers using the remember block to cache expensive calculations, assigning stable keys in Lazy layouts to avoid unnecessary recompositions, and using derivedStateOf to limit recomposition when state changes rapidly."},{"@type":"Article","headline":"The Memory Leaks Jetpack Compose Hides From LeakCanary (And How to Actually Find Them)","url":"https://naveenudesh.medium.com/the-memory-leaks-jetpack-compose-hides-from-leakcanary-and-how-to-actually-find-them-a24508252bd3?source=rss------kotlin-5","datePublished":"2026-07-19","description":"Explains memory leak patterns specific to Jetpack Compose internals that are hard to diagnose with LeakCanary because the retaining object is often Compose runtime code such as the slot table, the Recomposer's observer lists, or a CompositionLocal. It focuses on how composition disposal is tied to the Composition object rather than a composable leaving the screen, and how ComposeView inside a pooled RecyclerView view holder can keep an undisposed composition alive, with ViewCompositionStrategy as the relevant control."},{"@type":"Article","headline":"Why Kotlin, Jetpack Compose, and Kotlin Multiplatform Succeeded: The Power of Incremental Adoption","url":"https://medium.com/@dev.mohamed.arfa/why-kotlin-jetpack-compose-and-kotlin-multiplatform-succeeded-the-power-of-incremental-adoption-51f0995cdcda?source=rss------android-5","datePublished":"2026-07-19","description":"An opinion piece arguing that Kotlin, Jetpack Compose, and Kotlin Multiplatform succeeded largely because they support incremental adoption rather than requiring rewrites. It points to Kotlin's Java interoperability allowing file-by-file migration and Compose coexisting with the existing View system. The author frames gradual adoption as reducing migration risk for teams with large existing codebases."},{"@type":"Article","headline":"7 Kotlin Flow Mistakes That Quietly Break Android Apps","url":"https://halilozel1903.medium.com/7-kotlin-flow-mistakes-that-quietly-break-android-apps-cbd4bc77caff?source=rss------kotlin-5","datePublished":"2026-07-19","description":"A list of seven common Kotlin Flow mistakes in Android apps and how to avoid them. The first covers collecting a Flow without respecting the lifecycle, recommending collectAsStateWithLifecycle in Compose and repeatOnLifecycle in View-based screens. The article notes these issues often surface only after configuration changes or concurrent updates rather than in demos."},{"@type":"Article","headline":"Kotlin Turns 15: Celebrate the Kotlin Effect","url":"https://blog.jetbrains.com/kotlin/2026/07/kotlin-turns-15-celebrate-the-kotlin-effect/","datePublished":"2026-07-17","description":"JetBrains marks Kotlin's 15th anniversary with a set of community activities. These include leaving a birthday postcard message, a browser game, and free access to select Kotlin courses on Hyperskill until September 9, 2026."},{"@type":"Article","headline":"1.The first look at Kotlin","url":"https://medium.com/@aly.route/1-the-first-look-at-kotlin-e271d6f6a00d?source=rss------kotlin-5","datePublished":"2026-07-19","description":"An introductory overview of the Kotlin language, covering its concise syntax, extension functions, and type inference, and noting its Java interoperability for gradual migration. It also lists the platforms Kotlin targets: JVM, Android, JavaScript, and Native."},{"@type":"Article","headline":"I Stopped Eyeballing LLM Output and Started Scoring It Like a Unit Test","url":"https://proandroiddev.com/testing-an-llm-agent-like-i-test-kotlin-code-50849842ead7?source=rss----c72404660798---4","datePublished":"2026-07-17","description":"The author describes building an evaluation harness to score the output of a Kotlin-based LLM agent host (called ferryman, a local-first MCP client with pluggable skills and multi-provider routing) the way unit tests score code, rather than judging output by eye. It argues that the evaluation harness, not the agent itself, is what makes an AI feature production-ready, and notes the harness caught bugs including in its own graders and the LLM judge."},{"@type":"Article","headline":"Type Casting and Smart Cast in Kotlin: A Complete Guide for Beginners","url":"https://techdynasty.medium.com/type-casting-and-smart-cast-in-kotlin-a-complete-guide-for-beginners-992f8c45dd70?source=rss------kotlin-5","datePublished":"2026-07-19","description":"A beginner guide to type casting and smart casts in Kotlin. It covers the Any root type, the is operator for type checks, safe and unsafe casting, and how Kotlin's smart cast automatically treats a value as a more specific type after a verified check, reducing boilerplate compared to Java. Examples are framed around Android use cases such as mixed RecyclerView item types."},{"@type":"Article","headline":"2.3.0-alpha.3","url":"https://github.com/arrow-kt/arrow/releases/tag/2.3.0-alpha.3","datePublished":"2026-07-16","description":"A pre-release of the Arrow functional programming library for Kotlin, version 2.3.0-alpha.3. The changes include compatibility with result4K 3.0 and making prismFoci lazier in resolution."},{"@type":"Article","headline":"What is the architectural difference between KMP and Flutter?","url":"https://medium.com/@crpoudyal/what-is-the-architectural-difference-between-kmp-and-flutter-aec1c5f82f80?source=rss------kotlin-5","datePublished":"2026-07-13","description":"A comparison of how Kotlin Multiplatform and Flutter approach cross-platform code sharing. KMP shares business/non-UI logic while keeping platform-native UI (SwiftUI on iOS, Jetpack Compose on Android), whereas Flutter uses a single unified framework for both UI and logic across platforms. The article outlines the structural components of each, including KMP's common module for shared code."},{"@type":"Article","headline":"I Found a VLC Playback Bug While Building a KMP Video Feed","url":"https://medium.com/@nikolayv_dev/i-found-a-vlc-playback-bug-while-building-a-kmp-video-feed-0ab49e1e0f54?source=rss------kotlin-5","datePublished":"2026-07-19","description":"A debugging account from building Video Feed Lab, a Kotlin Multiplatform short-form video feed for Android (Media3) and Desktop (LibVLC via vlcj). The author traces a freeze that affected HLS and DASH streams but not progressive MP4, and isolates it by reproducing the same failure in the standalone VLC application, concluding the bug is in VLC's demuxer rather than the app. The issue reproduced across all 20 test videos in VLC 3.0.18 and 3.0.23, with logs showing the fMP4 demuxer and VideoToolbox decoder restarting."},{"@type":"Article","headline":"Kotlin Multiplatform Is Not Cross-Platform: Understanding the Real Difference","url":"https://medium.com/@dev.mohamed.arfa/kotlin-multiplatform-is-not-cross-platform-understanding-the-real-difference-158e548d03fe?source=rss------kotlin-5","datePublished":"2026-07-19","description":"An opinion piece arguing that Kotlin Multiplatform should not be grouped with cross-platform frameworks like Flutter, React Native, or Xamarin. It contrasts the framework approach, which hides platform differences and sits between developer and OS, with KMP's approach of sharing only business logic, networking, data, and similar layers while keeping UI and platform integration native. The author lists what typically stays native on Android and iOS and suggests this is why companies adopt KMP in production."},{"@type":"Article","headline":"Bring your KMP library to NuGet","url":"https://proandroiddev.com/bring-your-kmp-library-to-nuget-02e1131a4707?source=rss----c72404660798---4","datePublished":"2026-07-19","description":"Introduces kotlin-native-nuget, a Gradle plugin that packages a Kotlin/Native library as a NuGet package with generated idiomatic C# bindings, covering classes, enums, data classes, coroutines, Flow, generics, and interfaces without hand-written FFI boilerplate. The post explains the plugin's DSL configuration for native targets and package metadata, and motivates it by KMP's lack of a clean path into the .NET ecosystem (Unity, MAUI, Blazor)."},{"@type":"Article","headline":"Kotlin Architecture Tests: What They Are and Why They Matter - Part 1/3","url":"https://proandroiddev.com/kotlin-architecture-tests-what-they-are-and-why-they-matter-389ce9a1204c?source=rss----c72404660798---4","datePublished":"2026-07-17","description":"Part 1 of a series introducing Kotlin architecture tests, which verify that structural decisions such as layer boundaries and allowed package dependencies still hold, a gap left by compilers, linters, and unit tests. It shows an example using Konture to assert that domain-package classes only depend on approved packages, and explains why architecture violations (like a domain model accepting a network DTO or a feature module importing another's implementation) pass ordinary green builds."},{"@type":"Article","headline":"Kotlin Architecture Tests: Why Konture Exists - Part 2/3","url":"https://proandroiddev.com/kotlin-architecture-tests-why-konture-exists-4ac92a4dd3ba?source=rss----c72404660798---4","datePublished":"2026-07-17","description":"Part 2 of a series explaining the rationale behind Konture, a Kotlin architecture-testing tool. It argues that a Kotlin project has two views of its architecture: the Gradle module graph that decides what can link, and the Kotlin source model that decides what the code actually references, and that a rule such as presentation code not exposing transport DTOs can be violated in either view. The article uses Now in Android and a KotlinConf KMP sample as showcases and contrasts Konture with existing single-view architecture tools."},{"@type":"Article","headline":"Android System Design: Understanding Clean Architecture","url":"https://medium.com/@nematengg/android-system-design-understanding-clean-architecture-479f242a81f6?source=rss------kotlin-5","datePublished":"2026-07-13","description":"An introductory explanation of Clean Architecture for Android, framing it as a response to code where Activities and ViewModels take on too many responsibilities such as UI, validation, networking, storage, navigation, and analytics. It covers what Clean Architecture is, attributes it to Robert C. Martin, and describes the goal of separating responsibilities into layers that each know as little as possible about the others. The article notes the pattern is not Android-specific and applies to backend, iOS, desktop, and web."},{"@type":"Article","headline":"Clean Architecture on Android: What Google Actually Recommends","url":"https://sarmadsohaib.medium.com/de-mystifying-googles-android-app-recommended-architecture-de072a0b3a33?source=rss------android-5","datePublished":"2026-07-19","description":"An opinion piece arguing that Google's recommended Android app architecture is often misapplied as mandatory boilerplate, using the example of touching ten files to add one text field. It distinguishes Clean Architecture as a map of dependency boundaries rather than a required directory or module structure, and revisits what Google's guidelines and Robert C. Martin's principles actually mean for real apps."},{"@type":"Article","headline":"How We’re Migrating a 1M+ Install Finance App from Native to Flutter — Without a Rewrite","url":"https://medium.com/@muhammadrisky1401/how-were-migrating-a-1m-install-finance-app-from-native-to-flutter-without-a-rewrite-aaef2c1295d1?source=rss------android-5","datePublished":"2026-07-19","description":"First part of a series on incrementally migrating a production consumer-finance app (over one million installs) from native Swift/Kotlin to Flutter using an Add-to-App approach, without a rewrite or feature freeze. It outlines architectural decisions such as using a single Flutter gateway to serve every migrated flow rather than many Flutter modules, and running two routing systems in one module so Flutter behaves like a native feature during migration."},{"@type":"Article","headline":"What’s New in IntelliJ IDEA 2026.2","url":"https://blog.jetbrains.com/idea/2026/07/intellij-idea-2026-2/","datePublished":"2026-07-16","description":"JetBrains announces the release of IntelliJ IDEA 2026.2. The release adds day-one support for Java 27 and Kotlin 2.4 language features, along with AI upgrades including native GitHub Copilot integration and agent skills, plus logpoints, dependency completion, early Gradle 10 support, and Spring development improvements. It also includes stability and performance fixes described in a separate post."},{"@type":"Article","headline":"CLion 2026.2 Is Here","url":"https://blog.jetbrains.com/clion/2026/07/2026-2-release/","datePublished":"2026-07-16","description":"JetBrains announces the release of CLion 2026.2, its C and C++ IDE. Key additions include a bundled debugger skill for AI agents (usable via ACP-compatible agents like Claude Code and Codex), simplified debugger configuration through debug profiles, support for the STM32 Cube CLI bundle manager, C++26 reflection, and extended live watches for structs and arrays."},{"@type":"Article","headline":"GoLand 2026.2 Is Now Available!","url":"https://blog.jetbrains.com/go/2026/07/16/goland-2026-2-is-now-available/","datePublished":"2026-07-16","description":"Release announcement for GoLand 2026.2, JetBrains' Go IDE. It introduces a Go Optimization tool window combining profiling, escape analysis, and struct optimization, adds pprof profiling for regular applications without extra setup, and integrates the official go fix tool for language and standard library migrations. The release also adds reusable AI skills, configurable AI completion models, GitHub Copilot integration, and improvements for Docker Compose, Terraform, Git, and IDE responsiveness."},{"@type":"Article","headline":"Code in Space: Redefining Tech Creation with AI and XR","url":"https://blog.jetbrains.com/research/2026/07/ai-and-xr-future/","datePublished":"2026-07-16","description":"A JetBrains Research article on how AI and extended reality (XR) may reshape technology creation. It argues XR provides a rich multimodal input surface (gaze, hands, voice, head pose, spatial context) that, paired with AI, forms a new interaction substrate, and reports on semi-structured interviews with thirteen senior researchers and practitioners analyzed for tech-creator needs and pain points."},{"@type":"Article","headline":"Android Studio Quail 2 is Stable: Multi-task with the Android Studio AI agent","url":"https://android-developers.googleblog.com/2026/06/android-studio-quail-2-stable-features.html","datePublished":"2026-07-14","description":"Announces that Android Studio Quail 2 is stable for production use. Key changes include a redesigned Agent Mode that supports multiple parallel agent chats (each able to use different models), natively integrated memory leak profiling via LeakCanary, and context-aware crash remediation. Worktree support is not yet available and concurrent chats editing the same files can cause conflicts."},{"@type":"Article","headline":"What Releasing My First Android Game Taught Me in the First 24 Hours","url":"https://medium.com/@faruk.omeragic/what-releasing-my-first-android-game-taught-me-in-the-first-24-hours-74aa48895799?source=rss------android-5","datePublished":"2026-07-19","description":"A short reflection on releasing the author's first Android game, Cipher Uprising, on Google Play and the feedback received in the first 24 hours. Rather than gameplay comments, early feedback focused on the store presentation, with players unable to tell what kind of game it was and criticizing an AI-generated icon and screenshot. The author concludes the store page is part of the product and is redesigning the icon and first screenshot while leaving the gameplay largely unchanged."},{"@type":"Article","headline":"Part 3: Database Migrations That Won’t Crash Production: From AutoMigrations to Programmatic…","url":"https://medium.com/@sivavishnu0705/part-3-database-migrations-that-wont-crash-production-from-automigrations-to-programmatic-632473e4f3c1?source=rss------kotlin-5","datePublished":"2026-07-13","description":"Part 3 of a series on Jetpack Room database migrations, covering when @AutoMigration is sufficient and when you must write programmatic migrations. It discusses tracking schema history, performing structural transformations (splitting columns, coercing types, restructuring relationships) without data loss, and testing migrations against real SQLite. The full article is a Medium member-only story."},{"@type":"Article","headline":"Part 4: Stop Learning Service APIs — Start Designing Systems: Music Players, Uploads, Downloads…","url":"https://medium.com/@sivavishnu0705/part-4-stop-learning-service-apis-start-designing-systems-music-players-uploads-downloads-d35703b2e35d?source=rss------kotlin-5","datePublished":"2026-07-19","description":"Part 4 of a series on Android background work argues for treating a Service as a lifecycle host rather than putting business logic inside it, keeping the actual logic in a plain testable engine object. It applies this pattern to music players, uploads, downloads, and location tracking so features survive process death, network drops, and OS deprioritization."},{"@type":"Article","headline":"How I Built Android Kiosk Mode for a Commercial Device: A Complete Guide to Device Owner & Lock…","url":"https://medium.com/@harshhotwani367/how-i-built-android-kiosk-mode-for-a-commercial-device-a-complete-guide-to-device-owner-lock-aa836165e2da?source=rss------kotlin-5","datePublished":"2026-07-19","description":"A guide to implementing Android Kiosk Mode for a commercial POS device so the app stays pinned and users cannot exit to Settings or other apps. It explains the roles of Device Owner, Lock Task Mode, and DevicePolicyManager, along with provisioning and Android Enterprise setup, from initial configuration to production practices."},{"@type":"Article","headline":"How I Discovered a Premium Bypass Vulnerability in Spotify — And What Happened Next\nA first-time…","url":"https://medium.com/@nikhilgarg6176/how-i-discovered-a-premium-bypass-vulnerability-in-spotify-and-what-happened-next-a-first-time-748e2fda7a39?source=rss------android-5","datePublished":"2026-07-13","description":"A security researcher describes an authorization bypass that granted Spotify Premium features on a free account using only Spotify's official apps. The issue involves Spotify Connect: when a session is established between the mobile web player and the Android app, the backend fails to re-validate the account's subscription status, so the Android app inherits the web player's unrestricted session. The author published the findings after a 90-day responsible disclosure period with no resolution."},{"@type":"Article","headline":"BLE Advertiser Now Simulates the 5 Real-World BLE Systems Developers Actually Build For","url":"https://miniiot.medium.com/ble-advertiser-now-simulates-the-5-real-world-ble-systems-developers-actually-build-for-f7b509b9a5e5?source=rss------android-5","datePublished":"2026-07-13","description":"A post about the BLE Advertiser tool describing five real-world BLE system categories that use continuous advertising with changing payloads, such as indoor positioning beacons in retail, airports, museums, and warehouses. It explains how AdvertisingSet.setAdvertisingData() lets a device update its broadcast payload without stopping and restarting advertising, and argues that test tools should simulate this in-place update behavior to match production hardware. The piece focuses on BLE deployment patterns rather than Kotlin or Android APIs specifically."},{"@type":"Article","headline":"Introducing Live Manufacturer Data Updates Without Restarting BLE Advertising : BLE Advertiser(GATT…","url":"https://bleadvertiserapp.medium.com/introducing-live-manufacturer-data-updates-without-restarting-ble-advertising-ble-advertiser-gatt-0d1f1fe5004a?source=rss------android-5","datePublished":"2026-07-13","description":"Describes a new feature in the BLE Advertiser app that updates manufacturer data and other advertising payload fields in place while advertising continues, avoiding the stop-then-start cycle of Android's classic BLE advertising API. It explains problems with the restart approach: a visibility gap where scanners lose the device, possible rotation of the random/private address and reset of advertising interval timing, and slowness when payloads change frequently."},{"@type":"Article","headline":"ART broke our debugging — so we fixed it with a hook while the real fix rides the mainline train","url":"https://proandroiddev.com/art-broke-our-debugging-so-we-fixed-it-with-a-hook-while-the-real-fix-rides-the-mainline-train-cfca56a0968b?source=rss----c72404660798---4","datePublished":"2026-07-19","description":"A follow-up describing a workaround for an ART bug on Android 16 where attaching a Java debugger (JDWP) to a large debuggable app causes an ABBA lock-ordering deadlock between the GC thread and ART's native debug layer, resulting in an ANR. The authors present a small native hook (packaged as the open-source JdwpSilencer library) that suppresses the JDWP event avalanche so the debugger can attach normally, while the official mainline ART fix is still pending. The post notes the hook is not universal and includes a kill switch for cases where it causes hangs after the first breakpoint."},{"@type":"Article","headline":"ActivityNotFoundException in Android: How to Reproduce and Fix It","url":"https://proandroiddev.com/activitynotfoundexception-in-android-how-to-reproduce-and-fix-it-8977c223e53b?source=rss----c72404660798---4","datePublished":"2026-07-17","description":"Explains what causes ActivityNotFoundException in Android and how to reproduce it. The exception occurs when an implicit intent has no component available to handle its action, unlike explicit intents where the compiler can catch a missing activity. The article uses an ACTION_VIEW example and an AOSP emulator to demonstrate reproducing the error during development."},{"@type":"Article","headline":"Kotlin Architecture Tests with Konture: A Practical Guide - Part 3/3","url":"https://proandroiddev.com/kotlin-architecture-tests-with-konture-a-practical-guide-part-3-3-1f36ebe685db?source=rss----c72404660798---4","datePublished":"2026-07-17","description":"Part 3 of a guide on writing architecture tests for Kotlin projects using the Konture library. It walks through setting up a dedicated architecture-test module, adding Konture via the Gradle version catalog and plugin, and wiring up module dependencies. The example rule enforces that feature implementation modules must not depend on sibling feature implementation modules, using Gradle Kotlin DSL and JUnit 5."},{"@type":"Article","headline":"Fakes vs Mocks in Testing","url":"https://medium.com/@dhananjaydy/fakes-vs-mocks-in-testing-08ec776742d9?source=rss------kotlin-5","datePublished":"2026-07-13","description":"An overview of the difference between fakes and mocks as test doubles in Android testing. Mocks (via Mockito or MockK) record and verify interactions and return stubbed values without maintaining state, while fakes are simplified real implementations that maintain state. The article covers when each fits, such as mocks for stateless external APIs and event buses versus fakes for stateful dependencies like DAOs, and a hybrid approach using both."},{"@type":"Article","headline":"Multi-Module Build Economics: Designing API vs. Implementation Boundaries to Survive 50+ Dev Teams","url":"https://proandroiddev.com/multi-module-build-economics-designing-api-vs-implementation-boundaries-to-survive-50-dev-teams-464e6ddeabeb?source=rss----c72404660798---4","datePublished":"2026-07-17","description":"An article on Gradle multi-module build performance for large Android teams. It argues that slow incremental builds stem from ABI exposure rather than module count, distinguishes compile classpath from runtime classpath, and shows how using api versus implementation dependencies and separating :feature:*-api from :feature:*-impl modules limits recompilation."}]}</script>
 </head>
 <body>
 
@@ -93,7 +111,7 @@
               <button data-v="l" onclick="setSize('l')">L</button>
             </div>
           </div>
-          <div class="set-row">
+          <div class="set-row" id="rowLayout">
             <span class="set-label">Layout</span>
             <div class="seg" id="segLayout">
               <button data-v="paged" onclick="setLayout('paged')">Paged</button>
@@ -153,7 +171,8 @@
     <a href="about.html">About & Contributing</a> ·
     <a href="https://github.com/cicerohellmann/kotlin-digest">GitHub</a> ·
     <a href="https://github.com/cicerohellmann/kotlin-digest/blob/main/topics/topics.yml">Topic bible</a> ·
-    <a href="styleguide.html">Design system</a>
+    <a href="styleguide.html">Design system</a> ·
+    <a href="badge.html">Get the badge</a>
   </span>
 </footer>
 
@@ -213,7 +232,7 @@ const CHAPTERS = [
     articles:[
       { id:"935173c0ab875d66", col:"c12",
         title:"Evolving Android",
-        url:"https://medium.com/@abhaygzb15/evolving-android-9921312c9df8?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://medium.com/@abhaygzb15/evolving-android-9921312c9df8?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["compose", "kmp", "compose-multiplatform"],
         summary:"An opinion piece reflecting on how Android development has evolved over the past five years and where it is heading. The author, coming from a Flutter background, discusses the shift from XML to Jetpack Compose in 2021, the arrival of KMP and Compose Multiplatform for shared codebases, and the rise of AI-assisted coding.",
         snap:null,
@@ -221,7 +240,7 @@ const CHAPTERS = [
       },
       { id:"7eeaeee7f3c433b7", col:"c8",
         title:"v1.12.10-alpha01+dev4492: Details",
-        url:"https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4492", source:"Lib Compose Multiplatform", stype:"changelog", date:"17 Jul", paywalled:false,
+        url:"https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4492", source:"Lib Compose Multiplatform", stype:"changelog", date:"17 Jul", author:"olonho", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["compose-multiplatform", "jetbrains", "material3", "navigation"],
         summary:"A development pre-release tag (v1.12.10-alpha01+dev4492) of Compose Multiplatform from JetBrains. It bundles versions of the core Compose, Material3, lifecycle, and navigation3 artifacts. This is an automated dev build listing with no detailed changelog.",
         snap:null,
@@ -229,7 +248,7 @@ const CHAPTERS = [
       },
       { id:"584214f01ef001ae", col:"c8",
         title:"Building a Simple Dice Roller App with Jetpack Compose",
-        url:"https://medium.com/@ananyapraveen.shetty/building-a-simple-dice-roller-app-with-jetpack-compose-9701fc3b741f?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"13 Jul", paywalled:false,
+        url:"https://medium.com/@ananyapraveen.shetty/building-a-simple-dice-roller-app-with-jetpack-compose-9701fc3b741f?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"13 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["compose", "kotlin", "jetpack"],
         summary:"A beginner walkthrough of building a dice roller app in Kotlin with Jetpack Compose. It covers setting up MainActivity with setContent, storing the current dice value with remember and mutableStateOf, and using a when expression to map the rolled number (1-6) to the matching drawable image.",
         snap:null,
@@ -237,7 +256,7 @@ const CHAPTERS = [
       },
       { id:"68501104d284217d", col:"c6",
         title:"I Built an AI Travel Planner for Rwanda using Google AI Studio and It Changed How I Think About\u2026",
-        url:"https://medium.com/@esthcarelle/i-built-an-ai-travel-planner-for-rwanda-using-google-ai-studio-and-it-changed-how-i-think-about-7b7ff70a35cc?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://medium.com/@esthcarelle/i-built-an-ai-travel-planner-for-rwanda-using-google-ai-studio-and-it-changed-how-i-think-about-7b7ff70a35cc?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["compose", "kotlin"],
         summary:"A tutorial on using Google AI Studio to generate a Kotlin Jetpack Compose Android app, demonstrated by building an AI travel planner for Rwanda. It walks through prompting AI Studio to scaffold the app, choosing a generated UI theme, and notes that the generated apps come with Gemini configured server-side so no API key handling is needed for the prototype.",
         snap:null,
@@ -245,7 +264,7 @@ const CHAPTERS = [
       },
       { id:"8373195d53ce8914", col:"c6",
         title:"The 120Hz Trap: Debugging Infinite Recomposition and Silent Deep Link Failures on ColorOS",
-        url:"https://proandroiddev.com/the-120hz-trap-debugging-infinite-recomposition-and-silent-deep-link-failures-on-coloros-bceb3a320e11?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", paywalled:false,
+        url:"https://proandroiddev.com/the-120hz-trap-debugging-infinite-recomposition-and-silent-deep-link-failures-on-coloros-bceb3a320e11?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", author:"Subhankar Bag", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["compose", "navigation", "android-api"],
         summary:"A root-cause analysis of two bugs that surfaced only on a 120Hz Oppo ColorOS device: an infinite Compose recomposition loop and a silently failing deep link. The author explains that the recomposition loop was caused by writing to MutableState during the composition phase, which the high refresh rate exposed by firing the broken loop twice as often, and covers why deep links can die on custom OEM skins.",
         snap:null,
@@ -253,7 +272,7 @@ const CHAPTERS = [
       },
       { id:"4eb71d71252e8be3", col:"c6",
         title:"I Built a Jelly-Like FAB Menu for Jetpack Compose",
-        url:"https://proandroiddev.com/i-built-a-jelly-like-fab-menu-for-jetpack-compose-42e9f65f6576?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", paywalled:false,
+        url:"https://proandroiddev.com/i-built-a-jelly-like-fab-menu-for-jetpack-compose-42e9f65f6576?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", author:"Prashant Panwar", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["compose", "animation", "material3"],
         summary:"A walkthrough of building JellyFab, an open-source Compose library that creates a jelly-like expanding Floating Action Button menu. The effect is built without shaders, using Jetpack Compose Canvas, sampled points, and the Animatable API to deform the button into a soft blob. The article covers the custom trigger button (a clickable Box rather than a FloatingActionButton), expanding mini-FAB layers, the deformable blob, and a dynamic shadow.",
         snap:null,
@@ -261,7 +280,7 @@ const CHAPTERS = [
       },
       { id:"70ad9f7a4b29e6eb", col:"c4",
         title:"Leverage the essentials: Jetpack Compose best practices",
-        url:"https://medium.com/@subhadipdhn/leverage-the-essentials-jetpack-compose-best-practices-64c069d6b062?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"13 Jul", paywalled:false,
+        url:"https://medium.com/@subhadipdhn/leverage-the-essentials-jetpack-compose-best-practices-64c069d6b062?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"13 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["compose", "jetpack"],
         summary:"A collection of Jetpack Compose best practices focused on performance. It covers using the remember block to cache expensive calculations, assigning stable keys in Lazy layouts to avoid unnecessary recompositions, and using derivedStateOf to limit recomposition when state changes rapidly.",
         snap:{ label:"CACHE WITH REMEMBER", code:"<span class=\"k-c1\">// before \u2014 filters on every recomposition</span>\n<span class=\"k-n\">LazyColumn</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">items</span><span class=\"k-p\">(</span><span class=\"k-n\">list</span><span class=\"k-p\">.</span><span class=\"k-na\">filter</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-nb\">it</span><span class=\"k-p\">.</span><span class=\"k-na\">isAvailable</span><span class=\"k-w\"> </span><span class=\"k-p\">})</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-p\">...</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n\n<span class=\"k-c1\">// after \u2014 filtered once, re-run only when list changes</span>\n<span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">filteredList</span><span class=\"k-w\"> </span><span class=\"k-o\">=</span><span class=\"k-w\"> </span><span class=\"k-n\">remember</span><span class=\"k-p\">(</span><span class=\"k-n\">list</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">list</span><span class=\"k-p\">.</span><span class=\"k-na\">filter</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-nb\">it</span><span class=\"k-p\">.</span><span class=\"k-na\">isAvailable</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>\n<span class=\"k-n\">LazyColumn</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-n\">items</span><span class=\"k-p\">(</span><span class=\"k-n\">filteredList</span><span class=\"k-p\">)</span><span class=\"k-w\"> </span><span class=\"k-p\">{</span><span class=\"k-w\"> </span><span class=\"k-p\">...</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span><span class=\"k-w\"> </span><span class=\"k-p\">}</span>" },
@@ -269,7 +288,7 @@ const CHAPTERS = [
       },
       { id:"bd718aef2e1ab768", col:"c4",
         title:"The Memory Leaks Jetpack Compose Hides From LeakCanary (And How to Actually Find Them)",
-        url:"https://naveenudesh.medium.com/the-memory-leaks-jetpack-compose-hides-from-leakcanary-and-how-to-actually-find-them-a24508252bd3?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://naveenudesh.medium.com/the-memory-leaks-jetpack-compose-hides-from-leakcanary-and-how-to-actually-find-them-a24508252bd3?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["compose"],
         summary:"Explains memory leak patterns specific to Jetpack Compose internals that are hard to diagnose with LeakCanary because the retaining object is often Compose runtime code such as the slot table, the Recomposer's observer lists, or a CompositionLocal. It focuses on how composition disposal is tied to the Composition object rather than a composable leaving the screen, and how ComposeView inside a pooled RecyclerView view holder can keep an undisposed composition alive, with ViewCompositionStrategy as the relevant control.",
         snap:{ label:"DISPOSE STRATEGY", code:"<span class=\"k-c1\">// fixes undisposed composition in pooled RecyclerView holders</span>\n<span class=\"k-n\">composeView</span><span class=\"k-p\">.</span><span class=\"k-na\">setViewCompositionStrategy</span><span class=\"k-p\">(</span>\n<span class=\"k-w\">  </span><span class=\"k-n\">ViewCompositionStrategy</span><span class=\"k-p\">.</span><span class=\"k-na\">DisposeOnViewTreeLifecycleDestroyed</span><span class=\"k-p\">(</span><span class=\"k-n\">viewLifecycleOwner</span><span class=\"k-p\">)</span>\n<span class=\"k-p\">)</span>" },
@@ -283,7 +302,7 @@ const CHAPTERS = [
     articles:[
       { id:"49832020f6489e1e", col:"c12",
         title:"Why Kotlin, Jetpack Compose, and Kotlin Multiplatform Succeeded: The Power of Incremental Adoption",
-        url:"https://medium.com/@dev.mohamed.arfa/why-kotlin-jetpack-compose-and-kotlin-multiplatform-succeeded-the-power-of-incremental-adoption-51f0995cdcda?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://medium.com/@dev.mohamed.arfa/why-kotlin-jetpack-compose-and-kotlin-multiplatform-succeeded-the-power-of-incremental-adoption-51f0995cdcda?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["kotlin", "compose", "kmp"],
         summary:"An opinion piece arguing that Kotlin, Jetpack Compose, and Kotlin Multiplatform succeeded largely because they support incremental adoption rather than requiring rewrites. It points to Kotlin's Java interoperability allowing file-by-file migration and Compose coexisting with the existing View system. The author frames gradual adoption as reducing migration risk for teams with large existing codebases.",
         snap:null,
@@ -291,7 +310,7 @@ const CHAPTERS = [
       },
       { id:"ce1b0395675e9163", col:"c8",
         title:"7 Kotlin Flow Mistakes That Quietly Break Android Apps",
-        url:"https://halilozel1903.medium.com/7-kotlin-flow-mistakes-that-quietly-break-android-apps-cbd4bc77caff?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://halilozel1903.medium.com/7-kotlin-flow-mistakes-that-quietly-break-android-apps-cbd4bc77caff?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["flows", "coroutines", "compose", "kotlin"],
         summary:"A list of seven common Kotlin Flow mistakes in Android apps and how to avoid them. The first covers collecting a Flow without respecting the lifecycle, recommending collectAsStateWithLifecycle in Compose and repeatOnLifecycle in View-based screens. The article notes these issues often surface only after configuration changes or concurrent updates rather than in demos.",
         snap:{ label:"LIFECYCLE-AWARE COLLECT", code:"<span class=\"k-c1\">// before \u2014 collects even while UI is hidden</span>\n<span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">state</span><span class=\"k-w\"> </span><span class=\"k-k\">by</span><span class=\"k-w\"> </span><span class=\"k-n\">viewModel</span><span class=\"k-p\">.</span><span class=\"k-na\">uiState</span><span class=\"k-p\">.</span><span class=\"k-na\">collectAsState</span><span class=\"k-p\">()</span>\n\n<span class=\"k-c1\">// after \u2014 starts/stops with the lifecycle</span>\n<span class=\"k-kd\">val</span><span class=\"k-w\"> </span><span class=\"k-nv\">state</span><span class=\"k-w\"> </span><span class=\"k-k\">by</span><span class=\"k-w\"> </span><span class=\"k-n\">viewModel</span><span class=\"k-p\">.</span><span class=\"k-na\">uiState</span><span class=\"k-p\">.</span><span class=\"k-na\">collectAsStateWithLifecycle</span><span class=\"k-p\">()</span>" },
@@ -299,7 +318,7 @@ const CHAPTERS = [
       },
       { id:"e7154b35acd865cf", col:"c8",
         title:"Kotlin Turns 15: Celebrate the Kotlin Effect",
-        url:"https://blog.jetbrains.com/kotlin/2026/07/kotlin-turns-15-celebrate-the-kotlin-effect/", source:"Kotlin Blog", stype:"official", date:"17 Jul", paywalled:false,
+        url:"https://blog.jetbrains.com/kotlin/2026/07/kotlin-turns-15-celebrate-the-kotlin-effect/", source:"Kotlin Blog", stype:"official", date:"17 Jul", author:"Viliam Sedliak", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["kotlin", "jetbrains"],
         summary:"JetBrains marks Kotlin's 15th anniversary with a set of community activities. These include leaving a birthday postcard message, a browser game, and free access to select Kotlin courses on Hyperskill until September 9, 2026.",
         snap:null,
@@ -307,7 +326,7 @@ const CHAPTERS = [
       },
       { id:"2aeba079dda2cfd2", col:"c6",
         title:"1.The first look at Kotlin",
-        url:"https://medium.com/@aly.route/1-the-first-look-at-kotlin-e271d6f6a00d?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://medium.com/@aly.route/1-the-first-look-at-kotlin-e271d6f6a00d?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["kotlin", "kmp"],
         summary:"An introductory overview of the Kotlin language, covering its concise syntax, extension functions, and type inference, and noting its Java interoperability for gradual migration. It also lists the platforms Kotlin targets: JVM, Android, JavaScript, and Native.",
         snap:null,
@@ -315,7 +334,7 @@ const CHAPTERS = [
       },
       { id:"1547c19bafa08031", col:"c6",
         title:"I Stopped Eyeballing LLM Output and Started Scoring It Like a Unit Test",
-        url:"https://proandroiddev.com/testing-an-llm-agent-like-i-test-kotlin-code-50849842ead7?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", paywalled:false,
+        url:"https://proandroiddev.com/testing-an-llm-agent-like-i-test-kotlin-code-50849842ead7?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", author:"Gabor Berenyi", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["kotlin", "testing"],
         summary:"The author describes building an evaluation harness to score the output of a Kotlin-based LLM agent host (called ferryman, a local-first MCP client with pluggable skills and multi-provider routing) the way unit tests score code, rather than judging output by eye. It argues that the evaluation harness, not the agent itself, is what makes an AI feature production-ready, and notes the harness caught bugs including in its own graders and the LLM judge.",
         snap:null,
@@ -323,7 +342,7 @@ const CHAPTERS = [
       },
       { id:"6e7842cc2264ecd8", col:"c6",
         title:"Type Casting and Smart Cast in Kotlin: A Complete Guide for Beginners",
-        url:"https://techdynasty.medium.com/type-casting-and-smart-cast-in-kotlin-a-complete-guide-for-beginners-992f8c45dd70?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://techdynasty.medium.com/type-casting-and-smart-cast-in-kotlin-a-complete-guide-for-beginners-992f8c45dd70?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["kotlin", "android-api"],
         summary:"A beginner guide to type casting and smart casts in Kotlin. It covers the Any root type, the is operator for type checks, safe and unsafe casting, and how Kotlin's smart cast automatically treats a value as a more specific type after a verified check, reducing boilerplate compared to Java. Examples are framed around Android use cases such as mixed RecyclerView item types.",
         snap:null,
@@ -331,7 +350,7 @@ const CHAPTERS = [
       },
       { id:"a0de72b9066ee440", col:"c4",
         title:"2.3.0-alpha.3",
-        url:"https://github.com/arrow-kt/arrow/releases/tag/2.3.0-alpha.3", source:"Lib Arrow", stype:"changelog", date:"16 Jul", paywalled:false,
+        url:"https://github.com/arrow-kt/arrow/releases/tag/2.3.0-alpha.3", source:"Lib Arrow", stype:"changelog", date:"16 Jul", author:"serras", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["kotlin"],
         summary:"A pre-release of the Arrow functional programming library for Kotlin, version 2.3.0-alpha.3. The changes include compatibility with result4K 3.0 and making prismFoci lazier in resolution.",
         snap:null,
@@ -345,7 +364,7 @@ const CHAPTERS = [
     articles:[
       { id:"d70c542358c08a6c", col:"c12",
         title:"What is the architectural difference between KMP and Flutter?",
-        url:"https://medium.com/@crpoudyal/what-is-the-architectural-difference-between-kmp-and-flutter-aec1c5f82f80?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"13 Jul", paywalled:false,
+        url:"https://medium.com/@crpoudyal/what-is-the-architectural-difference-between-kmp-and-flutter-aec1c5f82f80?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"13 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["kmp", "architecture", "compose"],
         summary:"A comparison of how Kotlin Multiplatform and Flutter approach cross-platform code sharing. KMP shares business/non-UI logic while keeping platform-native UI (SwiftUI on iOS, Jetpack Compose on Android), whereas Flutter uses a single unified framework for both UI and logic across platforms. The article outlines the structural components of each, including KMP's common module for shared code.",
         snap:null,
@@ -353,7 +372,7 @@ const CHAPTERS = [
       },
       { id:"c9ff4cd9666d8a82", col:"c8",
         title:"I Found a VLC Playback Bug While Building a KMP Video Feed",
-        url:"https://medium.com/@nikolayv_dev/i-found-a-vlc-playback-bug-while-building-a-kmp-video-feed-0ab49e1e0f54?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://medium.com/@nikolayv_dev/i-found-a-vlc-playback-bug-while-building-a-kmp-video-feed-0ab49e1e0f54?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["kmp", "media3", "compose-multiplatform"],
         summary:"A debugging account from building Video Feed Lab, a Kotlin Multiplatform short-form video feed for Android (Media3) and Desktop (LibVLC via vlcj). The author traces a freeze that affected HLS and DASH streams but not progressive MP4, and isolates it by reproducing the same failure in the standalone VLC application, concluding the bug is in VLC's demuxer rather than the app. The issue reproduced across all 20 test videos in VLC 3.0.18 and 3.0.23, with logs showing the fMP4 demuxer and VideoToolbox decoder restarting.",
         snap:null,
@@ -361,7 +380,7 @@ const CHAPTERS = [
       },
       { id:"aabcbd39db3181e4", col:"c8",
         title:"Kotlin Multiplatform Is Not Cross-Platform: Understanding the Real Difference",
-        url:"https://medium.com/@dev.mohamed.arfa/kotlin-multiplatform-is-not-cross-platform-understanding-the-real-difference-158e548d03fe?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://medium.com/@dev.mohamed.arfa/kotlin-multiplatform-is-not-cross-platform-understanding-the-real-difference-158e548d03fe?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["kmp", "compose", "ios-interop"],
         summary:"An opinion piece arguing that Kotlin Multiplatform should not be grouped with cross-platform frameworks like Flutter, React Native, or Xamarin. It contrasts the framework approach, which hides platform differences and sits between developer and OS, with KMP's approach of sharing only business logic, networking, data, and similar layers while keeping UI and platform integration native. The author lists what typically stays native on Android and iOS and suggests this is why companies adopt KMP in production.",
         snap:null,
@@ -369,7 +388,7 @@ const CHAPTERS = [
       },
       { id:"c3b422f79b5a75c9", col:"c6",
         title:"Bring your KMP library to NuGet",
-        url:"https://proandroiddev.com/bring-your-kmp-library-to-nuget-02e1131a4707?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://proandroiddev.com/bring-your-kmp-library-to-nuget-02e1131a4707?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"19 Jul", author:"Isuru Rajapakse", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["kmp", "gradle-plugin", "kotlin"],
         summary:"Introduces kotlin-native-nuget, a Gradle plugin that packages a Kotlin/Native library as a NuGet package with generated idiomatic C# bindings, covering classes, enums, data classes, coroutines, Flow, generics, and interfaces without hand-written FFI boilerplate. The post explains the plugin's DSL configuration for native targets and package metadata, and motivates it by KMP's lack of a clean path into the .NET ecosystem (Unity, MAUI, Blazor).",
         snap:null,
@@ -383,7 +402,7 @@ const CHAPTERS = [
     articles:[
       { id:"41ebfff8fd3ce57b", col:"c12",
         title:"Kotlin Architecture Tests: What They Are and Why They Matter - Part 1/3",
-        url:"https://proandroiddev.com/kotlin-architecture-tests-what-they-are-and-why-they-matter-389ce9a1204c?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", paywalled:false,
+        url:"https://proandroiddev.com/kotlin-architecture-tests-what-they-are-and-why-they-matter-389ce9a1204c?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", author:"Bao Le", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["architecture", "testing", "kotlin"],
         summary:"Part 1 of a series introducing Kotlin architecture tests, which verify that structural decisions such as layer boundaries and allowed package dependencies still hold, a gap left by compilers, linters, and unit tests. It shows an example using Konture to assert that domain-package classes only depend on approved packages, and explains why architecture violations (like a domain model accepting a network DTO or a feature module importing another's implementation) pass ordinary green builds.",
         snap:null,
@@ -391,7 +410,7 @@ const CHAPTERS = [
       },
       { id:"cc87c3fdc709c51f", col:"c8",
         title:"Kotlin Architecture Tests: Why Konture Exists - Part 2/3",
-        url:"https://proandroiddev.com/kotlin-architecture-tests-why-konture-exists-4ac92a4dd3ba?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", paywalled:false,
+        url:"https://proandroiddev.com/kotlin-architecture-tests-why-konture-exists-4ac92a4dd3ba?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", author:"Bao Le", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["architecture", "testing", "gradle", "kmp"],
         summary:"Part 2 of a series explaining the rationale behind Konture, a Kotlin architecture-testing tool. It argues that a Kotlin project has two views of its architecture: the Gradle module graph that decides what can link, and the Kotlin source model that decides what the code actually references, and that a rule such as presentation code not exposing transport DTOs can be violated in either view. The article uses Now in Android and a KotlinConf KMP sample as showcases and contrasts Konture with existing single-view architecture tools.",
         snap:null,
@@ -399,7 +418,7 @@ const CHAPTERS = [
       },
       { id:"8baa296252e554c5", col:"c8",
         title:"Android System Design: Understanding Clean Architecture",
-        url:"https://medium.com/@nematengg/android-system-design-understanding-clean-architecture-479f242a81f6?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"13 Jul", paywalled:false,
+        url:"https://medium.com/@nematengg/android-system-design-understanding-clean-architecture-479f242a81f6?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"13 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["clean-architecture", "architecture", "android-developers"],
         summary:"An introductory explanation of Clean Architecture for Android, framing it as a response to code where Activities and ViewModels take on too many responsibilities such as UI, validation, networking, storage, navigation, and analytics. It covers what Clean Architecture is, attributes it to Robert C. Martin, and describes the goal of separating responsibilities into layers that each know as little as possible about the others. The article notes the pattern is not Android-specific and applies to backend, iOS, desktop, and web.",
         snap:null,
@@ -407,7 +426,7 @@ const CHAPTERS = [
       },
       { id:"94d4ebce0bdcbc35", col:"c6",
         title:"Clean Architecture on Android: What Google Actually Recommends",
-        url:"https://sarmadsohaib.medium.com/de-mystifying-googles-android-app-recommended-architecture-de072a0b3a33?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://sarmadsohaib.medium.com/de-mystifying-googles-android-app-recommended-architecture-de072a0b3a33?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["clean-architecture", "architecture", "android-developers"],
         summary:"An opinion piece arguing that Google's recommended Android app architecture is often misapplied as mandatory boilerplate, using the example of touching ten files to add one text field. It distinguishes Clean Architecture as a map of dependency boundaries rather than a required directory or module structure, and revisits what Google's guidelines and Robert C. Martin's principles actually mean for real apps.",
         snap:null,
@@ -415,7 +434,7 @@ const CHAPTERS = [
       },
       { id:"f412866a79718129", col:"c6",
         title:"How We\u2019re Migrating a 1M+ Install Finance App from Native to Flutter\u200a\u2014\u200aWithout a Rewrite",
-        url:"https://medium.com/@muhammadrisky1401/how-were-migrating-a-1m-install-finance-app-from-native-to-flutter-without-a-rewrite-aaef2c1295d1?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://medium.com/@muhammadrisky1401/how-were-migrating-a-1m-install-finance-app-from-native-to-flutter-without-a-rewrite-aaef2c1295d1?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["architecture"],
         summary:"First part of a series on incrementally migrating a production consumer-finance app (over one million installs) from native Swift/Kotlin to Flutter using an Add-to-App approach, without a rewrite or feature freeze. It outlines architectural decisions such as using a single Flutter gateway to serve every migrated flow rather than many Flutter modules, and running two routing systems in one module so Flutter behaves like a native feature during migration.",
         snap:null,
@@ -429,7 +448,7 @@ const CHAPTERS = [
     articles:[
       { id:"81302fcba0046a7e", col:"c12",
         title:"What\u2019s New in IntelliJ IDEA 2026.2",
-        url:"https://blog.jetbrains.com/idea/2026/07/intellij-idea-2026-2/", source:"Jetbrains Blog", stype:"official", date:"16 Jul", paywalled:false,
+        url:"https://blog.jetbrains.com/idea/2026/07/intellij-idea-2026-2/", source:"Jetbrains Blog", stype:"official", date:"16 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["jetbrains", "kotlin", "spring-kotlin", "gradle"],
         summary:"JetBrains announces the release of IntelliJ IDEA 2026.2. The release adds day-one support for Java 27 and Kotlin 2.4 language features, along with AI upgrades including native GitHub Copilot integration and agent skills, plus logpoints, dependency completion, early Gradle 10 support, and Spring development improvements. It also includes stability and performance fixes described in a separate post.",
         snap:null,
@@ -437,7 +456,7 @@ const CHAPTERS = [
       },
       { id:"9c47c1165bebb500", col:"c8",
         title:"CLion 2026.2 Is Here",
-        url:"https://blog.jetbrains.com/clion/2026/07/2026-2-release/", source:"Jetbrains Blog", stype:"official", date:"16 Jul", paywalled:false,
+        url:"https://blog.jetbrains.com/clion/2026/07/2026-2-release/", source:"Jetbrains Blog", stype:"official", date:"16 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["jetbrains"],
         summary:"JetBrains announces the release of CLion 2026.2, its C and C++ IDE. Key additions include a bundled debugger skill for AI agents (usable via ACP-compatible agents like Claude Code and Codex), simplified debugger configuration through debug profiles, support for the STM32 Cube CLI bundle manager, C++26 reflection, and extended live watches for structs and arrays.",
         snap:null,
@@ -445,7 +464,7 @@ const CHAPTERS = [
       },
       { id:"79ff48d56c46f1fb", col:"c8",
         title:"GoLand 2026.2 Is Now Available!",
-        url:"https://blog.jetbrains.com/go/2026/07/16/goland-2026-2-is-now-available/", source:"Jetbrains Blog", stype:"official", date:"16 Jul", paywalled:false,
+        url:"https://blog.jetbrains.com/go/2026/07/16/goland-2026-2-is-now-available/", source:"Jetbrains Blog", stype:"official", date:"16 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["jetbrains"],
         summary:"Release announcement for GoLand 2026.2, JetBrains' Go IDE. It introduces a Go Optimization tool window combining profiling, escape analysis, and struct optimization, adds pprof profiling for regular applications without extra setup, and integrates the official go fix tool for language and standard library migrations. The release also adds reusable AI skills, configurable AI completion models, GitHub Copilot integration, and improvements for Docker Compose, Terraform, Git, and IDE responsiveness.",
         snap:null,
@@ -453,7 +472,7 @@ const CHAPTERS = [
       },
       { id:"61dcec15f66045c9", col:"c6",
         title:"Code in Space: Redefining Tech Creation with AI and XR",
-        url:"https://blog.jetbrains.com/research/2026/07/ai-and-xr-future/", source:"Jetbrains Blog", stype:"official", date:"16 Jul", paywalled:false,
+        url:"https://blog.jetbrains.com/research/2026/07/ai-and-xr-future/", source:"Jetbrains Blog", stype:"official", date:"16 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["jetbrains"],
         summary:"A JetBrains Research article on how AI and extended reality (XR) may reshape technology creation. It argues XR provides a rich multimodal input surface (gaze, hands, voice, head pose, spatial context) that, paired with AI, forms a new interaction substrate, and reports on semi-structured interviews with thirteen senior researchers and practitioners analyzed for tech-creator needs and pain points.",
         snap:null,
@@ -461,7 +480,7 @@ const CHAPTERS = [
       },
       { id:"780878307499b9aa", col:"c6",
         title:"Android Studio Quail 2 is Stable: Multi-task with the Android Studio AI agent",
-        url:"https://android-developers.googleblog.com/2026/06/android-studio-quail-2-stable-features.html", source:"Android Developers Blog", stype:"official", date:"14 Jul", paywalled:false,
+        url:"https://android-developers.googleblog.com/2026/06/android-studio-quail-2-stable-features.html", source:"Android Developers Blog", stype:"official", date:"14 Jul", author:"Android Developers", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["android-developers"],
         summary:"Announces that Android Studio Quail 2 is stable for production use. Key changes include a redesigned Agent Mode that supports multiple parallel agent chats (each able to use different models), natively integrated memory leak profiling via LeakCanary, and context-aware crash remediation. Worktree support is not yet available and concurrent chats editing the same files can cause conflicts.",
         snap:null,
@@ -469,7 +488,7 @@ const CHAPTERS = [
       },
       { id:"3855b3eb7181e97f", col:"c6",
         title:"What Releasing My First Android Game Taught Me in the First 24 Hours",
-        url:"https://medium.com/@faruk.omeragic/what-releasing-my-first-android-game-taught-me-in-the-first-24-hours-74aa48895799?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://medium.com/@faruk.omeragic/what-releasing-my-first-android-game-taught-me-in-the-first-24-hours-74aa48895799?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["android-developers"],
         summary:"A short reflection on releasing the author's first Android game, Cipher Uprising, on Google Play and the feedback received in the first 24 hours. Rather than gameplay comments, early feedback focused on the store presentation, with players unable to tell what kind of game it was and criticizing an AI-generated icon and screenshot. The author concludes the store page is part of the product and is redesigning the icon and first screenshot while leaving the gameplay largely unchanged.",
         snap:null,
@@ -483,7 +502,7 @@ const CHAPTERS = [
     articles:[
       { id:"fbca3ea4063f5cf6", col:"c12",
         title:"Part 3: Database Migrations That Won\u2019t Crash Production: From AutoMigrations to Programmatic\u2026",
-        url:"https://medium.com/@sivavishnu0705/part-3-database-migrations-that-wont-crash-production-from-automigrations-to-programmatic-632473e4f3c1?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"13 Jul", paywalled:false,
+        url:"https://medium.com/@sivavishnu0705/part-3-database-migrations-that-wont-crash-production-from-automigrations-to-programmatic-632473e4f3c1?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"13 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["room", "jetpack", "android-developers"],
         summary:"Part 3 of a series on Jetpack Room database migrations, covering when @AutoMigration is sufficient and when you must write programmatic migrations. It discusses tracking schema history, performing structural transformations (splitting columns, coercing types, restructuring relationships) without data loss, and testing migrations against real SQLite. The full article is a Medium member-only story.",
         snap:null,
@@ -491,7 +510,7 @@ const CHAPTERS = [
       },
       { id:"ae87910ee691a0e7", col:"c8",
         title:"Part 4: Stop Learning Service APIs\u200a\u2014\u200aStart Designing Systems: Music Players, Uploads, Downloads\u2026",
-        url:"https://medium.com/@sivavishnu0705/part-4-stop-learning-service-apis-start-designing-systems-music-players-uploads-downloads-d35703b2e35d?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://medium.com/@sivavishnu0705/part-4-stop-learning-service-apis-start-designing-systems-music-players-uploads-downloads-d35703b2e35d?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["workmanager", "architecture", "android-developers"],
         summary:"Part 4 of a series on Android background work argues for treating a Service as a lifecycle host rather than putting business logic inside it, keeping the actual logic in a plain testable engine object. It applies this pattern to music players, uploads, downloads, and location tracking so features survive process death, network drops, and OS deprioritization.",
         snap:null,
@@ -499,7 +518,7 @@ const CHAPTERS = [
       },
       { id:"36dc631a99ad1b72", col:"c8",
         title:"How I Built Android Kiosk Mode for a Commercial Device: A Complete Guide to Device Owner & Lock\u2026",
-        url:"https://medium.com/@harshhotwani367/how-i-built-android-kiosk-mode-for-a-commercial-device-a-complete-guide-to-device-owner-lock-aa836165e2da?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://medium.com/@harshhotwani367/how-i-built-android-kiosk-mode-for-a-commercial-device-a-complete-guide-to-device-owner-lock-aa836165e2da?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"19 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["android-api", "android-developers"],
         summary:"A guide to implementing Android Kiosk Mode for a commercial POS device so the app stays pinned and users cannot exit to Settings or other apps. It explains the roles of Device Owner, Lock Task Mode, and DevicePolicyManager, along with provisioning and Android Enterprise setup, from initial configuration to production practices.",
         snap:null,
@@ -507,7 +526,7 @@ const CHAPTERS = [
       },
       { id:"b04014c426774349", col:"c6",
         title:"How I Discovered a Premium Bypass Vulnerability in Spotify \u2014 And What Happened Next\nA first-time\u2026",
-        url:"https://medium.com/@nikhilgarg6176/how-i-discovered-a-premium-bypass-vulnerability-in-spotify-and-what-happened-next-a-first-time-748e2fda7a39?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"13 Jul", paywalled:false,
+        url:"https://medium.com/@nikhilgarg6176/how-i-discovered-a-premium-bypass-vulnerability-in-spotify-and-what-happened-next-a-first-time-748e2fda7a39?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"13 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["android-api"],
         summary:"A security researcher describes an authorization bypass that granted Spotify Premium features on a free account using only Spotify's official apps. The issue involves Spotify Connect: when a session is established between the mobile web player and the Android app, the backend fails to re-validate the account's subscription status, so the Android app inherits the web player's unrestricted session. The author published the findings after a 90-day responsible disclosure period with no resolution.",
         snap:null,
@@ -515,7 +534,7 @@ const CHAPTERS = [
       },
       { id:"c2b06211ebeda700", col:"c6",
         title:"BLE Advertiser Now Simulates the 5 Real-World BLE Systems Developers Actually Build For",
-        url:"https://miniiot.medium.com/ble-advertiser-now-simulates-the-5-real-world-ble-systems-developers-actually-build-for-f7b509b9a5e5?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"13 Jul", paywalled:false,
+        url:"https://miniiot.medium.com/ble-advertiser-now-simulates-the-5-real-world-ble-systems-developers-actually-build-for-f7b509b9a5e5?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"13 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["android-api"],
         summary:"A post about the BLE Advertiser tool describing five real-world BLE system categories that use continuous advertising with changing payloads, such as indoor positioning beacons in retail, airports, museums, and warehouses. It explains how AdvertisingSet.setAdvertisingData() lets a device update its broadcast payload without stopping and restarting advertising, and argues that test tools should simulate this in-place update behavior to match production hardware. The piece focuses on BLE deployment patterns rather than Kotlin or Android APIs specifically.",
         snap:null,
@@ -523,7 +542,7 @@ const CHAPTERS = [
       },
       { id:"9dc6878f0f6aba01", col:"c6",
         title:"Introducing Live Manufacturer Data Updates Without Restarting BLE Advertising : BLE Advertiser(GATT\u2026",
-        url:"https://bleadvertiserapp.medium.com/introducing-live-manufacturer-data-updates-without-restarting-ble-advertising-ble-advertiser-gatt-0d1f1fe5004a?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"13 Jul", paywalled:false,
+        url:"https://bleadvertiserapp.medium.com/introducing-live-manufacturer-data-updates-without-restarting-ble-advertising-ble-advertiser-gatt-0d1f1fe5004a?source=rss------android-5", source:"Medium Android Tag", stype:"community", date:"13 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["android-api"],
         summary:"Describes a new feature in the BLE Advertiser app that updates manufacturer data and other advertising payload fields in place while advertising continues, avoiding the stop-then-start cycle of Android's classic BLE advertising API. It explains problems with the restart approach: a visibility gap where scanners lose the device, possible rotation of the random/private address and reset of advertising interval timing, and slowness when payloads change frequently.",
         snap:null,
@@ -531,7 +550,7 @@ const CHAPTERS = [
       },
       { id:"35f61392d461adb8", col:"c4",
         title:"ART broke our debugging \u2014 so we fixed it with a hook while the real fix rides the mainline train",
-        url:"https://proandroiddev.com/art-broke-our-debugging-so-we-fixed-it-with-a-hook-while-the-real-fix-rides-the-mainline-train-cfca56a0968b?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"19 Jul", paywalled:false,
+        url:"https://proandroiddev.com/art-broke-our-debugging-so-we-fixed-it-with-a-hook-while-the-real-fix-rides-the-mainline-train-cfca56a0968b?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"19 Jul", author:"Vitaliy Gribko", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["android-api"],
         summary:"A follow-up describing a workaround for an ART bug on Android 16 where attaching a Java debugger (JDWP) to a large debuggable app causes an ABBA lock-ordering deadlock between the GC thread and ART's native debug layer, resulting in an ANR. The authors present a small native hook (packaged as the open-source JdwpSilencer library) that suppresses the JDWP event avalanche so the debugger can attach normally, while the official mainline ART fix is still pending. The post notes the hook is not universal and includes a kill switch for cases where it causes hangs after the first breakpoint.",
         snap:null,
@@ -539,7 +558,7 @@ const CHAPTERS = [
       },
       { id:"9a5edb9d7702ac5b", col:"c4",
         title:"ActivityNotFoundException in Android: How to Reproduce and Fix It",
-        url:"https://proandroiddev.com/activitynotfoundexception-in-android-how-to-reproduce-and-fix-it-8977c223e53b?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", paywalled:false,
+        url:"https://proandroiddev.com/activitynotfoundexception-in-android-how-to-reproduce-and-fix-it-8977c223e53b?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", author:"Dilipchandar", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["android-api"],
         summary:"Explains what causes ActivityNotFoundException in Android and how to reproduce it. The exception occurs when an implicit intent has no component available to handle its action, unlike explicit intents where the compiler can catch a missing activity. The article uses an ACTION_VIEW example and an AOSP emulator to demonstrate reproducing the error during development.",
         snap:null,
@@ -553,7 +572,7 @@ const CHAPTERS = [
     articles:[
       { id:"d0fe45e91b2db02f", col:"c12",
         title:"Kotlin Architecture Tests with Konture: A Practical Guide - Part 3/3",
-        url:"https://proandroiddev.com/kotlin-architecture-tests-with-konture-a-practical-guide-part-3-3-1f36ebe685db?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", paywalled:false,
+        url:"https://proandroiddev.com/kotlin-architecture-tests-with-konture-a-practical-guide-part-3-3-1f36ebe685db?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", author:"Bao Le", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["testing", "architecture", "gradle", "version-catalog"],
         summary:"Part 3 of a guide on writing architecture tests for Kotlin projects using the Konture library. It walks through setting up a dedicated architecture-test module, adding Konture via the Gradle version catalog and plugin, and wiring up module dependencies. The example rule enforces that feature implementation modules must not depend on sibling feature implementation modules, using Gradle Kotlin DSL and JUnit 5.",
         snap:null,
@@ -561,7 +580,7 @@ const CHAPTERS = [
       },
       { id:"f9dd375efa545419", col:"c8",
         title:"Fakes vs Mocks in Testing",
-        url:"https://medium.com/@dhananjaydy/fakes-vs-mocks-in-testing-08ec776742d9?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"13 Jul", paywalled:false,
+        url:"https://medium.com/@dhananjaydy/fakes-vs-mocks-in-testing-08ec776742d9?source=rss------kotlin-5", source:"Medium Kotlin Tag", stype:"community", date:"13 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["testing", "android-developers"],
         summary:"An overview of the difference between fakes and mocks as test doubles in Android testing. Mocks (via Mockito or MockK) record and verify interactions and return stubbed values without maintaining state, while fakes are simplified real implementations that maintain state. The article covers when each fits, such as mocks for stateless external APIs and event buses versus fakes for stateful dependencies like DAOs, and a hybrid approach using both.",
         snap:null,
@@ -575,7 +594,7 @@ const CHAPTERS = [
     articles:[
       { id:"116fc7504e14f08b", col:"c12",
         title:"Multi-Module Build Economics: Designing API vs. Implementation Boundaries to Survive 50+ Dev Teams",
-        url:"https://proandroiddev.com/multi-module-build-economics-designing-api-vs-implementation-boundaries-to-survive-50-dev-teams-464e6ddeabeb?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", paywalled:false,
+        url:"https://proandroiddev.com/multi-module-build-economics-designing-api-vs-implementation-boundaries-to-survive-50-dev-teams-464e6ddeabeb?source=rss----c72404660798---4", source:"Proandroiddev", stype:"community", date:"17 Jul", author:"", avatar:"", video:"", media_type:"", thumbnail:"", paywalled:false,
         topics:["gradle", "build-logic", "architecture"],
         summary:"An article on Gradle multi-module build performance for large Android teams. It argues that slow incremental builds stem from ABI exposure rather than module count, distinguishes compile classpath from runtime classpath, and shows how using api versus implementation dependencies and separating :feature:*-api from :feature:*-impl modules limits recompilation.",
         snap:null,
@@ -692,18 +711,46 @@ function renderRollup(rollup) {
 // Article card — identical markup/classes/ids to before, so filters + night mode work.
 // idPrefix defaults to 'art'; the cover passes 'cover' so its copy of the feature
 // article doesn't collide with the same article's id inside its chapter.
+// Stable hue [0,360) from a topic name, so the same topic is always the same
+// colour (see .tag in components.css).
+function tagHue(t) {
+  let h = 0;
+  for (let i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0;
+  return h % 360;
+}
+
+// YouTube facade — nothing loads from youtube.com on page view. "Watch here"
+// swaps in the privacy-friendly nocookie player only on click; "Open on
+// YouTube" is a plain link that also loads nothing until the user follows it.
+function renderVideo(id) {
+  return `<div class="yt-facade" data-yt="${id}">
+    <button class="yt-play" aria-label="Play video" onclick="loadYouTube(this)">
+      <span class="yt-tri"></span><span class="yt-cap">Watch here</span>
+    </button>
+    <a class="yt-ext" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+  </div>`;
+}
+function loadYouTube(btn) {
+  const f = btn.closest('.yt-facade');
+  const id = f.dataset.yt;
+  f.innerHTML = `<iframe class="yt-frame" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+}
+
 function articleCard(a, idPrefix = 'art') {
-  return `<article class="article ${a.col}" id="${idPrefix}-${a.id}" data-topics="${a.topics.join(',')}">
+  const clickable = a.url && a.url !== '#';
+  return `<article class="article ${a.col}${clickable ? ' is-clickable' : ''}" id="${idPrefix}-${a.id}" data-topics="${a.topics.join(',')}"${clickable ? ` data-url="${a.url}"` : ''}>
     <div class="art-meta">
       <span class="source-tag ${a.stype}">${a.source}</span>
+      ${a.author ? `<span class="art-byline">${a.avatar ? `<img class="art-avatar" src="${a.avatar}" alt="" loading="lazy">` : ''}${a.author}</span>` : ''}
       <span class="art-date">${a.date}</span>
       ${a.paywalled ? '<span class="badge-paywall" title="Member-only story — requires a paid Medium account">🔒 Member-only</span>' : ''}
     </div>
     <h3 class="art-title"><a href="${a.url}" target="_blank" rel="noopener noreferrer" onclick="if(this.getAttribute('href')==='#')event.preventDefault()">${a.title}</a></h3>
     <p class="art-summary">${a.rollup && a.rollup.summary ? a.rollup.summary : a.summary}</p>
+    ${a.video ? renderVideo(a.video) : ''}
     ${renderSnapshot(a.snap)}
     ${renderRollup(a.rollup)}
-    <div class="art-tags">${a.topics.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    <div class="art-tags">${a.topics.map(t=>`<span class="tag" style="--tag-h:${tagHue(t)}">${t}</span>`).join('')}</div>
   </article>`;
 }
 
@@ -1025,10 +1072,71 @@ function renderScroll() {
   wireReaderChrome();
 }
 
-// Single render entry point — dispatches on the chosen reading layout.
+// Narrow viewports are forced to the scroll feed regardless of the saved
+// preference — paged clips overflow with no scroll, so it traps content on
+// phones. The layout toggle is hidden on mobile (see #rowLayout), so this is
+// the single source of truth for what actually renders.
+const MOBILE_MAX = 700;
+function effectiveLayout() {
+  return window.innerWidth <= MOBILE_MAX ? 'scroll' : state.reader.layout;
+}
+
+// Single render entry point — dispatches on the effective reading layout.
+// Re-runs on resize/rotation (see the resize handler), so crossing the
+// breakpoint or rotating a phone switches modes correctly.
 function renderView() {
-  if (state.reader.layout === 'scroll') renderScroll();
+  const layout = effectiveLayout();
+  document.documentElement.dataset.layout = layout;
+  if (layout === 'scroll') renderScroll();
   else layoutPager();
+}
+
+// Whole-card affordance: a click anywhere on a card (that isn't a real control
+// or a text selection) opens the article in a new tab; a long-press on touch
+// copies its link. Bound once via delegation so it survives re-renders.
+let _cardBound = false, _lpTimer = null, _lpFired = false;
+function bindCardInteractions() {
+  if (_cardBound) return; _cardBound = true;
+
+  document.addEventListener('click', e => {
+    if (_lpFired) { _lpFired = false; return; }   // swallow the click that follows a long-press
+    if (e.target.closest('a, button, summary, details, input, label, .settings-panel')) return;
+    if (window.getSelection && String(window.getSelection())) return;   // don't hijack text selection
+    const card = e.target.closest('.article.is-clickable');
+    if (card && card.dataset.url) window.open(card.dataset.url, '_blank', 'noopener');
+  });
+
+  const cancelLP = () => { if (_lpTimer) { clearTimeout(_lpTimer); _lpTimer = null; } };
+  document.addEventListener('touchstart', e => {
+    const card = e.target.closest('.article.is-clickable');
+    if (!card || !card.dataset.url) return;
+    cancelLP();
+    _lpTimer = setTimeout(() => { _lpTimer = null; _lpFired = true; copyLink(card.dataset.url); }, 500);
+  }, { passive: true });
+  document.addEventListener('touchend', cancelLP, { passive: true });
+  document.addEventListener('touchmove', cancelLP, { passive: true });
+}
+
+function copyLink(url) {
+  const done = () => showToast('Link copied');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(done).catch(() => fallbackCopy(url, done));
+  } else fallbackCopy(url, done);
+}
+function fallbackCopy(url, cb) {
+  const ta = document.createElement('textarea');
+  ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); cb && cb(); } catch (e) {}
+  document.body.removeChild(ta);
+}
+
+let _toastT = null;
+function showToast(msg) {
+  let t = document.getElementById('kd-toast');
+  if (!t) { t = document.createElement('div'); t.id = 'kd-toast'; document.body.appendChild(t); }
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(_toastT); _toastT = setTimeout(() => t.classList.remove('show'), 1600);
 }
 
 // ── viewer / navigation ──
@@ -1042,7 +1150,31 @@ function ensureNav() {
   mk('pr-prev', 'pr-arrow pr-prev', 'Previous page', '‹', prevScreen);
   mk('pr-next', 'pr-arrow pr-next', 'Next page', '›', nextScreen);
   const ind = document.createElement('div'); ind.id = 'pr-ind'; ind.className = 'pr-indicator';
+  ind.title = 'Jump to page';
+  ind.onclick = togglePageJump;
   document.body.appendChild(ind);
+}
+
+// Click the page indicator to open a grid of page numbers and jump straight to
+// one, instead of only stepping with the ‹ › arrows.
+function togglePageJump(e) {
+  if (e) e.stopPropagation();
+  const existing = document.getElementById('pr-jump');
+  if (existing) { existing.remove(); return; }
+  if (pager.screens <= 1) return;
+  const pop = document.createElement('div');
+  pop.id = 'pr-jump';
+  for (let s = 0; s < pager.screens; s++) {
+    const b = document.createElement('button');
+    b.textContent = s + 1;
+    if (s === pager.screen) b.className = 'is-current';
+    b.onclick = ev => { ev.stopPropagation(); goToScreen(s, false); pop.remove(); };
+    pop.appendChild(b);
+  }
+  document.body.appendChild(pop);
+  setTimeout(() => document.addEventListener('click', function h(ev) {
+    if (!pop.contains(ev.target) && ev.target.id !== 'pr-ind') { pop.remove(); document.removeEventListener('click', h); }
+  }), 0);
 }
 
 // The magazine turns like a book: the target screen (or the one leaving) pivots
@@ -1296,7 +1428,7 @@ function applyReaderDOM() {
   if (r.theme === 'night') el.dataset.night = '1'; else el.removeAttribute('data-night');
   el.style.setProperty('--read-font', READER_FONTS[r.font]);
   el.style.setProperty('--read-scale', READER_SCALES[r.size]);
-  el.dataset.layout = r.layout;
+  el.dataset.layout = (window.innerWidth <= MOBILE_MAX) ? 'scroll' : r.layout;
 }
 
 function syncSettingsUI() {
@@ -1361,6 +1493,7 @@ try {
     : 'EXCLUDE — select topics to <em>hide</em> from the digest.';
   updateChips();
   setupPagerListeners();
+  bindCardInteractions();
   // Paginate once fonts are ready so card measurements are accurate.
   const boot = () => {
     try { renderView(); } catch (e) { console.error('render failed:', e); }

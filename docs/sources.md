@@ -80,6 +80,13 @@ If no date is detectable, the article is ingested but flagged `date_uncertain: t
 - Treat each talk as an article
 - `cadence_days` set high (e.g. 180) — annual conferences shouldn't be flagged stale
 
+### `youtube`
+- Primary: YouTube channel Atom feed (`https://www.youtube.com/feeds/videos.xml?channel_id=...`)
+- Used for official, team, conference, and individual channels that publish original Kotlin, Android, KMP, or Compose videos
+- Treat each new video as an article-like record with `media_type: video`, `video_id`, title, date, and feed description
+- Renderable in the weekly digest with a no-cookie click-to-load embed facade
+- Avoid playlist roundups, repost channels, and channels that mostly curate other people's videos
+
 ### `slack-mirror`
 - Requires a public Slack export or mirror service
 - Ingested as topic signals only (not as full articles)

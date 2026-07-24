@@ -71,8 +71,9 @@ _TYPE_LABELS = {
     "slack-mirror": "Kotlinlang Slack (topic signal)",
     "discussion": "Discussion",
     "news": "News",
+    "youtube": "YouTube channels",
 }
-_TYPE_ORDER = ["blog", "conference", "changelog", "news", "discussion", "slack-mirror"]
+_TYPE_ORDER = ["blog", "youtube", "conference", "changelog", "news", "discussion", "slack-mirror"]
 
 
 def render_sources(sources: list, out_path: Path) -> None:

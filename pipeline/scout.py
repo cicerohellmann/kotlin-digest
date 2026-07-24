@@ -192,11 +192,55 @@ def extract_author(entry) -> str:
     return name[:80]
 
 
+def source_feed_url(source: dict) -> Optional[str]:
+    """Return an explicit feed URL, or derive the YouTube channel Atom feed."""
+    feed_url = source.get("rss") or source.get("atom")
+    if feed_url:
+        return feed_url
+    if source.get("type") == "youtube" and source.get("channel_id"):
+        return f"https://www.youtube.com/feeds/videos.xml?channel_id={source['channel_id']}"
+    return None
+
+
+def youtube_video_id_from_entry(entry, url: str) -> str:
+    """Best-effort YouTube video id from feedparser metadata or URL."""
+    for key in ("yt_videoid", "yt_videoId", "youtube_videoid"):
+        val = getattr(entry, key, None)
+        if val:
+            return str(val)
+        try:
+            val = entry.get(key)
+            if val:
+                return str(val)
+        except Exception:
+            pass
+    m = re.search(
+        r"(?:youtu\.be/|youtube\.com/(?:watch\?v=|embed/|v/|shorts/))([A-Za-z0-9_-]{11})",
+        url or "",
+    )
+    return m.group(1) if m else ""
+
+
+def youtube_thumbnail_from_entry(entry) -> str:
+    """Extract a thumbnail URL from YouTube Atom media metadata when present."""
+    thumbs = getattr(entry, "media_thumbnail", None)
+    if not thumbs:
+        try:
+            thumbs = entry.get("media_thumbnail")
+        except Exception:
+            thumbs = None
+    if isinstance(thumbs, list) and thumbs:
+        first = thumbs[0]
+        if isinstance(first, dict):
+            return first.get("url", "")
+    return ""
+
+
 # ── Per-source scouting ───────────────────────────────────────────────────────
 
 def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple:
     """Returns (new_articles, feed_had_entries) — distinguishes parse failure from no-recent-articles."""
-    feed_url = source.get("rss") or source.get("atom")
+    feed_url = source_feed_url(source)
     if not feed_url:
         return [], False
 
@@ -212,6 +256,7 @@ def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple
     sid = source["id"]
     needs_filter = sid in KEYWORD_FILTER_SOURCE_IDS
     is_discussion = source.get("type") == "discussion"
+    is_youtube = source.get("type") == "youtube"
     new_articles: list[dict] = []
 
     for entry in feed.entries:
@@ -239,7 +284,7 @@ def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple
             if not is_relevant(title + " " + excerpt):
                 continue
 
-        new_articles.append({
+        article = {
             "id": uid,
             "title": title,
             "url": url,
@@ -249,7 +294,12 @@ def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple
             "excerpt": excerpt,
             "date_uncertain": date_uncertain,
             "summarized": False,
-        })
+        }
+        if is_youtube:
+            article["media_type"] = "video"
+            article["video_id"] = youtube_video_id_from_entry(entry, url)
+            article["thumbnail"] = youtube_thumbnail_from_entry(entry)
+        new_articles.append(article)
 
     return new_articles, True
 
@@ -489,7 +539,7 @@ def scout_source(
     feed_succeeded = False
 
     # RSS/Atom first
-    if source.get("rss") or source.get("atom"):
+    if source_feed_url(source):
         new_articles, feed_succeeded = scout_via_rss(source, last_date, existing_ids)
 
     # Scrape fallback: only when RSS/Atom failed entirely (not just no recent articles)
