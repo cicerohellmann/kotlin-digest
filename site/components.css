@@ -491,8 +491,15 @@ body { min-height: 100vh; }
        so every topic is reachable. */
     @media (max-width: 700px) {
       #rowLayout { display: none; }
-      .ticker-track { animation: none; }
-      .ticker-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      /* The settings gear sits on the left of the stacked mobile masthead, so a
+         right-anchored panel runs off the left edge. Anchor it left and clamp
+         its width to the viewport so it's always fully on-screen. (Selector is
+         .settings-wrap-qualified to beat the base .settings-panel declared later
+         in the file.) */
+      .settings-wrap .settings-panel {
+        right: auto; left: 0;
+        width: min(232px, calc(100vw - 2.5rem));
+      }
     }
 
     /* No-JS preview (?nojs) and genuine no-JS visitors get the prerendered
@@ -812,6 +819,22 @@ body { min-height: 100vh; }
     .cw-status { font-family: var(--font-ui); font-size: 0.66rem; color: var(--accent); margin: 0.9rem 0 0; min-height: 1.1rem; }
     .cw-status.win { color: var(--green, #3E7B4F); font-weight: 600; }
     @media (max-width: 600px) { .cw-clues { grid-template-columns: 1fr; } }
+    /* Night: --ink flips to light, so the grid/blocks (which use --ink) would
+       become a blinding light slab. Pin the dark surfaces explicitly. */
+    html[data-night="1"] .cw-grid { background: #0F0E0C; }
+    html[data-night="1"] .cw-cell { background: var(--paper-b); }
+    html[data-night="1"] .cw-cell.block { background: #0F0E0C; }
+
+    /* No-JS preview badge — a small marker so you can tell you're on the
+       prerendered (?nojs) version, not the interactive reader. */
+    html[data-nojs] body::before {
+      content: "No-JS version";
+      position: fixed; top: 0; left: 0; z-index: 10001;
+      background: var(--accent); color: #1C1B18;
+      font-family: var(--font-ui); font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.25rem 0.6rem; border-bottom-right-radius: 5px;
+    }
 
     /* ── FOOTER ──────────────────────────────────────────────────── */
     footer {
