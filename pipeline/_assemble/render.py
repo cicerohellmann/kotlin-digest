@@ -7,6 +7,7 @@ from pygments.formatters import HtmlFormatter
 from pygments.lexers import KotlinLexer
 
 from pipeline.writers import load as load_writers, slugify as writer_slug
+from pipeline._assemble.crossword import load_puzzles
 
 _KT_LEXER = KotlinLexer()
 _KT_FORMATTER = HtmlFormatter(nowrap=True, classprefix="k-")
@@ -136,6 +137,15 @@ def build_data_block(
         )
     lines.append("const COMICS = [\n" + ",\n".join(comic_items) + "\n];")
     lines.append("const COMIC_EVERY = {};".format(int(comic_every)))
+    lines.append("")
+
+    # CROSSWORD — the Games chapter puzzle (first puzzle in the pool for now).
+    try:
+        puzzles = load_puzzles()
+    except Exception:
+        puzzles = []
+    crossword_js = json.dumps(puzzles[0], ensure_ascii=False) if puzzles else "null"
+    lines.append("const CROSSWORD = {};".format(crossword_js))
     lines.append("")
 
     # CHAPTERS

@@ -344,6 +344,264 @@ function articleCard(a, idPrefix = 'art', headingTag = 'h3') {
   </article>`;
 }
 
+// The Games chapter's crossword. gamesBand() emits the static shell; the
+// interactive board is built into it by Games.wire() after each render (the
+// digest is rebuilt on filter/resize, so the board re-initialises and reloads
+// saved progress from localStorage each time — see wireReaderChrome).
+function gamesBand(cw) {
+  if (!cw || !cw.solution) return '';
+  return `<section class="games">
+    <div class="games-kicker">The Back Page · Games</div>
+    <div class="cw" id="cw"></div>
+    <div class="cw-controls" id="cwControls" style="display:none">
+      <button class="cw-btn" id="cwDirBtn" onclick="Games.flipDir()">→ Across</button>
+      <button class="cw-btn" onclick="Games.check()">Check</button>
+      <button class="cw-btn" onclick="Games.revealCell()">Reveal letter</button>
+      <button class="cw-btn" onclick="Games.revealWord()">Reveal word</button>
+      <button class="cw-btn" onclick="Games.revealAll()">Reveal puzzle</button>
+      <button class="cw-btn" onclick="Games.clear()">Clear</button>
+    </div>
+    <p class="cw-status" id="cwStatus"></p>
+  </section>`;
+}
+
+// Crossword engine — fully isolated so its helpers (k, load, save, highlight…)
+// don't collide with the reader's globals.
+const Games = (function () {
+  const P = CROSSWORD;
+  const KEY = 'kd_crossword_' + (P ? P.id : 'x');
+  let cur = { r: 0, c: 0 }, dir = 'A', _focusFired = false;
+  let cellInput = {}, cellMeta = {}, ORDER = [];
+
+  const k = (r, c) => r + ',' + c;
+  const isCell = (r, c) => P.solution[r] && P.solution[r][c] != null;
+
+  function buildBoard() {
+    cellInput = {}; cellMeta = {}; ORDER = []; cur = { r: 0, c: 0 }; dir = 'A';
+    const cw = document.getElementById('cw');
+    const wrap = document.createElement('div');
+    wrap.className = 'cw-board-wrap';
+    const grid = document.createElement('div');
+    grid.className = 'cw-grid';
+    grid.style.setProperty('--cols', P.cols);
+    for (let r = 0; r < P.rows; r++) {
+      for (let c = 0; c < P.cols; c++) {
+        const cell = document.createElement('div');
+        cell.className = 'cw-cell';
+        if (!isCell(r, c)) { cell.classList.add('block'); grid.appendChild(cell); continue; }
+        const num = P.numbers[r][c];
+        if (num) { const s = document.createElement('span'); s.className = 'cw-num'; s.textContent = num; cell.appendChild(s); }
+        const inp = document.createElement('input');
+        inp.maxLength = 1; inp.autocomplete = 'off'; inp.inputMode = 'text';
+        inp.setAttribute('aria-label', 'cell ' + (r + 1) + ',' + (c + 1));
+        inp.dataset.r = r; inp.dataset.c = c;
+        inp.addEventListener('focus', () => { _focusFired = true; cur = { r, c }; highlight(); });
+        inp.addEventListener('click', () => { if (!_focusFired) toggleDir(); _focusFired = false; });
+        inp.addEventListener('input', onInput);
+        inp.addEventListener('keydown', onKeydown);
+        cell.appendChild(inp);
+        cellInput[k(r, c)] = inp;
+        grid.appendChild(cell);
+      }
+    }
+    wrap.appendChild(grid);
+    cw.appendChild(wrap);
+
+    const attach = (entry, down) => {
+      for (let i = 0; i < entry.len; i++) {
+        const r = entry.row + (down ? i : 0), c = entry.col + (down ? 0 : i);
+        cellMeta[k(r, c)] = cellMeta[k(r, c)] || {};
+        cellMeta[k(r, c)][down ? 'down' : 'across'] = entry;
+      }
+    };
+    P.across.forEach(e => attach(e, false));
+    P.down.forEach(e => attach(e, true));
+    ORDER = [...P.across.map(e => ({ e, down: false })), ...P.down.map(e => ({ e, down: true }))]
+      .sort((a, b) => a.e.num - b.e.num || (a.down ? 1 : 0) - (b.down ? 1 : 0));
+
+    cw.appendChild(buildClues());
+    document.getElementById('cwControls').style.display = 'flex';
+  }
+
+  function buildClues() {
+    const wrap = document.createElement('div');
+    wrap.className = 'cw-clues';
+    const col = (label, list, down) => {
+      const div = document.createElement('div');
+      div.className = 'cw-clue-col';
+      div.innerHTML = '<h3>' + label + '</h3>';
+      list.forEach(e => {
+        const p = document.createElement('div');
+        p.className = 'cw-clue';
+        p.dataset.num = e.num; p.dataset.down = down ? '1' : '0';
+        p.innerHTML = '<b>' + e.num + '</b>' + e.clue + ' (' + e.len + ')';
+        p.addEventListener('click', () => { dir = down ? 'D' : 'A'; focusCell(e.row, e.col); });
+        div.appendChild(p);
+      });
+      return div;
+    };
+    wrap.appendChild(col('Across', P.across, false));
+    wrap.appendChild(col('Down', P.down, true));
+    return wrap;
+  }
+
+  function curEntry() {
+    const m = cellMeta[k(cur.r, cur.c)];
+    if (!m) return null;
+    return dir === 'A' ? (m.across || m.down) : (m.down || m.across);
+  }
+  function toggleDir() {
+    const m = cellMeta[k(cur.r, cur.c)];
+    if (m && m.across && m.down) { dir = dir === 'A' ? 'D' : 'A'; highlight(); }
+  }
+  function focusCell(r, c) {
+    if (!isCell(r, c)) return;
+    cur = { r, c };
+    const inp = cellInput[k(r, c)];
+    if (inp) inp.focus();
+    highlight();
+  }
+  function ensureDir() {
+    const m = cellMeta[k(cur.r, cur.c)];
+    if (!m) return;
+    if (dir === 'D' && !m.down && m.across) dir = 'A';
+    else if (dir === 'A' && !m.across && m.down) dir = 'D';
+  }
+  function highlight() {
+    ensureDir();
+    document.querySelectorAll('.cw-cell').forEach(el => el.classList.remove('hl', 'cur'));
+    document.querySelectorAll('.cw-clue').forEach(el => el.classList.remove('active'));
+    const e = curEntry();
+    if (e) {
+      for (let i = 0; i < e.len; i++) {
+        const r = e.row + (dir === 'D' ? i : 0), c = e.col + (dir === 'D' ? 0 : i);
+        const inp = cellInput[k(r, c)];
+        if (inp) inp.parentElement.classList.add('hl');
+      }
+      const clue = document.querySelector('.cw-clue[data-num="' + e.num + '"][data-down="' + (dir === 'D' ? 1 : 0) + '"]');
+      if (clue) clue.classList.add('active');
+    }
+    const cinp = cellInput[k(cur.r, cur.c)];
+    if (cinp) cinp.parentElement.classList.add('cur');
+    const b = document.getElementById('cwDirBtn');
+    if (b) b.textContent = dir === 'D' ? '↓ Down' : '→ Across';
+  }
+  function advance(back) {
+    const d = back ? -1 : 1;
+    const nr = cur.r + (dir === 'D' ? d : 0), nc = cur.c + (dir === 'A' ? d : 0);
+    if (isCell(nr, nc)) focusCell(nr, nc);
+  }
+  function onInput(ev) {
+    ev.target.value = ev.target.value.toUpperCase().replace(/[^A-Z]/g, '').slice(-1);
+    clearMark(ev.target);
+    save();
+    if (ev.target.value) advance(false);
+    checkWin();
+  }
+  function onKeydown(ev) {
+    const r = +ev.target.dataset.r, c = +ev.target.dataset.c;
+    const moves = { ArrowUp: ['D', -1], ArrowDown: ['D', 1], ArrowLeft: ['A', -1], ArrowRight: ['A', 1] };
+    if (moves[ev.key]) {
+      ev.preventDefault();
+      const [wantDir, d] = moves[ev.key];
+      if (dir !== wantDir) { dir = wantDir; highlight(); }
+      let nr = r + (wantDir === 'D' ? d : 0), nc = c + (wantDir === 'A' ? d : 0);
+      while (nr >= 0 && nr < P.rows && nc >= 0 && nc < P.cols) {
+        if (isCell(nr, nc)) { focusCell(nr, nc); break; }
+        nr += (wantDir === 'D' ? d : 0); nc += (wantDir === 'A' ? d : 0);
+      }
+    } else if (ev.key === 'Backspace') {
+      if (!ev.target.value) { ev.preventDefault(); advance(true); const p = cellInput[k(cur.r, cur.c)]; if (p) { p.value = ''; clearMark(p); save(); } }
+      else { clearMark(ev.target); }
+    } else if (ev.key === 'Tab') { ev.preventDefault(); gotoWord(ev.shiftKey ? -1 : 1); }
+    else if (ev.key === ' ') { ev.preventDefault(); toggleDir(); }
+  }
+  function gotoWord(delta) {
+    if (!ORDER.length) return;
+    const e = curEntry(), down = dir === 'D';
+    let i = ORDER.findIndex(x => x.e === e && x.down === down);
+    i = i < 0 ? 0 : (i + delta + ORDER.length) % ORDER.length;
+    dir = ORDER[i].down ? 'D' : 'A';
+    focusCell(ORDER[i].e.row, ORDER[i].e.col);
+  }
+  const clearMark = inp => inp.parentElement.classList.remove('wrong', 'right');
+
+  function save() {
+    const rows = [];
+    for (let r = 0; r < P.rows; r++) {
+      let line = '';
+      for (let c = 0; c < P.cols; c++) line += isCell(r, c) ? (cellInput[k(r, c)].value || '.') : '#';
+      rows.push(line);
+    }
+    try { localStorage.setItem(KEY, rows.join('\n')); } catch (e) {}
+  }
+  function load() {
+    let saved;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    if (!saved) return;
+    const rows = saved.split('\n');
+    for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+      if (!isCell(r, c)) continue;
+      const ch = rows[r] && rows[r][c];
+      if (ch && ch !== '.' && ch !== '#') cellInput[k(r, c)].value = ch;
+    }
+  }
+  function checkWin() {
+    for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+      if (isCell(r, c) && cellInput[k(r, c)].value !== P.solution[r][c]) return false;
+    }
+    const s = document.getElementById('cwStatus');
+    if (s) { s.className = 'cw-status win'; s.textContent = '✓ Solved — nice.'; }
+    return true;
+  }
+
+  return {
+    wire() {
+      if (!P || !P.solution || !document.getElementById('cw')) return;
+      buildBoard();
+      load();
+      checkWin();
+    },
+    flipDir() { dir = dir === 'A' ? 'D' : 'A'; const inp = cellInput[k(cur.r, cur.c)]; if (inp) inp.focus(); highlight(); },
+    check() {
+      let wrong = 0, filled = 0;
+      for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+        if (!isCell(r, c)) continue;
+        const inp = cellInput[k(r, c)];
+        inp.parentElement.classList.remove('wrong', 'right');
+        if (!inp.value) continue;
+        filled++;
+        if (inp.value === P.solution[r][c]) inp.parentElement.classList.add('right');
+        else { inp.parentElement.classList.add('wrong'); wrong++; }
+      }
+      const s = document.getElementById('cwStatus');
+      s.className = 'cw-status';
+      s.textContent = filled === 0 ? 'Nothing filled in yet.' : wrong === 0 ? 'All filled cells are correct so far.' : wrong + ' incorrect cell' + (wrong > 1 ? 's' : '') + '.';
+    },
+    revealCell() { const inp = cellInput[k(cur.r, cur.c)]; if (inp) { inp.value = P.solution[cur.r][cur.c]; clearMark(inp); save(); checkWin(); } },
+    revealWord() {
+      const e = curEntry(); if (!e) return;
+      for (let i = 0; i < e.len; i++) {
+        const r = e.row + (dir === 'D' ? i : 0), c = e.col + (dir === 'D' ? 0 : i);
+        const inp = cellInput[k(r, c)]; if (inp) { inp.value = P.solution[r][c]; clearMark(inp); }
+      }
+      save(); checkWin();
+    },
+    revealAll() {
+      for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+        if (!isCell(r, c)) continue;
+        const inp = cellInput[k(r, c)]; inp.value = P.solution[r][c]; clearMark(inp);
+      }
+      save(); checkWin();
+    },
+    clear() {
+      for (const key in cellInput) { cellInput[key].value = ''; clearMark(cellInput[key]); }
+      try { localStorage.removeItem(KEY); } catch (e) {}
+      const s = document.getElementById('cwStatus'); if (s) s.textContent = '';
+    },
+  };
+})();
+
 // A comic interlude band. The image sits on a white panel (comics are drawn
 // black-on-white, so it stays readable in night mode too). alt = the artist's
 // hover-joke, shown as a caption since hover doesn't exist on touch.
@@ -384,6 +642,7 @@ let HEADER_HTML = '';
 function wireReaderChrome() {
   if (document.getElementById('ticker')) renderTicker();
   if (document.getElementById('settingsPanel')) syncSettingsUI();
+  if (CROSSWORD) Games.wire();
 }
 
 function filteredChapters() {
@@ -501,6 +760,7 @@ function buildPages(outerW, outerH) {
       since = 0;
     }
   });
+  if (CROSSWORD && CROSSWORD.solution) pages.push({ kind: 'games', html: gamesBand(CROSSWORD) });
 
   meas.remove();
   pages[tocIdx].html = tocInner(chs);
@@ -642,6 +902,7 @@ function renderScroll() {
     since += ch.articles.length;
     if (since >= COMIC_EVERY && ci < COMICS.length) { add('comic', comicBand(COMICS[ci++])); since = 0; }
   });
+  if (CROSSWORD && CROSSWORD.solution) add('games', gamesBand(CROSSWORD), 'games');
 
   host.innerHTML = '';
   host.appendChild(col);
