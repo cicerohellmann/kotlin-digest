@@ -6451,5 +6451,265 @@
     "excerpt": "As any indie developer surely knows, marketing is incredibly boring and tedious... I’m just starting out with promoting and raising awareness for an android app, and I have some doubts about paid ads—do they actually work, or are they a waste of money? Do you know of any better or more efficient channels? The more help and recommendations, the better; nothing beats the experiences of other indie developers. submitted by /u/Pablo_AndroidDev [link] [comments]",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "99a60097ce3d45b3",
+    "title": "Navigation 3: Keep entryProvider from Becoming a Giant Switchboard",
+    "url": "https://proandroiddev.com/navigation-3-keep-entryprovider-from-becoming-a-giant-switchboard-ffaafc720156?source=rss----c72404660798---4",
+    "date": "2026-07-24",
+    "source_id": "proandroiddev",
+    "excerpt": "Organize Related Screens with EntryProviderScope Image created by AI One of the first things you’ll probably do when adopting Navigation 3 is register every destination directly inside entryProvider. For small projects, that’s a perfectly reasonable place to start. NavDisplay( backStack = backStack, entryProvider = entryProvider { entry<HomeRoute> { HomeScreen() } entry<DetailRoute> { DetailScreen() } entry<LoginRoute> { LoginScreen() } entry<SignupRoute> { SignupScreen() } entry<SettingsRoute> ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c68cec86f249c4fb",
+    "title": "Building a 100% Jetpack Compose Library for iOS-Style Emoji Rendering",
+    "url": "https://medium.com/@abbas.ha.1378/building-a-100-jetpack-compose-library-for-ios-style-emoji-rendering-4353272744b3?source=rss------kotlin-5",
+    "date": "2026-07-25",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "One thing that has always bothered me when building Android apps with Jetpack Compose is emoji consistency. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "48c208b9a4f1bdf6",
+    "title": "Hilt vs Anvil: Choosing the Right DI Strategy for Real-World Android Apps",
+    "url": "https://medium.com/@mani1832r/hilt-vs-anvil-choosing-the-right-di-strategy-for-real-world-android-apps-0f6bf549925c?source=rss------kotlin-5",
+    "date": "2026-07-25",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "A practical guide for experienced Android developers deciding when Google’s opinionated defaults are enough — and when custom Dagger… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b41db16e981a9e31",
+    "title": "Android Ransomware: When Storage Access Meets Disaster",
+    "url": "https://medium.com/@jacksonfdam/android-ransomware-when-storage-access-meets-disaster-d79e12ec89e3?source=rss------kotlin-5",
+    "date": "2026-07-24",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "You already know the Android permission model is broken. You probably joke about it. What you might not realise is that it’s not just… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f7fd861b0f9fd593",
+    "title": "Best Practices for Creating UI States in Jetpack Compose in 2026",
+    "url": "https://halilozel1903.medium.com/best-practices-for-creating-ui-states-in-jetpack-compose-in-2026-a18aab59d9ca?source=rss------kotlin-5",
+    "date": "2026-07-24",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Build predictable, lifecycle-aware, and testable Compose screens without turning every interaction into another event wrapper. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3b1924ea2d697f50",
+    "title": "Migrating Legacy Android Java + XML Applications to Kotlin",
+    "url": "https://medium.com/@riyaspullurofficial/migrating-legacy-android-java-xml-applications-to-kotlin-a5956f984498?source=rss------kotlin-5",
+    "date": "2026-07-24",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Description Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e98cdc402b677fbe",
+    "title": "Stop Reaching for Canvas: Mastering the Compose Drawing Phase with drawBehind, drawWithContent, and…",
+    "url": "https://medium.com/@shivaniaakanksha/compose-drawing-phase-canvas-drawbehind-drawwithcache-c6b4f95cc368?source=rss------kotlin-5",
+    "date": "2026-07-24",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "The rendering pipeline most Android developers misunderstand — and the three modifiers that make custom UI cleaner, faster, and more… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d5801c874d80b8c2",
+    "title": "Properties and Backing Fields in Kotlin: A Complete Guide",
+    "url": "https://techdynasty.medium.com/properties-and-backing-fields-in-kotlin-a-complete-guide-f523d295c35d?source=rss------kotlin-5",
+    "date": "2026-07-24",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Every Kotlin class stores data. Whether it’s a user’s name, a product’s price, or a login state, that data is represented using properties… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "44fc7314b9d9ea2c",
+    "title": "Part 1: Testability Is an Architecture Decision, Not a Testing One",
+    "url": "https://medium.com/@sivavishnu0705/part-1-testability-is-an-architecture-decision-not-a-testing-one-ed0dea378d22?source=rss------kotlin-5",
+    "date": "2026-07-24",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "Why untestable Android code isn’t a mocking problem — it’s a boundary problem hiding in your architecture. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5dc81ddf86a18a3d",
+    "title": "Building High-Performance Text Editors in Kotlin Multiplatform with Krope",
+    "url": "https://medium.com/@numq/building-high-performance-text-editors-in-kotlin-multiplatform-with-krope-9f4b110314d6?source=rss------kotlin-5",
+    "date": "2026-07-24",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "If you have ever tried building a text editor, an IDE, or a collaborative document tool, you quickly run into a fundamental wall: how do… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7cd8ce47f784eda8",
+    "title": "Klocale: the locale-aware number formatting Kotlin Multiplatform was missing",
+    "url": "https://medium.com/@dellaporta.andrea01/klocale-the-locale-aware-number-formatting-kotlin-multiplatform-was-missing-c0d6f5710be9?source=rss------kotlin-5",
+    "date": "2026-07-24",
+    "source_id": "medium-kotlin-tag",
+    "excerpt": "How I found a real gap in the KMP ecosystem, and what it took to fill it consistently across six platforms. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "bfed924976767444",
+    "title": "How to Set Up a VPN on Any Device (Windows, Android, iPhone & Router) [2026 Guide]",
+    "url": "https://medium.com/@shivangiweb3task/how-to-set-up-a-vpn-on-any-device-windows-android-iphone-router-2026-guide-7f2d1c759920?source=rss------android-5",
+    "date": "2026-07-25",
+    "source_id": "medium-android-tag",
+    "excerpt": "Learn how to set up a VPN on Windows, Mac, Android, iPhone, and routers — plus manual configuration, troubleshooting, and security… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "454657ed3925ee22",
+    "title": "The EU Just Forced Google to Open Android’s AI Layer to Rivals. Here’s Exactly What That Means.",
+    "url": "https://medium.com/adi-insights-innovations-collective/the-eu-just-forced-google-to-open-androids-ai-layer-to-rivals-here-s-exactly-what-that-means-54714c503957?source=rss------android-5",
+    "date": "2026-07-25",
+    "source_id": "medium-android-tag",
+    "excerpt": "On July 16, 2026, the European Commission issued the most consequential AI competition ruling of the year. No speculation, no hype — just… Continue reading on Adi Insights & Innovations Collective »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "dcecf30142b4af40",
+    "title": "Android Passwordless Authentication: Implementing Passkeys with MVVM",
+    "url": "https://rajendradabhi.medium.com/passwordless-future-implementing-passkeys-in-android-with-mvvm-db11a8b05d76?source=rss------android-5",
+    "date": "2026-07-25",
+    "source_id": "medium-android-tag",
+    "excerpt": "Passkeys are the modern, more secure alternative to passwords. Based on the FIDO2/WebAuthn standard, they allow users to sign in to apps… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8665849639b67b8b",
+    "title": "Secure Biometric Authentication in Android: The Complete Guide (MVVM)",
+    "url": "https://rajendradabhi.medium.com/secure-biometric-authentication-in-android-the-complete-guide-mvvm-3d417cb8e72c?source=rss------android-5",
+    "date": "2026-07-25",
+    "source_id": "medium-android-tag",
+    "excerpt": "In the era of modern mobile applications, user experience and security must go hand in hand. Biometric Authentication (Fingerprint, Face… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c6bcbaf752b41ebf",
+    "title": "7 Mistakes People Make When Buying Smartphones",
+    "url": "https://regularproductreview.medium.com/7-mistakes-people-make-when-buying-smartphones-55559c5e3643?source=rss------android-5",
+    "date": "2026-07-25",
+    "source_id": "medium-android-tag",
+    "excerpt": "Buying a new smartphone should be exciting, but for many people it ends with disappointment. A phone may look impressive in advertisements… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0bad77128af35d52",
+    "title": "طريقة تشغيل مود تيكن 8 على محاكي PPSSPP للاندرويد",
+    "url": "https://fadyali.medium.com/%D8%B7%D8%B1%D9%8A%D9%82%D8%A9-%D8%AA%D8%B4%D8%BA%D9%8A%D9%84-%D9%85%D9%88%D8%AF-%D8%AA%D9%8A%D9%83%D9%86-8-%D8%B9%D9%84%D9%89-%D9%85%D8%AD%D8%A7%D9%83%D9%8A-ppsspp-%D9%84%D9%84%D8%A7%D9%86%D8%AF%D8%B1%D9%88%D9%8A%D8%AF-a4aa2eb542a7?source=rss------android-5",
+    "date": "2026-07-25",
+    "source_id": "medium-android-tag",
+    "excerpt": "لا يزال الحماس يشتعل في أوساط مجتمع لاعبي القتال مع صدور لعبة Tekken 8، Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b74bae5d20515ad3",
+    "title": "Android System Design: Caching Strategies in Android",
+    "url": "https://medium.com/@nematengg/android-system-design-caching-strategies-in-android-05da574c5576?source=rss------android-5",
+    "date": "2026-07-25",
+    "source_id": "medium-android-tag",
+    "excerpt": "When users open a mobile application, they expect information to appear instantly. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e5f6e978402e773a",
+    "title": "From Broke to Informed: How I Found Reliable Gaming Guides in Pakistan",
+    "url": "https://medium.com/@motivationgamer350/from-broke-to-informed-how-i-found-reliable-gaming-guides-in-pakistan-d3529b0003e3?source=rss------android-5",
+    "date": "2026-07-24",
+    "source_id": "medium-android-tag",
+    "excerpt": "It was the middle of the semester, his bank account was scraping empty, and his part-time job at the local café just wasn’t cutting it… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "fd3d9dd243c40591",
+    "title": "From Script to Finished Video: A Complete Guide to Teleprompter Automatic",
+    "url": "https://teleprompterautomatic.medium.com/from-script-to-finished-video-a-complete-guide-to-teleprompter-automatic-71a833db0241?source=rss------android-5",
+    "date": "2026-07-24",
+    "source_id": "medium-android-tag",
+    "excerpt": "How to prepare scripts, choose the right scrolling mode, record video or audio, stream live, edit the result, and keep your projects… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "574d98650e01ac00",
+    "title": "v1.12.10-alpha01+dev4546: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4546",
+    "date": "2026-07-25",
+    "source_id": "lib-compose-multiplatform",
+    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4546 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4546 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4546 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4546",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "fec620ed42d95da2",
+    "title": "Reaching the limits of Jetpack Compose Canvas: Moving my RPG engine to Google Filament (8x performance gain)",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v5a23f/reaching_the_limits_of_jetpack_compose_canvas/",
+    "date": "2026-07-24",
+    "source_id": "reddit-androiddev",
+    "excerpt": "Hey r/androiddev A couple of months ago, I made a post about scaling my solo RPG ( Adventurers Guild RPG Sim ) built 100% in Jetpack Compose Canvas with a custom single threaded ECS. While Compose Canvas was incredible for getting the engine off the ground, scaling the world map and visual effects eventually pushed me into a hard bottleneck. To solve this without breaking the live game, I decided to shift the world rendering backend over to Google Filament . Here is how moving to Filament, while",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "533ae4621ce40bd3",
+    "title": "A Fully Compose Android Library for iOS Emoji Rendering",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v5yy1g/a_fully_compose_android_library_for_ios_emoji/",
+    "date": "2026-07-25",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I built an Android library that renders iOS-style emojis in Jetpack Compose . Unlike most existing solutions, this library is 100% Compose —no TextView , AndroidView , or View-based implementation behind the scenes. GitHub: https://github.com/abbas-esfandiair/EmojiTextLibrary submitted by /u/Available_Visual_687 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "effb11ee3fd16653",
+    "title": "Android May Soon Restrict On-Device ADB, Affecting Shizuku, libadb and Developers",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v5jv18/android_may_soon_restrict_ondevice_adb_affecting/",
+    "date": "2026-07-24",
+    "source_id": "reddit-androiddev",
+    "excerpt": "This is a blog post. TLDR: This is about a conversation in the Google Issue Tracker about potential future changes. Depending on how they are implemented, these changes could impact Shizuku and other power-user tools. More details and explanations are available in the blog post. 8-minute read. This is not an official announcement and nothing is 100% confirmed yet. submitted by /u/kitsumed [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e52b89cb504a95fb",
+    "title": "Android VpnService stays connected, but all traffic fails with networksUnknownHostException",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v5gw1d/android_vpnservice_stays_connected_but_all/",
+    "date": "2026-07-24",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I’m developing an Android VPN app that uses Xray with VLESS + REALITY . I live in Russia, and my mobile provider sometimes enables an LTE whitelist mode: only a limited number of websites remain accessible, while most other websites are blocked. My VPN used to work correctly in this situation. However, around two weeks ago it suddenly stopped working most of the time, even though neither the application code nor the Xray configuration had changed. The VPN appears to connect successfully: VPN ico",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2324c7f60bde715d",
+    "title": "DAEX- Android Native- On Device Agent",
+    "url": "https://www.reddit.com/r/androiddev/comments/1v5g0en/daex_android_native_on_device_agent/",
+    "date": "2026-07-24",
+    "source_id": "reddit-androiddev",
+    "excerpt": "I seen locallyAI was pretty popular on IOS and Google Ai Edge gallery is a bit lacking in terms of actual use case features. So Im building DAEX; using litert I'm attempting to mimic features from popular agent harnesses like Hermes agent/ Openclaw etc. but bring it down completely on your mobile device. There is a lot more too it but this is just a high level overview. Its open source feel free to gander: https://github.com/DIIZZYFPS/DAEX/ submitted by /u/DIIZZYSNIPEZ [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
