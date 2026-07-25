@@ -168,6 +168,16 @@ Translations of the site UI are welcome at any point.
 
 ---
 
+## Contributors
+
+Kotlin Digest is community-assembled. Thanks to everyone who's pitched in:
+
+- **[James Cullimore (@LethalMaus)](https://github.com/LethalMaus)** — YouTube source ingestion, PageSpeed & accessibility fixes, and the no-JS/crawlability work that led to the build-time prerender.
+
+Want to see your name here? Add a source, fix a bug, or open a PR — see [Contributing](#contributing).
+
+---
+
 ## License
 
 MIT. Take the pipeline, the site, the structure. Build your own digest for your own community. We only ask that you don't call it Kotlin Digest.
