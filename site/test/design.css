@@ -1,0 +1,67 @@
+/* Kotlin Digest — shared design tokens */
+
+:root {
+  --paper:        #F3EDE2;
+  --paper-b:      #E8DFCE;
+  --ink:          #1C1B18;
+  --ink-mid:      #3A3830;
+  --ink-muted:    #6B6457;
+  --rule:         #C9BFB0;
+  --chip-bg:      #E5DDD0;
+  --accent:       #E06020;
+  --accent-dim:   #8B3608;
+  --blue:         #123F7C;
+  --green:        #1F573F;
+  --focus-tint:   #FFF4E6;
+  --exclude-tint: #EEF2FF;
+  --code-bg:      #18171A;
+  --code-text:    #D4CFC6;
+
+  /* Type tokens — the three real families, one per role. Swap these to
+     re-typeset the whole magazine. --read-font (reader setting) overrides the
+     body family per-visitor. */
+  --font-ui:      'JetBrains Mono', monospace;              /* labels, tags, chrome */
+  --font-body:    'Charter', 'Bitstream Charter', Georgia, serif;  /* reading */
+  --font-meta:    'DM Sans', sans-serif;                    /* small supporting meta */
+  --font-display: 'Charter', 'Bitstream Charter', Georgia, serif;  /* chapter/comic titles (italic per-use) */
+}
+
+html[data-night="1"] {
+  --paper:        #1C1A17;
+  --paper-b:      #252320;
+  --ink:          #E8E2D6;
+  --ink-mid:      #C4BDB0;
+  --ink-muted:    #7A7266;
+  --rule:         #3A3630;
+  --chip-bg:      #2A2820;
+  --accent:       #E8762E;
+  --accent-dim:   #C05018;
+  --blue:         #6B9FD4;
+  --green:        #5A9E78;
+  --focus-tint:   #2A2218;
+  --exclude-tint: #1A2030;
+  --code-bg:      #111010;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Charter', 'Bitstream Charter', Georgia, serif;
+}
+
+.night-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.night-btn:hover { color: var(--ink); border-color: var(--ink-muted); }
