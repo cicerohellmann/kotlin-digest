@@ -5,5 +5,8 @@
   },
   "ec41318879f5fdf3": {
     "summary": "One notable change this week — the 1.12.0-beta02 release makes isClearFocusOnMouseDownEnabled default to false. Everything else is automated nightly builds with no changelog."
+  },
+  "34e9a399a531046e": {
+    "summary": "Eight Compose Multiplatform nightly builds landed this week across the 1.12.10-alpha01 and 1.12.0-beta03 dev channels. Each bumps the org.jetbrains.compose, Material3, Lifecycle, and Navigation3 artifact coordinates in lockstep; none carry documented API or behavior changes beyond the version bump."
   }
 }
