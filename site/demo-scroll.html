@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kotlin Digest — SCROLL mode</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="design.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Charter','Bitstream Charter',Georgia,serif; }
+  .mode-flag { position: fixed; top: 10px; right: 10px; z-index: 50; font-family: 'JetBrains Mono', monospace; font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; background: var(--accent); color: #fff; padding: .3rem .6rem; border-radius: 5px; }
+  .night-btn { position: fixed; top: 10px; right: 92px; z-index: 50; cursor: pointer; }
+
+  .mast { max-width: 780px; margin: 0 auto; padding: 3rem 1.4rem 1.2rem; border-bottom: 3px double var(--ink); }
+  .mast .logo { font-family: 'JetBrains Mono', monospace; font-weight: 600; letter-spacing: .05em; }
+  .mast .logo b { font-size: 2.4rem; color: var(--ink); } .mast .logo .k { color: var(--accent); }
+  .mast .sub { display: flex; justify-content: space-between; align-items: baseline; margin-top: .5rem; font-family: 'JetBrains Mono', monospace; font-size: .62rem; color: var(--ink-muted); letter-spacing: .04em; }
+  .mast .tag { font-style: italic; font-size: 1rem; color: var(--ink-mid); margin-top: .7rem; font-family: 'Charter', serif; }
+
+  main { max-width: 780px; margin: 0 auto; padding: 0 1.4rem 5rem; }
+  .ch { margin-top: 2.6rem; }
+  .ch-h { display: flex; align-items: baseline; gap: .6rem; border-bottom: 2px solid var(--ink); padding-bottom: .35rem; margin-bottom: 1.1rem; }
+  .ch-h .num { font-family: 'JetBrains Mono', monospace; font-size: .64rem; color: var(--accent); font-weight: 600; }
+  .ch-h .ttl { font-family: 'Playfair Display', Charter, serif; font-style: italic; font-weight: 700; font-size: 1.5rem; flex: 1; }
+  .ch-h .ct { font-family: 'JetBrains Mono', monospace; font-size: .56rem; color: var(--ink-muted); }
+  .art { padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
+  .art .meta { display: flex; align-items: center; gap: .5rem; margin-bottom: .4rem; }
+  .src { font-family: 'JetBrains Mono', monospace; font-size: .54rem; letter-spacing: .04em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 3px; padding: .12rem .4rem; color: var(--ink-mid); }
+  .date { font-family: 'JetBrains Mono', monospace; font-size: .56rem; color: var(--ink-muted); }
+  .art h2 { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.16rem; line-height: 1.25; margin: 0 0 .5rem; }
+  .art h2 a { color: var(--ink); text-decoration: none; }
+  .art h2 a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .art p { font-size: .98rem; line-height: 1.6; color: var(--ink-mid); margin: 0 0 .55rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: .54rem; color: var(--ink-muted); background: var(--paper-b); border-radius: 3px; padding: .1rem .4rem; }
+  .backtop { position: fixed; bottom: 16px; right: 16px; z-index: 40; font-family: 'JetBrains Mono', monospace; font-size: .6rem; border: 1px solid var(--rule); background: var(--paper-b); color: var(--ink); border-radius: 99px; padding: .4rem .7rem; cursor: pointer; opacity: .85; }
+  .backtop:hover { opacity: 1; }
+</style>
+</head>
+<body>
+<button class="night-btn" onclick="document.documentElement.dataset.night = document.documentElement.dataset.night==='1'?'0':'1'">☾ night</button>
+<span class="mode-flag">Scroll mode</span>
+
+<div class="mast">
+  <div class="logo"><b><span class="k">K</span>OTLIN</b> DIGEST</div>
+  <div class="sub"><span>Edition 2026·W28 · 05 July 2026</span><span>59 articles · 9 chapters</span></div>
+  <div class="tag">The Kotlin world, assembled weekly, for Android engineers — one continuous read.</div>
+</div>
+<main id="main"></main>
+<button class="backtop" onclick="scrollTo({top:0,behavior:'smooth'})">↑ top</button>
+
+<script src="demo-data.js"></script>
+<script>
+const pad = n => String(n).padStart(2,'0');
+document.getElementById('main').innerHTML = KD_DEMO.map((ch,ci)=>{
+  const arts = ch.arts.map(a=>`
+    <article class="art">
+      <div class="meta"><span class="src">${a.source||'—'}</span><span class="date">${a.date||''}</span></div>
+      <h2><a href="${a.url}" target="_blank" rel="noopener noreferrer">${a.title}</a></h2>
+      ${a.summary?`<p>${a.summary}</p>`:''}
+      <div class="tags"><span class="tag">${ch.chapter.toLowerCase()}</span></div>
+    </article>`).join('');
+  return `<section class="ch"><div class="ch-h"><span class="num">§ ${pad(ci+1)}</span><span class="ttl">${ch.chapter}</span><span class="ct">${ch.arts.length} stories</span></div>${arts}</section>`;
+}).join('');
+</script>
+</body>
+</html>

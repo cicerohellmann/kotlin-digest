@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzE4MTcxQSIvPjx0ZXh0IHg9IjMiIHk9IjI0IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjRTA2MDIwIj5LPC90ZXh0Pjx0ZXh0IHg9IjE3IiB5PSIyNCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxOSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0YzRURFMiI+RDwvdGV4dD48L3N2Zz4K">
+  <title>Get the badge — Kotlin Digest</title>
+  <meta name="description" content="Grab the 'Featured in Kotlin Digest' badge — a link back to kotlindigest.com you can add to your README, blog, or profile.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design.css">
+  <script>if(document.cookie.includes('kd_night=1'))document.documentElement.dataset.night='1';</script>
+  <style>
+    .top-nav {
+      background: var(--ink);
+      padding: 0.6rem 2.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .nav-back {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+      color: var(--chip-bg); text-decoration: none; letter-spacing: 0.06em;
+      opacity: 0.75; transition: opacity 0.15s;
+    }
+    .nav-back:hover { opacity: 1; }
+    .nav-sep { font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; color: #4A4840; }
+    .nav-current { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--accent); letter-spacing: 0.06em; }
+    .night-btn {
+      margin-left: auto; background: none; border: 1px solid #4A4840;
+      color: var(--chip-bg); border-radius: 4px; cursor: pointer;
+      font-size: 0.8rem; width: 28px; height: 28px;
+    }
+    html[data-night="1"] .top-nav { background: var(--paper-b); }
+    html[data-night="1"] .nav-back { color: var(--ink-mid); }
+
+    .content { max-width: 720px; margin: 0 auto; padding: 2.75rem 2.5rem 4rem; }
+    .content h1 {
+      font-family: 'Playfair Display', Georgia, serif; font-weight: 900;
+      font-size: clamp(1.9rem, 5vw, 2.7rem); color: var(--ink);
+      line-height: 1.05; margin: 0 0 0.75rem;
+    }
+    .lede { font-family: 'DM Sans', sans-serif; font-size: 1.05rem; color: var(--ink-mid); line-height: 1.6; margin: 0 0 2.25rem; max-width: 60ch; }
+    .content h2 {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted);
+      margin: 2.5rem 0 0.9rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule);
+    }
+    .badge-preview {
+      display: flex; justify-content: center; align-items: center;
+      padding: 2.5rem; background: var(--paper-b); border: 1px solid var(--rule);
+      border-radius: 8px; margin-bottom: 0.75rem;
+    }
+    .badge-preview img { height: 28px; width: auto; }
+    .preview-note { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--ink-muted); text-align: center; }
+
+    .snippet { position: relative; margin-bottom: 1.4rem; }
+    .snippet-label { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .snippet pre {
+      margin: 0; background: #18171A; color: #E8E2D5;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; line-height: 1.55;
+      padding: 0.85rem 5.5rem 0.85rem 0.95rem; border-radius: 6px;
+      overflow-x: auto; white-space: pre; -webkit-overflow-scrolling: touch;
+    }
+    .copy-btn {
+      position: absolute; top: 2.1rem; right: 0.6rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; letter-spacing: 0.06em;
+      background: var(--accent); color: #fff; border: none; border-radius: 4px;
+      padding: 0.28rem 0.6rem; cursor: pointer; text-transform: uppercase;
+    }
+    .copy-btn:hover { filter: brightness(1.08); }
+    .copy-btn.copied { background: var(--green, #3E7B4F); }
+
+    footer {
+      border-top: 2px solid var(--ink); padding: 1.25rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; color: var(--ink-muted);
+    }
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .top-nav, .content, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .snippet pre { padding-right: 0.95rem; padding-top: 2.6rem; }
+      .copy-btn { top: 0.55rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-back">← Kotlin Digest</a>
+  <span class="nav-sep">/</span>
+  <span class="nav-current">GET THE BADGE</span>
+  <button class="night-btn" id="nightBtn" onclick="toggleNight()">☾</button>
+</nav>
+
+<main class="content">
+  <h1>Featured in Kotlin Digest</h1>
+  <p class="lede">
+    Wrote something we featured? Add the badge to your README, blog, or profile.
+    It links straight back to the digest — a small nod to your work, and a signal
+    to your readers that it landed in the weekly.
+  </p>
+
+  <div class="badge-preview">
+    <a href="https://kotlindigest.com" target="_blank" rel="noopener">
+      <img src="badge.svg" alt="Featured in Kotlin Digest" width="236" height="28">
+    </a>
+  </div>
+  <p class="preview-note">↑ the badge, linking to kotlindigest.com</p>
+
+  <h2>Markdown</h2>
+  <div class="snippet">
+    <div class="snippet-label">For a README or Markdown post</div>
+    <pre id="snip-md">[![Featured in Kotlin Digest](https://kotlindigest.com/badge.svg)](https://kotlindigest.com)</pre>
+    <button class="copy-btn" onclick="copySnippet('snip-md', this)">Copy</button>
+  </div>
+
+  <h2>HTML</h2>
+  <div class="snippet">
+    <div class="snippet-label">For a website or blog template</div>
+    <pre id="snip-html">&lt;a href="https://kotlindigest.com"&gt;
+  &lt;img src="https://kotlindigest.com/badge.svg" alt="Featured in Kotlin Digest" height="28"&gt;
+&lt;/a&gt;</pre>
+    <button class="copy-btn" onclick="copySnippet('snip-html', this)">Copy</button>
+  </div>
+
+  <h2>reStructuredText</h2>
+  <div class="snippet">
+    <div class="snippet-label">For Sphinx / RST docs</div>
+    <pre id="snip-rst">.. image:: https://kotlindigest.com/badge.svg
+   :target: https://kotlindigest.com
+   :alt: Featured in Kotlin Digest</pre>
+    <button class="copy-btn" onclick="copySnippet('snip-rst', this)">Copy</button>
+  </div>
+</main>
+
+<footer>
+  <span>Kotlin Digest · Open Source · MIT</span>
+  <span><a href="https://github.com/cicerohellmann/kotlin-digest">GitHub →</a></span>
+</footer>
+
+<script>
+function toggleNight() {
+  const next = document.documentElement.dataset.night === '1' ? '0' : '1';
+  document.documentElement.dataset.night = next;
+  document.cookie = `kd_night=${next};max-age=${60*60*24*90};path=/`;
+  document.getElementById('nightBtn').textContent = next === '1' ? '☀' : '☾';
+}
+if (document.documentElement.dataset.night === '1')
+  document.getElementById('nightBtn').textContent = '☀';
+
+function copySnippet(id, btn) {
+  const text = document.getElementById(id).textContent;
+  const done = () => {
+    const old = btn.textContent;
+    btn.textContent = 'Copied'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = old; btn.classList.remove('copied'); }, 1400);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(fallback);
+  } else fallback();
+  function fallback() {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+}
+</script>
+</body>
+</html>

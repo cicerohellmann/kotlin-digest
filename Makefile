@@ -1,6 +1,6 @@
 PYTHON := python3.11
 
-.PHONY: run scout bible fetch apply classify apply-snippets candidates assemble bundle test
+.PHONY: run scout bible fetch apply classify apply-snippets candidates assemble prerender preview bundle test
 
 # Automated pipeline (steps 1-2) — safe to run unattended
 run: scout bible
@@ -30,10 +30,28 @@ classify:
 apply-snippets:
 	$(PYTHON) pipeline/summarize.py --apply-snippets $(FILE)
 
-# Step 4 — assemble an edition
+# Step 4 — assemble an edition, then prerender its no-JS/crawlable snapshot.
+# This is the publication build: `make assemble` always produces pages whose
+# <main id="digest"> is pre-filled, so no-JS readers and search crawlers get the
+# full digest (the JS reader stays the single source of truth — prerender just
+# freezes its output).
 # Usage: make assemble EDITION=2026-W28
 assemble:
 	$(PYTHON) pipeline/assemble.py --edition $(EDITION)
+	$(MAKE) prerender EDITION=$(EDITION)
+
+# Prerender: snapshot the JS reader's output into #digest for no-JS + crawlers.
+# Run automatically by `assemble`; also runnable alone after a manual assemble.
+# Usage: make prerender EDITION=2026-W28
+prerender:
+	$(PYTHON) pipeline/prerender.py site/index.html site/editions/$(EDITION).html
+
+# Preview the built site locally. Visit http://localhost:8000/ for the reader,
+# or http://localhost:8000/?nojs to see exactly what a no-JS visitor/crawler
+# gets (the prerendered digest with the interactive chrome hidden).
+preview:
+	@echo "Serving site/ at http://localhost:8000  (?nojs for the no-JS view)"
+	@cd site && $(PYTHON) -m http.server 8000
 
 # Bundle: single portable HTML file anyone can open or email
 # Usage: make bundle EDITION=2026-W28

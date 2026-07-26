@@ -85,6 +85,59 @@ def write_atomic(path: Path, text: str) -> None:
     tmp.rename(path)
 
 
+def build_structured_data(
+    edition_display: str,
+    canonical_url: str,
+    meta_desc: str,
+    chapters: list,
+) -> str:
+    """Return compact JSON-LD for crawlers, derived from the assembled edition."""
+    page = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": f"Kotlin Digest — {edition_display}",
+        "description": meta_desc,
+        "url": canonical_url,
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Kotlin Digest",
+            "url": "https://kotlindigest.com/",
+        },
+        "hasPart": [],
+    }
+    for ch in chapters:
+        for a in ch["articles"]:
+            video_id = a.get("video_id")
+            thumbnail = a.get("thumbnail")
+            if video_id and thumbnail:
+                item = {
+                    "@type": "VideoObject",
+                    "name": a.get("title", ""),
+                    "description": a.get("summary") or a.get("excerpt", ""),
+                    "thumbnailUrl": thumbnail,
+                    "embedUrl": f"https://www.youtube-nocookie.com/embed/{video_id}",
+                    "url": a.get("url", ""),
+                }
+            else:
+                item = {
+                    "@type": "Article",
+                    "headline": a.get("title", ""),
+                    "url": a.get("url", ""),
+                    "description": a.get("summary", ""),
+                }
+            # Only emit a date when we actually have one — a null/empty
+            # datePublished/uploadDate is invalid structured data.
+            date_key = "uploadDate" if item["@type"] == "VideoObject" else "datePublished"
+            if a.get("date"):
+                item[date_key] = a["date"]
+            page["hasPart"].append(item)
+    return (
+        '<script type="application/ld+json">'
+        + json.dumps(page, ensure_ascii=False, separators=(",", ":"))
+        + "</script>"
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--edition", required=True, help="e.g. 2026-W28")
@@ -176,6 +229,10 @@ def main() -> None:
     html = inject_data(template, data_block)
 
     n_sources = len({a.get("source_id") for ch in chapters for a in ch["articles"] if a.get("source_id")})
+    n_videos = sum(
+        1 for ch in chapters for a in ch["articles"]
+        if a.get("media_type") == "video" or a.get("video_id")
+    )
 
     # Patch masthead edition label, title, date and counts (all static in the
     # template's placeholder W27 masthead).
@@ -186,6 +243,22 @@ def main() -> None:
     # Patched separately so the template can wrap "sources" in a link to sources.html.
     html = html.replace("27 articles", f"{total_arts} articles")
     html = html.replace("8 sources", f"{n_sources} sources")
+
+    # SEO / social meta — real per-edition description + canonical so link previews
+    # (WhatsApp, Slack, Twitter) show the right week instead of scraped body text.
+    video_phrase = f", including {n_videos} video{'s' if n_videos != 1 else ''}," if n_videos else ","
+    meta_desc = (
+        f"Kotlin Digest {edition_display}: {total_arts} hand-picked Android, "
+        f"Kotlin, KMP and Jetpack Compose stories from {n_sources} sources"
+        f"{video_phrase} for the week of {start.strftime('%d %B %Y')}."
+    )
+    html = html.replace("__META_DESC__", meta_desc)
+    html = html.replace("__CANONICAL__", "https://kotlindigest.com/")
+    html = html.replace(
+        "</head>",
+        build_structured_data(edition_display, "https://kotlindigest.com/", meta_desc, chapters) + "\n</head>",
+        1,
+    )
 
     write_atomic(OUTPUT_FILE, html)
     print(f"  Written → site/index.html")

@@ -12,7 +12,8 @@
     "topics": [
       "kotlin",
       "jetbrains"
-    ]
+    ],
+    "author": "Alyona Chernyaeva"
   },
   {
     "id": "64fed70cf49d9215",
@@ -27,7 +28,8 @@
     "topics": [
       "kotlinconf",
       "kotlin"
-    ]
+    ],
+    "author": "Jelena Ilic"
   },
   {
     "id": "d4d4bdcb81e3ab7f",
@@ -41,7 +43,8 @@
     "summary": "Android Bench is expanding beyond single-model evaluations to multi-agent and agentic task benchmarks, measuring how well LLMs handle real Android development workflows like building features end-to-end. The new era focuses on practical developer-task completion rather than isolated code generation.",
     "topics": [
       "android-developers"
-    ]
+    ],
+    "author": "Android Developers"
   },
   {
     "id": "a7051db035740859",
@@ -55,7 +58,8 @@
     "summary": "Google Play launched its first Indie Games Fund targeting Sub-Saharan Africa, offering funding and support to local game developers to reach global audiences. The fund is part of Play's broader initiative to grow the developer ecosystem in emerging markets.",
     "topics": [
       "android-developers"
-    ]
+    ],
+    "author": "Android Developers"
   },
   {
     "id": "196355b460e89179",
@@ -527,7 +531,8 @@
     "topics": [
       "android-api",
       "jetpack"
-    ]
+    ],
+    "author": "CommonsWare"
   },
   {
     "id": "ad2e4b2fe1921beb",
@@ -1140,7 +1145,8 @@
     "summary": "Dagger 2.60.1 release with bug fixes for component factory generation and improved error messages for missing bindings. Incremental maintenance release with no new API surface.",
     "topics": [
       "hilt"
-    ]
+    ],
+    "author": "bcorso"
   },
   {
     "id": "4e3268874e93b0fa",
@@ -1561,7 +1567,8 @@
     "topics": [
       "kotlin",
       "kotlinconf"
-    ]
+    ],
+    "author": "Olga Vorobeva"
   },
   {
     "id": "b313f24a8bde7769",
@@ -2097,7 +2104,8 @@
       "kotlin"
     ],
     "code_snippet": "// Arrow 2.3.0-alpha: QUERY verb in arrow-raise-ktor\nrouting {\n    query<UserRequest, UserResponse> {\n        val user = raise { fetchUser(it.id) }\n        respond(user)\n    }\n}",
-    "snippet_label": "RAISE KTOR QUERY"
+    "snippet_label": "RAISE KTOR QUERY",
+    "author": "serras"
   },
   {
     "id": "92925073da9bc887",
@@ -2302,7 +2310,8 @@
     "summary": "KSP 2.3.10 release with Kotlin 2.3 compatibility updates and bug fixes for incremental processing. Drop-in update for projects already on KSP 2.x.",
     "topics": [
       "ksp"
-    ]
+    ],
+    "author": "mkmuir0"
   },
   {
     "id": "8160faa90eb5228f",
@@ -3501,7 +3510,8 @@
     "source_id": "lib-arrow",
     "excerpt": "What's Changed Resolve returnType more lazily in Arrow Optics by @serras in #3943 Full Changelog : 2.3.0-alpha.1...2.3.0-alpha.2",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "author": "serras"
   },
   {
     "id": "3e70e66b2efaa0f8",
@@ -3798,7 +3808,8 @@
     "topics": [
       "kotlin",
       "jetbrains"
-    ]
+    ],
+    "author": "Viliam Sedliak"
   },
   {
     "id": "780878307499b9aa",
@@ -3812,7 +3823,8 @@
     "summary": "Announces that Android Studio Quail 2 is stable for production use. Key changes include a redesigned Agent Mode that supports multiple parallel agent chats (each able to use different models), natively integrated memory leak profiling via LeakCanary, and context-aware crash remediation. Worktree support is not yet available and concurrent chats editing the same files can cause conflicts.",
     "topics": [
       "android-developers"
-    ]
+    ],
+    "author": "Android Developers"
   },
   {
     "id": "81302fcba0046a7e",
@@ -3887,7 +3899,8 @@
       "kmp",
       "gradle-plugin",
       "kotlin"
-    ]
+    ],
+    "author": "Isuru Rajapakse"
   },
   {
     "id": "35f61392d461adb8",
@@ -3901,7 +3914,8 @@
     "summary": "A follow-up describing a workaround for an ART bug on Android 16 where attaching a Java debugger (JDWP) to a large debuggable app causes an ABBA lock-ordering deadlock between the GC thread and ART's native debug layer, resulting in an ANR. The authors present a small native hook (packaged as the open-source JdwpSilencer library) that suppresses the JDWP event avalanche so the debugger can attach normally, while the official mainline ART fix is still pending. The post notes the hook is not universal and includes a kill switch for cases where it causes hangs after the first breakpoint.",
     "topics": [
       "android-api"
-    ]
+    ],
+    "author": "Vitaliy Gribko"
   },
   {
     "id": "d0fe45e91b2db02f",
@@ -3918,7 +3932,8 @@
       "architecture",
       "gradle",
       "version-catalog"
-    ]
+    ],
+    "author": "Bao Le"
   },
   {
     "id": "8373195d53ce8914",
@@ -3934,7 +3949,8 @@
       "compose",
       "navigation",
       "android-api"
-    ]
+    ],
+    "author": "Subhankar Bag"
   },
   {
     "id": "cc87c3fdc709c51f",
@@ -3951,7 +3967,8 @@
       "testing",
       "gradle",
       "kmp"
-    ]
+    ],
+    "author": "Bao Le"
   },
   {
     "id": "41ebfff8fd3ce57b",
@@ -3967,7 +3984,8 @@
       "architecture",
       "testing",
       "kotlin"
-    ]
+    ],
+    "author": "Bao Le"
   },
   {
     "id": "1547c19bafa08031",
@@ -3982,7 +4000,8 @@
     "topics": [
       "kotlin",
       "testing"
-    ]
+    ],
+    "author": "Gabor Berenyi"
   },
   {
     "id": "9a5edb9d7702ac5b",
@@ -3996,7 +4015,8 @@
     "summary": "Explains what causes ActivityNotFoundException in Android and how to reproduce it. The exception occurs when an implicit intent has no component available to handle its action, unlike explicit intents where the compiler can catch a missing activity. The article uses an ACTION_VIEW example and an AOSP emulator to demonstrate reproducing the error during development.",
     "topics": [
       "android-api"
-    ]
+    ],
+    "author": "Dilipchandar"
   },
   {
     "id": "4eb71d71252e8be3",
@@ -4012,7 +4032,8 @@
       "compose",
       "animation",
       "material3"
-    ]
+    ],
+    "author": "Prashant Panwar"
   },
   {
     "id": "116fc7504e14f08b",
@@ -4287,7 +4308,8 @@
     "date_uncertain": false,
     "summarized": false,
     "unfetchable": true,
-    "unfetchable_reason": "no-content"
+    "unfetchable_reason": "no-content",
+    "author": "CommonsWare"
   },
   {
     "id": "7eeaeee7f3c433b7",
@@ -4304,7 +4326,8 @@
       "jetbrains",
       "material3",
       "navigation"
-    ]
+    ],
+    "author": "olonho"
   },
   {
     "id": "196a192af461d46b",
@@ -4321,7 +4344,8 @@
       "jetbrains",
       "material3",
       "navigation"
-    ]
+    ],
+    "author": "olonho"
   },
   {
     "id": "c304a22ce9c503dc",
@@ -4337,7 +4361,8 @@
       "compose-multiplatform",
       "compose",
       "jetbrains"
-    ]
+    ],
+    "author": "olonho"
   },
   {
     "id": "76f8913334495b4a",
@@ -4353,7 +4378,8 @@
       "compose-multiplatform",
       "material3",
       "navigation"
-    ]
+    ],
+    "author": "olonho"
   },
   {
     "id": "5c492734d0b39eae",
@@ -4418,7 +4444,8 @@
     "summary": "A pre-release of the Arrow functional programming library for Kotlin, version 2.3.0-alpha.3. The changes include compatibility with result4K 3.0 and making prismFoci lazier in resolution.",
     "topics": [
       "kotlin"
-    ]
+    ],
+    "author": "serras"
   },
   {
     "id": "bde081e03055f52c",
@@ -5200,7 +5227,8 @@
     "source_id": "lib-compose-multiplatform",
     "excerpt": "org.jetbrains.compose. : :1.12.0-beta03+dev4497",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": false,
+    "author": "olonho"
   },
   {
     "id": "2a8d4a8167961ccf",

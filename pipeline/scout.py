@@ -28,6 +28,9 @@ STATE_DIR = ROOT / "state"
 HEALTH_FILE = STATE_DIR / "source_health.json"
 ARTICLES_FILE = STATE_DIR / "articles.json"
 
+sys.path.insert(0, str(ROOT))
+from pipeline.writers import load as writers_load, save as writers_save, upsert as writers_upsert
+
 # ── Constants ─────────────────────────────────────────────────────────────────
 ARTICLE_WINDOW_DAYS = 90
 DEFAULT_LOOKBACK_DAYS = 7
@@ -164,11 +167,80 @@ def strip_html(raw: str) -> str:
     return BeautifulSoup(raw, "html.parser").get_text(separator=" ", strip=True)
 
 
+BOT_AUTHORS = {"dependabot", "renovate", "github-actions"}
+
+
+def extract_author(entry) -> str:
+    """Best-available human author name from a feedparser entry, or "".
+
+    Prefers author_detail.name (clean), falls back to the raw author string.
+    Blogger feeds append " (noreply@blogger.com)" — strip any trailing email.
+    Release automation (github-actions[bot], dependabot, …) is not a writer, so
+    those are dropped — keeps both the byline and the writers registry clean.
+    """
+    name = ""
+    detail = getattr(entry, "author_detail", None)
+    if isinstance(detail, dict):
+        name = (detail.get("name") or "").strip()
+    if not name:
+        name = (getattr(entry, "author", "") or "").strip()
+    # Drop a trailing "(email@host)" the way Blogger/Atom feeds format it.
+    name = re.sub(r"\s*\([^)]*@[^)]*\)\s*$", "", name).strip()
+    low = name.lower()
+    if low.endswith("[bot]") or low in BOT_AUTHORS:
+        return ""
+    return name[:80]
+
+
+def source_feed_url(source: dict) -> Optional[str]:
+    """Return an explicit feed URL, or derive the YouTube channel Atom feed."""
+    feed_url = source.get("rss") or source.get("atom")
+    if feed_url:
+        return feed_url
+    if source.get("type") == "youtube" and source.get("channel_id"):
+        return f"https://www.youtube.com/feeds/videos.xml?channel_id={source['channel_id']}"
+    return None
+
+
+def youtube_video_id_from_entry(entry, url: str) -> str:
+    """Best-effort YouTube video id from feedparser metadata or URL."""
+    for key in ("yt_videoid", "yt_videoId", "youtube_videoid"):
+        val = getattr(entry, key, None)
+        if val:
+            return str(val)
+        try:
+            val = entry.get(key)
+            if val:
+                return str(val)
+        except Exception:
+            pass
+    m = re.search(
+        r"(?:youtu\.be/|youtube\.com/(?:watch\?v=|embed/|v/|shorts/))([A-Za-z0-9_-]{11})",
+        url or "",
+    )
+    return m.group(1) if m else ""
+
+
+def youtube_thumbnail_from_entry(entry) -> str:
+    """Extract a thumbnail URL from YouTube Atom media metadata when present."""
+    thumbs = getattr(entry, "media_thumbnail", None)
+    if not thumbs:
+        try:
+            thumbs = entry.get("media_thumbnail")
+        except Exception:
+            thumbs = None
+    if isinstance(thumbs, list) and thumbs:
+        first = thumbs[0]
+        if isinstance(first, dict):
+            return first.get("url", "")
+    return ""
+
+
 # ── Per-source scouting ───────────────────────────────────────────────────────
 
 def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple:
     """Returns (new_articles, feed_had_entries) — distinguishes parse failure from no-recent-articles."""
-    feed_url = source.get("rss") or source.get("atom")
+    feed_url = source_feed_url(source)
     if not feed_url:
         return [], False
 
@@ -184,6 +256,7 @@ def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple
     sid = source["id"]
     needs_filter = sid in KEYWORD_FILTER_SOURCE_IDS
     is_discussion = source.get("type") == "discussion"
+    is_youtube = source.get("type") == "youtube"
     new_articles: list[dict] = []
 
     for entry in feed.entries:
@@ -211,16 +284,22 @@ def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple
             if not is_relevant(title + " " + excerpt):
                 continue
 
-        new_articles.append({
+        article = {
             "id": uid,
             "title": title,
             "url": url,
             "date": date.strftime("%Y-%m-%d") if date else None,
             "source_id": sid,
+            "author": extract_author(entry),
             "excerpt": excerpt,
             "date_uncertain": date_uncertain,
             "summarized": False,
-        })
+        }
+        if is_youtube:
+            article["media_type"] = "video"
+            article["video_id"] = youtube_video_id_from_entry(entry, url)
+            article["thumbnail"] = youtube_thumbnail_from_entry(entry)
+        new_articles.append(article)
 
     return new_articles, True
 
@@ -460,7 +539,7 @@ def scout_source(
     feed_succeeded = False
 
     # RSS/Atom first
-    if source.get("rss") or source.get("atom"):
+    if source_feed_url(source):
         new_articles, feed_succeeded = scout_via_rss(source, last_date, existing_ids)
 
     # Scrape fallback: only when RSS/Atom failed entirely (not just no recent articles)
@@ -539,6 +618,7 @@ def main() -> None:
     health: dict = json.loads(HEALTH_FILE.read_text(encoding="utf-8")) if HEALTH_FILE.exists() else {}
     articles: list[dict] = json.loads(ARTICLES_FILE.read_text(encoding="utf-8")) if ARTICLES_FILE.exists() else []
     existing_ids: set[str] = {a["id"] for a in articles}
+    writers = writers_load()
 
     cutoff = datetime.now(tz=timezone.utc) - timedelta(days=ARTICLE_WINDOW_DAYS)
 
@@ -565,6 +645,8 @@ def main() -> None:
             articles.extend(new_articles)
             existing_ids.update(a["id"] for a in new_articles)
             total_new += len(new_articles)
+            for a in new_articles:
+                writers_upsert(writers, a.get("author", ""), a.get("source_id", ""), a.get("date"))
             print(f"  +{len(new_articles)} articles")
 
         effective_last = most_recent or (last_date if last_str else None)
@@ -586,6 +668,7 @@ def main() -> None:
 
     write_atomic(HEALTH_FILE, health)
     write_atomic(ARTICLES_FILE, articles)
+    writers_save(writers)
 
     print(f"\n{'─' * 50}")
     print(f"  {total_new} new articles from {len(sources)} sources")

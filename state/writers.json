@@ -1,0 +1,189 @@
+{
+  "alyona-chernyaeva": {
+    "articles": 1,
+    "first_seen": "2026-07-08",
+    "last_seen": "2026-07-08",
+    "name": "Alyona Chernyaeva",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "kotlin-blog"
+    ]
+  },
+  "android-developers": {
+    "articles": 3,
+    "first_seen": "2026-07-06",
+    "last_seen": "2026-07-14",
+    "name": "Android Developers",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "android-developers-blog"
+    ]
+  },
+  "bao-le": {
+    "articles": 3,
+    "first_seen": "2026-07-17",
+    "last_seen": "2026-07-17",
+    "name": "Bao Le",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "proandroiddev"
+    ]
+  },
+  "bcorso": {
+    "articles": 1,
+    "first_seen": "2026-07-06",
+    "last_seen": "2026-07-06",
+    "name": "bcorso",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "lib-hilt-dagger"
+    ]
+  },
+  "commonsware": {
+    "articles": 2,
+    "first_seen": "2026-07-08",
+    "last_seen": "2026-07-15",
+    "name": "CommonsWare",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "commonsware"
+    ]
+  },
+  "dilipchandar": {
+    "articles": 1,
+    "first_seen": "2026-07-17",
+    "last_seen": "2026-07-17",
+    "name": "Dilipchandar",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "proandroiddev"
+    ]
+  },
+  "gabor-berenyi": {
+    "articles": 1,
+    "first_seen": "2026-07-17",
+    "last_seen": "2026-07-17",
+    "name": "Gabor Berenyi",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "proandroiddev"
+    ]
+  },
+  "isuru-rajapakse": {
+    "articles": 1,
+    "first_seen": "2026-07-19",
+    "last_seen": "2026-07-19",
+    "name": "Isuru Rajapakse",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "proandroiddev"
+    ]
+  },
+  "jelena-ilic": {
+    "articles": 1,
+    "first_seen": "2026-07-03",
+    "last_seen": "2026-07-03",
+    "name": "Jelena Ilic",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "kotlin-blog"
+    ]
+  },
+  "mkmuir0": {
+    "articles": 1,
+    "first_seen": "2026-07-09",
+    "last_seen": "2026-07-09",
+    "name": "mkmuir0",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "lib-ksp"
+    ]
+  },
+  "olga-vorobeva": {
+    "articles": 1,
+    "first_seen": "2026-07-09",
+    "last_seen": "2026-07-09",
+    "name": "Olga Vorobeva",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "kotlin-blog"
+    ]
+  },
+  "olonho": {
+    "articles": 5,
+    "first_seen": "2026-07-15",
+    "last_seen": "2026-07-20",
+    "name": "olonho",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "lib-compose-multiplatform"
+    ]
+  },
+  "prashant-panwar": {
+    "articles": 1,
+    "first_seen": "2026-07-17",
+    "last_seen": "2026-07-17",
+    "name": "Prashant Panwar",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "proandroiddev"
+    ]
+  },
+  "serras": {
+    "articles": 3,
+    "first_seen": "2026-07-09",
+    "last_seen": "2026-07-16",
+    "name": "serras",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "lib-arrow"
+    ]
+  },
+  "subhankar-bag": {
+    "articles": 1,
+    "first_seen": "2026-07-17",
+    "last_seen": "2026-07-17",
+    "name": "Subhankar Bag",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "proandroiddev"
+    ]
+  },
+  "viliam-sedliak": {
+    "articles": 1,
+    "first_seen": "2026-07-17",
+    "last_seen": "2026-07-17",
+    "name": "Viliam Sedliak",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "kotlin-blog"
+    ]
+  },
+  "vitaliy-gribko": {
+    "articles": 1,
+    "first_seen": "2026-07-19",
+    "last_seen": "2026-07-19",
+    "name": "Vitaliy Gribko",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "proandroiddev"
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+# Crossword pool — one puzzle runs as an interlude per edition.
+#
+# Author puzzles by CURATING WORDS, not by drawing grids: list answers + clues
+# and pipeline/_assemble/crossword.py fits them into a blocked grid and numbers
+# it (greedy placement, crossings where letters match, blocks elsewhere). Reorder
+# or swap words and re-run to reshape the grid.
+#
+# Answers: A-Z only, no spaces. Keep clues fair but knowledge-testing.
+# Community PRs welcome — add a puzzle below (same shape).
+
+puzzles:
+  - id: kotlin-1
+    title: "Kotlin — #1"
+    theme: kotlin
+    words:
+      - answer: SUSPEND
+        clue: "Modifier for a function that can pause and resume"
+      - answer: SEQUENCE
+        clue: "Lazy collection, evaluated element-by-element on demand"
+      - answer: REIFIED
+        clue: "Keeps an inline function's type parameter available at runtime"
+      - answer: ENTRIES
+        clue: "Enum member accessor that replaced values()"
+      - answer: CONTEXT
+        clue: "___ parameters: the reworked successor to context receivers"
+      - answer: SEALED
+        clue: "Restricts a class hierarchy to a known set of subtypes"
+      - answer: INLINE
+        clue: "Copies a function's body into each call site"
+      - answer: VALUE
+        clue: "@JvmInline ___ class: a zero-overhead wrapper type"
+      - answer: GUARD
+        clue: "when ___ condition, e.g. 'is Foo if (x.ready)' (Kotlin 2.1)"
+      - answer: WASM
+        clue: "Kotlin's WebAssembly compilation target (wasmJs)"
+      - answer: COROUTINE
+        clue: "Suspendable, lightweight unit of concurrency"
+      - answer: FLOW
+        clue: "Cold asynchronous stream of values"
+      - answer: LAUNCH
+        clue: "Coroutine builder that fires and forgets, returning a Job"
+      - answer: ASYNC
+        clue: "Coroutine builder returning a Deferred"
+      - answer: CHANNEL
+        clue: "Hot pipe that passes values between coroutines"
+      - answer: LATEINIT
+        clue: "Promise to initialise a non-null 'var' later"
+      - answer: COMPANION
+        clue: "Object holding a class's static-like members"
+      - answer: ELVIS
+        clue: "Nickname for the ?: operator"
+      - answer: OPERATOR
+        clue: "Modifier to overload +, get, or invoke"
+      - answer: COMPOSABLE
+        clue: "@___ function that emits Jetpack Compose UI"
+      - answer: REMEMBER
+        clue: "Compose call that caches a value across recompositions"
+      - answer: INFIX
+        clue: "Modifier letting you call a function without dots or parens"
