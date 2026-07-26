@@ -490,7 +490,10 @@ body { min-height: 100vh; }
        ticker drops its marquee animation and becomes a touch-swipeable strip
        so every topic is reachable. */
     @media (max-width: 700px) {
-      #rowLayout { display: none; }
+      /* Paged is available on mobile via the Layout toggle, but a fixed-height
+         page would clip tall content — let paged pages scroll internally on
+         phones so nothing is trapped (scroll layout is still the default). */
+      html[data-layout="paged"] .pr-page { overflow-y: auto; }
       /* The settings gear sits on the left of the stacked mobile masthead, so a
          right-anchored panel runs off the left edge. Anchor it left and clamp
          its width to the viewport so it's always fully on-screen. (Selector is

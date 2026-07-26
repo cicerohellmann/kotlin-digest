@@ -40,7 +40,7 @@
     // which strands tall pages (e.g. the trends list) on phones. Set pre-paint
     // to avoid a flash of the paged layout.
     var narrow = window.innerWidth <= 700;
-    el.dataset.layout = (narrow || r.layout==='scroll') ? 'scroll' : 'paged';
+    el.dataset.layout = r.layout ? r.layout : (narrow ? 'scroll' : 'paged');
     // ?nojs — preview the prerendered static digest exactly as a no-JS visitor
     // or crawler sees it: the interactive reader is skipped (see boot) and its
     // JS-only chrome is hidden. Set pre-paint so the controls never flash.
@@ -202,7 +202,7 @@ let state = {
   panelOpen: false,
   // Reading settings (mirrored in the kd_reader cookie; applied pre-paint by the
   // head bootstrap, so these defaults are only used when no cookie is present).
-  reader: { theme: 'light', font: 'serif', size: 'm', layout: 'paged' },
+  reader: { theme: 'light', font: 'serif', size: 'm', layout: '' },
 };
 
 const READER_FONTS = {
@@ -925,12 +925,12 @@ function renderScroll() {
 }
 
 // Narrow viewports are forced to the scroll feed regardless of the saved
-// preference — paged clips overflow with no scroll, so it traps content on
-// phones. The layout toggle is hidden on mobile (see #rowLayout), so this is
-// the single source of truth for what actually renders.
+// preference. When the reader hasn't explicitly chosen, default by viewport:
+// scroll on phones (paged pages are short there), paged on desktop. An explicit
+// choice (via the Layout toggle) is honoured on every screen.
 const MOBILE_MAX = 700;
 function effectiveLayout() {
-  return window.innerWidth <= MOBILE_MAX ? 'scroll' : state.reader.layout;
+  return state.reader.layout || (window.innerWidth <= MOBILE_MAX ? 'scroll' : 'paged');
 }
 
 // Single render entry point — dispatches on the effective reading layout.
@@ -1280,7 +1280,7 @@ function applyReaderDOM() {
   if (r.theme === 'night') el.dataset.night = '1'; else el.removeAttribute('data-night');
   el.style.setProperty('--read-font', READER_FONTS[r.font]);
   el.style.setProperty('--read-scale', READER_SCALES[r.size]);
-  el.dataset.layout = (window.innerWidth <= MOBILE_MAX) ? 'scroll' : r.layout;
+  el.dataset.layout = effectiveLayout();
 }
 
 function syncSettingsUI() {
@@ -1288,7 +1288,7 @@ function syncSettingsUI() {
   const mark = (seg, val) => document.querySelectorAll('#' + seg + ' button')
     .forEach(b => b.classList.toggle('active', b.dataset.v === val));
   mark('segTheme', r.theme); mark('segFont', r.font);
-  mark('segSize', r.size);   mark('segLayout', r.layout);
+  mark('segSize', r.size);   mark('segLayout', effectiveLayout());
 }
 
 function setTheme(v)  { state.reader.theme = v;  applyReaderDOM(); saveReader(); syncSettingsUI(); }
