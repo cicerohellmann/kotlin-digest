@@ -27,6 +27,54 @@ MANIFEST_FILE = ROOT / "state" / "editions.json"
 FEATURED_FILE = ROOT / "state" / "featured.json"
 
 
+def _load_pins() -> dict:
+    try:
+        return json.loads(FEATURED_FILE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def _entry(pins: dict, edition: str) -> dict:
+    """Normalize an edition's pin entry to {'cover': str, 'also': [str]}.
+
+    Backward-compatible: a bare string is the legacy cover-only form.
+    """
+    raw = pins.get(edition, {})
+    if isinstance(raw, str):
+        return {"cover": raw, "also": []}
+    if isinstance(raw, dict):
+        return {"cover": raw.get("cover", ""), "also": list(raw.get("also", []))}
+    return {"cover": "", "also": []}
+
+
+def _save_entry(pins: dict, edition: str, entry: dict) -> None:
+    # Collapse to the legacy string form when there are no also-pins, so the
+    # file stays minimal and old readers keep working.
+    pins[edition] = entry["cover"] if not entry["also"] else entry
+    FEATURED_FILE.write_text(json.dumps(pins, indent=2) + "\n", encoding="utf-8")
+
+
+def _match_token(token: str, week_articles: list, flag: str):
+    """Resolve one id-or-title-substring token to an article id, or None."""
+    token = token.strip()
+    if not token:
+        return None
+    hit = next((a for a in week_articles if a["id"] == token), None)
+    if hit:
+        return hit["id"]
+    needle = token.lower()
+    hits = [a for a in week_articles if needle in a.get("title", "").lower()]
+    if len(hits) == 1:
+        return hits[0]["id"]
+    if len(hits) > 1:
+        print(f"  [!] {flag} '{token}' matched {len(hits)} articles; be more specific:")
+        for a in hits:
+            print(f"        {a['id']}  {a.get('title','')[:70]}")
+    else:
+        print(f"  [!] {flag} '{token}' matched no article in this edition.")
+    return None
+
+
 def resolve_featured(edition: str, feature_arg, week_articles: list) -> str:
     """Return the pinned cover article id for this edition.
 
@@ -34,34 +82,45 @@ def resolve_featured(edition: str, feature_arg, week_articles: list) -> str:
     articles and persist the choice in state/featured.json. Without it, reuse a
     previously saved pin. Returns "" for the default score-based cover.
     """
-    try:
-        pins = json.loads(FEATURED_FILE.read_text(encoding="utf-8"))
-    except (FileNotFoundError, json.JSONDecodeError):
-        pins = {}
+    pins = _load_pins()
+    entry = _entry(pins, edition)
 
     if feature_arg:
-        needle = feature_arg.strip().lower()
-        match = next((a for a in week_articles if a["id"] == feature_arg), None)
-        if not match:
-            hits = [a for a in week_articles if needle in a.get("title", "").lower()]
-            if len(hits) == 1:
-                match = hits[0]
-            elif len(hits) > 1:
-                print(f"  [!] --feature '{feature_arg}' matched {len(hits)} articles; "
-                      f"be more specific:")
-                for a in hits:
-                    print(f"        {a['id']}  {a.get('title','')[:70]}")
-                return pins.get(edition, "")
-        if not match:
-            print(f"  [!] --feature '{feature_arg}' matched no article in {edition}; "
-                  f"using default cover.")
-            return pins.get(edition, "")
-        pins[edition] = match["id"]
-        FEATURED_FILE.write_text(json.dumps(pins, indent=2) + "\n", encoding="utf-8")
-        print(f"  Cover pinned → {match.get('title','')[:60]} ({match['id']})")
-        return match["id"]
+        cover = _match_token(feature_arg, week_articles, "--feature")
+        if cover:
+            entry["cover"] = cover
+            _save_entry(pins, edition, entry)
+            title = next((a.get("title", "") for a in week_articles if a["id"] == cover), "")
+            print(f"  Cover pinned → {title[:60]} ({cover})")
+            return cover
+        print("  [!] falling back to previous/default cover.")
 
-    return pins.get(edition, "")
+    return entry["cover"]
+
+
+def resolve_also(edition: str, also_arg, week_articles: list) -> list:
+    """Return the hand-picked 'Also inside this issue' ids for this edition.
+
+    With --also (comma-separated ids or title substrings), resolve in order and
+    persist. Without it, reuse the saved list. Empty = auto pick in the reader.
+    """
+    pins = _load_pins()
+    entry = _entry(pins, edition)
+
+    if also_arg is not None:
+        ids, seen = [], set()
+        for token in also_arg.split(","):
+            if not token.strip():
+                continue
+            mid = _match_token(token, week_articles, "--also")
+            if mid and mid not in seen:
+                ids.append(mid); seen.add(mid)
+        entry["also"] = ids
+        _save_entry(pins, edition, entry)
+        print(f"  Also-inside pinned → {len(ids)} article(s)")
+        return ids
+
+    return entry["also"]
 
 sys.path.insert(0, str(ROOT))
 
@@ -144,6 +203,10 @@ def main() -> None:
     parser.add_argument("--feature", default=None,
                         help="pin the cover story: an article id or a title substring. "
                              "Saved per edition so later re-assembles keep it.")
+    parser.add_argument("--also", default=None,
+                        help="pin the 'Also inside this issue' teasers: a comma-separated "
+                             "list of ids or title substrings, in order (up to 4 shown). "
+                             "Saved per edition. Omit to keep the auto pick.")
     args = parser.parse_args()
 
     start, end = edition_to_dates(args.edition)
@@ -207,6 +270,7 @@ def main() -> None:
     # else the default top-scoring article in the top chapter.
     placed = [a for ch in chapters for a in ch["articles"]]
     featured_id = resolve_featured(args.edition, args.feature, placed)
+    also_ids = resolve_also(args.edition, args.also, placed)
 
     # Comic interludes: one up top + one per COMIC_EVERY cards, no repeats.
     needed = comics_needed([len(ch["articles"]) for ch in chapters])
@@ -225,6 +289,7 @@ def main() -> None:
         comics=comics,
         comic_every=COMIC_EVERY,
         featured_id=featured_id,
+        also_ids=also_ids,
     )
     html = inject_data(template, data_block)
 

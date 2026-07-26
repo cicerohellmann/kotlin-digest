@@ -85,6 +85,7 @@ def build_data_block(
     comics: list = None,
     comic_every: int = 14,
     featured_id: str = "",
+    also_ids: list = None,
 ) -> str:
     lines = ["// ══ DATA ════════════════════════════════════════════════════════════════════", ""]
 
@@ -94,6 +95,9 @@ def build_data_block(
     # FEATURED_ID — pins the cover story to a specific article id; empty falls
     # back to the top-scoring article in the top chapter.
     lines.append("const FEATURED_ID = {};".format(json.dumps(featured_id or "")))
+    # ALSO_IDS — hand-picked "Also inside this issue" teasers, in order. Empty
+    # falls back to the auto pick (top article of each non-cover chapter).
+    lines.append("const ALSO_IDS = {};".format(json.dumps(also_ids or [])))
     lines.append("")
 
     # TOPICS — one entry per cluster (for the filter UI)
