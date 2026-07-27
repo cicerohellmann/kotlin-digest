@@ -117,6 +117,9 @@ def render_sources(sources: list, out_path: Path) -> None:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>Kotlin Digest — Sources</title>
   <script>if(document.cookie.match(/kd_reader=[^;]*%22theme%22%3A%22night%22/)||document.cookie.indexOf('kd_night=1')>=0)document.documentElement.dataset.night='1';</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -186,6 +189,9 @@ def render_archive(manifest: list, out_path: Path) -> None:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>Kotlin Digest — Archive</title>
   <script>if(document.cookie.match(/kd_reader=[^;]*%22theme%22%3A%22night%22/)||document.cookie.indexOf('kd_night=1')>=0)document.documentElement.dataset.night='1';</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
