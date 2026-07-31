@@ -44,7 +44,7 @@ KOTLIN_ANDROID_KEYWORDS = {
 }
 
 # Sources whose content must pass a keyword filter before being stored
-KEYWORD_FILTER_SOURCE_IDS = {"jetbrains-blog"}
+KEYWORD_FILTER_SOURCE_IDS = {"jetbrains-blog", "goto-conferences-youtube", "intellij-idea-youtube"}
 
 HTTP_HEADERS = {
     "User-Agent": "KotlinDigest/1.0 (+https://github.com/cicerohellmann/kotlin-digest)"

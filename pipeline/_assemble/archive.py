@@ -122,8 +122,7 @@ def render_sources(sources: list, out_path: Path) -> None:
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>Kotlin Digest — Sources</title>
   <script>if(document.cookie.match(/kd_reader=[^;]*%22theme%22%3A%22night%22/)||document.cookie.indexOf('kd_night=1')>=0)document.documentElement.dataset.night='1';</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="design.css">
   <style>
     body {{ min-height: 100vh; }}
@@ -194,8 +193,7 @@ def render_archive(manifest: list, out_path: Path) -> None:
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>Kotlin Digest — Archive</title>
   <script>if(document.cookie.match(/kd_reader=[^;]*%22theme%22%3A%22night%22/)||document.cookie.indexOf('kd_night=1')>=0)document.documentElement.dataset.night='1';</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="design.css">
   <style>
     body {{ min-height: 100vh; }}

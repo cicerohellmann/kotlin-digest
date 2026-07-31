@@ -2593,22 +2593,5 @@ if (document.documentElement.dataset.nojs === '1') {
 }
 </script>
 
-<!-- Cloudflare Web Analytics — cookieless, aggregate, no PII (see /tracking.html).
-     Loads ONLY if a token is configured AND the visitor hasn't asked not to be
-     tracked (Do Not Track / Global Privacy Control). Inert until CF_BEACON_TOKEN
-     is set to the token from the Cloudflare Web Analytics dashboard. -->
-<script>
-(function () {
-  var CF_BEACON_TOKEN = '';   // ← paste your Cloudflare Web Analytics token here
-  var dnt = navigator.doNotTrack === '1' || window.doNotTrack === '1'
-         || navigator.msDoNotTrack === '1' || navigator.globalPrivacyControl === true;
-  if (!CF_BEACON_TOKEN || dnt) return;
-  var s = document.createElement('script');
-  s.defer = true;
-  s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-  s.setAttribute('data-cf-beacon', JSON.stringify({ token: CF_BEACON_TOKEN }));
-  document.head.appendChild(s);
-})();
-</script>
 </body>
 </html>
