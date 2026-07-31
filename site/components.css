@@ -503,6 +503,13 @@ body { min-height: 100vh; }
         right: auto; left: 0;
         width: min(232px, calc(100vw - 2.5rem));
       }
+      /* Paged layout stacks the masthead differently and puts the gear on the
+         RIGHT, so the left anchor above runs the panel off the right edge.
+         Anchor it to the right there instead (scroll, the mobile default,
+         keeps the left anchor). Either way the width clamp keeps it on-screen. */
+      html[data-layout="paged"] .settings-wrap .settings-panel {
+        left: auto; right: 0;
+      }
     }
 
     /* No-JS preview (?nojs) and genuine no-JS visitors get the prerendered
