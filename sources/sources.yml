@@ -36,6 +36,46 @@ sources:
     topics: [kotlin, jetbrains, kmp, compose]
     notes: "Official Kotlin channel; ingested from YouTube Atom feed derived from channel_id"
 
+  - id: android-developers-youtube
+    name: "Android Developers — YouTube"
+    url: "https://www.youtube.com/@AndroidDevelopers"
+    channel_id: "UCVHFbqXqoYvEWM1Ddxl0QDg"
+    type: youtube
+    language: en
+    cadence_days: 3
+    topics: [android, compose, jetpack, kotlin]
+    notes: "Official Android Developers channel; keyless channel RSS via channel_id"
+
+  - id: intellij-idea-youtube
+    name: "IntelliJ IDEA (JetBrains) — YouTube"
+    url: "https://www.youtube.com/@intellijidea"
+    channel_id: "UC4ogdcPcIAOOMJktgBMhQnQ"
+    type: youtube
+    language: en
+    cadence_days: 5
+    topics: [kotlin, jetbrains, tooling, ide]
+    notes: "JetBrains IntelliJ IDEA channel; Kotlin tooling/IDE content via channel RSS"
+
+  - id: goto-conferences-youtube
+    name: "GOTO Conferences — YouTube"
+    url: "https://www.youtube.com/@GOTO"
+    channel_id: "UCRKbuSy6p5iDoql-U9Im7UQ"
+    type: youtube
+    language: en
+    cadence_days: 5
+    topics: [backend, architecture, jvm, kotlin]
+    notes: "GOTO Conferences talks; backend/architecture/JVM. Keyword-filtered for Kotlin/JVM relevance"
+
+  - id: droidcon-italy-youtube
+    name: "Droidcon Italy — YouTube"
+    url: "https://www.youtube.com/@DroidconItaly"
+    channel_id: "UC9f8652addezs8ZUuKPB4Ow"
+    type: youtube
+    language: en
+    cadence_days: 30
+    topics: [android, kotlin, compose, mobile]
+    notes: "Droidcon Italy conference talks; seasonal cadence around the event"
+
   - id: android-developers-blog
     name: "Android Developers Blog"
     url: "https://android-developers.googleblog.com/"

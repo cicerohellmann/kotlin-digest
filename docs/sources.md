@@ -87,6 +87,12 @@ If no date is detectable, the article is ingested but flagged `date_uncertain: t
 - Renderable in the weekly digest with a no-cookie click-to-load embed facade
 - Avoid playlist roundups, repost channels, and channels that mostly curate other people's videos
 
+**How videos are found and evaluated** (no API key required):
+- **Found**: each registered channel's keyless Atom feed is polled by `scout.py`, exactly like an RSS blog. New videos are detected by `published` date (same new-by-date logic as articles) and stored with `media_type: video` + `video_id`.
+- **Evaluated**: videos run through the **same** topic-bible model as articles — `bible.py` applies the `youtube` source weight (`2.0`, comparable to a blog) as a mention boost, `summarize.py` tags topics from title + description, and `assemble.py` places them into chapters by topic score. There is no separate video ranking path.
+- **Relevance gate for general channels**: broad channels (e.g. GOTO Conferences, IntelliJ IDEA) are added to `KEYWORD_FILTER_SOURCE_IDS`, so a video is only ingested if its title/description matches `KOTLIN_ANDROID_KEYWORDS`. Focused channels (Kotlin, Android Developers) skip the gate.
+- **Seed channels**: Kotlin by JetBrains, Android Developers, IntelliJ IDEA (filtered), GOTO Conferences (filtered), Droidcon Italy.
+
 ### `slack-mirror`
 - Requires a public Slack export or mirror service
 - Ingested as topic signals only (not as full articles)
