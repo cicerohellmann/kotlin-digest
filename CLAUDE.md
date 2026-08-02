@@ -21,6 +21,7 @@ docs/                   — architecture and design docs (read these before maki
 - `docs/sources.md` — source health states, date detection strategies, per-type ingestion
 - `docs/rollup.md` — protocol for bulky library releases (collapse → digest → display)
 - `docs/classifier.md` — code-snippet selection criteria (plain Kotlin; build highlights via Pygments)
+- `docs/content-rights.md` — binding rules for aggregating others' work (summarize-don't-republish, attribution, paywalls, snippet citation, no affiliate)
 
 ## Pipeline stages (implementation order)
 
