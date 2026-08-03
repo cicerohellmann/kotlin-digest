@@ -10,6 +10,7 @@ scoring:
   source_weights:
     conference: 3.0
     blog: 2.0
+    video: 2.2
     changelog: 2.5            # library releases are high-signal
     news: 1.5
     youtube: 2.0             # video talks/updates — comparable to a blog post

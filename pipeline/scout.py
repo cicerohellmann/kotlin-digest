@@ -14,7 +14,7 @@ import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 import feedparser
 import httpx
@@ -56,6 +56,11 @@ HTTP_HEADERS = {
 def normalize_url(url: str) -> str:
     """Strip query params and trailing slash for stable URL-based dedup."""
     p = urlparse(url)
+    host = p.netloc.lower()
+    if host in {"youtube.com", "www.youtube.com", "m.youtube.com"} and p.path == "/watch":
+        query = dict(parse_qsl(p.query))
+        if query.get("v"):
+            return urlunparse((p.scheme, p.netloc, p.path, "", urlencode({"v": query["v"]}), ""))
     return urlunparse((p.scheme, p.netloc, p.path.rstrip("/"), "", "", ""))
 
 
@@ -63,9 +68,55 @@ def article_id(url: str) -> str:
     return hashlib.sha1(normalize_url(url).encode()).hexdigest()[:16]
 
 
+def is_youtube_short(url: str) -> bool:
+    p = urlparse(url)
+    host = p.netloc.lower()
+    return host in {"youtube.com", "www.youtube.com", "m.youtube.com"} and p.path.startswith("/shorts/")
+
+
+def looks_like_live_video(title: str, excerpt: str) -> bool:
+    title_l = (title or "").lower()
+    excerpt_l = (excerpt or "").lower()
+    return bool(
+        re.search(r"\b(livestream|live stream|streamed live|watch live|going live)\b", title_l)
+        or re.search(r"^\s*live\s*[:|-]", title_l)
+        or re.search(r"\b(streamed live|watch live|going live)\b", excerpt_l)
+    )
+
+
+def is_video_source(source: dict) -> bool:
+    return source.get("type") in {"youtube", "video"}
+
+
+def video_filter_reason(source: dict, url: str, title: str, excerpt: str) -> Optional[str]:
+    """Return a source-configured skip reason for a video entry, or None."""
+    if not is_video_source(source):
+        return None
+
+    config = source.get("video") or {}
+    if config.get("include_shorts", True) is False and is_youtube_short(url):
+        return "short"
+    if config.get("include_live", True) is False and looks_like_live_video(title, excerpt):
+        return "live"
+
+    text = f"{title} {excerpt}".lower()
+    for term in config.get("exclude_terms", []) or []:
+        if str(term).lower() in text:
+            return f"excluded-term:{term}"
+
+    return None
+
+
 # ── Date parsing ──────────────────────────────────────────────────────────────
 
 def _parse_iso(s: str) -> Optional[datetime]:
+    raw = s.strip()
+    try:
+        dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except ValueError:
+        pass
+
     for fmt in (
         "%Y-%m-%dT%H:%M:%S%z",
         "%Y-%m-%dT%H:%M:%SZ",
@@ -73,7 +124,7 @@ def _parse_iso(s: str) -> Optional[datetime]:
         "%Y-%m-%d",
     ):
         try:
-            dt = datetime.strptime(s[:len(fmt)], fmt)
+            dt = datetime.strptime(raw, fmt)
             return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
         except ValueError:
             continue
@@ -128,16 +179,27 @@ def extract_date_from_html(soup: BeautifulSoup, url: str) -> tuple:
         if dt:
             return dt, False
 
-    # 2. JSON-LD datePublished
+    # 2. JSON-LD datePublished / uploadDate
+    def iter_jsonld_dates(data):
+        if isinstance(data, dict):
+            for key in ("datePublished", "uploadDate"):
+                if data.get(key):
+                    yield data[key]
+            graph = data.get("@graph")
+            if isinstance(graph, list):
+                for item in graph:
+                    yield from iter_jsonld_dates(item)
+        elif isinstance(data, list):
+            for item in data:
+                yield from iter_jsonld_dates(item)
+
     for script in soup.find_all("script", type="application/ld+json"):
         try:
             data = json.loads(script.string or "")
-            if isinstance(data, dict):
-                dp = data.get("datePublished")
-                if dp:
-                    dt = parse_date_str(dp)
-                    if dt:
-                        return dt, False
+            for raw_date in iter_jsonld_dates(data):
+                dt = parse_date_str(raw_date)
+                if dt:
+                    return dt, False
         except Exception:
             pass
 
@@ -245,7 +307,10 @@ def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple
         return [], False
 
     try:
-        feed = feedparser.parse(feed_url)
+        with httpx.Client(timeout=15, follow_redirects=True, headers=HTTP_HEADERS) as client:
+            resp = client.get(feed_url)
+            resp.raise_for_status()
+        feed = feedparser.parse(resp.content)
     except Exception as exc:
         print(f"  [!] feedparser error: {exc}", file=sys.stderr)
         return [], False
@@ -256,7 +321,7 @@ def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple
     sid = source["id"]
     needs_filter = sid in KEYWORD_FILTER_SOURCE_IDS
     is_discussion = source.get("type") == "discussion"
-    is_youtube = source.get("type") == "youtube"
+    is_youtube = is_video_source(source)
     new_articles: list[dict] = []
 
     for entry in feed.entries:
@@ -278,6 +343,9 @@ def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple
         title = getattr(entry, "title", "").strip()
         raw_excerpt = getattr(entry, "summary", "") or getattr(entry, "description", "") or ""
         excerpt = strip_html(raw_excerpt)[:500]
+
+        if video_filter_reason(source, url, title, excerpt):
+            continue
 
         # Apply source-level keyword filter where required
         if needs_filter or is_discussion:

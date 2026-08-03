@@ -7,7 +7,7 @@ Assembled by the community.
 
 ## What this is
 
-Kotlin Digest scouts the Kotlin and Android official blogs, library releases, conference talks, individual developer writing — and assembles it into a weekly, chapter-structured edition hosted on GitHub Pages.
+Kotlin Digest scouts the Kotlin and Android official blogs, video channels, library releases, conference talks, individual developer writing — and assembles it into a weekly, chapter-structured edition hosted on GitHub Pages.
 
 Chapters are ordered by a living **Topic Bible**: a scored, decaying keyword graph that reflects what the community is actually talking about right now. Topics trending hard this week appear first. Topics fading appear later, or disappear until the discussion picks back up.
 
@@ -60,7 +60,7 @@ Open `sources/sources.yml` and add an entry:
   name: "Human-readable name"
   url: "https://example.com/"
   rss: "https://example.com/feed/"   # strongly preferred; include if it exists
-  type: blog                 # blog | conference | changelog | discussion
+  type: blog                 # blog | conference | video | changelog | discussion
   language: en               # ISO 639-1
   cadence_days: 14           # expected publish interval — used to detect staleness
   topics: [kotlin, compose]  # editorial hints; not exclusive

@@ -5,8 +5,9 @@ sys.path.insert(0, '.')
 from datetime import date
 from pipeline._assemble.dates import edition_to_dates
 from pipeline._assemble.scores import lookup_scores_at
-from pipeline._assemble.articles import filter_articles, score_articles, assign_col, cluster_articles
+from pipeline._assemble.articles import cluster_articles, filter_articles, score_articles, assign_col
 from pipeline._assemble.render import spark_from_history, inject_data, build_data_block, highlight_kotlin
+from pipeline._assemble.videos import apply_video_render_filters, video_kotlin_relevance
 from pipeline.assemble import build_structured_data
 
 
@@ -131,6 +132,83 @@ def test_score_articles_unknown_topics_zero():
     scores = {"kotlin": 50.0}
     result = score_articles(articles, scores)
     assert result[0]["placement_score"] == 0.0
+
+
+def test_video_kotlin_relevance_scores_strong_kotlin_video():
+    article = {
+        "title": "Clean Code In Kotlin",
+        "excerpt": "Kotlin functions and architecture",
+        "url": "https://www.youtube.com/watch?v=test",
+        "topics": ["kotlin"],
+    }
+    source = {"type": "video", "kotlin_relevance": 7}
+
+    score, reason = video_kotlin_relevance(article, source)
+
+    assert score == 10
+    assert "strong" in reason
+
+
+def test_video_kotlin_relevance_penalizes_low_signal_short():
+    article = {
+        "title": "From student to Android app developer",
+        "excerpt": "A GDE journey story",
+        "url": "https://www.youtube.com/shorts/test",
+        "topics": [],
+    }
+    source = {"type": "video", "kotlin_relevance": 7}
+
+    score, reason = video_kotlin_relevance(article, source)
+
+    assert score == 4
+    assert "penalty" in reason
+
+
+def test_apply_video_render_filters_threshold_and_cap():
+    sources = {
+        "sources": [
+            {
+                "id": "youtube-android",
+                "type": "video",
+                "kotlin_relevance": 7,
+                "video": {"min_kotlin_score": 8, "max_per_edition": 1},
+            }
+        ]
+    }
+    articles = [
+        {
+            "id": "a",
+            "source_id": "youtube-android",
+            "title": "Jetpack Compose deep dive",
+            "excerpt": "Compose for Android",
+            "url": "https://www.youtube.com/watch?v=a",
+            "placement_score": 50.0,
+            "date": "2026-07-07",
+        },
+        {
+            "id": "b",
+            "source_id": "youtube-android",
+            "title": "Kotlin Multiplatform architecture",
+            "excerpt": "KMP and Compose Multiplatform",
+            "url": "https://www.youtube.com/watch?v=b",
+            "placement_score": 20.0,
+            "date": "2026-07-07",
+        },
+        {
+            "id": "c",
+            "source_id": "youtube-android",
+            "title": "Play Console policy update",
+            "excerpt": "Policy requirements",
+            "url": "https://www.youtube.com/watch?v=c",
+            "placement_score": 90.0,
+            "date": "2026-07-07",
+        },
+    ]
+
+    kept, dropped = apply_video_render_filters(articles, sources)
+
+    assert [a["id"] for a in kept] == ["b"]
+    assert len(dropped) == 2
 
 
 def test_assign_col():

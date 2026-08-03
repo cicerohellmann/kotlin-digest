@@ -126,8 +126,9 @@ sys.path.insert(0, str(ROOT))
 
 from pipeline._assemble.dates import edition_to_dates
 from pipeline._assemble.scores import lookup_scores_at
-from pipeline._assemble.articles import filter_articles, score_articles, cluster_articles
+from pipeline._assemble.articles import cluster_articles, filter_articles, score_articles
 from pipeline._assemble.render import build_data_block, inject_data
+from pipeline._assemble.videos import apply_video_render_filters
 from pipeline._assemble.comics import select_comics, comics_needed, COMIC_EVERY
 from pipeline.rollup import collapse, load_rollups, write_queue
 from pipeline._assemble.archive import (
@@ -269,6 +270,14 @@ def main() -> None:
               "`python3.11 pipeline/rollup.py --apply <file>`, then re-run assemble")
 
     week_articles = score_articles(week_articles, scores)
+
+    before_video_filter = len(week_articles)
+    week_articles, dropped_videos = apply_video_render_filters(week_articles, sources_config)
+    if dropped_videos:
+        print(f"  video relevance filter dropped {before_video_filter - len(week_articles)} video(s)")
+        for article, reason in dropped_videos[:8]:
+            print(f"    · {article.get('source_id')}: {article.get('title', '')[:60]} ({reason})")
+
     print(f"  {len(week_articles)} articles in window")
 
     chapters = cluster_articles(week_articles, clusters)

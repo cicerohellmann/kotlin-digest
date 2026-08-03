@@ -34,6 +34,10 @@ sources:
     language: en
     cadence_days: 14
     topics: [kotlin, jetbrains, kmp, compose]
+    kotlin_relevance: 10
+    video:
+      min_kotlin_score: 6
+      max_per_edition: 3
     notes: "Official Kotlin channel; ingested from YouTube Atom feed derived from channel_id"
 
   - id: android-developers-youtube
@@ -44,7 +48,28 @@ sources:
     language: en
     cadence_days: 3
     topics: [android, compose, jetpack, kotlin]
+    kotlin_relevance: 7
+    video:
+      min_kotlin_score: 8
+      max_per_edition: 2
     notes: "Official Android Developers channel; keyless channel RSS via channel_id"
+
+  - id: philipp-lackner-youtube
+    name: "Philipp Lackner — YouTube"
+    url: "https://www.youtube.com/@PhilippLackner"
+    channel_id: "UCKNTZMRHPLXfqlbdOI7mCkg"
+    type: youtube
+    language: en
+    cadence_days: 7
+    topics: [android, kotlin, compose, kmp, architecture]
+    kotlin_relevance: 7
+    video:
+      include_shorts: false
+      include_live: false
+      min_kotlin_score: 8
+      max_per_edition: 2
+      exclude_terms: ["#ad", "#anzeige"]
+    notes: "Creator channel. Keep long-form educational videos, but skip Shorts, live streams, and sponsored hashtag posts."
 
   - id: intellij-idea-youtube
     name: "IntelliJ IDEA (JetBrains) — YouTube"
