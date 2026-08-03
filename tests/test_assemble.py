@@ -383,7 +383,7 @@ def test_build_data_block_emits_comic_dimensions():
         source_type_map={},
         clusters=[],
         comics=[{
-            "img": "comic.png",
+            "img": "/comics/comic.png",
             "alt": "Comic alt text.",
             "title": "Kotlin Comic",
             "permalink": "https://example.com/comic",
@@ -395,3 +395,21 @@ def test_build_data_block_emits_comic_dimensions():
     )
     assert "width:640" in block
     assert "height:480" in block
+
+
+def test_build_data_block_rejects_hotlinked_comic():
+    """DSGVO guardrail: a remote comic img must fail the build, never ship."""
+    import pytest
+
+    with pytest.raises(ValueError):
+        build_data_block(
+            edition="2026-W28",
+            start=date(2026, 7, 6),
+            end=date(2026, 7, 12),
+            chapters=[],
+            bible={},
+            source_type_map={},
+            clusters=[],
+            comics=[{"img": "https://imgs.xkcd.com/comics/x.png", "alt": "", "title": "",
+                     "permalink": "", "artist": "", "source": "", "width": 1, "height": 1}],
+        )

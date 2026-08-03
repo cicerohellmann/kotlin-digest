@@ -127,6 +127,14 @@ def build_data_block(
     # COMICS — interludes: one before the mag, one after every `comic_every` cards
     comic_items = []
     for c in (comics or []):
+        # DSGVO guardrail: comic images must be self-hosted (see comics._localize).
+        # A remote src would leak the reader's IP to a third party on page load.
+        img = c.get("img", "")
+        if not img.startswith("/"):
+            raise ValueError(
+                f"comic {c.get('id')!r}: img must be a root-absolute local path, "
+                f"got {img!r} — comics must be self-hosted, never hotlinked"
+            )
         comic_items.append(
             "  {{ img:{}, alt:{}, title:{}, permalink:{}, artist:{}, source:{}, width:{}, height:{} }}".format(
                 json.dumps(c.get("img", "")),
