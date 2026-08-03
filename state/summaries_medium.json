@@ -1,0 +1,607 @@
+[
+  {
+    "id": "922a563b87179f85",
+    "summary": "A list of interview questions for junior Android developers spanning Kotlin basics, Activity/Fragment lifecycles, MVVM architecture, Retrofit networking, Room storage, coroutines, and dependency injection, framed around what interviewers probe for beyond memorized definitions.",
+    "topics": [
+      "mvvm",
+      "coroutines",
+      "room",
+      "retrofit"
+    ]
+  },
+  {
+    "id": "a1cacf86e1ea05b9",
+    "summary": "Introduces Ferret, a Ktor plugin that captures HTTP and WebSocket traffic from a shared Kotlin Multiplatform networking layer into an on-device inspector for Android and iOS, replacing single-platform tools like Chucker or Flipper without proxies or certificates.",
+    "topics": [
+      "kmp",
+      "ktor",
+      "ios-interop"
+    ],
+    "code_snippet": "val client = HttpClient(OkHttp) {\n    install(Ferret) {\n        context = applicationContext // Android only\n    }\n}",
+    "snippet_label": "INSTALL FERRET PLUGIN"
+  },
+  {
+    "id": "dfd9062dac285241",
+    "summary": "A short beginner explainer, written in Burmese, on Kotlin's null safety system: nullable type syntax with the question-mark suffix, the compile-time distinction between String and String?, and using the safe call operator to access members of nullable variables.",
+    "topics": [
+      "kotlin"
+    ],
+    "code_snippet": "var name: String? = \"CodeWall Technologies\"\nname = null\n\nvar number: Int? = null\n\nprintln(name?.length)",
+    "snippet_label": "SAFE CALL OPERATOR"
+  },
+  {
+    "id": "a0d828400ae3e2d8",
+    "summary": "A roundup comparing mobile forex signal apps such as TradingView, MetaTrader 5, Autochartist, Investing.com, and NetDania by charting, alerts, and broker-linked execution, aimed at currency traders rather than app developers; no Kotlin or Android development content.",
+    "topics": []
+  },
+  {
+    "id": "4f8c9e9dbfaa5e97",
+    "summary": "Discusses the unofficial modified Instagram client 'Insta Pro APK', listing its rumored customization and privacy features while warning of security risks, then recommends using Instagram's official built-in privacy and security tools instead. Not developer-focused content.",
+    "topics": []
+  },
+  {
+    "id": "2738bb68e97bb175",
+    "summary": "A dead link to a since-deleted Medium post that appears to have contained a film script excerpt describing a scene with a character named Leo; no retrievable content and no software development relevance.",
+    "topics": []
+  },
+  {
+    "id": "47b1014dc88bfa26",
+    "summary": "Explores why large language models like ChatGPT and Gemini confidently output nonexistent Android API methods, framing it as a mobile-developer awareness piece on general LLM hallucination causes rather than a concrete Kotlin or Android implementation guide.",
+    "topics": []
+  },
+  {
+    "id": "c18b53eaa966a311",
+    "summary": "A Kotlin Academy newsletter issue explaining why GlobalScope causes memory leaks and poor testability compared to structured scopes like viewModelScope, covering ConcurrentHashMap and its unsynchronized extension functions like getOrPut, and clarifying that Compose modifiers act as ordered decorators, not parameters.",
+    "topics": [
+      "coroutines",
+      "compose",
+      "kotlin-stdlib"
+    ]
+  },
+  {
+    "id": "775e8377cb3d40d5",
+    "summary": "Argues senior Android interviews increasingly test system-design concepts (API gateways, caching, message queues, idempotency, circuit breakers) rather than lifecycle callbacks or RecyclerView trivia, citing Meta, DoorDash, and TikTok interview loops. Generic backend-interview listicle with no concrete Kotlin or Android implementation detail.",
+    "topics": []
+  },
+  {
+    "id": "4ca560f0790c1a85",
+    "summary": "Announces Mobile DevTools, a new Google Play app billed as a pocket network debugger for Android developers. Post is written in Azerbaijani; the scraped page content is mostly Medium's own JS/routing boilerplate with no technical detail on the debugger itself.",
+    "topics": [
+      "android-api"
+    ]
+  },
+  {
+    "id": "02162c66d7be3d90",
+    "summary": "Personal Indonesian-language narrative about a school OSIS handover ceremony and forming close friendships. Not related to Kotlin, Android, or software development.",
+    "topics": []
+  },
+  {
+    "id": "2d9e29f7d0234cbb",
+    "summary": "Walks through new features in Android Studio Panda 4 (2025.3.4) for Kotlin and Jetpack Compose developers, including Next Edit Prediction, Agent Web Search, and Planning Mode. Describes Gemini resolving a Gradle dependency-graph conflict and predicting related code edits across a file.",
+    "topics": [
+      "compose",
+      "android-developers"
+    ]
+  },
+  {
+    "id": "8e609daf33489adb",
+    "summary": "Promotional guide for downloading and registering on \"Pak3 Game,\" a lottery/earning-app APK with referral bonuses and cashback. Gambling/earn-money spam with no development content.",
+    "topics": []
+  },
+  {
+    "id": "dbd5536c2a7c6311",
+    "summary": "Third part of a series comparing live-gift animation formats, covering ByteDance's open-source PAG (Portable Animated Graphic). Explains its three mixable encoding modes (vector, bitmap sequence, video sequence) and shows PAGFile/PAGPlayer/PAGView integration on Android, iOS, and Web, plus a RecyclerView memory-leak gotcha.",
+    "topics": [
+      "animation",
+      "ios-interop"
+    ],
+    "code_snippet": "val pagView = findViewById<PAGView>(R.id.pag_view)\nval pagFile = PAGFile.Load(assets, \"gifts/rocket.pag\")\npagView.composition = pagFile\npagView.setRepeatCount(1) // 0 = loop forever\npagView.play()",
+    "snippet_label": "PLAY PAG ANIMATION"
+  },
+  {
+    "id": "2fc812eb763d73a9",
+    "summary": "Deleted Medium story with no retrievable content.",
+    "topics": []
+  },
+  {
+    "id": "9278593a3383f436",
+    "summary": "Explains why Android emulators bog down machines: each instance is a full virtual device with its own system image, memory, and storage, and ARM-to-x86 instruction translation adds overhead. Gives a rule of thumb for choosing emulator vs. physical device vs. remote device farm when testing.",
+    "topics": [
+      "testing"
+    ]
+  },
+  {
+    "id": "3fc66199e06abdaa",
+    "summary": "Walks through installing Flutter and the Android SDK command-line tools on Linux without Android Studio, covering package dependencies, SDK Manager, build-tools, and license acceptance for building Flutter apps for Linux and Android targets.",
+    "topics": []
+  },
+  {
+    "id": "e9f49da2bff6264d",
+    "summary": "Introduces Vortex, an open-source BLE-based tool for pairing Linux and Android devices without shared Wi-Fi, positioned as a lower battery-drain alternative to KDE Connect. Project announcement seeking community feedback, not a development tutorial.",
+    "topics": []
+  },
+  {
+    "id": "404e6cbf728cf4da",
+    "summary": "Describes diagnosing and fixing Google Play's 16 KB memory page size compatibility warning in a pure-Java legacy app, tracing incompatible native .so files to bundled third-party SDKs like Realm and updating build tooling and dependencies to resolve it.",
+    "topics": [
+      "android-api",
+      "gradle"
+    ]
+  },
+  {
+    "id": "284664741690556b",
+    "summary": "Promotes BackSpace, a Google Play fitness app offering short guided isometric back-stretching routines with pain-area personalization. Marketing copy for an end-user wellness app, not developer-focused content.",
+    "topics": []
+  },
+  {
+    "id": "b3f71519806ccad8",
+    "summary": "Explains solunar feeding windows and barometric pressure as fishing timing factors, then promotes FishCast, an offline app computing these on-device. Consumer angling content with no development detail.",
+    "topics": []
+  },
+  {
+    "id": "5999526e38910235",
+    "summary": "Explains how R8 in AGP 9.2 rewrites kotlinx.atomicfu's AtomicReferenceFieldUpdater calls to raw Unsafe field access, removing reflective overhead that dominated coroutine launch and cancel costs behind Modifier.clickable and LaunchedEffect—roughly doubling coroutine throughput without any code changes.",
+    "topics": [
+      "r8-proguard",
+      "coroutines",
+      "compose",
+      "gradle"
+    ],
+    "code_snippet": "class AtomicBenchmark {\n    private val jucRef = java.util.concurrent.atomic.AtomicReference(false)\n    private val atomicFuRef = kotlinx.atomicfu.atomic(false)\n    fun benchmarkJuc() = jucRef.compareAndSet(true, false)\n    fun benchmarkAtomicFu() = atomicFuRef.compareAndSet(true, false)\n}",
+    "snippet_label": "ATOMICFU BENCHMARK"
+  },
+  {
+    "id": "30cfc515bbcb1856",
+    "summary": "Walks through Kotlin's inline, noinline, and crossinline modifiers with bytecode-level before/after comparisons, showing how inlining avoids lambda allocations, enables non-local returns, and pairs with reified type parameters to bypass JVM type erasure.",
+    "topics": [
+      "kotlin"
+    ],
+    "code_snippet": "inline fun <reified T> isType(value: Any): Boolean {\n    return value is T\n}\n\nfun main() {\n    println(isType<String>(\"hello\"))\n    println(isType<Int>(\"hello\"))\n}",
+    "snippet_label": "REIFIED TYPE CHECK"
+  },
+  {
+    "id": "ee9ce526c45c77df",
+    "summary": "Goes beyond basic Room-plus-WorkManager advice to cover synchronization engine design: handling concurrent sync triggers with single-flight locking, offline-first writes, partial-failure retries, process death recovery, conflict resolution, soft deletes, pagination/delta sync, and idempotent uploads.",
+    "topics": [
+      "room",
+      "workmanager",
+      "architecture",
+      "coroutines"
+    ]
+  },
+  {
+    "id": "76e1927cc5810fe4",
+    "summary": "Walks through Compose state fundamentals: mutableStateOf, remember, and hoisting stateful composables into stateless, reusable ones. Covers a ViewModel + StateFlow pattern for screen state, SharedFlow for one-time navigation events, and why collectAsStateWithLifecycle() beats collectAsState().",
+    "topics": [
+      "compose",
+      "viewmodel",
+      "mvvm"
+    ],
+    "code_snippet": "@Composable\nfun SearchBar(\n    query: String,\n    onQueryChange: (String) -> Unit\n) {\n    OutlinedTextField(\n        value = query,\n        onValueChange = onQueryChange,\n        label = { Text(\"Search\") }\n    )\n}",
+    "snippet_label": "HOIST STATE UP"
+  },
+  {
+    "id": "39bef8cf05004c3e",
+    "summary": "Introduces recomposition in Jetpack Compose, explaining that Compose rebuilds only the parts of the UI tied to changed state rather than redrawing the whole screen. Part seven of a beginner tutorial series that previously covered LazyColumn and LazyRow.",
+    "topics": [
+      "compose"
+    ]
+  },
+  {
+    "id": "faf502e726037dfa",
+    "summary": "Contrasts coroutineScope, where one child's failure cancels all its siblings, with supervisorScope, where failures stay isolated, using batch-upload versus dashboard-widget examples. Notes both only enforce structured concurrency locally and won't fix leaks if launched from GlobalScope or an unbound scope.",
+    "topics": [
+      "coroutines"
+    ],
+    "code_snippet": "suspend fun loadDashboard() = supervisorScope {\n    launch { loadWeatherWidget() }\n    launch { loadNewsWidget() } // throws\n    launch { loadStockWidget() }\n}\n// weather and stock widgets still complete",
+    "snippet_label": "SUPERVISOR SCOPE ISOLATION"
+  },
+  {
+    "id": "fee283164468831b",
+    "summary": "Explains that Android Gradle Plugin 9 now bundles Kotlin support directly, so Android projects that still apply the Kotlin Gradle plugin explicitly in build.gradle.kts hit a silent plugin-conflict build failure after upgrading. The fix is removing the now-redundant explicit Kotlin plugin declaration.",
+    "topics": [
+      "gradle",
+      "gradle-plugin"
+    ]
+  },
+  {
+    "id": "2bfaf86f51a33d30",
+    "summary": "Builds a functional Android home-screen launcher in Kotlin and Compose: the HOME/DEFAULT intent filter that qualifies an app as a launcher, a transparent windowShowWallpaper theme, Android 11+ package-visibility queries, and rendering the installed-app grid via PackageManager. Uses Kotlin 2.4.10, AGP 9.2.1 and a Gradle version catalog.",
+    "topics": [
+      "android-api",
+      "compose",
+      "gradle",
+      "version-catalog"
+    ]
+  },
+  {
+    "id": "969ba2662e1450c8",
+    "summary": "Personal narrative from a Flutter developer describing the motivation behind building a voice/OCR translator app for Hindi, Malayalam and English speakers in Kerala. Contains no Kotlin, Android-native, or KMP technical content.",
+    "topics": []
+  },
+  {
+    "id": "ccfe64af1d934ba1",
+    "summary": "Promotional guide for downloading, registering, and logging into the 777CB gambling/earning APK, listing bonus and reward features. Pure app-store SEO spam for a casino-style app with no development content.",
+    "topics": []
+  },
+  {
+    "id": "8945ce8849e4ed46",
+    "summary": "Marketing copy advertising a web design agency's custom website services for startups, with no code or technical substance. Not development content despite the Android tag.",
+    "topics": []
+  },
+  {
+    "id": "47d81bb1ca3b49f6",
+    "summary": "Promotes a single all-in-one GPS navigation app (Live Earth Satellite View Maps) as a fix for juggling multiple driving apps, touting satellite imagery, traffic overlays, and voice guidance. Reads as an app-store promotional post rather than development content.",
+    "topics": []
+  },
+  {
+    "id": "8354e32a0d4d21b7",
+    "summary": "Introduces Retrieval-Augmented Generation as a way to ground chatbot answers in an app's own data, pitched at mobile developers adding AI features. General AI-concepts primer with no Android, Kotlin, or KMP implementation detail.",
+    "topics": []
+  },
+  {
+    "id": "6f3c4c3cedbeb88c",
+    "summary": "Portuguese-language piece on an app that helps candidates prepare for Brazil's ESA military-school entrance exam. App marketing content unrelated to Kotlin or Android development.",
+    "topics": []
+  },
+  {
+    "id": "095d9f0804055b0f",
+    "summary": "Reverse-engineers an Android banking-trojan APK spread via a fake Punjab traffic-fine SMS, detailing how it abuses AccessibilityService to auto-grant permissions, hijack notifications, and steal OTPs. Threat-intelligence writeup with sample hashes and tooling, not app-building guidance.",
+    "topics": []
+  },
+  {
+    "id": "8f03fe870faa0309",
+    "summary": "Shows how to group a custom Switch-style View (icon, title, subtitle, SwitchCompat) into one Talkback-focusable unit instead of separate stops. Covers disabling child importantForAccessibility, overriding onInitializeAccessibilityNodeInfo/Event to report as a Switch, and exposing state via setStateDescription.",
+    "topics": [
+      "android-api",
+      "kotlin"
+    ],
+    "code_snippet": "override fun onInitializeAccessibilityNodeInfo(info: AccessibilityNodeInfo?) {\n    super.onInitializeAccessibilityNodeInfo(info)\n    info?.className = android.widget.Switch::class.java.name\n}",
+    "snippet_label": "ANNOUNCE AS SWITCH"
+  },
+  {
+    "id": "ecad86219186f85f",
+    "summary": "Walks through headline Kotlin 2.4.0 changes: experimental collection literals using bracket syntax, context parameters graduating to stable with explicit-argument disambiguation, new isSorted()-family stdlib checks, and kotlin.uuid.Uuid reaching stable for cross-platform IDs. Framed as comedic dialogue but covers real compiler flags and APIs.",
+    "topics": [
+      "kotlin",
+      "context-receivers",
+      "kotlin-stdlib",
+      "kmp"
+    ],
+    "code_snippet": "val shapes: MutableList<String> = [\"triangle\", \"square\", \"circle\"]\nprintln(shapes) // [triangle, square, circle]",
+    "snippet_label": "COLLECTION LITERALS"
+  },
+  {
+    "id": "9720007157e606ea",
+    "summary": "Recounts pitfalls from a first production Jetpack Compose migration: picking screens whose data layer stayed tangled with legacy Fragments and ViewModels, plus imperative setContent calls that bypassed recomposition. Fixes shown include one observable ViewModel state collected via collectAsStateWithLifecycle and hoisting lambdas to cut unnecessary recomposition.",
+    "topics": [
+      "compose",
+      "architecture",
+      "viewmodel",
+      "mvvm"
+    ],
+    "code_snippet": "composeView.setContent {\n    val user by viewModel.user.collectAsStateWithLifecycle()\n    UserProfileScreen(user = user)\n}",
+    "snippet_label": "LIFECYCLE-AWARE STATE"
+  },
+  {
+    "id": "1542a46908b07a9a",
+    "summary": "Explains Kotlin's by-keyword delegation for interfaces (auto-generated forwarding methods) and properties (lazy, observable, vetoable, map-backed, and custom getValue/setValue delegates). Connects the pattern to everyday Android usage like viewModels(), navArgs(), and mutableStateOf via remember.",
+    "topics": [
+      "kotlin",
+      "kotlin-stdlib",
+      "compose",
+      "viewmodel"
+    ],
+    "code_snippet": "class UserPrinter(\n    private val printer: Printer\n) : Printer by printer",
+    "snippet_label": "INTERFACE DELEGATION"
+  },
+  {
+    "id": "4887cb90eb4f068b",
+    "summary": "Traces how Android's ViewRootImpl registers a window with WindowManagerService through a Binder call, using a per-Activity token to authorize the window. Explains why invalid or dead tokens cause BadTokenException and \"Activity has leaked window\" crashes, tying window lifecycle to Activity lifecycle.",
+    "topics": [
+      "android-api",
+      "android-developers"
+    ]
+  },
+  {
+    "id": "5dea6113e2a542ba",
+    "summary": "Explains that Kotlin coroutines are cooperative rather than preemptive: without a suspension point like yield() or delay(), a busy loop can monopolize a dispatcher's worker thread and starve other coroutines. Highlights why explicit suspension is required to avoid CPU starvation and stalled cancellation.",
+    "topics": [
+      "coroutines"
+    ],
+    "code_snippet": "launch {\n    while (true) {\n        doSomeWork()\n        yield()\n    }\n}",
+    "snippet_label": "EXPLICIT YIELD POINT"
+  },
+  {
+    "id": "17cabe4fbc8f0c7f",
+    "summary": "Previews Kotlin's context parameters (stabilizing by 2026) as a replacement for passing dependencies like Logger or UserSession through constructors, alongside explicit backing fields. Speculative piece on how these language features could reshape Compose-based Android development going into 2027.",
+    "topics": [
+      "context-receivers",
+      "kotlin"
+    ],
+    "code_snippet": "context(session: UserSession, logger: Logger)\nfun fetchProfile(userId: String): Profile {\n    logger.debug(\"Fetching profile for $userId\")\n    return session.api.getProfile(userId)\n}",
+    "snippet_label": "CONTEXT PARAMETER DI"
+  },
+  {
+    "id": "ebad332fbe5029b5",
+    "summary": "Introduces Remote Compose, a server-driven UI approach where Compose UI definitions live on the backend and render on-device without shipping a new APK. Frames it as an alternative to native Compose for A/B testing, per-segment UI changes, and fixing broken layouts without app store review delays.",
+    "topics": [
+      "compose"
+    ]
+  },
+  {
+    "id": "2443c5333b600711",
+    "summary": "Consumer guide on data recovery for broken or unresponsive smartphones, listing risky actions to avoid (factory reset, forced updates, reflashing) before consulting a repair lab. Written in Italian; not related to Android/Kotlin development.",
+    "topics": []
+  },
+  {
+    "id": "2f1970836ac96e46",
+    "summary": "General consumer article promoting Android games and APK download sites, covering game genres and basic APK safety tips. Contains no Kotlin/Android development content.",
+    "topics": []
+  },
+  {
+    "id": "ea01ae819a73cb86",
+    "summary": "Beginner's guide to the Teen Patti Gold mobile card/gambling game covering features, gameplay tips, and referral bonuses. Purely a consumer gaming guide with no software development content.",
+    "topics": []
+  },
+  {
+    "id": "91fe70fc537869f1",
+    "summary": "Promotional guide for registering, logging into, and earning bonuses on the PKRONEWIN gambling/earning app in Pakistan. Marketing content with no Kotlin/Android development relevance.",
+    "topics": []
+  },
+  {
+    "id": "9198e0b3ff6e682a",
+    "summary": "Explains that Google Play will require apps to target Android 16 (API level 36) for new submissions and updates starting August 31, 2026. Written in Turkish, it outlines what developers should check before raising targetSdkVersion.",
+    "topics": [
+      "android-api",
+      "android-developers"
+    ]
+  },
+  {
+    "id": "432c0178e46b3c02",
+    "summary": "Walks through two Jetpack Compose animation techniques: a reusable shimmer Modifier built on an infinite gradient transition for loading skeletons, and SharedTransitionLayout-based hero image transitions between a list and detail screen keyed by URL.",
+    "topics": [
+      "compose",
+      "animation"
+    ],
+    "code_snippet": "AsyncImage(\n    model = imageUrl,\n    modifier = Modifier\n        .fillMaxWidth()\n        .height(200.dp)\n        .sharedElement(\n            rememberSharedContentState(key = \"image/${article.url}\"),\n            animatedVisibilityScope = animatedContentScope,\n        ),\n    contentScale = ContentScale.Crop,\n)",
+    "snippet_label": "SHARED ELEMENT IMAGE"
+  },
+  {
+    "id": "381463ab4cd8c24b",
+    "summary": "Diagnoses why offline-first Android chat apps duplicate or reorder messages under unreliable networks, framing sync as a distributed-systems problem rather than a UI bug. Points toward idempotency, transactional outbox patterns, and reliable WorkManager/Room-based sync design.",
+    "topics": [
+      "workmanager",
+      "room",
+      "architecture"
+    ]
+  },
+  {
+    "id": "6c86fe85563fc0c2",
+    "summary": "Part 4 of a Kotlin Coroutines series introduces Flow as a cold asynchronous stream, contrasting a suspend function's single return with continuous emission via emit, collect, and operators like filter and map. Also distinguishes hot flows: SharedFlow and StateFlow.",
+    "topics": [
+      "coroutines",
+      "flows"
+    ],
+    "code_snippet": "fun ordersFlow(): Flow<Order> = flow {\n    while (true) {\n        val order = takeNextOrder()\n        emit(order)\n        delay(1000)\n    }\n}",
+    "snippet_label": "COLD FLOW BUILDER"
+  },
+  {
+    "id": "cdd396bda7c0d329",
+    "summary": "Describes integrating the gif_view Flutter package for controllable GIF playback (pause, seek, speed, preloading) in a Flutter app. Flutter/Dart-only content with no Kotlin or Android-native relevance.",
+    "topics": []
+  },
+  {
+    "id": "0988cb07a01268e0",
+    "summary": "A personal review of the movie Spider-Man: Brand New Day praising Tom Holland's performance. Film commentary with no development content; tagged Android only incidentally.",
+    "topics": []
+  },
+  {
+    "id": "79d67b30c4d48d6d",
+    "summary": "Press release announcing Chainway's MC80, an Android 16 enterprise handheld with integrated UHF RFID reading, 5G/Wi-Fi 7 connectivity, and on-device AI for retail and logistics use cases. Hardware marketing, not developer content.",
+    "topics": []
+  },
+  {
+    "id": "ae64caeeca80d50d",
+    "summary": "Announces a beta feature for the Vortex tool letting a Linux desktop's mouse and keyboard control an Android device natively via cursor pass-through, rather than screen mirroring. Product update post with no implementation detail.",
+    "topics": []
+  },
+  {
+    "id": "6e6ab8225c77bf0d",
+    "summary": "Promotional overview of Appaso.io, an App Store Optimization platform offering keyword research, rank tracking, and competitor monitoring for iOS and Android apps. Written as vendor marketing rather than a technical tutorial, with no Kotlin or Android development substance.",
+    "topics": []
+  },
+  {
+    "id": "2ebd8ff46f4f2cc0",
+    "summary": "Walks through Flutter build flavors: separate dev, QA, staging, and production configurations sharing one Dart codebase, each with its own package name, API URL, and Firebase project. Covers Dart entry points and flutter run/build CLI flags; entirely Flutter/Dart, no Kotlin.",
+    "topics": []
+  },
+  {
+    "id": "8312f550302e8091",
+    "summary": "Marketing copy for NJ Technos, a web design agency pitching custom, fast-loading business websites with SEO and responsive design services for startups. Contains no code or technical Android/Kotlin content.",
+    "topics": []
+  },
+  {
+    "id": "dfbb94c473c14ab3",
+    "summary": "Self-promotional listing for AI Insta Edit, an Android app offering AI-based photo enhancement, background removal, and portrait retouching plus an in-app rewards program. A Google Play store listing pitch, not a development tutorial.",
+    "topics": []
+  },
+  {
+    "id": "6899de335cb34f0c",
+    "summary": "Step-by-step walkthrough of publishing an app update to Google Play: bumping versionCode/versionName in build.gradle.kts, generating a signed Android App Bundle with the existing keystore, and rolling out the release via Play Console. Focuses on release-management steps rather than Kotlin code.",
+    "topics": []
+  },
+  {
+    "id": "a1bd98f3ab5f086b",
+    "summary": "Explains why Android needs JNI: it bridges Kotlin/Java running on ART to native C/C++ libraries like the Bluetooth stack, camera, and SQLite, and gives finer memory control for performance-critical code. Walks through Android Studio's Native C++ template, external fun, System.loadLibrary, and the generated JNIEXPORT function.",
+    "topics": [
+      "android-api",
+      "kotlin"
+    ],
+    "code_snippet": "external fun stringFromJNI(): String\n\ncompanion object {\n    init {\n        System.loadLibrary(\"jni\")\n    }\n}",
+    "snippet_label": "DECLARE EXTERNAL JNI FUN"
+  },
+  {
+    "id": "d7c55078de58fc29",
+    "summary": "Explains Kotlin's CoroutineContext: how Job, Dispatcher, CoroutineName, and CoroutineExceptionHandler combine via the + operator, how child coroutines inherit and override parent context, and how withContext temporarily swaps dispatchers. A practical reference for reasoning about coroutine execution and cancellation.",
+    "topics": [
+      "coroutines"
+    ],
+    "code_snippet": "launch(\n    Dispatchers.IO +\n    CoroutineName(\"API\") +\n    handler\n) {\n    // work\n}",
+    "snippet_label": "COMBINE COROUTINE CONTEXT"
+  },
+  {
+    "id": "8c5c4c6c80bbabae",
+    "summary": "Breaks down HTTP status code categories (2xx-5xx) and what an Android app should do on each: retry, refresh a token, log the user out, or show an error, using Kotlin and Retrofit as the example networking stack.",
+    "topics": [
+      "retrofit"
+    ]
+  },
+  {
+    "id": "bbaf584c00acf112",
+    "summary": "Pitches Dart FFI as a faster replacement for Flutter platform channels when calling C/Rust code, citing a 500x latency cut on an audio-processing feature and covering benchmarks plus memory-management pitfalls. Entirely Dart/Flutter-focused despite Kotlin/Swift tags.",
+    "topics": []
+  },
+  {
+    "id": "83ee54e4d38cfd4c",
+    "summary": "Consumer news post listing which phone brands are expected to get the unreleased \"Android 17\" update and urging buyers to weigh software-support length when purchasing a device. No development content, just upgrade-eligibility speculation.",
+    "topics": []
+  },
+  {
+    "id": "d4f8976b7b0b708f",
+    "summary": "Personal anecdote promoting a third-party gaming-app review site (3pattiplay) and cautioning readers to research before downloading gaming APKs from random sources. Consumer advice piece, not development content.",
+    "topics": []
+  },
+  {
+    "id": "772aef745a3dbce7",
+    "summary": "Walks through how suspend functions compile into continuation-passing state machines, using decompiled bytecode to show why coroutines are cheaper than OS threads. Covers CoroutineScope, Job vs SupervisorJob, launch vs async/await exception timing, and the four standard Dispatchers.",
+    "topics": [
+      "coroutines",
+      "kotlin",
+      "android-developers"
+    ],
+    "code_snippet": "val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)",
+    "snippet_label": "SUPERVISORJOB SCOPE"
+  },
+  {
+    "id": "a4bfb6a20b1c6103",
+    "summary": "Weekly discussion prompt from an advocacy group asking whether AI could help solve national problems like healthcare and education, framed as generic civic musing. No technical or platform-specific content.",
+    "topics": []
+  },
+  {
+    "id": "0cf0e7318833b988",
+    "summary": "Overview of Android supply-chain risk that distinguishes dev-only libraries (Mockito) from shipped ones (OkHttp, Glide), citing a pre-2.7.5 OkHttp TLS chain-pollution bug that allowed SSL-pinning bypass, plus unmaintained-dependency and license-compliance concerns for LGPL-style code.",
+    "topics": [
+      "android-developers",
+      "okhttp"
+    ]
+  },
+  {
+    "id": "8a9920abf88dc977",
+    "summary": "Personal experiment log describing a day spent relying only on Google Assistant instead of touching a phone screen, covering voice-command wins and limits for reading, browsing, and messaging. Digital-wellbeing lifestyle piece, not development content.",
+    "topics": []
+  },
+  {
+    "id": "0ce23307b0eec190",
+    "summary": "Describes replacing a MainActivity handleDeepLink() function with a single DeepLinkRouter that routes both external deep links and in-app navigation through the same navigation code path in a 13-module Android app, avoiding drift between manifest intent-filters and ad-hoc navController calls.",
+    "topics": [
+      "navigation",
+      "architecture",
+      "compose"
+    ]
+  },
+  {
+    "id": "a9eea385669d15c8",
+    "summary": "Walks through building Android home screen widgets with Jetpack Glance, a Compose-style API that compiles to RemoteViews. Covers GlanceModifier's curated subset, the GlanceAppWidget/GlanceAppWidgetReceiver pair, data loading in provideGlance, and manifest registration.",
+    "topics": [
+      "jetpack",
+      "compose",
+      "android-api"
+    ],
+    "code_snippet": "class QuickNotesWidget : GlanceAppWidget() {\n    override suspend fun provideGlance(context: Context, id: GlanceId) {\n        val latestNote = NoteRepository.getLatestNote(context)\n        provideContent {\n            GlanceTheme { WidgetContent(latestNote) }\n        }\n    }\n}",
+    "snippet_label": "GLANCE WIDGET SETUP"
+  },
+  {
+    "id": "8a028edacf27a1dd",
+    "summary": "Part 4 of a Kotlin Multiplatform series on building a reactive presentation layer with Flow and StateFlow. Discusses immutable UI state, StateFlow vs SharedFlow, search and pagination, offline-first refresh, and testing reactive ViewModels shared across Android and iOS.",
+    "topics": [
+      "kmp",
+      "flows",
+      "coroutines",
+      "mvvm"
+    ]
+  },
+  {
+    "id": "9e3e86c5abef070e",
+    "summary": "Developer overview of splitcash, a Kotlin Multiplatform expense-tracking app sharing UI via Compose Multiplatform, a Ktor/sqldelight backend, and shared DTOs, deep-link parsing, validation, and a sync-delta protocol between client and server modules.",
+    "topics": [
+      "kmp",
+      "compose-multiplatform",
+      "ktor-server",
+      "kotlin"
+    ]
+  },
+  {
+    "id": "ac31684648401076",
+    "summary": "Shows how to pull a Git-hosted third-party Compose UI library into an Android project via JitPack, including adding the repository to settings.gradle.kts and declaring the dependency through the Gradle version catalog.",
+    "topics": [
+      "gradle",
+      "version-catalog"
+    ],
+    "code_snippet": "dependencyResolutionManagement {\n    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)\n    repositories {\n        google()\n        mavenCentral()\n        maven { url = uri(\"https://jitpack.io\") }\n    }\n}",
+    "snippet_label": "ADD JITPACK REPO"
+  },
+  {
+    "id": "db66ad87f4415b00",
+    "summary": "Broad career-style checklist of skills a senior Android engineer should have: Kotlin fluency, Compose/unidirectional UI architecture, lifecycle fundamentals, MVVM/MVI state management, offline-first networking, coroutines, testing strategy, and debugging/observability practices.",
+    "topics": [
+      "architecture",
+      "mvvm",
+      "testing"
+    ]
+  },
+  {
+    "id": "22fd44c7348ab8c3",
+    "summary": "Compares Kotlin's subList() and chunked() for splitting a list into smaller pieces, explaining that subList() returns a live view into the original list while chunked() creates independent copies, and why picking the wrong one causes bugs in grid/row UIs.",
+    "topics": [
+      "kotlin-stdlib"
+    ],
+    "code_snippet": "val actions = listOf(\"A\", \"B\", \"C\", \"D\", \"E\", \"F\", \"G\", \"H\", \"I\", \"J\", \"K\", \"L\")\nval row = actions.subList(8, 12)",
+    "snippet_label": "SUBLIST WINDOW VIEW"
+  },
+  {
+    "id": "a88dafb84231e592",
+    "summary": "Part 7 of a Compose performance series examining why AsyncImage in LazyColumn rows causes jank, covering bitmap memory math, pre-decode sizing, memory/disk cache configuration, crossfade cost, and Coil 3 multiplatform setup for smooth image-heavy lists.",
+    "topics": [
+      "compose",
+      "compose-multiplatform"
+    ],
+    "code_snippet": "AsyncImage(model = url, contentDescription = null)",
+    "snippet_label": "NAIVE ASYNCIMAGE CALL"
+  },
+  {
+    "id": "2e4d24bc2a159791",
+    "summary": "Hindi-language promotional post listing gambling-style \"earning\" gaming apps that claim instant cash withdrawals, with referral bonuses and a Telegram link. Not related to Kotlin or Android development.",
+    "topics": []
+  },
+  {
+    "id": "f5729b4091ca93c1",
+    "summary": "Walks through adding a torch/flashlight toggle to a Flutter app using the torch_light package, covering availability checks, enabling/disabling the torch, and exception handling. Entirely Flutter/Dart, not Kotlin or native Android development.",
+    "topics": []
+  },
+  {
+    "id": "23bde36543a0e14d",
+    "summary": "Promotional review pushing an Android rummy gambling APK, touting a signup bonus, instant UPI withdrawals, and installation steps via sideloading. Real-money gaming ad with no development content.",
+    "topics": []
+  },
+  {
+    "id": "8856c11252975f99",
+    "summary": "Marketing guide for downloading and registering on an Android gambling/earning-app APK aimed at Pakistani users, listing bonuses and referral incentives. Pure promotional content with no technical substance.",
+    "topics": []
+  },
+  {
+    "id": "59d7e34b187a3047",
+    "summary": "Speculative essay arguing Android's baseband processor and closed-source hardware blobs let state actors surveil phones even when powered off, discussing trust models and the confused-deputy problem. Security-conspiracy commentary, not Kotlin/Android development guidance.",
+    "topics": []
+  }
+]

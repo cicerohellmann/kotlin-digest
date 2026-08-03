@@ -95,6 +95,30 @@ def test_filter_articles_skips_dead_and_low_quality():
     assert [a["id"] for a in result] == ["a"]
 
 
+def test_filter_articles_excludes_shorts():
+    # YouTube Shorts (is_short) never render, in any edition — permanently.
+    articles = [
+        {"id": "a", "date": "2026-07-07", "topics": []},
+        {"id": "b", "date": "2026-07-07", "topics": [], "media_type": "video",
+         "is_short": True},
+    ]
+    result = filter_articles(articles, date(2026, 7, 6), date(2026, 7, 12))
+    assert [a["id"] for a in result] == ["a"]
+
+
+def test_filter_articles_no_videos_drops_all_video():
+    # Per-edition --no-videos drops every video, Short or full-length.
+    articles = [
+        {"id": "a", "date": "2026-07-07", "topics": []},
+        {"id": "b", "date": "2026-07-07", "topics": [], "media_type": "video"},
+    ]
+    kept = filter_articles(articles, date(2026, 7, 6), date(2026, 7, 12))
+    assert [a["id"] for a in kept] == ["a", "b"]
+    without_videos = filter_articles(articles, date(2026, 7, 6), date(2026, 7, 12),
+                                     no_videos=True)
+    assert [a["id"] for a in without_videos] == ["a"]
+
+
 def test_score_articles_sums_topic_scores():
     articles = [{"id": "a", "topics": ["kotlin", "compose"], "date": "2026-07-07"}]
     scores = {"kotlin": 100.0, "compose": 80.0}

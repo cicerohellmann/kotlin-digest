@@ -1,0 +1,63 @@
+[
+  {
+    "id": "584b4af36f3a7ee7",
+    "summary": "Google Developer Expert Pawan Kumar discusses integrating generative AI and agent-ready tooling into Android apps, emphasizing privacy and efficiency. He frames Android's trajectory as adaptive, intelligent, and performant, reflecting how on-device AI is shaping app design decisions.",
+    "topics": [
+      "android-developers"
+    ]
+  },
+  {
+    "id": "691d222835841a92",
+    "summary": "Google Developer Expert Pooja Bhaumik recounts building an Android app in high school that led to a developer career, highlighting curiosity, continuous building, and community involvement as drivers of growth within the Android ecosystem.",
+    "topics": [
+      "android-developers"
+    ]
+  },
+  {
+    "id": "f69010f185dd9110",
+    "summary": "Senior Android engineer Akshay Chordiya answers rapid-fire either/or questions marking Jetpack Compose's fifth anniversary, covering choices like Coil versus Glide and dark versus light mode, a lighthearted look at common Compose tooling preferences.",
+    "topics": [
+      "compose",
+      "android-developers"
+    ]
+  },
+  {
+    "id": "0e7ba99b7881a464",
+    "summary": "Android Studio's XR emulator lets developers build apps for display glasses without physical hardware, pairing with a companion phone and using Jetpack Compose Glimmer for UI creation. Built-in touch controls and custom environments support testing, available from Android Studio Canary 5.",
+    "topics": [
+      "compose",
+      "android-developers",
+      "android-api"
+    ]
+  },
+  {
+    "id": "abc498e101c162f9",
+    "summary": "Covers adapting Android apps for foldable and large-screen devices using dynamic layouts built with Jetpack Compose and adaptive design principles. Addresses multi-screen development considerations so apps scale correctly across differing form factors.",
+    "topics": [
+      "adaptive-ui",
+      "compose",
+      "android-developers"
+    ]
+  },
+  {
+    "id": "26456a6bd8184f9f",
+    "summary": "Gemini 3.6 Flash brings improved token efficiency and lower costs to agentic Android development, with visual and functional upgrades accessible in Android Studio via API key, plus support in Antigravity and Android CLI tooling.",
+    "topics": [
+      "android-developers",
+      "android-api"
+    ]
+  },
+  {
+    "id": "06e874623f7ff278",
+    "summary": "Gemini 3.5 Flash-Lite, a speed- and cost-optimized model, becomes available for Android development through the Gemini API directly inside Android Studio, aimed at scaling high-volume AI-assisted coding workflows.",
+    "topics": [
+      "android-developers",
+      "android-api"
+    ]
+  },
+  {
+    "id": "855292d8653937a7",
+    "summary": "Promotional content about a car dealership's website, showroom, and phone as customer contact points, with no connection to Android, Kotlin, or app development.",
+    "topics": []
+  }
+]

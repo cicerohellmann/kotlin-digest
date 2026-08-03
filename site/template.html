@@ -313,22 +313,46 @@ function tagHue(t) {
 // YouTube facade — nothing loads from youtube.com on page view. "Watch here"
 // swaps in the privacy-friendly nocookie player only on click; "Open on
 // YouTube" is a plain link that also loads nothing until the user follows it.
-function renderVideo(id) {
-  return `<div class="yt-facade" data-yt="${id}">
-    <button class="yt-play" aria-label="Play video" onclick="loadYouTube(this)">
+function facadeInner(id) {
+  return `<button class="yt-play" aria-label="Play video" onclick="loadYouTube(this)">
       <span class="yt-tri"></span><span class="yt-cap">Watch here</span>
     </button>
-    <a class="yt-ext" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
-  </div>`;
+    <a class="yt-ext" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>`;
 }
+function renderVideo(id) {
+  return `<div class="yt-facade" data-yt="${id}">${facadeInner(id)}</div>`;
+}
+// Tear a loaded player back down to its facade. Removing the iframe from the DOM
+// is the only reliable cross-browser way to stop YouTube playback.
+function resetVideo(f) {
+  if (f && f.querySelector('iframe.yt-frame')) f.innerHTML = facadeInner(f.dataset.yt);
+}
+// Stop every playing embed. Called on page turn BEFORE the pager clones pages —
+// a cloned playing iframe would otherwise autoplay a second copy.
+function stopAllVideos() {
+  document.querySelectorAll('.yt-facade').forEach(resetVideo);
+}
+let _ytObserver = null;
 function loadYouTube(btn) {
   const f = btn.closest('.yt-facade');
   const id = f.dataset.yt;
   f.innerHTML = `<iframe class="yt-frame" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  // Stop playback once the card leaves the viewport (scroll mode) or its page is
+  // hidden (paged mode) — both surface as the facade no longer intersecting.
+  if ('IntersectionObserver' in window) {
+    if (!_ytObserver) {
+      _ytObserver = new IntersectionObserver((entries) => {
+        entries.forEach(en => { if (!en.isIntersecting) { resetVideo(en.target); _ytObserver.unobserve(en.target); } });
+      }, { threshold: 0 });
+    }
+    _ytObserver.observe(f);
+  }
 }
 
 function articleCard(a, idPrefix = 'art', headingTag = 'h3') {
-  const clickable = a.url && a.url !== '#';
+  // Video cards are NOT whole-card clickable: the inline player is the action and
+  // there's an explicit "Open on YouTube" link. Card-click would hijack the player.
+  const clickable = a.url && a.url !== '#' && !a.video;
   const heading = headingTag === 'h2' ? 'h2' : 'h3';
   return `<article class="article ${a.col}${clickable ? ' is-clickable' : ''}" id="${idPrefix}-${a.id}" data-topics="${a.topics.join(',')}"${clickable ? ` data-url="${a.url}"` : ''}>
     <div class="art-meta">
@@ -338,7 +362,7 @@ function articleCard(a, idPrefix = 'art', headingTag = 'h3') {
       ${a.paywalled ? '<span class="badge-paywall" title="Member-only story — requires a paid Medium account">🔒 Member-only</span>' : ''}
     </div>
     <${heading} class="art-title"><a href="${a.url}" target="_blank" rel="noopener noreferrer" onclick="if(this.getAttribute('href')==='#')event.preventDefault()">${a.title}</a></${heading}>
-    <p class="art-summary">${a.rollup && a.rollup.summary ? a.rollup.summary : a.summary}</p>
+    ${(a.rollup && a.rollup.summary) || a.summary ? `<p class="art-summary">${a.rollup && a.rollup.summary ? a.rollup.summary : a.summary}</p>` : ''}
     ${a.video ? renderVideo(a.video) : ''}
     ${renderSnapshot(a.snap)}
     ${renderRollup(a.rollup)}
@@ -1073,6 +1097,7 @@ function endFlip() {
 
 function goToScreen(i, animate, dir) {
   const target = Math.max(0, Math.min(i, Math.max(0, pager.screens - 1)));
+  if (target !== pager.screen) stopAllVideos();   // stop any playing embed before turning/cloning
   if (!animate || _reducedMotion() || target === pager.screen) {
     if (_flip) endFlip();
     pager.screen = target;

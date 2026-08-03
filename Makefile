@@ -1,12 +1,19 @@
 PYTHON := python3.11
 
-.PHONY: run scout bible fetch apply classify apply-snippets candidates assemble prerender preview bundle test
+.PHONY: run scout scout-youtube bible fetch apply classify apply-snippets candidates assemble prerender preview edition-preview promote bundle test
 
 # Automated pipeline (steps 1-2) — safe to run unattended
 run: scout bible
 
 scout:
 	$(PYTHON) pipeline/scout.py
+
+# Scoped scout: fetch ONLY the youtube sources into articles.json (no full scout,
+# no prune, no other source touched). Run this before assembling an edition that
+# should carry videos, so the week's videos are in state — not just baked into a
+# stale page. See docs/summarize.md §2c.
+scout-youtube:
+	$(PYTHON) pipeline/scout.py --only-type youtube
 
 bible:
 	$(PYTHON) pipeline/bible.py
@@ -36,8 +43,10 @@ apply-snippets:
 # full digest (the JS reader stays the single source of truth — prerender just
 # freezes its output).
 # Usage: make assemble EDITION=2026-W28
+# ASSEMBLE_ARGS forwards extra flags to assemble.py, e.g.
+#   make assemble EDITION=2026-W31 ASSEMBLE_ARGS=--no-videos
 assemble:
-	$(PYTHON) pipeline/assemble.py --edition $(EDITION)
+	$(PYTHON) pipeline/assemble.py --edition $(EDITION) $(ASSEMBLE_ARGS)
 	$(MAKE) prerender EDITION=$(EDITION)
 
 # Prerender: snapshot the JS reader's output into #digest for no-JS + crawlers.
@@ -45,6 +54,31 @@ assemble:
 # Usage: make prerender EDITION=2026-W28
 prerender:
 	$(PYTHON) pipeline/prerender.py site/index.html site/editions/$(EDITION).html
+
+# Safe preview build: assemble an edition into the isolated /test slot with
+# production left byte-identical. Restores ONLY the prod *site* files — it NEVER
+# touches state/articles.json, so scouted videos + summaries persist (the bug that
+# silently dropped the videos was a `git restore state/articles.json` here).
+# Usage: make edition-preview EDITION=2026-W31   (then `make preview`, open /test/)
+edition-preview:
+	$(MAKE) assemble EDITION=$(EDITION) ASSEMBLE_ARGS="$(ASSEMBLE_ARGS)"
+	mv site/index.html site/test/index.html
+	$(PYTHON) -c "import pathlib; p=pathlib.Path('site/test/index.html'); t=p.read_text(encoding='utf-8'); \
+	p.write_text(t.replace('<head>', '<head>\n  <meta name=\"robots\" content=\"noindex\">', 1) if 'name=\"robots\"' not in t else t, encoding='utf-8')"
+	git restore site/index.html site/archive.html site/sources.html state/editions.json
+	rm -f site/editions/$(EDITION).html
+	@echo "Preview → site/test/index.html (noindex) · prod site files restored · articles.json UNTOUCHED"
+
+# Promote a staged edition to the live front page ("flip the flag"). Runs the
+# real assemble (front page + editions/ + archive + sources, NO restore), adds
+# the edition to the sitemap, and drops the now-redundant /test/ preview. Pass
+# the SAME ASSEMBLE_ARGS the edition was previewed with.
+# Usage: make promote EDITION=2026-W31 ASSEMBLE_ARGS=--no-videos
+promote:
+	$(MAKE) assemble EDITION=$(EDITION) ASSEMBLE_ARGS="$(ASSEMBLE_ARGS)"
+	$(PYTHON) pipeline/sitemap.py --add editions/$(EDITION).html --touch / --touch archive.html
+	rm -f site/test/index.html
+	@echo "Promoted $(EDITION) → live front page. Review 'git diff', then commit + push."
 
 # Preview the built site locally. Visit http://localhost:8000/ for the reader,
 # or http://localhost:8000/?nojs to see exactly what a no-JS visitor/crawler

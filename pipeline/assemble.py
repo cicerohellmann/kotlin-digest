@@ -184,6 +184,11 @@ def build_structured_data(
                     "url": a.get("url", ""),
                     "description": a.get("summary", ""),
                 }
+            # content-rights.md rule 3: paywalled / member-only stories are
+            # headline + link only — don't ship their summary to crawlers either
+            # (description is optional in schema.org, so omit it entirely).
+            if a.get("paywalled"):
+                item.pop("description", None)
             # Only emit a date when we actually have one — a null/empty
             # datePublished/uploadDate is invalid structured data.
             date_key = "uploadDate" if item["@type"] == "VideoObject" else "datePublished"
@@ -207,6 +212,9 @@ def main() -> None:
                         help="pin the 'Also inside this issue' teasers: a comma-separated "
                              "list of ids or title substrings, in order (up to 4 shown). "
                              "Saved per edition. Omit to keep the auto pick.")
+    parser.add_argument("--no-videos", action="store_true",
+                        help="drop all video articles from this edition "
+                             "(YouTube Shorts are already excluded globally).")
     args = parser.parse_args()
 
     start, end = edition_to_dates(args.edition)
@@ -229,7 +237,8 @@ def main() -> None:
 
     scores = lookup_scores_at(bible, end)
 
-    week_articles = filter_articles(articles, start, end, no_render_sources)
+    week_articles = filter_articles(articles, start, end, no_render_sources,
+                                    no_videos=args.no_videos)
 
     # Collapse high-frequency changelog sources to their single newest release,
     # folding the rest into a rollup on the survivor card.

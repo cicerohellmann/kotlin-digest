@@ -174,6 +174,11 @@ def build_data_block(
             date_str = _fmt_date(a.get("date", ""))
 
             summary = a.get("summary") or ""
+            # content-rights.md rule 3: member-only / paywalled stories are
+            # "headline + link only, never a fetched-body summary" — blank the
+            # summary here so no consumer (reader, prerender, bundle) ships it.
+            if a.get("paywalled"):
+                summary = ""
             snap_js = "null"
             if a.get("code_snippet"):
                 snap_js = "{{ label:{}, code:{} }}".format(

@@ -1,878 +1,673 @@
 [
   {
-    "id": "e21ada8071630396",
-    "summary": "Argues nullable properties are safer than lateinit for deferred Android initialization: the compiler forces a null check (?, !!) at every use site, preventing the silent UninitializedPropertyAccessException that a missing isInitialized guard lets through. Contrasts both approaches with code.",
-    "topics": [
-      "kotlin",
-      "android-api"
-    ],
-    "code_snippet": "var variable: String? = null\n\n// Safe: compiler enforces handling\nvariable?.length\n\n// Dangerous: crashes if null, same risk as lateinit\nvariable!!.length",
-    "snippet_label": "NULLABLE VS BANG BANG"
-  },
-  {
-    "id": "ce2d3acf823b267c",
-    "summary": "Cloudy's blur-only Modifier.cloudy grows into Mirage, a general Compose Multiplatform shader system: write one common-source kernel that lowers to AGSL/SKSL, and compose ordered effect chains (duotone, iridescence, specular glint) via a sealed Optic API over a node's content or captured backdrop.",
-    "topics": [
-      "compose-multiplatform",
-      "compose",
-      "kmp"
-    ],
-    "code_snippet": "Modifier.mirage {\n    filter(Duotone)\n    filter(Specular)\n}\n\nModifier.mirage(sky = sky) {\n    filter(Duotone)\n}",
-    "snippet_label": "MIRAGE EFFECT PLAN"
-  },
-  {
-    "id": "3330b73ff847fd59",
-    "summary": "Explains Compose's three render phases (composition, layout, drawing) and shows how reading fast-changing state directly in a composable body forces full recomposition; switching to lambda-based Modifier.offset/graphicsLayer and passing lambdas instead of values defers the read to layout or draw for cheaper drag updates.",
-    "topics": [
-      "compose"
-    ],
-    "code_snippet": "Card(\n    modifier = Modifier.offset {\n        IntOffset(state.offset.x.roundToInt(), state.offset.y.roundToInt())\n    }.graphicsLayer {\n        scaleX = state.scaleFactor\n        scaleY = state.scaleFactor\n    }\n)",
-    "snippet_label": "DEFER STATE READ"
-  },
-  {
-    "id": "1643ea9b946b37ef",
-    "summary": "Part 5 of a RecyclerView deep dive covers writing custom LayoutManagers, the dual-pass pre/post-layout pipeline behind predictive item animations, and stable IDs for cheaper rebinding, then contrasts that virtualization model with Compose LazyColumn's slot-table-based recomposition skipping.",
-    "topics": [
-      "android-api",
-      "compose",
-      "animation"
-    ]
-  },
-  {
-    "id": "027a6b8a91f680c4",
-    "summary": "Introduces Ktor Client as a Kotlin-first, coroutine-based alternative to Retrofit for Android networking, highlighting its JetBrains-built multiplatform support, modular plugin architecture, and lightweight footprint for calling REST APIs.",
-    "topics": [
-      "ktor",
-      "android-api",
-      "retrofit"
-    ]
-  },
-  {
-    "id": "af9d05c20c1a4a48",
-    "summary": "Compose Multiplatform release v1.12.10-alpha01+dev4447 bumps org.jetbrains.compose and material3 artifacts alongside lifecycle 2.11.10-alpha01 and navigation3 1.2.0-alpha03 — an alpha dependency-version sync with no described API changes.",
-    "topics": [
-      "compose-multiplatform",
-      "material3",
-      "navigation"
-    ]
-  },
-  {
-    "id": "ed95f9df1fafbbe3",
-    "summary": "Promotional guide for downloading, registering, and logging into the PAK5D gambling/gaming APK in Pakistan, covering install steps and deposit bonus tiers. Not related to Kotlin, Android, or KMP development.",
+    "id": "e83630fdcf8c7db3",
+    "summary": "A Flutter developer diagnoses a frame-rate drop to 31 fps as a list grew to 2,000 items, covering ten common performance mistakes (missing const constructors, eager ListView building, misplaced setState calls, Opacity-based fades) and their fixes.",
     "topics": []
   },
   {
-    "id": "6ffb3763da69e071",
-    "summary": "Overviews the new Android CLI, a terminal tool built for AI-agent workflows: project scaffolding, emulator and SDK management, APK deployment, doc search, UI hierarchy inspection, and direct Android Studio integration (find-usages, render-compose-preview) for scripted, non-IDE development.",
-    "topics": [
-      "android-developers",
-      "android-api",
-      "compose"
-    ]
-  },
-  {
-    "id": "7ce820bcf976cc9f",
-    "summary": "Abdal PacketView captures Android network traffic locally via VpnService, attributing packets to the owning app by UID and exporting sessions as a pcapng file plus a JSON summary for deeper analysis in Wireshark or tshark.",
+    "id": "09a459b7e17a3e71",
+    "summary": "Promotional guide for downloading an Android APK gaming app in Pakistan, covering installation steps and app features; contains no Kotlin, Android development, or engineering content.",
     "topics": []
   },
   {
-    "id": "1815f605ca90029a",
-    "summary": "An experimental Compose Styles API separates modifier chains that control appearance from those controlling behavior, addressing ordering bugs where paint and layout calls interacted unpredictably. Still experimental, it reshapes how Compose UI is organized without requiring an immediate rewrite.",
-    "topics": [
-      "compose"
-    ]
-  },
-  {
-    "id": "d327aa2038d42fd7",
-    "summary": "A beginner-focused overview explains why Android developers should adopt Kotlin, contrasting it with Java through data classes, null safety, extension functions, smart casts, and coroutines, while noting full Java interoperability for gradual, file-by-file migration.",
-    "topics": [
-      "kotlin",
-      "coroutines"
-    ]
-  },
-  {
-    "id": "8beee7f404d0dc84",
-    "summary": "Arrow 2.3.0-alpha.2 resolves returnType more lazily in Arrow Optics, a small internal fix landed via a single pull request since the previous 2.3.0-alpha.1 pre-release.",
-    "topics": [
-      "kotlin"
-    ]
-  },
-  {
-    "id": "bde081e03055f52c",
-    "summary": "Android Developers documents the TV Immersive list component, pairing a content row with a large preview pane that reveals background art and details as focus moves between cards, including anatomy, focus scaling, and 16:9 image guidance.",
-    "topics": [
-      "android-api"
-    ]
-  },
-  {
-    "id": "92d368f69b134549",
-    "summary": "The Compose viewModel() API reference details overloads for creating or retrieving a ViewModel via CreationExtras, ViewModelStoreOwner, and factories, including a lambda-based initializer that gives direct access to createSavedStateHandle() for passing custom constructor arguments.",
-    "topics": [
-      "viewmodel",
-      "compose"
-    ],
-    "code_snippet": "val viewModel = viewModel {\n    val handle = createSavedStateHandle()\n    SavedStateViewModel(handle, \"custom_value\")\n}",
-    "snippet_label": "VIEWMODEL WITH SAVEDSTATE"
-  },
-  {
-    "id": "aa95970254d204af",
-    "summary": "The androidx.lifecycle.viewmodel.compose package reference lists rememberViewModelStoreOwner, LocalViewModelStoreOwner, and the SavedStateHandle.saveable delegate family that bridges SavedStateHandle with Compose's rememberSaveable Saver API for persisting custom state holders like lists and maps.",
-    "topics": [
-      "viewmodel",
-      "compose"
-    ],
-    "code_snippet": "private val items: MutableList<Item> by handle.saveable(\n    saver = listSaver(\n        save = { it.map { item -> listOf(item.id.toString(), item.value) } },\n        restore = { it.map { saved -> Item(UUID.fromString(saved[0]), saved[1]) }.toMutableStateList() }\n    )\n) { mutableStateListOf() }",
-    "snippet_label": "SAVEABLE STATEHANDLE DELEGATE"
-  },
-  {
-    "id": "0bd3d01bedfc0daa",
-    "summary": "A Wikipedia explainer on the XY problem describes how asking about an attempted solution instead of the underlying goal derails technical support conversations, illustrating why probing for root intent matters when troubleshooting developer questions.",
+    "id": "f4ddfe094a11d10a",
+    "summary": "A personal Indonesian-language poem about unspoken love and gratitude, unrelated to Android, Kotlin, or software development.",
     "topics": []
   },
   {
-    "id": "baed73601e33f109",
-    "summary": "JetBrains' Kotlin Language Server brings official LSP support to any editor, including a VS Code extension with IntelliJ-powered completion, diagnostics, and quick fixes. It supports Gradle/Maven builds and experimental Android Gradle Plugin projects; Kotlin Multiplatform support is still in development, and the server remains in Alpha.",
+    "id": "821faf5db6ae340c",
+    "summary": "Demonstrates pushing column-level encryption into Oracle via DBMS_CRYPTO SQL functions, using Hibernate's @ColumnTransformer on Kotlin JPA entities so reads, writes, and even LIKE queries transparently decrypt and encrypt without touching application code.",
     "topics": [
-      "kotlin",
-      "jetbrains"
-    ]
-  },
-  {
-    "id": "de15634864298eaf",
-    "summary": "KTConf 2026 announces two full-day, paid pre-conference workshops in Leuven: a \"Kotlin Coroutines Forensics Masterclass\" by Amanda Hinchman-Dominguez and \"Kotlin Fundamentals\" by Simon Vergauwen, each including lunch and coffee.",
-    "topics": [
-      "coroutines",
-      "kotlin"
-    ]
-  },
-  {
-    "id": "66a6f99a4fa19658",
-    "summary": "EnumStore is an experimental, now-unmaintained library that lets Kotlin enum entries double as Android DataStore preference keys, giving type-safe get/set calls and Flow/StateFlow-based reactive access without manually passing Context or raw string keys.",
-    "topics": [
-      "datastore",
-      "android-api"
-    ],
-    "code_snippet": "enum class UserSettings : EnumStoreCollection {\n    USERNAME, THEME_DARK_MODE\n}\n\nUserSettings.USERNAME.set(\"KotlinLover99\")\nval name = UserSettings.USERNAME.get(\"Guest\")\nval themeFlow = UserSettings.THEME_DARK_MODE.asStateFlow(EnumStoreType.TypeBoolean)",
-    "snippet_label": "ENUM AS PREF KEY"
-  },
-  {
-    "id": "5b998d60e7427362",
-    "summary": "Kilua's animation module reimplements Compose's animate*AsState APIs (Double, Float, Int, Long, CssSize) for JS/Wasm targets on top of an external Motion-based spring engine, matching Compose Animation's default spring-physics behavior.",
-    "topics": [
-      "compose-multiplatform",
-      "animation",
-      "kotlin-js"
-    ],
-    "code_snippet": "private val defaultAnimation = MotionAnimation.SpringPhysics(stiffness = 1700, damping = 80)\n\n@Composable\npublic fun animateFloatAsState(\n    value: Float,\n    animation: MotionAnimation = defaultAnimation\n): State<Float> =\n    animateAsIntState(value, { (it.toDouble() * 100).toInt() }, { (it.toDouble() / 100).toFloat() }, animation)",
-    "snippet_label": "SPRING ANIMATE STATE"
-  },
-  {
-    "id": "75636aba7f2df780",
-    "summary": "Jake Wharton's essay argues Jetpack Compose conflates two distinct things under one name: a general-purpose compiler/runtime that manages trees of nodes of any type, and Compose UI, the Android/Desktop rendering toolkit built on top of it. He contends sharing a name pigeonholes the runtime's broader potential beyond UI rendering.",
-    "topics": [
-      "compose",
-      "architecture"
-    ]
-  },
-  {
-    "id": "4fecb45568cfd2c1",
-    "summary": "Android Developers' ViewModel overview covers how ViewModel persists UI state and business logic across configuration changes, scoping via ViewModelStoreOwner, SavedStateHandle for process-death survival, and new Compose retain APIs like rememberViewModelStoreOwner/rememberViewModelStoreProvider for scoping ViewModels to individual lazy-list or pager items.",
-    "topics": [
-      "viewmodel",
-      "architecture",
-      "compose"
-    ],
-    "code_snippet": "class DiceRollViewModel : ViewModel() {\n    private val _uiState = MutableStateFlow(DiceUiState())\n    val uiState: StateFlow<DiceUiState> = _uiState.asStateFlow()\n\n    fun rollDice() {\n        _uiState.update { it.copy(\n            firstDieValue = Random.nextInt(1, 7),\n            numberOfRolls = it.numberOfRolls + 1\n        ) }\n    }\n}",
-    "snippet_label": "VIEWMODEL STATEFLOW"
-  },
-  {
-    "id": "ef15abdd50646895",
-    "summary": "Android Developers documents ViewModel scoping APIs: viewModel() for the closest ViewModelStoreOwner, an explicit owner parameter for custom scopes, rememberViewModelStoreOwner()/rememberViewModelStoreProvider() for per-composable or per-page scoping (e.g. HorizontalPager items), and retrieving Navigation-graph-scoped ViewModels via getBackStackEntry().",
-    "topics": [
-      "viewmodel",
-      "navigation",
-      "compose"
-    ],
-    "code_snippet": "composable(\"myScreen\") { backStackEntry ->\n    val parentEntry = remember(backStackEntry) {\n        navController.getBackStackEntry(\"parentNavigationRoute\")\n    }\n    val parentViewModel: SharedViewModel = viewModel(parentEntry)\n}",
-    "snippet_label": "NAV-SCOPED VIEWMODEL"
-  },
-  {
-    "id": "81a8f30f658aa5f1",
-    "summary": "Kraken Technologies cut average Gradle build time from ~6 minutes to ~1:50 and sync time from ~5 minutes to ~45 seconds across a 600-module KMP project by adopting the Dependency Analysis Gradle Plugin (DAGP) v3.16.1, which now finds unused/misclassified dependencies on JVM and Android targets (iOS analysis not yet supported).",
-    "topics": [
-      "gradle",
-      "gradle-plugin",
-      "kmp"
-    ],
-    "code_snippet": "// root build.gradle.kts\nplugins {\n    id(\"com.autonomousapps.dependency-analysis\") version \"3.16.1\"\n}\n\n// subprojects/build.gradle.kts\nplugins {\n    id(\"com.autonomousapps.dependency-analysis\")\n}",
-    "snippet_label": "APPLY DAGP PLUGIN"
-  },
-  {
-    "id": "9ecd3d3dbce98878",
-    "summary": "Kotlin's official Multiplatform compatibility guide tracks supported Gradle/AGP/Xcode version ranges per Kotlin release and lists deprecation cycles: the androidTarget-to-android plugin migration, removed bitcode embedding, and default JVM Java source sets replacing withJava(). Answers a Slack question confirming AGP 9.2+ isn't yet officially supported.",
-    "topics": [
-      "kmp",
-      "gradle",
-      "android-api"
-    ],
-    "code_snippet": "kotlin {\n    jvm {\n        withJava() // no longer needed from Kotlin 2.1.20\n    }\n}",
-    "snippet_label": "WITHJAVA DEPRECATED"
-  },
-  {
-    "id": "504bc915a6393140",
-    "summary": "GitHub source tree for kotlinx.coroutines' debug/internal package (DebugProbes, AgentPremain, ConcurrentWeakMap), linked in a Slack thread noting that most debug-agent logic actually lives in kotlinx-coroutines-core, so depending on these internals carries a low risk of incompatible changes despite being unsupported API.",
-    "topics": [
-      "coroutines"
-    ]
-  },
-  {
-    "id": "d89bb1438112ef2e",
-    "summary": "Kotlin Foundation's 2026 grant program funds open-source Multiplatform libraries, tools, and frameworks, weighting selection toward security responsiveness and adherence to library best practices. First-round applications closed July 15, relevant to KMP maintainers seeking funding.",
-    "topics": [
-      "kotlin",
-      "kmp"
-    ]
-  },
-  {
-    "id": "6ea443f8c32c5cd9",
-    "summary": "Kotlin 2.4.10 changelog covers fixes for K/Wasm multimodule incremental builds, K2 const-val annotation resolution, reified type inference with elvis inside lambdas, a Compose Compiler 2.4 stability-inference regression, Gradle BCV version-range resolution, JS Yarn lock handling, and scripting compiler-options annotations.",
-    "topics": [
-      "kotlin",
-      "k2-compiler",
-      "wasm",
-      "kotlin-scripting"
-    ]
-  },
-  {
-    "id": "7e59255de6dedf53",
-    "summary": "Maven Central listing for abi-tools-embeddable 2.4.0, JetBrains' standalone library for producing binary-compatibility-validator ABI dumps independently of Gradle, referenced in a Slack answer explaining that BCV in the Kotlin Gradle plugin only works against the current project.",
-    "topics": [
-      "gradle",
-      "build-logic"
-    ]
-  },
-  {
-    "id": "e78678ab03c609d5",
-    "summary": "Source for AbiValidationToolchain.kt, a new Kotlin Build Tools API (since 2.4.0) exposing programmatic ABI-dump and comparison operations for JVM classes/jars and klibs, letting tooling authors build binary-compatibility checks outside the Gradle plugin.",
-    "topics": [
-      "gradle",
-      "build-logic"
-    ],
-    "code_snippet": "val toolchain = kotlinToolchains.abiValidation\ntoolchain.dumpJvmAbiToStringOperationBuilder(\n    appendable = System.out,\n    inputFiles = listOf(jarFile)\n).build()",
-    "snippet_label": "ABI DUMP API"
-  },
-  {
-    "id": "f590cf146d6ff2f8",
-    "summary": "Kotlin 2.1.20 release notes: K2 kapt becomes the default plugin implementation, Lombok gains @SuperBuilder support, a new experimental executable {} DSL replaces Gradle's Application plugin for KMP JVM targets, Xcode 16.3 support lands, and the Compose compiler relaxes @Composable restrictions.",
-    "topics": [
-      "k2-compiler",
-      "kapt",
-      "kmp",
-      "gradle"
-    ],
-    "code_snippet": "kotlin {\n    jvm {\n        @OptIn(ExperimentalKotlinGradlePluginApi::class)\n        binaries {\n            executable {\n                mainClass.set(\"foo.MainKt\")\n            }\n        }\n    }\n}",
-    "snippet_label": "NEW EXECUTABLE DSL"
-  },
-  {
-    "id": "1df8536065850221",
-    "summary": "Experimental JetBrains ecosystem plugin for Declarative Gradle, letting Kotlin build scripts define jvmApplication, webApplication, and multiplatform library subprojects using the new .gradle.dcl declarative format instead of Kotlin DSL scripts, previewed at KotlinConf'26.",
-    "topics": [
-      "gradle",
-      "gradle-plugin",
-      "kmp"
-    ]
-  },
-  {
-    "id": "2c7622de8c9f2045",
-    "summary": "A community Ktor benchmark suite measures HTTP client throughput across CIO, Apache, OkHttp, and Java engines by firing concurrent request batches at a local Netty server. Useful for spotting client-engine regressions or gauging how configuration changes affect requests-per-second.",
-    "topics": [
-      "ktor"
-    ]
-  },
-  {
-    "id": "3131e293933c9ac4",
-    "summary": "A dockerized follow-up benchmark isolates Ktor's HTTP client engines from their native counterparts (Apache, OkHttp, JDK) using CPU-pinned containers, finding a consistent 3.2-4.7x throughput gap. Profiling traces most overhead to kotlinx.coroutines scheduler internals, which consume over half the CPU time versus the wrapped library's own work.",
-    "topics": [
-      "ktor",
-      "coroutines"
-    ]
-  },
-  {
-    "id": "040f966fd3747234",
-    "summary": "Marketing page for Caddy, a general-purpose web server with automatic HTTPS/TLS certificate management, mentioned in a Ktor Slack thread as a reverse-proxy alternative to configuring TLS per client engine. Not itself Kotlin, Android, or KMP related.",
-    "topics": []
-  },
-  {
-    "id": "4dc66f046c3f66a4",
-    "summary": "Kotlin Compiler 2.3.20 introduced a regression where the frontend spawns coroutine Default Dispatcher threads without stopping them, leaking isolated classloaders and causing OOMs in large KSP-heavy builds. KSP 2.3.10 fixes this by moving its task cache to a Gradle build service.",
-    "topics": [
-      "ksp",
-      "gradle-plugin",
-      "coroutines"
-    ]
-  },
-  {
-    "id": "f87359a15c034db8",
-    "summary": "KSP 2.3.9 paired with Kotlin 2.4.0 fails code generation for internal members, such as Hilt/Dagger @Provides functions, because Kotlin 2.4.0's new standardized module-name format injects a colon into generated identifiers that KSP/KotlinPoet cannot escape. Manually overriding moduleName works around it.",
-    "topics": [
-      "ksp",
-      "kotlin",
-      "hilt"
-    ]
-  },
-  {
-    "id": "acea168ba18cf9bd",
-    "summary": "KSP2's KspAATask lost the NO-SOURCE task-skip optimization inherited from KSP1's KspTaskJvm because it declares source inputs as unfiltered file trees instead of restricting to *.kt/*.kts/*.java. Gradle can no longer detect source-less modules, forcing needless KSP reruns costing 300-500ms per module on full rebuilds.",
-    "topics": [
-      "ksp",
-      "gradle-plugin",
-      "gradle"
-    ],
-    "code_snippet": "project.objects.fileTree().from(it).matching {\n    it.include(\"**/*.kt\", \"**/*.kts\", \"**/*.java\")\n}",
-    "snippet_label": "FIX NO-SOURCE SKIP"
-  },
-  {
-    "id": "44f4d756103f720e",
-    "summary": "KSP2's incremental build cache can silently drop generated output files for unmodified source files after an incremental run, so Gradle's post-build cache snapshot omits them and downstream compilation fails with unresolved references once restored. Reported as an open bug in KSP2's incremental processing.",
-    "topics": [
-      "ksp",
-      "gradle"
-    ]
-  },
-  {
-    "id": "40acb2272e9936c8",
-    "summary": "KSP's KspAATask hashes source files without @NormalizeLineEndings, so a Windows checkout with CRLF line endings produces a different cache key than a Linux/macOS build with LF, causing every KSP task to miss the remote build cache cross-platform.",
-    "topics": [
-      "ksp",
-      "gradle"
-    ]
-  },
-  {
-    "id": "4ff951c53e630546",
-    "summary": "KSP's incremental compiler fails to record the dependency edge from an annotation argument (e.g. MyClass::class) through to the referenced class, so edits to that class don't mark dependents dirty and get skipped on rebuild.",
-    "topics": [
-      "ksp"
-    ],
-    "code_snippet": "@MyAnno(MyClass::class)\nclass Annotated",
-    "snippet_label": "MISSED DEPENDENCY EDGE"
-  },
-  {
-    "id": "43da36decae542fa",
-    "summary": "A merged KSP change switches AGP source consumption from sources.kotlin.static to sources.kotlin.all, letting KSP process Kotlin sources generated by other Gradle plugins or tasks instead of only its own outputs, without creating circular build dependencies.",
-    "topics": [
-      "ksp",
-      "gradle"
-    ]
-  },
-  {
-    "id": "5540bd1f1dce411c",
-    "summary": "A KSP fix addresses configuration cache invalidation for Kotlin/Native cross-compilation: onlyIf evaluated exported metadata JSONs at cache-store time before they existed, breaking reuse. It now declares them as task inputs and parses them at execution time.",
-    "topics": [
-      "ksp",
-      "kmp",
-      "gradle"
-    ]
-  },
-  {
-    "id": "881430538646dbd4",
-    "summary": "A KSP PR memoizes KSTypeImpl.hashCode() behind a lazy-cached field instead of reopening an Analysis API session on every call, since it fires as a HashMap key hundreds of thousands of times per task; benchmarks showed roughly 400ms to 130ms.",
-    "topics": [
-      "ksp"
-    ],
-    "code_snippet": "private val cachedHashCode: Int by lazy { type.fullyExpand().hashCode() }",
-    "snippet_label": "MEMOIZE HASHCODE"
-  },
-  {
-    "id": "c554d3c0e5c88b54",
-    "summary": "A merged KSP fix corrects getJvmName for @JvmRecord data classes: Java records expose bare accessor names like name() rather than getName(), so ResolverAAImpl now checks for @JvmRecord alongside the existing bean-getter logic to avoid the wrong prefix.",
-    "topics": [
-      "ksp",
-      "kotlin"
-    ]
-  },
-  {
-    "id": "6bd354ff002a9c48",
-    "summary": "A closed KSP task weighed bundling kotlinx.coroutines into KSP's uber jar, noting kotlin-stdlib doesn't reach it via reflection and that coroutines can be treated as an ordinary user-space dependency rather than a runtime library that needs shading in.",
-    "topics": [
-      "ksp",
-      "coroutines",
-      "gradle"
-    ]
-  },
-  {
-    "id": "cf34bb1528b9ea8e",
-    "summary": "A closed KSP feature request proposed emitting a .dot graph from a given origin symbol showing every symbol reachable from it, to make missing edges in the incremental compilation dependency graph easier to spot while debugging.",
-    "topics": [
-      "ksp"
-    ]
-  },
-  {
-    "id": "5ef7fbb6c5372f7b",
-    "summary": "Merged pull request in google/ksp flipping the default of the ksp.allow.all.target.configuration Gradle property to false, restricting which target configurations receive KSP processors automatically. Lands alongside KSP 2.3.10 fixes for coroutine-dispatcher OOMs and Kotlin 2.4.0 module-name sanitization.",
-    "topics": [
-      "ksp",
-      "gradle-plugin"
-    ]
-  },
-  {
-    "id": "50cb1426972c2d05",
-    "summary": "Kotlin docs page on configuring KSP in multiplatform projects now that the catch-all ksp(...) configuration is deprecated. Shows adding processors per target (kspJvm, kspIosX64), stacking multiple processors on one target, and wiring test compilations like kspJvmTest.",
-    "topics": [
-      "ksp",
-      "kmp",
-      "gradle"
-    ],
-    "code_snippet": "kotlin.targets.filter { it.name.startsWith(\"ios\") }.forEach { target ->\n    add(\n        \"ksp${target.name.replaceFirstChar { it.uppercaseChar() }}\",\n        project(\":test-processor\")\n    )\n}",
-    "snippet_label": "LOOP KSP TARGETS"
-  },
-  {
-    "id": "d47243165e709692",
-    "summary": "JetBrains PyCharm blog roundup of agentic AI frameworks (LangChain, AutoGen, and others) comparing graph-based, role-based, and chain-based orchestration models for Python applications in 2026. A Slack commenter flags that JetBrains' own Koog framework is missing from the list.",
-    "topics": []
-  },
-  {
-    "id": "356591b3cf5948d0",
-    "summary": "First entry in a series on SoPhi, a Kotlin agent harness embedded in Spring Boot, explaining why the team wrote their own ~600-800 line agent loop instead of adopting Koog, LangChain4j, or Spring AI. Cites SoPhi's custom session format, TUI, and lazy skill loading as reasons no framework fit.",
-    "topics": [
-      "kotlin",
       "spring-kotlin",
-      "architecture"
-    ]
+      "kotlin-backend"
+    ],
+    "code_snippet": "@Entity\n@Table(name = \"users\")\nclass User(\n    @Column(name = \"firstname\", columnDefinition = \"RAW(2000)\")\n    @ColumnTransformer(\n        read  = \"decrypt_text(firstname)\",\n        write = \"encrypt_text(?)\"\n    )\n    var firstname: String\n) : BaseDomain()",
+    "snippet_label": "ENCRYPTED COLUMN ENTITY"
   },
   {
-    "id": "624c78bd3fdd46f7",
-    "summary": "Content-farm style guide promoting the 'Raja Luck' gambling platform's Android compatibility and interface, padded with generic tips like keeping account details private and updating the device. Not Kotlin or Android development content.",
+    "id": "85ab8af06133f79d",
+    "summary": "Investigates why scheduled Flutter/Dart alarms fail to fire on closed apps on Xiaomi, Samsung, and Transsion Android devices, tracing OEM battery-management quirks with adb-based diagnostics rather than emulator tests.",
     "topics": []
   },
   {
-    "id": "42de62552fffa621",
-    "summary": "Promotional guide for the 'BDG Game' gambling app describing its Android-friendly interface and generic usage tips such as securing accounts and using a stable connection. Not related to Kotlin or Android engineering.",
-    "topics": []
-  },
-  {
-    "id": "d64794a6e9fb6d4e",
-    "summary": "Dev-channel release tag v1.12.0-beta03+dev4497 of JetBrains Compose Multiplatform, published July 20, 2026, with no changelog beyond the Maven coordinate bump for org.jetbrains.compose artifacts.",
+    "id": "ad5bd6b53a3807e7",
+    "summary": "A hands-on guide to building a shared Ktor networking layer across Ktor Server (JVM backend), a KMP client module, and Android/iOS consumers, covering client setup, plugins, and all major HTTP verb calls in one shared Kotlin codebase.",
     "topics": [
-      "compose-multiplatform",
-      "kmp"
-    ]
-  },
-  {
-    "id": "cf631d283ab82ec3",
-    "summary": "Android Developers Blog post announcing the Nearby Connections API will stop automatically turning on Wi-Fi and Bluetooth radios for first- and third-party apps, effective late 2026. Developers must manage radio state manually and prompt users to enable it themselves.",
-    "topics": [
-      "android-api",
-      "android-developers"
-    ]
-  },
-  {
-    "id": "3cf30b04840f4515",
-    "summary": "Explains rememberDecoratedNavEntries, a lower-level Navigation 3 API that pairs each independent NavBackStack with its own decorated NavEntry collection so rememberSaveable UI state survives tab switches, configuration changes, and process death without screen-level changes.",
-    "topics": [
-      "navigation",
+      "ktor",
+      "ktor-server",
+      "kmp",
       "compose"
     ],
-    "code_snippet": "val homeEntries = rememberDecoratedNavEntries(\n    backStack = homeBackStack,\n    entryDecorators = decorators,\n    entryProvider = entryProvider {\n        entry<Home> { HomeScreen() }\n        entry<Form> { FormScreen() }\n    }\n)\nNavDisplay(entries = homeEntries)",
-    "snippet_label": "DECORATED NAV ENTRIES"
+    "code_snippet": "val client = HttpClient(CIO) {\n    expectSuccess = true\n    install(ContentNegotiation) {\n        json(Json { ignoreUnknownKeys = true; isLenient = true })\n    }\n    install(Logging) { level = LogLevel.INFO }\n    install(HttpTimeout) { requestTimeoutMillis = 10_000 }\n    defaultRequest {\n        url(\"https://api.example.com/\")\n        contentType(ContentType.Application.Json)\n    }\n}",
+    "snippet_label": "KTOR CLIENT SETUP"
   },
   {
-    "id": "4c3985542dcd385f",
-    "summary": "Assesses whether Jetpack Compose is production-ready for Android TV in 2026, covering D-pad focus handling, focus restoration, performance on fragmented TV hardware, Media3 playback integration, and migration paths from Leanback. Recommends Compose for new TV apps and gradual migration for existing Leanback codebases.",
+    "id": "f12f5df2740ed22b",
+    "summary": "An Android developer's account of migrating a Jetpack Compose app to Compose Multiplatform for iOS, desktop, and web reach, outlining a dependency audit that swaps ViewModel, Navigation, Retrofit, and DI libraries for KMP-ready equivalents like Ktor and Koin.",
     "topics": [
+      "compose-multiplatform",
       "compose",
-      "media3"
+      "kmp",
+      "koin"
     ]
   },
   {
-    "id": "9399c5ad64c56106",
-    "summary": "Weekly JVM/Kotlin roundup marking Kotlin's 15th anniversary and its multiplatform growth, plus a case study on how default JPA settings caused subtle performance and correctness bugs in a Kotlin microservice, alongside Spring Boot 3.x end-of-life notices.",
+    "id": "5dc81ddf86a18a3d",
+    "summary": "Introduces Krope, a Kotlin Multiplatform rope data-structure library (Red-Black tree, structural sharing) for building high-performance text editors with O(log N) edits, StateFlow/SharedFlow-based reactive updates, and UTF-8/16/32 byte-offset tracking for LSP integration.",
     "topics": [
-      "kotlin",
-      "spring-kotlin"
-    ]
+      "kmp",
+      "flows",
+      "coroutines",
+      "kotlin-stdlib"
+    ],
+    "code_snippet": "val factory = RopeTextBufferFactory()\nval buffer = factory.create(\n    text = \"Hello World\",\n    encoding = Encoding.UTF8,\n    lineEnding = TextLineEnding.LF,\n    enablePooling = true\n).fold(\n    onLeft = { error -> throw error },\n    onRight = { it }\n)",
+    "snippet_label": "CREATE ROPE BUFFER"
   },
   {
-    "id": "c8adc24fe7a2864b",
-    "summary": "Beginner walkthrough of Kotlin string handling: declaring strings, string templates and expression interpolation, concatenation, common String methods (trim, split, replace, case conversion), multiline strings, and structural equality, with Android-flavored examples like building API URLs.",
+    "id": "9ff52cd915c72bc0",
+    "summary": "Contrasts Rust's Result<T,E> with Kotlin's exception-based error handling: Kotlin's throws compiles silently and can crash at runtime, while Rust forces callers to unwrap failures via match, ?, or custom error enums. Argues for explicit, exhaustive failure handling over generic try-catch.",
     "topics": [
       "kotlin",
       "kotlin-stdlib"
     ],
-    "code_snippet": "val price = 499\nval quantity = 3\nprintln(\"Total Price: ${price * quantity}\")",
-    "snippet_label": "STRING TEMPLATE EXPR"
+    "code_snippet": "fun getUser(id: String): User {\n    val response = api.fetchUser(id) // might throw\n    return response.toUser()\n}",
+    "snippet_label": "UNCHECKED THROW RISK"
   },
   {
-    "id": "0f85fb5bb4095790",
-    "summary": "Promotional announcement for a paid book on data structures and algorithms for mobile developers across Android, iOS, Flutter, and Kotlin Multiplatform, covering complexity analysis and mobile-specific applications like caching and pagination; mostly a sales pitch with purchase links.",
-    "topics": []
+    "id": "8ea1446eb7bbcde0",
+    "summary": "Beginner tutorial on Kotlin inheritance: classes are final by default, use open to allow subclassing, override functions/properties, call super, and chain constructors across multiple levels. Includes Android examples like a shared BaseActivity and layered User/Customer/Seller models.",
+    "topics": [
+      "kotlin"
+    ],
+    "code_snippet": "open class Animal {\n    open fun makeSound() {\n        println(\"Animal Sound\")\n    }\n}\n\nclass Dog : Animal() {\n    override fun makeSound() {\n        super.makeSound()\n        println(\"Bark\")\n    }\n}",
+    "snippet_label": "OVERRIDE WITH SUPER"
   },
   {
-    "id": "6cccea2474d5b157",
-    "summary": "Personal Indonesian-language essay reflecting on religious judgment and mistreatment of marginalized people; unrelated to Kotlin, Android, or software development.",
-    "topics": []
+    "id": "2d6fbca76d33c54a",
+    "summary": "Introductory coroutines chapter covering the suspend keyword, why suspend functions can only be called from other suspend functions or coroutines, bridging with runBlocking, and the launch-vs-async distinction, ending with running independent calls concurrently via async/await.",
+    "topics": [
+      "coroutines"
+    ],
+    "code_snippet": "suspend fun loadProfile(): Profile = coroutineScope {\n    val userDeferred = async { fetchUser(\"1\") }\n    val settingsDeferred = async { fetchSettings(\"1\") }\n    val user = userDeferred.await()\n    val settings = settingsDeferred.await()\n    Profile(user, settings)\n}",
+    "snippet_label": "PARALLEL ASYNC AWAIT"
   },
   {
-    "id": "a110c5d52d62a053",
-    "summary": "Release notes for Compose Multiplatform 1.12.10-alpha01+dev4500, bumping the core Compose and Material3 artifacts alongside Lifecycle 2.11.10-alpha01 and Navigation3 1.2.0-alpha03 dependency coordinates.",
+    "id": "0d3585c4b0d4fe5a",
+    "summary": "A Flutter developer recounts switching a native Android app's rewrite to Compose Multiplatform, describing the Modifier-based styling mental model, MVI via sealed classes with collectAsState/LaunchedEffect, and remaining gaps versus Flutter such as reliance on third-party Voyager navigation and no hot reload.",
     "topics": [
       "compose-multiplatform",
-      "kmp",
-      "material3",
-      "navigation"
-    ]
-  },
-  {
-    "id": "40c8e52027d7f98e",
-    "summary": "Release notes for Compose Multiplatform 1.12.0-beta03+dev4506, updating the core org.jetbrains.compose.* artifact coordinates to the new beta version with no further changelog detail provided.",
-    "topics": [
-      "compose-multiplatform",
+      "mvi",
       "kmp"
     ]
   },
   {
-    "id": "1f08c4db1e648cdc",
-    "summary": "Third post in Google's Jetpacker series covers cloud and hybrid AI on Android via Firebase AI Logic: URL/Search/Maps grounding for up-to-date chatbot answers, plus a hybrid-inference API with PREFER_ON_DEVICE, PREFER_IN_CLOUD, ONLY_ON_DEVICE and ONLY_IN_CLOUD routing modes to balance cost, latency and offline support.",
+    "id": "57544570a9182083",
+    "summary": "Field guide to a GitLab CI/CD pipeline that runs gradlew test/assembleDebug on merge requests and builds plus uploads a signed AAB via Fastlane on merge to master. Flags a real hardcoded-keystore-password incident and explains how Play App Signing limited the damage.",
     "topics": [
-      "android-developers",
-      "android-api"
+      "gradle",
+      "build-logic",
+      "r8-proguard"
     ],
-    "code_snippet": "val reviewModel = Firebase.ai.generativeModel(\n    modelName = \"gemini-3.1-flash-lite\",\n    onDeviceConfig = OnDeviceConfig(\n        inferenceMode = InferenceMode.PREFER_ON_DEVICE\n    )\n)",
-    "snippet_label": "HYBRID INFERENCE CONFIG"
+    "code_snippet": "signingConfigs {\n    create(\"release\") {\n        keyAlias = \"blah\"\n        keyPassword = \"blah\"\n        storeFile = file(\"../app/keystore/blah-release.jks\")\n        storePassword = \"blah\"\n    }\n}",
+    "snippet_label": "HARDCODED SIGNING KEYS"
   },
   {
-    "id": "79a434fa3ffdb177",
-    "summary": "Explains Android AppFunctions, which compile annotated Kotlin functions into type-safe tools a privileged on-device agent can discover via 'Android MCP', letting the Jetpacker demo app expose expense-tracking, itinerary and voice-note actions to voice/text commands without manual UI navigation.",
+    "id": "8e62b9191ddcfc6f",
+    "summary": "Personal Indonesian-language essay about being the youngest child in a family and the hidden struggles that come with it. Not related to Android, Kotlin, or KMP development.",
+    "topics": []
+  },
+  {
+    "id": "d0567b804e0e70b0",
+    "summary": "Short excerpt of storytelling/copywriting advice using Sam Walton and Walmart as an example of leading with struggle rather than success. Generic writing/marketing tip with no Android or Kotlin content.",
+    "topics": []
+  },
+  {
+    "id": "c6cafa7ac92c5c97",
+    "summary": "Launch announcement for Seerie, a free offline-first Android scam-detection app for India that runs a rule engine and an optional on-device small language model with no server-side data transmission, plus one-tap SOS and helpline shortcuts. Product marketing piece with no development detail.",
+    "topics": []
+  },
+  {
+    "id": "9883b5192e9dffd8",
+    "summary": "Explains Compose Runtime's new retain API, which keeps plain Kotlin objects alive across configuration changes without extending ViewModel or any Android lifecycle class. Compares it against remember, rememberSaveable and ViewModel, arguing it suits reusable, framework-independent, multiplatform-friendly state holders but doesn't replace ViewModel features like viewModelScope, SavedStateHandle or Hilt integration.",
     "topics": [
-      "android-developers",
+      "compose",
+      "viewmodel",
+      "kmp"
+    ],
+    "code_snippet": "class CounterHolder {\n    var count by mutableStateOf(0)\n}\n\n@Composable\nfun Counter() {\n    val holder = retain { CounterHolder() }\n    Button(onClick = { holder.count++ }) {\n        Text(\"Count: ${holder.count}\")\n    }\n}",
+    "snippet_label": "NEW RETAIN API"
+  },
+  {
+    "id": "3ed2c61405a9cf1d",
+    "summary": "A roadmap for Android developers starting Android XR: distinguishes immersive (headsets, wired glasses) from augmented (audio/display glasses) experiences, and recommends Jetpack XR SDK plus Kotlin, Compose and existing Android skills as the fastest entry path over Unity, OpenXR or WebXR. Also flags Jetpack Compose Glimmer, a Compose toolkit built for glanceable display-glasses UI.",
+    "topics": [
       "android-api",
-      "ksp"
-    ],
-    "code_snippet": "implementation(\"androidx.appfunctions:appfunctions:1.0.0-alpha10\")\nksp(\"androidx.appfunctions:appfunctions-compiler:1.0.0-alpha10\")\n\n@AppFunctionSerializable(isDescribedByKDoc = true)\ndata class TripSerializable(\n    val id: String,\n    val title: String,\n    val location: String\n)",
-    "snippet_label": "APPFUNCTION SERIALIZABLE"
-  },
-  {
-    "id": "a53c1bc3c113b87e",
-    "summary": "Introduces Jetpacker, Google's open-source I/O demo travel app, and frames the 'Build intelligent Android apps' series: choosing on-device, cloud or hybrid inference for itinerary summaries, receipt OCR, chat translation and AppFunctions system integration depending on privacy, cost and capability needs.",
-    "topics": [
-      "android-developers",
-      "android-api"
-    ]
-  },
-  {
-    "id": "a5e8d6099999316b",
-    "summary": "Shows how to use Gemini Nano 4 via ML Kit's Prompt API and Structured Output API for on-device Android features in Jetpacker: summarizing trip itineraries and extracting structured data from receipt photos, with prompt tuning cutting response latency from 13 seconds to under 2.",
-    "topics": [
-      "android-developers",
-      "android-api"
-    ],
-    "code_snippet": "val previewFastConfig = generationConfig {\n    modelConfig = modelConfig {\n        releaseStage = ModelReleaseStage.PREVIEW\n        preference = ModelPreference.FAST\n    }\n}\n\nval geminiNano2BPreviewModel = Generation.getClient(previewFastConfig)",
-    "snippet_label": "GEMINI NANO PROMPT CONFIG"
-  },
-  {
-    "id": "3c5ac448a462823c",
-    "summary": "JetBrains Air now connects to any ACP-compatible coding agent (GitHub Copilot, OpenCode, Cline, local Ollama models) alongside its bundled agents, adds IntelliJ-powered Java/Kotlin navigation and error diagnostics, Windows Docker task support, and an 'xhigh' reasoning effort option for Claude models.",
-    "topics": [
-      "jetbrains",
-      "kotlin"
-    ]
-  },
-  {
-    "id": "5477f630170c9108",
-    "summary": "RubyMine 2026.2 adds agentic debugging through a bundled debugger skill, native GitHub Copilot chat integration, third-party AI completion providers, and a symbol-based code insight engine enabled by default, plus RSpec 4 and RBS tooling improvements — a Ruby/Rails-only IDE release with no Kotlin/Android relevance.",
-    "topics": []
-  },
-  {
-    "id": "b63f6996d9ffce1a",
-    "summary": "PyCharm 2026.2 adds a Rust plugin for Python extension development, makes debugpy the default debugger, integrates the Pyrefly type engine, ships an editor minimap, AI-generated starter projects, and an agent skills manager — a Python-only IDE release with no Kotlin/Android relevance.",
-    "topics": []
-  },
-  {
-    "id": "d12eadbb98305009",
-    "summary": "JetBrains Context is a new repository-intelligence layer that semantically indexes codebases so agents like Claude Code, Codex CLI and Junie can query relevant code instead of repeatedly re-exploring files; benchmarks show up to 68% fewer agent turns, 59% lower latency and 48% lower cost, across JetBrains IDEs, Air and VS Code.",
-    "topics": [
-      "jetbrains"
-    ]
-  },
-  {
-    "id": "d29f7e9403b37e87",
-    "summary": "JetBrains' Q2 2026 plugin developer newsletter covers Marketplace changes (internal API usage notices, an open Exceptions tab), an IntelliJ Platform Gradle Plugin 2.18.1 update, Plugin Verifier 1.409, and links to guides on remote development, UI responsiveness, and the newly open-sourced LSP client API.",
-    "topics": [
-      "jetbrains",
-      "gradle-plugin"
-    ]
-  },
-  {
-    "id": "b956554d8b271ab9",
-    "summary": "A Medium review of a Udemy Jetpack Compose crash course finds it a solid refresher on animations, providers, and Compose fundamentals, but dated since it teaches Navigation 2 rather than the simpler Navigation 3.",
-    "topics": [
-      "compose",
-      "navigation"
-    ]
-  },
-  {
-    "id": "927cfdb0169b4c37",
-    "summary": "A developer built a minimal IntelliJ timer/stopwatch plugin with Compose, Jewel, and Skiko, hosting composables via JewelComposePanel, keeping state in a project-level service as a sealed StateFlow hierarchy, and covering pitfalls around bundling Compose as platform modules across IDE major versions.",
-    "topics": [
-      "compose",
-      "jetbrains",
-      "sealed-classes",
-      "flows"
-    ],
-    "code_snippet": "sealed interface TimerState {\n    val displaySeconds: Int\n    data class Stopped(val totalSeconds: Int) : TimerState\n    data class Running(val totalSeconds: Int, val remainingSeconds: Int) : TimerState\n    data class Paused(val totalSeconds: Int, val remainingSeconds: Int) : TimerState\n}",
-    "snippet_label": "SEALED TIMER STATE"
-  },
-  {
-    "id": "b7d1e51105a3d97e",
-    "summary": "A nightly Compose Multiplatform alpha snapshot (1.12.10-alpha01+dev4525) bumps Material3, Lifecycle, and Navigation3 artifacts in lockstep; the release lists no specific changelog entries for this dev build.",
-    "topics": [
-      "compose-multiplatform"
-    ]
-  },
-  {
-    "id": "22598e4381b50c97",
-    "summary": "Another Compose Multiplatform nightly (1.12.10-alpha01+dev4519) republishes the same Material3, Lifecycle, and Navigation3 dev artifacts a few hours before dev4525, again with no listed changes.",
-    "topics": [
-      "compose-multiplatform"
-    ]
-  },
-  {
-    "id": "176009e6ea633e28",
-    "summary": "Compose Multiplatform ships a 1.12.0-beta03 dev build (dev4514) that bumps the core org.jetbrains.compose artifacts, with no specific changes documented in the release notes.",
-    "topics": [
-      "compose-multiplatform"
-    ]
-  },
-  {
-    "id": "622791642ae06047",
-    "summary": "Arrow 2.3.0-alpha.4 updates the Optics compiler plugin to support generic types in the optics DSL and fixes it to work correctly alongside classes annotated with kotlinx.serialization's @Serializable.",
-    "topics": []
-  },
-  {
-    "id": "20c898baef7142c6",
-    "summary": "Google guides Android developers on adapting apps for Samsung's new ultra-wide foldables and Wear OS 7, covering fluid layouts with Compose's new Grid/FlexBox/MediaQuery APIs, Window Size Classes, fold-aware design, CameraX for rotation-safe previews, and Wear Widgets via Jetpack Glance.",
-    "topics": [
       "adaptive-ui",
-      "jetpack",
-      "wear-os",
-      "android-api"
-    ]
-  },
-  {
-    "id": "62202933c9d62ee8",
-    "summary": "JetBrains Rider 2026.2 wires the IDE's coverage, profiler, and refactoring context into AI coding agents through bundled and installable skills, adds native GitHub Copilot integration, and ships WPF Hot Reload plus faster debugging and indexing for .NET and Unreal Engine projects.",
-    "topics": []
-  },
-  {
-    "id": "74080321e6a95c05",
-    "summary": "RustRover 2026.2 adds axum/reqwest route-handler navigation, Ferrocene toolchain support, an interactive declarative macro tester, Criterion benchmark run configurations, and an agent skills manager for sharing framework knowledge across AI coding sessions.",
-    "topics": []
-  },
-  {
-    "id": "404d619b23514f36",
-    "summary": "First part of a series tracing how Android Views, Flutter, and Jetpack Compose each handle one state change: Views mutate a live tree via findViewById, Flutter rebuilds and diffs three parallel trees, framing why each rendering design trades efficiency differently.",
-    "topics": [
-      "compose",
-      "android-developers"
-    ]
-  },
-  {
-    "id": "855194cb528884b2",
-    "summary": "Reflects on a senior-interview question -- why does Compose exist -- and walks through how View-based UIs scatter UI truth across separate widgets requiring manual synchronization, while Compose centralizes state in one UI-state object the framework keeps consistent.",
-    "topics": [
-      "compose",
-      "architecture"
-    ],
-    "code_snippet": "usernameText.text = user.name\nprogressBar.isVisible = false\nfollowButton.isEnabled = false\ntoolbar.title = user.name\nverifiedBadge.isVisible = user.isVerified\nfollowersCount.text = user.followers.toString()",
-    "snippet_label": "MANUAL UI SYNC"
-  },
-  {
-    "id": "4a8e6d6d83c46392",
-    "summary": "Engineering guide to offline-first Android apps: Room as the single source of truth, an outbox table for durable pending writes, full/incremental/hybrid sync strategies, sync-token approaches, and field-level conflict resolution such as last-write-wins versus merge rules.",
-    "topics": [
-      "architecture",
-      "room",
-      "clean-architecture",
-      "flows"
-    ],
-    "code_snippet": "@Entity(tableName = \"outbox\")\ndata class OutboxEntry(\n    @PrimaryKey val id: String = UUID.randomUUID().toString(),\n    val entityType: String,\n    val entityId: String,\n    val operation: Operation,\n    val payload: String,\n    val createdAt: Long = System.currentTimeMillis(),\n    val retryCount: Int = 0,\n    val lastError: String? = null\n)",
-    "snippet_label": "OUTBOX PATTERN ENTITY"
-  },
-  {
-    "id": "1e0a14b3bf7e54d4",
-    "summary": "Beginner-level walkthrough of Kotlin classes and objects covering properties, primary constructors, default values, init blocks, nested classes, and member functions, illustrated with Student/Product/User examples relevant to everyday Android model classes.",
-    "topics": [
-      "kotlin"
-    ]
-  },
-  {
-    "id": "5e59445121cdacd4",
-    "summary": "Weekly Jetpack artifact roundup: Media3 reaches 1.11.0-rc01 after a single beta, covering ExoPlayer, Transformer, session, Compose UI, and Cast modules, alongside new Gradle version-catalog releases.",
-    "topics": [
-      "media3",
-      "version-catalog"
-    ]
-  },
-  {
-    "id": "ad840364f1eb4af5",
-    "summary": "CommonsWare retires cw-json in favor of kPointer, a Kotlin library that extracts values via JSON Pointer and dot-path syntax from JSON, YAML (yamlkt), and HTML/XML (Ksoup) through a shared adapter abstraction, with a conformance suite for custom adapters and future ports.",
-    "topics": [
-      "kotlin",
-      "kmp"
-    ]
-  },
-  {
-    "id": "e5be994a7dcc36c9",
-    "summary": "RustRover 2026.2 adds initial support for the Axum web framework, letting developers jump between route strings and their handler functions, see inline HTTP method/path hints, and auto-generate Reqwest client calls for an endpoint.",
-    "topics": []
-  },
-  {
-    "id": "bce502cd4a1eba5a",
-    "summary": "Rebuilds a voice-to-transaction Android feature entirely on-device, replacing the earlier Firebase AI Logic/Gemini cloud approach: whisper.cpp transcribes via JNI on a dedicated single-thread coroutine dispatcher, and a deterministic Kotlin parser (not an LLM) extracts the structured intent. Covers the Gradle/CMake NDK setup and the Hilt-swapped service interface.",
-    "topics": [
-      "android-api",
-      "coroutines",
-      "hilt"
-    ],
-    "code_snippet": "private val inferenceDispatcher = Executors.newSingleThreadExecutor { r ->\n    Thread(r, \"whisper-inference\")\n}.asCoroutineDispatcher()\n\nsuspend fun transcribe(audioData: FloatArray, language: String): String =\n    withContext(inferenceDispatcher) {\n        check(contextPtr != 0L) { \"released\" }\n        WhisperLib.fullTranscribe(contextPtr, threads, audioData, language)\n    }",
-    "snippet_label": "PIN JNI TO ONE THREAD"
-  },
-  {
-    "id": "67e5b6bfe56afc52",
-    "summary": "Walks through exposing a Kotlin NoteRepository's CRUD methods as Android AppFunctions so an AI agent can discover and call them, documenting five gaps encountered between the alpha API's documentation and a working end-to-end integration.",
-    "topics": [
-      "android-api",
-      "kotlin"
-    ],
-    "code_snippet": "interface NoteRepository {\n    suspend fun getAllNotes(): List<NoteEntity>\n    suspend fun createNote(title: String, content: String): String\n    suspend fun updateNote(id: String, title: String?, content: String?): NoteEntity?\n    suspend fun deleteNote(id: String): Boolean\n}",
-    "snippet_label": "NOTE REPOSITORY INTERFACE"
-  },
-  {
-    "id": "5d3d8bf490a46279",
-    "summary": "Explains Kotlin's primary and secondary constructors, init blocks, constructor delegation, and default parameter values, with require()/check() validation examples and simple Android-style model classes like User and Product.",
-    "topics": [
-      "kotlin"
-    ],
-    "code_snippet": "class User(val age: Int) {\n    init {\n        require(age >= 18) { \"Age must be at least 18.\" }\n    }\n}",
-    "snippet_label": "INIT BLOCK VALIDATION"
-  },
-  {
-    "id": "4ab33513185bc53e",
-    "summary": "Describes how Play Store apps from publishers like mr.Bunn and Hadiz Studio request broad permissions to quietly turn devices into ad-traffic generators, framing policy-compliant but deceptive apps as a bigger everyday risk than classic malware.",
-    "topics": []
-  },
-  {
-    "id": "62fa5a4d1a81c077",
-    "summary": "Promotes BrowsePad, an app that turns a phone into a wireless touchpad and keyboard for browsing the web on Android TV via QR-code pairing over local Wi-Fi, covering gestures, desktop-site switching, tabs, and downloads.",
-    "topics": []
-  },
-  {
-    "id": "088ffad5d95e7d92",
-    "summary": "Marketing listicle listing seven ways BrowsePad's phone-as-touchpad controller improves Android TV web browsing: cursor gestures, desktop-site rendering, multi-tab browsing, phone-based text input, bookmarks/history, and file downloads.",
-    "topics": []
-  },
-  {
-    "id": "5b4f30434b785553",
-    "summary": "Overviews Android XR for developers: Home Space vs Full Space app modes, declarative spatial UI via Jetpack Compose for XR (panels, depth, 3D entities), the Compose Glimmer toolkit for smart-glasses micro-UIs, Gemini Live API voice integration, and the built-in Android Studio XR emulator.",
-    "topics": [
-      "compose",
-      "jetpack",
-      "android-api"
-    ]
-  },
-  {
-    "id": "b1056c8ad1da3b3b",
-    "summary": "GitHub release notes for Compose Multiplatform v1.12.10-alpha01+dev4541, a nightly dev build bumping the org.jetbrains.compose, material3, lifecycle, and navigation3 artifact coordinates in lockstep. No changelog text is provided beyond the version bump itself.",
-    "topics": [
-      "compose-multiplatform",
-      "kmp"
-    ]
-  },
-  {
-    "id": "1b888910ee148542",
-    "summary": "GitHub release notes for Compose Multiplatform v1.12.10-alpha01+dev4534, a nightly dev build one day earlier than dev4541, again bumping compose, material3, lifecycle, and navigation3 artifact versions together. No further details are included.",
-    "topics": [
-      "compose-multiplatform",
-      "kmp"
-    ]
-  },
-  {
-    "id": "99a60097ce3d45b3",
-    "summary": "Shows how registering every destination directly inside Navigation 3's entryProvider turns it into an unmaintainable switchboard as an app grows. Proposes grouping related screens into EntryProviderScope extension functions per feature, so the root NavDisplay just composes feature entry points.",
-    "topics": [
-      "navigation",
-      "architecture",
-      "compose"
-    ],
-    "code_snippet": "fun EntryProviderScope<NavKey>.authFeature(\n    onAuthSuccess: () -> Unit,\n    onNavigateToSignup: () -> Unit\n) {\n    entry<LoginRoute> {\n        LoginScreen(\n            onLoginSuccess = onAuthSuccess,\n            onSignupClick = onNavigateToSignup\n        )\n    }\n}",
-    "snippet_label": "SCOPE NAV BY FEATURE"
-  },
-  {
-    "id": "f7fd861b0f9fd593",
-    "summary": "Argues Jetpack Compose screens need more than Loading/Success/Error booleans, covering cached content shown during refresh, filters retained across process recreation, and retryable errors that don't hide existing data. Recommends separating business-driven screen state from transient UI element state.",
-    "topics": [
-      "compose",
-      "mvvm",
-      "architecture"
-    ]
-  },
-  {
-    "id": "d5801c874d80b8c2",
-    "summary": "Walks through Kotlin property fundamentals: default getters/setters, custom getters for computed values, custom setters using the field backing keyword for validation, private setters, and lateinit. Includes Android-flavored examples like trimming email input and rejecting negative prices.",
-    "topics": [
-      "kotlin"
-    ],
-    "code_snippet": "var salary = 0\n    set(value) {\n        field = if (value >= 0) value else 0\n    }",
-    "snippet_label": "VALIDATE VIA BACKING FIELD"
-  },
-  {
-    "id": "dcecf30142b4af40",
-    "summary": "Walks through implementing FIDO2/WebAuthn passkey registration and login on Android with the Credential Manager API (androidx.credentials 1.5.0), wired into an MVVM ViewModel with sealed UI states and a minimal Compose screen that triggers the sign-in flow.",
-    "topics": [
-      "android-api",
-      "mvvm",
-      "compose"
-    ],
-    "code_snippet": "suspend fun loginWithPasskey(\n    activity: FragmentActivity,\n    requestJson: String\n): Result<GetCredentialResponse> {\n    return try {\n        val option = GetPublicKeyCredentialOption(requestJson)\n        val request = GetCredentialRequest(listOf(option))\n        Result.success(credentialManager.getCredential(activity, request))\n    } catch (e: GetCredentialException) {\n        Result.failure(e)\n    }\n}",
-    "snippet_label": "PASSKEY LOGIN CALL"
-  },
-  {
-    "id": "8665849639b67b8b",
-    "summary": "Covers building a production biometric login flow with BiometricPrompt and BiometricManager wrapped in MVVM, using a sealed AuthState and a Compose UI. Stresses signing a backend challenge with a Keystore-held CryptoObject rather than trusting a boolean success callback.",
-    "topics": [
-      "android-api",
-      "mvvm",
-      "compose"
-    ],
-    "code_snippet": "fun isBiometricAvailable(): Boolean {\n    val biometricManager = BiometricManager.from(context)\n    return biometricManager.canAuthenticate(\n        BiometricManager.Authenticators.BIOMETRIC_STRONG\n    ) == BiometricManager.BIOMETRIC_SUCCESS\n}",
-    "snippet_label": "CHECK BIOMETRIC SUPPORT"
-  },
-  {
-    "id": "c6bcbaf752b41ebf",
-    "summary": "A consumer buying guide listing seven mistakes people make when purchasing a smartphone, covering brand bias, processor specs, camera megapixels, storage sizing, software update support, battery life, and trusting reviews. Not developer-focused content.",
-    "topics": []
-  },
-  {
-    "id": "fd3d9dd243c40591",
-    "summary": "Promotional guide for a cross-platform teleprompter app covering script prep, four scrolling modes, and recording/editing across iPhone, Android, and web. Not Kotlin/Android development content.",
-    "topics": []
-  },
-  {
-    "id": "574d98650e01ac00",
-    "summary": "JetBrains Compose Multiplatform alpha release bumping org.jetbrains.compose.* and material3 artifacts to 1.12.10-alpha01, plus lifecycle to 2.11.10-alpha01 and navigation3 to 1.2.0-alpha03, all under dev4546. A routine dependency-coordinate update for teams tracking the bleeding edge.",
-    "topics": [
-      "compose-multiplatform",
-      "material3",
-      "navigation",
       "jetpack"
     ]
   },
   {
-    "id": "1fd23a0439262261",
-    "summary": "KSP 2.3.10 ships bug fixes including a fix for OOMs from unstopped coroutine dispatcher threads, by moving the KSP task cache to a Gradle build service. Recommended for projects hitting memory pressure during symbol processing.",
+    "id": "3e96d43889861743",
+    "summary": "Fourth part of a series comparing Android Views, Jetpack Compose and Flutter by how many trees each uses to track configuration, identity and behavior: Views use one object for all three, Compose splits a slot-table bookkeeping structure from the LayoutNode tree, and Flutter separates Widgets, Elements and RenderObjects into three. Clarifies why Compose sits inside a single classic Android View for the final render pass.",
+    "topics": [
+      "compose",
+      "architecture",
+      "kmp"
+    ]
+  },
+  {
+    "id": "ea4c51ef7d19701c",
+    "summary": "Investigates Android 16's Expanded Dark Theme by comparing a light-only app's auto-generated dark mode against a hand-built Material 3 dark theme across fourteen UI patterns. Finds auto-dark preserves WCAG contrast ratios on plain text but underperforms by 1.8-2.5x on saturated colors and mid-tone grays, tracing the gap to HWUI's lightness-inversion formula in the renderer source.",
+    "topics": [
+      "android-api",
+      "material3"
+    ]
+  },
+  {
+    "id": "0cfc9c8cb4a9ecee",
+    "summary": "Traces how a rendered Android frame actually reaches the screen: an app's Surface hands buffers to a BufferQueue, and the system process SurfaceFlinger consumes and composites every visible surface's latest buffer into one final image via Binder. Clarifies why status bars and wallpapers appear layered around app content the app never drew.",
+    "topics": [
+      "android-api"
+    ]
+  },
+  {
+    "id": "65e7b48e02fdd589",
+    "summary": "Walks through when to choose abstract classes versus interfaces in Kotlin, covering shared state and constructors for abstract classes versus multiple-inheritance capability contracts for interfaces, including default interface implementations. Uses Android examples like RecyclerView click listeners, a BaseViewModel and a payment system to ground the choice.",
+    "topics": [
+      "kotlin",
+      "architecture"
+    ],
+    "code_snippet": "abstract class Animal {\n    abstract fun makeSound()\n}\n\nclass Dog : Animal() {\n    override fun makeSound() = println(\"Bark\")\n}\n\ninterface Payment { fun pay() }\nclass CardPayment : Payment {\n    override fun pay() = println(\"Paid using Card\")\n}",
+    "snippet_label": "ABSTRACT VS INTERFACE"
+  },
+  {
+    "id": "849419255e0e9adf",
+    "summary": "Covers production architecture decisions for Kotlin Multiplatform, framing KMP as a way to avoid duplicating business logic rather than a general cross-platform tool. Flags AGP 9.0's incompatibility between com.android.library/application and the KMP plugin in the same module, requiring migration to the dedicated com.android.kotlin.multiplatform.library plugin before AGP 10 removes the legacy path.",
+    "topics": [
+      "kmp",
+      "gradle-plugin",
+      "architecture"
+    ],
+    "code_snippet": "plugins {\n    id(\"com.android.kotlin.multiplatform.library\")\n    kotlin(\"multiplatform\")\n}",
+    "snippet_label": "NEW KMP PLUGIN ID"
+  },
+  {
+    "id": "15e8fa1c8b81945b",
+    "summary": "Second part of a series building intuition for the Compose runtime by showing why ordinary functions can't hold state across recompositions: a naive var inside a composable resets on any unrelated recomposition, and moving it to a global variable leaks state across composable instances. Sets up the case for why remember exists as the runtime's per-position memory mechanism.",
+    "topics": [
+      "compose",
+      "kotlin"
+    ],
+    "code_snippet": "@Composable\nfun CounterScreen(count: Int) {\n    var expanded = false\n    Column {\n        Text(\"Count: $count\")\n        Button(onClick = { expanded = !expanded }) {\n            Text(if (expanded) \"Hide\" else \"Show\")\n        }\n        if (expanded) Details()\n    }\n}",
+    "snippet_label": "STATE RESET BUG"
+  },
+  {
+    "id": "77aa0c06f9845215",
+    "summary": "A five-round Android interview account covering fundamentals, system design, product sense, leadership, and culture fit, including a probe into whether a suspend function launched on Dispatchers.Main can cause an ANR (yes, if it blocks the main thread past the ~5-second threshold).",
+    "topics": [
+      "coroutines",
+      "android-developers"
+    ]
+  },
+  {
+    "id": "2974dcc5c8cc5483",
+    "summary": "A first-hand account of a three-round Blinkit Android interview process (core concepts, DSA, behavioral) that ended after round one, recapping what the interviewer probed and lessons learned for future candidates.",
+    "topics": []
+  },
+  {
+    "id": "3ef5d97236b58a05",
+    "summary": "Starting with AGP 9.2.0, R8 rewrites kotlinx.atomicfu's Atomic*FieldUpdater calls into Unsafe-based operations, cutting the reflection overhead that made compareAndSet ~2.7x slower than java.util.concurrent.atomic, yielding up to 2x faster coroutine launch and cancellation on Android.",
+    "topics": [
+      "coroutines",
+      "r8-proguard",
+      "android-api"
+    ],
+    "code_snippet": "val atomicReference = java.util.concurrent.atomic.AtomicReference(false)\nval atomicRef = kotlinx.atomicfu.atomic<Boolean>(false)\n\natomicReference.compareAndSet(true, false) // 50.7 ns\natomicRef.compareAndSet(true, false)       // 135 ns pre-fix",
+    "snippet_label": "ATOMICFU BENCHMARK"
+  },
+  {
+    "id": "56ca4a3907274ff2",
+    "summary": "A JetBrains livestream recap on migrating C/C++ codebases to Rust, arguing incremental migration of isolated modules beats full rewrites for concurrent, security-critical, or high-scale production systems; not Kotlin-specific content.",
+    "topics": []
+  },
+  {
+    "id": "b3ddf81ab6d5e807",
+    "summary": "A guide to Kotlin's coroutine builders (launch, async, runBlocking, withContext, coroutineScope, supervisorScope), covering their return types, start modes (including CoroutineStart.LAZY), and the key difference that launch throws exceptions eagerly while async defers them until await().",
+    "topics": [
+      "coroutines",
+      "kotlin"
+    ],
+    "code_snippet": "val deferred = scope.async {\n    throw IllegalStateException(\"boom\")\n}\n// nothing thrown yet...\ndeferred.await() // exception surfaces here",
+    "snippet_label": "ASYNC EXCEPTION TIMING"
+  },
+  {
+    "id": "ea62d58ab61d4808",
+    "summary": "A walkthrough of building an MCP server in Kotlin using the stdio transport, warning that any stray println or logging framework output corrupts JSON-RPC framing; the fix captures System.out before Logback initializes and redirects normal output to stderr.",
+    "topics": [
+      "kotlin",
+      "coroutines",
+      "kotlin-backend"
+    ],
+    "code_snippet": "val mcpOutput = System.out\nSystem.setOut(System.err)\nval transport = StdioServerTransport(\n    input = System.`in`.asSource().buffered(),\n    output = mcpOutput.asSink().buffered()\n)",
+    "snippet_label": "CAPTURE STDOUT FIRST"
+  },
+  {
+    "id": "4c87120423998dfb",
+    "summary": "A KMP architecture case study porting an 8,000-line 2013 Java game to Kotlin Multiplatform with Compose Multiplatform UI, showing how thin commonMain interfaces (graphics, hardware sensors) and a shared @Composable overlay stop platform-specific logic like steering sensitivity from drifting between Android and iOS.",
+    "topics": [
+      "kmp",
+      "compose-multiplatform",
+      "ios-interop"
+    ],
+    "code_snippet": "interface HardwareSensors {\n    // Device pitch in m/s^2; 0 = flat, positive = tilted forward\n    val devicePitch: Float\n}",
+    "snippet_label": "SHARED SENSOR SEAM"
+  },
+  {
+    "id": "2331d2b1354884d7",
+    "summary": "An introductory tour of Kotlin data classes explaining the auto-generated equals(), hashCode(), toString(), copy(), and componentN() functions, with Android examples spanning Retrofit response models, Room entities, and Compose/MVI UI state updated via copy().",
+    "topics": [
+      "kotlin",
+      "room",
+      "compose",
+      "retrofit"
+    ],
+    "code_snippet": "data class LoginUiState(\n    val isLoading: Boolean,\n    val error: String?,\n    val userName: String\n)\n\nstate = state.copy(isLoading = true)",
+    "snippet_label": "COPY UI STATE"
+  },
+  {
+    "id": "4f354d36cb820fc9",
+    "summary": "Promotional roundup for MedSBoX, an Iraqi creator's directory of Telegram channels, bots, and social profiles for \"Android and iOS apps, AI tools, and digital solutions.\" No Kotlin, Android, or KMP development content — pure self-promotion/spam.",
+    "topics": []
+  },
+  {
+    "id": "80bbe3d21de36d14",
+    "summary": "JetBrains open-sourced KotlinLLM, an IntelliJ plugin letting Kotlin/JVM code call asLlm/mockLlm 'Smart macros' whose generated bodies persist as ordinary, reviewable Kotlin source rather than hitting an LLM every call. Evaluated on Spring Petclinic and a GitHub issue-triage prototype (~89% recall), it aims to make runtime LLM delegation explicit and testable.",
+    "topics": [
+      "kotlin",
+      "jetbrains"
+    ],
+    "code_snippet": "val issuesApiUrl: String = asLlm(repoInput, hint = \"GitHub API URL: get all issues, including closed\")\nval issues: List<Issue> = asLlm(response, hint = \"Return all beginner-friendly issues for this repository\")",
+    "snippet_label": "SMART MACRO CALL"
+  },
+  {
+    "id": "0dd80518394d809a",
+    "summary": "Google marks five years since Jetpack Compose 1.0, now used in over 68% of the top 1,000 Android apps, tracing its evolution from basic layouts to Compose for TV, Wear OS, Glance, and adaptive APIs like FlexBox and Grid. Confirms a Compose-first direction as the Views toolkit enters maintenance mode.",
+    "topics": [
+      "compose",
+      "jetpack",
+      "android-developers",
+      "material3"
+    ]
+  },
+  {
+    "id": "7ef15164f25002e7",
+    "summary": "JetBrains opens its annual State of CI/CD 2026 survey, inviting developers and DevOps engineers to share which CI/CD platforms they use and how AI is reshaping delivery pipelines. Purely a call for survey participants with a prize incentive, no technical Kotlin/Android content.",
+    "topics": []
+  },
+  {
+    "id": "5d14ed5c3b313dfe",
+    "summary": "Beginner walkthrough of Kotlin sealed classes and sealed interfaces, showing how to model restricted state hierarchies (Loading/Success/Error) for exhaustive when-expressions instead of enums or raw strings. Covers real Android patterns for ViewModel UI state, API results, navigation destinations, and Compose rendering in MVVM/MVI style.",
+    "topics": [
+      "sealed-classes",
+      "kotlin",
+      "mvvm",
+      "compose"
+    ],
+    "code_snippet": "sealed class LoginState {\n    object Loading : LoginState()\n    object Success : LoginState()\n    data class Error(val message: String) : LoginState()\n}\nfun handleState(state: LoginState) = when (state) {\n    is LoginState.Loading -> println(\"Loading...\")\n    is LoginState.Success -> println(\"Login Successful\")\n    is LoginState.Error -> println(state.message)\n}",
+    "snippet_label": "EXHAUSTIVE WHEN STATE"
+  },
+  {
+    "id": "094782c8657292d1",
+    "summary": "Independent Kotlin/Python project pairing an Android app with a Windows tray tool that converts Banglish (Bengali written in Roman script) to Bengali or English via Groq's free llama-3.3-70b-versatile API. The Android client is plain Kotlin calling the REST endpoint directly through OkHttp.",
+    "topics": [
+      "kotlin",
+      "android-developers",
+      "okhttp"
+    ]
+  },
+  {
+    "id": "79d63c25b26ad02a",
+    "summary": "Listicle claiming to reveal five signs a WhatsApp account is being remotely monitored (battery drain, unrecognized linked devices, early read receipts, phone heat, call artifacts) with generic consumer security tips. Clickbait security content with no Kotlin/Android development substance.",
+    "topics": []
+  },
+  {
+    "id": "5dfdad94b50d7386",
+    "summary": "GitHub release tag for Compose Multiplatform v1.12.0-beta04+dev4563, a dev-track beta of JetBrains' Kotlin Multiplatform UI framework. The release page itself failed to load and lists no changelog beyond the version tag and Maven coordinates.",
+    "topics": [
+      "compose-multiplatform",
+      "kmp"
+    ]
+  },
+  {
+    "id": "25593cdcf161aa39",
+    "summary": "Compose Multiplatform alpha release bumping org.jetbrains.compose, material3, androidx.lifecycle, and Navigation3 artifact coordinates to matching alpha/dev versions. A coordinate-only tag with no described API changes, relevant mainly to teams tracking bleeding-edge Compose Multiplatform builds.",
+    "topics": [
+      "compose-multiplatform",
+      "kmp"
+    ]
+  },
+  {
+    "id": "7c92463fa6a3579b",
+    "summary": "Compose Multiplatform 1.12.0-beta03 bumps Compose Hot Reload to 1.2.0-rc01 and fixes several iOS crashes (text-input cancellation, disposed AccessibilityElement, an iOS 14 CAFrameRateRangeDefault crash), a desktop VerifyError build failure, and Web/WASM accessibility-sizing and scroll regressions.",
+    "topics": [
+      "compose-multiplatform",
+      "kmp",
+      "wasm",
+      "ios-interop"
+    ]
+  },
+  {
+    "id": "5e8bd083bcb603e4",
+    "summary": "JetBrains-published tutorial explaining OAuth2 delegated authorization and JWT structure (header/payload/signature), then applying them to secure a Kotlin/Spring Boot REST API acting as a resource server that validates bearer tokens. A companion Ktor-based tutorial is planned.",
+    "topics": [
+      "spring-kotlin",
+      "kotlin-backend"
+    ]
+  },
+  {
+    "id": "920d1e97155e24c6",
+    "summary": "Google announces global expansion of the Play Age Signals API, letting parents share a child's age range via Family Link so Android apps can tailor content and features per age group instead of applying one-size-fits-all rules. Rolls out to Australia and Canada by mid-August, globally later in 2026.",
+    "topics": [
+      "android-developers",
+      "android-api"
+    ]
+  },
+  {
+    "id": "257ed072984ad882",
+    "summary": "JetBrains' Qodana 2026.2 adds pull-request-level code coverage highlighting for changed lines, auto-detects Jacoco/Kover and other coverage report locations without extra config, and expands SAST with multi-file taint analysis, custom OpenGrep rules, and a new SABER benchmark runner for scoring findings against public vulnerability datasets.",
+    "topics": [
+      "jetbrains",
+      "testing",
+      "gradle"
+    ]
+  },
+  {
+    "id": "2c0c48cb4e1a487e",
+    "summary": "Explains why Kotlin uses Any instead of java.lang.Object as its root type: platform-agnostic design for JVM/JS/Native, dropping JVM-only methods like wait()/notify(), a non-nullable default (Any? for nullable), and compiler mapping of Any to Object in JVM bytecode for zero-overhead Java interop.",
+    "topics": [
+      "kotlin",
+      "kotlin-stdlib",
+      "kmp"
+    ]
+  },
+  {
+    "id": "c3511d8ef63dfe3e",
+    "summary": "Beginner walkthrough of val versus var clarifying that val only fixes the reference, not the referenced object's internal mutability, illustrated with a mutableListOf that still accepts add() under a val. Notes true immutability requires an immutable type like List, not just val.",
+    "topics": [
+      "kotlin",
+      "kotlin-stdlib"
+    ],
+    "code_snippet": "val items = mutableListOf(1, 2)\nitems.add(3)\nprintln(items) // [1, 2, 3]\n// items = mutableListOf() -> won't compile\nval frozen: List<Int> = listOf(1, 2) // no add() on the interface",
+    "snippet_label": "VAL VS VAR"
+  },
+  {
+    "id": "91bec38678596569",
+    "summary": "Beginner guide to Kotlin enum classes covering constructor properties, per-constant method overrides, built-in name/ordinal, the entries iteration API, and valueOf() string parsing. Closes with guidance on choosing enums for fixed constant sets versus sealed classes when states carry different data.",
+    "topics": [
+      "kotlin",
+      "sealed-classes"
+    ],
+    "code_snippet": "enum class Operation {\n    ADD { override fun apply(a: Int, b: Int) = a + b },\n    SUBTRACT { override fun apply(a: Int, b: Int) = a - b };\n    abstract fun apply(a: Int, b: Int): Int\n}\nprintln(Operation.ADD.apply(10, 5)) // 15",
+    "snippet_label": "ENUM PER-CONSTANT OVERRIDE"
+  },
+  {
+    "id": "da52c2910bc19ecc",
+    "summary": "A personal, non-technical reflective essay in Indonesian about kindness and gratitude, prompted by observing struggling workers. Contains no Android, Kotlin, or KMP development content despite being pulled from an Android-tagged feed.",
+    "topics": []
+  },
+  {
+    "id": "61ac29140c891acc",
+    "summary": "An Indonesian-language poem about love and staying close to a partner despite judgment from others. Purely creative writing with no connection to Android or Kotlin development.",
+    "topics": []
+  },
+  {
+    "id": "3e5bc621bbac68af",
+    "summary": "A consumer-facing reflection on how Android apps accumulate permissions (location, microphone, contacts) that users grant without reading, urging readers to periodically review and revoke unnecessary access. No implementation detail or developer-facing API guidance.",
+    "topics": []
+  },
+  {
+    "id": "7a4229cf469468d0",
+    "summary": "Walks through adding a Koog-based in-app AI assistant to the FantasyPremierLeague Compose Multiplatform sample, using Koog's structured-output support so the LLM returns typed player/fixture IDs instead of prose. Covers KMP expect/actual model wiring, SimpleTool-backed repository tools, and a functional agent strategy with StructureFixingParser for schema repair.",
+    "topics": [
+      "kmp",
+      "compose-multiplatform"
+    ],
+    "code_snippet": "@Serializable\n@LLMDescription(\"A Fantasy Premier League assistant answer\")\ndata class FplAnswer(\n    @property:LLMDescription(\"The user-facing answer, formatted as markdown\")\n    val text: String,\n    @property:LLMDescription(\"The FPL 'id' of every player referenced\")\n    val playerIds: List<Int> = emptyList(),\n    @property:LLMDescription(\"The 'id' of every fixture referenced\")\n    val fixtureIds: List<Int> = emptyList(),\n)",
+    "snippet_label": "KOOG STRUCTURED OUTPUT"
+  },
+  {
+    "id": "cb473de5758b62f5",
+    "summary": "Explains building a UPI (India's payment network) flow on Android in Kotlin: constructing the payment URI with Uri.Builder, launching the external UPI app via the modern Activity Result API instead of deprecated onActivityResult, and defensively parsing and validating the key-value response string for success, failure, or cancellation.",
+    "topics": [
+      "android-api"
+    ],
+    "code_snippet": "fun buildUpiUri(\n    payeeVpa: String,\n    payeeName: String,\n    amount: String,\n    transactionRef: String,\n    note: String\n): Uri {\n    return Uri.Builder()\n        .scheme(\"upi\")\n        .authority(\"pay\")\n        .appendQueryParameter(\"pa\", payeeVpa)\n        .appendQueryParameter(\"pn\", payeeName)\n        .appendQueryParameter(\"am\", amount)\n        .build()\n}",
+    "snippet_label": "BUILD UPI URI"
+  },
+  {
+    "id": "aa0f30696cb5c505",
+    "summary": "Shows how to use Compose's snapshotFlow to bridge internal Compose State (like scroll offsets or Pager position) into a Kotlin Flow for reliable UI testing, replacing flaky Thread.sleep()/polling with composeTestRule.waitUntil observing state that the Semantics Tree can't reach.",
+    "topics": [
+      "compose",
+      "testing",
+      "flows"
+    ],
+    "code_snippet": "LaunchedEffect(listState) {\n    snapshotFlow { listState.firstVisibleItemIndex }\n        .distinctUntilChanged()\n        .filter { it > 5 }\n        .collect { index ->\n            println(\"User is at index: $index\")\n        }\n}",
+    "snippet_label": "SNAPSHOTFLOW BRIDGE"
+  },
+  {
+    "id": "cad33f637f68b05b",
+    "summary": "Details the :security module of a modular Android news app that signs every authenticated request with a hardware-backed secp256r1 EC key from AndroidKeyStore, attaching signature, timestamp, and public-key headers via an OkHttp AuthInterceptor. Also covers why AndroidKeyStore can't be unit-tested directly under Robolectric and how a SecurityManager interface seam works around it.",
+    "topics": [
+      "android-api",
+      "okhttp"
+    ],
+    "code_snippet": "override fun signData(data: String): String {\n    return try {\n        val keyStore = KeyStore.getInstance(ANDROID_KEYSTORE).apply { load(null) }\n        val privateKey = keyStore.getKey(KEY_ALIAS, null) as PrivateKey\n        val signature = Signature.getInstance(\"SHA256withECDSA\")\n        signature.initSign(privateKey)\n        signature.update(data.toByteArray())\n        Base64.encodeToString(signature.sign(), Base64.NO_WRAP)\n    } catch (e: Exception) { \"\" }\n}",
+    "snippet_label": "SIGN WITH EC KEY"
+  },
+  {
+    "id": "a2f076175d348371",
+    "summary": "An open-source Kotlin live wallpaper that renders a real-time double-pendulum chaos simulation using Hamiltonian dynamics and Runge-Kutta integration instead of looping video effects. Free on Play Store with source on GitHub, no network access or tracking.",
+    "topics": [
+      "kotlin"
+    ]
+  },
+  {
+    "id": "0f10888c4b198e5d",
+    "summary": "A step-by-step Kotlin guide to Android's Room library: Entity/DAO/Database setup with KSP, Flow-based observation versus suspend calls, relations and indexes, and production habits like committed schema exports and safe migrations that avoid wiping user data on upgrade.",
+    "topics": [
+      "room",
+      "flows",
+      "testing"
+    ],
+    "code_snippet": "@Entity(tableName = \"notes\")\ndata class NoteEntity(\n    @PrimaryKey val id: String,\n    val title: String,\n    val updatedAt: Long,\n)\n\n@Dao\ninterface NoteDao {\n    @Query(\"SELECT * FROM notes ORDER BY updatedAt DESC\")\n    fun observeAll(): Flow<List<NoteEntity>>\n\n    @Insert(onConflict = OnConflictStrategy.REPLACE)\n    suspend fun upsert(note: NoteEntity)\n}",
+    "snippet_label": "ROOM ENTITY DAO"
+  },
+  {
+    "id": "8d4024a9a1c814d5",
+    "summary": "Walks through wiring Android App Links end to end: declaring intent filters, generating assetlinks.json with the Play App Signing SHA-256 fingerprint, hosting it correctly under Nginx without an SPA fallback swallowing it, and verifying deep links in a Kotlin Multiplatform app.",
+    "topics": [
+      "android-api",
+      "kmp"
+    ]
+  },
+  {
+    "id": "a3199d990f65fe1f",
+    "summary": "Explains why Kotlin has no static keyword and how object declarations, companion objects, and the singleton pattern replace it, with Android examples such as a shared Retrofit client, a session manager, factory methods, and companion objects implementing interfaces.",
+    "topics": [
+      "kotlin"
+    ],
+    "code_snippet": "class User private constructor(val name: String) {\n    companion object : Factory<User> {\n        override fun create() = User(\"Guest\")\n    }\n}\n\nval guest = User.create()",
+    "snippet_label": "FACTORY COMPANION OBJECT"
+  },
+  {
+    "id": "b1f97d4404ff3e50",
+    "summary": "Release notes for Compose Multiplatform 1.12.0-beta04+dev4577, a routine JetBrains snapshot bumping org.jetbrains.compose artifacts with no further changelog detail provided.",
+    "topics": [
+      "compose-multiplatform"
+    ]
+  },
+  {
+    "id": "287624812806950b",
+    "summary": "Compose Multiplatform 1.12.10-alpha01 snapshot bumps material3, AndroidX Lifecycle (2.11.10-alpha01), and Navigation3 (1.2.0-alpha03) in lockstep, relevant to teams tracking bleeding-edge KMP UI dependency versions.",
+    "topics": [
+      "compose-multiplatform",
+      "material3",
+      "navigation"
+    ]
+  },
+  {
+    "id": "9e04e3d85f9983dd",
+    "summary": "JetBrains announces its Ship Kotlin Everywhere award at RevenueCat's Shipaton 2026 hackathon (Aug 1-Sep 30), offering a $30,000 prize pool for apps built with Kotlin Multiplatform and Compose Multiplatform across Android, iOS, desktop, and web, plus free IntelliJ IDEA Ultimate and Junie access.",
+    "topics": [
+      "kmp",
+      "compose-multiplatform",
+      "kotlin"
+    ]
+  },
+  {
+    "id": "2cf3e2280b02993e",
+    "summary": "Argues Android architecture is moving UI state (text fields, dialog visibility, scroll position) out of ViewModel into remember/rememberSaveable, while navigation arguments move into Navigation 3's NavKey, leaving ViewModel as a business-logic state holder that produces UI state from repositories.",
+    "topics": [
+      "viewmodel",
+      "architecture",
+      "compose",
+      "navigation"
+    ],
+    "code_snippet": "data class UserDetail(val userId: Long) : NavKey\n\nvar query by rememberSerializable { mutableStateOf(\"\") }",
+    "snippet_label": "NAVKEY STATE OWNERSHIP"
+  },
+  {
+    "id": "d13fb75becaa6533",
+    "summary": "Lists ten common 2026 Android/Compose mistakes that cause lifecycle bugs, unnecessary recompositions, untestable coroutines, broken large-screen layouts, and slow startup, starting with triggering network calls or navigation directly from a composable body instead of a state holder or keyed effect.",
+    "topics": [
+      "compose",
+      "architecture",
+      "coroutines"
+    ],
+    "code_snippet": "@Composable\nfun ProfileScreen(viewModel: ProfileViewModel) {\n    viewModel.loadProfile() // may run again on recomposition\n    val state by viewModel.uiState.collectAsStateWithLifecycle()\n    ProfileContent(state)\n}",
+    "snippet_label": "ANTI PATTERN SIDE EFFECT"
+  },
+  {
+    "id": "b557f63c2456c42a",
+    "summary": "Walks through Kotlin's four visibility modifiers—public, private, protected, and internal—using a bank-account example, then maps each onto real Android patterns like repositories, singletons, and private constructors paired with companion-object factories.",
+    "topics": [
+      "kotlin",
+      "clean-architecture"
+    ],
+    "code_snippet": "class User private constructor() {\n    companion object {\n        fun create() = User()\n    }\n}",
+    "snippet_label": "PRIVATE CONSTRUCTOR FACTORY"
+  },
+  {
+    "id": "d4249e252b052097",
+    "summary": "Google Play Console now lets developers permanently delete eligible apps instead of only unpublishing them, clearing dashboards of old prototypes and test builds. Deletion has a 7-day recovery window but drops update capability and historical stats for good.",
+    "topics": [
+      "android-developers"
+    ]
+  },
+  {
+    "id": "7e70d20a3bf013db",
+    "summary": "Compares WorkManager's OneTimeWorkRequest and PeriodicWorkRequest, covering use cases such as user-initiated uploads versus recurring background jobs, plus chaining one-time work with beginWith().then().enqueue() and delaying it via setInitialDelay().",
+    "topics": [
+      "workmanager"
+    ],
+    "code_snippet": "WorkManager.getInstance(context)\n    .beginWith(downloadWork)\n    .then(compressWork)\n    .then(uploadWork)\n    .enqueue()",
+    "snippet_label": "CHAIN WORK REQUESTS"
+  },
+  {
+    "id": "cc93a7b3a5f8c013",
+    "summary": "KSP 2.3.11 renames the coroutines core-jvm version catalog alias to coreJvm so it is no longer a prefix of another alias, removing the asProvider disambiguation workaround needed at every use site.",
     "topics": [
       "ksp",
+      "version-catalog",
       "coroutines",
       "gradle"
     ]
+  },
+  {
+    "id": "f63293a2c4789376",
+    "summary": "Nightly dev snapshot v1.12.10-alpha01+dev4589 of Compose Multiplatform, bumping the compose, material3, lifecycle, and navigation3 artifact groups to matching dev4589 versions with no user-facing changelog beyond version alignment.",
+    "topics": [
+      "compose-multiplatform"
+    ]
+  },
+  {
+    "id": "0e0c3b26839f76a9",
+    "summary": "Beta snapshot v1.12.0-beta04+dev4588 of Compose Multiplatform, bumping the org.jetbrains.compose artifact group to the dev4588 build ahead of the 1.12.0 stable release, with no accompanying changelog notes.",
+    "topics": [
+      "compose-multiplatform"
+    ]
+  },
+  {
+    "id": "0c7dce889acbf392",
+    "summary": "Nightly dev snapshot v1.12.10-alpha01+dev4583 of Compose Multiplatform, aligning compose, material3, lifecycle, and navigation3 artifact versions to the dev4583 build with no functional changelog provided.",
+    "topics": [
+      "compose-multiplatform"
+    ]
+  },
+  {
+    "id": "6c92e4cb41de7181",
+    "summary": "Nightly dev snapshot v1.12.10-alpha01+dev4579 of Compose Multiplatform, syncing compose, material3, lifecycle, and navigation3 artifact versions to the dev4579 build; another routine pre-release tag with no listed changes.",
+    "topics": [
+      "compose-multiplatform"
+    ]
+  },
+  {
+    "id": "df9a28c7073b4c7f",
+    "summary": "A dated dev-build tag (dev4584) of Compose Multiplatform 1.12.0-beta04, published without release notes. Signals ongoing iteration on JetBrains' Kotlin Multiplatform UI toolkit but carries no concrete changelog for developers to act on.",
+    "topics": [
+      "compose-multiplatform",
+      "kmp"
+    ]
+  },
+  {
+    "id": "6c81a703e54c8e44",
+    "summary": "Another dev-build tag (dev4580) of Compose Multiplatform 1.12.0-beta04, published without release notes. Marks routine nightly iteration on the org.jetbrains.compose artifacts ahead of the next stable beta.",
+    "topics": [
+      "compose-multiplatform",
+      "kmp"
+    ]
+  },
+  {
+    "id": "b53ca6468c094a28",
+    "summary": "Argues module count is a poor proxy for real modularization, proposing to design Gradle module boundaries around change boundaries rather than folder layers. Covers dependency-direction rules, narrow feature-boundary contracts, convention plugins, and automated checks for keeping large Android codebases maintainable.",
+    "topics": [
+      "architecture",
+      "gradle",
+      "clean-architecture"
+    ]
+  },
+  {
+    "id": "d6612f5e38752c10",
+    "summary": "Third part of a Room offline-first series tackling sync conflicts: adds a monotonic version field to entities and a ConflictResolver deciding whether a pull should overwrite local rows, never clobbering pending outbox edits. Includes unit tests and a server-wins policy with 409 handling.",
+    "topics": [
+      "room",
+      "workmanager",
+      "architecture"
+    ],
+    "code_snippet": "fun shouldAcceptRemote(\n    localVersion: Long,\n    remoteVersion: Long,\n    hasPendingLocalChanges: Boolean,\n): Boolean {\n    if (hasPendingLocalChanges) return false\n    return remoteVersion >= localVersion\n}",
+    "snippet_label": "CONFLICT RESOLVER"
+  },
+  {
+    "id": "042e1e31b6ba33aa",
+    "summary": "Explains Model Context Protocol (MCP) as a standard for connecting AI features to external tools and data, not an architecture pattern, clarifying it doesn't replace MVVM, MVI, or Clean Architecture. Covers integrating MCP with Kotlin coroutines, StateFlow, and Jetpack Compose for agentic Android features.",
+    "topics": [
+      "compose",
+      "architecture",
+      "android-developers"
+    ]
+  },
+  {
+    "id": "1be1ebbb30c40cf8",
+    "summary": "Indie developer account of rebuilding a flashlight app from scratch in Jetpack Compose with Material 3 and targetSdk 36 after losing the original source. Covers a rhythm-recording strobe editor, seizure-safety warnings, widget/tile shortcuts, and 16-language localization.",
+    "topics": [
+      "compose",
+      "material3"
+    ]
+  },
+  {
+    "id": "123e8c26faf6319e",
+    "summary": "Personal essay on five Android settings (adaptive notification ordering, app priority alerts, always-on display previews, app timers, auto-brightness) that quietly increase phone checking, with a suggested fix for each. General productivity advice, not Android development content.",
+    "topics": []
   }
 ]

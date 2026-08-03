@@ -299,6 +299,10 @@ def scout_via_rss(source: dict, last_date: datetime, existing_ids: set) -> tuple
             article["media_type"] = "video"
             article["video_id"] = youtube_video_id_from_entry(entry, url)
             article["thumbnail"] = youtube_thumbnail_from_entry(entry)
+            # YouTube Shorts are vertical filler, not magazine material. Tag them
+            # so filter_articles never renders them (kept in state for audit).
+            if "/shorts/" in url:
+                article["is_short"] = True
         new_articles.append(article)
 
     return new_articles, True
@@ -608,12 +612,21 @@ def write_atomic(path: Path, data: object) -> None:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def main() -> None:
+def main(only_type: str | None = None) -> None:
+    """Scout sources into articles.json.
+
+    only_type: if set (e.g. "youtube"), scout ONLY sources of that type and skip
+    the 90-day prune. This is the safe way to top up one kind of source (videos)
+    for an edition without a full scout touching every source or removing anything.
+    """
     STATE_DIR.mkdir(exist_ok=True)
 
     with open(SOURCES_FILE, encoding="utf-8") as f:
         config = yaml.safe_load(f)
     sources: list[dict] = config["sources"]
+    if only_type:
+        sources = [s for s in sources if s.get("type") == only_type]
+        print(f"[scout] scoped to type={only_type}: {len(sources)} source(s), prune skipped")
 
     health: dict = json.loads(HEALTH_FILE.read_text(encoding="utf-8")) if HEALTH_FILE.exists() else {}
     articles: list[dict] = json.loads(ARTICLES_FILE.read_text(encoding="utf-8")) if ARTICLES_FILE.exists() else []
@@ -658,13 +671,16 @@ def main() -> None:
         elif h == "dead":
             dead_count += 1
 
-    # Prune 90-day rolling window
-    before = len(articles)
-    articles = [
-        a for a in articles
-        if not a.get("date") or datetime.strptime(a["date"], "%Y-%m-%d").replace(tzinfo=timezone.utc) >= cutoff
-    ]
-    pruned = before - len(articles)
+    # Prune 90-day rolling window (skipped for a scoped scout so it never removes
+    # articles from sources it didn't even look at).
+    pruned = 0
+    if not only_type:
+        before = len(articles)
+        articles = [
+            a for a in articles
+            if not a.get("date") or datetime.strptime(a["date"], "%Y-%m-%d").replace(tzinfo=timezone.utc) >= cutoff
+        ]
+        pruned = before - len(articles)
 
     write_atomic(HEALTH_FILE, health)
     write_atomic(ARTICLES_FILE, articles)
@@ -680,4 +696,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser(description="Scout sources into articles.json")
+    ap.add_argument("--only-type", metavar="TYPE",
+                    help="scout only sources of this type (e.g. youtube); skips the 90-day prune")
+    args = ap.parse_args()
+    main(only_type=args.only_type)
