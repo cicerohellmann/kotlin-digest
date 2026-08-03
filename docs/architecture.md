@@ -20,7 +20,7 @@ Nothing requires a server. State lives in the repo as committed JSON/YAML files.
   name: "Kotlin Blog"
   url: "https://blog.jetbrains.com/kotlin/"
   rss: "https://blog.jetbrains.com/kotlin/feed/"
-  type: blog          # blog | news | conference | slack-mirror
+  type: blog          # blog | news | conference | video | slack-mirror
   language: en
   cadence_days: 7     # expected publish interval — used to compute staleness
   topics: [kotlin, language, jetbrains]   # editorial hints, not exclusive
@@ -30,6 +30,7 @@ Source types:
 - `blog` — RSS preferred, date-based article detection
 - `news` — high-cadence, may need custom scraper
 - `conference` — periodic, talk titles + abstracts
+- `video` — YouTube channel RSS, real upload dates and metadata
 - `slack-mirror` — digest exports or public Slack archives
 
 ---
@@ -92,7 +93,7 @@ Health state is committed to `state/source_health.json` daily. Dashboard surface
 
 Each day:
 
-1. **Ingestion boost** — for every article mentioning a topic: `score += weight` where weight depends on source type (conference > blog > news)
+1. **Ingestion boost** — for every article mentioning a topic: `score += weight` where weight depends on source type (conference > changelog > video > blog > news)
 2. **Decay** — after boost: `score = score * decay_factor` (e.g. `0.92` daily → a score halves in ~8 days without new mentions)
 3. **Emergence** — if an AI-extracted term is not in the bible but appears in ≥3 articles in one cycle, it's added automatically with a note that it's unvetted
 

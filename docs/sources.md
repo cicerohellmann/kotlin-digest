@@ -80,6 +80,14 @@ If no date is detectable, the article is ingested but flagged `date_uncertain: t
 - Treat each talk as an article
 - `cadence_days` set high (e.g. 180) — annual conferences shouldn't be flagged stale
 
+### `video`
+- Primary: YouTube channel RSS feeds, using channel IDs rather than handle pages
+- Treat uploads as dated articles when the feed or page exposes a real upload date
+- Summarize only from video metadata/description unless a transcript is added later
+- Prefer official/project channels over broad recommendation feeds
+- `kotlin_relevance` rates the channel's baseline Kotlin signal from 1-10
+- Optional per-source `video:` settings can disable Shorts/live streams, exclude terms such as `#ad`, set `min_kotlin_score`, and cap `max_per_edition`
+
 ### `slack-mirror`
 - Requires a public Slack export or mirror service
 - Ingested as topic signals only (not as full articles)

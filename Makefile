@@ -1,6 +1,6 @@
 PYTHON := python3.11
 
-.PHONY: run scout bible fetch apply classify apply-snippets candidates assemble bundle test
+.PHONY: run scout bible fetch apply classify apply-snippets candidates youtube-audit assemble bundle test
 
 # Automated pipeline (steps 1-2) — safe to run unattended
 run: scout bible
@@ -48,6 +48,11 @@ f = Path('state/candidates.json'); \
 data = json.loads(f.read_text()) if f.exists() else []; \
 [print(f'  {c[\"count\"]}x  {c[\"term\"]}\n     ' + '\n     '.join(c['seen_in'])) for c in data] \
 if data else print('  No candidates.')"
+
+# Show which YouTube/video URLs would be placed or dropped for an edition
+# Usage: make youtube-audit EDITION=2026-W29 ARGS=--live
+youtube-audit:
+	$(PYTHON) pipeline/audit_youtube.py --edition $(EDITION) $(ARGS)
 
 # Tests
 test:

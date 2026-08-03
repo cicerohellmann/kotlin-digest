@@ -62,12 +62,13 @@ def _edition_label(edition: str) -> str:
 _TYPE_LABELS = {
     "blog": "Blogs",
     "conference": "Conferences",
+    "video": "Video",
     "changelog": "Changelogs & releases",
     "slack-mirror": "Kotlinlang Slack (topic signal)",
     "discussion": "Discussion",
     "news": "News",
 }
-_TYPE_ORDER = ["blog", "conference", "changelog", "news", "discussion", "slack-mirror"]
+_TYPE_ORDER = ["blog", "conference", "video", "changelog", "news", "discussion", "slack-mirror"]
 
 
 def render_sources(sources: list, out_path: Path) -> None:
@@ -146,7 +147,7 @@ def render_sources(sources: list, out_path: Path) -> None:
       </svg>
       <div class="src-kicker">Sources · {len(sources)} feeds</div>
     </header>
-    <p class="src-intro">Every feed the digest scouts to assemble each edition. Blogs, conferences and changelogs become story cards; the Kotlinlang Slack channels feed topic signal into the scoring bible and never appear as articles. The registry is open — <a href="https://github.com/cicerohellmann/kotlin-digest/blob/main/sources/sources.yml" target="_blank" rel="noopener noreferrer">propose a source</a>.</p>
+    <p class="src-intro">Every feed the digest scouts to assemble each edition. Blogs, videos, conferences and changelogs become story cards; the Kotlinlang Slack channels feed topic signal into the scoring bible and never appear as articles. The registry is open — <a href="https://github.com/cicerohellmann/kotlin-digest/blob/main/sources/sources.yml" target="_blank" rel="noopener noreferrer">propose a source</a>.</p>
 {body}
     <div class="src-foot"><a href="index.html">← Latest edition</a> · <a href="archive.html">Archive</a></div>
   </div>

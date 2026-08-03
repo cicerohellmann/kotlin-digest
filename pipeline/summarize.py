@@ -33,6 +33,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlparse
 
 import httpx
 import yaml
@@ -68,6 +69,44 @@ def _has_usable_content(content: str, excerpt: str) -> bool:
     return body_ok or _wordcount(excerpt) >= MIN_EXCERPT_WORDS
 
 
+def _is_youtube_url(url: str) -> bool:
+    host = urlparse(url or "").netloc.lower()
+    return host in {"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be", "www.youtu.be"}
+
+
+def _youtube_metadata_text(soup: BeautifulSoup) -> str:
+    parts = []
+    og_title = soup.find("meta", property="og:title")
+    if og_title and og_title.get("content"):
+        parts.append(f"Title: {og_title['content'].strip()}")
+
+    og_description = soup.find("meta", property="og:description")
+    if og_description and og_description.get("content"):
+        parts.append(f"Description: {og_description['content'].strip()}")
+
+    for script in soup.find_all("script", type="application/ld+json"):
+        try:
+            data = json.loads(script.string or "")
+        except Exception:
+            continue
+        stack = data if isinstance(data, list) else [data]
+        while stack:
+            item = stack.pop()
+            if not isinstance(item, dict):
+                continue
+            if item.get("@graph"):
+                stack.extend(item["@graph"])
+            if item.get("@type") == "VideoObject":
+                if item.get("name") and not parts:
+                    parts.append(f"Title: {item['name'].strip()}")
+                if item.get("description"):
+                    parts.append(f"Description: {item['description'].strip()}")
+                if item.get("uploadDate"):
+                    parts.append(f"Upload date: {item['uploadDate']}")
+
+    return "\n".join(dict.fromkeys(parts))
+
+
 def no_render_sources() -> set:
     """Source ids marked `render: false` — signal-only feeds (e.g. Reddit) that
     are never summarized or rendered as articles."""
@@ -87,6 +126,10 @@ def fetch_content(url: str) -> str:
         return f"[fetch error: {exc}]"
 
     soup = BeautifulSoup(resp.text, "html.parser")
+
+    if _is_youtube_url(url):
+        metadata = _youtube_metadata_text(soup)
+        return metadata or "[no content extracted]"
 
     container = (
         soup.find("article")

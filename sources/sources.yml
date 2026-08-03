@@ -176,6 +176,55 @@ sources:
     notes: "Multiple city editions per year — Droidcon London, NYC, Berlin, etc."
 
   # ════════════════════════════════════════════════════════════════════════════
+  # VIDEO — Official channel RSS feeds with real upload dates
+  # ════════════════════════════════════════════════════════════════════════════
+
+  - id: youtube-kotlin
+    name: "Kotlin by JetBrains"
+    url: "https://www.youtube.com/@Kotlin"
+    rss: "https://www.youtube.com/feeds/videos.xml?channel_id=UCP7uiEZIqci43m22KDl0sNw"
+    type: video
+    language: en
+    cadence_days: 14
+    topics: [kotlin, kmp, coroutines, jetbrains]
+    kotlin_relevance: 10
+    video:
+      min_kotlin_score: 6
+      max_per_edition: 3
+    notes: "Official Kotlin YouTube channel. Channel ID verified from Wikidata; RSS avoids the Slack link-dump path."
+
+  - id: youtube-android-developers
+    name: "Android Developers"
+    url: "https://www.youtube.com/@AndroidDevelopers"
+    rss: "https://www.youtube.com/feeds/videos.xml?channel_id=UCVHFbqXqoYvEWM1Ddxl0QDg"
+    type: video
+    language: en
+    cadence_days: 7
+    topics: [android, compose, android-studio]
+    kotlin_relevance: 7
+    video:
+      min_kotlin_score: 8
+      max_per_edition: 2
+    notes: "Official Android Developers YouTube channel. Channel ID verified from Wikidata/YouTube analytics references."
+
+  - id: youtube-philipp-lackner
+    name: "Philipp Lackner"
+    url: "https://www.youtube.com/@PhilippLackner"
+    rss: "https://www.youtube.com/feeds/videos.xml?channel_id=UCKNTZMRHPLXfqlbdOI7mCkg"
+    type: video
+    language: en
+    cadence_days: 7
+    topics: [android, kotlin, compose, kmp, architecture]
+    kotlin_relevance: 7
+    video:
+      include_shorts: false
+      include_live: false
+      min_kotlin_score: 8
+      max_per_edition: 2
+      exclude_terms: ["#ad", "#anzeige"]
+    notes: "Creator channel. Keep long-form educational videos, but skip Shorts, live streams, and sponsored hashtag posts."
+
+  # ════════════════════════════════════════════════════════════════════════════
   # LIBRARY CHANGELOGS
   # Strategy: GitHub .atom release feeds where available (confirmed working).
   # For AndroidX/Google libraries: developer.android.com release feeds.
