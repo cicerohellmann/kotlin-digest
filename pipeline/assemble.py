@@ -27,6 +27,54 @@ MANIFEST_FILE = ROOT / "state" / "editions.json"
 FEATURED_FILE = ROOT / "state" / "featured.json"
 
 
+def _load_pins() -> dict:
+    try:
+        return json.loads(FEATURED_FILE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def _entry(pins: dict, edition: str) -> dict:
+    """Normalize an edition's pin entry to {'cover': str, 'also': [str]}.
+
+    Backward-compatible: a bare string is the legacy cover-only form.
+    """
+    raw = pins.get(edition, {})
+    if isinstance(raw, str):
+        return {"cover": raw, "also": []}
+    if isinstance(raw, dict):
+        return {"cover": raw.get("cover", ""), "also": list(raw.get("also", []))}
+    return {"cover": "", "also": []}
+
+
+def _save_entry(pins: dict, edition: str, entry: dict) -> None:
+    # Collapse to the legacy string form when there are no also-pins, so the
+    # file stays minimal and old readers keep working.
+    pins[edition] = entry["cover"] if not entry["also"] else entry
+    FEATURED_FILE.write_text(json.dumps(pins, indent=2) + "\n", encoding="utf-8")
+
+
+def _match_token(token: str, week_articles: list, flag: str):
+    """Resolve one id-or-title-substring token to an article id, or None."""
+    token = token.strip()
+    if not token:
+        return None
+    hit = next((a for a in week_articles if a["id"] == token), None)
+    if hit:
+        return hit["id"]
+    needle = token.lower()
+    hits = [a for a in week_articles if needle in a.get("title", "").lower()]
+    if len(hits) == 1:
+        return hits[0]["id"]
+    if len(hits) > 1:
+        print(f"  [!] {flag} '{token}' matched {len(hits)} articles; be more specific:")
+        for a in hits:
+            print(f"        {a['id']}  {a.get('title','')[:70]}")
+    else:
+        print(f"  [!] {flag} '{token}' matched no article in this edition.")
+    return None
+
+
 def resolve_featured(edition: str, feature_arg, week_articles: list) -> str:
     """Return the pinned cover article id for this edition.
 
@@ -34,34 +82,45 @@ def resolve_featured(edition: str, feature_arg, week_articles: list) -> str:
     articles and persist the choice in state/featured.json. Without it, reuse a
     previously saved pin. Returns "" for the default score-based cover.
     """
-    try:
-        pins = json.loads(FEATURED_FILE.read_text(encoding="utf-8"))
-    except (FileNotFoundError, json.JSONDecodeError):
-        pins = {}
+    pins = _load_pins()
+    entry = _entry(pins, edition)
 
     if feature_arg:
-        needle = feature_arg.strip().lower()
-        match = next((a for a in week_articles if a["id"] == feature_arg), None)
-        if not match:
-            hits = [a for a in week_articles if needle in a.get("title", "").lower()]
-            if len(hits) == 1:
-                match = hits[0]
-            elif len(hits) > 1:
-                print(f"  [!] --feature '{feature_arg}' matched {len(hits)} articles; "
-                      f"be more specific:")
-                for a in hits:
-                    print(f"        {a['id']}  {a.get('title','')[:70]}")
-                return pins.get(edition, "")
-        if not match:
-            print(f"  [!] --feature '{feature_arg}' matched no article in {edition}; "
-                  f"using default cover.")
-            return pins.get(edition, "")
-        pins[edition] = match["id"]
-        FEATURED_FILE.write_text(json.dumps(pins, indent=2) + "\n", encoding="utf-8")
-        print(f"  Cover pinned → {match.get('title','')[:60]} ({match['id']})")
-        return match["id"]
+        cover = _match_token(feature_arg, week_articles, "--feature")
+        if cover:
+            entry["cover"] = cover
+            _save_entry(pins, edition, entry)
+            title = next((a.get("title", "") for a in week_articles if a["id"] == cover), "")
+            print(f"  Cover pinned → {title[:60]} ({cover})")
+            return cover
+        print("  [!] falling back to previous/default cover.")
 
-    return pins.get(edition, "")
+    return entry["cover"]
+
+
+def resolve_also(edition: str, also_arg, week_articles: list) -> list:
+    """Return the hand-picked 'Also inside this issue' ids for this edition.
+
+    With --also (comma-separated ids or title substrings), resolve in order and
+    persist. Without it, reuse the saved list. Empty = auto pick in the reader.
+    """
+    pins = _load_pins()
+    entry = _entry(pins, edition)
+
+    if also_arg is not None:
+        ids, seen = [], set()
+        for token in also_arg.split(","):
+            if not token.strip():
+                continue
+            mid = _match_token(token, week_articles, "--also")
+            if mid and mid not in seen:
+                ids.append(mid); seen.add(mid)
+        entry["also"] = ids
+        _save_entry(pins, edition, entry)
+        print(f"  Also-inside pinned → {len(ids)} article(s)")
+        return ids
+
+    return entry["also"]
 
 sys.path.insert(0, str(ROOT))
 
@@ -86,12 +145,77 @@ def write_atomic(path: Path, text: str) -> None:
     tmp.rename(path)
 
 
+def build_structured_data(
+    edition_display: str,
+    canonical_url: str,
+    meta_desc: str,
+    chapters: list,
+) -> str:
+    """Return compact JSON-LD for crawlers, derived from the assembled edition."""
+    page = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": f"Kotlin Digest — {edition_display}",
+        "description": meta_desc,
+        "url": canonical_url,
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Kotlin Digest",
+            "url": "https://kotlindigest.com/",
+        },
+        "hasPart": [],
+    }
+    for ch in chapters:
+        for a in ch["articles"]:
+            video_id = a.get("video_id")
+            thumbnail = a.get("thumbnail")
+            if video_id and thumbnail:
+                item = {
+                    "@type": "VideoObject",
+                    "name": a.get("title", ""),
+                    "description": a.get("summary") or a.get("excerpt", ""),
+                    "thumbnailUrl": thumbnail,
+                    "embedUrl": f"https://www.youtube-nocookie.com/embed/{video_id}",
+                    "url": a.get("url", ""),
+                }
+            else:
+                item = {
+                    "@type": "Article",
+                    "headline": a.get("title", ""),
+                    "url": a.get("url", ""),
+                    "description": a.get("summary", ""),
+                }
+            # content-rights.md rule 3: paywalled / member-only stories are
+            # headline + link only — don't ship their summary to crawlers either
+            # (description is optional in schema.org, so omit it entirely).
+            if a.get("paywalled"):
+                item.pop("description", None)
+            # Only emit a date when we actually have one — a null/empty
+            # datePublished/uploadDate is invalid structured data.
+            date_key = "uploadDate" if item["@type"] == "VideoObject" else "datePublished"
+            if a.get("date"):
+                item[date_key] = a["date"]
+            page["hasPart"].append(item)
+    return (
+        '<script type="application/ld+json">'
+        + json.dumps(page, ensure_ascii=False, separators=(",", ":"))
+        + "</script>"
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--edition", required=True, help="e.g. 2026-W28")
     parser.add_argument("--feature", default=None,
                         help="pin the cover story: an article id or a title substring. "
                              "Saved per edition so later re-assembles keep it.")
+    parser.add_argument("--also", default=None,
+                        help="pin the 'Also inside this issue' teasers: a comma-separated "
+                             "list of ids or title substrings, in order (up to 4 shown). "
+                             "Saved per edition. Omit to keep the auto pick.")
+    parser.add_argument("--no-videos", action="store_true",
+                        help="drop all video articles from this edition "
+                             "(YouTube Shorts are already excluded globally).")
     args = parser.parse_args()
 
     start, end = edition_to_dates(args.edition)
@@ -114,7 +238,8 @@ def main() -> None:
 
     scores = lookup_scores_at(bible, end)
 
-    week_articles = filter_articles(articles, start, end, no_render_sources)
+    week_articles = filter_articles(articles, start, end, no_render_sources,
+                                    no_videos=args.no_videos)
 
     # Collapse high-frequency changelog sources to their single newest release,
     # folding the rest into a rollup on the survivor card.
@@ -163,6 +288,7 @@ def main() -> None:
     # else the default top-scoring article in the top chapter.
     placed = [a for ch in chapters for a in ch["articles"]]
     featured_id = resolve_featured(args.edition, args.feature, placed)
+    also_ids = resolve_also(args.edition, args.also, placed)
 
     # Comic interludes: one up top + one per COMIC_EVERY cards, no repeats.
     needed = comics_needed([len(ch["articles"]) for ch in chapters])
@@ -181,10 +307,15 @@ def main() -> None:
         comics=comics,
         comic_every=COMIC_EVERY,
         featured_id=featured_id,
+        also_ids=also_ids,
     )
     html = inject_data(template, data_block)
 
     n_sources = len({a.get("source_id") for ch in chapters for a in ch["articles"] if a.get("source_id")})
+    n_videos = sum(
+        1 for ch in chapters for a in ch["articles"]
+        if a.get("media_type") == "video" or a.get("video_id")
+    )
 
     # Patch masthead edition label, title, date and counts (all static in the
     # template's placeholder W27 masthead).
@@ -195,6 +326,22 @@ def main() -> None:
     # Patched separately so the template can wrap "sources" in a link to sources.html.
     html = html.replace("27 articles", f"{total_arts} articles")
     html = html.replace("8 sources", f"{n_sources} sources")
+
+    # SEO / social meta — real per-edition description + canonical so link previews
+    # (WhatsApp, Slack, Twitter) show the right week instead of scraped body text.
+    video_phrase = f", including {n_videos} video{'s' if n_videos != 1 else ''}," if n_videos else ","
+    meta_desc = (
+        f"Kotlin Digest {edition_display}: {total_arts} hand-picked Android, "
+        f"Kotlin, KMP and Jetpack Compose stories from {n_sources} sources"
+        f"{video_phrase} for the week of {start.strftime('%d %B %Y')}."
+    )
+    html = html.replace("__META_DESC__", meta_desc)
+    html = html.replace("__CANONICAL__", "https://kotlindigest.com/")
+    html = html.replace(
+        "</head>",
+        build_structured_data(edition_display, "https://kotlindigest.com/", meta_desc, chapters) + "\n</head>",
+        1,
+    )
 
     write_atomic(OUTPUT_FILE, html)
     print(f"  Written → site/index.html")

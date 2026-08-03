@@ -1,0 +1,6 @@
+[
+  {
+    "rollup_id": "a838998728cd22a9",
+    "summary": "The 1.12.0-beta03 release fixes several iOS crashes (cancelling text input, a disposed accessibility element, an iOS 14 frame-rate crash), a desktop VerifyError build failure, and Web/WASM accessibility-sizing and scroll regressions, and updates Compose Hot Reload. The rest are nightly dev builds."
+  }
+]

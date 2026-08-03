@@ -3,10 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzE4MTcxQSIvPjx0ZXh0IHg9IjMiIHk9IjI0IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjRTA2MDIwIj5LPC90ZXh0Pjx0ZXh0IHg9IjE3IiB5PSIyNCIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIxOSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0YzRURFMiI+RDwvdGV4dD48L3N2Zz4K">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>Kotlin Digest — 2026·W27</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="__META_DESC__">
+  <link rel="canonical" href="__CANONICAL__">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kotlin Digest">
+  <meta property="og:title" content="Kotlin Digest — 2026·W27">
+  <meta property="og:description" content="__META_DESC__">
+  <meta property="og:url" content="__CANONICAL__">
+  <meta property="og:image" content="https://kotlindigest.com/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kotlin Digest — 2026·W27">
+  <meta name="twitter:description" content="__META_DESC__">
+  <meta name="twitter:image" content="https://kotlindigest.com/og-card.png">
+  <link id="fontcss" rel="preload" as="style" href="/fonts/fonts.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="/fonts/fonts.css" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="design.css">
   <script>
   // Apply saved reading prefs before first paint (no flash). One cookie holds
@@ -20,7 +34,16 @@
     if(r.font && fonts[r.font]) el.style.setProperty('--read-font', fonts[r.font]);
     var scales={s:'0.92',m:'1',l:'1.12'};
     if(r.size && scales[r.size]) el.style.setProperty('--read-scale', scales[r.size]);
-    el.dataset.layout = (r.layout==='scroll') ? 'scroll' : 'paged';
+    // Narrow viewports always use the scroll feed: the paged reader packs each
+    // page to a fixed height and clips the overflow with no way to scroll it,
+    // which strands tall pages (e.g. the trends list) on phones. Set pre-paint
+    // to avoid a flash of the paged layout.
+    var narrow = window.innerWidth <= 700;
+    el.dataset.layout = r.layout ? r.layout : (narrow ? 'scroll' : 'paged');
+    // ?nojs — preview the prerendered static digest exactly as a no-JS visitor
+    // or crawler sees it: the interactive reader is skipped (see boot) and its
+    // JS-only chrome is hidden. Set pre-paint so the controls never flash.
+    if (/[?&]nojs\b/.test(location.search)) el.dataset.nojs='1';
   })();
   </script>
   <link rel="stylesheet" href="components.css">
@@ -36,8 +59,15 @@
 <!-- Failsafe: if the main script never runs (JS off / error), don't strand the loader -->
 <script>setTimeout(function(){var l=document.getElementById('kd-loader');if(l)l.style.display='none';},8000);</script>
 <noscript>
-  <style>#kd-loader{display:none!important}</style>
-  <div class="kd-noscript">This digest is interactive and needs JavaScript. Please open it in a web browser (Safari, Chrome) rather than a file preview.</div>
+  <!-- With JS off the prerendered #digest is the whole experience: hide the
+       loader and the JS-only chrome (filter bar, settings gear) plus the top
+       ticker/masthead, which the prerendered cover already contains (the JS
+       reader normally lifts them there). No "needs JavaScript" notice — the
+       static digest reads fine on its own. -->
+  <style>
+    #kd-loader, .filter-bar, .settings-wrap,
+    body > .ticker-wrap, body > .masthead { display: none !important; }
+  </style>
 </noscript>
 
 <!-- TREND TICKER -->
@@ -93,7 +123,7 @@
               <button data-v="l" onclick="setSize('l')">L</button>
             </div>
           </div>
-          <div class="set-row">
+          <div class="set-row" id="rowLayout">
             <span class="set-label">Layout</span>
             <div class="seg" id="segLayout">
               <button data-v="paged" onclick="setLayout('paged')">Paged</button>
@@ -152,7 +182,13 @@
   <span>
     <a href="about.html">About & Contributing</a> ·
     <a href="https://github.com/cicerohellmann/kotlin-digest">GitHub</a> ·
-    <a href="https://github.com/cicerohellmann/kotlin-digest/blob/main/topics/topics.yml">Topic bible</a>
+    <a href="https://github.com/cicerohellmann/kotlin-digest/blob/main/topics/topics.yml">Topic bible</a> ·
+    <a href="styleguide.html">Design system</a> ·
+    <a href="badge.html">Get the badge</a> ·
+    <a href="tracking.html">What we know</a> ·
+    <a href="/impressum.html">Impressum</a> ·
+    <a href="/datenschutz.html">Datenschutz</a> ·
+    <a href="?nojs">No-JS version</a>
   </span>
 </footer>
 
@@ -167,7 +203,7 @@ let state = {
   panelOpen: false,
   // Reading settings (mirrored in the kd_reader cookie; applied pre-paint by the
   // head bootstrap, so these defaults are only used when no cookie is present).
-  reader: { theme: 'light', font: 'serif', size: 'm', layout: 'paged' },
+  reader: { theme: 'light', font: 'serif', size: 'm', layout: '' },
 };
 
 const READER_FONTS = {
@@ -265,20 +301,331 @@ function renderRollup(rollup) {
 // Article card — identical markup/classes/ids to before, so filters + night mode work.
 // idPrefix defaults to 'art'; the cover passes 'cover' so its copy of the feature
 // article doesn't collide with the same article's id inside its chapter.
-function articleCard(a, idPrefix = 'art') {
-  return `<article class="article ${a.col}" id="${idPrefix}-${a.id}" data-topics="${a.topics.join(',')}">
+// Stable hue [0,360) from a topic name, so the same topic is always the same
+// colour (see .tag in components.css).
+function tagHue(t) {
+  let h = 0;
+  for (let i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0;
+  return h % 360;
+}
+
+// YouTube facade — nothing loads from youtube.com on page view. "Watch here"
+// swaps in the privacy-friendly nocookie player only on click; "Open on
+// YouTube" is a plain link that also loads nothing until the user follows it.
+function facadeInner(id) {
+  return `<button class="yt-play" aria-label="Play video" onclick="loadYouTube(this)">
+      <span class="yt-tri"></span><span class="yt-cap">Watch here</span>
+    </button>
+    <a class="yt-ext" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>`;
+}
+function renderVideo(id) {
+  return `<div class="yt-facade" data-yt="${id}">${facadeInner(id)}</div>`;
+}
+// Tear a loaded player back down to its facade. Removing the iframe from the DOM
+// is the only reliable cross-browser way to stop YouTube playback.
+function resetVideo(f) {
+  if (f && f.querySelector('iframe.yt-frame')) f.innerHTML = facadeInner(f.dataset.yt);
+}
+// Stop every playing embed. Called on page turn BEFORE the pager clones pages —
+// a cloned playing iframe would otherwise autoplay a second copy.
+function stopAllVideos() {
+  document.querySelectorAll('.yt-facade').forEach(resetVideo);
+}
+let _ytObserver = null;
+function loadYouTube(btn) {
+  const f = btn.closest('.yt-facade');
+  const id = f.dataset.yt;
+  f.innerHTML = `<iframe class="yt-frame" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1" title="YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  // Stop playback once the card leaves the viewport (scroll mode) or its page is
+  // hidden (paged mode) — both surface as the facade no longer intersecting.
+  if ('IntersectionObserver' in window) {
+    if (!_ytObserver) {
+      _ytObserver = new IntersectionObserver((entries) => {
+        entries.forEach(en => { if (!en.isIntersecting) { resetVideo(en.target); _ytObserver.unobserve(en.target); } });
+      }, { threshold: 0 });
+    }
+    _ytObserver.observe(f);
+  }
+}
+
+function articleCard(a, idPrefix = 'art', headingTag = 'h3') {
+  // Video cards are NOT whole-card clickable: the inline player is the action and
+  // there's an explicit "Open on YouTube" link. Card-click would hijack the player.
+  const clickable = a.url && a.url !== '#' && !a.video;
+  const heading = headingTag === 'h2' ? 'h2' : 'h3';
+  return `<article class="article ${a.col}${clickable ? ' is-clickable' : ''}" id="${idPrefix}-${a.id}" data-topics="${a.topics.join(',')}"${clickable ? ` data-url="${a.url}"` : ''}>
     <div class="art-meta">
       <span class="source-tag ${a.stype}">${a.source}</span>
+      ${a.author ? `<span class="art-byline">${a.avatar ? `<img class="art-avatar" src="${a.avatar}" alt="" loading="lazy">` : ''}${a.author}</span>` : ''}
       <span class="art-date">${a.date}</span>
       ${a.paywalled ? '<span class="badge-paywall" title="Member-only story — requires a paid Medium account">🔒 Member-only</span>' : ''}
     </div>
-    <h3 class="art-title"><a href="${a.url}" target="_blank" rel="noopener noreferrer" onclick="if(this.getAttribute('href')==='#')event.preventDefault()">${a.title}</a></h3>
-    <p class="art-summary">${a.rollup && a.rollup.summary ? a.rollup.summary : a.summary}</p>
+    <${heading} class="art-title"><a href="${a.url}" target="_blank" rel="noopener noreferrer" onclick="if(this.getAttribute('href')==='#')event.preventDefault()">${a.title}</a></${heading}>
+    ${(a.rollup && a.rollup.summary) || a.summary ? `<p class="art-summary">${a.rollup && a.rollup.summary ? a.rollup.summary : a.summary}</p>` : ''}
+    ${a.video ? renderVideo(a.video) : ''}
     ${renderSnapshot(a.snap)}
     ${renderRollup(a.rollup)}
-    <div class="art-tags">${a.topics.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    <div class="art-tags">${a.topics.map(t=>`<span class="tag" style="--tag-h:${tagHue(t)}">${t}</span>`).join('')}</div>
   </article>`;
 }
+
+// The Games chapter's crossword. gamesBand() emits the static shell; the
+// interactive board is built into it by Games.wire() after each render (the
+// digest is rebuilt on filter/resize, so the board re-initialises and reloads
+// saved progress from localStorage each time — see wireReaderChrome).
+function gamesBand(cw) {
+  if (!cw || !cw.solution) return '';
+  return `<section class="games">
+    <div class="games-kicker">The Back Page · Games</div>
+    <div class="cw" id="cw"></div>
+    <div class="cw-controls" id="cwControls" style="display:none">
+      <button class="cw-btn" id="cwDirBtn" onclick="Games.flipDir()">→ Across</button>
+      <button class="cw-btn" onclick="Games.check()">Check</button>
+      <button class="cw-btn" onclick="Games.revealCell()">Reveal letter</button>
+      <button class="cw-btn" onclick="Games.revealWord()">Reveal word</button>
+      <button class="cw-btn" onclick="Games.revealAll()">Reveal puzzle</button>
+      <button class="cw-btn" onclick="Games.clear()">Clear</button>
+    </div>
+    <p class="cw-status" id="cwStatus"></p>
+  </section>`;
+}
+
+// Crossword engine — fully isolated so its helpers (k, load, save, highlight…)
+// don't collide with the reader's globals.
+const Games = (function () {
+  const P = CROSSWORD;
+  const KEY = 'kd_crossword_' + (P ? P.id : 'x');
+  let cur = { r: 0, c: 0 }, dir = 'A', _focusFired = false;
+  let cellInput = {}, cellMeta = {}, ORDER = [];
+
+  const k = (r, c) => r + ',' + c;
+  const isCell = (r, c) => P.solution[r] && P.solution[r][c] != null;
+
+  function buildBoard() {
+    cellInput = {}; cellMeta = {}; ORDER = []; cur = { r: 0, c: 0 }; dir = 'A';
+    const cw = document.getElementById('cw');
+    const wrap = document.createElement('div');
+    wrap.className = 'cw-board-wrap';
+    const grid = document.createElement('div');
+    grid.className = 'cw-grid';
+    grid.style.setProperty('--cols', P.cols);
+    for (let r = 0; r < P.rows; r++) {
+      for (let c = 0; c < P.cols; c++) {
+        const cell = document.createElement('div');
+        cell.className = 'cw-cell';
+        if (!isCell(r, c)) { cell.classList.add('block'); grid.appendChild(cell); continue; }
+        const num = P.numbers[r][c];
+        if (num) { const s = document.createElement('span'); s.className = 'cw-num'; s.textContent = num; cell.appendChild(s); }
+        const inp = document.createElement('input');
+        inp.maxLength = 1; inp.autocomplete = 'off'; inp.inputMode = 'text';
+        inp.setAttribute('aria-label', 'cell ' + (r + 1) + ',' + (c + 1));
+        inp.dataset.r = r; inp.dataset.c = c;
+        inp.addEventListener('focus', () => { _focusFired = true; cur = { r, c }; highlight(); });
+        inp.addEventListener('click', () => { if (!_focusFired) toggleDir(); _focusFired = false; });
+        inp.addEventListener('input', onInput);
+        inp.addEventListener('keydown', onKeydown);
+        cell.appendChild(inp);
+        cellInput[k(r, c)] = inp;
+        grid.appendChild(cell);
+      }
+    }
+    wrap.appendChild(grid);
+    cw.appendChild(wrap);
+
+    const attach = (entry, down) => {
+      for (let i = 0; i < entry.len; i++) {
+        const r = entry.row + (down ? i : 0), c = entry.col + (down ? 0 : i);
+        cellMeta[k(r, c)] = cellMeta[k(r, c)] || {};
+        cellMeta[k(r, c)][down ? 'down' : 'across'] = entry;
+      }
+    };
+    P.across.forEach(e => attach(e, false));
+    P.down.forEach(e => attach(e, true));
+    ORDER = [...P.across.map(e => ({ e, down: false })), ...P.down.map(e => ({ e, down: true }))]
+      .sort((a, b) => a.e.num - b.e.num || (a.down ? 1 : 0) - (b.down ? 1 : 0));
+
+    cw.appendChild(buildClues());
+    document.getElementById('cwControls').style.display = 'flex';
+  }
+
+  function buildClues() {
+    const wrap = document.createElement('div');
+    wrap.className = 'cw-clues';
+    const col = (label, list, down) => {
+      const div = document.createElement('div');
+      div.className = 'cw-clue-col';
+      div.innerHTML = '<h3>' + label + '</h3>';
+      list.forEach(e => {
+        const p = document.createElement('div');
+        p.className = 'cw-clue';
+        p.dataset.num = e.num; p.dataset.down = down ? '1' : '0';
+        p.innerHTML = '<b>' + e.num + '</b>' + e.clue + ' (' + e.len + ')';
+        p.addEventListener('click', () => { dir = down ? 'D' : 'A'; focusCell(e.row, e.col); });
+        div.appendChild(p);
+      });
+      return div;
+    };
+    wrap.appendChild(col('Across', P.across, false));
+    wrap.appendChild(col('Down', P.down, true));
+    return wrap;
+  }
+
+  function curEntry() {
+    const m = cellMeta[k(cur.r, cur.c)];
+    if (!m) return null;
+    return dir === 'A' ? (m.across || m.down) : (m.down || m.across);
+  }
+  function toggleDir() {
+    const m = cellMeta[k(cur.r, cur.c)];
+    if (m && m.across && m.down) { dir = dir === 'A' ? 'D' : 'A'; highlight(); }
+  }
+  function focusCell(r, c) {
+    if (!isCell(r, c)) return;
+    cur = { r, c };
+    const inp = cellInput[k(r, c)];
+    if (inp) inp.focus();
+    highlight();
+  }
+  function ensureDir() {
+    const m = cellMeta[k(cur.r, cur.c)];
+    if (!m) return;
+    if (dir === 'D' && !m.down && m.across) dir = 'A';
+    else if (dir === 'A' && !m.across && m.down) dir = 'D';
+  }
+  function highlight() {
+    ensureDir();
+    document.querySelectorAll('.cw-cell').forEach(el => el.classList.remove('hl', 'cur'));
+    document.querySelectorAll('.cw-clue').forEach(el => el.classList.remove('active'));
+    const e = curEntry();
+    if (e) {
+      for (let i = 0; i < e.len; i++) {
+        const r = e.row + (dir === 'D' ? i : 0), c = e.col + (dir === 'D' ? 0 : i);
+        const inp = cellInput[k(r, c)];
+        if (inp) inp.parentElement.classList.add('hl');
+      }
+      const clue = document.querySelector('.cw-clue[data-num="' + e.num + '"][data-down="' + (dir === 'D' ? 1 : 0) + '"]');
+      if (clue) clue.classList.add('active');
+    }
+    const cinp = cellInput[k(cur.r, cur.c)];
+    if (cinp) cinp.parentElement.classList.add('cur');
+    const b = document.getElementById('cwDirBtn');
+    if (b) b.textContent = dir === 'D' ? '↓ Down' : '→ Across';
+  }
+  function advance(back) {
+    const d = back ? -1 : 1;
+    const nr = cur.r + (dir === 'D' ? d : 0), nc = cur.c + (dir === 'A' ? d : 0);
+    if (isCell(nr, nc)) focusCell(nr, nc);
+  }
+  function onInput(ev) {
+    ev.target.value = ev.target.value.toUpperCase().replace(/[^A-Z]/g, '').slice(-1);
+    clearMark(ev.target);
+    save();
+    if (ev.target.value) advance(false);
+    checkWin();
+  }
+  function onKeydown(ev) {
+    const r = +ev.target.dataset.r, c = +ev.target.dataset.c;
+    const moves = { ArrowUp: ['D', -1], ArrowDown: ['D', 1], ArrowLeft: ['A', -1], ArrowRight: ['A', 1] };
+    if (moves[ev.key]) {
+      ev.preventDefault();
+      const [wantDir, d] = moves[ev.key];
+      if (dir !== wantDir) { dir = wantDir; highlight(); }
+      let nr = r + (wantDir === 'D' ? d : 0), nc = c + (wantDir === 'A' ? d : 0);
+      while (nr >= 0 && nr < P.rows && nc >= 0 && nc < P.cols) {
+        if (isCell(nr, nc)) { focusCell(nr, nc); break; }
+        nr += (wantDir === 'D' ? d : 0); nc += (wantDir === 'A' ? d : 0);
+      }
+    } else if (ev.key === 'Backspace') {
+      if (!ev.target.value) { ev.preventDefault(); advance(true); const p = cellInput[k(cur.r, cur.c)]; if (p) { p.value = ''; clearMark(p); save(); } }
+      else { clearMark(ev.target); }
+    } else if (ev.key === 'Tab') { ev.preventDefault(); gotoWord(ev.shiftKey ? -1 : 1); }
+    else if (ev.key === ' ') { ev.preventDefault(); toggleDir(); }
+  }
+  function gotoWord(delta) {
+    if (!ORDER.length) return;
+    const e = curEntry(), down = dir === 'D';
+    let i = ORDER.findIndex(x => x.e === e && x.down === down);
+    i = i < 0 ? 0 : (i + delta + ORDER.length) % ORDER.length;
+    dir = ORDER[i].down ? 'D' : 'A';
+    focusCell(ORDER[i].e.row, ORDER[i].e.col);
+  }
+  const clearMark = inp => inp.parentElement.classList.remove('wrong', 'right');
+
+  function save() {
+    const rows = [];
+    for (let r = 0; r < P.rows; r++) {
+      let line = '';
+      for (let c = 0; c < P.cols; c++) line += isCell(r, c) ? (cellInput[k(r, c)].value || '.') : '#';
+      rows.push(line);
+    }
+    try { localStorage.setItem(KEY, rows.join('\n')); } catch (e) {}
+  }
+  function load() {
+    let saved;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    if (!saved) return;
+    const rows = saved.split('\n');
+    for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+      if (!isCell(r, c)) continue;
+      const ch = rows[r] && rows[r][c];
+      if (ch && ch !== '.' && ch !== '#') cellInput[k(r, c)].value = ch;
+    }
+  }
+  function checkWin() {
+    for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+      if (isCell(r, c) && cellInput[k(r, c)].value !== P.solution[r][c]) return false;
+    }
+    const s = document.getElementById('cwStatus');
+    if (s) { s.className = 'cw-status win'; s.textContent = '✓ Solved — nice.'; }
+    return true;
+  }
+
+  return {
+    wire() {
+      if (!P || !P.solution || !document.getElementById('cw')) return;
+      buildBoard();
+      load();
+      checkWin();
+    },
+    flipDir() { dir = dir === 'A' ? 'D' : 'A'; const inp = cellInput[k(cur.r, cur.c)]; if (inp) inp.focus(); highlight(); },
+    check() {
+      let wrong = 0, filled = 0;
+      for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+        if (!isCell(r, c)) continue;
+        const inp = cellInput[k(r, c)];
+        inp.parentElement.classList.remove('wrong', 'right');
+        if (!inp.value) continue;
+        filled++;
+        if (inp.value === P.solution[r][c]) inp.parentElement.classList.add('right');
+        else { inp.parentElement.classList.add('wrong'); wrong++; }
+      }
+      const s = document.getElementById('cwStatus');
+      s.className = 'cw-status';
+      s.textContent = filled === 0 ? 'Nothing filled in yet.' : wrong === 0 ? 'All filled cells are correct so far.' : wrong + ' incorrect cell' + (wrong > 1 ? 's' : '') + '.';
+    },
+    revealCell() { const inp = cellInput[k(cur.r, cur.c)]; if (inp) { inp.value = P.solution[cur.r][cur.c]; clearMark(inp); save(); checkWin(); } },
+    revealWord() {
+      const e = curEntry(); if (!e) return;
+      for (let i = 0; i < e.len; i++) {
+        const r = e.row + (dir === 'D' ? i : 0), c = e.col + (dir === 'D' ? 0 : i);
+        const inp = cellInput[k(r, c)]; if (inp) { inp.value = P.solution[r][c]; clearMark(inp); }
+      }
+      save(); checkWin();
+    },
+    revealAll() {
+      for (let r = 0; r < P.rows; r++) for (let c = 0; c < P.cols; c++) {
+        if (!isCell(r, c)) continue;
+        const inp = cellInput[k(r, c)]; inp.value = P.solution[r][c]; clearMark(inp);
+      }
+      save(); checkWin();
+    },
+    clear() {
+      for (const key in cellInput) { cellInput[key].value = ''; clearMark(cellInput[key]); }
+      try { localStorage.removeItem(KEY); } catch (e) {}
+      const s = document.getElementById('cwStatus'); if (s) s.textContent = '';
+    },
+  };
+})();
 
 // A comic interlude band. The image sits on a white panel (comics are drawn
 // black-on-white, so it stays readable in night mode too). alt = the artist's
@@ -286,11 +633,12 @@ function articleCard(a, idPrefix = 'art') {
 function comicBand(c) {
   if (!c) return '';
   const joke = c.alt ? `<p class="comic-alt">${c.alt}</p>` : '';
+  const dims = c.width && c.height ? ` width="${c.width}" height="${c.height}"` : '';
   return `<section class="comic-interlude">
     <div class="comic-kicker">Interlude</div>
     <figure class="comic-figure">
       <a href="${c.permalink}" target="_blank" rel="noopener noreferrer">
-        <img class="comic-img" src="${c.img}" alt="${c.title}" loading="lazy">
+        <img class="comic-img" src="${c.img}" alt="${c.title}" loading="lazy"${dims}>
       </a>
       <figcaption class="comic-cap">
         <span class="comic-title">${c.title}</span>
@@ -309,6 +657,18 @@ function comicBand(c) {
 
 let pager = { pages: [], startPage: {}, perScreen: 1, screen: 0, screens: 1, pageW: 0 };
 const pad = x => String(x).padStart(2, '0');
+
+// The masthead + ticker are captured here at init and injected as the top of the
+// cover block, so the header lives IN the content flow (page 1 when paged, the
+// top of the feed when scrolling) instead of eating every page as fixed chrome.
+let HEADER_HTML = '';
+// Re-fill the ticker and re-sync the settings panel after each render, since the
+// cover block (which now holds them) is rebuilt on every paginate.
+function wireReaderChrome() {
+  if (document.getElementById('ticker')) renderTicker();
+  if (document.getElementById('settingsPanel')) syncSettingsUI();
+  if (CROSSWORD) Games.wire();
+}
 
 function filteredChapters() {
   const kwIn = state.kwInclude ? state.kwInclude.split(/[\s,]+/).filter(Boolean) : [];
@@ -346,14 +706,27 @@ function coverInner(chs) {
     }
   }
   const secondary = [];
-  for (const ch of chs) {
-    if (secondary.length >= 4) break;
-    const a = ch.articles.find(x => x.id !== feature.id);
-    if (a && ch.id !== featCh.id) secondary.push([a, ch.id]);
+  const findArt = id => {
+    for (const ch of chs) { const a = ch.articles.find(x => x.id === id); if (a) return [a, ch.id]; }
+    return null;
+  };
+  if (typeof ALSO_IDS !== 'undefined' && ALSO_IDS && ALSO_IDS.length) {
+    // Hand-picked teasers, in order. Skip the cover and anything not visible.
+    for (const id of ALSO_IDS) {
+      if (secondary.length >= 4 || id === feature.id) continue;
+      const hit = findArt(id);
+      if (hit) secondary.push(hit);
+    }
+  } else {
+    for (const ch of chs) {
+      if (secondary.length >= 4) break;
+      const a = ch.articles.find(x => x.id !== feature.id);
+      if (a && ch.id !== featCh.id) secondary.push([a, ch.id]);
+    }
   }
   return `<div class="mag-cover-inner">
     <div class="cover-kicker">Cover Story · ${featCh.title}</div>
-    ${articleCard(feature, 'cover')}
+    ${articleCard(feature, 'cover', 'h2')}
     <div class="also"><span class="lbl">Also inside this issue</span>
       ${secondary.map(([a, cid]) => `<a href="#" data-goto="${cid}"><span class="n" data-pgref="${cid}">··</span> ${a.title}</a>`).join('')}
     </div></div>`;
@@ -384,7 +757,7 @@ function buildPages(outerW, outerH) {
   const pages = [], startPage = {};
   if (!chs.length) return { pages, startPage };
 
-  pages.push({ kind: 'cover', html: coverInner(chs) });
+  pages.push({ kind: 'cover', html: HEADER_HTML + coverInner(chs) });
   const tocIdx = pages.length;
   pages.push({ kind: 'toc', html: '' });   // placeholder; filled after start pages known
 
@@ -425,6 +798,7 @@ function buildPages(outerW, outerH) {
       since = 0;
     }
   });
+  if (CROSSWORD && CROSSWORD.solution) pages.push({ kind: 'games', html: gamesBand(CROSSWORD) });
 
   meas.remove();
   pages[tocIdx].html = tocInner(chs);
@@ -525,6 +899,7 @@ function renderPager() {
 
   pager.screens = Math.ceil(pager.pages.length / pager.perScreen);
   goToScreen(Math.min(pager.screen, pager.screens - 1));
+  wireReaderChrome();
 }
 
 function layoutPager() { setHostHeight(); renderPager(); }
@@ -555,7 +930,7 @@ function renderScroll() {
     col.appendChild(b);
   };
 
-  add('cover', coverInner(chs));
+  add('cover', HEADER_HTML + coverInner(chs));
   add('toc', tocInner(chs));
   let ci = 0, since = 0;
   if (COMICS.length) add('comic', comicBand(COMICS[ci++]));
@@ -565,6 +940,7 @@ function renderScroll() {
     since += ch.articles.length;
     if (since >= COMIC_EVERY && ci < COMICS.length) { add('comic', comicBand(COMICS[ci++])); since = 0; }
   });
+  if (CROSSWORD && CROSSWORD.solution) add('games', gamesBand(CROSSWORD), 'games');
 
   host.innerHTML = '';
   host.appendChild(col);
@@ -583,12 +959,74 @@ function renderScroll() {
       t.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+  wireReaderChrome();
 }
 
-// Single render entry point — dispatches on the chosen reading layout.
+// Narrow viewports are forced to the scroll feed regardless of the saved
+// preference. When the reader hasn't explicitly chosen, default by viewport:
+// scroll on phones (paged pages are short there), paged on desktop. An explicit
+// choice (via the Layout toggle) is honoured on every screen.
+const MOBILE_MAX = 700;
+function effectiveLayout() {
+  return state.reader.layout || (window.innerWidth <= MOBILE_MAX ? 'scroll' : 'paged');
+}
+
+// Single render entry point — dispatches on the effective reading layout.
+// Re-runs on resize/rotation (see the resize handler), so crossing the
+// breakpoint or rotating a phone switches modes correctly.
 function renderView() {
-  if (state.reader.layout === 'scroll') renderScroll();
+  const layout = effectiveLayout();
+  document.documentElement.dataset.layout = layout;
+  if (layout === 'scroll') renderScroll();
   else layoutPager();
+}
+
+// Whole-card affordance: a click anywhere on a card (that isn't a real control
+// or a text selection) opens the article in a new tab; a long-press on touch
+// copies its link. Bound once via delegation so it survives re-renders.
+let _cardBound = false, _lpTimer = null, _lpFired = false;
+function bindCardInteractions() {
+  if (_cardBound) return; _cardBound = true;
+
+  document.addEventListener('click', e => {
+    if (_lpFired) { _lpFired = false; return; }   // swallow the click that follows a long-press
+    if (e.target.closest('a, button, summary, details, input, label, .settings-panel')) return;
+    if (window.getSelection && String(window.getSelection())) return;   // don't hijack text selection
+    const card = e.target.closest('.article.is-clickable');
+    if (card && card.dataset.url) window.open(card.dataset.url, '_blank', 'noopener');
+  });
+
+  const cancelLP = () => { if (_lpTimer) { clearTimeout(_lpTimer); _lpTimer = null; } };
+  document.addEventListener('touchstart', e => {
+    const card = e.target.closest('.article.is-clickable');
+    if (!card || !card.dataset.url) return;
+    cancelLP();
+    _lpTimer = setTimeout(() => { _lpTimer = null; _lpFired = true; copyLink(card.dataset.url); }, 500);
+  }, { passive: true });
+  document.addEventListener('touchend', cancelLP, { passive: true });
+  document.addEventListener('touchmove', cancelLP, { passive: true });
+}
+
+function copyLink(url) {
+  const done = () => showToast('Link copied');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(done).catch(() => fallbackCopy(url, done));
+  } else fallbackCopy(url, done);
+}
+function fallbackCopy(url, cb) {
+  const ta = document.createElement('textarea');
+  ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); cb && cb(); } catch (e) {}
+  document.body.removeChild(ta);
+}
+
+let _toastT = null;
+function showToast(msg) {
+  let t = document.getElementById('kd-toast');
+  if (!t) { t = document.createElement('div'); t.id = 'kd-toast'; document.body.appendChild(t); }
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(_toastT); _toastT = setTimeout(() => t.classList.remove('show'), 1600);
 }
 
 // ── viewer / navigation ──
@@ -602,7 +1040,31 @@ function ensureNav() {
   mk('pr-prev', 'pr-arrow pr-prev', 'Previous page', '‹', prevScreen);
   mk('pr-next', 'pr-arrow pr-next', 'Next page', '›', nextScreen);
   const ind = document.createElement('div'); ind.id = 'pr-ind'; ind.className = 'pr-indicator';
+  ind.title = 'Jump to page';
+  ind.onclick = togglePageJump;
   document.body.appendChild(ind);
+}
+
+// Click the page indicator to open a grid of page numbers and jump straight to
+// one, instead of only stepping with the ‹ › arrows.
+function togglePageJump(e) {
+  if (e) e.stopPropagation();
+  const existing = document.getElementById('pr-jump');
+  if (existing) { existing.remove(); return; }
+  if (pager.screens <= 1) return;
+  const pop = document.createElement('div');
+  pop.id = 'pr-jump';
+  for (let s = 0; s < pager.screens; s++) {
+    const b = document.createElement('button');
+    b.textContent = s + 1;
+    if (s === pager.screen) b.className = 'is-current';
+    b.onclick = ev => { ev.stopPropagation(); goToScreen(s, false); pop.remove(); };
+    pop.appendChild(b);
+  }
+  document.body.appendChild(pop);
+  setTimeout(() => document.addEventListener('click', function h(ev) {
+    if (!pop.contains(ev.target) && ev.target.id !== 'pr-ind') { pop.remove(); document.removeEventListener('click', h); }
+  }), 0);
 }
 
 // The magazine turns like a book: the target screen (or the one leaving) pivots
@@ -634,6 +1096,7 @@ function endFlip() {
 
 function goToScreen(i, animate, dir) {
   const target = Math.max(0, Math.min(i, Math.max(0, pager.screens - 1)));
+  if (target !== pager.screen) stopAllVideos();   // stop any playing embed before turning/cloning
   if (!animate || _reducedMotion() || target === pager.screen) {
     if (_flip) endFlip();
     pager.screen = target;
@@ -856,7 +1319,7 @@ function applyReaderDOM() {
   if (r.theme === 'night') el.dataset.night = '1'; else el.removeAttribute('data-night');
   el.style.setProperty('--read-font', READER_FONTS[r.font]);
   el.style.setProperty('--read-scale', READER_SCALES[r.size]);
-  el.dataset.layout = r.layout;
+  el.dataset.layout = effectiveLayout();
 }
 
 function syncSettingsUI() {
@@ -864,7 +1327,7 @@ function syncSettingsUI() {
   const mark = (seg, val) => document.querySelectorAll('#' + seg + ' button')
     .forEach(b => b.classList.toggle('active', b.dataset.v === val));
   mark('segTheme', r.theme); mark('segFont', r.font);
-  mark('segSize', r.size);   mark('segLayout', r.layout);
+  mark('segSize', r.size);   mark('segLayout', effectiveLayout());
 }
 
 function setTheme(v)  { state.reader.theme = v;  applyReaderDOM(); saveReader(); syncSettingsUI(); }
@@ -898,11 +1361,20 @@ function dismissLoader() {
   }
 }
 
-try {
+if (document.documentElement.dataset.nojs === '1') {
+  // No-JS preview: leave the prerendered #digest untouched, just reveal it.
+  dismissLoader();
+} else try {
   loadCookies();
   applyReaderDOM();
-  syncSettingsUI();
-  renderTicker();
+  // Lift the masthead + ticker out of fixed chrome into HEADER_HTML; they now
+  // render as the top of the cover block (page 1 paged / feed top). The ticker
+  // and settings panel are re-wired after each render via wireReaderChrome().
+  const _tk = document.querySelector('.ticker-wrap'), _mh = document.querySelector('.masthead');
+  HEADER_HTML = (_tk ? _tk.outerHTML : '') + (_mh ? _mh.outerHTML : '');
+  if (_tk) _tk.remove();
+  if (_mh) _mh.remove();
+
   renderTopicChecks();
   document.getElementById('kwInclude').value = state.kwInclude;
   document.getElementById('kwExclude').value = state.kwExclude;
@@ -915,17 +1387,35 @@ try {
     : 'EXCLUDE — select topics to <em>hide</em> from the digest.';
   updateChips();
   setupPagerListeners();
-  // Paginate once fonts are ready so card measurements are accurate.
+  bindCardInteractions();
+  // Render immediately for LCP. Paged layout gets a quiet second pass once web
+  // fonts settle, because only fixed pages depend on exact text measurement.
   const boot = () => {
     try { renderView(); } catch (e) { console.error('render failed:', e); }
     dismissLoader();
   };
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(boot).catch(boot);
-  else boot();
+  // Paged pages are packed to exact text height, so they must be re-measured
+  // once the WEB fonts are truly applied. The font CSS is loaded async (preload
+  // → stylesheet), so document.fonts.ready at boot resolves against fallback
+  // metrics — too early. Wait for the stylesheet to go live (its @font-face
+  // then exists), then for the actual fonts, and only then re-paginate.
+  const rePaginate = () => { if (document.documentElement.dataset.layout !== 'scroll') renderView(); };
+  const afterFonts = () => {
+    if (!document.fonts || !document.fonts.load) return;
+    Promise.all([
+      document.fonts.load('600 1rem "JetBrains Mono"'),
+      document.fonts.load('500 1rem "DM Sans"'),
+    ]).then(rePaginate).catch(rePaginate);
+  };
+  boot();
+  const fontcss = document.getElementById('fontcss');
+  if (!fontcss || fontcss.rel === 'stylesheet') afterFonts();   // already applied (cache)
+  else fontcss.addEventListener('load', afterFonts, { once: true });
 } catch (e) {
   console.error('Digest init failed:', e);
   dismissLoader();
 }
 </script>
+
 </body>
 </html>

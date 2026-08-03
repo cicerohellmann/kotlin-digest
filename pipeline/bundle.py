@@ -42,13 +42,24 @@ def fetch_bytes(url: str) -> bytes:
         return resp.content
 
 
-def embed_fonts(font_css: str) -> str:
-    """Replace url(...) in @font-face blocks with base64 data URIs."""
+def embed_fonts(font_css: str, local_dir: Path | None = None) -> str:
+    """Replace url(...) in @font-face blocks with base64 data URIs.
+
+    Handles remote (http) urls and local self-hosted woff2 files. Local font
+    files are referenced by bare filename in site/fonts/fonts.css and read from
+    `local_dir` — no network call, so the bundle stays Google-free and offline."""
     def replace_url(m):
         url = m.group(1).strip("'\"")
+        data = None
         if url.startswith("http"):
             print(f"    embedding font: {url.split('/')[-1]}", file=sys.stderr)
             data = fetch_bytes(url)
+        elif local_dir is not None:
+            cand = local_dir / Path(url).name
+            if cand.exists():
+                print(f"    embedding local font: {cand.name}", file=sys.stderr)
+                data = cand.read_bytes()
+        if data is not None:
             b64 = base64.b64encode(data).decode()
             return f"url('data:font/woff2;base64,{b64}')"
         return m.group(0)
@@ -131,26 +142,32 @@ def main() -> None:
             f"<style>\n{css}\n</style>",
         )
 
-    # 2. Fetch and embed Google Fonts
-    gf_match = re.search(
-        r'<link href="(https://fonts\.googleapis\.com/css2[^"]+)"[^>]*rel="stylesheet"[^>]*>',
-        html,
-    )
-    if not gf_match:
+    # 2. Embed fonts. Prefer the local self-hosted set (site/fonts/fonts.css);
+    #    fall back to a legacy Google-Fonts link if one is still present.
+    fonts_dir = SITE_DIR / "fonts"
+    local_css = fonts_dir / "fonts.css"
+    if re.search(r'<link[^>]*href="/fonts/fonts\.css"', html) and local_css.exists():
+        print("  Embedding self-hosted fonts (no network)...", file=sys.stderr)
+        font_css_embedded = embed_fonts(local_css.read_text(encoding="utf-8"), local_dir=fonts_dir)
+        # Drop the fontcss link + its <noscript> fallback; inline the embedded @font-face.
+        html = re.sub(r'[ \t]*<link[^>]*href="/fonts/fonts\.css"[^>]*>\n?', '', html)
+        html = re.sub(r'[ \t]*<noscript><link[^>]*fonts\.css[^>]*></noscript>\n?', '', html)
+        html = html.replace("</head>", f"<style>\n{font_css_embedded}\n</style>\n</head>", 1)
+    else:
         gf_match = re.search(
+            r'<link href="(https://fonts\.googleapis\.com/css2[^"]+)"[^>]*rel="stylesheet"[^>]*>',
+            html,
+        ) or re.search(
             r'<link rel="stylesheet"[^>]*href="(https://fonts\.googleapis\.com/css2[^"]+)"[^>]*>',
             html,
         )
-
-    if gf_match:
-        gf_url = gf_match.group(1)
-        print(f"  Fetching Google Fonts CSS...", file=sys.stderr)
-        font_css = fetch_text(gf_url, headers={"User-Agent": FONT_UA})
-        font_css_embedded = embed_fonts(font_css)
-        # Remove preconnect hints and the stylesheet link; replace with embedded style
-        html = re.sub(r'<link[^>]+fonts\.gstatic\.com[^>]*>\n?', '', html)
-        html = re.sub(r'<link[^>]+fonts\.googleapis\.com[^>]*>\n?', '', html)
-        html = html.replace("</head>", f"<style>\n{font_css_embedded}\n</style>\n</head>", 1)
+        if gf_match:
+            print("  Fetching Google Fonts CSS (legacy path)...", file=sys.stderr)
+            font_css = fetch_text(gf_match.group(1), headers={"User-Agent": FONT_UA})
+            font_css_embedded = embed_fonts(font_css)
+            html = re.sub(r'<link[^>]+fonts\.gstatic\.com[^>]*>\n?', '', html)
+            html = re.sub(r'<link[^>]+fonts\.googleapis\.com[^>]*>\n?', '', html)
+            html = html.replace("</head>", f"<style>\n{font_css_embedded}\n</style>\n</head>", 1)
 
     # 3. Swap cookies → localStorage (bundle opens via file://, cookies are a no-op)
     print("  Swapping cookies → localStorage for standalone use...", file=sys.stderr)

@@ -1,9 +1,13 @@
 import json
+import re
 from datetime import date, datetime
 
 from pygments import highlight as _pyg_highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import KotlinLexer
+
+from pipeline.writers import load as load_writers, slugify as writer_slug
+from pipeline._assemble.crossword import load_puzzles
 
 _KT_LEXER = KotlinLexer()
 _KT_FORMATTER = HtmlFormatter(nowrap=True, classprefix="k-")
@@ -14,6 +18,17 @@ def highlight_kotlin(code: str) -> str:
     so generics like <Any> survive). Classes are prefixed `k-` to match the
     .snap-code .k-* palette in template.html."""
     return _pyg_highlight(code, _KT_LEXER, _KT_FORMATTER).rstrip("\n")
+
+_YT_RE = re.compile(
+    r"(?:youtu\.be/|youtube\.com/(?:watch\?v=|embed/|v/|shorts/))([A-Za-z0-9_-]{11})"
+)
+
+
+def youtube_id(url: str) -> str:
+    """Extract an 11-char YouTube id from any common URL form, else ''."""
+    m = _YT_RE.search(url or "")
+    return m.group(1) if m else ""
+
 
 SPARK_CHARS = "▁▂▃▄▅▆▇█"
 DATA_MARKER = "// @@DIGEST_DATA@@"
@@ -70,12 +85,19 @@ def build_data_block(
     comics: list = None,
     comic_every: int = 14,
     featured_id: str = "",
+    also_ids: list = None,
 ) -> str:
     lines = ["// ══ DATA ════════════════════════════════════════════════════════════════════", ""]
+
+    # Writers registry supplies author photos (null until a source provides one).
+    writers = load_writers()
 
     # FEATURED_ID — pins the cover story to a specific article id; empty falls
     # back to the top-scoring article in the top chapter.
     lines.append("const FEATURED_ID = {};".format(json.dumps(featured_id or "")))
+    # ALSO_IDS — hand-picked "Also inside this issue" teasers, in order. Empty
+    # falls back to the auto pick (top article of each non-cover chapter).
+    lines.append("const ALSO_IDS = {};".format(json.dumps(also_ids or [])))
     lines.append("")
 
     # TOPICS — one entry per cluster (for the filter UI)
@@ -105,18 +127,37 @@ def build_data_block(
     # COMICS — interludes: one before the mag, one after every `comic_every` cards
     comic_items = []
     for c in (comics or []):
+        # DSGVO guardrail: comic images must be self-hosted (see comics._localize).
+        # A remote src would leak the reader's IP to a third party on page load.
+        img = c.get("img", "")
+        if not img.startswith("/"):
+            raise ValueError(
+                f"comic {c.get('id')!r}: img must be a root-absolute local path, "
+                f"got {img!r} — comics must be self-hosted, never hotlinked"
+            )
         comic_items.append(
-            "  {{ img:{}, alt:{}, title:{}, permalink:{}, artist:{}, source:{} }}".format(
+            "  {{ img:{}, alt:{}, title:{}, permalink:{}, artist:{}, source:{}, width:{}, height:{} }}".format(
                 json.dumps(c.get("img", "")),
                 json.dumps(c.get("alt", "")),
                 json.dumps(c.get("title", "")),
                 json.dumps(c.get("permalink", "")),
                 json.dumps(c.get("artist", "")),
                 json.dumps(c.get("source", "")),
+                int(c.get("width") or 0),
+                int(c.get("height") or 0),
             )
         )
     lines.append("const COMICS = [\n" + ",\n".join(comic_items) + "\n];")
     lines.append("const COMIC_EVERY = {};".format(int(comic_every)))
+    lines.append("")
+
+    # CROSSWORD — the Games chapter puzzle (first puzzle in the pool for now).
+    try:
+        puzzles = load_puzzles()
+    except Exception:
+        puzzles = []
+    crossword_js = json.dumps(puzzles[0], ensure_ascii=False) if puzzles else "null"
+    lines.append("const CROSSWORD = {};".format(crossword_js))
     lines.append("")
 
     # CHAPTERS
@@ -141,6 +182,11 @@ def build_data_block(
             date_str = _fmt_date(a.get("date", ""))
 
             summary = a.get("summary") or ""
+            # content-rights.md rule 3: member-only / paywalled stories are
+            # "headline + link only, never a fetched-body summary" — blank the
+            # summary here so no consumer (reader, prerender, bundle) ships it.
+            if a.get("paywalled"):
+                summary = ""
             snap_js = "null"
             if a.get("code_snippet"):
                 snap_js = "{{ label:{}, code:{} }}".format(
@@ -165,10 +211,19 @@ def build_data_block(
             topics_js = json.dumps(a.get("topics", []))
             source_name = src_id.replace("-", " ").title()
 
+            author = a.get("author", "")
+            avatar = ""
+            if author:
+                w = writers.get(writer_slug(author))
+                if w and w.get("photo"):
+                    avatar = w["photo"]
+
+            video = a.get("video_id") or youtube_id(a.get("url", ""))
+
             article_blocks.append(
                 "      {{ id:{}, col:{},\n"
                 "        title:{},\n"
-                "        url:{}, source:{}, stype:{}, date:{}, paywalled:{},\n"
+                "        url:{}, source:{}, stype:{}, date:{}, author:{}, avatar:{}, video:{}, media_type:{}, thumbnail:{}, paywalled:{},\n"
                 "        topics:{},\n"
                 "        summary:{},\n"
                 "        snap:{},\n"
@@ -178,6 +233,8 @@ def build_data_block(
                     json.dumps(a["title"]),
                     json.dumps(a["url"]), json.dumps(source_name),
                     json.dumps(stype), json.dumps(date_str),
+                    json.dumps(author), json.dumps(avatar), json.dumps(video),
+                    json.dumps(a.get("media_type", "")), json.dumps(a.get("thumbnail", "")),
                     "true" if a.get("paywalled") else "false",
                     topics_js,
                     json.dumps(summary),

@@ -2,15 +2,19 @@ from datetime import date
 
 
 def filter_articles(articles: list, start: date, end: date,
-                    no_render_sources: set = None) -> list:
+                    no_render_sources: set = None, no_videos: bool = False) -> list:
     """Keep articles whose date falls within [start, end] inclusive.
 
     Articles flagged `dead` (deleted/removed at source), `low_quality`
-    (junk/off-topic/spam), or `unfetchable` (no usable content could be read,
-    so it was never summarized) are excluded — the record stays in state for
-    the audit trail but never renders. Articles from `no_render_sources`
+    (junk/off-topic/spam), `unfetchable` (no usable content could be read,
+    so it was never summarized), or `is_short` (YouTube Shorts — vertical
+    filler, never magazine material) are excluded — the record stays in state
+    for the audit trail but never renders. Articles from `no_render_sources`
     (sources marked `render: false`, e.g. Reddit — signal-only feeds for the
     bible) are likewise kept in state but never rendered.
+
+    When `no_videos` is set, every article with `media_type == "video"` is
+    dropped for this edition too (assemble.py --no-videos).
     """
     start_s = start.isoformat()
     end_s = end.isoformat()
@@ -21,6 +25,8 @@ def filter_articles(articles: list, start: date, end: date,
         and not a.get("dead")
         and not a.get("low_quality")
         and not a.get("unfetchable")
+        and not a.get("is_short")
+        and not (no_videos and a.get("media_type") == "video")
         and a.get("source_id") not in no_render
     ]
 

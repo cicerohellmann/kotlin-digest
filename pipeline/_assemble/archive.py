@@ -22,6 +22,11 @@ def write_edition_copy(html: str, edition: str, editions_dir: Path) -> Path:
     """Write a permanent copy of the rendered edition to editions/{edition}.html."""
     editions_dir.mkdir(parents=True, exist_ok=True)
     out = editions_dir / f"{edition}.html"
+    # This archived copy has its own permanent URL — point canonical + og:url at
+    # it, not at the site root the index copy uses (og:image is left untouched).
+    edition_url = f"https://kotlindigest.com/editions/{edition}.html"
+    html = html.replace('href="https://kotlindigest.com/"', f'href="{edition_url}"')
+    html = html.replace('content="https://kotlindigest.com/"', f'content="{edition_url}"')
     tmp = out.with_suffix(".tmp")
     tmp.write_text(_inject_base(html), encoding="utf-8")
     tmp.rename(out)
@@ -67,8 +72,9 @@ _TYPE_LABELS = {
     "slack-mirror": "Kotlinlang Slack (topic signal)",
     "discussion": "Discussion",
     "news": "News",
+    "youtube": "YouTube channels",
 }
-_TYPE_ORDER = ["blog", "conference", "video", "changelog", "news", "discussion", "slack-mirror"]
+_TYPE_ORDER = ["blog", "youtube", "conference", "changelog", "news", "discussion", "slack-mirror"]
 
 
 def render_sources(sources: list, out_path: Path) -> None:
@@ -112,10 +118,12 @@ def render_sources(sources: list, out_path: Path) -> None:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>Kotlin Digest — Sources</title>
   <script>if(document.cookie.match(/kd_reader=[^;]*%22theme%22%3A%22night%22/)||document.cookie.indexOf('kd_night=1')>=0)document.documentElement.dataset.night='1';</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="design.css">
   <style>
     body {{ min-height: 100vh; }}
@@ -181,10 +189,12 @@ def render_archive(manifest: list, out_path: Path) -> None:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>Kotlin Digest — Archive</title>
   <script>if(document.cookie.match(/kd_reader=[^;]*%22theme%22%3A%22night%22/)||document.cookie.indexOf('kd_night=1')>=0)document.documentElement.dataset.night='1';</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="design.css">
   <style>
     body {{ min-height: 100vh; }}

@@ -9,6 +9,10 @@
 #     non-commercial only. If Kotlin Digest ever monetises, this breaks.
 #   - Any all-rights-reserved comic (SMBC, CommitStrip, MonkeyUser, ...) needs
 #     the artist's explicit permission before it goes here.
+#   Images are SELF-HOSTED under site/comics/ (DSGVO: zero third-party
+#   requests on page load). `img` is a root-absolute local path; `remote`
+#   records the origin so the assembler can re-fetch a missing file.
+#
 # Each entry must credit the artist and link to the original (permalink).
 #
 # Community PRs welcome — add an entry below (same shape).
@@ -16,7 +20,10 @@
 comics:
 - id: xkcd-303
   title: Compiling
-  img: https://imgs.xkcd.com/comics/compiling.png
+  img: /comics/compiling.png
+  remote: https://imgs.xkcd.com/comics/compiling.png
+  width: 413
+  height: 360
   alt: '''Are you stealing those LCDs?'' ''Yeah, but I''m doing it while my code compiles.'''
   permalink: https://xkcd.com/303/
   artist: Randall Munroe
@@ -24,7 +31,10 @@ comics:
   license: CC BY-NC 2.5
 - id: xkcd-1205
   title: Is It Worth the Time?
-  img: https://imgs.xkcd.com/comics/is_it_worth_the_time.png
+  img: /comics/is_it_worth_the_time.png
+  remote: https://imgs.xkcd.com/comics/is_it_worth_the_time.png
+  width: 571
+  height: 464
   alt: Don't forget the time you spend finding the chart to look up what you save. And the time spent
     reading this reminder about the time spent. And the time trying to figure out if either of those actually
     make sense. Remember, every second counts toward your life total, including these right now.
@@ -34,7 +44,10 @@ comics:
   license: CC BY-NC 2.5
 - id: xkcd-1319
   title: Automation
-  img: https://imgs.xkcd.com/comics/automation.png
+  img: /comics/automation.png
+  remote: https://imgs.xkcd.com/comics/automation.png
+  width: 404
+  height: 408
   alt: '''Automating'' comes from the roots ''auto-'' meaning ''self-'', and ''mating'', meaning ''screwing''.'
   permalink: https://xkcd.com/1319/
   artist: Randall Munroe
@@ -42,7 +55,10 @@ comics:
   license: CC BY-NC 2.5
 - id: xkcd-1421
   title: Future Self
-  img: https://imgs.xkcd.com/comics/future_self.png
+  img: /comics/future_self.png
+  remote: https://imgs.xkcd.com/comics/future_self.png
+  width: 280
+  height: 462
   alt: Maybe I haven't been to Iceland because I'm busy dealing with YOUR crummy code.
   permalink: https://xkcd.com/1421/
   artist: Randall Munroe
@@ -50,7 +66,10 @@ comics:
   license: CC BY-NC 2.5
 - id: xkcd-1667
   title: Algorithms
-  img: https://imgs.xkcd.com/comics/algorithms.png
+  img: /comics/algorithms.png
+  remote: https://imgs.xkcd.com/comics/algorithms.png
+  width: 740
+  height: 206
   alt: There was a schism in 2007, when a sect advocating OpenOffice created a fork of Sunday.xlsx and
     maintained it independently for several months. The efforts to reconcile the conflicting schedules
     led to the reinvention, within the cells of the spreadsheet, of modern version control.
@@ -60,7 +79,10 @@ comics:
   license: CC BY-NC 2.5
 - id: xkcd-1739
   title: Fixing Problems
-  img: https://imgs.xkcd.com/comics/fixing_problems.png
+  img: /comics/fixing_problems.png
+  remote: https://imgs.xkcd.com/comics/fixing_problems.png
+  width: 312
+  height: 307
   alt: '''What was the original problem you were trying to fix?'' ''Well, I noticed one of the tools I
     was using had an inefficiency that was wasting my time.'''
   permalink: https://xkcd.com/1739/
@@ -69,7 +91,8 @@ comics:
   license: CC BY-NC 2.5
 - id: xkcd-927
   title: Standards
-  img: https://imgs.xkcd.com/comics/standards.png
+  img: /comics/standards.png
+  remote: https://imgs.xkcd.com/comics/standards.png
   alt: Fortunately, the charging one has been solved now that we've all standardized on mini-USB. Or is
     it micro-USB? Shit.
   permalink: https://xkcd.com/927/
@@ -78,7 +101,8 @@ comics:
   license: CC BY-NC 2.5
 - id: xkcd-2347
   title: Dependency
-  img: https://imgs.xkcd.com/comics/dependency.png
+  img: /comics/dependency.png
+  remote: https://imgs.xkcd.com/comics/dependency.png
   alt: Someday ImageMagick will finally break for good and we'll have a long period of scrambling as we
     try to reassemble civilization from the rubble.
   permalink: https://xkcd.com/2347/
@@ -87,7 +111,8 @@ comics:
   license: CC BY-NC 2.5
 - id: xkcd-1988
   title: Containers
-  img: https://imgs.xkcd.com/comics/containers.png
+  img: /comics/containers.png
+  remote: https://imgs.xkcd.com/comics/containers.png
   alt: All services are microservices if you ignore most of their features.
   permalink: https://xkcd.com/1988/
   artist: Randall Munroe
@@ -95,7 +120,8 @@ comics:
   license: CC BY-NC 2.5
 - id: xkcd-844
   title: Good Code
-  img: https://imgs.xkcd.com/comics/good_code.png
+  img: /comics/good_code.png
+  remote: https://imgs.xkcd.com/comics/good_code.png
   alt: You can either hang out in the Android Loop or the HURD loop.
   permalink: https://xkcd.com/844/
   artist: Randall Munroe
@@ -103,7 +129,8 @@ comics:
   license: CC BY-NC 2.5
 - id: xkcd-1513
   title: Code Quality
-  img: https://imgs.xkcd.com/comics/code_quality.png
+  img: /comics/code_quality.png
+  remote: https://imgs.xkcd.com/comics/code_quality.png
   alt: I honestly didn't think you could even USE emoji in variable names. Or that there were so many
     different crying ones.
   permalink: https://xkcd.com/1513/
@@ -112,7 +139,8 @@ comics:
   license: CC BY-NC 2.5
 - id: xkcd-1926
   title: Bad Code
-  img: https://imgs.xkcd.com/comics/bad_code.png
+  img: /comics/bad_code.png
+  remote: https://imgs.xkcd.com/comics/bad_code.png
   alt: '"Oh my God, why did you scotch-tape a bunch of hammers together?" "It''s ok! Nothing depends on
     this wall being destroyed efficiently."'
   permalink: https://xkcd.com/1926/

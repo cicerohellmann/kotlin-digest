@@ -1,5 +1,8 @@
 # Code Snippet Classifier
 
+> **Before selecting any snippet, obey [`docs/content-rights.md`](content-rights.md).** Snippets are
+> short attributed citations (≤10 lines), never wholesale copies, never from paywalled bodies.
+
 Used during summarization to decide whether an article deserves a code snippet card and, if so, what to show.
 
 The snippet is a **sneak peek, not a tutorial**. It should make a developer look at it and immediately understand why the article is worth their time. One glance = one clear signal of what's new, what changed, or what's possible. Think of it as the article's hook, not its explanation.

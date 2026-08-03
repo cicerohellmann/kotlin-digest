@@ -1,0 +1,1148 @@
+/* Kotlin Digest — component styles (atoms -> organisms + reader templates).
+   Extracted from template.html so the reader and site/styleguide.html share
+   one source of truth. Tokens live in design.css. */
+
+body { min-height: 100vh; }
+
+    /* ── TICKER — always dark, never flips ─────────────────────── */
+    .ticker-wrap {
+      background: #0F0E0C;
+      color: #C8C0B0;
+      padding: 0.45rem 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    .ticker-label {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      padding: 0 1.5rem;
+      white-space: nowrap;
+      border-right: 1px solid #2A2820;
+      background: #0F0E0C;
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .ticker-track {
+      display: flex;
+      gap: 2.5rem;
+      padding-left: 2rem;
+      animation: scroll-ticker 40s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-ui);
+      font-size: 0.62rem;
+    }
+    .t-spark { color: var(--accent); letter-spacing: -0.04em; }
+    .t-name  { color: #C8C0B0; }
+    .t-score { color: #8B8070; }
+    @keyframes scroll-ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── LOADING GATE ────────────────────────────────────────────── */
+    #kd-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.4rem;
+      background: var(--paper);
+      transition: opacity 0.4s ease;
+    }
+    #kd-loader.kd-loaded {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .kd-loader-caption {
+      font-family: var(--font-ui);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .kd-loader-spinner {
+      width: 2rem;
+      height: 2rem;
+      border: 2px solid var(--rule);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: kd-spin 0.72s linear infinite;
+    }
+    .kd-loader-name {
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+    }
+    @keyframes kd-spin { to { transform: rotate(360deg); } }
+    .kd-noscript {
+      position: fixed; inset: 0; z-index: 10000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 2rem; text-align: center;
+      background: var(--paper); color: var(--ink);
+      font-family: var(--font-ui); font-size: 0.85rem; line-height: 1.7;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .kd-loader-spinner { animation: none; }
+      #kd-loader { transition-duration: 0.15s; }
+    }
+
+    /* ── MASTHEAD ────────────────────────────────────────────────── */
+    .masthead {
+      padding: 1.75rem 2.5rem 1.25rem;
+      border-bottom: 3px double var(--ink);
+    }
+    .masthead-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .masthead-wordmark {
+      line-height: 1;
+    }
+    .site-logo {
+      height: clamp(2rem, 5vw, 3.75rem);
+      width: auto;
+      display: block;
+    }
+    .masthead-meta {
+      text-align: right;
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+    }
+    .masthead-meta a, .masthead-stats a {
+      color: var(--blue) !important;
+      text-decoration: underline !important;
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
+    .masthead-meta a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 0.15rem;
+    }
+    .masthead-meta strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .masthead-foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .masthead-tagline {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+    }
+    .masthead-stats {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── FILTER BAR ──────────────────────────────────────────────── */
+    .filter-bar {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--paper);
+      border-bottom: 1px solid var(--rule);
+      box-shadow: 0 2px 8px rgba(28,27,24,0.06);
+    }
+    .filter-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.6rem 2.5rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .filter-toggle-label {
+      font-family: var(--font-meta);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .mode-switcher {
+      display: flex;
+      background: var(--chip-bg);
+      border-radius: 4px;
+      padding: 2px;
+      gap: 2px;
+    }
+    .mode-btn {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      min-height: 32px;
+      padding: 0.35rem 0.8rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 3px;
+      color: var(--ink-muted);
+      transition: background 0.15s, color 0.15s;
+    }
+    .mode-btn.active.focus   { background: var(--accent); color: #1C1B18; }
+    .mode-btn.active.exclude { background: var(--blue);       color: #fff; }
+    .filter-active-count {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .filter-chevron {
+      margin-left: auto;
+      font-size: 0.65rem;
+      color: var(--ink-muted);
+      transition: transform 0.2s;
+    }
+    .filter-open .filter-chevron { transform: rotate(180deg); }
+
+    .filter-panel {
+      display: none;
+      padding: 1rem 2.5rem 1.25rem;
+      border-top: 1px solid var(--rule);
+      background: var(--focus-tint);
+    }
+    /* Drops as an overlay over the magazine's top instead of pushing #digest
+       down in flow — so opening/using/resetting filters never shifts or
+       rescales the paged reader (its height is measured from a stable top). */
+    .filter-panel.open {
+      display: block;
+      position: absolute;
+      left: 0; right: 0;
+      top: 100%;
+      z-index: 10;
+      box-shadow: 0 10px 22px rgba(28,27,24,0.12);
+    }
+    .filter-panel.exclude-mode { background: var(--exclude-tint); }
+
+    .filter-mode-hint {
+      font-family: var(--font-meta);
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+    .filter-panel.exclude-mode .mode-btn.active { background: var(--blue); }
+
+    .topic-checks {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.5rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .topic-check-label {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-meta);
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .topic-check-label input[type="checkbox"] {
+      accent-color: var(--accent);
+      width: 13px; height: 13px;
+      flex-shrink: 0;
+    }
+    .filter-panel.exclude-mode .topic-check-label input[type="checkbox"] {
+      accent-color: var(--blue);
+    }
+
+    .keyword-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--rule);
+      flex-wrap: wrap;
+    }
+    .kw-field {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .kw-field label {
+      font-family: var(--font-ui);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+      white-space: nowrap;
+    }
+    .kw-field input[type="text"] {
+      border: 1px solid var(--rule);
+      background: var(--paper);
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      padding: 0.28rem 0.6rem;
+      border-radius: 3px;
+      width: 170px;
+      color: var(--ink);
+      outline: none;
+    }
+    .kw-field input[type="text"]:focus { border-color: var(--ink-muted); }
+    .reset-btn {
+      margin-left: auto;
+      font-family: var(--font-meta);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid var(--rule);
+      background: transparent;
+      padding: 0.28rem 0.75rem;
+      cursor: pointer;
+      border-radius: 3px;
+      color: var(--ink-muted);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .reset-btn:hover { border-color: var(--ink); color: var(--ink); }
+
+    /* active chips */
+    .active-chips {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0.35rem 2.5rem;
+      border-top: 1px solid var(--rule);
+      min-height: 2.4rem;
+    }
+    .active-chips:empty { display: none; }
+    .chip-mode-label {
+      font-family: var(--font-ui);
+      font-size: 0.58rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.08em;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      padding: 0.18rem 0.5rem;
+      border-radius: 100px;
+    }
+    .chip.focus-chip   { background: #FFDAB5; color: #7A2E00; }
+    .chip.exclude-chip { background: #C8D4F8; color: #1A2C7A; }
+    .chip.kw-chip      { background: var(--chip-bg); color: var(--ink-muted); }
+
+    /* ── MAIN CONTENT ────────────────────────────────────────────── */
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0.5rem 2.5rem 0;
+    }
+
+    #no-results {
+      display: none;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    #no-results p:first-child {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--ink-muted);
+      margin-bottom: 0.5rem;
+    }
+    #no-results p:last-child {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+    }
+    #no-results a { color: var(--blue); }
+
+    /* ── CHAPTER ─────────────────────────────────────────────────── */
+    .chapter {
+      /* expand to full width of main by cancelling its horizontal padding */
+      margin-left: -2.5rem;
+      margin-right: -2.5rem;
+      padding: 2.75rem 2.5rem 2.5rem;
+      animation: fade-up 0.4s ease both;
+    }
+    .chapter + .chapter {
+      border-top: 1px solid var(--rule);
+    }
+    .chapter:nth-child(even) {
+      background: var(--paper-b);
+    }
+    .chapter.hidden { display: none; }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .chapter:nth-child(1) { animation-delay: 0.05s; }
+    .chapter:nth-child(2) { animation-delay: 0.10s; }
+    .chapter:nth-child(3) { animation-delay: 0.15s; }
+    .chapter:nth-child(4) { animation-delay: 0.20s; }
+    .chapter:nth-child(5) { animation-delay: 0.25s; }
+    .chapter:nth-child(6) { animation-delay: 0.30s; }
+
+    .chapter-head {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 1.75rem;
+    }
+    .ch-num {
+      font-family: var(--font-ui);
+      font-size: 0.58rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+    }
+    .ch-title {
+      font-family: var(--font-ui);
+      font-size: 1.3rem;
+      font-weight: 600;
+      font-style: normal;
+      letter-spacing: -0.04em;
+      flex: 1;
+    }
+    .ch-score {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--font-ui);
+      font-size: 0.68rem;
+      color: var(--ink-muted);
+    }
+    .ch-spark { color: var(--accent); letter-spacing: -0.03em; }
+    .ch-score-val { color: var(--ink); font-weight: 600; }
+
+    /* ── ARTICLE GRID ────────────────────────────────────────────── */
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.75rem 2rem;
+    }
+
+    .article {
+      border-top: 1px solid var(--rule);
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      transition: opacity 0.2s;
+    }
+    .article.hidden { display: none; }
+    .article.c4  { grid-column: span 4; }
+    .article.c6  { grid-column: span 6; }
+    .article.c8  { grid-column: span 8; }
+    .article.c12 { grid-column: span 12; }
+
+    @media (max-width: 900px) {
+      .article.c4, .article.c6, .article.c8 { grid-column: span 6; }
+    }
+    @media (max-width: 600px) {
+      .articles { grid-template-columns: 1fr; }
+      .article { grid-column: span 1 !important; }
+      .filter-toggle, .filter-panel, .active-chips, .masthead { padding-left: 1.25rem; padding-right: 1.25rem; }
+      main { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .chapter {
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+      /* De-cramp the masthead: stack the tagline over the stats/settings row
+         instead of squeezing them side by side at phone widths. */
+      .masthead { padding-top: 1.25rem; padding-bottom: 1rem; }
+      .masthead-top { align-items: center; }
+      .masthead-foot { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+      .masthead-tagline { font-size: 0.85rem; }
+      .masthead-stats { flex-wrap: wrap; width: 100%; justify-content: space-between; }
+    }
+
+    /* Mobile always renders the scroll feed (paged clips overflow with no
+       scroll on touch), so the Layout toggle is moot — hide it. The trends
+       ticker drops its marquee animation and becomes a touch-swipeable strip
+       so every topic is reachable. */
+    @media (max-width: 700px) {
+      /* Paged is available on mobile via the Layout toggle, but a fixed-height
+         page would clip tall content — let paged pages scroll internally on
+         phones so nothing is trapped (scroll layout is still the default). */
+      html[data-layout="paged"] .pr-page { overflow-y: auto; }
+      /* The settings gear sits on the left of the stacked mobile masthead, so a
+         right-anchored panel runs off the left edge. Anchor it left and clamp
+         its width to the viewport so it's always fully on-screen. (Selector is
+         .settings-wrap-qualified to beat the base .settings-panel declared later
+         in the file.) */
+      .settings-wrap .settings-panel {
+        right: auto; left: 0;
+        width: min(232px, calc(100vw - 2.5rem));
+      }
+    }
+
+    /* No-JS preview (?nojs) and genuine no-JS visitors get the prerendered
+       digest with the JS-only chrome hidden — the filter bar, the settings
+       gear, and the loading gate all need JavaScript to do anything. The top
+       ticker + masthead are also hidden: the JS reader normally lifts them into
+       the cover, which the prerendered #digest already contains, so the page
+       chrome copies would double up without JS. */
+    html[data-nojs] .filter-bar,
+    html[data-nojs] .settings-wrap,
+    html[data-nojs] #kd-loader,
+    html[data-nojs] body > .ticker-wrap,
+    html[data-nojs] body > .masthead { display: none !important; }
+
+    .art-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .source-tag {
+      font-family: var(--font-ui);
+      font-size: 0.57rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.14rem 0.45rem;
+      border-radius: 2px;
+      border: 1px solid var(--rule);
+      color: var(--ink-muted);
+    }
+    .source-tag.official  { border-color: var(--blue);  color: var(--blue);  }
+    .source-tag.changelog { border-color: var(--green); color: var(--green); }
+    .art-date {
+      font-family: var(--font-ui);
+      font-size: 0.57rem;
+      color: var(--ink-muted);
+    }
+    .art-byline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.28em;
+      font-family: var(--font-ui);
+      font-size: 0.57rem;
+      color: var(--ink-muted);
+    }
+    .art-byline::before {
+      content: "by";
+      opacity: 0.6;
+    }
+    .art-avatar {
+      width: 1.15em;
+      height: 1.15em;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--rule);
+      flex: none;
+    }
+    .badge-paywall {
+      font-family: var(--font-meta);
+      font-size: 0.55rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      background: var(--chip-bg);
+      color: var(--ink-muted);
+      border: 1px solid var(--rule);
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+      cursor: help;
+    }
+
+    .art-title {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+    .art-title a { color: inherit; text-decoration: none; }
+    .art-title a:hover { color: var(--blue); }
+
+    .art-summary {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--ink-mid);
+    }
+
+    .snapshot {
+      background: var(--code-bg);
+      border-radius: 5px;
+      padding: 0.7rem 1rem;
+      overflow: hidden;
+    }
+    .snap-label {
+      font-family: var(--font-ui);
+      font-size: 0.52rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.45rem;
+    }
+    .snap-code {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      line-height: 1.55;
+      color: var(--code-text);
+      white-space: pre;
+      overflow-x: auto;
+    }
+    /* syntax-ish coloring */
+    /* Pygments Kotlin tokens (classprefix k-) → Material Palenight */
+    .snap-code .k-c, .snap-code .k-c1, .snap-code .k-cm { color: #A9B8C0; font-style: italic; }
+    .snap-code .k-k, .snap-code .k-kd, .snap-code .k-kn, .snap-code .k-kc { color: #C792EA; }
+    .snap-code .k-kt { color: #FFCB6B; }
+    .snap-code .k-nc { color: #FFCB6B; }
+    .snap-code .k-nd { color: #F78C6C; }
+    .snap-code .k-nf, .snap-code .k-na { color: #82AAFF; }
+    .snap-code .k-nb { color: #89DDFF; font-style: italic; }
+    .snap-code .k-s, .snap-code .k-s1, .snap-code .k-s2, .snap-code .k-se { color: #C3E88D; }
+    .snap-code .k-si { color: #89DDFF; }
+    .snap-code .k-mi, .snap-code .k-mf { color: #F78C6C; }
+    .snap-code .k-o { color: #89DDFF; }
+    .snap-code .k-p { color: #89DDFF; }
+
+    /* rollup — folded-in changelog builds on the survivor card */
+    .rollup {
+      border-left: 2px solid var(--accent);
+      padding: 0.1rem 0 0.1rem 0.85rem;
+      margin: 0.15rem 0;
+    }
+    .rollup-summary {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--ink-mid);
+      margin: 0 0 0.5rem;
+    }
+    .rollup-builds > summary {
+      font-family: var(--font-ui);
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      cursor: pointer;
+      list-style: none;
+    }
+    .rollup-builds > summary::-webkit-details-marker { display: none; }
+    .rollup-builds ul {
+      list-style: none;
+      margin: 0.5rem 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .rollup-builds li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      font-family: var(--font-ui);
+      font-size: 0.66rem;
+    }
+    .rollup-builds li a {
+      color: var(--ink-mid);
+      text-decoration: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .rollup-builds li a:hover { color: var(--accent); }
+    .rollup-date { color: var(--ink-mid); opacity: 0.6; flex-shrink: 0; }
+
+    .art-tags {
+      display: flex;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+    /* Each tag gets a stable hue from its topic name (--tag-h, set inline) so
+       related topics stay one recognisable colour across cards and editions. */
+    .tag {
+      font-family: var(--font-ui);
+      font-size: 0.55rem;
+      color: hsl(var(--tag-h, 40) 52% 24%);
+      background: hsl(var(--tag-h, 40) 46% 92%);
+      border: 1px solid hsl(var(--tag-h, 40) 35% 76%);
+      padding: 0.18rem 0.45rem;
+      border-radius: 2px;
+    }
+    html[data-night="1"] .tag {
+      color: hsl(var(--tag-h, 40) 60% 74%);
+      background: hsl(var(--tag-h, 40) 28% 18%);
+      border-color: hsl(var(--tag-h, 40) 30% 32%);
+    }
+
+    /* Whole card is a click target (opens the article; long-press copies the
+       link on touch). Real controls inside still work — see bindCardInteractions. */
+    .article.is-clickable { cursor: pointer; }
+    .article.is-clickable:hover .art-title a { color: var(--accent); }
+
+    /* Transient toast (e.g. "Link copied"). */
+    #kd-toast {
+      position: fixed; left: 50%; bottom: 2rem;
+      transform: translateX(-50%) translateY(1rem);
+      background: var(--ink); color: var(--paper);
+      font-family: var(--font-ui); font-size: 0.72rem;
+      padding: 0.5rem 0.9rem; border-radius: 6px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.18s, transform 0.18s;
+      z-index: 9999;
+    }
+    #kd-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Jump-to-page grid, opened from the page indicator (paged layout). */
+    #pr-jump {
+      position: fixed; bottom: 48px; left: 50%; transform: translateX(-50%);
+      z-index: 41; display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;
+      max-width: min(90vw, 320px);
+      background: var(--paper-b); border: 1px solid var(--rule);
+      padding: 8px; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+    }
+    #pr-jump button {
+      font-family: var(--font-ui); font-size: 0.68rem;
+      min-width: 34px; padding: 0.3rem 0; cursor: pointer;
+      background: var(--paper); color: var(--ink-mid);
+      border: 1px solid var(--rule); border-radius: 5px;
+    }
+    #pr-jump button:hover { border-color: var(--ink-muted); color: var(--ink); }
+    #pr-jump button.is-current { background: var(--accent); color: #1C1B18; border-color: var(--accent); }
+
+    /* ── YOUTUBE FACADE (click-to-load; no external request until "Watch here") ── */
+    .yt-facade {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      margin: 0.7rem 0;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #0F0E0C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .yt-play {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.55rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #F3EDE2;
+      font-family: var(--font-ui);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .yt-tri {
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 15px 0 15px 26px;
+      border-color: transparent transparent transparent var(--accent);
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.45));
+      transition: border-left-color 0.15s;
+    }
+    .yt-play:hover .yt-tri { border-left-color: #fff; }
+    .yt-ext {
+      position: absolute; right: 8px; bottom: 8px;
+      font-family: var(--font-ui); font-size: 0.56rem;
+      color: #C8C0B0; text-decoration: none;
+      background: rgba(0,0,0,0.45);
+      padding: 0.22rem 0.5rem; border-radius: 4px;
+    }
+    .yt-ext:hover { color: #fff; }
+    .yt-frame { width: 100%; height: 100%; border: 0; display: block; }
+
+    /* ── GAMES CHAPTER (crossword) ───────────────────────────────── */
+    .games { padding: 0.5rem 0 1rem; }
+    .games-kicker { font-family: var(--font-ui); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    /* The paged reader clips overflow per page; a tall crossword needs to scroll
+       inside its own page so it's never stranded. */
+    .pr-page.pr-games { overflow: auto; }
+    .cw { display: flex; flex-wrap: wrap; gap: 1.75rem; align-items: flex-start; }
+    /* Cells cap at 34px on desktop but shrink (square, via aspect-ratio) to fit
+       a phone, so the grid sits beside the clues on wide screens and fits the
+       viewport on narrow ones. --cols is set per puzzle in JS. */
+    .cw-board-wrap { flex: 0 1 auto; min-width: 0; max-width: 100%; }
+    .cw-grid {
+      display: grid;
+      grid-template-columns: repeat(var(--cols, 10), minmax(0, 34px));
+      gap: 0; border: 2px solid var(--ink); background: var(--ink);
+      width: fit-content; max-width: 100%;
+    }
+    .cw-cell { position: relative; aspect-ratio: 1; min-width: 0; background: var(--paper); }
+    .cw-cell.block { background: var(--ink); }
+    .cw-num { position: absolute; top: 1px; left: 2px; font-family: var(--font-ui); font-size: clamp(0.38rem, 1.5vw, 0.5rem); color: var(--ink-muted); pointer-events: none; line-height: 1; }
+    .cw-cell input {
+      width: 100%; height: 100%; border: 1px solid var(--rule);
+      background: transparent; text-align: center;
+      font-family: var(--font-ui); font-size: clamp(0.6rem, 3.2vw, 1rem); font-weight: 600;
+      color: var(--ink); text-transform: uppercase; padding: 0; caret-color: transparent;
+    }
+    .cw-cell input:focus { outline: none; }
+    .cw-cell.hl input { background: var(--focus-tint); }
+    .cw-cell.cur input { background: var(--accent); color: #1C1B18; }
+    .cw-cell.wrong input { color: #C0392B; }
+    html[data-night="1"] .cw-cell.wrong input { color: #ff8a7a; }
+    .cw-cell.right input { color: var(--green, #3E7B4F); }
+    .cw-clues { flex: 1 1 300px; min-width: 260px; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .cw-clue-col h3 { font-family: var(--font-ui); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); border-bottom: 1px solid var(--rule); padding-bottom: 0.3rem; margin: 0 0 0.5rem; }
+    .cw-clue { font-family: var(--font-body); font-size: 0.82rem; line-height: 1.4; color: var(--ink); padding: 0.28rem 0.4rem; border-radius: 4px; cursor: pointer; }
+    .cw-clue:hover { background: var(--focus-tint); }
+    .cw-clue.active { background: var(--focus-tint); font-weight: 600; }
+    .cw-clue b { color: var(--accent); font-family: var(--font-ui); font-size: 0.72rem; margin-right: 0.35rem; }
+    .cw-controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 0; }
+    .cw-btn { font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.04em; text-transform: uppercase; background: var(--paper-b); color: var(--ink-mid); border: 1px solid var(--rule); border-radius: 5px; padding: 0.4rem 0.7rem; cursor: pointer; }
+    .cw-btn:hover { border-color: var(--ink-muted); color: var(--ink); }
+    .cw-status { font-family: var(--font-ui); font-size: 0.66rem; color: var(--accent); margin: 0.9rem 0 0; min-height: 1.1rem; }
+    .cw-status.win { color: var(--green, #3E7B4F); font-weight: 600; }
+    @media (max-width: 600px) { .cw-clues { grid-template-columns: 1fr; } }
+    /* Night: --ink flips to light, so the grid/blocks (which use --ink) would
+       become a blinding light slab. Pin the dark surfaces explicitly. */
+    html[data-night="1"] .cw-grid { background: #0F0E0C; }
+    html[data-night="1"] .cw-cell { background: var(--paper-b); }
+    html[data-night="1"] .cw-cell.block { background: #0F0E0C; }
+
+    /* No-JS preview badge — a small marker so you can tell you're on the
+       prerendered (?nojs) version, not the interactive reader. */
+    html[data-nojs] body::before {
+      content: "No-JS version";
+      position: fixed; top: 0; left: 0; z-index: 10001;
+      background: var(--accent); color: #1C1B18;
+      font-family: var(--font-ui); font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.25rem 0.6rem; border-bottom-right-radius: 5px;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────────── */
+    footer {
+      border-top: 2px solid var(--ink);
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-ui);
+      font-size: 0.62rem;
+      color: var(--ink-muted);
+    }
+    footer a { color: var(--blue); text-decoration: underline; text-underline-offset: 0.18em; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ══ MAGAZINE DISTRIBUTION — cover, contents, double-page chapter spreads ══ */
+    main#digest { max-width: none; margin: 0; padding: 0; }
+    .mag-cover { min-height: 76vh; display: flex; align-items: center; justify-content: center;
+      padding: clamp(2rem,6vw,6rem); border-bottom: 1px solid var(--rule); background: var(--paper); }
+    .mag-cover-inner { max-width: 1000px; width: 100%; }
+    .cover-kicker { font-family: var(--font-ui); font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--ink); margin-bottom: 1rem;
+      text-decoration-line: underline; text-decoration-color: var(--accent);
+      text-decoration-thickness: 0.18em; text-underline-offset: 0.22em; }
+    .cover-h { font-size: clamp(2rem,4.5vw,3.4rem); line-height: 1.03; }
+    .cover-deck { font-size: 1.05rem; margin-top: 1rem; max-width: 46ch; }
+    .mag-cover-inner .art-meta { margin-top: 1.75rem; }
+    .also { margin-top: 2rem; border-top: 2px solid var(--ink); padding-top: 0.8rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem 1.6rem; }
+    .also .lbl { grid-column: 1/-1; font-family: var(--font-ui); font-size: 0.55rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted); }
+    .also a { font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
+      line-height: 1.15; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; min-height: 44px; padding: 0.25rem 0; }
+    .also a .n {
+      color: #1C1B18; background: var(--accent);
+      font-family: var(--font-ui); font-size: 0.72rem;
+      min-width: 1.8rem; text-align: center; border-radius: 2px;
+    }
+    .also a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.16em; }
+
+    .chapter.mag-spread { display: flex; margin: 0; padding: 0; background: var(--paper);
+      border-top: none; border-bottom: 1px solid var(--rule); }
+    .chapter.mag-spread:nth-child(even) { background: var(--paper); }
+    .mag-page { width: 50%; padding: clamp(1.8rem,3vw,3.5rem); }
+    .mag-page.left { border-right: 1px solid var(--rule); }
+    .mag-folio { display: flex; align-items: baseline; gap: 0.8rem; padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--ink); margin-bottom: 1.6rem; }
+    .mag-folio .ch-title { flex: 1; }
+    .mag-folio .side { flex: 1; font-family: var(--font-ui); font-size: 0.6rem;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+    .mag-folio .pg { font-family: var(--font-ui); font-weight: 600; color: var(--accent); }
+    .mag-arts { display: flex; flex-direction: column; gap: 1.7rem; }
+    .mag-arts .article { grid-column: auto; }
+
+    .mag-toc .mag-trend { display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.2rem; }
+    .mag-toc .mag-trend .row { display: flex; justify-content: space-between; align-items: baseline;
+      font-family: var(--font-ui); font-size: 0.72rem; }
+    .mag-toc .mag-trend .row .sp { color: var(--accent); letter-spacing: -0.05em; }
+    .mag-toc .cat-row { display: flex; gap: 0.9rem; align-items: baseline; padding: 0.6rem 0;
+      border-bottom: 1px solid var(--rule); }
+    .mag-toc .cat-row .pg { font-family: var(--font-ui); color: var(--accent); font-weight: 600; width: 2rem; }
+    .mag-toc .cat-row h3 { flex: 1; font-family: var(--font-ui); font-weight: 600; font-size: 1rem; }
+    .mag-toc .cat-row p { font-family: var(--font-ui); font-size: 0.6rem; color: var(--ink-muted); }
+
+    @media (max-width: 820px) {
+      .chapter.mag-spread { display: block; }
+      .mag-page { width: 100%; }
+      .mag-page.left { border-right: none; }
+      .also { grid-template-columns: 1fr; }
+    }
+
+    /* COMIC INTERLUDE — a full-width print-style break between chapters */
+    .comic-interlude {
+      background: var(--paper-b);
+      border-top: 3px double var(--ink);
+      border-bottom: 3px double var(--ink);
+      padding: 1.5rem 1.5rem 1.75rem;
+      text-align: center;
+    }
+    .comic-kicker {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration-line: underline;
+      text-decoration-color: var(--accent);
+      text-decoration-thickness: 0.18em;
+      text-underline-offset: 0.22em;
+      margin-bottom: 0.9rem;
+    }
+    .comic-figure {
+      margin: 0 auto;
+      max-width: 560px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .comic-figure a { display: inline-block; line-height: 0; }
+    .comic-img {
+      /* Fit a comic to the screen like a page: cap by viewport height so it
+         always fits, and by px so it stays a quick beat on large screens. */
+      max-height: min(460px, 60vh);
+      width: auto;
+      max-width: 100%;
+      background: #fff;               /* comics are black-on-white — keep panel white in night mode */
+      padding: 0.75rem;
+      border: 1px solid var(--rule);
+      box-shadow: 5px 7px 0 rgba(0, 0, 0, 0.07);
+      border-radius: 2px;
+    }
+    .comic-cap {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;   /* title↔credit spacing matches the credit↔joke gap below */
+    }
+    .comic-title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--ink);
+    }
+    .comic-credit {
+      font-family: var(--font-ui);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+    }
+    .comic-credit:hover { color: var(--accent); }
+    .comic-alt {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.86rem;
+      line-height: 1.55;
+      color: var(--ink-muted);
+      max-width: 46ch;
+      margin: 1rem auto 0;
+    }
+
+    /* ══ PAGED READER — fixed pages you flip through, never scroll ══ */
+    #digest { position: relative; overflow: hidden; perspective: 2200px; }
+    /* Each screen (one page, or a 2-page spread) is stacked in place and turns
+       like a sheet of paper on its hinge — the whole strip never slides. Only
+       the active screen is visible; a turn briefly shows two while one pivots. */
+    .pr-screen {
+      position: absolute; inset: 0;
+      display: flex;
+      transform-origin: right center;
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+    .pr-screen:not(.is-active) { visibility: hidden; }
+    /* Book leaf turn (2-up): a single page pivots on the centre spine while the
+       facing page stays put. Built as a throwaway overlay of cloned pages so it
+       never disturbs the real, measured screens underneath. */
+    .pr-turn { position: absolute; inset: 0; z-index: 5; transform-style: preserve-3d; }
+    .pr-turn .pr-face { position: absolute; top: 0; height: 100%; }
+    .pr-leaf {
+      position: absolute; top: 0; height: 100%; z-index: 2;
+      transform-style: preserve-3d; will-change: transform;
+      box-shadow: 0 0 38px rgba(0, 0, 0, 0.20);
+    }
+    .pr-leaf .front, .pr-leaf .back { position: absolute; inset: 0; backface-visibility: hidden; }
+    .pr-leaf .back { transform: rotateY(180deg); }
+    @media (prefers-reduced-motion: reduce) {
+      .pr-screen, .pr-leaf { transition: none !important; }
+    }
+    .pr-page {
+      flex: 0 0 auto;
+      height: 100%;
+      box-sizing: border-box;
+      /* Wider side padding so the fixed nav arrows sit over the margin, not text. */
+      padding: 1.6rem 2.9rem;
+      overflow: hidden;
+      background: var(--paper);
+      border-right: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+    }
+    .pr-comic { margin: auto 0; text-align: center; }
+    .pr-cover { text-align: left; }
+    .pr-page.pr-comic, .pr-page.pr-cover { justify-content: center; }
+    /* article column inside a page */
+    .pr-page .mag-arts { display: flex; flex-direction: column; gap: 0.8rem; }
+    .pr-page .article { width: 100% !important; margin: 0; }
+    /* trending list on the contents page — sparks in mono so they render crisp */
+    .pr-toc .mag-trend { display: flex; flex-direction: column; gap: 0.4rem; }
+    .pr-toc .mag-trend .row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-family: var(--font-body); font-size: 0.92rem; color: var(--ink-mid); }
+    .pr-toc .mag-trend .row .sp { font-family: var(--font-ui); color: var(--accent); letter-spacing: -0.05em; font-size: 0.85rem; flex: 0 0 auto; }
+    /* clickable contents / cover entries jump to the page */
+    .pr-jump { cursor: pointer; }
+    .pr-toc .cat-row.pr-jump:hover h3 { color: var(--accent); }
+    .pr-cover .also a { cursor: pointer; }
+    /* chapter / contents folio header */
+    .pr-folio {
+      display: flex; align-items: baseline; gap: 0.6rem;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 0.4rem; margin-bottom: 0.95rem; flex: 0 0 auto;
+    }
+    .pr-folio .ch-num {
+      font-family: var(--font-ui); font-size: 0.62rem; color: #1C1B18;
+      background: var(--accent); font-weight: 600; letter-spacing: 0.04em;
+      padding: 0.05rem 0.28rem; border-radius: 2px;
+    }
+    .pr-folio .ch-title { font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 1.15rem; flex: 1; line-height: 1.15; }
+    .pr-folio .ch-title .cont { font-size: 0.68rem; color: var(--ink-muted); font-style: normal; font-family: var(--font-ui); }
+    .pr-folio .side { font-family: var(--font-ui); font-size: 0.58rem; color: var(--ink-muted); letter-spacing: 0.08em; text-transform: uppercase; flex: 1; }
+    .pr-folio .pg { font-family: var(--font-ui); font-size: 0.6rem; color: var(--ink-muted); }
+    /* contents page */
+    .pr-toc .mag-trend { margin-bottom: 1.1rem; }
+    .pr-toc .pr-cat .cat-row { display: flex; align-items: center; gap: 0.7rem; min-height: 44px; padding: 0.35rem 0; border-bottom: 1px solid var(--rule); }
+    .pr-toc .pr-cat .cat-row .pg {
+      font-family: var(--font-ui); font-size: 0.7rem; color: #1C1B18;
+      background: var(--accent); min-width: 1.6rem; text-align: center; border-radius: 2px;
+    }
+    .pr-toc .pr-cat .cat-row h3 { font-family: var(--font-body); font-size: 0.95rem; flex: 1; }
+    .pr-toc .pr-cat .cat-row p { font-family: var(--font-ui); font-size: 0.58rem; color: var(--ink-muted); }
+    /* comic fills its own page */
+    .pr-comic .comic-interlude { background: none; border: none; padding: 0; }
+    /* navigation */
+    .pr-arrow {
+      position: fixed; top: 50%; transform: translateY(-50%); z-index: 40;
+      width: 30px; height: 58px; border: 1px solid var(--rule);
+      /* Translucent panel, but the arrow glyph stays fully opaque (color, not
+         element opacity, so only the background shows the page through it). */
+      background: color-mix(in srgb, var(--paper-b) 62%, transparent); color: var(--ink);
+      font-size: 1.5rem; line-height: 1; cursor: pointer; border-radius: 4px;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .pr-arrow:hover { background: color-mix(in srgb, var(--paper-b) 85%, transparent); border-color: var(--ink-muted); }
+    .pr-arrow[disabled] { opacity: 0.22; cursor: default; }
+    .pr-prev { left: 10px; } .pr-next { right: 10px; }
+    .pr-indicator {
+      position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 40;
+      font-family: var(--font-ui); font-size: 0.68rem; color: var(--ink-mid);
+      background: var(--paper-b); border: 1px solid var(--rule);
+      padding: 0.25rem 0.75rem; border-radius: 99px; letter-spacing: 0.06em;
+    }
+    @media (max-width: 640px) {
+      .pr-arrow { width: 24px; height: 48px; font-size: 1.2rem; }
+      .pr-page { padding: 1.1rem 2.2rem; }
+      /* Mobile: cap the comic with a FIXED px, no vh. vh is dynamic on mobile —
+         it changes as the address bar hides/shows while scrolling, so a
+         vh-sized comic visibly resizes as you scroll (worst in scroll mode). A
+         fixed height can't jitter, and it also keeps the paged comic within its
+         (masthead-shortened) page so the fit-to-page zoom doesn't fire. */
+      .comic-img { max-height: 300px; }
+      .comic-cap { gap: 0.55rem; margin-top: 0.7rem; }
+    }
+
+    /* ══ READING SETTINGS — font / size applied to article prose ══ */
+    html { --read-font: var(--font-body); --read-scale: 1; }
+    .art-summary, .cover-deck { font-family: var(--read-font); }
+    .art-title, .cover-h { font-size: calc(1.05rem * var(--read-scale)); }
+    .art-summary { font-size: calc(0.875rem * var(--read-scale)); }
+    .cover-deck { font-size: calc(0.95rem * var(--read-scale)); }
+
+    /* ══ SCROLL LAYOUT — same blocks, stacked, no page-turning ══ */
+    html[data-layout="scroll"] #digest { position: static; height: auto !important; overflow: visible; perspective: none; }
+    html[data-layout="scroll"] .pr-arrow, html[data-layout="scroll"] .pr-indicator { display: none !important; }
+    .scroll-col { max-width: 760px; margin: 0 auto; }
+    .scroll-col .pr-page {
+      height: auto; overflow: visible; border-right: none;
+      border-bottom: 1px solid var(--rule); padding: 1.6rem 1.7rem;
+    }
+    .scroll-col .pr-comic, .scroll-col .pr-cover { justify-content: flex-start; }
+    @media (max-width: 640px) { .scroll-col .pr-page { padding: 1.1rem 1.15rem; } }
+
+    /* ══ SETTINGS PANEL — gear popover in the masthead ══ */
+    .settings-wrap { position: relative; }
+    .settings-btn {
+      font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600;
+      padding: 0.25rem 0.55rem; border-radius: 3px; border: 1px solid var(--rule);
+      background: transparent; color: var(--ink-muted); cursor: pointer; line-height: 1;
+      transition: color 0.15s, border-color 0.15s;
+      display: inline-block; vertical-align: middle; text-align: center;
+    }
+    .settings-btn:hover, .settings-btn.open { color: var(--ink); border-color: var(--ink-muted); }
+    .settings-panel {
+      position: absolute; top: calc(100% + 8px); right: 0; z-index: 60;
+      width: 232px; background: var(--paper-b); border: 1px solid var(--rule);
+      border-radius: 6px; padding: 0.85rem 0.9rem; box-shadow: 0 10px 34px rgba(0,0,0,0.22);
+      display: none;
+      z-index: 300;
+    }
+    .settings-panel.open { display: block; }
+    .settings-panel .set-row { margin-bottom: 0.8rem; }
+    .settings-panel .set-row:last-child { margin-bottom: 0; }
+    .settings-panel .set-label {
+      font-family: var(--font-ui); font-size: 0.54rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted);
+      margin-bottom: 0.35rem; display: block;
+    }
+    .seg { display: flex; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+    .seg button {
+      flex: 1; font-family: var(--font-ui); font-size: 0.62rem; font-weight: 500;
+      padding: 0.34rem 0.2rem; border: none; border-left: 1px solid var(--rule);
+      background: transparent; color: var(--ink-muted); cursor: pointer; line-height: 1.2;
+      transition: background 0.12s, color 0.12s;
+    }
+    .seg button:first-child { border-left: none; }
+    .seg button:hover { color: var(--ink); }
+    .seg button.active { background: var(--accent); color: #1C1B18; }

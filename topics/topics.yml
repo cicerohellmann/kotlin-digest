@@ -13,6 +13,7 @@ scoring:
     video: 2.2
     changelog: 2.5            # library releases are high-signal
     news: 1.5
+    youtube: 2.0             # video talks/updates — comparable to a blog post
     slack-mirror: 1.0
   emergence_threshold: 3      # auto-add a topic if it appears in N+ articles in one cycle
 

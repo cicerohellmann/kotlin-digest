@@ -81,7 +81,7 @@ def apply_video_render_filters(articles: list, sources_config: dict) -> tuple[li
 
     for article in articles:
         source = sources.get(article.get("source_id"), {})
-        if source.get("type") != "video":
+        if source.get("type") not in {"youtube", "video"}:
             kept_non_video.append(article)
             continue
 

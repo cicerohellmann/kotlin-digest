@@ -26,6 +26,81 @@ sources:
     cadence_days: 7
     topics: [kotlin, jetbrains, language]
 
+  - id: kotlin-youtube
+    name: "Kotlin by JetBrains — YouTube"
+    url: "https://www.youtube.com/@Kotlin"
+    channel_id: "UCP7uiEZIqci43m22KDl0sNw"
+    type: youtube
+    language: en
+    cadence_days: 14
+    topics: [kotlin, jetbrains, kmp, compose]
+    kotlin_relevance: 10
+    video:
+      min_kotlin_score: 6
+      max_per_edition: 3
+    notes: "Official Kotlin channel; ingested from YouTube Atom feed derived from channel_id"
+
+  - id: android-developers-youtube
+    name: "Android Developers — YouTube"
+    url: "https://www.youtube.com/@AndroidDevelopers"
+    channel_id: "UCVHFbqXqoYvEWM1Ddxl0QDg"
+    type: youtube
+    language: en
+    cadence_days: 3
+    topics: [android, compose, jetpack, kotlin]
+    kotlin_relevance: 7
+    video:
+      min_kotlin_score: 8
+      max_per_edition: 2
+    notes: "Official Android Developers channel; keyless channel RSS via channel_id"
+
+  - id: philipp-lackner-youtube
+    name: "Philipp Lackner — YouTube"
+    url: "https://www.youtube.com/@PhilippLackner"
+    channel_id: "UCKNTZMRHPLXfqlbdOI7mCkg"
+    type: youtube
+    language: en
+    cadence_days: 7
+    topics: [android, kotlin, compose, kmp, architecture]
+    kotlin_relevance: 7
+    video:
+      include_shorts: false
+      include_live: false
+      min_kotlin_score: 8
+      max_per_edition: 2
+      exclude_terms: ["#ad", "#anzeige"]
+    notes: "Creator channel. Keep long-form educational videos, but skip Shorts, live streams, and sponsored hashtag posts."
+
+  - id: intellij-idea-youtube
+    name: "IntelliJ IDEA (JetBrains) — YouTube"
+    url: "https://www.youtube.com/@intellijidea"
+    channel_id: "UC4ogdcPcIAOOMJktgBMhQnQ"
+    type: youtube
+    language: en
+    cadence_days: 5
+    topics: [kotlin, jetbrains, tooling, ide]
+    notes: "JetBrains IntelliJ IDEA channel; Kotlin tooling/IDE content via channel RSS"
+
+  - id: goto-conferences-youtube
+    name: "GOTO Conferences — YouTube"
+    url: "https://www.youtube.com/@GOTO"
+    channel_id: "UCRKbuSy6p5iDoql-U9Im7UQ"
+    type: youtube
+    language: en
+    cadence_days: 5
+    topics: [backend, architecture, jvm, kotlin]
+    notes: "GOTO Conferences talks; backend/architecture/JVM. Keyword-filtered for Kotlin/JVM relevance"
+
+  - id: droidcon-italy-youtube
+    name: "Droidcon Italy — YouTube"
+    url: "https://www.youtube.com/@DroidconItaly"
+    channel_id: "UC9f8652addezs8ZUuKPB4Ow"
+    type: youtube
+    language: en
+    cadence_days: 30
+    topics: [android, kotlin, compose, mobile]
+    notes: "Droidcon Italy conference talks; seasonal cadence around the event"
+
   - id: android-developers-blog
     name: "Android Developers Blog"
     url: "https://android-developers.googleblog.com/"
@@ -174,55 +249,6 @@ sources:
     cadence_days: 30
     topics: [android, droidcon, community]
     notes: "Multiple city editions per year — Droidcon London, NYC, Berlin, etc."
-
-  # ════════════════════════════════════════════════════════════════════════════
-  # VIDEO — Official channel RSS feeds with real upload dates
-  # ════════════════════════════════════════════════════════════════════════════
-
-  - id: youtube-kotlin
-    name: "Kotlin by JetBrains"
-    url: "https://www.youtube.com/@Kotlin"
-    rss: "https://www.youtube.com/feeds/videos.xml?channel_id=UCP7uiEZIqci43m22KDl0sNw"
-    type: video
-    language: en
-    cadence_days: 14
-    topics: [kotlin, kmp, coroutines, jetbrains]
-    kotlin_relevance: 10
-    video:
-      min_kotlin_score: 6
-      max_per_edition: 3
-    notes: "Official Kotlin YouTube channel. Channel ID verified from Wikidata; RSS avoids the Slack link-dump path."
-
-  - id: youtube-android-developers
-    name: "Android Developers"
-    url: "https://www.youtube.com/@AndroidDevelopers"
-    rss: "https://www.youtube.com/feeds/videos.xml?channel_id=UCVHFbqXqoYvEWM1Ddxl0QDg"
-    type: video
-    language: en
-    cadence_days: 7
-    topics: [android, compose, android-studio]
-    kotlin_relevance: 7
-    video:
-      min_kotlin_score: 8
-      max_per_edition: 2
-    notes: "Official Android Developers YouTube channel. Channel ID verified from Wikidata/YouTube analytics references."
-
-  - id: youtube-philipp-lackner
-    name: "Philipp Lackner"
-    url: "https://www.youtube.com/@PhilippLackner"
-    rss: "https://www.youtube.com/feeds/videos.xml?channel_id=UCKNTZMRHPLXfqlbdOI7mCkg"
-    type: video
-    language: en
-    cadence_days: 7
-    topics: [android, kotlin, compose, kmp, architecture]
-    kotlin_relevance: 7
-    video:
-      include_shorts: false
-      include_live: false
-      min_kotlin_score: 8
-      max_per_edition: 2
-      exclude_terms: ["#ad", "#anzeige"]
-    notes: "Creator channel. Keep long-form educational videos, but skip Shorts, live streams, and sponsored hashtag posts."
 
   # ════════════════════════════════════════════════════════════════════════════
   # LIBRARY CHANGELOGS

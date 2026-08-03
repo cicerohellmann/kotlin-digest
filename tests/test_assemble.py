@@ -8,6 +8,7 @@ from pipeline._assemble.scores import lookup_scores_at
 from pipeline._assemble.articles import cluster_articles, filter_articles, score_articles, assign_col
 from pipeline._assemble.render import spark_from_history, inject_data, build_data_block, highlight_kotlin
 from pipeline._assemble.videos import apply_video_render_filters, video_kotlin_relevance
+from pipeline.assemble import build_structured_data
 
 
 # ── dates ────────────────────────────────────────────────────────────────────
@@ -93,6 +94,30 @@ def test_filter_articles_skips_dead_and_low_quality():
     ]
     result = filter_articles(articles, date(2026, 7, 6), date(2026, 7, 12))
     assert [a["id"] for a in result] == ["a"]
+
+
+def test_filter_articles_excludes_shorts():
+    # YouTube Shorts (is_short) never render, in any edition — permanently.
+    articles = [
+        {"id": "a", "date": "2026-07-07", "topics": []},
+        {"id": "b", "date": "2026-07-07", "topics": [], "media_type": "video",
+         "is_short": True},
+    ]
+    result = filter_articles(articles, date(2026, 7, 6), date(2026, 7, 12))
+    assert [a["id"] for a in result] == ["a"]
+
+
+def test_filter_articles_no_videos_drops_all_video():
+    # Per-edition --no-videos drops every video, Short or full-length.
+    articles = [
+        {"id": "a", "date": "2026-07-07", "topics": []},
+        {"id": "b", "date": "2026-07-07", "topics": [], "media_type": "video"},
+    ]
+    kept = filter_articles(articles, date(2026, 7, 6), date(2026, 7, 12))
+    assert [a["id"] for a in kept] == ["a", "b"]
+    without_videos = filter_articles(articles, date(2026, 7, 6), date(2026, 7, 12),
+                                     no_videos=True)
+    assert [a["id"] for a in without_videos] == ["a"]
 
 
 def test_score_articles_sums_topic_scores():
@@ -383,3 +408,86 @@ def test_build_data_block_no_rollup_is_null():
         source_type_map={"kotlin-blog": "blog"}, clusters=clusters,
     )
     assert "rollup:null" in block
+
+
+def test_build_data_block_uses_explicit_youtube_video_id():
+    clusters = [{"id": "community", "label": "Community", "topics": ["kotlin"]}]
+    chapters = [{
+        "id": "community", "label": "Community", "score": 10.0,
+        "articles": [{
+            "id": "v1", "col": "c12", "title": "Kotlin Talk",
+            "url": "https://www.youtube.com/watch?v=aaaaaaaaaaa",
+            "source_id": "kotlin-youtube", "date": "2026-07-07",
+            "topics": ["kotlin"], "placement_score": 10.0,
+            "summary": "A Kotlin video.", "summarized": True,
+            "media_type": "video", "video_id": "bbbbbbbbbbb",
+        }],
+    }]
+    bible = {"kotlin": {"score": 10.0, "history": [{"date": "2026-07-07", "score": 10.0}]}}
+    block = build_data_block(
+        edition="2026-W28", start=date(2026, 7, 6), end=date(2026, 7, 12),
+        chapters=chapters, bible=bible,
+        source_type_map={"kotlin-youtube": "youtube"}, clusters=clusters,
+    )
+    assert 'video:"bbbbbbbbbbb"' in block
+    assert 'media_type:"video"' in block
+
+
+def test_build_structured_data_emits_video_object_when_thumbnail_exists():
+    chapters = [{
+        "articles": [{
+            "title": "Kotlin Talk",
+            "url": "https://www.youtube.com/watch?v=bbbbbbbbbbb",
+            "date": "2026-07-07",
+            "summary": "A Kotlin video.",
+            "media_type": "video",
+            "video_id": "bbbbbbbbbbb",
+            "thumbnail": "https://i.ytimg.com/vi/bbbbbbbbbbb/hqdefault.jpg",
+        }]
+    }]
+    html = build_structured_data("2026·W28", "https://kotlindigest.com/", "desc", chapters)
+    assert 'application/ld+json' in html
+    assert '"@type":"VideoObject"' in html
+    assert "https://www.youtube-nocookie.com/embed/bbbbbbbbbbb" in html
+
+
+def test_build_data_block_emits_comic_dimensions():
+    block = build_data_block(
+        edition="2026-W28",
+        start=date(2026, 7, 6),
+        end=date(2026, 7, 12),
+        chapters=[],
+        bible={},
+        source_type_map={},
+        clusters=[],
+        comics=[{
+            "img": "/comics/comic.png",
+            "alt": "Comic alt text.",
+            "title": "Kotlin Comic",
+            "permalink": "https://example.com/comic",
+            "artist": "Artist",
+            "source": "Comic Source",
+            "width": 640,
+            "height": 480,
+        }],
+    )
+    assert "width:640" in block
+    assert "height:480" in block
+
+
+def test_build_data_block_rejects_hotlinked_comic():
+    """DSGVO guardrail: a remote comic img must fail the build, never ship."""
+    import pytest
+
+    with pytest.raises(ValueError):
+        build_data_block(
+            edition="2026-W28",
+            start=date(2026, 7, 6),
+            end=date(2026, 7, 12),
+            chapters=[],
+            bible={},
+            source_type_map={},
+            clusters=[],
+            comics=[{"img": "https://imgs.xkcd.com/comics/x.png", "alt": "", "title": "",
+                     "permalink": "", "artist": "", "source": "", "width": 1, "height": 1}],
+        )

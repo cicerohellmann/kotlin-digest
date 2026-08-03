@@ -80,13 +80,20 @@ If no date is detectable, the article is ingested but flagged `date_uncertain: t
 - Treat each talk as an article
 - `cadence_days` set high (e.g. 180) — annual conferences shouldn't be flagged stale
 
-### `video`
-- Primary: YouTube channel RSS feeds, using channel IDs rather than handle pages
-- Treat uploads as dated articles when the feed or page exposes a real upload date
-- Summarize only from video metadata/description unless a transcript is added later
-- Prefer official/project channels over broad recommendation feeds
+### `youtube`
+- Primary: YouTube channel Atom feed (`https://www.youtube.com/feeds/videos.xml?channel_id=...`)
+- Used for official, team, conference, and individual channels that publish original Kotlin, Android, KMP, or Compose videos
+- Treat each new video as an article-like record with `media_type: video`, `video_id`, title, date, and feed description
+- Renderable in the weekly digest with a no-cookie click-to-load embed facade
+- Avoid playlist roundups, repost channels, and channels that mostly curate other people's videos
 - `kotlin_relevance` rates the channel's baseline Kotlin signal from 1-10
 - Optional per-source `video:` settings can disable Shorts/live streams, exclude terms such as `#ad`, set `min_kotlin_score`, and cap `max_per_edition`
+
+**How videos are found and evaluated** (no API key required):
+- **Found**: each registered channel's keyless Atom feed is polled by `scout.py`, exactly like an RSS blog. New videos are detected by `published` date (same new-by-date logic as articles) and stored with `media_type: video` + `video_id`.
+- **Evaluated**: videos run through the **same** topic-bible model as articles — `bible.py` applies the `youtube` source weight (`2.0`, comparable to a blog), `summarize.py` tags topics from title + description, and `assemble.py` places them into chapters by topic score. A final YouTube-specific render filter applies channel Kotlin rating, title/description/topic keyword scoring, per-source minimum score, and per-source caps.
+- **Relevance gate for general channels**: broad channels (e.g. GOTO Conferences, IntelliJ IDEA) are added to `KEYWORD_FILTER_SOURCE_IDS`, so a video is only ingested if its title/description matches `KOTLIN_ANDROID_KEYWORDS`. Focused channels (Kotlin, Android Developers) skip the gate.
+- **Seed channels**: Kotlin by JetBrains, Android Developers, Philipp Lackner, IntelliJ IDEA (filtered), GOTO Conferences (filtered), Droidcon Italy.
 
 ### `slack-mirror`
 - Requires a public Slack export or mirror service

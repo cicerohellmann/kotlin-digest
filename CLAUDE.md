@@ -19,14 +19,16 @@ docs/                   — architecture and design docs (read these before maki
 - `docs/architecture.md` — full 6-stage pipeline, state file schema, workflow triggers
 - `docs/topic-bible.md` — scoring model, decay constants, topic emergence rules
 - `docs/sources.md` — source health states, date detection strategies, per-type ingestion
+- `docs/summarize.md` — **runbook: how to summarize a composed edition** (fetch → batch → parallel Sonnet workflow → merge/verify → apply → assemble). Read this whenever the task is "the mag is composed, run the summaries" — the edition is already curated; do not recompute it.
 - `docs/rollup.md` — protocol for bulky library releases (collapse → digest → display)
 - `docs/classifier.md` — code-snippet selection criteria (plain Kotlin; build highlights via Pygments)
+- `docs/content-rights.md` — binding rules for aggregating others' work (summarize-don't-republish, attribution, paywalls, snippet citation, no affiliate)
 
 ## Pipeline stages (implementation order)
 
 1. `pipeline/scout.py` — fetch sources, detect new articles by date, update source health
 2. `pipeline/bible.py` — apply mention boosts, decay scores, auto-emerge new topics
-3. `pipeline/summarize.py` — Claude API summarization + topic tagging per article
+3. `pipeline/summarize.py` — agent-driven summarization + topic tagging per article. **Follow `docs/summarize.md`** — the full step-by-step (parallel Sonnet workflow); don't re-derive it.
 4. `pipeline/assemble.py` — cluster articles into chapters, order by bible score, render HTML
 
 ## Tech stack

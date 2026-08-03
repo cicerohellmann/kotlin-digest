@@ -9,7 +9,24 @@ on:
   workflow_dispatch:
 
 jobs:
+  # Gate the deploy on the test suite — the privacy guards (tests/test_privacy.py)
+  # fail the build if a page reintroduces a third-party asset, so a leaky site
+  # never publishes. A lightweight dep set: the tests don't need spacy/nltk/
+  # playwright, so we skip those (and their model/browser downloads) for speed.
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install test deps
+        run: pip install pytest beautifulsoup4 PyYAML Pygments feedparser httpx lxml
+      - name: Run tests
+        run: python -m pytest tests/ -q
+
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     permissions:
       pages: write

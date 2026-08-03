@@ -70,6 +70,12 @@ Open a PR. In the description, include one sentence on why this source adds some
 
 If the source has an RSS or Atom feed, include it — the pipeline will always prefer a feed over scraping. If it doesn't, include a note on how article dates are detectable on the page.
 
+For YouTube channels, use `type: youtube` and either provide the channel Atom
+feed as `rss:` or provide `channel_id:` so the scout can derive it. YouTube
+sources should still be primary sources: official channels, conference channels,
+library/team channels, or individual creators publishing their own Kotlin,
+Android, Compose, or KMP videos.
+
 ### Report a dead source
 
 If a source has gone quiet, open a PR removing it from `sources/sources.yml`. Include the last known article URL and date in the PR description so we have a record.
@@ -159,6 +165,16 @@ When a source reaches `dead`, the pipeline opens a GitHub Issue automatically. A
 The digest is English-first. There is no editorial reason for this beyond where the initial contributors are. If a well-maintained source in another language earns enough article volume to merit its own chapter or section, it will get one.
 
 Translations of the site UI are welcome at any point.
+
+---
+
+## Contributors
+
+Kotlin Digest is community-assembled. Thanks to everyone who's pitched in:
+
+- **[James Cullimore (@LethalMaus)](https://github.com/LethalMaus)** — YouTube source ingestion, PageSpeed & accessibility fixes, and the no-JS/crawlability work that led to the build-time prerender.
+
+Want to see your name here? Add a source, fix a bug, or open a PR — see [Contributing](#contributing).
 
 ---
 
