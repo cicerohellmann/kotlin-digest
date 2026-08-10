@@ -856,18 +856,6 @@
     "topics": []
   },
   {
-    "id": "965a82bf42c5f14b",
-    "title": "Hiatus",
-    "url": "https://blog.stylingandroid.com/hiatus/",
-    "date": null,
-    "source_id": "styling-android",
-    "excerpt": "",
-    "date_uncertain": true,
-    "summarized": true,
-    "summary": "The Styling Android blog is on hiatus with no new posts currently being published.",
-    "topics": []
-  },
-  {
     "id": "fac8a90b886e86d6",
     "title": "Compose: UI Screenshot Testing",
     "url": "https://blog.stylingandroid.com/compose-ui-snapshot-testing/",
@@ -881,37 +869,6 @@
       "compose",
       "testing",
       "paparazzi"
-    ]
-  },
-  {
-    "id": "fac8a90b886e86d6",
-    "title": "Compose: UI Screenshot Testing",
-    "url": "https://blog.stylingandroid.com/compose-ui-snapshot-testing/",
-    "date": null,
-    "source_id": "styling-android",
-    "excerpt": "",
-    "date_uncertain": true,
-    "summarized": true,
-    "summary": "Walkthrough of UI screenshot testing in Jetpack Compose, covering how to set up golden file tests with Paparazzi or Roborazzi, manage golden images in CI, and handle rendering differences across device configurations.",
-    "topics": [
-      "compose",
-      "testing",
-      "paparazzi"
-    ]
-  },
-  {
-    "id": "4276aef00b942a0a",
-    "title": "Compose: Strikethru Animation",
-    "url": "https://blog.stylingandroid.com/compose-strikethru-animation/",
-    "date": null,
-    "source_id": "styling-android",
-    "excerpt": "",
-    "date_uncertain": true,
-    "summarized": true,
-    "summary": "Implements a strikethrough text animation in Jetpack Compose by animating a horizontal line drawn over text using Canvas and animateFloatAsState. A concise example of combining drawing APIs with Compose animation.",
-    "topics": [
-      "compose",
-      "animation"
     ]
   },
   {
@@ -944,20 +901,6 @@
     ]
   },
   {
-    "id": "36f6736e85c46d2a",
-    "title": "Bluetooth Pairing",
-    "url": "https://blog.stylingandroid.com/bluetooth-pairing/",
-    "date": null,
-    "source_id": "styling-android",
-    "excerpt": "",
-    "date_uncertain": true,
-    "summarized": true,
-    "summary": "Covers Bluetooth pairing flows on Android, including the Classic BT pairing dialog, BLE bonding via BluetoothDevice, and how to handle pairing intent broadcasts correctly across Android versions.",
-    "topics": [
-      "android-api"
-    ]
-  },
-  {
     "id": "52464c4f9d269f53",
     "title": "Compose: List / Detail – Testing part 2",
     "url": "https://blog.stylingandroid.com/compose-list-detail-testing-2/",
@@ -967,36 +910,6 @@
     "date_uncertain": true,
     "summarized": true,
     "summary": "Part 2 of testing a Compose list/detail layout, adding integration tests for navigation between panes, testing adaptive layout changes, and verifying state restoration after process death.",
-    "topics": [
-      "compose",
-      "testing"
-    ]
-  },
-  {
-    "id": "52464c4f9d269f53",
-    "title": "Compose: List / Detail – Testing part 2",
-    "url": "https://blog.stylingandroid.com/compose-list-detail-testing-2/",
-    "date": null,
-    "source_id": "styling-android",
-    "excerpt": "",
-    "date_uncertain": true,
-    "summarized": true,
-    "summary": "Part 2 of testing a Compose list/detail layout, adding integration tests for navigation between panes, testing adaptive layout changes, and verifying state restoration after process death.",
-    "topics": [
-      "compose",
-      "testing"
-    ]
-  },
-  {
-    "id": "006721ea11a23b9b",
-    "title": "Compose: List / Detail – Testing part 1",
-    "url": "https://blog.stylingandroid.com/compose-list-detail-testing-1/",
-    "date": null,
-    "source_id": "styling-android",
-    "excerpt": "",
-    "date_uncertain": true,
-    "summarized": true,
-    "summary": "Part 1 of testing a Compose list/detail layout using ComposeTestRule, covering how to write tests that work for both single-pane phone and dual-pane tablet layouts.",
     "topics": [
       "compose",
       "testing"
@@ -1033,35 +946,6 @@
     ]
   },
   {
-    "id": "d88aa93dcb11af18",
-    "title": "Compose – List / Detail: Foldables",
-    "url": "https://blog.stylingandroid.com/compose-list-detail-foldables/",
-    "date": null,
-    "source_id": "styling-android",
-    "excerpt": "",
-    "date_uncertain": true,
-    "summarized": true,
-    "summary": "Builds a Compose list/detail layout that adapts to foldable form factors using WindowSizeClass and the adaptive layout APIs. Shows how to detect fold state and rearrange panes accordingly.",
-    "topics": [
-      "compose",
-      "adaptive-ui"
-    ]
-  },
-  {
-    "id": "1cc7a75e7320470c",
-    "title": "Compose – List / Detail: Basics",
-    "url": "https://blog.stylingandroid.com/compose-list-detail-basics/",
-    "date": null,
-    "source_id": "styling-android",
-    "excerpt": "",
-    "date_uncertain": true,
-    "summarized": true,
-    "summary": "Introduces the basics of a Compose list/detail layout using two composables that share a ViewModel. Covers how to manage the selected item state and animate the panel transition.",
-    "topics": [
-      "compose"
-    ]
-  },
-  {
     "id": "1cc7a75e7320470c",
     "title": "Compose – List / Detail: Basics",
     "url": "https://blog.stylingandroid.com/compose-list-detail-basics/",
@@ -1088,35 +972,6 @@
     "topics": [
       "gradle",
       "version-catalog"
-    ]
-  },
-  {
-    "id": "4ae96a18251db7e0",
-    "title": "Gradle: Version Catalogs",
-    "url": "https://blog.stylingandroid.com/gradle-version-catalogs/",
-    "date": null,
-    "source_id": "styling-android",
-    "excerpt": "",
-    "date_uncertain": true,
-    "summarized": true,
-    "summary": "Guide to Gradle Version Catalogs for centralizing dependency versions in a libs.versions.toml file. Covers adding the catalog, migrating existing dependencies, and sharing the catalog across modules.",
-    "topics": [
-      "gradle",
-      "version-catalog"
-    ]
-  },
-  {
-    "id": "d40f9871e5752e5c",
-    "title": "Jetpack Compose",
-    "url": "https://blog.stylingandroid.com/jetpack-compose/",
-    "date": null,
-    "source_id": "styling-android",
-    "excerpt": "",
-    "date_uncertain": true,
-    "summarized": true,
-    "summary": "Introduction to Jetpack Compose fundamentals covering the composable function model, recomposition, state hoisting, and the Compose rendering pipeline. Aimed at developers migrating from View-based UI.",
-    "topics": [
-      "compose"
     ]
   },
   {
@@ -10158,7 +10013,14 @@
     "author": "Raphael Pantaleão",
     "excerpt": "They became Stable in Kotlin 2.4.0. Here’s where they replace a ThreadLocal, where they lose to constructor injection, and what breaks if… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Kotlin 2.4.0 made context parameters stable, letting functions declare and receive ambient values (like tenant/trace IDs) without threading them through every signature. Compares them to ThreadLocals and constructor injection, arguing context parameters suit per-call values while constructor injection still wins for per-instance dependencies.",
+    "topics": [
+      "kotlin",
+      "context-receivers"
+    ],
+    "code_snippet": "data class RequestContext(\n    val tenant: String,\n    val traceId: String,\n)\n\ncontext(ctx: RequestContext)\nfun loadOrders(): List<Order> =\n    repository.findByTenant(ctx.tenant)",
+    "snippet_label": "CONTEXT PARAMETER API"
   },
   {
     "id": "45e9550fac51c702",
@@ -10202,7 +10064,11 @@
     "author": "Neeraja Gandla",
     "excerpt": "In Part 2, we ended with an important question. Continue reading on Dev Genius »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains how the Jetpack Compose runtime tracks composable identity across recompositions using call site plus execution order, then introduces the Slot Table as the structure that stores per-composable state so recomposition resumes rather than restarts. Notes why key() matters when list order changes.",
+    "topics": [
+      "compose"
+    ]
   },
   {
     "id": "1b368606eb7a07e7",
@@ -10235,7 +10101,12 @@
     "author": "Donald Isoe",
     "excerpt": "Know your meme Continue reading on KotlinKenya & Android254 »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Recap of Kotlin Kenya & Android254 meetup #38, hosted by Terra Softworks, covering a talk on building a BLE-based smartwatch companion app (Chronos), a panel on building products users love, and a plug for DroidCon x FlutterCon Kenya 2026 tickets.",
+    "topics": [
+      "android-developers",
+      "droidcon"
+    ]
   },
   {
     "id": "99539dfa08e14fd6",
@@ -10246,7 +10117,12 @@
     "author": "Pramod Patel",
     "excerpt": "Refresh rates, VRR, and why you actually drop frames Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Argues the classic 16ms Android frame budget only holds at 60Hz; walks through per-frame budget as 1000/refreshRate, Choreographer's skippedFrames math and its 30-frame warning threshold, and how variable refresh rate (ARR) plus Surface.setFrameRate shift the real budget at runtime.",
+    "topics": [
+      "android-api",
+      "animation"
+    ]
   },
   {
     "id": "56bd4636807b2eda",
@@ -10257,7 +10133,14 @@
     "author": "Mohamed Nabil",
     "excerpt": "Modern mobile applications perform many operations concurrently. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Walks through a real race condition where the same chat voice-note gets processed twice after arriving via both a socket event and an API sync, then fixes it with a Mutex-guarded set of in-flight message IDs instead of one global lock, preserving concurrency across independent downloads.",
+    "topics": [
+      "coroutines",
+      "kotlin"
+    ],
+    "code_snippet": "private val activeDownloadsMutex = Mutex()\nprivate val activeDownloadIds = mutableSetOf<String>()\n\nprivate suspend fun claimDownload(messageId: String): Boolean =\n    activeDownloadsMutex.withLock {\n        activeDownloadIds.add(messageId)\n    }",
+    "snippet_label": "ATOMIC CLAIM MUTEX"
   },
   {
     "id": "d3033edc53173c32",
@@ -10268,7 +10151,9 @@
     "author": "Flutter Guru",
     "excerpt": "Avoid Play Console warnings by migrating to Android Photo Picker and removing unnecessary storage permissions. Continue reading on CodeX »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains why Google Play now flags Flutter apps for requesting broad storage permissions and walks through migrating the image_picker plugin to the Android Photo Picker by updating packages and stripping READ_MEDIA_IMAGES/READ_EXTERNAL_STORAGE from the manifest.",
+    "topics": []
   },
   {
     "id": "40550aa9d400fb3d",
@@ -10279,7 +10164,16 @@
     "author": "Muhammad Awais",
     "excerpt": "By Awais — Android developer, devawais.com Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Builds the same search-and-filter screen four ways — MVVM and MVI, each with XML Views and Jetpack Compose — showing MVVM's independent StateFlows needing manual combining for derived UI state, versus MVI's single State object computing it directly and triggering fewer recompositions.",
+    "topics": [
+      "mvvm",
+      "mvi",
+      "compose",
+      "architecture"
+    ],
+    "code_snippet": "data class ProductScreenState(\n    val products: List<Product> = emptyList(),\n    val isLoading: Boolean = false,\n    val error: String? = null,\n) {\n    val isEmptyStateVisible: Boolean\n        get() = products.isEmpty() && !isLoading && error == null\n}",
+    "snippet_label": "MVI DERIVED STATE"
   },
   {
     "id": "bbcd380092c6e618",
@@ -10290,7 +10184,14 @@
     "author": "Muhammad Awais",
     "excerpt": "By Awais — Senior Mobile App Developer, devawais.com Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Companion decision guide comparing MVVM and MVI on Android: MVVM's independent state fields are simpler for small screens but can drift out of sync, while MVI's single immutable State object is more predictable and testable but adds boilerplate. Recommends choosing per-screen rather than project-wide.",
+    "topics": [
+      "mvvm",
+      "mvi",
+      "architecture",
+      "clean-architecture"
+    ]
   },
   {
     "id": "8dbee72a312774c5",
@@ -10301,7 +10202,9 @@
     "author": "Papercraft Publishers",
     "excerpt": "Do you know that strange dread that washes over you when you close TikTok and just sit there? That’s not boredom. That’s reality anxiety. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A personal essay about \"reality anxiety\" — the restlessness people feel after putting down their phones, and a suggestion to practice short phone-free moments. General mental-health/social-media commentary, not developer content.",
+    "topics": []
   },
   {
     "id": "daf29b829a3ce40d",
@@ -10312,7 +10215,9 @@
     "author": "Ankit Mehra",
     "excerpt": "When we shop online, one of the first things we check after placing an order is where our package has reached. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Walkthrough of building a Flipkart-style vertical order-tracking timeline using the order_tracker Flutter/Dart package, covering data setup, the OrderTracker widget, and status/color customization. Flutter-only, no Android/Kotlin relevance.",
+    "topics": []
   },
   {
     "id": "19183681a9d7696a",
@@ -10323,7 +10228,15 @@
     "author": "AmitGuptaAppschance",
     "excerpt": "Google Play’s latest Target API Level requirement is approaching. Here’s everything Android developers need to know before the August 31… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains Google Play's August 31, 2026 Target API Level deadline: what targetSdk/compileSdk mean, consequences of missing it, and a step-by-step checklist covering Gradle/AGP upgrades, notification permissions, scoped storage, background/foreground service limits, and staged rollout testing.",
+    "topics": [
+      "android-api",
+      "gradle",
+      "android-developers"
+    ],
+    "code_snippet": "android {\n    compileSdk = 36\n    defaultConfig {\n        minSdk = 24\n        targetSdk = 36\n    }\n}",
+    "snippet_label": "TARGET SDK BUMP"
   },
   {
     "id": "da6d71ba724ea8cb",
@@ -10334,7 +10247,9 @@
     "author": "CRUNCHYROLL MOD APK",
     "excerpt": "Crunchyroll's premium plan not fitting your budget? Here's a complete, honest breakdown of every free option available — from the official… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Promotional guide for accessing Crunchyroll's paid catalog for free, including a modified APK that bypasses subscription checks. Piracy/APK-mod promo content, unrelated to Kotlin/Android development.",
+    "topics": []
   },
   {
     "id": "00126537e80a0a7b",
@@ -10345,7 +10260,9 @@
     "author": "Zaydenhale",
     "excerpt": "These days, almost everyone wants to watch movies and shows on their phone, but not everyone wants to pay for yet another monthly… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Basic install guide for the NetMirror APK, an unofficial streaming app sideloaded outside the Play Store, plus common install troubleshooting tips. Not developer-relevant content.",
+    "topics": []
   },
   {
     "id": "cbd8bd145f3aae8e",
@@ -10356,7 +10273,9 @@
     "author": "MZTECH",
     "excerpt": "Picture this: You’re driving through an unfamiliar area, approaching a tight highway split, and right when you need to know which lane to… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Marketing post promoting \"Live Earth Satellite View Maps\" as a lightweight alternative to bloated navigation apps that overheat phones. Consumer app advertisement, not development content.",
+    "topics": []
   },
   {
     "id": "3fb677ea2b301297",
@@ -10620,7 +10539,9 @@
     "author": "Sargis Avagyan",
     "excerpt": "Let’s talk about the elephant in every data scientist’s room (or in this case, the panda). You’ve probably touched pandas before, even if nobody introduced you two properly. Ever opened a CSV file in Python and tried to make sense of it? Sorted a column, dropped some junk rows, and prayed a merge would work? […]",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Announcement of a JetBrains Academy course teaching the pandas Python library inside PyCharm, covering DataFrames, data cleaning, and two portfolio projects. Python/data-science focused, no Kotlin or Android relevance.",
+    "topics": []
   },
   {
     "id": "0fa552185d4df2bd",
@@ -10631,7 +10552,9 @@
     "author": "Viktor Kiselev",
     "excerpt": "Over the past six months at JetBrains, our AI development expenses have increased roughly 10x. When the costs started rising, of course we noticed – and realized that we simply didn’t know how to control them systematically. We didn’t know because our developers don’t just use the AI tools we build. They decide for themselves […]",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "JetBrains describes its internal effort to control ballooning AI tooling costs (Claude Code, Codex, Junie, IDE AI chat) after a 10x spend increase, moving from spreadsheets to dashboards and a CLI-wrapper prototype for usage tracking. Internal engineering-org cost management, not Kotlin/Android development content.",
+    "topics": []
   },
   {
     "id": "3323f8420ae47e78",
@@ -10642,7 +10565,15 @@
     "author": "D I N E S H",
     "excerpt": "Have you ever wondered how your Android app communicates with system services like LocationManager or CameraManager under the hood? Or how two completely separate Android apps can talk to each other securely? In Android, process isolation is a core security boundary: every app runs in its own Linux process with a dedicated sandboxed Process ID (PID). One app cannot directly access another app’s memory space. To bridge this gap, Android provides Binder IPC (Inter-Process Communication) and AIDL (",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Walks through Android's Binder IPC and AIDL by building a three-module Gradle project (shared, server, client) where a Jetpack Compose app binds to a remote service via a generated Stub/Proxy pair. Explains why Binder beats sockets or HTTP for cross-process calls: kernel-verified identity, single-copy memory transfer, and automatic lifecycle cleanup.",
+    "topics": [
+      "android-api",
+      "compose",
+      "kotlin"
+    ],
+    "code_snippet": "override fun onServiceConnected(name: ComponentName?, service: IBinder?) {\n    iaidlColorInterface = IAIDLColorInterface.Stub.asInterface(service)\n}\n\noverride fun onServiceDisconnected(name: ComponentName?) {\n    iaidlColorInterface = null\n}",
+    "snippet_label": "AIDL STUB PROXY"
   },
   {
     "id": "85decc28f5364568",
@@ -10653,7 +10584,12 @@
     "author": "Farman Ullah Marwat",
     "excerpt": "Every Android app you ship can be taken apart. The APK is not a locked box — it’s a readable archive. With tools like jadx and Frida, an… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Argues obfuscation can't secure Android apps since APKs are always readable, and proposes a two-layer 'Reduce & Detect' model: proxy API keys server-side, require auth, minimize returned data, and enable R8 so a cracked APK yields nothing; then add RASP (Play Integrity, root/tamper detection) to raise attacker cost.",
+    "topics": [
+      "r8-proguard",
+      "android-api"
+    ]
   },
   {
     "id": "9f2dc4f4170b0a9f",
@@ -10664,7 +10600,14 @@
     "author": "Neeraja Gandla",
     "excerpt": "In Part 3, we discovered how the runtime never loses its place. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Fourth part of a Compose Runtime series explains why the runtime skips recomposition when a stable parameter's value hasn't changed, since doing no work beats doing fast work. Clarifies that stable types can still mutate, but only through observable state Compose can track, which is why @Stable/@Immutable annotations matter.",
+    "topics": [
+      "compose",
+      "kotlin"
+    ],
+    "code_snippet": "class Counter {\n    var count by mutableStateOf(0)\n}\n\n// count changes, but every change is\n// observable, so Compose never misses it",
+    "snippet_label": "STABLE MUTABLE STATE"
   },
   {
     "id": "d91cae82304f21c4",
@@ -10686,7 +10629,15 @@
     "author": "Imran Ali",
     "excerpt": "The last two posts were about picking the right tool for a single line of code — a scope, a coroutine builder. This one is bigger: how do… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains MVI architecture for Compose screens: an immutable State data class, a sealed Intent hierarchy covering every user action, a ViewModel that's the sole place turning intents into new states, and a purely rendering Composable. Argues this discipline scales more predictably than scattering mutableStateOf across a screen.",
+    "topics": [
+      "mvi",
+      "compose",
+      "viewmodel"
+    ],
+    "code_snippet": "sealed interface ProfileIntent {\n    data class LoadProfile(val userId: String) : ProfileIntent\n    object Retry : ProfileIntent\n    object DismissError : ProfileIntent\n}",
+    "snippet_label": "MVI INTENT SEALED CLASS"
   },
   {
     "id": "dc64f7fc9b6900e8",
@@ -10697,7 +10648,14 @@
     "author": "Nemat",
     "excerpt": "Concurrency is one of the most challenging aspects of software development. As applications become increasingly asynchronous, multiple… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Compares Kotlin coroutine synchronization primitives: Mutex enforces exclusive access to a critical section (one coroutine at a time via withLock), while Semaphore caps concurrent access to N coroutines via withPermit. Warns that Semaphore(N>1) still allows race conditions since it limits concurrency, not exclusivity.",
+    "topics": [
+      "coroutines",
+      "kotlin"
+    ],
+    "code_snippet": "val mutex = Mutex()\nmutex.withLock { counter++ }\n\nval semaphore = Semaphore(3)\nsemaphore.withPermit {\n    // at most 3 coroutines run this at once\n}",
+    "snippet_label": "MUTEX VS SEMAPHORE"
   },
   {
     "id": "acac6127a82fca98",
@@ -10708,7 +10666,15 @@
     "author": "Adrián Leyva",
     "excerpt": "A practical look at five design principles through real Android examples Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Walks through Robert Martin's five SOLID principles using Android/Kotlin examples: splitting an overloaded ViewModel into a mapper, analytics tracker, and leaner ViewModel for Single Responsibility, and replacing a payment-type when-branch with a PaymentStrategy interface for Open/Closed.",
+    "topics": [
+      "clean-architecture",
+      "architecture",
+      "kotlin"
+    ],
+    "code_snippet": "interface PaymentStrategy {\n    suspend fun process(amount: BigDecimal): PaymentResult\n}\n\nclass PayPalPayment(\n    private val client: PayPalClient\n) : PaymentStrategy {\n    override suspend fun process(amount: BigDecimal) =\n        client.createOrder(amount)\n}",
+    "snippet_label": "STRATEGY OVER WHEN"
   },
   {
     "id": "13614a6e6ed6ee5b",
@@ -10719,7 +10685,14 @@
     "author": "Dilipchandar",
     "excerpt": "How unboxing, unguarded exceptions, and race conditions silently break production apps Continue reading on CodeToDeploy »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Walks through three real production crashes: unboxing a null Boolean pulled from a Map<String, Object>, throwing unguarded exceptions from a when-expression instead of using runCatching/Result, and reading a not-yet-initialized ArrayList from a BroadcastReceiver callback registered before the list was set up.",
+    "topics": [
+      "android-api",
+      "kotlin"
+    ],
+    "code_snippet": "fun performOperation(op: Char, b: Double, a: Double): Result<Double> =\n    runCatching {\n        when (op) {\n            '+' -> a + b\n            '/' -> if (b == 0.0)\n                throw UnsupportedOperationException(\"div0\")\n            else a / b\n            else -> throw UnsupportedOperationException(\"Unknown: $op\")\n        }\n    }",
+    "snippet_label": "RUNCATCHING RESULT"
   },
   {
     "id": "aabf5c7481e78655",
@@ -10730,7 +10703,14 @@
     "author": "Christophy Barth",
     "excerpt": "BoxWithConstraints gets recommended a lot, often as the one-line answer to \"how do I make my layout responsive?\" It can do that. But it… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains BoxWithConstraints, which uses SubcomposeLayout to expose incoming maxWidth/maxHeight before children compose, letting a composable branch into structurally different content based on available space, useful for cards inside variable-width grids. Warns it's costlier than plain modifiers and best reserved for genuine 'what to compose' decisions, not simple resizing.",
+    "topics": [
+      "compose",
+      "adaptive-ui"
+    ],
+    "code_snippet": "BoxWithConstraints {\n    if (maxWidth < 400.dp) {\n        CompactContent()\n    } else {\n        WideContent()\n    }\n}",
+    "snippet_label": "ADAPTIVE WIDTH BRANCH"
   },
   {
     "id": "ef7ec9713867e42e",
@@ -10741,7 +10721,14 @@
     "author": "Prachi Mishra",
     "excerpt": "Why has Google adopted a “Compose First” approach for Android development? Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A rundown of interview questions for senior Android roles covering Compose fundamentals: remember vs rememberSaveable, state hoisting, recomposition, CompositionLocal, LazyColumn performance, navigation, and snapshot testing. No answers are given, just prep prompts.",
+    "topics": [
+      "compose",
+      "mvvm",
+      "testing",
+      "navigation"
+    ]
   },
   {
     "id": "f3b5a7cb1dc00e47",
@@ -10752,7 +10739,16 @@
     "author": "Dev_Pratixa",
     "excerpt": "Four names, one confusing question: which one do I actually use? Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Compares Flow, StateFlow, SharedFlow, and LiveData for exposing ViewModel data to Compose UIs, explaining when each fits: Flow for cold streams, StateFlow for persistent UI state, SharedFlow for one-time events, LiveData as the older lifecycle-aware alternative.",
+    "topics": [
+      "flows",
+      "coroutines",
+      "viewmodel",
+      "mvvm"
+    ],
+    "code_snippet": "class LoginViewModel : ViewModel() {\n    private val _isLoggedIn = MutableStateFlow(false)\n    val isLoggedIn: StateFlow<Boolean> = _isLoggedIn\n\n    fun onLoginSuccess() {\n        _isLoggedIn.value = true\n    }\n}",
+    "snippet_label": "STATEFLOW UI STATE"
   },
   {
     "id": "633cf961344cf82d",
@@ -10763,7 +10759,9 @@
     "author": "Kevin Tea",
     "excerpt": "Like millions of Android owners who use their phone to play MP3 music, I went down the de facto Poweramp route for many years. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A personal review of the Musicolet Android music player, praising its offline playback, multiple independent queues, tag editing, and simple single-row navigation as a replacement for Poweramp. Consumer app review, not a development topic.",
+    "topics": []
   },
   {
     "id": "948a4c8341bf3d78",
@@ -10774,7 +10772,9 @@
     "author": "에릭Eric_jeong(정용욱)",
     "excerpt": "안녕하세요. 서비스웹개발팀의 에릭입니다. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Fifth installment of a Korean-language series on building an airline booking frontend, focused on handling browser back-button navigation. The original post was deleted (HTTP 410) and only Medium's loader scaffolding remained, so no technical detail could be recovered.",
+    "topics": []
   },
   {
     "id": "7766073cd9bfbc43",
@@ -10785,7 +10785,9 @@
     "author": "Mehul Patel",
     "excerpt": "Every week, a new article claims that AI is redefining mobile applications. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A mobile engineering leader reflects on lessons from shipping AI-powered apps at scale, touching on on-device inference trade-offs (latency, battery, thermal), new ML security risks, and needing solid telemetry before predictive features. High-level and generic, no Kotlin specifics.",
+    "topics": []
   },
   {
     "id": "933335954760a6fb",
@@ -10796,7 +10798,9 @@
     "author": "Teen Patti Master",
     "excerpt": "Every year, mobile games receive updates that promise a better experience. Teen Patti Master 2027 is no exception. Instead of completely… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Promotional update notes for the Teen Patti Master gambling app claiming faster startup, smoother navigation, and better Android compatibility. Game-app marketing content, unrelated to Kotlin/Android development.",
+    "topics": []
   },
   {
     "id": "22cf3461b658937e",
@@ -10807,7 +10811,9 @@
     "author": "QicApp",
     "excerpt": "Why the next generation of AI won’t be measured by how much code it writes — but by how effectively it helps turn ideas into successful… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Argues that AI code generation lowers the barrier to writing software but doesn't replace product judgment, citing skipped user research and validation as why many AI-built apps never ship. General software-strategy opinion piece with no Kotlin/Android specifics.",
+    "topics": []
   },
   {
     "id": "9d35d04bb60da914",
@@ -10818,7 +10824,9 @@
     "author": "Aqarion/https://huggingface.co/Quantarion9\nAQARION",
     "excerpt": "AQARION-ARITHMETIC Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Introduces AQARION, an abstract mathematical framework using Koopman operators and defect measures to classify observable quotients of finite deterministic dynamical systems. Pure math research manifesto tagged Android on Medium but unrelated to app development.",
+    "topics": []
   },
   {
     "id": "1840cd1ac5c08dc2",
@@ -10829,7 +10837,9 @@
     "author": "Harshana Herath",
     "excerpt": "In a mobile ecosystem saturated with single-purpose media apps, users are often forced to juggle three or four different applications just… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Promotes Hera Player, a Flutter/C++ Android media app with a 10-band equalizer, 4K video playback, and an encrypted media vault. A product listing rather than Kotlin/Android native development content.",
+    "topics": []
   },
   {
     "id": "574ae6b802c2cf5a",
@@ -10917,7 +10927,12 @@
     "author": "Kodee",
     "excerpt": "Hi everyone! July gave me plenty to celebrate: Kotlin turned 15, got its first public benchmark for AI coding agents, became available in BlueJ, and shipped its 2.4.10 release. Developers can also demonstrate their skills at RevenueCat Shipaton 2026 by building a Kotlin Multiplatform app and competing for the Ship Kotlin Everywhere Award. Meanwhile, X […]",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "JetBrains' monthly Kotlin roundup covers Kotlin's 15th birthday celebration, a new public benchmark for AI coding agents, the 2.4.10 release, BlueJ support, and RevenueCat's Shipaton 2026 KMP app contest.",
+    "topics": [
+      "kotlin",
+      "kmp"
+    ]
   },
   {
     "id": "bab3712c9051168b",
@@ -10943,7 +10958,12 @@
     "author": "Marco Behler",
     "excerpt": "It’s no secret that agentic development is changing how developers build software. As agents take on more and more of the implementation work, developers spend less and less time manually editing code.  For this manual work, they might only need a basic, narrow set of features that IDEs provide, like navigating to declarations, finding references, […]",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "JetBrains ships a preview VS Code/Cursor extension exposing IntelliJ IDEA's Java and Kotlin language intelligence via LSP, covering completion, navigation, refactoring, and Gradle/Maven/Bazel support; a separate Apache-2.0 Kotlin LSP stays free for pure Kotlin projects.",
+    "topics": [
+      "kotlin",
+      "jetbrains"
+    ]
   },
   {
     "id": "df6f1e95988f3224",
@@ -10954,7 +10974,16 @@
     "author": "Yves Kalume",
     "excerpt": "originally published on yvesandmobile.substack.com When building a Compose UI, passing a ViewModel deep into the UI makes components less reusable because they become tied to one ViewModel type, and therefore to one screen. It also makes them harder to test in isolation and can break previews because previews are not meant to recreate the real runtime environment of the app. So instead, we keep the ViewModel at the route level. This is generally the recommended shape with state hoisting : move s",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Proposes splitting a bloated Compose screen ViewModel into focused 'controller' interfaces (sources, articles, search, refresh) that share one state store, avoiding a single God ViewModel while keeping one UiState and one action entry point.",
+    "topics": [
+      "compose",
+      "viewmodel",
+      "architecture",
+      "mvvm"
+    ],
+    "code_snippet": "sealed interface HomeAction {\n    data object Refresh : HomeAction\n    data class SourceSelected(val source: SourceItem?) : HomeAction\n    data class SearchQueryChanged(val query: String) : HomeAction\n}",
+    "snippet_label": "GROUPED USER ACTIONS"
   },
   {
     "id": "9253c60648630a5c",
@@ -10965,7 +10994,13 @@
     "author": "Katie Barnett",
     "excerpt": "Make sure you are calling the right app and getting the right response Image generated by Gemini The new App Functions API is the next frontier for Android. It essentially turns your app into an on-device data provider for AI agents. Instead of relying on generic web searches, AI can now talk directly to your app to fetch highly personalised, user-specific information. It is easy to implement , there is even a dedicated AppFunctions agent skill that will help you integrate it faster but how do y",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Walks through testing Android's private-preview App Functions API using adb (list-app-functions) and Google's Testing Agent app wired to a Gemini API key, verifying that natural-language prompts correctly trigger a registered function.",
+    "topics": [
+      "android-api",
+      "testing",
+      "android-developers"
+    ]
   },
   {
     "id": "67c15d6d195e2ff8",
@@ -10976,7 +11011,15 @@
     "author": "Cedric Ferry",
     "excerpt": "Introduction For most of Android’s history, we have built applications for people. A user opens an app, looks at a screen, finds a button, navigates through a menu, enters some data, and finally performs an action. This model works well when the user is a human. It works much less well when the user is an AI agent. An agent that wants to interact with an application can try to understand what is displayed on the screen, identify UI elements, navigate through them, and reproduce the same steps as",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains Android AppFunctions, an API letting apps expose callable capabilities (e.g. createNote, addItemToShoppingList) so AI agents can invoke business logic directly instead of navigating the UI; includes the KSP/Gradle setup needed to register functions.",
+    "topics": [
+      "android-api",
+      "ksp",
+      "android-developers"
+    ],
+    "code_snippet": "ksp {\n    arg(\"appfunctions:aggregateAppFunctions\", \"true\")\n    arg(\"appfunctions:generateMetadataFromSchema\", \"false\")\n}",
+    "snippet_label": "KSP APPFUNCTIONS CONFIG"
   },
   {
     "id": "7f6e7328364957fb",
@@ -10998,7 +11041,16 @@
     "author": "Sohaib Ahmed",
     "excerpt": "What Separates a Developer From an Android Engineer Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A study guide of Android interview questions for 2-5 year developers, spanning architecture (MVVM/MVI/Clean Architecture), coroutines, Flow vs StateFlow, dependency injection, Room migrations, and API/error handling.",
+    "topics": [
+      "architecture",
+      "mvvm",
+      "coroutines",
+      "room"
+    ],
+    "code_snippet": "sealed interface UiState {\n    data object Loading : UiState\n    data class Success(val data: List<Item>) : UiState\n    data class Error(val message: String) : UiState\n}",
+    "snippet_label": "UI STATE SEALED INTERFACE"
   },
   {
     "id": "4d3e28c4561578f2",
@@ -11009,7 +11061,16 @@
     "author": "Nguyenkhacphuc",
     "excerpt": "Start here. If your ViewModel looks like this, you’re writing MVVM. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Argues that 'dispatch-style' MVI is often MVVM with a sealed-class router in front, since both write state from inside the async coroutine; contrasts it with 'reducer MVI', where a pure reduce function and a single writer make transitions atomic and cancellable.",
+    "topics": [
+      "mvi",
+      "mvvm",
+      "architecture",
+      "coroutines"
+    ],
+    "code_snippet": "fun reduce(s: SearchState, r: Result): SearchState = when (r) {\n    Result.Started -> s.copy(loading = true, error = null)\n    is Result.Loaded -> s.copy(loading = false, items = r.items)\n    is Result.Failed -> s.copy(loading = false, error = r.message)\n}",
+    "snippet_label": "PURE REDUCER FUNCTION"
   },
   {
     "id": "35b6de282edaa519",
@@ -11020,7 +11081,15 @@
     "author": "Supsabhi",
     "excerpt": "You receive a delivery notification saying: Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Walks through Android deep linking basics: custom URI schemes versus verified App Links, then a step-by-step Kotlin implementation wiring an AndroidManifest intent-filter to a Compose Navigation destination via navDeepLink so a web URL opens a specific screen directly.",
+    "topics": [
+      "navigation",
+      "compose",
+      "android-api"
+    ],
+    "code_snippet": "composable(\n    route = \"details/{itemId}\",\n    arguments = listOf(navArgument(\"itemId\") { type = NavType.StringType }),\n    deepLinks = listOf(navDeepLink {\n        uriPattern = \"$BASE_URL/product/{itemId}\"\n    })\n) { backStackEntry ->\n    val itemId = backStackEntry.arguments?.getString(\"itemId\") ?: \"Unknown\"\n    DetailsScreen(itemId = itemId)\n}",
+    "snippet_label": "NAV DEEP LINK"
   },
   {
     "id": "4b7cc6091fef0c1b",
@@ -11031,7 +11100,9 @@
     "author": "Saidel López",
     "excerpt": "I started to use my free month of LinkedIn Premium and after some quick questions it created a learning plan for me. I will share with you… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Personal account of using LinkedIn Premium's AI-generated learning plan to study Kotlin Multiplatform, covering the modules it proposed (Kotlin basics, concurrency, KMP libraries) and the writer's mixed impressions of the pacing and depth.",
+    "topics": []
   },
   {
     "id": "1fc752496f461920",
@@ -11042,7 +11113,14 @@
     "author": "Nemat",
     "excerpt": "A secure authentication system is more than simply storing a token after login. It must handle token expiration, concurrent API requests… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Describes a production Android auth architecture: encrypted token storage behind a SessionManager, mutex-guarded single-flight token refresh, a separate unauthenticated Retrofit/OkHttp client for refresh calls, and an OkHttp Authenticator that transparently retries requests once after a 401.",
+    "topics": [
+      "architecture",
+      "okhttp",
+      "retrofit",
+      "coroutines"
+    ]
   },
   {
     "id": "1580940b73bc397f",
@@ -11053,7 +11131,15 @@
     "author": "Kevin Desai",
     "excerpt": "1. Lists stopped being a project Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A five-year retrospective on Jetpack Compose highlighting LazyColumn replacing RecyclerView/DiffUtil boilerplate, AnimatedVisibility simplifying view-animation callback juggling, cheaper layout nesting versus ConstraintLayout, and Compose Multiplatform sharing composables across desktop/iOS/web.",
+    "topics": [
+      "compose",
+      "animation",
+      "compose-multiplatform"
+    ],
+    "code_snippet": "AnimatedVisibility(\n    visible = isExpanded,\n    enter = fadeIn() + expandVertically(),\n    exit = fadeOut() + shrinkVertically()\n) {\n    DetailPanel()\n}",
+    "snippet_label": "ANIMATED VISIBILITY"
   },
   {
     "id": "d71af36afb090436",
@@ -11064,7 +11150,14 @@
     "author": "Dima Danilov",
     "excerpt": "Exception handling and cancellation were among the most confusing parts of Kotlin coroutines for me. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Builds a mental model for Kotlin coroutine exception handling by separating three questions per coroutine: which builder determines how failure is observed, which parent Job is affected by it, and which scope function determines where it can be caught, distinguishing cancellation from failure propagation.",
+    "topics": [
+      "coroutines",
+      "kotlin"
+    ],
+    "code_snippet": "val parent = launch {\n    val child = launch { delay(1_000) }\n    child.cancelAndJoin()\n    println(\"Child cancelled: ${child.isCancelled}\")\n    println(\"Parent is still active: $isActive\")\n}\nparent.join()",
+    "snippet_label": "CHILD CANCEL VS PARENT"
   },
   {
     "id": "626e6d7dd1042dc8",
@@ -11075,7 +11168,12 @@
     "author": "Subhadeep Das",
     "excerpt": "Picture a locked-down tablet — a hotel check-in kiosk, a warehouse scanning terminal, any device running one app full-screen with nothing… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Recounts choosing Accessibility Service's TYPE_ACCESSIBILITY_OVERLAY window instead of the SYSTEM_ALERT_WINDOW permission flow to show a brief popup on a kiosk tablet, since the app already ran an accessibility service for text injection and gained the overlay capability for free with no runtime permission dance.",
+    "topics": [
+      "android-api",
+      "android-developers"
+    ]
   },
   {
     "id": "f38a7bd59ed73fdc",
@@ -11097,7 +11195,9 @@
     "author": "Joeccy",
     "excerpt": "Spotify has completely changed the way we enjoy music. With millions of songs, playlists, and podcasts available instantly, streaming has… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Consumer guide comparing Spotify's official offline downloads against third-party Spotify-to-MP3 converter tools for Android, covering audio quality, metadata preservation, and safety considerations; not developer content.",
+    "topics": []
   },
   {
     "id": "fe0adb15b1e205c5",
@@ -11108,7 +11208,9 @@
     "author": "AJAY KUMAR",
     "excerpt": "BDG Play Official 2026 — Complete Android Platform Guide for New Users. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Promotional platform guide for a mobile gaming app (BDG Play), covering account registration and generic safety tips; contains no Android development content.",
+    "topics": []
   },
   {
     "id": "67053f9adcfd800a",
@@ -11119,7 +11221,9 @@
     "author": "Design Studio UI/UX",
     "excerpt": "Why the biggest update in years isn’t really about how it looks. Look at it from a UI/UX angle and you’ll notice Samsung isn’t trying to… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Overview of Samsung's One UI 9 Android skin, covering deeper Gemini AI integration, adaptive foldable layouts, customizable Quick Settings, and a location-use indicator, framed as incremental refinement rather than a visual redesign.",
+    "topics": []
   },
   {
     "id": "cdc3261474ae15d2",
@@ -11130,7 +11234,9 @@
     "author": "MZTECH",
     "excerpt": "We’ve all been there: you’re relying on your GPS for directions, and suddenly your phone gets burning hot on the dashboard mount, the map… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Promotional post pitching a lightweight GPS app as a fix for phones overheating during navigation, blaming background data load and CPU throttling, with no technical detail beyond the app's marketing claims.",
+    "topics": []
   },
   {
     "id": "682c5f41c3b583d5",
@@ -11141,7 +11247,9 @@
     "author": "Herda Herda",
     "excerpt": "Teknologi seharusnya menjadi sarana yang memudahkan umat, bukan menjadi penghalang. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Indonesian-language announcement that a mosque digital-signage Android TV app (prayer times, announcements, finance reports) is now free, presented as a mission decision by its studio rather than a technical change.",
+    "topics": []
   },
   {
     "id": "449527a32907514e",
@@ -11185,7 +11293,12 @@
     "author": "Stexxe",
     "excerpt": "Published 31 July 2026 Improvements KTOR-8032 RateLimit: Allow limit requests based on authentication result KTOR-9719 ApplicationCall.isStaticContent returns false when called from plugin interceptors KTOR-8450 ContentNegotiation: it doesn't handle content type suffixes KTOR-7892 SwaggerUI: Missing oauth2-redirect.html support in the plugin KTOR-9759 Reject whitespace in URL hosts during parsing KTOR-9681 Update kotlinx-io to 0.9.1 KTOR-9743 ByteReadChannel.readLineStrict: Misleading definition",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Ktor 3.5.2 release notes: RateLimit can scope limits by authentication result, ApplicationCall.isStaticContent is fixed inside plugin interceptors, ContentNegotiation handles content-type suffixes, SwaggerUI adds oauth2-redirect.html support, and kotlinx-io bumps to 0.9.1.",
+    "topics": [
+      "ktor",
+      "ktor-server"
+    ]
   },
   {
     "id": "db829facddec8d7c",
@@ -11218,7 +11331,12 @@
     "author": "cortinico",
     "excerpt": "2.0.0-alpha.6 - 2026-08-04 This is an alpha release of Detekt 2.0.0. It's built against Kotlin 2.4.10, Gradle 9.6.1, AGP 9.3.1 and is tested against JDK 25. Notable Changes The detekt Gradle task now analyzes all Kotlin source sets with type resolution by default, replacing the previous type-resolution-free task - #7025 detekt-rules-ktlint-wrapper now targets JVM 17, in preparation for the next ktlint major release which requires JVM 17+, the rest of detekt still targets JVM 8+ - #9453 Changelog",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Detekt 2.0.0-alpha.6 targets Kotlin 2.4.10, Gradle 9.6.1, AGP 9.3.1 and JDK 25; its Gradle task now runs type-resolution analysis on all Kotlin source sets by default, and the ktlint-wrapper rules module raises its minimum to JVM 17.",
+    "topics": [
+      "kotlin",
+      "gradle-plugin"
+    ]
   },
   {
     "id": "3deff25a85a0afb0",
@@ -11306,7 +11424,12 @@
     "author": "Irina Mariasova",
     "excerpt": "July gave the tech world plenty to talk about, from fresh releases and useful tutorials to Kotlin updates, AI experiments, and new ideas across the wider ecosystem. We packed the best of it into one issue, so you can skip scrolling and get straight to the good stuff. To top it all off, Donald Raab […]",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "JetBrains' August Java/Kotlin roundup links a Kotlin Corner covering Kotlin turning 15, the Exposed SQL library, Amper's current state, value semantics in Kotlin, local lifetimes, and an open-sourced KotlinLLM project, alongside broader Java news.",
+    "topics": [
+      "kotlin",
+      "exposed"
+    ]
   },
   {
     "id": "b72982d38e3237c1",
@@ -11317,7 +11440,12 @@
     "author": "Kerry Beetge",
     "excerpt": "Drew Penrod is an experienced fullstack engineer at a company that makes phones designed for kids using Samsung Galaxy hardware running custom software. He and his team develop and maintain an Android-based platform that gives parents control over apps, contacts, screen time, messaging, and browsing through a web-based interface. As the company and its engineering […]",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Interview with a DevSecOps engineer at a kids'-phone company on why inconsistent linting across Kotlin, TypeScript and React repos led them to adopt Qodana for unified static analysis, dependency scanning and license auditing to meet CIS/NIST security controls.",
+    "topics": [
+      "kotlin",
+      "android-developers"
+    ]
   },
   {
     "id": "78b2c2882898b7e2",
@@ -11328,7 +11456,16 @@
     "author": "Bao Le",
     "excerpt": "Turn code guidelines into automated guardrails to prevent footguns and fragile tests. Every growing codebase accumulates “dangerous” APIs: methods that are easy to misuse, cause flaky tests, or break architecture boundaries. Initially, teams rely on PR reviews or wiki pages: “Don’t use spyk in tests,\" or \"Use custom scopes instead of GlobalScope.\" Eventually, human vigilance fails. Guidelines get ignored, code reviewers miss things, and dangerous patterns spread across pull requests. The fix? St",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains automating bans on dangerous APIs like MockK's spyk, GlobalScope, and Thread.sleep via Detekt's ForbiddenMethodCall/ForbiddenImport rules, Konture architecture unit tests, or @Deprecated(level=ERROR), turning wiki guidelines into compiler/build-time guardrails.",
+    "topics": [
+      "testing",
+      "coroutines",
+      "architecture",
+      "kotlin"
+    ],
+    "code_snippet": "@Deprecated(\n    message = \"BaseActivity is banned. Use ComposeActivity instead.\",\n    replaceWith = ReplaceWith(\"ComposeActivity()\"),\n    level = DeprecationLevel.ERROR\n)\nclass BaseActivity",
+    "snippet_label": "DEPRECATE WITH ERROR LEVEL"
   },
   {
     "id": "afd7660c92c7fe8b",
@@ -11339,7 +11476,12 @@
     "author": "Amit",
     "excerpt": "What several real Android and Kotlin codebases taught me about the five principles everyone quotes in interviews. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Auditing several production Android/Compose Multiplatform codebases against SOLID, the author finds Interface Segregation violations (one bloated repository interface everyone depends on) the most damaging, while Dependency Inversion via Hilt/Koin consistently pays off. Lays out a strangler-style sequence for splitting god ViewModels and god repositories without breaking consumers.",
+    "topics": [
+      "architecture",
+      "clean-architecture"
+    ]
   },
   {
     "id": "e9a42eaf5e82b8c3",
@@ -11361,7 +11503,9 @@
     "author": "JCConf Taiwan",
     "excerpt": "台灣最具指標性的 Java 技術年會 JCConf 2026 完整議程已經出爐！今年內容橫跨語言核心演進、極致效能調校、Kotlin 實戰、Spring 生態系與 AI 企業落地，絕對是開發者今年不可錯過的技術饗宴。 Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Program announcement for JCConf Taiwan 2026 (Sept 11), a Java-focused conference spanning Project Valhalla value types, Java 26/27 features, Spring AI 2.0, and one Kotlin-specific talk on why Spring Boot feels smaller in Kotlin. Mostly Chinese-language ticket-sale copy, not a technical writeup.",
+    "topics": []
   },
   {
     "id": "f299c06e0fe07f4d",
@@ -11372,7 +11516,12 @@
     "author": "Pramod Patel",
     "excerpt": "InputReader, InputDispatcher, and event delivery Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Traces how a single Android touch event travels from the kernel evdev driver through InputReader/InputDispatcher in system_server, across a Unix-socket IPC hop, into ViewRootImpl's InputStage chain, before reaching dispatchTouchEvent. Explains why onInterceptTouchEvent quirks and dropped touches during fast scrolling originate upstream of app code.",
+    "topics": [
+      "android-api",
+      "android-developers"
+    ]
   },
   {
     "id": "3ec1930c8083cd19",
@@ -11383,7 +11532,14 @@
     "author": "Recipes For Software",
     "excerpt": "How a focused Jetpack Compose news app became an offline-first Kotlin Multiplatform project with shared domain, data, presentation, and UI Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Walks through evolving a single-module Android MVVM/Compose news app into SignalBrief, a Kotlin Multiplatform app with shared domain/data/presentation modules, Compose Multiplatform UI, Room KMP persistence, and Ktor+kotlinx.serialization replacing Retrofit+Gson, while keeping DI and platform hosting Android/iOS-specific.",
+    "topics": [
+      "kmp",
+      "compose-multiplatform",
+      "ktor",
+      "mvvm"
+    ]
   },
   {
     "id": "788dc41f2e7cb8ae",
@@ -11394,7 +11550,14 @@
     "author": "Jamersomfabricio",
     "excerpt": "One of the first concepts you’ll learn in Kotlin is the difference between val and var. At first glance, it may seem like a simple choice… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains Kotlin's val/var distinction, clarifying that val only freezes the reference (not object contents) and contrasting read-only vs mutable collections. Recommends isolating mutation to a single manager class returning copies via toList() for safer, more predictable, concurrency-friendly state.",
+    "topics": [
+      "kotlin",
+      "kotlin-stdlib"
+    ],
+    "code_snippet": "class ShoppingCartManager {\n    private val _items = mutableListOf<Product>()\n    fun getState(): ShoppingCartState {\n        return ShoppingCartState(\n            items = _items.toList(),\n            total = _items.sumOf { it.price }\n        )\n    }\n}",
+    "snippet_label": "ENCAPSULATE MUTABLE STATE"
   },
   {
     "id": "8a707ce9dc43b56b",
@@ -11405,7 +11568,14 @@
     "author": "Behzod Halil",
     "excerpt": "Have you ever noticed how much of your push notification code has nothing to do with your product? Token tables, refresh callbacks… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Details migrating a Kotlin Multiplatform price-alert app from direct Firebase Cloud Messaging to OneSignal, switching addressing from per-device tokens to an OneSignal.login(userId) identity, a config-gated no-flag-day rollout, and a durable-inbox-first delivery pattern. Covers a Kotlin/Swift closure bridge since Kotlin can't see the Swift-only OneSignal iOS SDK.",
+    "topics": [
+      "kmp",
+      "ios-interop"
+    ],
+    "code_snippet": "interface PushIdentityBinder {\n    fun login(userId: String)\n    fun logout()\n}\nclass AndroidPushIdentityBinder : PushIdentityBinder {\n    override fun login(userId: String) {\n        runCatching { OneSignal.login(userId) }\n    }\n    override fun logout() {\n        runCatching { OneSignal.logout() }\n    }\n}",
+    "snippet_label": "NO THROW PUSH BINDING"
   },
   {
     "id": "f7607b9f5ae6275d",
@@ -11449,7 +11619,9 @@
     "author": "Alexmercer Techo",
     "excerpt": "Walk into any retail store, restaurant, or service business today and you will find a point of sale system quietly running the entire… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Generic cost-estimation guide for building a custom POS system, covering retail/restaurant/mobile/enterprise variants and checkout, inventory, and staff-management features. Business-budgeting content with no Android or Kotlin implementation detail despite appearing in the Android feed.",
+    "topics": []
   },
   {
     "id": "c658ee45afb861e7",
@@ -11460,7 +11632,12 @@
     "author": "Fora Soft",
     "excerpt": "Smooth Android video in 2026 is the sum of ten coordinated optimizations, not one heroic rewrite. Aligned, they cut video start time by… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Ten prioritized fixes for Android video rebuffering in 2026: tuning Media3's LoadControl per network class, shipping AV1+HEVC while dropping VP9 (software VP9 thermal-throttles budget chips), enabling native CMCD telemetry, and reserving low-latency HLS/DASH for genuinely latency-sensitive streams, with dev-day cost estimates per fix.",
+    "topics": [
+      "media3",
+      "android-api"
+    ]
   },
   {
     "id": "1af2bd1d27460fec",
@@ -11471,7 +11648,9 @@
     "author": "Samiyasami",
     "excerpt": "Open world mobile games have come a long way, and Rope Hero is one of the titles that keeps pulling players back in. If you have just… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A gameplay tips roundup for the mobile game Rope Hero: Vice Town, covering rope-swing traversal, exploration, weapon choice, and vehicle switching. Not related to Android/Kotlin development.",
+    "topics": []
   },
   {
     "id": "2df45197a52358d9",
@@ -11493,7 +11672,12 @@
     "author": "Wardharaheem",
     "excerpt": "Stop switching tabs between Apple’s docs, Google’s docs, and the W3C. It’s all here. Continue reading on Design Systems Collective »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A cross-platform design reference consolidating WCAG 2.2 success criteria, Apple Human Interface Guidelines, and Material Design 3 rules into one checklist. Covers Android-specific specs: 48dp touch targets, FAB sizing, 8dp grids, dynamic color roles, and navigation component choices.",
+    "topics": [
+      "material3",
+      "android-api"
+    ]
   },
   {
     "id": "83e5b607bfe16d10",
@@ -11504,7 +11688,11 @@
     "author": "khinmaungthoo",
     "excerpt": "Android visual testing becomes much easier when you stop asking which vision tool is “best” and instead ask what must remain true. A… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Argues Android visual testing should pick the narrowest assertion for the requirement rather than one universal tool: UI/accessibility state for semantics, screenshot comparison for layout, OCR for localized text, and template matching for stable icons. Proposes a five-stage evidence-logging pattern for reliable checks.",
+    "topics": [
+      "testing"
+    ]
   },
   {
     "id": "4a9f729625d4486e",
@@ -11515,7 +11703,9 @@
     "author": "kayla Redd",
     "excerpt": "Google is more than just a search engine. Millions of people use it every day, yet most only scratch the surface of what it can do. Beyond… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A general productivity listicle of ten lesser-known Google Search tricks (site search, exact phrases, unit conversion, flight tracking, translation). Not related to Android or Kotlin development.",
+    "topics": []
   },
   {
     "id": "9b7f397562759b5d",
@@ -11526,7 +11716,9 @@
     "author": "Youssef Zahran",
     "excerpt": "People often use \"Agile\" and \"Iterative\" as if they mean the same thing. They don't. One is a *model*. The other is a *mindset* built on… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A short explainer distinguishing the iterative development model from Agile methodology, framed for QA practitioners deciding when testing happens in a sprint versus fixed checkpoints. General process discussion, not Android/Kotlin-specific.",
+    "topics": []
   },
   {
     "id": "f422903a50325beb",
@@ -11537,7 +11729,9 @@
     "author": "Allclonescript",
     "excerpt": "A step-by-step guide detailing the complete mobile app development process from idea to live product. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A generic 10-step mobile app development lifecycle guide (idea validation, requirements, feature prioritization, UX design) aimed at businesses planning an app. No Android, iOS, or Kotlin technical content.",
+    "topics": []
   },
   {
     "id": "18d37b565f88fccf",
@@ -11691,7 +11885,13 @@
     "author": "Android Developers",
     "excerpt": "Posted by Jose Alcérreca, Developer Relations Engineer, Android Developer Relations We released the official Android Skills in April, and the response surpassed all our expectations. In this blog post, I'll address some of the feedback we received, explaining the philosophy and methodology behind the project. Hopefully, this will also help you understand what happens behind the scenes when you install and use skills, allowing you to make better use of tokens and your own time. Why are there so f",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Android Developer Relations explains why official Android Skills for AI coding agents stay narrow: they're only built for verifiable knowledge gaps in current models, such as AGP 9, Navigation 3, Camera APIs, and Perfetto SQL, since every installed skill adds token overhead. Details the eval framework used to validate each skill before release and when smaller/cheaper models still benefit from basic skills.",
+    "topics": [
+      "android-developers",
+      "gradle-plugin",
+      "navigation"
+    ]
   },
   {
     "id": "27e2b4cb763f6b0e",
@@ -11702,7 +11902,9 @@
     "author": "Isaac Levin",
     "excerpt": "With the rapid rise in agent-first development, many developers are adopting AI-first editors like Cursor, Google Antigravity IDE, Devin Desktop, and Kiro into their workflows. The appeal is obvious: deep, contextual AI assistance integrated directly into the coding surface. But if you write C# and .NET for a living, you have probably hit a massive […]",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A piece on adapting AI-first editors like Cursor and Google Antigravity to C#/.NET workflows; source page returned a bot-verification challenge instead of content. Not Kotlin/Android-related regardless.",
+    "topics": []
   },
   {
     "id": "cef6a2a55dc4bedd",
@@ -11724,7 +11926,11 @@
     "author": "Vusal Islamzada",
     "excerpt": "Əvvəlcə bir cümləlik xatırlatma: Garbage Collector, qısaca GC — Java və Kotlin kimi dillərdə proqramın artıq istifadə etmədiyi obyektləri… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains how the JVM's G1 garbage collector organizes the heap into thousands of small regions instead of fixed young/old blocks, using Remembered Sets to track cross-region references and a special path for oversized 'humongous' objects. Also covers tricolor marking and the SATB technique G1 uses to avoid losing live objects during concurrent collection.",
+    "topics": [
+      "kotlin"
+    ]
   },
   {
     "id": "6fa01ef1ca8154ae",
@@ -11779,7 +11985,16 @@
     "author": "Nemat",
     "excerpt": "The Kotlin questions that separate Senior Android Engineers from Staff Engineers Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A rundown of advanced Kotlin questions asked in Staff-level Android interviews: inline/noinline/crossinline semantics, reified generics, interface and property delegation, value classes, sealed classes vs sealed interfaces, variance, type erasure, and context receivers. Frames these features as design tools for scalable APIs rather than trivia.",
+    "topics": [
+      "kotlin",
+      "value-classes",
+      "sealed-classes",
+      "context-receivers"
+    ],
+    "code_snippet": "@JvmInline\nvalue class UserId(val value: String)",
+    "snippet_label": "VALUE CLASS WRAPPER"
   },
   {
     "id": "34aa8e3a75d152a0",
@@ -11790,7 +12005,9 @@
     "author": "Rajen Trivedi",
     "excerpt": "jsoup 1.23.1 just dropped and this one is worth paying attention to. Not just a patch release. There are real parser speed gains… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Details jsoup 1.23.1's performance and security changes: 18% faster string parsing, 70% faster source-position tracking, lower memory use on large documents, and a fix for a Cleaner Safelist bypass affecting custom raw-text tag permissions. A pure-Java HTML-parsing library release, not Kotlin/Android specific.",
+    "topics": []
   },
   {
     "id": "4bdc34de2b665329",
@@ -11801,7 +12018,14 @@
     "author": "Ak Deepankar",
     "excerpt": "Welcome to the first update of my build-in-public journey for Shipaton 2026 by Revenuecat ! Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A build-in-public log for a Compose Multiplatform node-based AI workflow editor targeting iOS and Android from one codebase. Covers using Compose's Canvas and gesture APIs for an infinite pannable node graph, plus expect/actual declarations to persist generated media files per platform.",
+    "topics": [
+      "compose-multiplatform",
+      "kmp"
+    ],
+    "code_snippet": "expect object LocalStorage {\n    fun saveMediaToTemp(bytes: ByteArray, extension: String): String\n}",
+    "snippet_label": "KMP EXPECT DECLARATION"
   },
   {
     "id": "c51fce67b20cbd1a",
@@ -11812,7 +12036,13 @@
     "author": "Mahmoud Ramadan",
     "excerpt": "ReadMore https://leanpub.com/modern_android_testing Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Argues the classic testing pyramid no longer fits modern Android: Compose can render on the JVM via Robolectric, semantics-tree queries replace brittle view matching, unidirectional state makes UI logic unit-testable, and screenshot tools like Paparazzi/Roborazzi catch visual regressions cheaply. Opening chapter of a book on modern Android testing strategy.",
+    "topics": [
+      "testing",
+      "compose",
+      "paparazzi"
+    ]
   },
   {
     "id": "b79eb1c3827188f4",
@@ -11823,7 +12053,14 @@
     "author": "Angelina Andronova",
     "excerpt": "You have two imports open. Both types have a .value. Both are “observable.” Both hold a single piece of state that something else reacts… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Compares mutableStateOf and StateFlow: both expose an observable .value but come from different libraries with different machinery. Explains why Compose's snapshot state could not simply reuse StateFlow, and how each notifies readers and fits Compose vs coroutine code.",
+    "topics": [
+      "compose",
+      "flows",
+      "coroutines",
+      "kotlin"
+    ]
   },
   {
     "id": "df2c035391d3da8b",
@@ -12010,7 +12247,12 @@
     "author": "Sargis Avagyan",
     "excerpt": "Somewhere between the fifteenth open tab and the third iced coffee, it hit me. Maybe we don’t hate meetings. We just hate the ones where nobody has anything to say. Welcome back to another mandatory meeting. This one’s got range: Kotlin just turned 15, IntelliJ IDEA Conf dropped a lineup worth clearing your calendar for, […]",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "JetBrains Academy's July roundup, flagged as covering Kotlin's 15th anniversary and the IntelliJ IDEA Conf lineup announcement. The article body was blocked by a bot-check page at fetch time, so only the headline topics from the excerpt are available.",
+    "topics": [
+      "jetbrains",
+      "kotlin"
+    ]
   },
   {
     "id": "272d4054d74a819e",
@@ -12021,7 +12263,16 @@
     "author": "Subhankar Bag",
     "excerpt": "Your Compose code compiles. It works. And half of it now has a better alternative. You open an old Compose project. Everything compiles. Everything runs. And yet, a surprising amount of the code you’re writing today has a better replacement shipped in the last twelve months. Navigation changed fundamentally. State handling got a new tier. Scroll performance quietly caught up with RecyclerView. Text fields got a completely different state model. Shadows finally work the way designers expect. If y",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Rounds up ten Compose changes from the past year worth adopting: default pausable composition improving scroll performance, the new retain {} API for non-serializable UI-scoped objects like players, stable Navigation 3, dropShadow/innerShadow, TextFieldState, and Material 3 Expressive. Contrasts old vs new code for each.",
+    "topics": [
+      "compose",
+      "navigation",
+      "material3",
+      "testing"
+    ],
+    "code_snippet": "val exoPlayer = retain(mediaUri) {\n    ExoPlayer.Builder(appContext).build().apply {\n        setMediaItem(MediaItem.fromUri(mediaUri))\n        prepare()\n    }\n}\nRetainedEffect(exoPlayer) {\n    onRetire { exoPlayer.release() }\n}",
+    "snippet_label": "RETAIN SCOPED STATE"
   },
   {
     "id": "f31ba478c6859019",
@@ -12032,7 +12283,16 @@
     "author": "Dilipchandar",
     "excerpt": "Here’s the counterintuitive philosophy behind Google’s new agent system — with code. Image by mammela from Pixabay You’ve probably seen the announcement. Android Skills launched in April; the response surpassed Google’s expectations, and yesterday the Android Developer Relations team published a deep dive explaining the philosophy behind the project. Most developers read it as a release note. It’s actually a set of architectural decisions about AI-assisted Android development — and if you miss t",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains Google's Android Skills system, launched in April: modular SKILL.md instructions that auto-trigger for confirmed AI failure modes such as Navigation 2.8+ type-safe routing, AGP 9 migrations, and R8 analysis. Warns against installing too many skills due to token cost, and includes a sample AGENTS.md template.",
+    "topics": [
+      "android-developers",
+      "navigation",
+      "compose",
+      "hilt"
+    ],
+    "code_snippet": "@Serializable object Home\n@Serializable data class Detail(val userId: String)\n\nNavHost(navController = navController, startDestination = Home) {\n    composable<Home> {\n        HomeScreen(onNavigateToDetail = { userId -> navController.navigate(Detail(userId)) })\n    }\n    composable<Detail> { backStackEntry ->\n        val detail: Detail = backStackEntry.toRoute()\n        DetailScreen(userId = detail.userId)\n    }\n}",
+    "snippet_label": "TYPE-SAFE NAV ROUTES"
   },
   {
     "id": "8bd24d6205ed7d84",
@@ -12054,7 +12314,13 @@
     "author": "Tom",
     "excerpt": "How I combined a smooth Flutter UI with a Kotlin foreground service, monotonic time, and state snapshots. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Describes how a Flutter timer app added a native Kotlin foreground service to keep countdown state accurate while the Flutter engine is paused. Uses SystemClock.elapsedRealtime() for monotonic timing, a MethodChannel bridge, and state snapshots restored on resume.",
+    "topics": [
+      "android-api"
+    ],
+    "code_snippet": "val now = SystemClock.elapsedRealtime()\nlastAccountingMs = now\ndeadlineMs = now + remainingMs",
+    "snippet_label": "MONOTONIC DEADLINE CLOCK"
   },
   {
     "id": "60feddcc148044d7",
@@ -12065,7 +12331,14 @@
     "author": "Steven",
     "excerpt": "Introduction Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Walks through common mistakes Android developers make when learning Jetpack Compose, rooted in carrying an XML/View mental model into declarative UI. Covers state-as-source-of-truth, recomposition, side-effect handling (LaunchedEffect), and unidirectional data flow, with before/after code examples.",
+    "topics": [
+      "compose",
+      "android-developers"
+    ],
+    "code_snippet": "@Composable\nfun Greeting(username: String, isLoading: Boolean, canSubmit: Boolean) {\n    if (isLoading) {\n        CircularProgressIndicator()\n    } else {\n        Text(\"Hello, $username\")\n        Button(onClick = { }, enabled = canSubmit) { Text(\"Submit\") }\n    }\n}",
+    "snippet_label": "STATE-DRIVEN UI"
   },
   {
     "id": "a1d209b67640b75c",
@@ -12076,7 +12349,11 @@
     "author": "halo",
     "excerpt": "When learning Kotlin, you’ll quickly encounter three ways to declare values: Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Beginner explainer distinguishing Kotlin's const val, val, and var: compile-time constant, read-only reference, and mutable reference respectively. Clarifies that val only locks the reference, not the underlying object, and that const val values get inlined at compile time.",
+    "topics": [
+      "kotlin"
+    ]
   },
   {
     "id": "49c5630dba973cf9",
@@ -12087,7 +12364,12 @@
     "author": "Dora Badrinath",
     "excerpt": "#001 — Why Kotlin Prefers val Over var (and Why Android Developers Should Too) Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "First entry in a beginner Android series arguing Kotlin developers should default to val over var, since read-only references communicate intent and prevent accidental mutation. Notes MVVM/Compose UI state models rely on val plus copy() rather than in-place mutation.",
+    "topics": [
+      "kotlin",
+      "android-developers"
+    ]
   },
   {
     "id": "1f5754741c5d0c61",
@@ -12098,7 +12380,13 @@
     "author": "Pavel Votyakov",
     "excerpt": "What writing a MongoDB driver for Kotlin/Native taught me about testing Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Postmortem on building mongkn, a Kotlin/Native cinterop MongoDB driver: four silent bugs (BSON type mismatch, missing @SerialName for _id, explicit BsonNull breaking sparse indexes, string timestamps breaking TTL indexes) that passed 294 tests yet broke in production, prompting integration-test-only rules for native storage layers.",
+    "topics": [
+      "kotlin",
+      "testing",
+      "kmp"
+    ]
   },
   {
     "id": "843c719dd091c5e1",
@@ -12109,7 +12397,15 @@
     "author": "Eugen Martynov",
     "excerpt": "Snapshot testing has a shape, and the shape is a matrix. My app has 27 screen states to capture, each rendered in five configurations —… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Compares two ways to generate a 135-case snapshot-test matrix (27 screens x 5 configs) with Roborazzi: ParameterizedRobolectricTestRunner versus TestBalloon's Kotlin DSL, where suites are plain code and loops replace annotation-driven parameterization. Notes a current Android-target bug in TestBalloon's public release.",
+    "topics": [
+      "testing",
+      "compose-multiplatform",
+      "kotlin"
+    ],
+    "code_snippet": "enum class SnapshotVariant(\n    val qualifiers: String,\n    val fontScale: Float,\n    val isDark: Boolean = false\n) {\n    BASELINE(qualifiers = \"+en-w411dp-h891dp\", fontScale = 1.0f),\n    DARK(qualifiers = \"+en-w411dp-h891dp-night\", fontScale = 1.0f, isDark = true),\n    FONT_SCALE(qualifiers = \"+nl-w411dp-h891dp\", fontScale = 2.0f)\n}",
+    "snippet_label": "SNAPSHOT VARIANT ENUM"
   },
   {
     "id": "55f7c5ff3cd4a0a2",
@@ -12120,7 +12416,13 @@
     "author": "Rudra Dave",
     "excerpt": "How a solo Android engineer used Kotlin Multiplatform to build StreakShow for Shipaton 2026, and the three mistakes that almost sank it. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Solo developer's account of shipping StreakShow, a photo-streak habit app, in three weeks using Kotlin Multiplatform with Compose Multiplatform for Shipaton 2026, sharing UI and ViewModels across Android and iOS. Lists three near-fatal mistakes: hidden second streak in navigation, priceless paywall, and a skipped account-deletion flow.",
+    "topics": [
+      "kmp",
+      "compose-multiplatform",
+      "room"
+    ]
   },
   {
     "id": "d5f44b3f9742a5c3",
@@ -12142,7 +12444,14 @@
     "author": "Dmitry Glazunov",
     "excerpt": "allEqual, allEqualBy, allDistinct, and allDistinctBy look like convenience methods. The interesting part is what they let us stop doing —… Continue reading on Level Up Coding »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Kotlin 2.4.20-Beta2 adds four experimental stdlib functions — allEqual, allEqualBy, allDistinct, allDistinctBy — for collections, sequences and arrays, gated behind ExperimentalStdlibApi. They replace verbose toSet()/distinct() workarounds and fix edge cases like empty-collection equality returning true instead of false.",
+    "topics": [
+      "kotlin",
+      "kotlin-stdlib"
+    ],
+    "code_snippet": "@OptIn(ExperimentalStdlibApi::class)\nfun validateUpload(parts: List<UploadPart>) {\n    require(parts.isNotEmpty()) { \"Upload must contain at least one part\" }\n    require(parts.allEqualBy { it.uploadId }) { \"Mixed upload IDs\" }\n    require(parts.allDistinctBy { it.index }) { \"Duplicate part index\" }\n}",
+    "snippet_label": "NEW EQUALITY CHECKS"
   },
   {
     "id": "11cd47ca64e2042b",
@@ -12153,7 +12462,12 @@
     "author": "Anand Gaur",
     "excerpt": "Crashlytics tells you what broke. It rarely tells you why. And if your team ships on more than one stack, it tells you that in five… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Measure is an open-source, self-hosted alternative to Crashlytics covering Android, iOS, Flutter, React Native and KMP with a single SDK and backend. It auto-captures gestures, navigation and network calls, attaches full session replays to every crash/ANR, and de-minifies stack traces per platform, including shared KMP code.",
+    "topics": [
+      "kmp",
+      "android-developers"
+    ]
   },
   {
     "id": "74eed0b85277c768",
@@ -12164,7 +12478,9 @@
     "author": "Live Gamer yt",
     "excerpt": "Best story game for low-end PC Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A listicle of ten narrative-driven PC games playable on low-end hardware, covering titles like Undertale, Firewatch and Disco Elysium. Not related to Android or Kotlin development.",
+    "topics": []
   },
   {
     "id": "87d674e4a5881634",
@@ -12175,7 +12491,12 @@
     "author": "Zachary Wander",
     "excerpt": "The porting process and the challenges we faced along the way Continue reading on Thumbtack Engineering »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Thumbtack's Android team describes porting 1,500 Firebase Test Lab screenshot tests to Roborazzi, a JVM-local, Robolectric-based screenshot testing framework for Compose apps. Covers batch-porting steps, a font-cache test-isolation bug across parallel Robolectric runs, and cross-OS shadow-rendering mismatches between macOS and CI.",
+    "topics": [
+      "testing",
+      "compose"
+    ]
   },
   {
     "id": "937ebf63d863257c",
@@ -12186,7 +12507,11 @@
     "author": "Nemat",
     "excerpt": "Imagine an e-commerce application with 100,000 products. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains Android pagination strategies — offset-based, cursor-based and keyset — for large datasets like product catalogs and feeds, covering consistency trade-offs as data changes and query-performance costs of large offsets. Frames pagination as a system-design concern spanning API, architecture, caching and Paging 3 implementation.",
+    "topics": [
+      "architecture"
+    ]
   },
   {
     "id": "3bbf38ef9ce727e9",
@@ -12197,7 +12522,12 @@
     "author": "Alfino Hatta",
     "excerpt": "Airports, ports, data centers, and energy grids all share a growing vulnerability: low-cost, high-capability drones. A few years ago, a… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Describes building Redoubt Analytics, a counter-UAS risk platform with a Kotlin/Jetpack Compose Android client, a Spring Boot backend handling auth and access control, and a separate Monte Carlo simulation engine. Focuses on splitting responsibilities across the three services to serve security officers, risk officers and SOC operators differently.",
+    "topics": [
+      "architecture",
+      "spring-kotlin"
+    ]
   },
   {
     "id": "1de431677fd5cf7e",
@@ -12230,7 +12560,9 @@
     "author": "Marializ Sánchez Peguero",
     "excerpt": "Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Spanish-language promotional post for Earnne, a rewards app offering surveys, games and tasks for cash payouts, including the author's personal referral link. Not developer content.",
+    "topics": []
   },
   {
     "id": "397f65c815418c7c",
@@ -12372,7 +12704,13 @@
     "author": "Oğuzhan Aslan",
     "excerpt": "Full tensor-level control for custom machine learning models on Android. Every team building on-device AI eventually reaches a point where pre-packaged task pipelines no longer suffice. You might need to deploy a custom-trained model, implement a specialized quantization strategy, or pipe raw tensor outputs directly from one neural network into another. That’s where LiteRT operates. It is the core runtime engine that powers MediaPipe Tasks and handles low-level model execution on Android. Introd",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Part four of an on-device AI series covering LiteRT (formerly TensorFlow Lite), Google's edge runtime for classical ML and quantized generative models like Gemma and Llama on Android. Walks through the CompiledModel API's tensor-buffer lifecycle for image classification and BERT text classification with manual int8 quantization handling.",
+    "topics": [
+      "android-api"
+    ],
+    "code_snippet": "compiledModel = CompiledModel.create(\n    context.assets,\n    \"efficientnet_lite0.tflite\",\n    CompiledModel.Options(Accelerator.CPU),\n    null\n)\nval inputBuffers = compiledModel.createInputBuffers()\nval outputBuffers = compiledModel.createOutputBuffers()\ninputBuffers[0].writeInt8(extractPixelBytes(bitmap))\ncompiledModel.run(inputBuffers, outputBuffers)",
+    "snippet_label": "COMPILED MODEL API"
   },
   {
     "id": "b315461b76f21c57",
@@ -12383,7 +12721,14 @@
     "author": "Subhankar Bag",
     "excerpt": "You’ve done everything right. You bumped the BOM. Pausable composition is on. Your shadows are real dropShadow() calls now, not three stacked gradients. (If none of that sounds familiar, start with [ Stop Writing Compose Like It's 2024 ] — this article picks up where that one left off.) And your screen still stutters when you drag it. Here’s the uncomfortable truth I’ve learned debugging Compose performance in production: the framework is rarely the bottleneck anymore. In almost every janky scre",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Walks through seven Compose recomposition mistakes — reading state too high in the tree, reading animated values during composition instead of layout/draw, monolithic UiState objects — each with a before/after fix using lambda-overload modifiers and derivedStateOf to shrink the invalidation blast radius.",
+    "topics": [
+      "compose",
+      "animation"
+    ],
+    "code_snippet": "val offset by animateDpAsState(targetValue = targetOffset)\nBox(\n    Modifier\n        .offset { IntOffset(x = offset.roundToPx(), y = 0) }\n        .size(80.dp)\n)",
+    "snippet_label": "DEFER OFFSET READ"
   },
   {
     "id": "b17a72383efd5267",
@@ -12394,7 +12739,14 @@
     "author": "halo",
     "excerpt": "When building Kotlin applications, we often need to combine text with values stored in variables. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Covers Kotlin string templates: $variable and ${expression} syntax, calling functions and filtering collections inside interpolated strings, and the common pitfall where $obj.property parses as $obj followed by literal .property text.",
+    "topics": [
+      "kotlin",
+      "kotlin-stdlib"
+    ],
+    "code_snippet": "val newStudent = Student(name = \"Alex\", scores = listOf(15, 25, 30))\nprintln(\"Scores: $newStudent.scores\")\nprintln(\"Scores: ${newStudent.scores}\")",
+    "snippet_label": "INTERPOLATION GOTCHA"
   },
   {
     "id": "9c03fce43e037764",
@@ -12405,7 +12757,16 @@
     "author": "Kaushik Kumar",
     "excerpt": "Designing clean, type-safe navigation with shared ViewModel intents while keeping Jetpack Compose and SwiftUI navigation fully native. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Part 6 of a KMP series proposes sharing only navigation intent between Android and iOS while keeping execution native: a shared ViewModel emits sealed NavigationDestination/Effect values via SharedFlow, mapped to NavController routes on Compose and NavigationStack on SwiftUI.",
+    "topics": [
+      "kmp",
+      "navigation",
+      "ios-interop",
+      "compose-multiplatform"
+    ],
+    "code_snippet": "sealed interface NavigationDestination {\n    data object ShowList : NavigationDestination\n    data class ShowDetail(val showId: Long) : NavigationDestination\n}",
+    "snippet_label": "SHARED NAV INTENT"
   },
   {
     "id": "b3684023cde700ed",
@@ -12416,7 +12777,13 @@
     "author": "Alim Reshitov",
     "excerpt": "Everything you need to know to stop treating the Keystore as a black box — with a working, biometric-gated encryption example Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains what the Android Keystore actually guarantees — hardware-backed key material via TEE or StrongBox versus software fallback — and gives a working pattern for generating an AES-256 GCM key with KeyGenParameterSpec, plus pitfalls like ECB mode or reused key aliases.",
+    "topics": [
+      "android-api"
+    ],
+    "code_snippet": "val spec = KeyGenParameterSpec.Builder(\n    KEY_ALIAS,\n    KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT\n)\n    .setBlockModes(KeyProperties.BLOCK_MODE_GCM)\n    .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)\n    .setKeySize(256)\n    .build()",
+    "snippet_label": "HARDWARE BACKED AES KEY"
   },
   {
     "id": "de9155fa3b1eef5f",
@@ -12438,7 +12805,16 @@
     "author": "Akhil Bodhade",
     "excerpt": "Building a predictable, testable login screen with StateFlow, ViewModel, and a three-layer Clean Architecture — no third-party MVI library… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Builds a login screen using MVI on top of Unidirectional Data Flow with a three-layer Clean Architecture (Presentation/Domain/Data), comparing a flat UiState data class against a sealed UiState hierarchy, and clarifies that MVI and Clean Architecture are independent, complementary choices.",
+    "topics": [
+      "mvi",
+      "compose",
+      "clean-architecture",
+      "viewmodel"
+    ],
+    "code_snippet": "sealed interface LoginUiState {\n    data object Idle : LoginUiState\n    data object Loading : LoginUiState\n    data object Success : LoginUiState\n    data class Error(val message: String) : LoginUiState\n}",
+    "snippet_label": "SEALED UI STATE"
   },
   {
     "id": "8df5a56d923215df",
@@ -12449,7 +12825,15 @@
     "author": "Vincenzo Pascarella",
     "excerpt": "Embed self-sizing Compose Multiplatform components in native UIKit and Objective-C scroll views on iOS, with a height-measuring pattern. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Solves Compose Multiplatform components rendering at zero height inside a UIKit/Objective-C scroll view, since Compose has no intrinsicContentSize: the Kotlin side reports its measured height via onGloballyPositioned, and Swift turns that report into an Auto Layout constraint.",
+    "topics": [
+      "compose-multiplatform",
+      "ios-interop",
+      "kmp"
+    ],
+    "code_snippet": "Column(\n    modifier = Modifier\n        .fillMaxWidth()\n        .onGloballyPositioned { coordinates ->\n            val heightDp = with(density) { coordinates.size.height.toDp().value }\n            onHeightChanged(heightDp)\n        }\n) { }",
+    "snippet_label": "REPORT HEIGHT TO UIKIT"
   },
   {
     "id": "f44a0e6aac2d70ed",
@@ -12460,7 +12844,14 @@
     "author": "Muhammad Ali Dev",
     "excerpt": "In Kotlin, lazy initialization is a design pattern that delays the creation of an object or computation of a value until the exact moment… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Explains Kotlin's by lazy delegate: single-execution, cached initialization on first access, the three LazyThreadSafetyMode options (SYNCHRONIZED, PUBLICATION, NONE), how it differs from lateinit, and a memory-leak pitfall when a lazy property captures a short-lived context.",
+    "topics": [
+      "kotlin",
+      "kotlin-stdlib"
+    ],
+    "code_snippet": "val heavyResource: HeavyClass by lazy {\n    HeavyClass()\n}",
+    "snippet_label": "LAZY PROPERTY DELEGATE"
   },
   {
     "id": "1f33dbfe269ced01",
@@ -12482,7 +12873,9 @@
     "author": "The 3uTools Desk",
     "excerpt": "For most users, when you mention 3uTools, the first response is managing iPhones on a Windows device. For years, we felt the same way… Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Reviews the 3uTools Android companion app's device-management features — data migration, device info, storage cleanup, and a memory booster — as a consumer utility app, not a Kotlin or Android development topic.",
+    "topics": []
   },
   {
     "id": "d8e9f7d11b5abf88",
@@ -12493,7 +12886,9 @@
     "author": "Ethan Clarke",
     "excerpt": "Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "A save-compatibility checker and backup checklist for the Summertime Saga game before installing updates. Not related to Android/Kotlin/KMP development.",
+    "topics": []
   },
   {
     "id": "7ab2c777c54c92cd",
@@ -12504,7 +12899,9 @@
     "author": "Tech GSM Softwares",
     "excerpt": "Download Link: https://unluckytool.com/oneplus-rollback-firmware-downloader/ Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Promotional listing for a third-party OnePlus firmware rollback download tool. Not developer content; spam/software-download promotion.",
+    "topics": []
   },
   {
     "id": "7a333518d8816930",
@@ -12515,7 +12912,9 @@
     "author": "Tech GSM Softwares",
     "excerpt": "Download Link: https://unluckytool.com/mjt-adb-tool-pro-v1–2–7/ Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Promotional listing for an ADB-based phone-unlocking utility (MJT ADB Tool Pro). Not developer content; spam/software-download promotion.",
+    "topics": []
   },
   {
     "id": "00868b07f3934605",
@@ -12526,7 +12925,9 @@
     "author": "GSM Toolkit Blog",
     "excerpt": "Download Link: https://unluckytool.com/key-tool-9–4-update/ Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Promotional listing for a Samsung carrier-unlock tool update. Not developer content; spam/software-download promotion.",
+    "topics": []
   },
   {
     "id": "b15ad061b20783cd",
@@ -12537,7 +12938,9 @@
     "author": "GSM Toolkit Blog",
     "excerpt": "Download Link: https://unluckytool.com/eft-pro-dongle-update-v5–5–6/ Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Promotional listing for an EFT Pro Dongle firmware update adding Apple ramdisk passcode backup/restore features. Not developer content; spam/software-download promotion.",
+    "topics": []
   },
   {
     "id": "960477042e1b2dd8",
@@ -12548,7 +12951,9 @@
     "author": "Unbox Daily HQ",
     "excerpt": "Motorola’s new tablet combines a 12.1-inch 2.5K display, 5G connectivity, a 10,200mAh battery and an AI-powered stylus. Continue reading on Medium »",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "Consumer hardware announcement for Motorola's Moto Pad 70 tablet, covering price, display, chipset, battery and included stylus. Phone/tablet spec news, not development content.",
+    "topics": []
   },
   {
     "id": "b2687edf6eb71a6e",
@@ -12559,7 +12964,12 @@
     "author": "CommonsWare",
     "excerpt": "I have moved off of Wear OS and onto a Pebble watch!",
     "date_uncertain": false,
-    "summarized": false
+    "summarized": true,
+    "summary": "CommonsWare's Mark Murphy recounts leaving Wear OS for an open-source Pebble Time 2 after growing frustrated with Google's wearable stack, and plans to start writing Pebble apps alongside his Kotlin Multiplatform work.",
+    "topics": [
+      "wear-os",
+      "kmp"
+    ]
   },
   {
     "id": "c6162ea0fe33dd17",

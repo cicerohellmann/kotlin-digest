@@ -86,6 +86,7 @@ def build_data_block(
     comic_every: int = 14,
     featured_id: str = "",
     also_ids: list = None,
+    no_games: bool = False,
 ) -> str:
     lines = ["// ══ DATA ════════════════════════════════════════════════════════════════════", ""]
 
@@ -152,10 +153,14 @@ def build_data_block(
     lines.append("")
 
     # CROSSWORD — the Games chapter puzzle (first puzzle in the pool for now).
-    try:
-        puzzles = load_puzzles()
-    except Exception:
+    # Suppressed entirely when no_games is set (the Games chapter is dropped).
+    if no_games:
         puzzles = []
+    else:
+        try:
+            puzzles = load_puzzles()
+        except Exception:
+            puzzles = []
     crossword_js = json.dumps(puzzles[0], ensure_ascii=False) if puzzles else "null"
     lines.append("const CROSSWORD = {};".format(crossword_js))
     lines.append("")

@@ -215,6 +215,8 @@ def main() -> None:
     parser.add_argument("--no-videos", action="store_true",
                         help="drop all video articles from this edition "
                              "(YouTube Shorts are already excluded globally).")
+    parser.add_argument("--no-games", action="store_true",
+                        help="suppress the Games chapter (crossword) for this edition.")
     args = parser.parse_args()
 
     start, end = edition_to_dates(args.edition)
@@ -299,6 +301,7 @@ def main() -> None:
         comic_every=COMIC_EVERY,
         featured_id=featured_id,
         also_ids=also_ids,
+        no_games=args.no_games,
     )
     html = inject_data(template, data_block)
 
