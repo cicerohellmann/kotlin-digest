@@ -85,31 +85,69 @@ handle that: only in-window, summarized articles land in the edition.
 
 ## 2b. Recover Medium bodies via a real browser (the 403 workaround)
 
-The HTTP fetcher can't get Medium content (§2), but a **headless real browser can**:
-once a tab is on `medium.com`, a same-origin `fetch()` from inside the page carries
-the browser's Cloudflare clearance and returns the full article HTML (200, not 403).
-This is how you get the ~90 Medium articles back into an edition.
+The HTTP fetcher can't get Medium-family content (§2) — Medium, `proandroiddev.com`,
+`blog.devgenius.io`, `levelup.gitconnected.com`, and `*.medium.com` all hard-block it
+at Cloudflare (403). The proven fix is a **real browser navigation**.
 
-Use the Playwright MCP (`mcp__playwright-brave__*`):
+**Why navigation, not `fetch()`.** An earlier approach opened a Medium tab and ran a
+same-origin `fetch()` from inside the page. That is unreliable: a sandboxed `fetch()`
+does **not** carry the browser's Cloudflare clearance the way a top-level navigation
+does — for many articles it throws `TypeError: Failed to fetch`, and for others it
+returns only the ~180-word "Member-only story" teaser. A real **`goto`** navigation to
+the article URL carries the clearance and returns the full server-rendered body. (Do
+not resurrect the `fetch()` method — this is why it was replaced.) Genuine member-only
+articles still return a gated ~180-word teaser; those are flagged `gated` and **dropped**
+per `docs/content-rights.md` rule 3 (member-only ⇒ headline + link only, never summarized).
 
-1. **Collect the blocked Medium URLs** — the in-window Medium articles that are still
-   `not summarized` and `not unfetchable`. Strip the `?source=…` query but keep the
-   trailing hex id (Medium 404s without it). Dump `[[id, url], …]`.
-2. **Navigate once** to any real Medium article so the browser holds a medium.com
-   origin + Cloudflare cookie:
-   `browser_navigate("https://medium.com/@nagarjuna3/…-<hexid>")`.
-3. **Batch-fetch from inside the page** with `browser_evaluate`, ~12 URLs per call.
-   The function loops `await fetch(u, {credentials:'include'})`, parses
-   `article`/`main`/`body` textContent, truncates to 6000 chars, and returns
-   `[{id, status, words, content}]`. **Save each call to a file** via the evaluate
-   `filename` param — the path MUST be under the repo (e.g.
-   `<repo>/.playwright-mcp/medium_out_NN.json`); paths outside the repo are denied.
-   Space calls with a ~250ms per-URL delay. A few will `Failed to fetch` (member-only
-   / deleted) — retry once, then leave them.
-4. **Build a Medium queue**: join the harvested `content` back to each article's
-   `title/excerpt/date/source_id` (keep only `words ≥ 60` — shorter is real junk like
-   "TSM PRO EDITION … Unlock"), and write it as `state/queue_medium.json` in the exact
-   `queue.json` shape.
+The browser is driven via the **cmux** CLI over its unix socket. This is all wrapped in
+`pipeline/recover_medium.py`:
+
+```bash
+python3.11 pipeline/recover_medium.py --edition 2026-W33
+```
+
+The tool:
+
+1. Loads `state/articles.json`, computes the edition's Mon–Sun window
+   (`edition_to_dates`), and selects in-window articles that are **not summarized**,
+   **not `is_short`**, **Medium-family** (by URL host or `source_id` prefix
+   `medium`/`proandroiddev`), and from a **`render:true`** source.
+2. Opens its own cmux browser surface (pass `--surface surface:NN` to reuse an already-open
+   one and leave it open). For each selected article it strips the `?source=…` query,
+   `goto`s the URL, waits/settles, and extracts via the proven eval JS
+   (`document.querySelector("article")||document.body` → collapse whitespace → slice to
+   6000 chars → `{words, gated, content}`; `gated` = /member-only story|Sign in to
+   read|Become a member/i on the first 400 chars).
+3. Writes `state/recovered/<id>.json` = `{id,url,words,gated,content}` per article
+   (or a record with `error` on failure). It is **resumable** — an id that already has a
+   file is skipped. `--limit N` caps the number of articles actually attempted (skips
+   don't count). Progress tally + a final summary (usable / gated / errors) print at the end.
+
+Then **build the Medium queue** from the recovered bodies — join each usable recovered
+`content` back to its article's `title/excerpt/date/source_id` and write
+`state/queue_medium.json` in the exact `queue.json` shape. Keep only `words ≥ 60` **and
+not `gated`** (drop member-only teasers per content-rights, and shorter bodies are real
+junk like "TSM PRO EDITION … Unlock"):
+
+```bash
+python3.11 - <<'PY'
+import json, glob, os
+arts = {a['id']: a for a in json.load(open('state/articles.json'))}
+q = []
+for f in glob.glob('state/recovered/*.json'):
+    r = json.load(open(f))
+    if r.get('gated') or r.get('words', 0) < 60 or not r.get('content'):
+        continue
+    a = arts.get(r['id'])
+    if not a:
+        continue
+    q.append({'id': a['id'], 'title': a['title'], 'excerpt': a.get('excerpt', ''),
+              'date': a['date'], 'source_id': a['source_id'], 'url': a['url'],
+              'content': r['content']})
+json.dump(q, open('state/queue_medium.json', 'w'), ensure_ascii=False, indent=2)
+print('queue_medium:', len(q), 'usable Medium articles')
+PY
+```
 
 Then feed `state/queue_medium.json` through §3–§5 like any other queue. Give the
 summarization agents an extra instruction for this batch: **be ruthless about junk** —
@@ -118,6 +156,7 @@ phone-spec news, and Flutter-only posts; those must get `topics: []` so they dro
 
 > Rights note: this is fetch-to-summarize, identical to what the HTTP fetcher did —
 > not republishing. Same `content-rights.md` rules apply (summarize, attribute, link).
+> Member-only (`gated`) articles are never summarized — headline + link only.
 
 ## 2c. YouTube videos — scout them, and DON'T let them get reverted
 

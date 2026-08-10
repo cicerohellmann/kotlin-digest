@@ -8,3 +8,10 @@ __pycache__/
 .venv/
 venv/
 .playwright-mcp/
+
+# Medium recovery + queue scratch (runtime, resumable)
+state/recovered/
+state/medium_urls.json
+state/other_urls.json
+state/queue_medium.json
+state/recover*.log

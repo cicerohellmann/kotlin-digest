@@ -1,6 +1,11 @@
 PYTHON := python3.11
 
-.PHONY: run scout scout-youtube bible fetch apply classify apply-snippets candidates assemble prerender preview edition-preview promote bundle test
+.PHONY: run scout scout-youtube bible fetch recover-medium apply classify apply-snippets candidates assemble prerender preview edition-preview preflight promote bundle test
+
+# Publish-time defaults injected into edition-preview/promote assembles.
+# Games (crossword) are suppressed for now (owner decision); videos likewise.
+# Override by setting ASSEMBLE_ARGS= on the command line if ever needed.
+PUBLISH_ARGS := --no-videos --no-games
 
 # Automated pipeline (steps 1-2) — safe to run unattended
 run: scout bible
@@ -23,6 +28,14 @@ bible:
 #        make apply FILE=state/summaries.json
 fetch:
 	$(PYTHON) pipeline/summarize.py
+
+# Step 2b — recover Medium-family bodies the HTTP fetcher gets 403 on, via a real
+# browser NAVIGATION (cmux), which carries Cloudflare clearance that fetch() lacks.
+# Run between `make fetch` and the batch split. Resumable; member-only stay gated
+# and are dropped. Then build state/queue_medium.json (see docs/summarize.md §2b).
+# Usage: make recover-medium EDITION=2026-W33
+recover-medium:
+	$(PYTHON) pipeline/recover_medium.py --edition $(EDITION)
 
 apply:
 	$(PYTHON) pipeline/summarize.py --apply $(FILE)
@@ -61,21 +74,33 @@ prerender:
 # silently dropped the videos was a `git restore state/articles.json` here).
 # Usage: make edition-preview EDITION=2026-W31   (then `make preview`, open /test/)
 edition-preview:
-	$(MAKE) assemble EDITION=$(EDITION) ASSEMBLE_ARGS="$(ASSEMBLE_ARGS)"
+	$(MAKE) assemble EDITION=$(EDITION) ASSEMBLE_ARGS="$(PUBLISH_ARGS) $(ASSEMBLE_ARGS)"
 	mv site/index.html site/test/index.html
 	$(PYTHON) -c "import pathlib; p=pathlib.Path('site/test/index.html'); t=p.read_text(encoding='utf-8'); \
 	p.write_text(t.replace('<head>', '<head>\n  <meta name=\"robots\" content=\"noindex\">', 1) if 'name=\"robots\"' not in t else t, encoding='utf-8')"
 	git restore site/index.html site/archive.html site/sources.html state/editions.json
 	rm -f site/editions/$(EDITION).html
 	@echo "Preview → site/test/index.html (noindex) · prod site files restored · articles.json UNTOUCHED"
+	@echo "── preflight (advisory in preview) ──"
+	-$(PYTHON) pipeline/preflight.py --edition $(EDITION)
+
+# Preflight quality gate — run before promoting. HARD checks (density, unique
+# article ids, valid urls) exit non-zero and BLOCK a promote; WARN checks
+# (stale featured pins, comics pool) are advisory. Usage: make preflight EDITION=2026-W32
+preflight:
+	$(PYTHON) pipeline/preflight.py --edition $(EDITION)
 
 # Promote a staged edition to the live front page ("flip the flag"). Runs the
 # real assemble (front page + editions/ + archive + sources, NO restore), adds
 # the edition to the sitemap, and drops the now-redundant /test/ preview. Pass
 # the SAME ASSEMBLE_ARGS the edition was previewed with.
-# Usage: make promote EDITION=2026-W31 ASSEMBLE_ARGS=--no-videos
+# Usage: make promote EDITION=2026-W31
+# Runs the preflight gate FIRST — if any HARD check fails (too few articles,
+# duplicate ids, bad urls) make aborts and nothing is assembled/committed.
+# --no-videos --no-games are applied by default (PUBLISH_ARGS).
 promote:
-	$(MAKE) assemble EDITION=$(EDITION) ASSEMBLE_ARGS="$(ASSEMBLE_ARGS)"
+	$(PYTHON) pipeline/preflight.py --edition $(EDITION)
+	$(MAKE) assemble EDITION=$(EDITION) ASSEMBLE_ARGS="$(PUBLISH_ARGS) $(ASSEMBLE_ARGS)"
 	$(PYTHON) pipeline/sitemap.py --add editions/$(EDITION).html --touch / --touch archive.html
 	rm -f site/test/index.html
 	@echo "Promoted $(EDITION) → live front page. Review 'git diff', then commit + push."
