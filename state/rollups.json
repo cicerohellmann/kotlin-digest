@@ -11,8 +11,5 @@
   },
   "a838998728cd22a9": {
     "summary": "The 1.12.0-beta03 release fixes several iOS crashes (cancelling text input, a disposed accessibility element, an iOS 14 frame-rate crash), a desktop VerifyError build failure, and Web/WASM accessibility-sizing and scroll regressions, and updates Compose Hot Reload. The rest are nightly dev builds."
-  },
-  "158c422f069b0c43": {
-    "summary": "Nine nightly dev snapshots across the 1.12.10-alpha01 and 1.12.0-rc01 lines — version-coordinate bumps only, with no documented API or behaviour changes. Relevant only for pinning bleeding-edge Compose Multiplatform builds and their matching Material3, Lifecycle 2.11.10-alpha01, and Navigation3 1.2.0-alpha03 artifacts."
   }
 }

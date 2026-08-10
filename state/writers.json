@@ -77,15 +77,15 @@
       "medium-kotlin-tag"
     ]
   },
-  "afree-tech-news": {
+  "adri-n-leyva": {
     "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "AFREE TECH NEWS",
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "name": "Adrián Leyva",
     "photo": null,
     "profile": null,
     "sources": [
-      "medium-android-tag"
+      "medium-kotlin-tag"
     ]
   },
   "afzaal-subhani": {
@@ -99,26 +99,37 @@
       "medium-android-tag"
     ]
   },
-  "ahmed-kenawy": {
+  "ajay-kumar": {
     "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "Ahmed Kenawy",
+    "first_seen": "2026-08-05",
+    "last_seen": "2026-08-05",
+    "name": "AJAY KUMAR",
     "photo": null,
     "profile": null,
     "sources": [
       "medium-android-tag"
     ]
   },
-  "akash-pandey": {
+  "ak-deepankar": {
     "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "Akash Pandey",
+    "first_seen": "2026-08-06",
+    "last_seen": "2026-08-06",
+    "name": "Ak Deepankar",
     "photo": null,
     "profile": null,
     "sources": [
-      "medium-android-tag"
+      "medium-kotlin-tag"
+    ]
+  },
+  "akhil-bodhade": {
+    "articles": 1,
+    "first_seen": "2026-08-08",
+    "last_seen": "2026-08-08",
+    "name": "Akhil Bodhade",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
     ]
   },
   "akshay-nandwana": {
@@ -277,9 +288,9 @@
     ]
   },
   "android-developers": {
-    "articles": 12,
+    "articles": 11,
     "first_seen": "2026-07-06",
-    "last_seen": "2026-08-07",
+    "last_seen": "2026-08-06",
     "name": "Android Developers",
     "photo": null,
     "profile": null,
@@ -289,9 +300,9 @@
     ]
   },
   "android-expert": {
-    "articles": 3,
+    "articles": 6,
     "first_seen": "2026-07-25",
-    "last_seen": "2026-08-09",
+    "last_seen": "2026-08-08",
     "name": "Android Expert",
     "photo": null,
     "profile": null,
@@ -532,15 +543,37 @@
       "proandroiddev"
     ]
   },
-  "climacus": {
+  "chetan-gupta": {
     "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "Climacus",
+    "first_seen": "2026-08-07",
+    "last_seen": "2026-08-07",
+    "name": "Chetan Gupta",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
+  "chimin": {
+    "articles": 1,
+    "first_seen": "2026-08-08",
+    "last_seen": "2026-08-08",
+    "name": "Chimin",
     "photo": null,
     "profile": null,
     "sources": [
       "medium-android-tag"
+    ]
+  },
+  "christophy-barth": {
+    "articles": 1,
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "name": "Christophy Barth",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
     ]
   },
   "codewall-edu": {
@@ -567,8 +600,8 @@
   },
   "cortinico": {
     "articles": 1,
-    "first_seen": "2026-08-08",
-    "last_seen": "2026-08-08",
+    "first_seen": "2026-08-04",
+    "last_seen": "2026-08-04",
     "name": "cortinico",
     "photo": null,
     "profile": null,
@@ -643,7 +676,7 @@
     ]
   },
   "dilipchandar": {
-    "articles": 3,
+    "articles": 4,
     "first_seen": "2026-07-17",
     "last_seen": "2026-08-07",
     "name": "Dilipchandar",
@@ -876,15 +909,14 @@
     ]
   },
   "gourango-sutradhar-gourab": {
-    "articles": 2,
+    "articles": 1,
     "first_seen": "2026-08-01",
-    "last_seen": "2026-08-09",
+    "last_seen": "2026-08-01",
     "name": "Gourango Sutradhar (Gourab)",
     "photo": null,
     "profile": null,
     "sources": [
-      "medium-kotlin-tag",
-      "medium-android-tag"
+      "medium-kotlin-tag"
     ]
   },
   "gsm-toolkit-blog": {
@@ -910,9 +942,9 @@
     ]
   },
   "halil-zel": {
-    "articles": 5,
+    "articles": 4,
     "first_seen": "2026-07-26",
-    "last_seen": "2026-08-09",
+    "last_seen": "2026-08-08",
     "name": "Halil Özel",
     "photo": null,
     "profile": null,
@@ -921,8 +953,8 @@
     ]
   },
   "halo": {
-    "articles": 1,
-    "first_seen": "2026-08-09",
+    "articles": 2,
+    "first_seen": "2026-08-08",
     "last_seen": "2026-08-09",
     "name": "halo",
     "photo": null,
@@ -1096,11 +1128,11 @@
       "medium-kotlin-tag"
     ]
   },
-  "jainrajat254": {
+  "jamersomfabricio": {
     "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "jainrajat254",
+    "first_seen": "2026-08-05",
+    "last_seen": "2026-08-05",
+    "name": "Jamersomfabricio",
     "photo": null,
     "profile": null,
     "sources": [
@@ -1228,6 +1260,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "kayla-redd": {
+    "articles": 1,
+    "first_seen": "2026-08-06",
+    "last_seen": "2026-08-06",
+    "name": "kayla Redd",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "kerry-beetge": {
     "articles": 2,
     "first_seen": "2026-07-29",
@@ -1327,10 +1370,21 @@
       "kotlin-youtube"
     ]
   },
+  "live-gamer-yt": {
+    "articles": 1,
+    "first_seen": "2026-08-08",
+    "last_seen": "2026-08-08",
+    "name": "Live Gamer yt",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "luca-fioravanti": {
-    "articles": 2,
+    "articles": 1,
     "first_seen": "2026-07-26",
-    "last_seen": "2026-08-09",
+    "last_seen": "2026-07-26",
     "name": "Luca Fioravanti",
     "photo": null,
     "profile": null,
@@ -1352,7 +1406,7 @@
   "mahmoud-ramadan": {
     "articles": 3,
     "first_seen": "2026-07-25",
-    "last_seen": "2026-08-09",
+    "last_seen": "2026-08-06",
     "name": "Mahmoud Ramadan",
     "photo": null,
     "profile": null,
@@ -1372,17 +1426,6 @@
     ]
   },
   "marco-behler": {
-    "articles": 1,
-    "first_seen": "2026-08-04",
-    "last_seen": "2026-08-04",
-    "name": "Marco Behler",
-    "photo": null,
-    "profile": null,
-    "sources": [
-      "jetbrains-blog"
-    ]
-  },
-  "mehul-patel": {
     "articles": 1,
     "first_seen": "2026-08-04",
     "last_seen": "2026-08-04",
@@ -1425,17 +1468,6 @@
     "profile": null,
     "sources": [
       "medium-kotlin-tag"
-    ]
-  },
-  "mike-thomas": {
-    "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "Mike Thomas",
-    "photo": null,
-    "profile": null,
-    "sources": [
-      "medium-android-tag"
     ]
   },
   "mkmuir0": {
@@ -1682,7 +1714,7 @@
     ]
   },
   "olonho": {
-    "articles": 25,
+    "articles": 30,
     "first_seen": "2026-07-15",
     "last_seen": "2026-08-08",
     "name": "olonho",
@@ -1769,17 +1801,6 @@
       "medium-kotlin-tag"
     ]
   },
-  "prashant-kumar": {
-    "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "Prashant Kumar",
-    "photo": null,
-    "profile": null,
-    "sources": [
-      "medium-android-tag"
-    ]
-  },
   "prashant-panwar": {
     "articles": 1,
     "first_seen": "2026-07-17",
@@ -1825,15 +1846,14 @@
     ]
   },
   "rafa": {
-    "articles": 2,
+    "articles": 1,
     "first_seen": "2026-07-26",
-    "last_seen": "2026-08-09",
+    "last_seen": "2026-07-26",
     "name": "RAFA",
     "photo": null,
     "profile": null,
     "sources": [
-      "medium-android-tag",
-      "medium-kotlin-tag"
+      "medium-android-tag"
     ]
   },
   "rafiul-islam": {
@@ -1856,17 +1876,6 @@
     "profile": null,
     "sources": [
       "medium-kotlin-tag"
-    ]
-  },
-  "ram-singh": {
-    "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "Ram Singh",
-    "photo": null,
-    "profile": null,
-    "sources": [
-      "medium-android-tag"
     ]
   },
   "ramadan-sayed": {
@@ -2012,6 +2021,17 @@
       "jetbrains-blog"
     ]
   },
+  "saugat-menon": {
+    "articles": 1,
+    "first_seen": "2026-08-05",
+    "last_seen": "2026-08-05",
+    "name": "Saugat Menon",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "seerror": {
     "articles": 1,
     "first_seen": "2026-07-25",
@@ -2122,6 +2142,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "steven": {
+    "articles": 1,
+    "first_seen": "2026-08-08",
+    "last_seen": "2026-08-08",
+    "name": "Steven",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "stexxe": {
     "articles": 1,
     "first_seen": "2026-08-04",
@@ -2131,6 +2162,17 @@
     "profile": null,
     "sources": [
       "lib-ktor"
+    ]
+  },
+  "subhadeep-das": {
+    "articles": 1,
+    "first_seen": "2026-08-04",
+    "last_seen": "2026-08-04",
+    "name": "Subhadeep Das",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
     ]
   },
   "subhankar-bag": {
@@ -2215,17 +2257,6 @@
     "first_seen": "2026-07-27",
     "last_seen": "2026-08-08",
     "name": "Tech GSM Softwares",
-    "photo": null,
-    "profile": null,
-    "sources": [
-      "medium-android-tag"
-    ]
-  },
-  "technical-bot": {
-    "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "Technical Bot",
     "photo": null,
     "profile": null,
     "sources": [
@@ -2453,9 +2484,20 @@
       "reddit-kotlin"
     ]
   },
-  "u-boiniok": {
+  "u-baramdeboramians": {
     "articles": 1,
-    "first_seen": "2026-08-07",
+    "first_seen": "2026-08-08",
+    "last_seen": "2026-08-08",
+    "name": "/u/baramDeBoramians",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-boiniok": {
+    "articles": 2,
+    "first_seen": "2026-08-06",
     "last_seen": "2026-08-07",
     "name": "/u/Boiniok",
     "photo": null,
@@ -2762,11 +2804,11 @@
       "reddit-kotlin"
     ]
   },
-  "u-impossible-road8195": {
+  "u-impossible-act-5254": {
     "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "/u/Impossible-Road8195",
+    "first_seen": "2026-08-04",
+    "last_seen": "2026-08-04",
+    "name": "/u/Impossible-Act-5254",
     "photo": null,
     "profile": null,
     "sources": [
@@ -2936,6 +2978,17 @@
     "profile": null,
     "sources": [
       "reddit-kotlin"
+    ]
+  },
+  "u-leros": {
+    "articles": 1,
+    "first_seen": "2026-08-04",
+    "last_seen": "2026-08-04",
+    "name": "/u/leros",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
     ]
   },
   "u-live-jellyfish-9024": {
@@ -3115,11 +3168,11 @@
       "reddit-androiddev"
     ]
   },
-  "u-out-of-the-box": {
+  "u-odd-mention-2772": {
     "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "/u/_Out_of_the_Box",
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "name": "/u/Odd_Mention_2772",
     "photo": null,
     "profile": null,
     "sources": [
@@ -3161,11 +3214,11 @@
       "reddit-kotlin"
     ]
   },
-  "u-rajan-freelancer": {
+  "u-ramzi-ali-rachedi": {
     "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "/u/rajan_freelancer",
+    "first_seen": "2026-08-06",
+    "last_seen": "2026-08-06",
+    "name": "/u/ramzi_ali_rachedi",
     "photo": null,
     "profile": null,
     "sources": [
@@ -3282,17 +3335,6 @@
       "reddit-androiddev"
     ]
   },
-  "u-shreyaspatil99": {
-    "articles": 1,
-    "first_seen": "2026-08-08",
-    "last_seen": "2026-08-08",
-    "name": "/u/Sharp_Vast1942",
-    "photo": null,
-    "profile": null,
-    "sources": [
-      "reddit-androiddev"
-    ]
-  },
   "u-shogoki555": {
     "articles": 1,
     "first_seen": "2026-08-07",
@@ -3309,6 +3351,17 @@
     "first_seen": "2026-08-03",
     "last_seen": "2026-08-06",
     "name": "/u/shreyaspatil99",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-shubhang-d": {
+    "articles": 1,
+    "first_seen": "2026-08-06",
+    "last_seen": "2026-08-06",
+    "name": "/u/Shubhang_D",
     "photo": null,
     "profile": null,
     "sources": [
@@ -3481,17 +3534,6 @@
       "reddit-kotlin"
     ]
   },
-  "u-torsten-heftrich": {
-    "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "/u/Torsten-Heftrich",
-    "photo": null,
-    "profile": null,
-    "sources": [
-      "reddit-androiddev"
-    ]
-  },
   "u-tuhikimi-dev": {
     "articles": 1,
     "first_seen": "2026-07-26",
@@ -3570,6 +3612,28 @@
       "reddit-androiddev"
     ]
   },
+  "u-wipechat": {
+    "articles": 1,
+    "first_seen": "2026-08-04",
+    "last_seen": "2026-08-04",
+    "name": "/u/WipeChat",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-xom2005": {
+    "articles": 1,
+    "first_seen": "2026-08-04",
+    "last_seen": "2026-08-04",
+    "name": "/u/Xom2005",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-yawnocdev": {
     "articles": 1,
     "first_seen": "2026-07-26",
@@ -3586,6 +3650,17 @@
     "first_seen": "2026-08-07",
     "last_seen": "2026-08-07",
     "name": "/u/Yha_Boiii",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-zer0-56": {
+    "articles": 1,
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "name": "/u/Zer0-56",
     "photo": null,
     "profile": null,
     "sources": [
@@ -3714,15 +3789,37 @@
       "medium-android-tag"
     ]
   },
-  "yadnyesh-rana": {
+  "wardharaheem": {
     "articles": 1,
-    "first_seen": "2026-08-09",
-    "last_seen": "2026-08-09",
-    "name": "YADNYESH RANA",
+    "first_seen": "2026-08-06",
+    "last_seen": "2026-08-06",
+    "name": "Wardharaheem",
     "photo": null,
     "profile": null,
     "sources": [
-      "medium-kotlin-tag"
+      "medium-android-tag"
+    ]
+  },
+  "youssef-zahran": {
+    "articles": 1,
+    "first_seen": "2026-08-06",
+    "last_seen": "2026-08-06",
+    "name": "Youssef Zahran",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "yowcali": {
+    "articles": 1,
+    "first_seen": "2026-08-07",
+    "last_seen": "2026-08-07",
+    "name": "Yowcali",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
     ]
   },
   "yves-kalume": {
@@ -3734,6 +3831,17 @@
     "profile": null,
     "sources": [
       "proandroiddev"
+    ]
+  },
+  "zachary-wander": {
+    "articles": 1,
+    "first_seen": "2026-08-08",
+    "last_seen": "2026-08-08",
+    "name": "Zachary Wander",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
     ]
   },
   "zaydenhale": {
