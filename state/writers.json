@@ -145,6 +145,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "affan-minhas": {
+    "articles": 1,
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26",
+    "name": "Affan Minhas",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "afzaal-subhani": {
     "articles": 1,
     "first_seen": "2026-07-29",
@@ -432,7 +443,7 @@
     ]
   },
   "amitguptaappschance": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-07-31",
     "last_seen": "2026-08-25",
     "name": "AmitGuptaAppschance",
@@ -499,9 +510,9 @@
     ]
   },
   "android-developers": {
-    "articles": 21,
+    "articles": 22,
     "first_seen": "2026-07-06",
-    "last_seen": "2026-08-24",
+    "last_seen": "2026-08-25",
     "name": "Android Developers",
     "photo": null,
     "profile": null,
@@ -734,9 +745,9 @@
     ]
   },
   "ayman-atif": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-08-18",
-    "last_seen": "2026-08-18",
+    "last_seen": "2026-08-25",
     "name": "Ayman Atif",
     "photo": null,
     "profile": null,
@@ -1153,9 +1164,9 @@
     ]
   },
   "dilipchandar": {
-    "articles": 6,
+    "articles": 7,
     "first_seen": "2026-07-17",
-    "last_seen": "2026-08-17",
+    "last_seen": "2026-08-26",
     "name": "Dilipchandar",
     "photo": null,
     "profile": null,
@@ -1242,9 +1253,9 @@
     ]
   },
   "dora-badrinath": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-08-08",
-    "last_seen": "2026-08-13",
+    "last_seen": "2026-08-25",
     "name": "Dora Badrinath",
     "photo": null,
     "profile": null,
@@ -1544,6 +1555,17 @@
     "first_seen": "2026-08-14",
     "last_seen": "2026-08-14",
     "name": "Gaurav Tak",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "global-digital-plug-by-eniye-charles-owei": {
+    "articles": 2,
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25",
+    "name": "Global Digital Plug  by, Eniye Charles Owei",
     "photo": null,
     "profile": null,
     "sources": [
@@ -1916,9 +1938,9 @@
     ]
   },
   "jb-compose-bot": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-07-28",
-    "last_seen": "2026-08-11",
+    "last_seen": "2026-08-25",
     "name": "jb-compose-bot",
     "photo": null,
     "profile": null,
@@ -1990,6 +2012,17 @@
     "profile": null,
     "sources": [
       "medium-kotlin-tag"
+    ]
+  },
+  "kaito-and-droid": {
+    "articles": 1,
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25",
+    "name": "Kaito and droid",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
     ]
   },
   "kalanasampath": {
@@ -2067,6 +2100,17 @@
     "profile": null,
     "sources": [
       "proandroiddev"
+    ]
+  },
+  "katie-fraser": {
+    "articles": 1,
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25",
+    "name": "Katie Fraser",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "jetbrains-blog"
     ]
   },
   "kaushik-kumar": {
@@ -2338,6 +2382,17 @@
     "first_seen": "2026-08-08",
     "last_seen": "2026-08-08",
     "name": "Marializ Sánchez Peguero",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "mark-vena": {
+    "articles": 1,
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25",
+    "name": "Mark Vena",
     "photo": null,
     "profile": null,
     "sources": [
@@ -2777,6 +2832,17 @@
       "medium-android-tag"
     ]
   },
+  "null-entity": {
+    "articles": 1,
+    "first_seen": "2026-08-26",
+    "last_seen": "2026-08-26",
+    "name": "Null Entity",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "o-uzhan-aslan": {
     "articles": 1,
     "first_seen": "2026-08-08",
@@ -2811,9 +2877,9 @@
     ]
   },
   "olonho": {
-    "articles": 48,
+    "articles": 50,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-08-25",
+    "last_seen": "2026-08-26",
     "name": "olonho",
     "photo": null,
     "profile": null,
@@ -2887,6 +2953,17 @@
       "jetbrains-blog"
     ]
   },
+  "pavansairam": {
+    "articles": 1,
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25",
+    "name": "Pavansairam",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "pavel-votyakov": {
     "articles": 1,
     "first_seen": "2026-08-07",
@@ -2921,9 +2998,9 @@
     ]
   },
   "pkrgameapk": {
-    "articles": 3,
+    "articles": 4,
     "first_seen": "2026-08-16",
-    "last_seen": "2026-08-22",
+    "last_seen": "2026-08-25",
     "name": "Pkrgameapk",
     "photo": null,
     "profile": null,
@@ -2999,9 +3076,9 @@
     ]
   },
   "pramod-patel": {
-    "articles": 7,
+    "articles": 8,
     "first_seen": "2026-07-27",
-    "last_seen": "2026-08-24",
+    "last_seen": "2026-08-26",
     "name": "Pramod Patel",
     "photo": null,
     "profile": null,
@@ -3187,9 +3264,9 @@
     ]
   },
   "recipes-for-software": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-08-05",
-    "last_seen": "2026-08-05",
+    "last_seen": "2026-08-25",
     "name": "Recipes For Software",
     "photo": null,
     "profile": null,
@@ -3356,6 +3433,17 @@
     "first_seen": "2026-08-13",
     "last_seen": "2026-08-13",
     "name": "Sanjay",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
+  "santiago-mattiauda": {
+    "articles": 1,
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25",
+    "name": "Santiago Mattiauda",
     "photo": null,
     "profile": null,
     "sources": [
@@ -3697,6 +3785,17 @@
     "first_seen": "2026-08-05",
     "last_seen": "2026-08-05",
     "name": "Supsabhi",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
+  "suryansh-prajapati": {
+    "articles": 1,
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25",
+    "name": "Suryansh Prajapati",
     "photo": null,
     "profile": null,
     "sources": [
@@ -4078,9 +4177,9 @@
     ]
   },
   "u-androidtoolsbot": {
-    "articles": 7,
+    "articles": 8,
     "first_seen": "2026-07-30",
-    "last_seen": "2026-08-20",
+    "last_seen": "2026-08-25",
     "name": "/u/androidtoolsbot",
     "photo": null,
     "profile": null,
@@ -4983,6 +5082,17 @@
       "reddit-androiddev"
     ]
   },
+  "u-its-suryansh": {
+    "articles": 1,
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25",
+    "name": "/u/its_suryansh",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-ivan-digital": {
     "articles": 1,
     "first_seen": "2026-08-02",
@@ -5260,9 +5370,9 @@
     ]
   },
   "u-meet-miyani": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-08-13",
-    "last_seen": "2026-08-16",
+    "last_seen": "2026-08-25",
     "name": "/u/meet_miyani",
     "photo": null,
     "profile": null,
@@ -5330,6 +5440,17 @@
     "first_seen": "2026-08-03",
     "last_seen": "2026-08-03",
     "name": "/u/molesterman069",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-mrhtml5000": {
+    "articles": 1,
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25",
+    "name": "/u/MrHTML5000",
     "photo": null,
     "profile": null,
     "sources": [
@@ -5502,6 +5623,17 @@
       "reddit-androiddev"
     ]
   },
+  "u-orelzion": {
+    "articles": 1,
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25",
+    "name": "/u/orelzion",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-out-of-the-box": {
     "articles": 1,
     "first_seen": "2026-08-09",
@@ -5533,6 +5665,17 @@
     "profile": null,
     "sources": [
       "reddit-kotlin",
+      "reddit-androiddev"
+    ]
+  },
+  "u-paneer-analyst": {
+    "articles": 1,
+    "first_seen": "2026-08-25",
+    "last_seen": "2026-08-25",
+    "name": "/u/paneer-analyst",
+    "photo": null,
+    "profile": null,
+    "sources": [
       "reddit-androiddev"
     ]
   },
@@ -6444,9 +6587,9 @@
     ]
   },
   "u-zimmer550king": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-07-28",
-    "last_seen": "2026-07-29",
+    "last_seen": "2026-08-25",
     "name": "/u/zimmer550king",
     "photo": null,
     "profile": null,
@@ -6665,9 +6808,9 @@
     ]
   },
   "webvify-web-to-app-using-webview": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-08-10",
-    "last_seen": "2026-08-10",
+    "last_seen": "2026-08-26",
     "name": "Webvify - Web To App using WebView",
     "photo": null,
     "profile": null,
