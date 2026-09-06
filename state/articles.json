@@ -21862,5 +21862,213 @@
     "excerpt": "I shipped an Android app with one hard constraint: it must work with zero network access, ever. No account, no analytics, no cloud. That turned out to be harder than expected once I got to localisation — 35 languages covering Latin, Cyrillic, Greek, RTL and CJK. The first thing that had to go was any font library that fetches at runtime. Downloading a typeface on first launch quietly breaks an offline promise. So everything got bundled: - Barlow for Latin + Vietnamese - Noto Sans for Greek + Cyr",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "aae31c4f4e165046",
+    "title": "Layered Root Detection: Why Any Single Check Fails",
+    "url": "https://medium.com/@legenda4250/layered-root-detection-why-any-single-check-fails-ba5481db786c?source=rss------kotlin-5",
+    "date": "2026-09-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "Alim Reshitov",
+    "excerpt": "Root and hooking detection as risk-scoring, not gatekeeping — and why the check that matters most doesn’t run on the device at all Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "74a0d9a7af377662",
+    "title": "Protecting Encryption Keys with Android Keystore",
+    "url": "https://medium.com/@jevhee/protecting-encryption-keys-with-android-keystore-6833c818318d?source=rss------kotlin-5",
+    "date": "2026-09-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "Jevi Saputra",
+    "excerpt": "Why encrypting local data isn’t enough when the encryption key is still hardcoded inside your Android app. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ead6566b9765c022",
+    "title": "SafetyNet Is Gone: Migrating to the Play Integrity API in Kotlin",
+    "url": "https://blog.stackademic.com/safetynet-is-gone-migrating-to-the-play-integrity-api-in-kotlin-f812baf155d7?source=rss------kotlin-5",
+    "date": "2026-09-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "YADNYESH RANA",
+    "excerpt": "The client swap is ten lines. What breaks migrations is where you verify the token — and forgetting requestHash entirely. Continue reading on Stackademic »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8a65d316215616cb",
+    "title": "Delegation in Practice: The by You Already Write Every Day",
+    "url": "https://medium.com/@ahmedelkrrai/delegation-in-practice-the-by-you-already-write-every-day-7a484ba034b5?source=rss------kotlin-5",
+    "date": "2026-09-05",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ahmed Elkrrai",
+    "excerpt": "The previous article in this series, “Delegated Properties: When the Property Doesn’t Own Its Value,” went underneath the by keyword… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7d7b928ec7ffe452",
+    "title": "Reducing APK Size in an 800-Module Android Project: The Complete Action Plan",
+    "url": "https://medium.com/@ramadan123sayed/reducing-apk-size-in-an-800-module-android-project-the-complete-action-plan-3c57f5f64d70?source=rss------kotlin-5",
+    "date": "2026-09-05",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ramadan Sayed",
+    "excerpt": "Every article about Android app size gives you the same twelve techniques. Enable R8. Ship an App Bundle. Use WebP. Remove unused… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e6731f008719f7e1",
+    "title": "One flag stops the Compose 1.12.0 keyboard flicker",
+    "url": "https://medium.com/@lucf15/one-flag-stops-the-compose-1-12-0-keyboard-flicker-0d4a68a9ec50?source=rss------kotlin-5",
+    "date": "2026-09-05",
+    "source_id": "medium-kotlin-tag",
+    "author": "Luca Fioravanti",
+    "excerpt": "Compose 1.12.0 has a regression: the soft keyboard closes and immediately reopens whenever focus moves from one text field to another. The… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ade6a99edf8c291e",
+    "title": "Demystifying Retrofit and OkHttp: An Android Developer’s Guide to Networking",
+    "url": "https://medium.com/@sehajkahlon437/demystifying-retrofit-and-okhttp-an-android-developers-guide-to-networking-059fa036bb41?source=rss------kotlin-5",
+    "date": "2026-09-05",
+    "source_id": "medium-kotlin-tag",
+    "author": "Sehaj kahlon",
+    "excerpt": "If you’ve built an Android app in the last few years, you’ve probably used Retrofit. It’s the undisputed king of Android networking. But… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b54ad1726407213e",
+    "title": "The Builder Pattern: Why “Invalid Objects Should Never Exist”",
+    "url": "https://medium.com/@ankitsingh101/the-builder-pattern-why-invalid-objects-should-never-exist-9ad5e92e16e9?source=rss------kotlin-5",
+    "date": "2026-09-05",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ankit Singh",
+    "excerpt": "If you’ve sat through a handful of Low-Level Design (LLD) interviews, you’ve probably been asked some version of: “How would you construct… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e3210482c291f114",
+    "title": "Xiaomi POCO X8 Power",
+    "url": "https://medium.com/@storybydhanush/xiaomi-poco-x8-power-18f4972ebf97?source=rss------android-5",
+    "date": "2026-09-06",
+    "source_id": "medium-android-tag",
+    "author": "Thanasekar K",
+    "excerpt": "Power That Doesn’t Quit Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e0e5dddcc01841e8",
+    "title": "Android Concepts Under the Hood",
+    "url": "https://medium.com/@mansimtanna15/android-concepts-under-the-hood-e04b109eeb8a?source=rss------android-5",
+    "date": "2026-09-06",
+    "source_id": "medium-android-tag",
+    "author": "Mansi Tanna",
+    "excerpt": "As Android developers, we use these concepts almost every day. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c9026cc6451959a2",
+    "title": "Minimal ADB and Fastboot: Lightweight ADB & Fastboot Tool for Windows",
+    "url": "https://medium.com/@gsmunlocktools01/minimal-adb-and-fastboot-lightweight-adb-fastboot-tool-for-windows-b6f056dc5f45?source=rss------android-5",
+    "date": "2026-09-06",
+    "source_id": "medium-android-tag",
+    "author": "Gsmunlocktools",
+    "excerpt": "Working with Android devices often requires ADB and Fastboot commands for troubleshooting, device communication, bootloader operations… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "188b84803eb733be",
+    "title": "Sony Flash Tool v0.9.36.0 Download for Sony Xperia",
+    "url": "https://medium.com/@gsmtoolszone/sony-flash-tool-v0-9-36-0-download-for-sony-xperia-5a97b065b11a?source=rss------android-5",
+    "date": "2026-09-06",
+    "source_id": "medium-android-tag",
+    "author": "Gsmtoolszone",
+    "excerpt": "Sony Xperia devices can sometimes experience boot loops, firmware problems, software errors, or other issues after an unsuccessful update… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e003da2165fe0667",
+    "title": "Why Do We Need to Sign an APK?",
+    "url": "https://medium.com/@yadhuvasanthigovindan7/why-do-we-need-to-sign-an-apk-4d5d678aa213?source=rss------android-5",
+    "date": "2026-09-06",
+    "source_id": "medium-android-tag",
+    "author": "Yadu Krishnan",
+    "excerpt": "If you are working with Android or Flutter, you have probably come across APK signing. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b8b2e339bd80e2b3",
+    "title": "‎ 最后的拥抱\n‎\n‎在一片茂密的森林里，住着一只可爱的小熊猫，名字叫米修。\n‎\n‎米修非常调皮，但在它的世界里，最重要的只有一个人——它的妈妈。❤️\n‎…",
+    "url": "https://medium.com/@sadg42463/%E6%9C%80%E5%90%8E%E7%9A%84%E6%8B%A5%E6%8A%B1-%E5%9C%A8%E4%B8%80%E7%89%87%E8%8C%82%E5%AF%86%E7%9A%84%E6%A3%AE%E6%9E%97%E9%87%8C-%E4%BD%8F%E7%9D%80%E4%B8%80%E5%8F%AA%E5%8F%AF%E7%88%B1%E7%9A%84%E5%B0%8F%E7%86%8A%E7%8C%AB-%E5%90%8D%E5%AD%97%E5%8F%AB%E7%B1%B3%E4%BF%AE-%E7%B1%B3%E4%BF%AE%E9%9D%9E%E5%B8%B8%E8%B0%83%E7%9A%AE-%E4%BD%86%E5%9C%A8%E5%AE%83%E7%9A%84%E4%B8%96%E7%95%8C%E9%87%8C-%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E4%BA%BA-%E5%AE%83%E7%9A%84%E5%A6%88%E5%A6%88-%EF%B8%8F-25b60942f618?source=rss------android-5",
+    "date": "2026-09-06",
+    "source_id": "medium-android-tag",
+    "author": "Sad Girl",
+    "excerpt": "Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "60311db06fc465fb",
+    "title": "Flutter App Security: Detecting Rooted & Jailbroken Devices",
+    "url": "https://medium.com/@oniaduragbemijoshua/flutter-app-security-detecting-rooted-jailbroken-devices-222faf671362?source=rss------android-5",
+    "date": "2026-09-06",
+    "source_id": "medium-android-tag",
+    "author": "Joshua Oni",
+    "excerpt": "If your Flutter app handles money or personal data, you will eventually need to ask one question: can I trust the device my app is running… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0394c4bb497356c0",
+    "title": "Using the new Google Gen AI SDK for Kotlin",
+    "url": "https://johnoreilly.dev/posts/genai-kotlin-sdk/",
+    "date": null,
+    "source_id": "john-oreilly",
+    "excerpt": "",
+    "date_uncertain": true,
+    "summarized": false
+  },
+  {
+    "id": "11aa62c92d0498ba",
+    "title": "Android TV dev here. I got Compose Multiplatform running on Apple TV and wrote up how.",
+    "url": "https://www.reddit.com/r/androiddev/comments/1w7uxjn/android_tv_dev_here_i_got_compose_multiplatform/",
+    "date": "2026-09-05",
+    "source_id": "reddit-androiddev",
+    "author": "/u/topper865",
+    "excerpt": "If you build for Android TV and have ever been asked \"can we do Apple TV too\", this might be useful. I have ten years on Android and Android TV. Our app went Views, then Jetpack Compose, then Compose Multiplatform so a small team could ship phone, TV, desktop, iOS and tvOS from one UI codebase. tvOS was the gap: JetBrains does not support it, and SwiftUI's focus system does not give you the control you are used to from Compose on Android TV. So I added the tvOS target to the Compose Multiplatfor",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8c24791c56800812",
+    "title": "Inexpensive development device?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1w8lchx/inexpensive_development_device/",
+    "date": "2026-09-06",
+    "source_id": "reddit-androiddev",
+    "author": "/u/error_accessing_user",
+    "excerpt": "Hi, I wrote several Android apps for an employer more than a decade ago. But, that was the last time I used Android. I was trying to register for a Google Play account to publish an app I'm working on, and they need verification that you have a real Android device. Does anyone have any thoughts about what might be good to have? This phone/tablet/whatever will only be used to verify for the Play Store, and run my app. It would be good if it could run the latest version of Android; otherwise, I'm ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "11713332c6dca0e5",
+    "title": "I added iOS binary size profiling to kmprofiler using Xcode link maps",
+    "url": "https://www.reddit.com/r/androiddev/comments/1w7z55v/i_added_ios_binary_size_profiling_to_kmprofiler/",
+    "date": "2026-09-05",
+    "source_id": "reddit-androiddev",
+    "author": "/u/bun_maska",
+    "excerpt": "Hey everyone! I previously shared kmprofiler, a Gradle plugin that finds Kotlin declarations exported to iOS but not directly referenced in Swift. v0.2.0 now adds Xcode link-map analysis. It can: Group linked symbol size by Kotlin package Show the largest symbols Map symbols to object files and frameworks Compare two builds to see what grew or became smaller I tested it on a real KMP app with more than 330,000 symbols. It measures symbols in the link map, not the complete app size, so it is main",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]
