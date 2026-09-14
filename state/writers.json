@@ -44,9 +44,9 @@
     ]
   },
   "ab-nay": {
-    "articles": 3,
+    "articles": 4,
     "first_seen": "2026-07-29",
-    "last_seen": "2026-09-04",
+    "last_seen": "2026-09-14",
     "name": "AB nay",
     "photo": null,
     "profile": null,
@@ -133,15 +133,16 @@
     ]
   },
   "abdullahkhan": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-08-12",
-    "last_seen": "2026-08-23",
+    "last_seen": "2026-09-14",
     "name": "Abdullahkhan",
     "photo": null,
     "profile": null,
     "sources": [
       "proandroiddev",
-      "medium-android-tag"
+      "medium-android-tag",
+      "medium-kotlin-tag"
     ]
   },
   "abdulrahman-mohamed": {
@@ -731,6 +732,17 @@
       "jetbrains-blog"
     ]
   },
+  "andrii-dubovyk": {
+    "articles": 1,
+    "first_seen": "2026-09-14",
+    "last_seen": "2026-09-14",
+    "name": "Andrii Dubovyk",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "proandroiddev"
+    ]
+  },
   "android-developers": {
     "articles": 36,
     "first_seen": "2026-07-06",
@@ -766,9 +778,9 @@
     ]
   },
   "androidlab-by-andre": {
-    "articles": 16,
+    "articles": 18,
     "first_seen": "2026-07-29",
-    "last_seen": "2026-09-12",
+    "last_seen": "2026-09-14",
     "name": "AndroidLab by Andre",
     "photo": null,
     "profile": null,
@@ -853,6 +865,17 @@
     "profile": null,
     "sources": [
       "jetbrains-blog"
+    ]
+  },
+  "anshraj-dhakad": {
+    "articles": 1,
+    "first_seen": "2026-09-14",
+    "last_seen": "2026-09-14",
+    "name": "Anshraj  Dhakad",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
     ]
   },
   "anton-arhipov": {
@@ -1752,9 +1775,9 @@
     ]
   },
   "dinakar-maurya": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-08-13",
-    "last_seen": "2026-08-13",
+    "last_seen": "2026-09-14",
     "name": "Dinakar Maurya",
     "photo": null,
     "profile": null,
@@ -2563,6 +2586,17 @@
     "first_seen": "2026-08-19",
     "last_seen": "2026-08-19",
     "name": "Icorpplaystore",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "idayah": {
+    "articles": 1,
+    "first_seen": "2026-09-14",
+    "last_seen": "2026-09-14",
+    "name": "idayah?",
     "photo": null,
     "profile": null,
     "sources": [
@@ -3861,6 +3895,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "munir-ahmad": {
+    "articles": 1,
+    "first_seen": "2026-09-14",
+    "last_seen": "2026-09-14",
+    "name": "Munir Ahmad",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "murmusoftwareinfotech": {
     "articles": 1,
     "first_seen": "2026-08-20",
@@ -4161,9 +4206,9 @@
     ]
   },
   "o-uzhan-aslan": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-08-08",
-    "last_seen": "2026-08-08",
+    "last_seen": "2026-09-14",
     "name": "Oğuzhan Aslan",
     "photo": null,
     "profile": null,
@@ -4470,9 +4515,9 @@
     ]
   },
   "pramod-patel": {
-    "articles": 13,
+    "articles": 14,
     "first_seen": "2026-07-27",
-    "last_seen": "2026-09-09",
+    "last_seen": "2026-09-14",
     "name": "Pramod Patel",
     "photo": null,
     "profile": null,
@@ -5000,9 +5045,9 @@
     ]
   },
   "sajid-ali": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-09-05",
-    "last_seen": "2026-09-09",
+    "last_seen": "2026-09-14",
     "name": "Sajid Ali",
     "photo": null,
     "profile": null,
@@ -5031,6 +5076,17 @@
     "profile": null,
     "sources": [
       "medium-kotlin-tag"
+    ]
+  },
+  "sandesh-raj": {
+    "articles": 1,
+    "first_seen": "2026-09-14",
+    "last_seen": "2026-09-14",
+    "name": "Sandesh Raj",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
     ]
   },
   "sandwwraith": {
@@ -5408,14 +5464,15 @@
     ]
   },
   "sixtin-mobile-app-developer": {
-    "articles": 2,
+    "articles": 4,
     "first_seen": "2026-09-12",
-    "last_seen": "2026-09-12",
+    "last_seen": "2026-09-14",
     "name": "Sixtin - Mobile App Developer",
     "photo": null,
     "profile": null,
     "sources": [
-      "medium-android-tag"
+      "medium-android-tag",
+      "medium-kotlin-tag"
     ]
   },
   "sjs": {
@@ -5988,6 +6045,17 @@
     "profile": null,
     "sources": [
       "medium-kotlin-tag"
+    ]
+  },
+  "u-471craft": {
+    "articles": 1,
+    "first_seen": "2026-09-14",
+    "last_seen": "2026-09-14",
+    "name": "/u/471Craft",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
     ]
   },
   "u-8superduper8": {
@@ -9258,9 +9326,9 @@
     ]
   },
   "u-super-performance-86": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-08-20",
-    "last_seen": "2026-09-03",
+    "last_seen": "2026-09-14",
     "name": "/u/Super-Performance-86",
     "photo": null,
     "profile": null,
@@ -9613,9 +9681,9 @@
     ]
   },
   "u-used-show-2246": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-09-12",
-    "last_seen": "2026-09-12",
+    "last_seen": "2026-09-13",
     "name": "/u/Used-Show-2246",
     "photo": null,
     "profile": null,
@@ -9633,6 +9701,17 @@
     "sources": [
       "reddit-androiddev",
       "reddit-kotlin"
+    ]
+  },
+  "u-vas224": {
+    "articles": 1,
+    "first_seen": "2026-09-14",
+    "last_seen": "2026-09-14",
+    "name": "/u/vas224",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
     ]
   },
   "u-vikashgjfu": {
@@ -10067,9 +10146,9 @@
     ]
   },
   "vitaliy-gribko": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-07-19",
-    "last_seen": "2026-08-31",
+    "last_seen": "2026-09-14",
     "name": "Vitaliy Gribko",
     "photo": null,
     "profile": null,
