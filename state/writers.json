@@ -110,6 +110,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "abdul-wahab": {
+    "articles": 1,
+    "first_seen": "2026-09-19",
+    "last_seen": "2026-09-19",
+    "name": "Abdul Wahab",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "abdullah": {
     "articles": 1,
     "first_seen": "2026-07-26",
@@ -465,6 +476,17 @@
     "profile": null,
     "sources": [
       "medium-kotlin-tag"
+    ]
+  },
+  "aliaksei-kartynnik": {
+    "articles": 1,
+    "first_seen": "2026-09-18",
+    "last_seen": "2026-09-18",
+    "name": "Aliaksei Kartynnik",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "jetbrains-blog"
     ]
   },
   "alif-hasnain-niloy": {
@@ -1043,6 +1065,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "artsiom-seliuzhytski": {
+    "articles": 1,
+    "first_seen": "2026-09-18",
+    "last_seen": "2026-09-18",
+    "name": "Artsiom Seliuzhytski",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "arumaa": {
     "articles": 1,
     "first_seen": "2026-08-17",
@@ -1155,9 +1188,9 @@
     ]
   },
   "atta-muhammad": {
-    "articles": 12,
+    "articles": 13,
     "first_seen": "2026-08-10",
-    "last_seen": "2026-09-09",
+    "last_seen": "2026-09-18",
     "name": "Atta Muhammad",
     "photo": null,
     "profile": null,
@@ -4481,9 +4514,9 @@
     ]
   },
   "olonho": {
-    "articles": 76,
+    "articles": 77,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-09-18",
+    "last_seen": "2026-09-19",
     "name": "olonho",
     "photo": null,
     "profile": null,
@@ -4712,6 +4745,17 @@
       "medium-android-tag"
     ]
   },
+  "pocketapkofficial": {
+    "articles": 1,
+    "first_seen": "2026-09-19",
+    "last_seen": "2026-09-19",
+    "name": "Pocketapkofficial",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "prabhleen-firani": {
     "articles": 1,
     "first_seen": "2026-08-25",
@@ -4817,6 +4861,28 @@
     "first_seen": "2026-09-07",
     "last_seen": "2026-09-07",
     "name": "Praveen Karuppusamy",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
+  "praveen-kumar": {
+    "articles": 1,
+    "first_seen": "2026-09-19",
+    "last_seen": "2026-09-19",
+    "name": "Praveen Kumar",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "praveen-sharma": {
+    "articles": 1,
+    "first_seen": "2026-09-19",
+    "last_seen": "2026-09-19",
+    "name": "praveen sharma",
     "photo": null,
     "profile": null,
     "sources": [
@@ -5001,9 +5067,9 @@
     ]
   },
   "rajan-maurya": {
-    "articles": 4,
+    "articles": 6,
     "first_seen": "2026-09-01",
-    "last_seen": "2026-09-03",
+    "last_seen": "2026-09-18",
     "name": "Rajan Maurya",
     "photo": null,
     "profile": null,
@@ -5034,9 +5100,9 @@
     ]
   },
   "ramadan-sayed": {
-    "articles": 14,
+    "articles": 16,
     "first_seen": "2026-08-01",
-    "last_seen": "2026-09-16",
+    "last_seen": "2026-09-18",
     "name": "Ramadan Sayed",
     "photo": null,
     "profile": null,
@@ -5090,9 +5156,9 @@
     ]
   },
   "ravi-rawal": {
-    "articles": 3,
+    "articles": 4,
     "first_seen": "2026-09-16",
-    "last_seen": "2026-09-18",
+    "last_seen": "2026-09-19",
     "name": "Ravi Rawal",
     "photo": null,
     "profile": null,
@@ -5651,6 +5717,17 @@
       "medium-android-tag"
     ]
   },
+  "shivam-saini": {
+    "articles": 1,
+    "first_seen": "2026-09-19",
+    "last_seen": "2026-09-19",
+    "name": "Shivam Saini",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "shreewin": {
     "articles": 2,
     "first_seen": "2026-09-04",
@@ -5739,6 +5816,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "simon-vergauwen": {
+    "articles": 1,
+    "first_seen": "2026-09-18",
+    "last_seen": "2026-09-18",
+    "name": "Simon Vergauwen",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "jetbrains-blog"
+    ]
+  },
   "simra-husain": {
     "articles": 1,
     "first_seen": "2026-07-27",
@@ -5762,9 +5850,9 @@
     ]
   },
   "sixtin-mobile-app-developer": {
-    "articles": 6,
+    "articles": 8,
     "first_seen": "2026-09-12",
-    "last_seen": "2026-09-15",
+    "last_seen": "2026-09-19",
     "name": "Sixtin - Mobile App Developer",
     "photo": null,
     "profile": null,
@@ -5872,6 +5960,17 @@
       "medium-android-tag"
     ]
   },
+  "stanislav-tikhomirov": {
+    "articles": 1,
+    "first_seen": "2026-09-18",
+    "last_seen": "2026-09-18",
+    "name": "Stanislav Tikhomirov",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "jetbrains-blog"
+    ]
+  },
   "stevdza-san": {
     "articles": 2,
     "first_seen": "2026-07-26",
@@ -5939,9 +6038,9 @@
     ]
   },
   "subway-surfers-mod": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-09-13",
-    "last_seen": "2026-09-16",
+    "last_seen": "2026-09-19",
     "name": "Subway Surfers Mod",
     "photo": null,
     "profile": null,
@@ -6346,9 +6445,9 @@
     ]
   },
   "tomislav-mladenov": {
-    "articles": 3,
+    "articles": 4,
     "first_seen": "2026-08-30",
-    "last_seen": "2026-09-17",
+    "last_seen": "2026-09-18",
     "name": "Tomislav Mladenov",
     "photo": null,
     "profile": null,
@@ -6578,9 +6677,9 @@
     ]
   },
   "u-alexstyl": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-08-31",
-    "last_seen": "2026-08-31",
+    "last_seen": "2026-09-18",
     "name": "/u/alexstyl",
     "photo": null,
     "profile": null,
@@ -6677,9 +6776,9 @@
     ]
   },
   "u-androidtoolsbot": {
-    "articles": 14,
+    "articles": 15,
     "first_seen": "2026-07-30",
-    "last_seen": "2026-09-17",
+    "last_seen": "2026-09-18",
     "name": "/u/androidtoolsbot",
     "photo": null,
     "profile": null,
@@ -7307,6 +7406,17 @@
       "reddit-androiddev"
     ]
   },
+  "u-dev-shushant": {
+    "articles": 1,
+    "first_seen": "2026-09-19",
+    "last_seen": "2026-09-19",
+    "name": "/u/dev_shushant",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-devbitsxyz": {
     "articles": 1,
     "first_seen": "2026-08-17",
@@ -7389,6 +7499,17 @@
     "first_seen": "2026-09-03",
     "last_seen": "2026-09-03",
     "name": "/u/DryGround7693",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-dull-painting-9815": {
+    "articles": 1,
+    "first_seen": "2026-09-18",
+    "last_seen": "2026-09-18",
+    "name": "/u/Dull-Painting-9815",
     "photo": null,
     "profile": null,
     "sources": [
@@ -8309,6 +8430,17 @@
       "reddit-androiddev"
     ]
   },
+  "u-kaliyugasufferer": {
+    "articles": 1,
+    "first_seen": "2026-09-19",
+    "last_seen": "2026-09-19",
+    "name": "/u/KaliYugaSufferer",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-kaster-64": {
     "articles": 1,
     "first_seen": "2026-08-28",
@@ -8402,6 +8534,17 @@
     "first_seen": "2026-09-11",
     "last_seen": "2026-09-11",
     "name": "/u/lambdacomplex_",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-legitimateboy6042": {
+    "articles": 1,
+    "first_seen": "2026-09-19",
+    "last_seen": "2026-09-19",
+    "name": "/u/LegitimateBoy6042",
     "photo": null,
     "profile": null,
     "sources": [
@@ -9116,6 +9259,17 @@
       "reddit-androiddev"
     ]
   },
+  "u-phenomenal008": {
+    "articles": 1,
+    "first_seen": "2026-09-18",
+    "last_seen": "2026-09-18",
+    "name": "/u/Phenomenal008",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-pleasant-set-3182": {
     "articles": 1,
     "first_seen": "2026-08-16",
@@ -9470,9 +9624,9 @@
     ]
   },
   "u-sehmisaab": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-09-16",
-    "last_seen": "2026-09-16",
+    "last_seen": "2026-09-19",
     "name": "/u/SehmiSaab",
     "photo": null,
     "profile": null,
