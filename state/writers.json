@@ -302,9 +302,9 @@
     ]
   },
   "agastya-dewan": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-09-07",
-    "last_seen": "2026-09-07",
+    "last_seen": "2026-09-21",
     "name": "Agastya Dewan",
     "photo": null,
     "profile": null,
@@ -1529,6 +1529,17 @@
       "medium-android-tag"
     ]
   },
+  "chandra-gudimetla": {
+    "articles": 1,
+    "first_seen": "2026-09-21",
+    "last_seen": "2026-09-21",
+    "name": "chandra gudimetla",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "chanzmao": {
     "articles": 7,
     "first_seen": "2026-07-31",
@@ -2492,6 +2503,17 @@
       "medium-android-tag"
     ]
   },
+  "ganhago-oficial": {
+    "articles": 1,
+    "first_seen": "2026-09-21",
+    "last_seen": "2026-09-21",
+    "name": "GanhaGo Oficial",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "gaurav-tak": {
     "articles": 1,
     "first_seen": "2026-08-14",
@@ -2582,9 +2604,9 @@
     ]
   },
   "gsm-toolkit-blog": {
-    "articles": 2,
+    "articles": 4,
     "first_seen": "2026-08-08",
-    "last_seen": "2026-08-08",
+    "last_seen": "2026-09-21",
     "name": "GSM Toolkit Blog",
     "photo": null,
     "profile": null,
@@ -4125,6 +4147,17 @@
       "medium-android-tag"
     ]
   },
+  "mudasirusman": {
+    "articles": 1,
+    "first_seen": "2026-09-21",
+    "last_seen": "2026-09-21",
+    "name": "Mudasirusman",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "muhamad-syafii": {
     "articles": 3,
     "first_seen": "2026-07-29",
@@ -4359,6 +4392,17 @@
       "medium-android-tag"
     ]
   },
+  "next2help": {
+    "articles": 1,
+    "first_seen": "2026-09-21",
+    "last_seen": "2026-09-21",
+    "name": "Next2help",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "nguyenkhacphuc": {
     "articles": 1,
     "first_seen": "2026-08-05",
@@ -4420,6 +4464,17 @@
     "first_seen": "2026-07-25",
     "last_seen": "2026-07-25",
     "name": "Nikolay Vlasov",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
+  "niraj-paul": {
+    "articles": 1,
+    "first_seen": "2026-09-21",
+    "last_seen": "2026-09-21",
+    "name": "Niraj Paul",
     "photo": null,
     "profile": null,
     "sources": [
@@ -4824,9 +4879,9 @@
     ]
   },
   "prakash-ranjan": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-08-02",
-    "last_seen": "2026-08-02",
+    "last_seen": "2026-09-21",
     "name": "Prakash Ranjan",
     "photo": null,
     "profile": null,
@@ -5112,9 +5167,9 @@
     ]
   },
   "rajan-maurya": {
-    "articles": 8,
+    "articles": 10,
     "first_seen": "2026-09-01",
-    "last_seen": "2026-09-20",
+    "last_seen": "2026-09-21",
     "name": "Rajan Maurya",
     "photo": null,
     "profile": null,
@@ -5145,9 +5200,9 @@
     ]
   },
   "ramadan-sayed": {
-    "articles": 18,
+    "articles": 20,
     "first_seen": "2026-08-01",
-    "last_seen": "2026-09-19",
+    "last_seen": "2026-09-21",
     "name": "Ramadan Sayed",
     "photo": null,
     "profile": null,
@@ -5201,9 +5256,9 @@
     ]
   },
   "ravi-rawal": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-09-16",
-    "last_seen": "2026-09-19",
+    "last_seen": "2026-09-20",
     "name": "Ravi Rawal",
     "photo": null,
     "profile": null,
@@ -5918,9 +5973,9 @@
     ]
   },
   "smart-apps-studio": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-08-25",
-    "last_seen": "2026-09-11",
+    "last_seen": "2026-09-21",
     "name": "Smart Apps Studio",
     "photo": null,
     "profile": null,
@@ -6303,9 +6358,9 @@
     ]
   },
   "tech-gsm-softwares": {
-    "articles": 4,
+    "articles": 6,
     "first_seen": "2026-07-27",
-    "last_seen": "2026-08-08",
+    "last_seen": "2026-09-21",
     "name": "Tech GSM Softwares",
     "photo": null,
     "profile": null,
@@ -7880,6 +7935,17 @@
       "reddit-androiddev"
     ]
   },
+  "u-fsrcuser": {
+    "articles": 1,
+    "first_seen": "2026-09-21",
+    "last_seen": "2026-09-21",
+    "name": "/u/fsrcuser",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-fullstack-dev33": {
     "articles": 1,
     "first_seen": "2026-07-25",
@@ -8300,9 +8366,9 @@
     ]
   },
   "u-investigatorfun5445": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-08-28",
-    "last_seen": "2026-08-28",
+    "last_seen": "2026-09-20",
     "name": "/u/InvestigatorFun5445",
     "photo": null,
     "profile": null,
@@ -9408,6 +9474,17 @@
     "first_seen": "2026-08-24",
     "last_seen": "2026-08-24",
     "name": "/u/pratiks360",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-pravejxlab": {
+    "articles": 1,
+    "first_seen": "2026-09-21",
+    "last_seen": "2026-09-21",
+    "name": "/u/Pravejxlab",
     "photo": null,
     "profile": null,
     "sources": [
@@ -10619,6 +10696,17 @@
       "reddit-androiddev"
     ]
   },
+  "u-wonderful-speaker-97": {
+    "articles": 1,
+    "first_seen": "2026-09-21",
+    "last_seen": "2026-09-21",
+    "name": "/u/Wonderful-Speaker-97",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-worldly-ad-7355": {
     "articles": 1,
     "first_seen": "2026-09-11",
@@ -11271,9 +11359,9 @@
     ]
   },
   "yudistiro-septian-dwi-saputro": {
-    "articles": 5,
+    "articles": 6,
     "first_seen": "2026-08-14",
-    "last_seen": "2026-09-20",
+    "last_seen": "2026-09-21",
     "name": "Yudistiro Septian Dwi Saputro",
     "photo": null,
     "profile": null,
