@@ -28591,5 +28591,148 @@
     "excerpt": "Hey devs, I've been experimenting with real-time camera processing pipelines on Android using MediaPipe for gesture detection, and wanted to discuss a few performance and architectural tradeoffs. When processing live camera frames for gesture recognition (like hand-tracking), balancing frame rate and CPU/GPU thermal throttling on low-to-mid-range Android devices can be tricky. Here are a few technical hurdles I ran into: Frame Conversion Bottlenecks: Converting raw YUV camera streams to RGB/Tens",
     "date_uncertain": false,
     "summarized": false
+  },
+  {
+    "id": "bc6eeaeede0710b1",
+    "title": "A shadow needs a shape, and Compose won’t guess one for you",
+    "url": "https://medium.com/mobilebytesensei/a-shadow-needs-a-shape-and-compose-wont-guess-one-for-you-d1efac846393?source=rss------kotlin-5",
+    "date": "2026-09-27",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "71207e4dee9848c7",
+    "title": "Four bytes a pixel is the number that decides whether your app gets killed",
+    "url": "https://medium.com/mobilebytesensei/four-bytes-a-pixel-is-the-number-that-decides-whether-your-app-gets-killed-f27e6606e2e9?source=rss------kotlin-5",
+    "date": "2026-09-27",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f85f3c6d06212325",
+    "title": "Compose has a dozen animation APIs and one decision tree",
+    "url": "https://medium.com/mobilebytesensei/compose-has-a-dozen-animation-apis-and-one-decision-tree-140771b7ff14?source=rss------kotlin-5",
+    "date": "2026-09-27",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a6541534e9c75bde",
+    "title": "You don’t animate from A to B, you declare B and Compose handles the rest",
+    "url": "https://medium.com/mobilebytesensei/you-dont-animate-from-a-to-b-you-declare-b-and-compose-handles-the-rest-e8a53999f2b1?source=rss------kotlin-5",
+    "date": "2026-09-27",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1214aeffe38420a8",
+    "title": "updateTransition is a state machine that happens to animate",
+    "url": "https://medium.com/mobilebytesensei/updatetransition-is-a-state-machine-that-happens-to-animate-a63d4a2ff894?source=rss------kotlin-5",
+    "date": "2026-09-27",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "df53ce5f7e9659d2",
+    "title": "You cannot fade out something that has already left the composition",
+    "url": "https://medium.com/mobilebytesensei/you-cannot-fade-out-something-that-has-already-left-the-composition-170e699a4ec9?source=rss------kotlin-5",
+    "date": "2026-09-27",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "bebf717ab5f08dd6",
+    "title": "A shared element transition is one element pretending to be two",
+    "url": "https://medium.com/mobilebytesensei/a-shared-element-transition-is-one-element-pretending-to-be-two-25af105fb725?source=rss------kotlin-5",
+    "date": "2026-09-27",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d1c7b0190e9835f6",
+    "title": "Take the clock away and animations become testable",
+    "url": "https://medium.com/mobilebytesensei/take-the-clock-away-and-animations-become-testable-5a3d46e013c7?source=rss------kotlin-5",
+    "date": "2026-09-27",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7da05aa6069214de",
+    "title": "Compose builds a second tree, and it’s the one your users hear",
+    "url": "https://medium.com/mobilebytesensei/compose-builds-a-second-tree-and-its-the-one-your-users-hear-7fea412fa8e4?source=rss------kotlin-5",
+    "date": "2026-09-27",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "69778c4cfd274fa2",
+    "title": "One card, four announcements — merging is the fix",
+    "url": "https://medium.com/mobilebytesensei/one-card-four-announcements-merging-is-the-fix-bf751ed53827?source=rss------kotlin-5",
+    "date": "2026-09-27",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1bc317c7849e5afb",
+    "title": "What is the future of Indie?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wqta2w/what_is_the_future_of_indie/",
+    "date": "2026-09-26",
+    "source_id": "reddit-androiddev",
+    "author": "/u/SomeoneSomewherre",
+    "excerpt": "What is the future of Indie? I started indie publishing (indie-hacking) about 5-6 months ago with 4 years Android Development experience. Then I came to know that development is the easy part. Distribution is the hardest. I couldn't generate any income after all these months and I'm losing motivation. Also somebody in my circle commented that Indie is dying already. And I feel so as well. Because there are vibecoders shipping tons of apps. Tons of habit trackers, finance trackers, and calorie tr",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3795a13a24d8dd58",
+    "title": "I built a small ML inference runtime in Kotlin using AndroidX WebGPU",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wqyow4/i_built_a_small_ml_inference_runtime_in_kotlin/",
+    "date": "2026-09-26",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Junior_Android_",
+    "excerpt": "I built webgpu-inference , a small experimental ML inference runtime for Android using Kotlin and AndroidX WebGPU. I also wrote a walkthrough of how it works, from model conversion to GPU execution. Github: https://github.com/l2hyunwoo/webgpu-inference Medium: https://medium.com/@l2hyunwoo/build-own-ml-inference-runtime-with-androidx-webgpu-e90131007d71 I’d love to hear your feedback on the project or the article! submitted by /u/Junior_Android_ [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b9bd5ec82a8d96fe",
+    "title": "I built dimock: inspect and mock OkHttp responses on the device, by hand or through Claude Code / Cursor",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wqnd13/i_built_dimock_inspect_and_mock_okhttp_responses/",
+    "date": "2026-09-26",
+    "source_id": "reddit-androiddev",
+    "author": "/u/CoffeCo",
+    "excerpt": "Hi r/androiddev ! I'm Yudis, an Android engineer. I built a small open-source library out of two frustrations, and I'd like some honest feedback on it. First, most of the screens I build start before the API behind them exists. So I either waited, or faked the response somewhere in the code and hoped nobody shipped it. Second, bugs tied to a response. The app only breaks when the server returns a 500, an empty list, or just hangs. Chucker showed me the request. It couldn't make the server do it ",
+    "date_uncertain": false,
+    "summarized": false
   }
 ]

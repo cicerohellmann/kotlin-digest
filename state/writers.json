@@ -5510,9 +5510,9 @@
     ]
   },
   "rajan-maurya": {
-    "articles": 29,
+    "articles": 39,
     "first_seen": "2026-09-01",
-    "last_seen": "2026-09-26",
+    "last_seen": "2026-09-27",
     "name": "Rajan Maurya",
     "photo": null,
     "profile": null,
@@ -7826,6 +7826,17 @@
       "reddit-androiddev"
     ]
   },
+  "u-coffeco": {
+    "articles": 1,
+    "first_seen": "2026-09-26",
+    "last_seen": "2026-09-26",
+    "name": "/u/CoffeCo",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-coltanium131": {
     "articles": 1,
     "first_seen": "2026-08-03",
@@ -9175,6 +9186,17 @@
     "first_seen": "2026-09-01",
     "last_seen": "2026-09-01",
     "name": "/u/Jou_See",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-junior-android": {
+    "articles": 1,
+    "first_seen": "2026-09-26",
+    "last_seen": "2026-09-26",
+    "name": "/u/Junior_Android_",
     "photo": null,
     "profile": null,
     "sources": [
@@ -10802,6 +10824,17 @@
     "profile": null,
     "sources": [
       "reddit-kotlin"
+    ]
+  },
+  "u-someonesomewherre": {
+    "articles": 1,
+    "first_seen": "2026-09-26",
+    "last_seen": "2026-09-26",
+    "name": "/u/SomeoneSomewherre",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
     ]
   },
   "u-son-le": {
