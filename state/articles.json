@@ -16,22 +16,6 @@
     "author": "Alyona Chernyaeva"
   },
   {
-    "id": "64fed70cf49d9215",
-    "title": "In Conversation With the Golden Kodee Winners",
-    "url": "https://blog.jetbrains.com/kotlin/2026/07/in-conversation-with-the-golden-kodee-winners/",
-    "date": "2026-07-03",
-    "source_id": "kotlin-blog",
-    "excerpt": "KotlinConf 2026 marked a milestone for the Kotlin community: the very first Golden Kodee Community Awards. The awards recognize the individuals and communities whose passion and dedication help the Kotlin ecosystem thrive. From creating educational content and building engaging online communities to organizing events, fostering connections, and driving positive societal impact, the Golden Kodee Awards […]",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "KotlinConf 2026 held its first Golden Kodee Community Awards, recognizing developers and communities driving Kotlin adoption. Winners spanned library authors, educators, and community organizers across multiple continents.",
-    "topics": [
-      "kotlinconf",
-      "kotlin"
-    ],
-    "author": "Jelena Ilic"
-  },
-  {
     "id": "d4d4bdcb81e3ab7f",
     "title": "Evolving how LLMs are measured for Android: the next era of Android Bench",
     "url": "https://android-developers.googleblog.com/2026/07/android-bench-llm-measurement.html",
@@ -1098,34 +1082,6 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Compose Multiplatform 1.12.0-beta02+dev4414 continuing the beta cycle toward stable 1.12.0.",
-    "topics": [
-      "compose-multiplatform"
-    ]
-  },
-  {
-    "id": "1ad175686aaacad9",
-    "title": "v1.12.10-alpha01+dev4403: Details",
-    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4403",
-    "date": "2026-07-03",
-    "source_id": "lib-compose-multiplatform",
-    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4403 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4403 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4403 org.jetbrains.androidx.navigation3:navigation3- :1.2.10-alpha01+dev4403",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Compose Multiplatform dev build v1.12.10-alpha01+dev4403 with runtime and compiler fixes.",
-    "topics": [
-      "compose-multiplatform"
-    ]
-  },
-  {
-    "id": "2969ef4ae43f3ece",
-    "title": "v1.12.0-beta02+dev4402: Details",
-    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.0-beta02%2Bdev4402",
-    "date": "2026-07-03",
-    "source_id": "lib-compose-multiplatform",
-    "excerpt": "org.jetbrains.compose. : :1.12.0-beta02+dev4402 org.jetbrains.compose.material3:material3*:1.12.0-alpha04+dev4402 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.0-rc02+dev4402 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4402",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Compose Multiplatform 1.12.0-beta02+dev4402, early beta build with focus on Wasm and iOS rendering stability.",
     "topics": [
       "compose-multiplatform"
     ]
@@ -29748,6 +29704,358 @@
     "source_id": "reddit-androiddev",
     "author": "/u/jung-gaon",
     "excerpt": "When I switched from iPhone, every podcast app on Android felt either dated or overcomplicated. So I built GlassCast: a free podcast player focused on smooth animations and simple controls. - The player takes its colours from whatever you're listening to - Pull-up panel for Up Next, speed and sleep timer (shake to restart it) - Discover tab with recommendations based on the shows you follow - New-episode notifications - Cast to other devices - Import your shows from another podcast app (supporte",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "fc31e5dc5fea52a5",
+    "title": "How Instagram Direct engineers built AI-native UI architecture with Jetpack Compose and reduced token cost per agent session by 33%",
+    "url": "https://android-developers.googleblog.com/2026/09/jetpack-compose-ai-native-ui-instagram-direct.html",
+    "date": "2026-09-30",
+    "source_id": "android-developers-blog",
+    "author": "Android Developers",
+    "excerpt": "Posted by Pavlo Stavytskyi, Software Engineer, Meta and Rebecca Franks, Developer Relations Engineer, Google This blog post is written in collaboration with the Meta team. Instagram Direct is one of the core surfaces on Instagram, handling billions of user messages every single day. Over years of iteration, the team squeezed every micro-optimization possible out of the legacy Android View system. However, maintaining and expanding a heavily optimized legacy surface creates significant technical ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "072b439f5134f1d0",
+    "title": "RustRover vs VS Code + rust-analyzer: What Changes in Your Rust Workflow",
+    "url": "https://blog.jetbrains.com/rust/2026/10/01/rustrover-vs-vs-code/",
+    "date": "2026-10-01",
+    "source_id": "jetbrains-blog",
+    "author": "Irina Mihajlovic",
+    "excerpt": "As the team behind a dedicated Rust IDE, we’re naturally curious to see how RustRover stacks up against other popular setups for Rust development and the strengths and trade-offs of each one. This article is the first in a series where we’ll look at different Rust workflows.   We’re not unbiased, but we want to give […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2b341386820d7a29",
+    "title": "Small Talk with Emiliano Bonilla, CEO and Co-Founder of Synnax",
+    "url": "https://blog.jetbrains.com/startups/2026/09/small-talk-synnax/",
+    "date": "2026-09-30",
+    "source_id": "jetbrains-blog",
+    "author": "Mitsal Athaya",
+    "excerpt": "What is Small Talk? Small Talk is our short Q&A with founders from the JetBrains Startup Program. They answer a handful of questions in their own words about what they’re building, why they started, and what they’ve figured out along the way. No pitch, no polish – just a two-minute read to meet the person […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "bcc1c793ace63337",
+    "title": "Proxy your Android emulator and iOS simulator to your local Docker stack",
+    "url": "https://proandroiddev.com/proxy-your-android-emulator-and-ios-simulator-to-your-local-docker-stack-d251321d8017?source=rss----c72404660798---4",
+    "date": "2026-09-30",
+    "source_id": "proandroiddev",
+    "author": "Jan Rabe",
+    "excerpt": "One command handles the certificate and the routing. The interesting part is why it takes fourteen steps by hand. TL;DR: Point the device at an HTTPS proxy running on your Mac. The proxy does the DNS lookup, so your Mac’s /etc/hosts becomes the single source of truth for routing. The device only needs to trust one certificate, once. If you want to skip ahead: uvx proxy-lab start android. GitHub - kibotu/proxy-lab.sh: Android's two HTTPS blockers - device trust and proxy routing - scripted end to",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c85c54d7e7ade4b1",
+    "title": "Ktor vs Spring Boot: I Picked Wrong the First Time",
+    "url": "https://medium.com/@androidlab/ktor-vs-spring-boot-i-picked-wrong-the-first-time-7db7f948d411?source=rss------kotlin-5",
+    "date": "2026-10-01",
+    "source_id": "medium-kotlin-tag",
+    "author": "AndroidLab by Andre",
+    "excerpt": "A practical comparison for Android developers who need a Kotlin backend Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7cd1d22ba60c10cd",
+    "title": "Compose 1.12 Looks Like a Minor Bump. It Isn’t.",
+    "url": "https://medium.com/@androidlab/compose-1-12-looks-like-a-minor-bump-it-isnt-1b7fced264b7?source=rss------kotlin-5",
+    "date": "2026-10-01",
+    "source_id": "medium-kotlin-tag",
+    "author": "AndroidLab by Andre",
+    "excerpt": "What actually changed from Jetpack Compose 1.11, and what will break your build first Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "aaee05d6891360be",
+    "title": "Android Modularization Part 9: Cross-Module Navigation & DI",
+    "url": "https://medium.com/@ramadan123sayed/android-modularization-part-9-cross-module-navigation-di-6f27c9341a1f?source=rss------kotlin-5",
+    "date": "2026-10-01",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ramadan Sayed",
+    "excerpt": "How features navigate to each other without knowing each other exists — and the demo-app payoff. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6c77b503ea82d9be",
+    "title": "What’s New in Kotlin 2.5.0-Beta1",
+    "url": "https://medium.com/code2mobile/whats-new-in-kotlin-2-5-0-beta1-1464b9033e88?source=rss------kotlin-5",
+    "date": "2026-10-01",
+    "source_id": "medium-kotlin-tag",
+    "author": "Jayant Kumar",
+    "excerpt": "Kotlin 2.5.0-Beta1 is out (September 23, 2026). It is an early preview, but it already shows Kotlin with less boilerplate, faster builds… Continue reading on Android Lab »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "dbcce12bbc2c26e9",
+    "title": "Google Play Production Access Questionnaire Answers (2026): All 10 Questions, Sample Answers &…",
+    "url": "https://medium.com/@RebeccaMillan-/google-play-production-access-questionnaire-answers-2026-all-10-questions-sample-answers-7e4036cfbfc8?source=rss------kotlin-5",
+    "date": "2026-09-30",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rebecca Millan",
+    "excerpt": "The complete answer workbook for the form that decides whether your app goes live — or gets sent back for another 14 days of testing. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a72b51b0ef671a9b",
+    "title": "The Origin of Mitrasthali: How a Friend’s Call and Sanskrit Etymology Built Nitivakya’s Lore",
+    "url": "https://premjitchowdhury.medium.com/the-origin-of-mitrasthali-how-a-friends-call-and-sanskrit-etymology-built-nitivakya-s-lore-81a054bdce6a?source=rss------kotlin-5",
+    "date": "2026-09-30",
+    "source_id": "medium-kotlin-tag",
+    "author": "Premjit",
+    "excerpt": "I needed a way to introduce the 86,400 time budget so users wouldn’t think Nitivakya was just another generic habit tracker. Here is the… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "552669a013e3064d",
+    "title": "Why I Stuck with Plain TEXT Columns for JSON in SQLite (And Why JSONB Didn’t Make Sense for My App)",
+    "url": "https://premjitchowdhury.medium.com/why-i-stuck-with-plain-text-columns-for-json-in-sqlite-and-why-jsonb-didnt-make-sense-for-my-kmp-a5286147a9c3?source=rss------kotlin-5",
+    "date": "2026-09-30",
+    "source_id": "medium-kotlin-tag",
+    "author": "Premjit",
+    "excerpt": "I initially planned to use binary JSONB in SQLite for my Kotlin Multiplatform app. Here is why plain TEXT columns turned out to be cleaner… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ba9be83d4478d4e9",
+    "title": "How I Built a Self-Healing Sync Engine for App Quotas (And Stopped Local State Tampering)",
+    "url": "https://premjitchowdhury.medium.com/how-i-built-a-self-healing-sync-engine-for-app-quotas-and-stopped-local-state-tampering-331acf78530a?source=rss------kotlin-5",
+    "date": "2026-09-30",
+    "source_id": "medium-kotlin-tag",
+    "author": "Premjit",
+    "excerpt": "In an offline-first app, local quota checks are for UX, not security. Here is how I combined server-side Postgres RLS and client-side… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d6f92a1031d01a07",
+    "title": "Why I Replaced Array Based Ordering with Lexicographical Ranking in Nitivakya App",
+    "url": "https://premjitchowdhury.medium.com/why-i-replaced-array-based-ordering-with-lexicographical-ranking-in-nitivakya-app-585a1258460d?source=rss------kotlin-5",
+    "date": "2026-09-30",
+    "source_id": "medium-kotlin-tag",
+    "author": "Premjit",
+    "excerpt": "Sending full order arrays on every drag-and-drop gesture was ruining sparse updates. Here is how LexoRank transformed Nitivakya’s server… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c091c90f946ff003",
+    "title": "I Tried 20+ Kotlin courses — Here Are My Top 5 Recommendations for 2027",
+    "url": "https://medium.com/javarevisited/i-tried-20-kotlin-courses-here-are-my-top-5-recommendations-for-2027-d2b8b65a2c98?source=rss------kotlin-5",
+    "date": "2026-09-30",
+    "source_id": "medium-kotlin-tag",
+    "author": "Soma",
+    "excerpt": "My Favorite online courses to learn Kotlin in 2027 Continue reading on Javarevisited »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "44095ec2fbf154bf",
+    "title": "EFT Pro Dongle V5.6.4",
+    "url": "https://medium.com/@ashirumermalik11/eft-pro-dongle-v5-6-4-729413479bb5?source=rss------android-5",
+    "date": "2026-10-01",
+    "source_id": "medium-android-tag",
+    "author": "Ashirumermalik",
+    "excerpt": "https://go.cyberslinks.com/r.php?id=MoDObD Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6f99b885a5584a6f",
+    "title": "Kotlin Multiplatform: el problema de los recursos",
+    "url": "https://medium.com/@manelcc72/kotlin-multiplatform-el-problema-de-los-recursos-fcc287820e3f?source=rss------android-5",
+    "date": "2026-10-01",
+    "source_id": "medium-android-tag",
+    "author": "manuel cabezas caldero",
+    "excerpt": "El Problema de Compartir Recursos en Kotlin Multiplatform Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "01b1817bd748e48e",
+    "title": "Dars unlock Tool Latest V2026.08.25.0",
+    "url": "https://medium.com/@ashirumermalik11/dars-unlock-tool-latest-v2026-08-25-0-3ca57dc76fe5?source=rss------android-5",
+    "date": "2026-10-01",
+    "source_id": "medium-android-tag",
+    "author": "Ashirumermalik",
+    "excerpt": "https://go.cyberslinks.com/r.php?id=z50B92 Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b0d5ef062c1b3bf1",
+    "title": "Android Developer Interview Questions: What Hiring Panels Really Ask and How to Answer Them",
+    "url": "https://medium.com/@roshan.justacademy/android-developer-interview-questions-what-hiring-panels-really-ask-and-how-to-answer-them-6c967a5a38e7?source=rss------android-5",
+    "date": "2026-10-01",
+    "source_id": "medium-android-tag",
+    "author": "Rohan sharma",
+    "excerpt": "Most people who search for android developer interview questions are not short of knowledge. They have followed courses, copied code from… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a70498cef6f173b4",
+    "title": "Is Flutter Still Worth Learning in 2026? I Asked Myself the Same Thing",
+    "url": "https://medium.com/@flutter-app/is-flutter-still-worth-learning-in-2026-i-asked-myself-the-same-thing-60e40ac5e3e4?source=rss------android-5",
+    "date": "2026-10-01",
+    "source_id": "medium-android-tag",
+    "author": "Nicolas",
+    "excerpt": "An honest look at Flutter development, Dart 3, and where it beats native and React Native Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "02954bd5a0e6578d",
+    "title": "Keep your Flame game, get a 3D world: how I bridged Flame and flutter3d",
+    "url": "https://dzolotov.medium.com/keep-your-flame-game-get-a-3d-world-how-i-bridged-flame-and-flutter3d-5f31fb968550?source=rss------android-5",
+    "date": "2026-10-01",
+    "source_id": "medium-android-tag",
+    "author": "Dmitrii Zolotov",
+    "excerpt": "How flame_flutter3d puts a real 3D renderer under a Flame game, what crosses between the two engines, and a step-by-step tutorial for your… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e8e5fb6e55d262e1",
+    "title": "Yapay Zeka Çağında MVI mı MVVM mi ?",
+    "url": "https://medium.com/@cemboragungormus/yapay-zeka-%C3%A7a%C4%9F%C4%B1nda-mvi-m%C4%B1-mvvm-mi-409df8b82bf5?source=rss------android-5",
+    "date": "2026-10-01",
+    "source_id": "medium-android-tag",
+    "author": "Cem Bora Güngörmüş",
+    "excerpt": "En son dahil olduğum bankacılık projesinde MVI kullanmıştık ve çok faydasını görmüştük. O yüzden biraz taraflı bir yazı oldu :) Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "31477b0013e50190",
+    "title": "Nomi AI Is Off the Play Store, and a Copycat Took Its Spot",
+    "url": "https://medium.com/@bernardaisolutions/nomi-ai-is-off-the-play-store-and-a-copycat-took-its-spot-b9b9a0f1bad0?source=rss------android-5",
+    "date": "2026-10-01",
+    "source_id": "medium-android-tag",
+    "author": "Bernard's AI solutions",
+    "excerpt": "Search “Nomi AI” on Google Play right now and the first result looks right. Right name, friendly description, an install button. But it is… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "acae846d01facbec",
+    "title": "v1.13.0-alpha02+dev4905: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.13.0-alpha02%2Bdev4905",
+    "date": "2026-10-01",
+    "source_id": "lib-compose-multiplatform",
+    "author": "olonho",
+    "excerpt": "org.jetbrains.compose. : :1.13.0-alpha02+dev4905 org.jetbrains.compose.material3:material3*:1.13.0-alpha02+dev4905 org.jetbrains.compose.material3.adaptive:adaptive- :1.3.0+dev4905 org.jetbrains.androidx.navigation:navigation- :2.10.0-rc01+dev4905 org.jetbrains.androidx.navigation3:navigation3-*:1.2.0-rc01+dev4905",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d064173bcbdc2f9c",
+    "title": "v1.13.0-alpha02+dev4899: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.13.0-alpha02%2Bdev4899",
+    "date": "2026-09-30",
+    "source_id": "lib-compose-multiplatform",
+    "author": "olonho",
+    "excerpt": "org.jetbrains.compose. : :1.13.0-alpha02+dev4899 org.jetbrains.compose.material3:material3*:1.13.0-alpha02+dev4899 org.jetbrains.compose.material3.adaptive:adaptive- :1.3.0+dev4899 org.jetbrains.androidx.navigation:navigation- :2.10.0-rc01+dev4899 org.jetbrains.androidx.navigation3:navigation3-*:1.2.0-rc01+dev4899",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "03449dcdc4517788",
+    "title": "Brought my Gradle build time from 6 mins to 26 secs :))",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wuu508/brought_my_gradle_build_time_from_6_mins_to_26/",
+    "date": "2026-10-01",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Boiniok",
+    "excerpt": "Hello everyone, So I've been working on my open source app since last 5 months and everytime i used to start my android studios it used to take around 6 mins to build gradle and the subsequent runs used to take slightly less... and tbh i was frustated of this. so yeah i decided to dig into whats the issue, googled stuff and found out ./gradlew build --scan which basically generates a detailed HTML dashboard tracking configuration times and task execution timelines Through that i found out my loc",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "801a3626e02072de",
+    "title": "My app got approved in... 30mins?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wu8yzb/my_app_got_approved_in_30mins/",
+    "date": "2026-09-30",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Puzzleheaded-Emu-168",
+    "excerpt": "Have you guys experienced this? I’ve had this app on Apple’s App Store for around 3 weeks now and recently added IAP/subscription plans. I submitted it to Play Console around the same time, but I had to go through the 12 testers for 14 days requirement before I could submit to production. After a little over 2 weeks, that got approved too. The version that went through testing was still the free version without IAP. It took me a bit more time to figure out all the Android requirements for subscr",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "cf963baa56af2b11",
+    "title": "Made a pitch detection library for Android",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wuqypu/made_a_pitch_detection_library_for_android/",
+    "date": "2026-10-01",
+    "source_id": "reddit-androiddev",
+    "author": "/u/nicolaou_nicos",
+    "excerpt": "I’ve been working on a Android library for pitch and chord detection using Kotlin. It started as an experiment with audio processing and ended up becoming a library that uses FFT/YIN for pitch detection and chroma for chord detection. Repo: https://github.com/NicosNicolaou16/PitchKit submitted by /u/nicolaou_nicos [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "510fcd5872e02b0e",
+    "title": "With all the AI changes happening, how hard is for Android seniors to find remote work today?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wuspgc/with_all_the_ai_changes_happening_how_hard_is_for/",
+    "date": "2026-10-01",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Archeage123123",
+    "excerpt": "Is it harder or easier compared to 2 years ago? submitted by /u/Archeage123123 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7fa71bdfb5ef862b",
+    "title": "Paid the dev registration fee but PlayStore Console still asks me to create an account — normal?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wu4c6e/paid_the_dev_registration_fee_but_playstore/",
+    "date": "2026-09-30",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Realistic-Host8381",
+    "excerpt": "Hi! First-time dev. I paid the one-time registration fee (receipt says \"Android Developer Console registration Fee\" , ~$25) and got an email saying my Android Developer Console account was validated (the package-name registration thing). But going to play.google.com/console , it still tells me to create a developer account from scratch — like I never paid. Anyone hit this recently? I'va already did it ! --> Thanks :) https://preview.redd.it/d2n0yqo3onsh1.png?width=768&format=png&auto=webp&s=5eaa",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4c1f6f134c1de30d",
+    "title": "I built a open-source, ad-free SQLite Admin app for Android because the Play Store options are broken",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wufkxn/i_built_a_opensource_adfree_sqlite_admin_app_for/",
+    "date": "2026-09-30",
+    "source_id": "reddit-androiddev",
+    "author": "/u/AmyS3_br",
+    "excerpt": "Hey everyone, Like many of you, I've spent hours trying to find a reliable, clean way to browse local SQLite databases on an Android test device without pulling files over ADB, Network or external Storage every single time. Most of the apps currently available on the Play Store are either crap, locked behind paywalls, missing basic features or cluttered with intrusive ads. To solve this, I built SqliteAdmin a completely free and open-source database manager designed specifically for performance ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "cc1a3989d00eacef",
+    "title": "Android Developer Verification",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wu9r7x/android_developer_verification/",
+    "date": "2026-09-30",
+    "source_id": "reddit-androiddev",
+    "author": "/u/MatthewAtGoogle",
+    "excerpt": "A safer Android ecosystem begins with accountability and trust! Today marks the start of our gradual roll-out of Android developer verification — a foundational first step in protecting billions of users, while preserving the open platform developers rely on. We're starting with 7 participating app stores in Brazil, Indonesia, Thailand and Singapore. Following this initial phase with the participating app stores , we will continue to work with additional Android app stores to gradually expand de",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b6a2bc65ed181b2e",
+    "title": "Anyone can direct me to a framework",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wtt4k5/anyone_can_direct_me_to_a_framework/",
+    "date": "2026-09-30",
+    "source_id": "reddit-androiddev",
+    "author": "/u/realdreamer1993",
+    "excerpt": "That I can use as base to build free floating app. Floating means like windows or linux GUI that I can resize, positioning, etc. So I will build several different apps that open one by one and I can view all them at once inside this root window. Edit: Above is my original question. Then I make a bit of research and the result is it is possible and is supported by Android with this schema: - lets say my main app B, it must pass everything if want to listed in Google Play Store. - lets say my plug",
     "date_uncertain": false,
     "summarized": false
   }
