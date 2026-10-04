@@ -31,21 +31,6 @@
     "author": "Android Developers"
   },
   {
-    "id": "a7051db035740859",
-    "title": "Google Play launches the first Indie Games Fund in Africa",
-    "url": "https://android-developers.googleblog.com/2026/07/Indie-Games-Fund-Africa.html",
-    "date": "2026-07-06",
-    "source_id": "android-developers-blog",
-    "excerpt": "Posted by Steph Pio, Strategic Partnerships Manager, Google Play EMEA Sub-Saharan Africa is home to some of the world’s most creative storytelling. To help bring those stories to a global audience, today, we’re proud to announce the debut of Google Play’s Indie Games Fund in Africa. The region’s unique creativity has fueled a vibrant game development scene, helping drive what is quickly becoming one of the most exciting, resilient, and fast-growing gaming markets. It’s a space defined by immense",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Google Play launched its first Indie Games Fund targeting Sub-Saharan Africa, offering funding and support to local game developers to reach global audiences. The fund is part of Play's broader initiative to grow the developer ecosystem in emerging markets.",
-    "topics": [
-      "android-developers"
-    ],
-    "author": "Android Developers"
-  },
-  {
     "id": "196355b460e89179",
     "title": "What’s Next for TeamCity – CI/CD by JetBrains",
     "url": "https://blog.jetbrains.com/teamcity/2026/07/whats-next-for-teamcity/",
@@ -177,67 +162,6 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Part 2 of an on-device AI series focusing on Firebase AI Logic for running ML models locally on Android. Covers model quantization, Firebase ML hosting vs bundling, and integrating inference results into Compose UI.",
-    "topics": [
-      "android-api"
-    ]
-  },
-  {
-    "id": "9af187b5f4452780",
-    "title": "BroadcastReceiver Security: 7 Mistakes Every Android Developer Should Avoid",
-    "url": "https://proandroiddev.com/broadcastreceiver-security-7-mistakes-every-android-developer-should-avoid-7eeb8439b986?source=rss----c72404660798---4",
-    "date": "2026-07-06",
-    "source_id": "proandroiddev",
-    "excerpt": "“Every exported component is a potential entry point. Secure it as if an attacker already knows it exists.”\n — Android Security Best… Continue reading on ProAndroidDev »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Documents seven BroadcastReceiver security mistakes including exported receivers without permissions, implicit intents from untrusted apps, and missing signature-level protection. Each mistake includes a vulnerable example and a secure alternative.",
-    "topics": [
-      "android-api",
-      "jetpack"
-    ],
-    "paywalled": true
-  },
-  {
-    "id": "a1f001c02053cbc4",
-    "title": "How I Found a Deadlock Inside ART That ART Itself Couldn’t Dump",
-    "url": "https://proandroiddev.com/how-i-found-a-deadlock-inside-art-that-art-itself-couldnt-dump-ff7b33b0334a?source=rss----c72404660798---4",
-    "date": "2026-07-06",
-    "source_id": "proandroiddev",
-    "excerpt": "A whole-VM lock-ordering deadlock between the garbage collector and the JDWP debug layer, reproduced on two independent targets, bisected to a specific ART mainline update — filed as Issue #530992434 on the Android Public Tracker. TL;DR On Android 16, attaching a Java debugger (JDWP) to a large debuggable app reliably freezes the whole process and triggers an ANR. The same app runs fine without a debugger, and small apps attach with no problem. The cause is a userspace lock-ordering deadlock bet",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "A developer traced a production deadlock to a race condition inside Android Runtime itself, unreachable by standard crash reporting because ART couldn't dump the thread state. The investigation used JDWP, custom signal handlers, and native tracing to confirm the root cause.",
-    "topics": [
-      "android-api"
-    ]
-  },
-  {
-    "id": "78995ebbdaae090a",
-    "title": "Keep UI-Only Logic in the UI with snapshotFlow",
-    "url": "https://proandroiddev.com/keep-ui-only-logic-in-the-ui-with-snapshotflow-4efe34063f03?source=rss----c72404660798---4",
-    "date": "2026-07-06",
-    "source_id": "proandroiddev",
-    "excerpt": "Not every piece of UI state belongs in your ViewModel. Scroll position, selection, and other UI-only state can stay in the UI. snapshotFlow lets you react to those changes while keeping your architecture simple and idiomatic. Image created by UI Jetpack Compose gives us an elegant way to describe UI with immutable state and recomposition. At the same time, Kotlin’s Flowhas become the standard tool for building reactive pipelines. Sooner or later, these two worlds meet. You have a piece of Compos",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Shows how to use snapshotFlow to bridge Compose state into coroutine flows, keeping UI-only reactive logic inside composables rather than leaking it into ViewModels. Includes comparison with collectAsState and guidance on when each pattern fits.",
-    "topics": [
-      "compose",
-      "flows"
-    ],
-    "code_snippet": "LaunchedEffect(Unit) {\n    snapshotFlow { listState.firstVisibleItemIndex }\n        .collect { index ->\n            analytics.logScroll(index)\n        }\n}",
-    "snippet_label": "SNAPSHOT FLOW"
-  },
-  {
-    "id": "0c5f458d8b6d93ef",
-    "title": "The Android Crash That Only Happened on Certain Phones",
-    "url": "https://proandroiddev.com/the-android-crash-that-only-happened-on-certain-phones-16ce2effe84e?source=rss----c72404660798---4",
-    "date": "2026-07-06",
-    "source_id": "proandroiddev",
-    "excerpt": "How to use Crashlytics to isolate and fix OEM-specific resource not found exceptions As Android Developers, we will use resources like icons, colors, and fonts, etc in our app as per the requirement. While creating a feature and testing it on our available emulators or real devices, we may not face it. And based on the geography we are located in, we may only have devices like Pixel, Samsung, Xiaomi, and OnePlus. And some device manufacturers may stop manufacturing new devices, and those can bec",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Investigation of a crash that only reproduced on specific Android device models due to differences in manufacturer-customized ROM behavior and non-standard OEM sensor drivers. Covers the debugging process using Firebase Crashlytics, device farms, and targeted ANR analysis.",
     "topics": [
       "android-api"
     ]
@@ -973,21 +897,6 @@
     ]
   },
   {
-    "id": "19dfec4be63692b2",
-    "title": "Dagger 2.60.1",
-    "url": "https://github.com/google/dagger/releases/tag/dagger-2.60.1",
-    "date": "2026-07-06",
-    "source_id": "lib-hilt-dagger",
-    "excerpt": "Bug fixes: Fixes #5203 : Fixes regression in Dagger 2.60 where the Hilt compiler options (like fastInit) failed to propagate to the Hilt aggregation compilation tasks. ( e181a0d ) Fixes #5204 : Fixes @CanIgnoreReturnValue import error by removing the annotation from ActivityRetainedComponentBuilder ( 3f2dd8f )",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Dagger 2.60.1 release with bug fixes for component factory generation and improved error messages for missing bindings. Incremental maintenance release with no new API surface.",
-    "topics": [
-      "hilt"
-    ],
-    "author": "bcorso"
-  },
-  {
     "id": "4e3268874e93b0fa",
     "title": "July 07, 2026",
     "url": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_07_2026",
@@ -1054,34 +963,6 @@
     "date_uncertain": false,
     "summarized": true,
     "summary": "Compose Multiplatform 1.12.0-beta02+dev4432, progressing toward the stable 1.12.0 release with focus on stability fixes in the iOS and Desktop targets.",
-    "topics": [
-      "compose-multiplatform"
-    ]
-  },
-  {
-    "id": "1ae722ac9e98d62d",
-    "title": "v1.12.10-alpha01+dev4413: Details",
-    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4413",
-    "date": "2026-07-06",
-    "source_id": "lib-compose-multiplatform",
-    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4413 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4413 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4413 org.jetbrains.androidx.navigation3:navigation3- :1.2.10-alpha01+dev4413",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Compose Multiplatform dev build v1.12.10-alpha01+dev4413 with incremental improvements.",
-    "topics": [
-      "compose-multiplatform"
-    ]
-  },
-  {
-    "id": "c0eaabff0fcc82df",
-    "title": "v1.12.0-beta02+dev4414: Details",
-    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.0-beta02%2Bdev4414",
-    "date": "2026-07-06",
-    "source_id": "lib-compose-multiplatform",
-    "excerpt": "org.jetbrains.compose. : :1.12.0-beta02+dev4414 org.jetbrains.compose.material3:material3*:1.12.0-alpha04+dev4414 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.0-rc02+dev4414 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4414",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Compose Multiplatform 1.12.0-beta02+dev4414 continuing the beta cycle toward stable 1.12.0.",
     "topics": [
       "compose-multiplatform"
     ]
@@ -1324,21 +1205,6 @@
     "summary": "Reddit thread about hitting Gemini's rate limits inside Android Studio's AI assistant during active development sessions. Discussion of workarounds including API key rotation and offline fallback models.",
     "topics": [
       "android-developers"
-    ]
-  },
-  {
-    "id": "4b6547aece196425",
-    "title": "Hikage - A real-time Android View runtime powered by Kotlin DSL",
-    "url": "https://www.reddit.com/r/androiddev/comments/1uouo5p/hikage_a_realtime_android_view_runtime_powered_by/",
-    "date": "2026-07-06",
-    "source_id": "reddit-androiddev",
-    "excerpt": "I have been writing Android long enough to feel the strange split in the UI world. On one side, XML is boring in the best and worst ways. It is stable, deeply integrated with the platform, understood by every legacy custom View, and still works with the Android pipeline that has existed for years. On the other side, Jetpack Compose gives Kotlin developers a much better authoring model: UI as code, local composition, reusable functions, less ceremony. But real projects are rarely clean rewrites. ",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Hikage is a new library that provides a real-time Android View layout runtime powered by a Kotlin DSL, letting developers define and update View hierarchies in code without XML inflation. Targets teams building dynamic or server-driven UIs with the classic View system.",
-    "topics": [
-      "android-api",
-      "kotlin"
     ]
   },
   {
@@ -3645,16 +3511,6 @@
     "date": "2026-07-07",
     "source_id": "reddit-kotlin",
     "excerpt": "For you that is coming to play with KMP, I hope you never need touch XCFramework. KMP is great and its goals is right but as any other multiplatform solution, you won't have a good life. Avoid as much as possible keep you Kotlin version up to date if you aren't a \"Kotlin Core\" framework driven. Any third-party library added to your project will be a headache. As expected, latest releases improved XCFramework only. It isn't available in previous releases of course. Are you mixing Swift and Kotlin",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "993fc703fc6634ee",
-    "title": "I built kUML — a Kotlin-native UML/SysML tool designed from day one for the LLM era",
-    "url": "https://www.reddit.com/r/Kotlin/comments/1up3pv0/i_built_kuml_a_kotlinnative_umlsysml_tool/",
-    "date": "2026-07-06",
-    "source_id": "reddit-kotlin",
-    "excerpt": "Hey everyone, I've spent twenty years writing UML and SysML in automotive R&D — Car2x, autonomous-driving validation, safety-critical embedded systems. In every team I've worked with, the same workflow runs on repeat: Draw the diagram in Enterprise Architect or MagicDraw. Export PNG. Paste into Confluence or a Word deliverable. Six weeks later, rename the class in the code. Forget the diagram exists. Eight months later, somebody in review asks which version is binding. Nobody knows. This isn't a",
     "date_uncertain": false,
     "summarized": false
   },
@@ -30691,6 +30547,236 @@
     "source_id": "reddit-androiddev",
     "author": "/u/PsychologicalCamp118",
     "excerpt": "Hey everyone, I’m currently looking for a good tracking and analytics tool specifically tailored for the Google Play Store, similar to what App Store Tracker offers for Apple. What tools are you guys using for Android app intelligence and ASO tracking that actually work well and don’t cost a fortune? Would love to hear your recommendations, experiences, or hidden gems you rely on for your apps. Thanks in advance! submitted by /u/PsychologicalCamp118 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4cf9ea9439c79f40",
+    "title": "Moving Local Storage to Jetpack DataStore Without Paying a Cent in Performance",
+    "url": "https://proandroiddev.com/moving-local-storage-to-jetpack-datastore-without-paying-a-cent-in-performance-e709b28719de?source=rss------kotlin-5",
+    "date": "2026-10-04",
+    "source_id": "medium-kotlin-tag",
+    "author": "Taufik Amaryansyah",
+    "excerpt": "How we replaced the storage foundation of a large-scale app, then proved it with numbers. Continue reading on ProAndroidDev »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d42734943eea15a9",
+    "title": "adb install -r doesn’t kill your app, so your screenshot is a lie",
+    "url": "https://medium.com/mobilebytesensei/adb-install-r-doesnt-kill-your-app-so-your-screenshot-is-a-lie-54d0ab6466ec?source=rss------kotlin-5",
+    "date": "2026-10-04",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b8f0831892af3c95",
+    "title": "Why Your Android Gradle Build Is Slow — and How to Diagnose It",
+    "url": "https://medium.com/@agnihotrikshitiz/why-your-android-gradle-build-is-slow-and-how-to-diagnose-it-cb48abee7c56?source=rss------kotlin-5",
+    "date": "2026-10-04",
+    "source_id": "medium-kotlin-tag",
+    "author": "kshitiz agnihotri",
+    "excerpt": "A five-minute build can turn a tiny edit into a long interruption. In a multi-module Android app, the fix is rarely “make Gradle do… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "81481592a89b2eae",
+    "title": "R8, String Encryption, and Frida Detection: Raising the Cost of Reverse Engineering",
+    "url": "https://medium.com/@legenda4250/r8-string-encryption-and-frida-detection-raising-the-cost-of-reverse-engineering-ee32cf1b7944?source=rss------kotlin-5",
+    "date": "2026-10-04",
+    "source_id": "medium-kotlin-tag",
+    "author": "Alim Reshitov",
+    "excerpt": "An honest look at what obfuscation actually buys a banking app — and what it doesn’t Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f8bf9367521f9270",
+    "title": "Cloud Storage for Photographers: The Complete Guide",
+    "url": "https://medium.com/@aelxried/cloud-storage-for-photographers-the-complete-guide-66cbbb4339d8?source=rss------kotlin-5",
+    "date": "2026-10-04",
+    "source_id": "medium-kotlin-tag",
+    "author": "Aelxried",
+    "excerpt": "Cloud storage for photographers can protect your photos from drive failure, theft and ransomware. Compare backup features, security, costs… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "fb36f0db0bc90490",
+    "title": "Why Offline-First Inventory Apps Are Harder Than They Look",
+    "url": "https://medium.com/@taufikfredipratama/why-offline-first-inventory-apps-are-harder-than-they-look-6eb0253c0cac?source=rss------kotlin-5",
+    "date": "2026-10-04",
+    "source_id": "medium-kotlin-tag",
+    "author": "Taufik Fredi Pratama",
+    "excerpt": "A quantity looked simple until transfers and physical counts started overlapping. Notes from building a local-first Android inventory… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "63cdfb30687c35dc",
+    "title": "12 Clever Kotlin Tricks That Make Your Code Feel Surprisingly Smart",
+    "url": "https://medium.com/codex/12-clever-kotlin-tricks-that-make-your-code-feel-surprisingly-smart-1feb873b7957?source=rss------kotlin-5",
+    "date": "2026-10-03",
+    "source_id": "medium-kotlin-tag",
+    "author": "Zayd Islam",
+    "excerpt": "Towards Becoming Senior Engineer Series Continue reading on CodeX »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0632ee0f42976144",
+    "title": "StreetComplete Reached iOS With 41 Lines of Swift. I Measured How It Split the Code",
+    "url": "https://halilozel1903.medium.com/streetcomplete-reached-ios-with-41-lines-of-swift-i-measured-how-it-split-the-code-c76cdd9b6bc4?source=rss------kotlin-5",
+    "date": "2026-10-03",
+    "source_id": "medium-kotlin-tag",
+    "author": "Halil Özel",
+    "excerpt": "The popular OpenStreetMap editor went from a pure Android app to 97.7% shared Kotlin, and its iOS version is now in public beta on… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "aee7907aa8105bbf",
+    "title": "Navi Android SDE-1 Interview Experience (2.9 YOE) | DSA, Machine Coding & Android",
+    "url": "https://akashchandra2343.medium.com/navi-android-sde-1-interview-experience-2-9-yoe-dsa-machine-coding-android-ae70c589838f?source=rss------kotlin-5",
+    "date": "2026-10-03",
+    "source_id": "medium-kotlin-tag",
+    "author": "Akash chandra",
+    "excerpt": "A detailed breakdown of the DSA, machine coding, Android & Kotlin questions I faced during my Navi SDE-1 interview. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a9af7cf3ac9cca6a",
+    "title": "Nykaa SDE II (Android) Interview Experience: 3 Rounds, What They Asked, and How Deep They Went",
+    "url": "https://theadityatiwari.medium.com/nykaa-sde-ii-android-interview-experience-3-rounds-what-they-asked-and-how-deep-they-went-bfc15c388965?source=rss------kotlin-5",
+    "date": "2026-10-03",
+    "source_id": "medium-kotlin-tag",
+    "author": "Aditya Tiwari",
+    "excerpt": "4 rounds, the real topics, the depth they expect, and the Must Know strategy that saved my preparation time. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8247cd76f252ad90",
+    "title": "Review Santai: Advan Tab A10, Tablet Sejutaan Mid yang Banyak SnK-nya",
+    "url": "https://medium.com/@anggwar/review-santai-advan-tab-a10-tablet-sejutaan-mid-yang-banyak-snk-nya-da1ca29627e1?source=rss------android-5",
+    "date": "2026-10-04",
+    "source_id": "medium-android-tag",
+    "author": "Angga Agia Wardhana",
+    "excerpt": "Bukan buat semua orang, tapi bisa menemani penggunanya. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5152c9b6d16c09c4",
+    "title": "I Built an App That Paints the Streets You’ve Walked. GPS and Map Matching",
+    "url": "https://medium.com/@vrclub148n1/i-built-an-app-that-paints-the-streets-youve-walked-gps-and-map-matching-0c7d0537673f?source=rss------android-5",
+    "date": "2026-10-04",
+    "source_id": "medium-android-tag",
+    "author": "Ivan",
+    "excerpt": "I moved to another country, and I got hooked on walking around and exploring new places. Then I started traveling, and I wanted to know… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "144abf9a5353d7b1",
+    "title": "The first inference is the one users judge you on",
+    "url": "https://medium.com/mobilebytesensei/the-first-inference-is-the-one-users-judge-you-on-4dfaff804868?source=rss------android-5",
+    "date": "2026-10-04",
+    "source_id": "medium-android-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "53b0b1b0e3f2752c",
+    "title": "What a local model does to your battery",
+    "url": "https://medium.com/mobilebytesensei/what-a-local-model-does-to-your-battery-378d79e3f99a?source=rss------android-5",
+    "date": "2026-10-04",
+    "source_id": "medium-android-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ca77d25d6955096b",
+    "title": "How to Factory Reset Samsung Phone — Hard Reset Samsung",
+    "url": "https://medium.com/@nur.zuinfo2/how-to-factory-reset-samsung-phone-hard-reset-samsung-4ae760a291d5?source=rss------android-5",
+    "date": "2026-10-04",
+    "source_id": "medium-android-tag",
+    "author": "Ufo187",
+    "excerpt": "I show you how to factory reset any Samsung phone and perform a hard reset to restore your Samsung Android device to factory settings. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1d780f0570db9564",
+    "title": "React Native vs. Flutter vs. Native: Why Cure.fit Rebuilt Its Navigation From Scratch",
+    "url": "https://medium.com/@ciphemicacademia/react-native-vs-flutter-vs-native-why-cure-fit-rebuilt-its-navigation-from-scratch-4f3aa658c6d8?source=rss------android-5",
+    "date": "2026-10-04",
+    "source_id": "medium-android-tag",
+    "author": "Ciphemicacademia",
+    "excerpt": "React Native vs. Flutter vs. Native: Why Cure.fit Rebuilt Its Navigation From Scratch Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "cbd8685cb448d91d",
+    "title": "Kotlin Multiplatform iOS build times: what's actually driving the cost",
+    "url": "https://johnoreilly.dev/posts/kmp-ios-build-times/",
+    "date": null,
+    "source_id": "john-oreilly",
+    "excerpt": "",
+    "date_uncertain": true,
+    "summarized": false
+  },
+  {
+    "id": "011b82edc31f6f02",
+    "title": "5 years into Android, 8 months of heavy Claude Code use — am I getting too dependent on AI?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wwrnls/5_years_into_android_8_months_of_heavy_claude/",
+    "date": "2026-10-03",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Null_PointerX",
+    "excerpt": "Hey everyone, I’m an Android developer with ~5 years of experience. For the last 8 months, I’ve been coding almost entirely with Claude Code. I’ve been very productive, delivered impressive results, and my company is happy. But I feel like I’m not learning as much anymore. There are parts of my codebase that I barely understand because Claude implemented them, even though they work perfectly. Recently, I had a technical interview with some relatively simple coding. My mind completely froze and I",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "456af5f694380c73",
+    "title": "Cranpose, Jetpack Compose in Rust",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wx9dqr/cranpose_jetpack_compose_in_rust/",
+    "date": "2026-10-04",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Secure_Pirate9838",
+    "excerpt": "Hello everyone! It's been almost a year since that idea came to my mind, so I would like to share with you and take some feedback. The idea is that in AI era the most popular language would be Rust, and as and Android dev myself I want to transfer my knowledge of Jetpack Compose to the new ecosystem. It also very handy to be able to review the code the AI agents made, at least to understand whats happening. I made this guide that introduces you to the project and how Jetpack Compose translates t",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8c4d46ffa37dbe02",
+    "title": "Can’t change which Google Play account is used for in-app purchases/subscriptions",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wwv3av/cant_change_which_google_play_account_is_used_for/",
+    "date": "2026-10-03",
+    "source_id": "reddit-androiddev",
+    "author": "/u/MFlaggy",
+    "excerpt": "I have an Android app already published publicly on Google Play One Google account on my phone was previously used as a license tester. I removed the license testing email list and stopped the closed testing anf removed also the email list in Play Console Now I’m trying to test the production subscription flow with another Google account on the same phone. I switched to the new Google account in the Play Store uninstalled the app cleared Google Play Store data/cache restarted the phone reinstall",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "cca0a3e1c20449c1",
+    "title": "How are you guys handling high-frequency network state in Compose without killing performance?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1wwedv7/how_are_you_guys_handling_highfrequency_network/",
+    "date": "2026-10-03",
+    "source_id": "reddit-androiddev",
+    "author": "/u/kexx77",
+    "excerpt": "I've been working on a local-network presentation remote (Android client + Windows host) and hit some really annoying architectural bottlenecks with Compose and high-frequency state updates. The host streams presentation state (slide images, notes, live timers) over WebSockets. Initially, I just dumped this massive JSON payload into a single StateFlow. Obviously, that caused the entire screen to recompose and stutter like crazy. I ended up aggressively splitting the UI state so the slide images ",
     "date_uncertain": false,
     "summarized": false
   }
