@@ -743,106 +743,6 @@
     "date_corrected_from": "2026-07-05"
   },
   {
-    "id": "db86ad5377a3ad05",
-    "title": "SharedFlow in Kotlin — A Simple Guide for Android Developers",
-    "url": "https://medium.com/@nikhilkhant/sharedflow-in-kotlin-a-simple-guide-for-android-developers-43cd4bc4afba?source=rss------kotlin-5",
-    "date": "2026-07-12",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "Learn what SharedFlow is, when to use it, and how it is different from StateFlow and LiveData with simple examples. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "ed95f9df1fafbbe3",
-    "title": "PAK5D Game APK(V1.10) Download in Pakistan Complete Guide",
-    "url": "https://medium.com/@nayapakapk93/pak5d-game-apk-v1-10-download-in-pakistan-complete-guide-99605e186475?source=rss------android-5",
-    "date": "2026-07-12",
-    "source_id": "medium-android-tag",
-    "excerpt": "PAK5D Game is a modern entertainment platform designed for Pakistani users who enjoy mobile and desktop gaming experiences. It offers… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "low_quality": true,
-    "low_quality_reason": "spam/non-dev, no-kotlin-signal",
-    "summary": "Promotional guide for downloading, registering, and logging into the PAK5D gambling/gaming APK in Pakistan, covering install steps and deposit bonus tiers. Not related to Kotlin, Android, or KMP development.",
-    "topics": []
-  },
-  {
-    "id": "6ffb3763da69e071",
-    "title": "The Complete Guide to Android CLI: A Faster Way to Build, Debug, and Automate Android Apps",
-    "url": "https://proandroiddev.com/the-complete-guide-to-android-cli-a-faster-way-to-build-debug-and-automate-android-apps-d23b8311b41a?source=rss------android-5",
-    "date": "2026-07-12",
-    "source_id": "medium-android-tag",
-    "excerpt": "Android development has traditionally revolved around Android Studio. Continue reading on ProAndroidDev »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Overviews the new Android CLI, a terminal tool built for AI-agent workflows: project scaffolding, emulator and SDK management, APK deployment, doc search, UI hierarchy inspection, and direct Android Studio integration (find-usages, render-compose-preview) for scripted, non-IDE development.",
-    "topics": [
-      "android-developers",
-      "android-api",
-      "compose"
-    ]
-  },
-  {
-    "id": "468eb5d34a82f38f",
-    "title": "حل مشاكل محاكي PPSSPP على أندرويد 13 و 14 و 15",
-    "url": "https://fadyali.medium.com/%D8%AD%D9%84-%D9%85%D8%B4%D8%A7%D9%83%D9%84-%D9%85%D8%AD%D8%A7%D9%83%D9%8A-ppsspp-%D8%B9%D9%84%D9%89-%D8%A3%D9%86%D8%AF%D8%B1%D9%88%D9%8A%D8%AF-13-%D9%88-14-%D9%88-15-6ccf6cd727d3?source=rss------android-5",
-    "date": "2026-07-12",
-    "source_id": "medium-android-tag",
-    "excerpt": "يعتبر محاكي PPSSPP طفرة تقنية حقيقية لعشاق الألعاب؛ حيث يمنحك القدرة Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false,
-    "low_quality": true,
-    "low_quality_reason": "non-english, no-kotlin-signal",
-    "unfetchable": true,
-    "unfetchable_reason": "no-content"
-  },
-  {
-    "id": "01c4db12e93692b3",
-    "title": "أفضل محاكي للأجهزة الضعيفة 1 جيجا رام وتشغيل فري فاير",
-    "url": "https://fadyali.medium.com/%D8%A3%D9%81%D8%B6%D9%84-%D9%85%D8%AD%D8%A7%D9%83%D9%8A-%D9%84%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9-%D8%A7%D9%84%D8%B6%D8%B9%D9%8A%D9%81%D8%A9-1-%D8%AC%D9%8A%D8%AC%D8%A7-%D8%B1%D8%A7%D9%85-%D9%88%D8%AA%D8%B4%D8%BA%D9%8A%D9%84-%D9%81%D8%B1%D9%8A-%D9%81%D8%A7%D9%8A%D8%B1-0f2b8542821e?source=rss------android-5",
-    "date": "2026-07-12",
-    "source_id": "medium-android-tag",
-    "excerpt": "يواجه ملايين اللاعبين حول العالم تحدياً كبيراً عند محاولة تشغيل الألعاب Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false,
-    "low_quality": true,
-    "low_quality_reason": "non-english, no-kotlin-signal",
-    "unfetchable": true,
-    "unfetchable_reason": "no-content"
-  },
-  {
-    "id": "7ce820bcf976cc9f",
-    "title": "Wireshark Alternative Android",
-    "url": "https://ebrasha.medium.com/wireshark-alternative-android-441e45f06d1b?source=rss------android-5",
-    "date": "2026-07-12",
-    "source_id": "medium-android-tag",
-    "excerpt": "How Abdal PacketView brings local, app-aware packet capture to Android without trying to replace everything Wireshark does on the desktop. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Abdal PacketView captures Android network traffic locally via VpnService, attributing packets to the owning app by UID and exporting sessions as a pcapng file plus a JSON summary for deeper analysis in Wireshark or tshark.",
-    "topics": []
-  },
-  {
-    "id": "9350efc0f53d0843",
-    "title": "Which languages would you prioritize after English for an Android app?",
-    "url": "https://www.reddit.com/r/androiddev/comments/1uu96dj/which_languages_would_you_prioritize_after/",
-    "date": "2026-07-12",
-    "source_id": "reddit-androiddev",
-    "excerpt": "I'm adding multilingual support to my new Android app and would like to get some input from other Android developers. The app is a privacy-focused utility , so the target audience isn't necessarily the same as a typical social or entertainment app. If you were localizing your app, which languages would you add, and how would you prioritize the first 5–10 languages after English? Here's the list I'm currently considering: Spanish Portuguese German French Arabic Hindi Indonesian Japanese Italian T",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "f9a5e27f3ff19a1d",
-    "title": "Is this effect possible on android?",
-    "url": "https://www.reddit.com/r/androiddev/comments/1uu0bjt/is_this_effect_possible_on_android/",
-    "date": "2026-07-12",
-    "source_id": "reddit-androiddev",
-    "excerpt": "submitted by /u/meowterspace [link] [comments]",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
     "id": "fbca3ea4063f5cf6",
     "title": "Part 3: Database Migrations That Won’t Crash Production: From AutoMigrations to Programmatic…",
     "url": "https://medium.com/@sivavishnu0705/part-3-database-migrations-that-wont-crash-production-from-automigrations-to-programmatic-632473e4f3c1?source=rss------kotlin-5",
@@ -920,65 +820,6 @@
       "architecture",
       "android-developers"
     ]
-  },
-  {
-    "id": "1815f605ca90029a",
-    "title": "Compose’s new Styles API split my modifier chain in two",
-    "url": "https://stevie658jjh.medium.com/composes-new-styles-api-split-my-modifier-chain-in-two-65bb561dbe54?source=rss------kotlin-5",
-    "date": "2026-07-12",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "For years, one modifier chain mixed how a thing looks with what it does. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "An experimental Compose Styles API separates modifier chains that control appearance from those controlling behavior, addressing ordering bugs where paint and layout calls interacted unpredictably. Still experimental, it reshapes how Compose UI is organized without requiring an immediate rewrite.",
-    "topics": [
-      "compose"
-    ]
-  },
-  {
-    "id": "d327aa2038d42fd7",
-    "title": "Introduction to Kotlin: Why Every Android Developer Should Learn It",
-    "url": "https://techdynasty.medium.com/introduction-to-kotlin-why-every-android-developer-should-learn-it-de2ffd396397?source=rss------kotlin-5",
-    "date": "2026-07-12",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "Android development has evolved significantly over the last decade. While Java laid the foundation, Kotlin has become the language that… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "A beginner-focused overview explains why Android developers should adopt Kotlin, contrasting it with Java through data classes, null safety, extension functions, smart casts, and coroutines, while noting full Java interoperability for gradual, file-by-file migration.",
-    "topics": [
-      "kotlin",
-      "coroutines"
-    ]
-  },
-  {
-    "id": "2f670f3a90d85892",
-    "title": "Biometric Authentication sebagai Mekanisme Keamanan pada Aplikasi Android Modern",
-    "url": "https://medium.com/@myhikmal000/biometric-authentication-sebagai-mekanisme-keamanan-pada-aplikasi-android-modern-d47966bc5848?source=rss------kotlin-5",
-    "date": "2026-07-12",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "Fitur biometrik dapat diintegrasikan ke aplikasi yang dibangun dengan Compose untuk meningkatkan keamanan dan pengalaman pengguna Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "63644831c409c7e5",
-    "title": "Ciri Ciri Viagra Usa Asli 081225577768 — Distributor Viagra Pfizer Original",
-    "url": "https://medium.com/@henkyshop123/ciri-ciri-viagra-usa-asli-081225577768-distributor-viagra-pfizer-original-52fcfa846dd9?source=rss------kotlin-5",
-    "date": "2026-07-12",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "Distributor Viagra asli USA merupakan salah satu sarana dalam mendapatkan kenikmatan dalam berhubungan sebuah rumah tangga. Ada banyak… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "c62ca3c3da429d63",
-    "title": "Part 2: Stop Bundling Your Database: Modularizing Room for Clean Architecture",
-    "url": "https://medium.com/@sivavishnu0705/part-2-stop-bundling-your-database-modularizing-room-for-clean-architecture-f35e5ac14ce6?source=rss------kotlin-5",
-    "date": "2026-07-12",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "Split your monolithic Room setup into entities, DAOs, and a sealed core module to fix slow builds and enforce real boundaries. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
   },
   {
     "id": "7c409f5069eb5284",
@@ -1120,31 +961,6 @@
     "low_quality_reason": "non-english, no-kotlin-signal"
   },
   {
-    "id": "8beee7f404d0dc84",
-    "title": "2.3.0-alpha.2",
-    "url": "https://github.com/arrow-kt/arrow/releases/tag/2.3.0-alpha.2",
-    "date": "2026-07-12",
-    "source_id": "lib-arrow",
-    "excerpt": "What's Changed Resolve returnType more lazily in Arrow Optics by @serras in #3943 Full Changelog : 2.3.0-alpha.1...2.3.0-alpha.2",
-    "date_uncertain": false,
-    "summarized": true,
-    "author": "serras",
-    "summary": "Arrow 2.3.0-alpha.2 resolves returnType more lazily in Arrow Optics, a small internal fix landed via a single pull request since the previous 2.3.0-alpha.1 pre-release.",
-    "topics": [
-      "kotlin"
-    ]
-  },
-  {
-    "id": "3e70e66b2efaa0f8",
-    "title": "Exploiting PackageInstaller parsing: A 974-byte modern Android 14 PoC.",
-    "url": "https://www.reddit.com/r/androiddev/comments/1uuom29/exploiting_packageinstaller_parsing_a_974byte/",
-    "date": "2026-07-12",
-    "source_id": "reddit-androiddev",
-    "excerpt": "I’ve been exploring the absolute structural floor of the Android APK format. By leveraging hasCode=\"false\" and surgically optimizing the ASN.1 DER encoding of the V2 signature, I’ve managed to get a compliant Android 14 app down to 974 bytes. The system treats it as a first-class app, and it’s fully installable on a stock Android 14 device. It’s an exercise in how much the PackageManager trusts the headers versus what it semantically validates. You can find the repo and the byte-by-byte breakdow",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
     "id": "e38303e9c06c936f",
     "title": "[Showcase] haptify — a Dart CLI that turns audio files into iOS + Android haptics (and can do it at runtime too)",
     "url": "https://www.reddit.com/r/androiddev/comments/1uv56th/showcase_haptify_a_dart_cli_that_turns_audio/",
@@ -1183,46 +999,6 @@
     "date": "2026-07-13",
     "source_id": "reddit-androiddev",
     "excerpt": "https://preview.redd.it/0sie1thafxch1.png?width=1017&format=png&auto=webp&s=57089630e8a6aa332849214950f8cac8ec31da88 Hey everyone, I am running into a severe storage bottleneck on my primary drive which is why I'm not able to run my emulator... and wanted to ask how you all manage the massive space requirements for native Android development? I have tried to separate the SDK, Android Studio and .android folder (which contains all my emulators, in total i have 2 emulators). All this folders are i",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "8f94e6688df8cabf",
-    "title": "Building an open-source Compose Multiplatform image comparison library — looking for API and architecture feedback",
-    "url": "https://www.reddit.com/r/androiddev/comments/1uuf1kq/building_an_opensource_compose_multiplatform/",
-    "date": "2026-07-12",
-    "source_id": "reddit-androiddev",
-    "excerpt": "submitted by /u/usman0769 [link] [comments]",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "e7f46849244389f1",
-    "title": "[Partnership] Looking for Android Developer(s) — Revenue Share, No Upfront Fee",
-    "url": "https://www.reddit.com/r/androiddev/comments/1uur5my/partnership_looking_for_android_developers/",
-    "date": "2026-07-12",
-    "source_id": "reddit-androiddev",
-    "excerpt": "Hi all, I have an established Google Play Console business account and I'm looking to partner with Android developer(s) on a revenue-share basis — no upfront payment, but we split profits from apps we publish together. What I bring: Verified Google Play Console business account with USA LLC. ASO/marketing support, ad network setup, budget for user acquisition, app ideas/market research, etc. What I'm looking for: Developer(s) who can build and maintain Android apps (native, Kotlin, or Flutter — ",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "399133d432535631",
-    "title": "Kdrant — an idiomatic, coroutine-first Kotlin client for Qdrant (the official one is Java-clunky)",
-    "url": "https://www.reddit.com/r/Kotlin/comments/1uulwij/kdrant_an_idiomatic_coroutinefirst_kotlin_client/",
-    "date": "2026-07-12",
-    "source_id": "reddit-kotlin",
-    "excerpt": "I've been doing RAG on the JVM and kept hitting the same wall: Qdrant's official client is well-built for Java , but painful from Kotlin — every call returns a ListenableFuture you .get() (blocking) or bridge, requests are protobuf builders, scroll is manual pagination, and it drags ~21 MB of grpc-netty onto your classpath. So I built Kdrant — the client I actually wanted to write Kotlin against: suspend everywhere, no ListenableFuture type-safe DSLs for collections, points, payloads and filters",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "24d6710f5efedb70",
-    "title": "Building an open-source Compose Multiplatform image comparison library — looking for API and architecture feedback",
-    "url": "https://www.reddit.com/r/Kotlin/comments/1uud2qj/building_an_opensource_compose_multiplatform/",
-    "date": "2026-07-12",
-    "source_id": "reddit-kotlin",
-    "excerpt": "Hi everyone, I've been building my first open-source Kotlin Multiplatform library called CompareKit. The goal is to provide a reusable before/after image comparison component that works with Compose Multiplatform using a single shared implementation. Current features Before/After image comparison Horizontal draggable slider Custom thumb Custom divider Custom labels Material 3 friendly Android support iOS support 100% shared Compose code (no platform-specific implementation) Example API: BeforeAf",
     "date_uncertain": false,
     "summarized": false
   },
@@ -30195,6 +29971,259 @@
     "source_id": "reddit-androiddev",
     "author": "/u/brookm291",
     "excerpt": "The global mobile engineering community is gearing up for a massive, synchronized tech gathering this autumn. From October 7–9, 2026 , the CityCube Berlin will host for three distinct, co-located conferences: droidCon Berlin , FlutterCon Europe , and swiftCon . This massive arrangement offers mobile developers a unique opportunity to network across ecosystems and explore the latest industry trends under one roof. As the anchor event for Android engineering, droidCon Berlin returns as Europe's pr",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "32ddc5051d48ba00",
+    "title": "UI freeze reports are now available in JetBrains Marketplace",
+    "url": "https://blog.jetbrains.com/platform/2026/10/ui-freeze-reports-in-marketplace/",
+    "date": "2026-10-09",
+    "source_id": "jetbrains-blog",
+    "author": "Jakub Chrzanowski",
+    "excerpt": "A user reports that the IDE stopped responding, and your plugin is the prime suspect. You try the same steps, but everything works. Without more details, such as a thread dump captured during the freeze, it’s hard to know where to start. JetBrains Marketplace now gives plugin authors access to UI freeze reports attributed to […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e4c829f82b3ab4a6",
+    "title": "Two places that both think they are the truth",
+    "url": "https://medium.com/mobilebytesensei/two-places-that-both-think-they-are-the-truth-42ac16862ebc?source=rss------kotlin-5",
+    "date": "2026-10-10",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9764da16953760e7",
+    "title": "Your list flickers because the page swap is not atomic",
+    "url": "https://medium.com/mobilebytesensei/your-list-flickers-because-the-page-swap-is-not-atomic-6e24492a4dc7?source=rss------kotlin-5",
+    "date": "2026-10-10",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "70724c6fb3a5b207",
+    "title": "Killing the Gradle daemon costs you thirty minutes",
+    "url": "https://medium.com/mobilebytesensei/killing-the-gradle-daemon-costs-you-thirty-minutes-a6930a93873a?source=rss------kotlin-5",
+    "date": "2026-10-10",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "bdc530cbfbe69031",
+    "title": "Stop hand-registering what a processor can see",
+    "url": "https://medium.com/mobilebytesensei/stop-hand-registering-what-a-processor-can-see-d4780fca7a4c?source=rss------kotlin-5",
+    "date": "2026-10-10",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a96e776d893a457e",
+    "title": "The module that compiled and was never installed",
+    "url": "https://medium.com/mobilebytesensei/the-module-that-compiled-and-was-never-installed-4ecea2efae76?source=rss------kotlin-5",
+    "date": "2026-10-10",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ee965d43c3341274",
+    "title": "Android Studio Rabbit: New Features and Their Impact on the Android Development Process",
+    "url": "https://medium.com/@enesselcuk/android-studio-rabbit-new-features-and-their-impact-on-the-android-development-process-40361d0834f5?source=rss------kotlin-5",
+    "date": "2026-10-10",
+    "source_id": "medium-kotlin-tag",
+    "author": "Enes Selçuk",
+    "excerpt": "The tools we use in Android development are just as important as the code we write. Build times, Gradle sync, testing processes, and the …. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3b6263538d2e60c8",
+    "title": "Android Studio Rabbit: Yeni Özellikler ve Android Geliştirme Sürecine Etkileri",
+    "url": "https://medium.com/@enesselcuk/android-studio-rabbit-yeni-%C3%B6zellikler-ve-android-geli%C5%9Ftirme-s%C3%BCrecine-etkileri-efc522ca99c8?source=rss------kotlin-5",
+    "date": "2026-10-10",
+    "source_id": "medium-kotlin-tag",
+    "author": "Enes Selçuk",
+    "excerpt": "Android geliştirme sürecinde kullandığımız araçlar, yazdığımız kod kadar önemli. Build süreleri, Gradle senkronizasyonu, test süreçleri ve… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1f306930084aed44",
+    "title": "Daily Kotlin: Functions, Default Arguments, and Lambdas",
+    "url": "https://jasonobject.medium.com/daily-kotlin-functions-default-arguments-and-lambdas-5a1166a4cc6c?source=rss------kotlin-5",
+    "date": "2026-10-10",
+    "source_id": "medium-kotlin-tag",
+    "author": "Jason Kwon",
+    "excerpt": "Mastering idiomatic function signatures, higher-order functions, and trailing lambdas across Kotlin Multiplatform Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "cb758fdc6b29067f",
+    "title": "Mastering Android CLI: Complex Development, Debugging, Testing, and Performance Workflows",
+    "url": "https://ravirawal13.medium.com/mastering-android-cli-development-debugging-testing-performance-workflows-3405d00fb2a7?source=rss------kotlin-5",
+    "date": "2026-10-09",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ravi Rawal",
+    "excerpt": "How to combine Android CLI’s project inspection, Android Studio integration, device operations, and Journeys with Gradle and Android… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b17dd3fe8841f2bd",
+    "title": "Where Did All the Android Developer Jobs Go?",
+    "url": "https://blog.stackademic.com/where-did-all-the-android-developer-jobs-go-a935ee08f251?source=rss------kotlin-5",
+    "date": "2026-10-09",
+    "source_id": "medium-kotlin-tag",
+    "author": "Mobile App Developer",
+    "excerpt": "Before COVID, every business wanted a mobile app. Today, even experienced Android developers are struggling to get interview calls. What… Continue reading on Stackademic »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "458f26278e9bb0c5",
+    "title": "How do you test a screen whose text is generated?",
+    "url": "https://medium.com/mobilebytesensei/how-do-you-test-a-screen-whose-text-is-generated-c23cc548293b?source=rss------android-5",
+    "date": "2026-10-10",
+    "source_id": "medium-android-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b90250e224140f86",
+    "title": "DFT PRO Update v7.0.7 [Xiaomi Qualcomm]",
+    "url": "https://medium.com/@chaudharyuzair802/dft-pro-update-v7-0-7-xiaomi-qualcomm-151c5803d1ef?source=rss------android-5",
+    "date": "2026-10-10",
+    "source_id": "medium-android-tag",
+    "author": "GSM World",
+    "excerpt": "Download Link: https://go.cyberslinks.com/r.php?id=Q9VXIc Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c66b463d4f6a1774",
+    "title": "CHEETAH TOOL PRO V2026.06.06.180.0 Added Samsung MediaTek V6 And More…",
+    "url": "https://medium.com/@chaudharyuzair802/cheetah-tool-pro-v2026-06-06-180-0-added-samsung-mediatek-v6-and-more-80dd6c187e1d?source=rss------android-5",
+    "date": "2026-10-10",
+    "source_id": "medium-android-tag",
+    "author": "GSM World",
+    "excerpt": "Download Link: https://go.cyberslinks.com/r.php?id=QmePCP Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "eb81927915d7f66d",
+    "title": "Master Android Studio Profilers: A Deep-Dive Guide to CPU, Memory, Network, and Energy Optimization",
+    "url": "https://kabi20.medium.com/master-android-studio-profilers-a-deep-dive-guide-to-cpu-memory-network-and-energy-optimization-9061ced7ccd9?source=rss------android-5",
+    "date": "2026-10-10",
+    "source_id": "medium-android-tag",
+    "author": "Kabi",
+    "excerpt": "Every Android developer eventually hits that dreaded moment in production, an app that performs smoothly on a flagship test phone starts… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "bb7060a6016a4ac1",
+    "title": "I Let an AI Agent Order Lunch on My Phone. Here’s What It Took.",
+    "url": "https://djajafer.medium.com/i-let-an-ai-agent-order-lunch-on-my-phone-heres-what-it-took-8428a534f910?source=rss------android-5",
+    "date": "2026-10-10",
+    "source_id": "medium-android-tag",
+    "author": "Ferry Djaja",
+    "excerpt": "How a small local bridge turned an Android phone into something a browser agent can read, tap and reason about without guessing at pixels. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4c3e9582a72093a1",
+    "title": "​⚔️ iOS vs. Android in 2026: Which Operating System Rules the Mobile World?",
+    "url": "https://tech-ai-insights.medium.com/%EF%B8%8F-ios-vs-android-in-2026-which-operating-system-rules-the-mobile-world-a7a60acd2da6?source=rss------android-5",
+    "date": "2026-10-10",
+    "source_id": "medium-android-tag",
+    "author": "Tech & AI Insights",
+    "excerpt": "A complete breakdown of customization, gaming performance, and ecosystems to help you choose your next smartphone Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "516bc018198e5066",
+    "title": "Your VPN Profile Survived the Restart. Has the Connection Returned?",
+    "url": "https://lisarconnect.medium.com/your-vpn-profile-survived-the-restart-has-the-connection-returned-6412ecd4fdf9?source=rss------android-5",
+    "date": "2026-10-10",
+    "source_id": "medium-android-tag",
+    "author": "Lisar Connect",
+    "excerpt": "A familiar profile name can still be there after a restart even when the connection has not returned. Here is what to check before… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8860087f3291bcac",
+    "title": "Android Binder IPC from Scratch — Inside the Generated Code (Part 5/16)",
+    "url": "https://medium.com/@aiswaryacsuresh2002/android-binder-ipc-from-scratch-inside-the-generated-code-part-5-16-ea8691e3eb2e?source=rss------android-5",
+    "date": "2026-10-10",
+    "source_id": "medium-android-tag",
+    "author": "Aiswarya",
+    "excerpt": "In Part 4, we learned what AIDL is, what data types it supports, and why an arbitrary Java object can’t cross a process boundary unless it… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5cc19434f72edc29",
+    "title": "How to Hide Your Instagram Story from Everyone on Android Using Kiwi Browser",
+    "url": "https://medium.com/@team.petakpeta/how-to-hide-your-instagram-story-from-everyone-on-android-using-kiwi-browser-cbc62e5ddb2d?source=rss------android-5",
+    "date": "2026-10-10",
+    "source_id": "medium-android-tag",
+    "author": "Team Petakpeta",
+    "excerpt": "Want to hide your Instagram Story from all your followers without selecting hundreds of accounts one by one? Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d4acb1f79d65038d",
+    "title": "How to Scan Documents on Android Without an App — The Complete Playbook (Medium)",
+    "url": "https://medium.com/@yashpalgreat1/how-to-scan-documents-on-android-without-an-app-the-complete-playbook-medium-609e846f050b?source=rss------android-5",
+    "date": "2026-10-10",
+    "source_id": "medium-android-tag",
+    "author": "Yashpalgreat",
+    "excerpt": "Here’s how to scan documents on Android without app downloads: open Google Drive, tap the scan button, and point your camera at the page —… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7ad764ec12d309b9",
+    "title": "I made a customizable squircle bottom navigation bar for Android (SqNav)",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x2akv8/i_made_a_customizable_squircle_bottom_navigation/",
+    "date": "2026-10-10",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Ahmed_El_Gendy",
+    "excerpt": "Hey everyone, I recently built an open-source Android library called SqNav . It's a bottom navigation bar designed with floating squircle card transitions and a glowing indicator for the active tab. I wanted something clean, with smooth spring animations, and easy to customize without building custom drawables and animations from scratch every time. A few highlights: Floating squircle card with spring overshoot animations for the active tab Neon glow indicator dot on top of the selected item (ca",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5c4767141298e768",
+    "title": "How do you manage Play Store releases and review delays for client apps?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x1i0ho/how_do_you_manage_play_store_releases_and_review/",
+    "date": "2026-10-09",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Visual-Leading-4547",
+    "excerpt": "I work at a small UK agency and we build Android and iOS apps for business clients. On the Android side, the pain points that come up most are release management and setting client expectations on review and rollout. Our current approach is staged rollouts, an internal testing track before every release, and a buffer in the schedule so a rejected build doesn't blow a deadline. How do you handle it? Anything you would change, especially around testing on older devices and communicating timelines ",
     "date_uncertain": false,
     "summarized": false
   }
