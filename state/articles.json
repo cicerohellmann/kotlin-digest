@@ -759,21 +759,6 @@
     "author": "Viliam Sedliak"
   },
   {
-    "id": "780878307499b9aa",
-    "title": "Android Studio Quail 2 is Stable: Multi-task with the Android Studio AI agent",
-    "url": "https://android-developers.googleblog.com/2026/06/android-studio-quail-2-stable-features.html",
-    "date": "2026-07-14",
-    "source_id": "android-developers-blog",
-    "excerpt": "Posted by Amman Asfaw, Product Manager, Android Studio Android Studio Quail 2 is now stable and ready for you to use in production, bringing a shift to your IDE with concurrent agentic workflows, natively integrated memory leak profiling, and context-aware crash remediation. Whether you are performing a sweeping architectural overhaul, tracing a memory leak, or resolving a critical production crash, Android Studio keeps you anchored in your workspace by reducing manual friction. Here’s a deep di",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Announces that Android Studio Quail 2 is stable for production use. Key changes include a redesigned Agent Mode that supports multiple parallel agent chats (each able to use different models), natively integrated memory leak profiling via LeakCanary, and context-aware crash remediation. Worktree support is not yet available and concurrent chats editing the same files can cause conflicts.",
-    "topics": [
-      "android-developers"
-    ],
-    "author": "Android Developers"
-  },
-  {
     "id": "81302fcba0046a7e",
     "title": "What’s New in IntelliJ IDEA 2026.2",
     "url": "https://blog.jetbrains.com/idea/2026/07/intellij-idea-2026-2/",
@@ -1342,42 +1327,6 @@
       "compose-multiplatform",
       "jetbrains"
     ]
-  },
-  {
-    "id": "676a82fb29de91f1",
-    "title": "v1.12.10-alpha01+dev4462: Details",
-    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4462",
-    "date": "2026-07-14",
-    "source_id": "lib-compose-multiplatform",
-    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4462 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4462 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4462 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4462",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Release notes page for Compose Multiplatform version 1.12.10-alpha01+dev4462, a development build tagged by JetBrains. It lists the bundled artifact versions, including compose material3 at 1.12.10-alpha01+dev4462, lifecycle at 2.11.10-alpha01+dev4462, and navigation3 at 1.2.0-alpha03+dev4462.",
-    "topics": [
-      "compose-multiplatform",
-      "jetbrains",
-      "material3",
-      "navigation"
-    ]
-  },
-  {
-    "id": "4981b0691b301262",
-    "title": "1.12.0-beta02",
-    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.0-beta02",
-    "date": "2026-07-14",
-    "source_id": "lib-compose-multiplatform",
-    "excerpt": "Changes since 1.12.0-beta01 Features Multiple Platforms (prerelease fix) The isClearFocusOnMouseDownEnabled flag is now false by default #3162 Implemented ComposeUiTest.runWithoutImplicitWait #3170 Desktop (prerelease fix) Bump Compose Hot Reload to #5632 1.2.0-beta01 Fixes Multiple Platforms (prerelease fix) Fix printing GlobalSnapshotManager concurrent registrations warning during creation of Popup / Dialog on iOS and Desktop with custom compose.layers.type #3156 iOS Fix an issue where Compose",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Release notes for Compose Multiplatform 1.12.0-beta02, listing changes since beta01. Features include the isClearFocusOnMouseDownEnabled flag now defaulting to false and a new ComposeUiTest.runWithoutImplicitWait. Fixes span multiple platforms, iOS (SwiftUI embedding, back gesture, RTL swipe-back, Scribble text input), Desktop (accessibility, popups/dialogs, dynamic dark theme polling), and Web text rendering.",
-    "topics": [
-      "compose-multiplatform",
-      "jetbrains",
-      "ios-interop",
-      "testing"
-    ],
-    "code_snippet": "// Desktop: OS theme changes now recompose callers\nval dark = isSystemInDarkTheme()\n// opt out of the 1s background poll:\nComposeUiFlags.pollSystemTheme = false",
-    "snippet_label": "POLL SYSTEM THEME"
   },
   {
     "id": "a0de72b9066ee440",
@@ -30249,6 +30198,248 @@
     "source_id": "reddit-androiddev",
     "author": "/u/PutParticular9911",
     "excerpt": "Most hardening tools in this space are either paid SaaS (upload your APK to someone's server) or \"open source\" in name only — the GUI is public but the actual protection logic is a closed binary. Shellsmith is my attempt at doing it properly: the Rust core, the Android stub module, and even the licenses for the third-party components it depends on are all in the repo. Everything runs locally — no upload step. MIT OR Apache-2.0, cross-platform desktop GUI (Tauri + React), CLI for automation, full",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b8f69f13692aa0c2",
+    "title": "Build Your Game Challenge: Join in and Compete for Prizes",
+    "url": "https://blog.jetbrains.com/education/2026/10/12/build-your-game-challenge-join-in-and-compete-for-prizes/",
+    "date": "2026-10-12",
+    "source_id": "jetbrains-blog",
+    "author": "Regina Muradova",
+    "excerpt": "This October, we’re launching a new challenge for the JetBrains Academy community. To take part, complete our Build a Game With an AI Coding Agent course, customize the game with your own ideas, and submit your project for a chance to win prizes. How to participate Joining the challenge is simple: You can add new […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d84bbf651966c91d",
+    "title": "R8 and Keep Rules in Production: Shrinking a 600-Module App Without Breaking Reflection",
+    "url": "https://medium.com/@ramadan123sayed/r8-and-keep-rules-in-production-shrinking-a-600-module-app-without-breaking-reflection-794aa48a6803?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ramadan Sayed",
+    "excerpt": "“It works in debug but crashes in release” is the most disorienting bug in Android, because the code is identical. It is not a mystery. It… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6e7f98e3d8ca9d5d",
+    "title": "Kotlin Multiplatform, Incrementally",
+    "url": "https://medium.com/@ramadan123sayed/kotlin-multiplatform-incrementally-d7aa383a597b?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ramadan Sayed",
+    "excerpt": "You do not need to rewrite your app, share your UI, or convince your iOS team of anything. KMP is adoptable one module at a time, starting… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2163239df8fe9eb7",
+    "title": "The corpus your generator reads is production code",
+    "url": "https://medium.com/mobilebytesensei/the-corpus-your-generator-reads-is-production-code-20bbff141712?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f0edfdbbefec2b3b",
+    "title": "Your Coroutine Crash Finally Tells You Who Rethrew It",
+    "url": "https://medium.com/@androidlab/your-coroutine-crash-finally-tells-you-who-rethrew-it-5941b5bc4a80?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "AndroidLab by Andre",
+    "excerpt": "Kotlin 2.4.20’s StackTraceRecoverable fixes custom exceptions that lose their trail across coroutines. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d72afe4f4be7897d",
+    "title": "Room 3.0 Just Broke Your DAOs",
+    "url": "https://medium.com/@androidlab/room-3-0-just-broke-your-daos-9d707fc1c4af?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "AndroidLab by Andre",
+    "excerpt": "What changed in Room 3, what it’ll cost you, and whether your Android app should migrate now or wait. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "435d84e0ab041357",
+    "title": "Daily Kotlin: Data Classes, Destructuring, and copy()",
+    "url": "https://jasonobject.medium.com/daily-kotlin-data-classes-destructuring-and-copy-f5255767f00b?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "Jason Kwon",
+    "excerpt": "Mastering immutable state modeling, automatic utility methods, and clean component extraction across Kotlin Multiplatform Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e7cebc8118d2e7e4",
+    "title": "The ANR Illusion: How to Stop Chasing Ghosts and Fix Thread Starvation",
+    "url": "https://porterblog.medium.com/the-anr-illusion-how-to-stop-chasing-ghosts-and-fix-thread-starvation-3e0d643d2d4c?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "Porter",
+    "excerpt": "Written by: Mohammed Nishar Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "37f0da9b4fdeb881",
+    "title": "Compose’ta Bir if Kapanınca Ekran Nereye Gidiyor? Kaybolan State’in Anatomisi",
+    "url": "https://bahadireray.medium.com/composeta-bir-if-kapan%C4%B1nca-ekran-nereye-gidiyor-kaybolan-state-in-anatomisi-afe5086b8c97?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "Bahadireray",
+    "excerpt": "Bir filtre ekranınız olduğunu düşünün. Kullanıcı listeden ürün arıyor, birkaç filtre seçiyor ve aşağı doğru kaydırıyor. Ardından görünümü… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4c5bf6ec569c7b50",
+    "title": "Android CLI Device Streaming: Bringing Real Android Hardware Into Agentic Development",
+    "url": "https://ravirawal13.medium.com/android-cli-device-streaming-real-device-testing-a33694ac5021?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ravi Rawal",
+    "excerpt": "Your AI coding agent can now work with a real Android device in the cloud, without requiring that device to sit on your desk. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "da09adee91f08fb0",
+    "title": "Why Changing One Boolean Re-renders Your Entire Screen",
+    "url": "https://medium.com/tech-in-olx-indonesia/why-changing-one-boolean-re-renders-your-entire-screen-42ecc8371e68?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "Reinaldo Riant",
+    "excerpt": "For the last few months, my team has been migrating from MVP to MVVM. We followed Google’s official app architecture guide as our north… Continue reading on Tech in OLX Indonesia »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1ca6d6a38f633760",
+    "title": "Does WhatsApp remove location data from photos? The app-by-app answer",
+    "url": "https://medium.com/@devsahadat/does-whatsapp-remove-location-data-from-photos-fe97c8f5e143?source=rss------android-5",
+    "date": "2026-10-12",
+    "source_id": "medium-android-tag",
+    "author": "Sahadat Husain",
+    "excerpt": "Sent normally, the GPS was gone in 5 dated tests; sent as a document, it arrived. What iMessage, Telegram, Signal, Discord and email do. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7da4cd19bfbe9653",
+    "title": "Play passed this dashboard card in 13 builds. On 11 October it called it deceptive",
+    "url": "https://medium.com/codex/play-passed-this-dashboard-card-in-13-builds-on-11-october-it-called-it-deceptive-3b05c220176d?source=rss------android-5",
+    "date": "2026-10-12",
+    "source_id": "medium-android-tag",
+    "author": "Muhammad Azhar",
+    "excerpt": "Google’s only evidence was a screenshot of my ADB app on a phone with no ADB connected, where nothing the card promised could run Continue reading on CodeX »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6770a418d214d459",
+    "title": "Flutter’s Big Design Split Is Bigger Than a Find-and-Replace",
+    "url": "https://medium.com/@flutter-app/flutters-big-design-split-is-bigger-than-a-find-and-replace-0e7265a6d576?source=rss------android-5",
+    "date": "2026-10-12",
+    "source_id": "medium-android-tag",
+    "author": "Nicolas",
+    "excerpt": "Flutter 3.47 moves Material and Cupertino into standalone packages, and the ripple effects reach your dependencies, not just your imports. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a6e2119fa642e778",
+    "title": "The latency maths that decides on-device versus an API call",
+    "url": "https://medium.com/mobilebytesensei/the-latency-maths-that-decides-on-device-versus-an-api-call-19ce8991584b?source=rss------android-5",
+    "date": "2026-10-12",
+    "source_id": "medium-android-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f3cb4891d8392ae1",
+    "title": "What a small on-device model simply cannot do",
+    "url": "https://medium.com/mobilebytesensei/what-a-small-on-device-model-simply-cannot-do-41173af1d590?source=rss------android-5",
+    "date": "2026-10-12",
+    "source_id": "medium-android-tag",
+    "author": "Rajan Maurya",
+    "excerpt": "Continue reading on MobileByteSensei »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "caac8b9778759e57",
+    "title": "The app freezes and you cannot reproduce it: the follow-up that decides the round",
+    "url": "https://medium.com/@mike.salari.dev/the-app-freezes-and-you-cannot-reproduce-it-the-follow-up-that-decides-the-round-9f8093d7c9ae?source=rss------android-5",
+    "date": "2026-10-12",
+    "source_id": "medium-android-tag",
+    "author": "Mike Salari",
+    "excerpt": "“Move it off the main thread” is a first answer. What you say when the debugger is taken away is the senior one. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1de4bb93dd935c92",
+    "title": "Alternative Payments for Digital Products on Android and iOS",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x3m2xx/alternative_payments_for_digital_products_on/",
+    "date": "2026-10-11",
+    "source_id": "reddit-androiddev",
+    "author": "/u/almuhad",
+    "excerpt": "Hi everyone, has anyone faced the challenge of offering alternative payment methods in Android and iOS apps for digital products? For example, in my app, premium users can create channels that other users pay to join, similar to YouTube memberships, or purchase digital gifts. How did you handle Google Play and Apple’s in-app purchase policies while also offering payment options. I’d appreciate hearing how you solved it. Thanks! submitted by /u/almuhad [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "68b5ac0b63b16da0",
+    "title": "Why is android so frustrating?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x3vjwa/why_is_android_so_frustrating/",
+    "date": "2026-10-12",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Caffeine_Library",
+    "excerpt": "Hi all. Just getting into android development in university and would like to vent. Why is android development feel so fragmented? There are text buttons which arent the same as buttons with text. It doesnt follow basic MVC. Using jetbrains compose, much of the system superloop and triggers are under the hood requiring various specially duplicated variable classes to cooperate with jetpack, which casting between classes to operate in and out of jetbrains is one of many headaches. Coroutines anot",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7d711eb89363daf1",
+    "title": "Android Studio suddenly became barely working, throwing errors for no visible reason, and it stays after re-installing. What to do? (Windows 11, Quail 3 | 2026.1.3 Patch 1)",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x39po2/android_studio_suddenly_became_barely_working/",
+    "date": "2026-10-11",
+    "source_id": "reddit-androiddev",
+    "author": "/u/aks304",
+    "excerpt": "I'm currently trying to write an app. Until a few days ago, it worked OK, but a few days ago unexplained errors begun. Sometimes my emulator or app won't start, or will start on 2nd or 3rd attempt. It shows errors like: \"(device) is already running at process\" (when it's OFF) \"`AdbServerController` is in a stopping/stopped state\" \" 'unknown host service' error on device serial #emulator-5554 executing service 'host-serial:emulator-5554:features' \" \"This network name is no longer available\" And e",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "db4a34db06bf907b",
+    "title": "My app won't open from tapping the notification?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x3mmao/my_app_wont_open_from_tapping_the_notification/",
+    "date": "2026-10-11",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Adamstrad",
+    "excerpt": "I've been trying to get it to work for about an hour, no amount of AI is helping me and no errors are displayed. I am using the official android development program to make an app and after getting the notifications working, I cannot get it to open the app from the notification, what could be the problem? AndroidManifest.xml <?xml version=\"1.0\" encoding=\"utf-8\"?> <manifest xmlns:android=\"http://schemas.android.com/apk/res/android\" package=\"com.example.wordoftheday\"> <uses-permission android:name",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d33248f5ca8dc90b",
+    "title": "Does Android WebView actually return WebAuthn prf (clientExtensionResults.prf), or only passkeys for sign-in?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x35nix/does_android_webview_actually_return_webauthn_prf/",
+    "date": "2026-10-11",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Mysterious_Video_103",
+    "excerpt": "We're building a Cordova hybrid app where passkeys are used for PRF-based key derivation (decrypt payslips), not login. RP is our own domain (first-party). Android docs show WebView can enable WebAuthn/passkeys via WebSettingsCompat.setWebAuthenticationSupport(FOR_APP) + Digital Asset Links: https://developer.android.com/identity/sign-in/credential-manager-webview Those docs never mention the WebAuthn prf extension . Chrome on Android + GPM is known to support PRF in the browser, but I can't fin",
     "date_uncertain": false,
     "summarized": false
   }
