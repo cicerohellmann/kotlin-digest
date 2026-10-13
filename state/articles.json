@@ -1231,19 +1231,6 @@
     "low_quality_reason": "no-kotlin-signal"
   },
   {
-    "id": "e81555a62b47db85",
-    "title": "15 July 2026 Artifact Wave",
-    "url": "https://commonsware.com/blog/2026/07/15/jetpack-artifact-wave.html",
-    "date": "2026-07-15",
-    "source_id": "commonsware",
-    "excerpt": "Here is what we got as new Jetpack artifacts this week!",
-    "date_uncertain": false,
-    "summarized": false,
-    "unfetchable": true,
-    "unfetchable_reason": "no-content",
-    "author": "CommonsWare"
-  },
-  {
     "id": "7eeaeee7f3c433b7",
     "title": "v1.12.10-alpha01+dev4492: Details",
     "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4492",
@@ -1295,38 +1282,6 @@
       "jetbrains"
     ],
     "author": "olonho"
-  },
-  {
-    "id": "76f8913334495b4a",
-    "title": "v1.12.10-alpha01+dev4472: Details",
-    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4472",
-    "date": "2026-07-15",
-    "source_id": "lib-compose-multiplatform",
-    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4472 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4472 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4472 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4472",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Release notes for Compose Multiplatform version 1.12.10-alpha01+dev4472, a development build. It lists the coordinated artifact versions, including org.jetbrains.compose and material3 at 1.12.10-alpha01+dev4472, lifecycle at 2.11.10-alpha01+dev4472, and navigation3 at 1.2.0-alpha03+dev4472.",
-    "topics": [
-      "compose-multiplatform",
-      "material3",
-      "navigation"
-    ],
-    "author": "olonho"
-  },
-  {
-    "id": "5c492734d0b39eae",
-    "title": "v1.12.0-beta03+dev4473: Details",
-    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.0-beta03%2Bdev4473",
-    "date": "2026-07-15",
-    "source_id": "lib-compose-multiplatform",
-    "excerpt": "org.jetbrains.compose. : :1.12.0-beta03+dev4473 org.jetbrains.androidx.lifecycle:lifecycle-*:2.11.1+dev4473",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "A development release (v1.12.0-beta03+dev4473) of Compose Multiplatform from JetBrains. It publishes the org.jetbrains.compose artifacts at 1.12.0-beta03+dev4473 and the lifecycle artifacts at 2.11.1+dev4473.",
-    "topics": [
-      "compose-multiplatform",
-      "jetbrains"
-    ]
   },
   {
     "id": "a0de72b9066ee440",
@@ -28553,17 +28508,6 @@
     "summarized": false
   },
   {
-    "id": "4e3268874e93b0fa",
-    "title": "July 15, 2026",
-    "url": "https://developer.android.com/jetpack/androidx/versions/all-channel#july_15_2026",
-    "date": "2026-07-15",
-    "source_id": "lib-androidx",
-    "author": "",
-    "excerpt": "Annotation Version 1.11.0-alpha01 Com Android Tools Metalava Version 1.0.0-alpha15 Compose Material3 Version 1.5.0-alpha24 Compose Remote Version 1.0.0-alpha15 Glance Wear Version 1.0.0-alpha14 Ink Version 1.1.0-alpha05 Loader Version 1.2.0-rc01 Navigation3 Version 1.2.0-alpha06 Navigationevent Version 1.2.0-alpha02 Tracing Version 2.0.0-beta01 Wear Version 1.1.1 Wear Compose Version 1.7.0-alpha06 Webkit Version 1.17.0-alpha04 Work Version 2.12.0-alpha01 Xr Arcore Version 1.0.0-beta01 Xr Compose",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
     "id": "7ba661d8c9eedec6",
     "title": "v1.13.0-alpha02: Details",
     "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.13.0-alpha02",
@@ -30440,6 +30384,292 @@
     "source_id": "reddit-androiddev",
     "author": "/u/Mysterious_Video_103",
     "excerpt": "We're building a Cordova hybrid app where passkeys are used for PRF-based key derivation (decrypt payslips), not login. RP is our own domain (first-party). Android docs show WebView can enable WebAuthn/passkeys via WebSettingsCompat.setWebAuthenticationSupport(FOR_APP) + Digital Asset Links: https://developer.android.com/identity/sign-in/credential-manager-webview Those docs never mention the WebAuthn prf extension . Chrome on Android + GPM is known to support PRF in the browser, but I can't fin",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8854e0572f759d90",
+    "title": "Introducing the Googlebook Linux Terminal Preview: A VM-Backed Environment for AI and Development",
+    "url": "https://android-developers.googleblog.com/2026/10/googlebook-linux-terminal-preview-vm.html",
+    "date": "2026-10-12",
+    "source_id": "android-developers-blog",
+    "author": "Android Developers",
+    "excerpt": "Posted by Cyrus Stoller, Group Product Manager, Laptops & Tablets Today, getting the most out of AI workflows requires access to a terminal with a command line, even if someone doesn’t identify as a programmer or software developer. With Googlebook, we’re excited to help users express themselves and gain access to these tools. Googlebooks come with pre-installed tooling to get you going. In this post, we’ll explore the capabilities of our new Linux terminal— now available in preview— share our f",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2db8d55fbc2ac98e",
+    "title": "Python vs Go: A Practical Comparison for Developers",
+    "url": "https://blog.jetbrains.com/go/2026/10/13/python-vs-go/",
+    "date": "2026-10-13",
+    "source_id": "jetbrains-blog",
+    "author": "Dominika Stankiewicz",
+    "excerpt": "Two things are true about Python: It’s the most popular programming language in the world, and it’s the most common companion language for Go developers. How do we know that? From the Developer Ecosystem 2026 survey by JetBrains. But we also know a lot more about the developers who use these two languages – both […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2d3dd6c1f601e84e",
+    "title": "Coding, Math, and AI: What’s Ahead for School Students in 2026–2027",
+    "url": "https://blog.jetbrains.com/education/2026/10/13/coding-math-and-ai-what-s-ahead-for-school-students-in-2026-2027/",
+    "date": "2026-10-13",
+    "source_id": "jetbrains-blog",
+    "author": "Alena Gupaisova",
+    "excerpt": "Looking for new ways to challenge your programming skills, explore AI, or get better at solving math problems? This school year, JetBrains is bringing even more opportunities to young people interested in technology. From free online clubs and coding competitions across Europe to intensive programming camps, there’s plenty to get involved in. Whether you want […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "137e3544cd9d4cb4",
+    "title": "The Evolution of Flow Collection in Jetpack Compose",
+    "url": "https://proandroiddev.com/the-evolution-of-flow-collection-in-jetpack-compose-e93416a9d52d?source=rss----c72404660798---4",
+    "date": "2026-10-13",
+    "source_id": "proandroiddev",
+    "author": "chanzmao",
+    "excerpt": "From basic state collection to lifecycle-aware UI updates Image created by AI When collecting a Flow in Jetpack Compose, the code can be as simple as this: val uiState by viewModel.uiState.collectAsState() But Android applications have a lifecycle. When an app moves to the background, should the UI continue collecting updates? What happens when the user returns? Over the years, Android developers have used several approaches to handle these questions. Understanding how they evolved helps us choo",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "fac66e97e754a1e5",
+    "title": "Taming Bazel Dependency Conflicts: An Android Case Study",
+    "url": "https://proandroiddev.com/taming-bazel-dependency-conflicts-an-android-case-study-44b7926839be?source=rss----c72404660798---4",
+    "date": "2026-10-12",
+    "source_id": "proandroiddev",
+    "author": "Taufik Amaryansyah",
+    "excerpt": "Illustration Generated by Gemini For many developers, “dependency conflict” is a phrase that instantly causes a headache. This is especially true when moving from a familiar ecosystem like Gradle to a powerful but complex tool like Bazel. A while back, I wrote about my experience building an Android app with Bazel (You can read about it here: Building a Modern Android Music Player App with Bazel… ). Recently, I decided to update some libraries in that project, most notably by moving to the Compo",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "17fc2372277519ed",
+    "title": "Fixing Recomposition in Jetpack Compose: 12 Stability Mistakes That Redraw Your UI Twice",
+    "url": "https://medium.com/@ramadan123sayed/fixing-recomposition-in-jetpack-compose-12-stability-mistakes-that-redraw-your-ui-twice-31d108f48c33?source=rss------kotlin-5",
+    "date": "2026-10-13",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ramadan Sayed",
+    "excerpt": "Your screen redraws far more than you think it does. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ec17c1eb0435e0d0",
+    "title": "Cutting Android Cold Start With Baseline Profiles: Generating, Verifying, and Keeping It Honest in…",
+    "url": "https://medium.com/@ramadan123sayed/cutting-android-cold-start-with-baseline-profiles-generating-verifying-and-keeping-it-honest-in-9845acb6d933?source=rss------kotlin-5",
+    "date": "2026-10-13",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ramadan Sayed",
+    "excerpt": "There is a double-digit percentage improvement in your cold start time sitting unclaimed in your project right now. It requires no new… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f8b01447a2cc50fd",
+    "title": "One guard clause, four switches in my app, and the return value you cannot copy",
+    "url": "https://medium.com/codex/one-guard-clause-four-switches-in-my-app-and-the-return-value-you-cannot-copy-1efdcc7666dc?source=rss------kotlin-5",
+    "date": "2026-10-13",
+    "source_id": "medium-kotlin-tag",
+    "author": "Muhammad Azhar",
+    "excerpt": "Three return false when the config read fails, one returns null, and that one difference is the whole safety design Continue reading on CodeX »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9c473a587d532102",
+    "title": "Fixing Uploads That Stop When a Compose iOS Screen Closes",
+    "url": "https://medium.com/@sijanneupane/fixing-uploads-that-stop-when-a-compose-ios-screen-closes-ca0ccbba1cbf?source=rss------kotlin-5",
+    "date": "2026-10-13",
+    "source_id": "medium-kotlin-tag",
+    "author": "Sijan Neupane",
+    "excerpt": "Leaving a photo review screen should let you get on with the app. In our Compose Multiplatform iOS flow, disposing one screen could cancel… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b399107ab8c6f45b",
+    "title": "Daily Kotlin: Object Declarations and Companion Objects",
+    "url": "https://jasonobject.medium.com/daily-kotlin-object-declarations-and-companion-objects-f18ba460116e?source=rss------kotlin-5",
+    "date": "2026-10-13",
+    "source_id": "medium-kotlin-tag",
+    "author": "Jason Kwon",
+    "excerpt": "Mastering thread-safe singletons, companion factories, and anonymous object expressions across Kotlin Multiplatform Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7ba0abaf7e96026b",
+    "title": "Bridging React Native with Native iOS and Android Screens",
+    "url": "https://medium.com/@silverskytechnology/bridging-react-native-with-native-ios-and-android-screens-dd73ab2ba811?source=rss------kotlin-5",
+    "date": "2026-10-13",
+    "source_id": "medium-kotlin-tag",
+    "author": "Silversky Technology",
+    "excerpt": "React Native lets a single JavaScript codebase target both iOS and Android. But every experienced mobile engineer eventually hits a wall… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "285274eaaa6608b5",
+    "title": "Your Design System Is a Contract. Enforce It with Konsist and Android Lint",
+    "url": "https://ravirawal13.medium.com/konsist-design-system-validator-jetpack-compose-d5c3814fe462?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ravi Rawal",
+    "excerpt": "A practical guide to enforcing colors, spacing, typography, shapes, and component conventions in Jetpack Compose — with a custom Android… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "74f55f71e9ea0c3f",
+    "title": "[MM’s] Engineering Weekly #81 — From Code Intelligence to AI Engineering",
+    "url": "https://marconak-matej.medium.com/mms-engineering-weekly-81-from-code-intelligence-to-ai-engineering-3ba4ad81dae3?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "Matej Marconak",
+    "excerpt": "Better developer tooling, safer AI-assisted coding and approaches to building software. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "dd327a5a0ea609b2",
+    "title": "Who Owns the Value? Choosing Between lateinit and by lazy in Production Kotlin",
+    "url": "https://medium.com/@sivavishnu0705/who-owns-the-value-choosing-between-lateinit-and-by-lazy-in-production-kotlin-060199cbe1ab?source=rss------kotlin-5",
+    "date": "2026-10-12",
+    "source_id": "medium-kotlin-tag",
+    "author": "Android Expert",
+    "excerpt": "Both keywords delay initialization, but they solve different problems. Learn the ownership rule and the Android failure modes behind each. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e8ea23ba0c326b5e",
+    "title": "Why Do Android Phone Makers Keep Copying Apple?",
+    "url": "https://medium.com/the-story-well/why-do-android-phone-makers-keep-copying-apple-6ec4370b6c25?source=rss------android-5",
+    "date": "2026-10-13",
+    "source_id": "medium-android-tag",
+    "author": "Shahrukh Qureshi",
+    "excerpt": "Android was supposed to be the iPhone’s alternative. It was supposed to give smartphone manufacturers the freedom to experiment with… Continue reading on The Story Well »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2e289d66bfa27222",
+    "title": "Meet the Vivo X Fold6 and Its Dimensity 9500 Super Edition Chip",
+    "url": "https://medium.com/@agastyadewan/meet-the-vivo-x-fold6-and-its-dimensity-9500-super-edition-chip-28016d46c910?source=rss------android-5",
+    "date": "2026-10-13",
+    "source_id": "medium-android-tag",
+    "author": "Agastya Dewan",
+    "excerpt": "Vivo has launched the X Fold6, and the biggest change is not on the outside. It is the chip inside. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "17be75186243a327",
+    "title": "Preview Cross-System Data Changes Before Sync",
+    "url": "https://medium.com/@raylabs/preview-cross-system-data-changes-before-sync-d1e32dfe2886?source=rss------android-5",
+    "date": "2026-10-13",
+    "source_id": "medium-android-tag",
+    "author": "Raylabs",
+    "excerpt": "Learn how to preview data differences between Google Sheets and a backend database before syncing, block ambiguous changes, and verify… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8129821e23f33a97",
+    "title": "Blade Runner & What It Truly Means to Be Human",
+    "url": "https://medium.com/@dekarteng/blade-runner-what-it-truly-means-to-be-human-6d15e95a490c?source=rss------android-5",
+    "date": "2026-10-13",
+    "source_id": "medium-android-tag",
+    "author": "dekart ENG",
+    "excerpt": "In a world filled with artificial life, why do sci-fi androids feel more human than us? Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4fdafaa1fa14052d",
+    "title": "What to Do Before Buying a Company-Owned or School-Owned Used Phone",
+    "url": "https://alexmorgan1129.medium.com/what-to-do-before-buying-a-company-owned-or-school-owned-used-phone-93d2c2e8db40?source=rss------android-5",
+    "date": "2026-10-13",
+    "source_id": "medium-android-tag",
+    "author": "Alex Morgan",
+    "excerpt": "Quick Answer\nBefore handing over any cash for a used company or school phone, you must perform three critical checks: verify the IMEI for… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8f4114b3a883730a",
+    "title": "How to Connect Your Android Phone to Your Car Screen: A Simple Guide (2026)",
+    "url": "https://medium.com/@undzshop40/how-to-connect-your-android-phone-to-your-car-screen-a-simple-guide-2026-81a939d36da9?source=rss------android-5",
+    "date": "2026-10-13",
+    "source_id": "medium-android-tag",
+    "author": "Undzshop",
+    "excerpt": "Long drives are better when your phone and car work together. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3bf3d365ca58daaf",
+    "title": "F you Google",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x4ou0k/f_you_google/",
+    "date": "2026-10-13",
+    "source_id": "reddit-androiddev",
+    "author": "/u/fshme",
+    "excerpt": "Every time, the same shitshow. This release has been rejected already two times and every time I’m trying to fix it, I’m waiting over 2w for another review. Android because of that is already 5 versions behind. Meanwhile Apple takes 48h MAX!!!! to review anything my studio is publishing. At this point I’m considering pulling the app out of the Play Store because it’s just a waste of time and nerve-wracking. submitted by /u/fshme [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "077e5120c27b9a7b",
+    "title": "Publish to test-track using Android Studio Rabbit?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x4txpn/publish_to_testtrack_using_android_studio_rabbit/",
+    "date": "2026-10-13",
+    "source_id": "reddit-androiddev",
+    "author": "/u/hendarion",
+    "excerpt": "Hi. The news says building an AAB/APK should offer uploading it directly to my Play Console's test-track. Just... it doesn't. Any idea what I need to do? The dialog only says \"yep, that package name is registered by a verified developer\" - yea, that developer is me, I would like to upload now. But there's no such option. Also not after building the AAB completed. Any ideas? submitted by /u/hendarion [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a88678b1220aad0a",
+    "title": "How We Refactored a Crashing Production Android Payment Module via TDD and Feature Toggles",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x4snau/how_we_refactored_a_crashing_production_android/",
+    "date": "2026-10-13",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Useful_Mode1799",
+    "excerpt": "A year after deploying our application, Android Vitals and Firebase telemetry flags revealed a critical architecture defect: a 5% transaction drop rate and systematic crashes inside the core checkout flow on Android 13+. De-obfuscation map logs pointed to a strict concurrency conflict between the Google Play Billing Library and our custom internal billing wrapper. Downgrading Google Billing was not an option. We had to rewrite the module in a live app without losing active subscriptions. Here is",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "329a319a3c14ed75",
+    "title": "Using Claude AI as a mentor to relearn Android: good approach or a trap?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x4e68u/using_claude_ai_as_a_mentor_to_relearn_android/",
+    "date": "2026-10-12",
+    "source_id": "reddit-androiddev",
+    "author": "/u/MML_Pro",
+    "excerpt": "Hi everyone, I’ve been working with Android for a while, but I’ve had a gap in active practice and want to get my skills back to a solid level. I’m planning to use Claude (Anthropic’s AI) as a mentor, not as a code generator. The setup: I’m building a real app with Jetpack Compose , Clean Architecture , and a multi-module structure (core / domain / data / feature modules). Claude designs the module structure and breaks the work into small tasks with clear acceptance criteria. I write all the cod",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e017c7c9709b8b5f",
+    "title": "A Staff Engineer's Honest Take on \"Is Android Engineering Dead?\"",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x4jx9x/a_staff_engineers_honest_take_on_is_android/",
+    "date": "2026-10-13",
+    "source_id": "reddit-androiddev",
+    "author": "/u/droidchef",
+    "excerpt": "Personally for me a lot of aspects around Android Engineering have died multiple times over the last decade. I do discuss these in the video and they heavily inform my opinion that I deliver. Having Answered This Question a Million Times in One on Ones, Finally Decided to Make a Video on It. submitted by /u/droidchef [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2051b54007f3f068",
+    "title": "How is mobile testing going for you in 2026? (2-3 min anonymous survey, mods ok'd)",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x3zleq/how_is_mobile_testing_going_for_you_in_2026_23/",
+    "date": "2026-10-12",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Mashomobil",
+    "excerpt": "Hi guys! mods said I can post this so thanks to them :) I work at Marathon Labs, we do cloud infra for mobile testing. Wanted to say that upfront. I'm running this because I'd rather hear what teams really deal with than guess from the vendor side, and I'll use the answers to put together results and a guidebook for everyone. It’s a short anonymous survey (2-3 min) about the pain points of people who build, test or lead teams that ship native iOS and Android apps. No email required. You only lea",
     "date_uncertain": false,
     "summarized": false
   }
