@@ -743,22 +743,6 @@
     "date_corrected_from": "2026-07-05"
   },
   {
-    "id": "e7154b35acd865cf",
-    "title": "Kotlin Turns 15: Celebrate the Kotlin Effect",
-    "url": "https://blog.jetbrains.com/kotlin/2026/07/kotlin-turns-15-celebrate-the-kotlin-effect/",
-    "date": "2026-07-17",
-    "source_id": "kotlin-blog",
-    "excerpt": "🎉 Kotlin turns 15! 🎉 For 15 years, you’ve helped shape Kotlin into the language it is today. Whether you’ve built apps, contributed to the ecosystem, taught others, or simply chosen Kotlin for your next project – thank you for being part of the journey. Today, we’re celebrating Kotlin and the people who have made […]",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "JetBrains marks Kotlin's 15th anniversary with a set of community activities. These include leaving a birthday postcard message, a browser game, and free access to select Kotlin courses on Hyperskill until September 9, 2026.",
-    "topics": [
-      "kotlin",
-      "jetbrains"
-    ],
-    "author": "Viliam Sedliak"
-  },
-  {
     "id": "c3b422f79b5a75c9",
     "title": "Bring your KMP library to NuGet",
     "url": "https://proandroiddev.com/bring-your-kmp-library-to-nuget-02e1131a4707?source=rss----c72404660798---4",
@@ -789,140 +773,6 @@
       "android-api"
     ],
     "author": "Vitaliy Gribko"
-  },
-  {
-    "id": "d0fe45e91b2db02f",
-    "title": "Kotlin Architecture Tests with Konture: A Practical Guide - Part 3/3",
-    "url": "https://proandroiddev.com/kotlin-architecture-tests-with-konture-a-practical-guide-part-3-3-1f36ebe685db?source=rss----c72404660798---4",
-    "date": "2026-07-17",
-    "source_id": "proandroiddev",
-    "excerpt": "Set up a dedicated architecture-test module, add Konture, and grow a small suite of structural rules that protects the boundaries your Kotlin project actually depends on. The best first architecture test is usually not clever. It is a rule the team already believes: Feature implementation modules must not depend on sibling feature implementation modules. That rule is concrete. It is easy to explain. It is painful when broken. It also exercises the right habit: encode a real architectural decisio",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Part 3 of a guide on writing architecture tests for Kotlin projects using the Konture library. It walks through setting up a dedicated architecture-test module, adding Konture via the Gradle version catalog and plugin, and wiring up module dependencies. The example rule enforces that feature implementation modules must not depend on sibling feature implementation modules, using Gradle Kotlin DSL and JUnit 5.",
-    "topics": [
-      "testing",
-      "architecture",
-      "gradle",
-      "version-catalog"
-    ],
-    "author": "Bao Le"
-  },
-  {
-    "id": "8373195d53ce8914",
-    "title": "The 120Hz Trap: Debugging Infinite Recomposition and Silent Deep Link Failures on ColorOS",
-    "url": "https://proandroiddev.com/the-120hz-trap-debugging-infinite-recomposition-and-silent-deep-link-failures-on-coloros-bceb3a320e11?source=rss----c72404660798---4",
-    "date": "2026-07-17",
-    "source_id": "proandroiddev",
-    "excerpt": "How a single mid-range Oppo device exposed two bugs that had been hiding in our codebase all along. Introduction As Android developers move to declarative UIs with Jetpack Compose — often coexisting with legacy Epoxy screens — device-specific quirks have a way of exposing problems that were sitting quietly in “stable” code the whole time. In a recent rollout, we hit a critical incident on one specific device: the Oppo F31 Pro 5G , a 6.57-inch 120Hz AMOLED mid-ranger running ColorOS 15 (Android 1",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "A root-cause analysis of two bugs that surfaced only on a 120Hz Oppo ColorOS device: an infinite Compose recomposition loop and a silently failing deep link. The author explains that the recomposition loop was caused by writing to MutableState during the composition phase, which the high refresh rate exposed by firing the broken loop twice as often, and covers why deep links can die on custom OEM skins.",
-    "topics": [
-      "compose",
-      "navigation",
-      "android-api"
-    ],
-    "author": "Subhankar Bag"
-  },
-  {
-    "id": "cc87c3fdc709c51f",
-    "title": "Kotlin Architecture Tests: Why Konture Exists - Part 2/3",
-    "url": "https://proandroiddev.com/kotlin-architecture-tests-why-konture-exists-4ac92a4dd3ba?source=rss----c72404660798---4",
-    "date": "2026-07-17",
-    "source_id": "proandroiddev",
-    "excerpt": "Kotlin architecture has two views of the same architecture: the Gradle graph that decides what can link, and the Kotlin source model that decides what the code actually says. Konture exists to test both. Consider a rule from an Android project: Presentation code must not expose transport DTOs in screen state or UI-facing APIs. That rule can fail in two different places. It can fail in the build graph when the presentation module is wired directly to a transport module: // feature/profile/present",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Part 2 of a series explaining the rationale behind Konture, a Kotlin architecture-testing tool. It argues that a Kotlin project has two views of its architecture: the Gradle module graph that decides what can link, and the Kotlin source model that decides what the code actually references, and that a rule such as presentation code not exposing transport DTOs can be violated in either view. The article uses Now in Android and a KotlinConf KMP sample as showcases and contrasts Konture with existing single-view architecture tools.",
-    "topics": [
-      "architecture",
-      "testing",
-      "gradle",
-      "kmp"
-    ],
-    "author": "Bao Le"
-  },
-  {
-    "id": "41ebfff8fd3ce57b",
-    "title": "Kotlin Architecture Tests: What They Are and Why They Matter - Part 1/3",
-    "url": "https://proandroiddev.com/kotlin-architecture-tests-what-they-are-and-why-they-matter-389ce9a1204c?source=rss----c72404660798---4",
-    "date": "2026-07-17",
-    "source_id": "proandroiddev",
-    "excerpt": "A Kotlin project can compile, pass its unit tests, satisfy its linter, and still become structurally harder to change. Architecture tests exist for that gap. Most verification tools answer local questions. The compiler asks whether the code is valid Kotlin. A linter asks whether a file follows local style and quality rules. Unit tests ask whether a function or component behaves as expected. Those checks are necessary. They are not the same as asking whether the system still has the shape the tea",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Part 1 of a series introducing Kotlin architecture tests, which verify that structural decisions such as layer boundaries and allowed package dependencies still hold, a gap left by compilers, linters, and unit tests. It shows an example using Konture to assert that domain-package classes only depend on approved packages, and explains why architecture violations (like a domain model accepting a network DTO or a feature module importing another's implementation) pass ordinary green builds.",
-    "topics": [
-      "architecture",
-      "testing",
-      "kotlin"
-    ],
-    "author": "Bao Le"
-  },
-  {
-    "id": "1547c19bafa08031",
-    "title": "I Stopped Eyeballing LLM Output and Started Scoring It Like a Unit Test",
-    "url": "https://proandroiddev.com/testing-an-llm-agent-like-i-test-kotlin-code-50849842ead7?source=rss----c72404660798---4",
-    "date": "2026-07-17",
-    "source_id": "proandroiddev",
-    "excerpt": "Second in a loose series on making correctness checkable. Previously: Teaching a Kotlin Chess Engine to Debug Itself . When I write code, I test it: input in, assertion out. In part one, I pushed that discipline onto a chess engine: perft gave a mathematically correct number of nodes for every position, Stockfish supplied a second opinion that localized the bug, and a coding agent did the fixing. I knew — arithmetically, mechanically — that the fix worked. But the moment you put an LLM in the lo",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "The author describes building an evaluation harness to score the output of a Kotlin-based LLM agent host (called ferryman, a local-first MCP client with pluggable skills and multi-provider routing) the way unit tests score code, rather than judging output by eye. It argues that the evaluation harness, not the agent itself, is what makes an AI feature production-ready, and notes the harness caught bugs including in its own graders and the LLM judge.",
-    "topics": [
-      "kotlin",
-      "testing"
-    ],
-    "author": "Gabor Berenyi"
-  },
-  {
-    "id": "9a5edb9d7702ac5b",
-    "title": "ActivityNotFoundException in Android: How to Reproduce and Fix It",
-    "url": "https://proandroiddev.com/activitynotfoundexception-in-android-how-to-reproduce-and-fix-it-8977c223e53b?source=rss----c72404660798---4",
-    "date": "2026-07-17",
-    "source_id": "proandroiddev",
-    "excerpt": "A real debugging technique using an AOSP emulator Activities are one of the fundamental building blocks of an Android application. Every app has at least one activity as its entry point. While ActivityNotFoundException is easy to fix, reproducing it during development can be surprisingly difficult. In this article, I'll show you both. What is ActivityNotFoundException? When we try to start an activity through Intent and an activity to execute that particular action is not found on the Android de",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Explains what causes ActivityNotFoundException in Android and how to reproduce it. The exception occurs when an implicit intent has no component available to handle its action, unlike explicit intents where the compiler can catch a missing activity. The article uses an ACTION_VIEW example and an AOSP emulator to demonstrate reproducing the error during development.",
-    "topics": [
-      "android-api"
-    ],
-    "author": "Dilipchandar"
-  },
-  {
-    "id": "4eb71d71252e8be3",
-    "title": "I Built a Jelly-Like FAB Menu for Jetpack Compose",
-    "url": "https://proandroiddev.com/i-built-a-jelly-like-fab-menu-for-jetpack-compose-42e9f65f6576?source=rss----c72404660798---4",
-    "date": "2026-07-17",
-    "source_id": "proandroiddev",
-    "excerpt": "How I built a jelly-like FAB menu from scratch: no shaders, just Jetpack Compose Canvas and Animatable API Source: https://dribbble.com/shots/3908815-Floating-button Most expanding Floating Action Button menus animate the buttons . I wanted to animate the button itself . The inspiration came from a Dribbble animation where the main FAB didn’t simply reveal more actions, it stretched toward them, wobbled as they emerged, and settled back into place like a soft blob of jelly. It looked playful, bu",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "A walkthrough of building JellyFab, an open-source Compose library that creates a jelly-like expanding Floating Action Button menu. The effect is built without shaders, using Jetpack Compose Canvas, sampled points, and the Animatable API to deform the button into a soft blob. The article covers the custom trigger button (a clickable Box rather than a FloatingActionButton), expanding mini-FAB layers, the deformable blob, and a dynamic shadow.",
-    "topics": [
-      "compose",
-      "animation",
-      "material3"
-    ],
-    "author": "Prashant Panwar"
-  },
-  {
-    "id": "116fc7504e14f08b",
-    "title": "Multi-Module Build Economics: Designing API vs. Implementation Boundaries to Survive 50+ Dev Teams",
-    "url": "https://proandroiddev.com/multi-module-build-economics-designing-api-vs-implementation-boundaries-to-survive-50-dev-teams-464e6ddeabeb?source=rss----c72404660798---4",
-    "date": "2026-07-17",
-    "source_id": "proandroiddev",
-    "excerpt": "By Senior Software Engineer @ Google Image custom-generated by the author. 1. The Micro-Economics of Gradle Build Graphs At five developers, your build system is invisible. At 50+ developers across 10 distinct feature squads, your Gradle build graph is either an accelerator or your single largest payroll drain. Most Android teams react to scaling pain by creating more modules. They split a monolith into 30 feature modules, connect them via api dependencies, and express surprise when incremental ",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "An article on Gradle multi-module build performance for large Android teams. It argues that slow incremental builds stem from ABI exposure rather than module count, distinguishes compile classpath from runtime classpath, and shows how using api versus implementation dependencies and separating :feature:*-api from :feature:*-impl modules limits recompilation.",
-    "topics": [
-      "gradle",
-      "build-logic",
-      "architecture"
-    ]
   },
   {
     "id": "c9ff4cd9666d8a82",
@@ -1170,24 +1020,6 @@
     "topics": [],
     "low_quality": true,
     "low_quality_reason": "no-kotlin-signal"
-  },
-  {
-    "id": "7eeaeee7f3c433b7",
-    "title": "v1.12.10-alpha01+dev4492: Details",
-    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4492",
-    "date": "2026-07-17",
-    "source_id": "lib-compose-multiplatform",
-    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4492 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4492 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4492 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4492",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "A development pre-release tag (v1.12.10-alpha01+dev4492) of Compose Multiplatform from JetBrains. It bundles versions of the core Compose, Material3, lifecycle, and navigation3 artifacts. This is an automated dev build listing with no detailed changelog.",
-    "topics": [
-      "compose-multiplatform",
-      "jetbrains",
-      "material3",
-      "navigation"
-    ],
-    "author": "olonho"
   },
   {
     "id": "bde081e03055f52c",
@@ -31015,6 +30847,325 @@
     "source_id": "reddit-androiddev",
     "author": "/u/_aDamian_",
     "excerpt": "I've just released Pagelin 1.0.3 , an open-source Android library for generating PDFs using Jetpack Compose. It supports custom Compose pages, multi-page documents, and ready-to-use templates. Available on Maven Central. Feedback and suggestions are welcome! GitHub: https://github.com/adamian-code/pagelin submitted by /u/_aDamian_ [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "3b90b8a80bf532d4",
+    "title": "KotlinConf Recap: Lessons from Verifone’s Architect on Kotlin in Mission-Critical Payments",
+    "url": "https://blog.jetbrains.com/kotlin/2026/10/kotlinconf-recap-lessons-from-verifone-s-architect-on-kotlin-in-mission-critical-payments/",
+    "date": "2026-10-14",
+    "source_id": "kotlin-blog",
+    "author": "Alina Dolgikh",
+    "excerpt": "Yuri Geronimus’s four-year-old son once asked him what his job was. Yuri told him he writes books: books that describe what he wants to change in the physical world. His son didn’t fully get it.  Neither would most engineers: if you understand the words in your application code, you build good systems. If you don’t, […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "9c054ee7683fcd15",
+    "title": "How Cloud-Based Agent Sandboxing Works in Air",
+    "url": "https://blog.jetbrains.com/air/2026/10/cloud-agent-sandboxing/",
+    "date": "2026-10-14",
+    "source_id": "jetbrains-blog",
+    "author": "Dennis Ushakov",
+    "excerpt": "Recently, we released a preview of cloud agents in JetBrains Air. Cloud agents let you run AI agents remotely in a JetBrains-managed cloud environment, giving them an isolated place to work without relying on your local machine. Here’s what that looks like in practice. In this video, I start a task in IntelliJ IDEA, follow […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5a7b144faf11d810",
+    "title": "เปลี่ยนหน้าแอปได้ในไม่กี่วินาที ไม่ต้องรอ Play Store: ลองทำ Server-Driven UI ด้วย Jetpack Compose",
+    "url": "https://medium.com/@maturapoj.h/%E0%B9%80%E0%B8%9B%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%99%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B9%81%E0%B8%AD%E0%B8%9B%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%83%E0%B8%99%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%81%E0%B8%B5%E0%B9%88%E0%B8%A7%E0%B8%B4%E0%B8%99%E0%B8%B2%E0%B8%97%E0%B8%B5-%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%A3%E0%B8%AD-play-store-%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B3-server-driven-ui-%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2-jetpack-compose-0e36d7a9ee7c?source=rss------kotlin-5",
+    "date": "2026-10-15",
+    "source_id": "medium-kotlin-tag",
+    "author": "Maturapoj H",
+    "excerpt": "กด Broadcast บนเว็บ แล้ว UI บนมือถือเปลี่ยนทันที มาดูกันว่าเบื้องหลังทำงานยังไง Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f8837acee3d88776",
+    "title": "Stop Arguing About Member Order: Sort Your Kotlin Classes with One Shortcut",
+    "url": "https://medium.com/@a.ayar94/stop-arguing-about-member-order-sort-your-kotlin-classes-with-one-shortcut-f203a1bd0494?source=rss------kotlin-5",
+    "date": "2026-10-15",
+    "source_id": "medium-kotlin-tag",
+    "author": "Adem Ayar",
+    "excerpt": "Every Android team eventually has the same review comment: “can you move the lifecycle methods up?” Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2ae3d5dae994b81c",
+    "title": "Our Headless Flutter Compatibility Matrix that helped Cross-Platform our Native .aar",
+    "url": "https://medium.com/@harrisonkuria254/our-headless-flutter-compatibility-matrix-that-helped-cross-platform-our-native-aar-30bfed6a081d?source=rss------kotlin-5",
+    "date": "2026-10-14",
+    "source_id": "medium-kotlin-tag",
+    "author": "Harrison Kuria",
+    "excerpt": "We built our Native SDK in pure Kotlin only for it to fail in a flutter app at Compile Time Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4316b494a9fb4446",
+    "title": "Frameworks by Switch: Compose, Ktor and One Shared Model",
+    "url": "https://ravirawal13.medium.com/kotlin-toolchain-compose-ktor-shared-model-dc557f8a8284?source=rss------kotlin-5",
+    "date": "2026-10-14",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ravi Rawal",
+    "excerpt": "Turning on Compose Multiplatform, Ktor and kotlinx.serialization with the Kotlin Toolchain 0.13, and sharing one data model between four… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a877ef067409c015",
+    "title": "Dependency Inversion Principle (DIP) in Android — Depend on Abstractions, Not Concrete Classes",
+    "url": "https://medium.com/@maheshjadhav8122/dependency-inversion-principle-dip-in-android-depend-on-abstractions-not-concrete-classes-7f89a4eaac23?source=rss------kotlin-5",
+    "date": "2026-10-14",
+    "source_id": "medium-kotlin-tag",
+    "author": "Mahesh Jadhav",
+    "excerpt": "Your class should depend on what something can do, not on one specific implementation of how it does it. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "34bf6e664a71e002",
+    "title": "AppArmorX: Android Security Through a Single Gradle Plugin",
+    "url": "https://medium.com/@shushanttiwari.ashu/apparmorx-android-security-through-a-single-gradle-plugin-a996b2a1617e?source=rss------kotlin-5",
+    "date": "2026-10-14",
+    "source_id": "medium-kotlin-tag",
+    "author": "Shushant Tiwari",
+    "excerpt": "Building a Gradle-delivered Android security engine, testing it against real attacks, and documenting the limits alongside the results. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "520cc1ae1b88f54d",
+    "title": "Android 16 vs Android 17: What Actually Changed",
+    "url": "https://medium.com/@androidlab/android-16-vs-android-17-what-actually-changed-4e7892b7046b?source=rss------kotlin-5",
+    "date": "2026-10-14",
+    "source_id": "medium-kotlin-tag",
+    "author": "AndroidLab by Andre",
+    "excerpt": "Skip the keynote recap. Here’s what the jump from API 36 to API 37 means for your codebase. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "dae634186fcf0ed2",
+    "title": "Kotlin 2.4: 10 Features You Should Start Using Today",
+    "url": "https://medium.com/@androidlab/kotlin-2-4-10-features-you-should-start-using-today-dfc1065a0283?source=rss------kotlin-5",
+    "date": "2026-10-14",
+    "source_id": "medium-kotlin-tag",
+    "author": "AndroidLab by Andre",
+    "excerpt": "Stable context parameters, cleaner ViewModels, and a few experiments worth trying before everyone else does. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d939859801b1d0ab",
+    "title": "Android dynamic colors for your own design system",
+    "url": "https://medium.com/@lucf15/android-dynamic-colors-for-your-own-design-system-163461faca03?source=rss------kotlin-5",
+    "date": "2026-10-14",
+    "source_id": "medium-kotlin-tag",
+    "author": "Luca Fioravanti",
+    "excerpt": "Using the system palette in Compose, Android Views and XML, with an explicit fallback for older devices. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "dcd0795a124b82b7",
+    "title": "My own audit said to cut one analytics field from two apps. It has shipped in 14 releases since",
+    "url": "https://medium.com/codex/my-own-audit-said-to-cut-one-analytics-field-from-two-apps-it-has-shipped-in-14-releases-since-b8a19a422d98?source=rss------kotlin-5",
+    "date": "2026-10-14",
+    "source_id": "medium-kotlin-tag",
+    "author": "Muhammad Azhar",
+    "excerpt": "Secure Folder and Mock Location still send part of the raw Play install referrer to GA4, and the audit got two other things wrong Continue reading on CodeX »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1e1f5d6f29e5ede2",
+    "title": "Choosing Real-Device Infrastructure for Mobile AI: Public Cloud, Dedicated Fleets, or Both?",
+    "url": "https://medium.com/@armarray/choosing-real-device-infrastructure-for-mobile-ai-public-cloud-dedicated-fleets-or-both-600b2054259d?source=rss------android-5",
+    "date": "2026-10-15",
+    "source_id": "medium-android-tag",
+    "author": "ARMARRAY",
+    "excerpt": "Match device access to workload, privacy requirements, and operating needs Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f10d830d77e1bdca",
+    "title": "Infinity CM2MT2 v3.13 New Update",
+    "url": "https://medium.com/@chaudharyuzair802/infinity-cm2mt2-v3-13-new-update-976f77e2924d?source=rss------android-5",
+    "date": "2026-10-15",
+    "source_id": "medium-android-tag",
+    "author": "GSM World",
+    "excerpt": "Download Link: https://go.cyberslinks.com/r.php?id=81aZsS Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b4785580aaa2d311",
+    "title": "Xiaomi Push Fix Tool v1.1 — Fix Delayed Notifications on MIUI & HyperOS (100% Working)",
+    "url": "https://medium.com/@chaudharyuzair802/xiaomi-push-fix-tool-v1-1-fix-delayed-notifications-on-miui-hyperos-100-working-2b5814d70037?source=rss------android-5",
+    "date": "2026-10-15",
+    "source_id": "medium-android-tag",
+    "author": "GSM World",
+    "excerpt": "Download Link: https://go.cyberslinks.com/r.php?id=FMcRSK Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "edcf3502e4702317",
+    "title": "Top Android cloud phones in 2026: 6 platforms compared by what’s included",
+    "url": "https://medium.com/@kseniia.shilova/top-android-cloud-phones-in-2026-6-platforms-compared-by-whats-included-17e3ba539d74?source=rss------android-5",
+    "date": "2026-10-15",
+    "source_id": "medium-android-tag",
+    "author": "Kseniia Shilova",
+    "excerpt": "DuoPlus, GeeLark, GoLogin, MoreLogin, Multilogin and VMOS Cloud, compared by what each plan includes, plus the limits users report. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "95013d695b6290c0",
+    "title": "Nothing Phone (4b): Where It Falls Short",
+    "url": "https://medium.com/@aadeshchawla897/nothing-phone-4b-where-it-falls-short-0add4a9333b4?source=rss------android-5",
+    "date": "2026-10-15",
+    "source_id": "medium-android-tag",
+    "author": "Aadesh Chawla",
+    "excerpt": "I wanted to like the Nothing Phone (4b). It has a big battery, clean software, and a friendly price. But the more I looked into it, the… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "02ace9dc5719d570",
+    "title": "CinePlus app problems can interrupt your plans when you are ready to watch something.",
+    "url": "https://medium.com/@apkcineplus/cineplus-app-problems-can-interrupt-your-plans-when-you-are-ready-to-watch-something-3264955607cd?source=rss------android-5",
+    "date": "2026-10-15",
+    "source_id": "medium-android-tag",
+    "author": "CinePlus APK",
+    "excerpt": "These symptoms do not all point to the same problem. An unstable connection, limited storage, incompatible software, or an unavailable… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d3c5620e672bb10d",
+    "title": "Why Migrating to Navigation 3 Became the Right Move for Box Box Club",
+    "url": "https://blog.boxbox.club/why-migrating-to-navigation-3-became-the-right-move-for-box-box-club-d356f9055a18?source=rss------android-5",
+    "date": "2026-10-15",
+    "source_id": "medium-android-tag",
+    "author": "Bhoomi Vaghasiya Gadhiya",
+    "excerpt": "Building a Better Navigation Architecture Continue reading on Box Box Club® »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ba7f96354526578a",
+    "title": "Engineering Scalability: Inside the Multi-Platform Architecture of SafariBookers",
+    "url": "https://medium.com/@enquiry_73735/engineering-scalability-inside-the-multi-platform-architecture-of-safaribookers-aab3c89a9efb?source=rss------android-5",
+    "date": "2026-10-15",
+    "source_id": "medium-android-tag",
+    "author": "Thefoxlab",
+    "excerpt": "Standard booking plugins break the moment a business model moves beyond hourly appointments or single-night hotel stays. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "58f10f9a8fb544e4",
+    "title": "Weather Alerts: Custom Weather Notifications for the Places You Care About",
+    "url": "https://medium.com/@info_17069/weather-alerts-custom-weather-notifications-for-the-places-you-care-about-e8912b65ecd7?source=rss------android-5",
+    "date": "2026-10-15",
+    "source_id": "medium-android-tag",
+    "author": "Weather Alerts",
+    "excerpt": "Most weather apps tell you what the weather is. Very few tell you when the weather is about to matter to you. That gap is why I started… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a0ba7dc21536d2df",
+    "title": "14 October 2026 Artifact Wave",
+    "url": "https://commonsware.com/blog/2026/10/14/jetpack-artifact-wave.html",
+    "date": "2026-10-14",
+    "source_id": "commonsware",
+    "author": "CommonsWare",
+    "excerpt": "Here is what we got as new Jetpack artifacts this week!",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "37c6f291c0abb5c2",
+    "title": "v1.12.2: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.2",
+    "date": "2026-10-15",
+    "source_id": "lib-compose-multiplatform",
+    "author": "olonho",
+    "excerpt": "org.jetbrains.compose. : :1.12.2",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "756f7a823091b513",
+    "title": "buildHelpers_v0.1.1",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/buildHelpers_v0.1.1",
+    "date": "2026-10-15",
+    "source_id": "lib-compose-multiplatform",
+    "author": "olonho",
+    "excerpt": "automatically created by TeamCity VCS labeling build feature",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8b0934ac310a7fed",
+    "title": "v1.12.2+dev4988: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.2%2Bdev4988",
+    "date": "2026-10-14",
+    "source_id": "lib-compose-multiplatform",
+    "author": "olonho",
+    "excerpt": "org.jetbrains.compose. : :1.12.2+dev4988",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "89903bb39074b692",
+    "title": "Anyone letting agents drive their app on the emulator? Looking for feedback",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x6gspf/anyone_letting_agents_drive_their_app_on_the/",
+    "date": "2026-10-15",
+    "source_id": "reddit-androiddev",
+    "author": "/u/blazejkustra",
+    "excerpt": "I’ve been working on Argent, an open-source MCP server that lets your agent (Claude Code, Codex, Cursor, etc.) tap through your app on an Android emulator or device, read the view hierarchy and logcat, and profile with Perfetto. That way it can check its own changes instead of just saying it’s done A lot of the feedback so far has come from React Native folks, but it works with native Kotlin/Compose apps too, and that’s where I’d love more input. If you’re already letting an agent test your app,",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8ce49913d2e58c92",
+    "title": "To senior android devs here, was it really that easy before the AI era?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x5wx6l/to_senior_android_devs_here_was_it_really_that/",
+    "date": "2026-10-14",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Acrobatic-Bit3508",
+    "excerpt": "These days, people often say that AI has severely impacted the job market. Candidates are applying to hundreds of jobs without getting a single interview call, and some are even losing their jobs to AI. My question is for senior developers who have experienced the job market before the AI era: Was getting a job and landing interviews really easier back then, or are people overreacting and blaming AI for what might actually be a skills gap? submitted by /u/Acrobatic-Bit3508 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "7dd973f847c43d63",
+    "title": "Where do you discover active open-source Android projects?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x5v999/where_do_you_discover_active_opensource_android/",
+    "date": "2026-10-14",
+    "source_id": "reddit-androiddev",
+    "author": "/u/aram-antonyan-hgtg42",
+    "excerpt": "I’m trying to find more open-source Android projects beyond the big, established names—apps, Kotlin/Compose libraries, and developer tools. Where do you usually discover them? Are there particular maintainers, communities, newsletters or repo lists you follow? I’d also appreciate examples of smaller projects with active development. I’m curious about what people are building and how you hear about it. submitted by /u/aram-antonyan-hgtg42 [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "fb715070734e1da7",
+    "title": "Strings.xml Localization (Free Plugin)",
+    "url": "https://www.reddit.com/r/androiddev/comments/1x5ut1w/stringsxml_localization_free_plugin/",
+    "date": "2026-10-14",
+    "source_id": "reddit-androiddev",
+    "author": "/u/StevdzaSan",
+    "excerpt": "https://preview.redd.it/ixbxiiqqegvh1.png?width=2802&format=png&auto=webp&s=397bc6f8c9c631be42d74b149c0c17cb813ed88e I've built a Free plugin for Android Studio , that helps you localize and maintain large number of localized strings.xml files with ease. I'm using Google Translate API + Gemini. Use your own API keys. Work directly from Android Studio. Save a ton of time. Website: https://localyze.app Jetbrains marketplace: https://plugins.jetbrains.com/plugin/30802-localyze submitted by /u/Stevd",
     "date_uncertain": false,
     "summarized": false
   }

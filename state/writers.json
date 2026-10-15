@@ -44,9 +44,9 @@
     ]
   },
   "aadesh-chawla": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-09-18",
-    "last_seen": "2026-10-05",
+    "last_seen": "2026-10-15",
     "name": "Aadesh Chawla",
     "photo": null,
     "profile": null,
@@ -273,6 +273,17 @@
     "first_seen": "2026-08-27",
     "last_seen": "2026-08-27",
     "name": "Adam Świderski",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
+  "adem-ayar": {
+    "articles": 1,
+    "first_seen": "2026-10-15",
+    "last_seen": "2026-10-15",
+    "name": "Adem Ayar",
     "photo": null,
     "profile": null,
     "sources": [
@@ -633,9 +644,9 @@
     ]
   },
   "alina-dolgikh": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-07-29",
-    "last_seen": "2026-07-29",
+    "last_seen": "2026-10-14",
     "name": "Alina Dolgikh",
     "photo": null,
     "profile": null,
@@ -988,9 +999,9 @@
     ]
   },
   "androidlab-by-andre": {
-    "articles": 32,
+    "articles": 34,
     "first_seen": "2026-07-29",
-    "last_seen": "2026-10-12",
+    "last_seen": "2026-10-14",
     "name": "AndroidLab by Andre",
     "photo": null,
     "profile": null,
@@ -1243,9 +1254,9 @@
     ]
   },
   "armarray": {
-    "articles": 6,
+    "articles": 7,
     "first_seen": "2026-09-30",
-    "last_seen": "2026-10-14",
+    "last_seen": "2026-10-15",
     "name": "ARMARRAY",
     "photo": null,
     "profile": null,
@@ -1655,7 +1666,7 @@
     ]
   },
   "bcorso": {
-    "articles": 11,
+    "articles": 12,
     "first_seen": "2026-07-06",
     "last_seen": "2026-07-06",
     "name": "bcorso",
@@ -1732,9 +1743,9 @@
     ]
   },
   "bhoomi-vaghasiya-gadhiya": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-09-22",
-    "last_seen": "2026-09-22",
+    "last_seen": "2026-10-15",
     "name": "Bhoomi Vaghasiya Gadhiya",
     "photo": null,
     "profile": null,
@@ -2007,6 +2018,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "cineplus-apk": {
+    "articles": 1,
+    "first_seen": "2026-10-15",
+    "last_seen": "2026-10-15",
+    "name": "CinePlus APK",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "ciphemicacademia": {
     "articles": 1,
     "first_seen": "2026-10-04",
@@ -2096,9 +2118,9 @@
     ]
   },
   "commonsware": {
-    "articles": 12,
+    "articles": 13,
     "first_seen": "2026-07-08",
-    "last_seen": "2026-10-07",
+    "last_seen": "2026-10-14",
     "name": "CommonsWare",
     "photo": null,
     "profile": null,
@@ -2380,6 +2402,17 @@
     "profile": null,
     "sources": [
       "medium-android-tag"
+    ]
+  },
+  "dennis-ushakov": {
+    "articles": 1,
+    "first_seen": "2026-10-14",
+    "last_seen": "2026-10-14",
+    "name": "Dennis Ushakov",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "jetbrains-blog"
     ]
   },
   "design-studio-ui-ux": {
@@ -3291,9 +3324,9 @@
     ]
   },
   "gsm-world": {
-    "articles": 35,
+    "articles": 37,
     "first_seen": "2026-08-29",
-    "last_seen": "2026-10-14",
+    "last_seen": "2026-10-15",
     "name": "GSM World",
     "photo": null,
     "profile": null,
@@ -3372,6 +3405,17 @@
     "first_seen": "2026-08-08",
     "last_seen": "2026-08-09",
     "name": "halo",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
+  "harrison-kuria": {
+    "articles": 1,
+    "first_seen": "2026-10-14",
+    "last_seen": "2026-10-14",
+    "name": "Harrison Kuria",
     "photo": null,
     "profile": null,
     "sources": [
@@ -4538,6 +4582,17 @@
       "medium-android-tag"
     ]
   },
+  "kseniia-shilova": {
+    "articles": 1,
+    "first_seen": "2026-10-15",
+    "last_seen": "2026-10-15",
+    "name": "Kseniia Shilova",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "kshitiz-agnihotri": {
     "articles": 1,
     "first_seen": "2026-10-04",
@@ -4682,9 +4737,9 @@
     ]
   },
   "luca-fioravanti": {
-    "articles": 7,
+    "articles": 8,
     "first_seen": "2026-07-26",
-    "last_seen": "2026-09-05",
+    "last_seen": "2026-10-14",
     "name": "Luca Fioravanti",
     "photo": null,
     "profile": null,
@@ -4759,9 +4814,9 @@
     ]
   },
   "mahesh-jadhav": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-09-28",
-    "last_seen": "2026-10-10",
+    "last_seen": "2026-10-14",
     "name": "Mahesh Jadhav",
     "photo": null,
     "profile": null,
@@ -5005,6 +5060,17 @@
     "first_seen": "2026-08-18",
     "last_seen": "2026-08-18",
     "name": "Mathieu Perroud",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
+  "maturapoj-h": {
+    "articles": 1,
+    "first_seen": "2026-10-15",
+    "last_seen": "2026-10-15",
+    "name": "Maturapoj H",
     "photo": null,
     "profile": null,
     "sources": [
@@ -5335,9 +5401,9 @@
     ]
   },
   "muhammad-azhar": {
-    "articles": 11,
+    "articles": 12,
     "first_seen": "2026-09-12",
-    "last_seen": "2026-10-13",
+    "last_seen": "2026-10-14",
     "name": "Muhammad Azhar",
     "photo": null,
     "profile": null,
@@ -5845,9 +5911,9 @@
     ]
   },
   "olonho": {
-    "articles": 96,
+    "articles": 99,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-10-14",
+    "last_seen": "2026-10-15",
     "name": "olonho",
     "photo": null,
     "profile": null,
@@ -6599,7 +6665,7 @@
     ]
   },
   "ravi-rawal": {
-    "articles": 11,
+    "articles": 12,
     "first_seen": "2026-09-16",
     "last_seen": "2026-10-14",
     "name": "Ravi Rawal",
@@ -7446,6 +7512,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "shushant-tiwari": {
+    "articles": 1,
+    "first_seen": "2026-10-14",
+    "last_seen": "2026-10-14",
+    "name": "Shushant Tiwari",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "siavashhamiri": {
     "articles": 1,
     "first_seen": "2026-09-03",
@@ -8262,6 +8339,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "thefoxlab": {
+    "articles": 1,
+    "first_seen": "2026-10-15",
+    "last_seen": "2026-10-15",
+    "name": "Thefoxlab",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "thotanithya": {
     "articles": 1,
     "first_seen": "2026-08-11",
@@ -8484,9 +8572,9 @@
     ]
   },
   "u-acrobatic-bit3508": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-09-25",
-    "last_seen": "2026-09-25",
+    "last_seen": "2026-10-14",
     "name": "/u/Acrobatic-Bit3508",
     "photo": null,
     "profile": null,
@@ -8902,6 +8990,17 @@
       "reddit-androiddev"
     ]
   },
+  "u-aram-antonyan-hgtg42": {
+    "articles": 1,
+    "first_seen": "2026-10-14",
+    "last_seen": "2026-10-14",
+    "name": "/u/aram-antonyan-hgtg42",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-aravindhandeveloper": {
     "articles": 1,
     "first_seen": "2026-09-10",
@@ -9096,6 +9195,17 @@
     "first_seen": "2026-08-12",
     "last_seen": "2026-08-12",
     "name": "/u/bitterchocolate26",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-blazejkustra": {
+    "articles": 1,
+    "first_seen": "2026-10-15",
+    "last_seen": "2026-10-15",
+    "name": "/u/blazejkustra",
     "photo": null,
     "profile": null,
     "sources": [
@@ -13247,6 +13357,17 @@
       "reddit-androiddev"
     ]
   },
+  "u-stevdzasan": {
+    "articles": 1,
+    "first_seen": "2026-10-14",
+    "last_seen": "2026-10-14",
+    "name": "/u/StevdzaSan",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-straight-court7558": {
     "articles": 1,
     "first_seen": "2026-10-08",
@@ -14545,6 +14666,17 @@
     "first_seen": "2026-08-13",
     "last_seen": "2026-08-13",
     "name": "Wayne Hymenberg",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "weather-alerts": {
+    "articles": 1,
+    "first_seen": "2026-10-15",
+    "last_seen": "2026-10-15",
+    "name": "Weather Alerts",
     "photo": null,
     "profile": null,
     "sources": [
