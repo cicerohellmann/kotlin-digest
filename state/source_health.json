@@ -1,55 +1,55 @@
 {
   "kotlin-blog": {
     "last_article_date": "2026-10-15",
-    "last_checked": "2026-10-20T10:37:08Z",
+    "last_checked": "2026-10-21T10:48:41Z",
     "cadence_days": 7,
-    "days_since_last": 5,
+    "days_since_last": 6,
     "health": "active",
-    "consecutive_empty_cycles": 4
+    "consecutive_empty_cycles": 5
   },
   "android-developers-blog": {
     "last_article_date": "2026-10-19",
-    "last_checked": "2026-10-20T10:37:09Z",
+    "last_checked": "2026-10-21T10:48:42Z",
     "cadence_days": 4,
-    "days_since_last": 1,
-    "health": "active",
-    "consecutive_empty_cycles": 0
-  },
-  "android-developers-medium": {
-    "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:10Z",
-    "cadence_days": 3,
-    "days_since_last": null,
-    "health": "unknown",
-    "consecutive_empty_cycles": 108
-  },
-  "jetbrains-blog": {
-    "last_article_date": "2026-10-20",
-    "last_checked": "2026-10-20T10:37:10Z",
-    "cadence_days": 3,
-    "days_since_last": 0,
-    "health": "active",
-    "consecutive_empty_cycles": 0
-  },
-  "proandroiddev": {
-    "last_article_date": "2026-10-18",
-    "last_checked": "2026-10-20T10:37:10Z",
-    "cadence_days": 2,
     "days_since_last": 2,
     "health": "active",
     "consecutive_empty_cycles": 1
   },
-  "medium-kotlin-tag": {
+  "android-developers-medium": {
+    "last_article_date": null,
+    "last_checked": "2026-10-21T10:48:43Z",
+    "cadence_days": 3,
+    "days_since_last": null,
+    "health": "unknown",
+    "consecutive_empty_cycles": 109
+  },
+  "jetbrains-blog": {
     "last_article_date": "2026-10-20",
-    "last_checked": "2026-10-20T10:37:10Z",
+    "last_checked": "2026-10-21T10:48:43Z",
+    "cadence_days": 3,
+    "days_since_last": 1,
+    "health": "active",
+    "consecutive_empty_cycles": 0
+  },
+  "proandroiddev": {
+    "last_article_date": "2026-10-20",
+    "last_checked": "2026-10-21T10:48:43Z",
+    "cadence_days": 2,
+    "days_since_last": 1,
+    "health": "active",
+    "consecutive_empty_cycles": 0
+  },
+  "medium-kotlin-tag": {
+    "last_article_date": "2026-10-21",
+    "last_checked": "2026-10-21T10:48:44Z",
     "cadence_days": 1,
     "days_since_last": 0,
     "health": "active",
     "consecutive_empty_cycles": 0
   },
   "medium-android-tag": {
-    "last_article_date": "2026-10-20",
-    "last_checked": "2026-10-20T10:37:10Z",
+    "last_article_date": "2026-10-21",
+    "last_checked": "2026-10-21T10:48:44Z",
     "cadence_days": 1,
     "days_since_last": 0,
     "health": "active",
@@ -57,243 +57,243 @@
   },
   "zac-sweers": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:10Z",
+    "last_checked": "2026-10-21T10:48:44Z",
     "cadence_days": 30,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "jeroen-mols": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:11Z",
+    "last_checked": "2026-10-21T10:48:44Z",
     "cadence_days": 30,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "commonsware": {
     "last_article_date": "2026-10-14",
-    "last_checked": "2026-10-20T10:37:11Z",
+    "last_checked": "2026-10-21T10:48:44Z",
     "cadence_days": 3,
-    "days_since_last": 6,
+    "days_since_last": 7,
     "health": "slowing",
-    "consecutive_empty_cycles": 5
+    "consecutive_empty_cycles": 6
   },
   "dan-lew": {
     "last_article_date": "2026-09-15",
-    "last_checked": "2026-10-20T10:37:11Z",
+    "last_checked": "2026-10-21T10:48:45Z",
     "cadence_days": 60,
-    "days_since_last": 35,
+    "days_since_last": 36,
     "health": "active",
-    "consecutive_empty_cycles": 34
+    "consecutive_empty_cycles": 35
   },
   "hannes-dorfmann": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:11Z",
+    "last_checked": "2026-10-21T10:48:45Z",
     "cadence_days": 60,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "john-oreilly": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:11Z",
+    "last_checked": "2026-10-21T10:48:46Z",
     "cadence_days": 14,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 6
+    "consecutive_empty_cycles": 7
   },
   "styling-android": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:12Z",
+    "last_checked": "2026-10-21T10:48:46Z",
     "cadence_days": 21,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 107
+    "consecutive_empty_cycles": 108
   },
   "kotlinconf": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:12Z",
+    "last_checked": "2026-10-21T10:48:46Z",
     "cadence_days": 365,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "droidcon": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:12Z",
+    "last_checked": "2026-10-21T10:48:46Z",
     "cadence_days": 30,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "lib-coroutines": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:12Z",
+    "last_checked": "2026-10-21T10:48:47Z",
     "cadence_days": 30,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "lib-serialization": {
     "last_article_date": "2026-10-19",
-    "last_checked": "2026-10-20T10:37:13Z",
+    "last_checked": "2026-10-21T10:48:48Z",
     "cadence_days": 30,
-    "days_since_last": 1,
+    "days_since_last": 2,
     "health": "active",
-    "consecutive_empty_cycles": 0
+    "consecutive_empty_cycles": 1
   },
   "lib-datetime": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:13Z",
+    "last_checked": "2026-10-21T10:48:48Z",
     "cadence_days": 60,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "lib-ksp": {
     "last_article_date": "2026-09-09",
-    "last_checked": "2026-10-20T10:37:14Z",
+    "last_checked": "2026-10-21T10:48:49Z",
     "cadence_days": 14,
-    "days_since_last": 41,
+    "days_since_last": 42,
     "health": "slowing",
-    "consecutive_empty_cycles": 40
+    "consecutive_empty_cycles": 41
   },
   "lib-ktor": {
     "last_article_date": "2026-09-18",
-    "last_checked": "2026-10-20T10:37:14Z",
+    "last_checked": "2026-10-21T10:48:49Z",
     "cadence_days": 21,
-    "days_since_last": 32,
+    "days_since_last": 33,
     "health": "slowing",
-    "consecutive_empty_cycles": 32
+    "consecutive_empty_cycles": 33
   },
   "lib-retrofit": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:14Z",
+    "last_checked": "2026-10-21T10:48:50Z",
     "cadence_days": 60,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "lib-okhttp": {
     "last_article_date": "2026-08-16",
-    "last_checked": "2026-10-20T10:37:15Z",
+    "last_checked": "2026-10-21T10:48:50Z",
     "cadence_days": 30,
-    "days_since_last": 65,
+    "days_since_last": 66,
     "health": "slowing",
-    "consecutive_empty_cycles": 64
+    "consecutive_empty_cycles": 65
   },
   "lib-hilt-dagger": {
     "last_article_date": "2026-07-06",
-    "last_checked": "2026-10-20T10:37:15Z",
+    "last_checked": "2026-10-21T10:48:51Z",
     "cadence_days": 30,
-    "days_since_last": 106,
+    "days_since_last": 107,
     "health": "stale",
     "consecutive_empty_cycles": 0
   },
   "lib-koin": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:15Z",
+    "last_checked": "2026-10-21T10:48:51Z",
     "cadence_days": 21,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "lib-androidx": {
     "last_article_date": "2026-09-23",
-    "last_checked": "2026-10-20T10:37:16Z",
+    "last_checked": "2026-10-21T10:48:52Z",
     "cadence_days": 7,
-    "days_since_last": 27,
+    "days_since_last": 28,
     "health": "stale",
-    "consecutive_empty_cycles": 14
+    "consecutive_empty_cycles": 15
   },
   "lib-compose-multiplatform": {
     "last_article_date": "2026-10-18",
-    "last_checked": "2026-10-20T10:37:16Z",
+    "last_checked": "2026-10-21T10:48:52Z",
     "cadence_days": 21,
-    "days_since_last": 2,
+    "days_since_last": 3,
     "health": "active",
-    "consecutive_empty_cycles": 2
+    "consecutive_empty_cycles": 3
   },
   "lib-coil": {
     "last_article_date": "2026-09-18",
-    "last_checked": "2026-10-20T10:37:16Z",
+    "last_checked": "2026-10-21T10:48:53Z",
     "cadence_days": 30,
-    "days_since_last": 32,
+    "days_since_last": 33,
     "health": "active",
-    "consecutive_empty_cycles": 32
+    "consecutive_empty_cycles": 33
   },
   "lib-sqldelight": {
     "last_article_date": "2026-10-06",
-    "last_checked": "2026-10-20T10:37:17Z",
+    "last_checked": "2026-10-21T10:48:53Z",
     "cadence_days": 30,
-    "days_since_last": 14,
+    "days_since_last": 15,
     "health": "active",
-    "consecutive_empty_cycles": 13
+    "consecutive_empty_cycles": 14
   },
   "lib-gradle-agp": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:17Z",
+    "last_checked": "2026-10-21T10:48:54Z",
     "cadence_days": 30,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "lib-detekt": {
     "last_article_date": "2026-08-04",
-    "last_checked": "2026-10-20T10:37:18Z",
+    "last_checked": "2026-10-21T10:48:55Z",
     "cadence_days": 30,
-    "days_since_last": 77,
+    "days_since_last": 78,
     "health": "slowing",
-    "consecutive_empty_cycles": 76
+    "consecutive_empty_cycles": 77
   },
   "lib-turbine": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:18Z",
+    "last_checked": "2026-10-21T10:48:55Z",
     "cadence_days": 60,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "lib-mockk": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:19Z",
+    "last_checked": "2026-10-21T10:48:56Z",
     "cadence_days": 30,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "lib-paparazzi": {
     "last_article_date": "2026-09-28",
-    "last_checked": "2026-10-20T10:37:19Z",
+    "last_checked": "2026-10-21T10:48:56Z",
     "cadence_days": 45,
-    "days_since_last": 22,
+    "days_since_last": 23,
     "health": "active",
-    "consecutive_empty_cycles": 21
+    "consecutive_empty_cycles": 22
   },
   "lib-decompose": {
     "last_article_date": "2026-10-13",
-    "last_checked": "2026-10-20T10:37:20Z",
+    "last_checked": "2026-10-21T10:48:57Z",
     "cadence_days": 30,
-    "days_since_last": 7,
+    "days_since_last": 8,
     "health": "active",
-    "consecutive_empty_cycles": 6
+    "consecutive_empty_cycles": 7
   },
   "lib-voyager": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:20Z",
+    "last_checked": "2026-10-21T10:48:58Z",
     "cadence_days": 45,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 108
+    "consecutive_empty_cycles": 109
   },
   "lib-arrow": {
     "last_article_date": "2026-10-19",
-    "last_checked": "2026-10-20T10:37:21Z",
+    "last_checked": "2026-10-21T10:48:59Z",
     "cadence_days": 30,
-    "days_since_last": 1,
+    "days_since_last": 2,
     "health": "active",
-    "consecutive_empty_cycles": 0
+    "consecutive_empty_cycles": 1
   },
   "kotlin-slack-archive": {
     "last_article_date": null,
@@ -304,8 +304,8 @@
     "consecutive_empty_cycles": 2
   },
   "reddit-androiddev": {
-    "last_article_date": "2026-10-20",
-    "last_checked": "2026-10-20T10:37:22Z",
+    "last_article_date": "2026-10-21",
+    "last_checked": "2026-10-21T10:49:01Z",
     "cadence_days": 1,
     "days_since_last": 0,
     "health": "active",
@@ -313,119 +313,119 @@
   },
   "reddit-kotlin": {
     "last_article_date": "2026-10-15",
-    "last_checked": "2026-10-20T10:37:22Z",
+    "last_checked": "2026-10-21T10:49:01Z",
     "cadence_days": 1,
-    "days_since_last": 5,
+    "days_since_last": 6,
     "health": "stale",
-    "consecutive_empty_cycles": 4
+    "consecutive_empty_cycles": 5
   },
   "slack-android": {
     "last_article_date": "2026-07-08",
-    "last_checked": "2026-10-20T10:37:21Z",
-    "cadence_days": 1,
-    "days_since_last": 104,
-    "health": "dead",
-    "consecutive_empty_cycles": 103
-  },
-  "slack-compose": {
-    "last_article_date": "2026-07-07",
-    "last_checked": "2026-10-20T10:37:21Z",
+    "last_checked": "2026-10-21T10:48:59Z",
     "cadence_days": 1,
     "days_since_last": 105,
     "health": "dead",
-    "consecutive_empty_cycles": 103
+    "consecutive_empty_cycles": 104
+  },
+  "slack-compose": {
+    "last_article_date": "2026-07-07",
+    "last_checked": "2026-10-21T10:48:59Z",
+    "cadence_days": 1,
+    "days_since_last": 106,
+    "health": "dead",
+    "consecutive_empty_cycles": 104
   },
   "slack-compose-android": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:21Z",
+    "last_checked": "2026-10-21T10:48:59Z",
     "cadence_days": 1,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 104
+    "consecutive_empty_cycles": 105
   },
   "slack-compose-mp": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:21Z",
+    "last_checked": "2026-10-21T10:48:59Z",
     "cadence_days": 1,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 104
+    "consecutive_empty_cycles": 105
   },
   "slack-multiplatform": {
     "last_article_date": "2026-07-08",
-    "last_checked": "2026-10-20T10:37:21Z",
+    "last_checked": "2026-10-21T10:48:59Z",
     "cadence_days": 1,
-    "days_since_last": 104,
+    "days_since_last": 105,
     "health": "dead",
-    "consecutive_empty_cycles": 103
+    "consecutive_empty_cycles": 104
   },
   "slack-coroutines": {
     "last_article_date": "2026-07-09",
-    "last_checked": "2026-10-20T10:37:21Z",
+    "last_checked": "2026-10-21T10:48:59Z",
     "cadence_days": 1,
-    "days_since_last": 103,
+    "days_since_last": 104,
     "health": "dead",
-    "consecutive_empty_cycles": 103
+    "consecutive_empty_cycles": 104
   },
   "slack-announcements": {
     "last_article_date": "2026-07-09",
-    "last_checked": "2026-10-20T10:37:21Z",
+    "last_checked": "2026-10-21T10:48:59Z",
     "cadence_days": 1,
-    "days_since_last": 103,
+    "days_since_last": 104,
     "health": "dead",
-    "consecutive_empty_cycles": 103
+    "consecutive_empty_cycles": 104
   },
   "slack-gradle": {
     "last_article_date": "2026-07-09",
-    "last_checked": "2026-10-20T10:37:21Z",
+    "last_checked": "2026-10-21T10:48:59Z",
     "cadence_days": 1,
-    "days_since_last": 103,
+    "days_since_last": 104,
     "health": "dead",
-    "consecutive_empty_cycles": 103
+    "consecutive_empty_cycles": 104
   },
   "slack-ktor": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:22Z",
+    "last_checked": "2026-10-21T10:49:00Z",
     "cadence_days": 1,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 104
+    "consecutive_empty_cycles": 105
   },
   "slack-ksp": {
     "last_article_date": "2026-07-05",
-    "last_checked": "2026-10-20T10:37:22Z",
+    "last_checked": "2026-10-21T10:49:00Z",
     "cadence_days": 1,
-    "days_since_last": 107,
+    "days_since_last": 108,
     "health": "dead",
-    "consecutive_empty_cycles": 103
+    "consecutive_empty_cycles": 104
   },
   "slack-koog": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:22Z",
+    "last_checked": "2026-10-21T10:49:00Z",
     "cadence_days": 1,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 104
+    "consecutive_empty_cycles": 105
   },
   "slack-mcp-sdk": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:22Z",
+    "last_checked": "2026-10-21T10:49:00Z",
     "cadence_days": 1,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 104
+    "consecutive_empty_cycles": 105
   },
   "kotlin-youtube": {
     "last_article_date": "2026-09-30",
-    "last_checked": "2026-10-20T10:37:08Z",
+    "last_checked": "2026-10-21T10:48:41Z",
     "cadence_days": 14,
-    "days_since_last": 20,
+    "days_since_last": 21,
     "health": "active",
-    "consecutive_empty_cycles": 20
+    "consecutive_empty_cycles": 21
   },
   "android-developers-youtube": {
-    "last_article_date": "2026-10-19",
-    "last_checked": "2026-10-20T10:37:08Z",
+    "last_article_date": "2026-10-20",
+    "last_checked": "2026-10-21T10:48:41Z",
     "cadence_days": 3,
     "days_since_last": 1,
     "health": "active",
@@ -433,26 +433,26 @@
   },
   "intellij-idea-youtube": {
     "last_article_date": "2026-08-14",
-    "last_checked": "2026-10-20T10:37:08Z",
+    "last_checked": "2026-10-21T10:48:42Z",
     "cadence_days": 5,
-    "days_since_last": 67,
+    "days_since_last": 68,
     "health": "dead",
-    "consecutive_empty_cycles": 65
+    "consecutive_empty_cycles": 66
   },
   "goto-conferences-youtube": {
     "last_article_date": "2026-10-15",
-    "last_checked": "2026-10-20T10:37:09Z",
+    "last_checked": "2026-10-21T10:48:42Z",
     "cadence_days": 5,
-    "days_since_last": 5,
+    "days_since_last": 6,
     "health": "active",
-    "consecutive_empty_cycles": 4
+    "consecutive_empty_cycles": 5
   },
   "droidcon-italy-youtube": {
     "last_article_date": null,
-    "last_checked": "2026-10-20T10:37:09Z",
+    "last_checked": "2026-10-21T10:48:42Z",
     "cadence_days": 30,
     "days_since_last": null,
     "health": "unknown",
-    "consecutive_empty_cycles": 79
+    "consecutive_empty_cycles": 80
   }
 }
