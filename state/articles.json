@@ -1430,161 +1430,6 @@
     "topics": []
   },
   {
-    "id": "955982b8820b6649",
-    "title": "The 4 Ways an Android App Can Die (and a 3-Layer Defense to Survive Them)",
-    "url": "https://medium.com/@muhamadsyafii4/the-4-ways-an-android-app-can-die-and-a-3-layer-defense-to-survive-them-c8222866a837?source=rss------kotlin-5",
-    "date": "2026-07-24",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "Most Android engineers only prepare for one failure mode: a crash caused by a bug. But there are actually four distinct ways an app can… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "7b883a338a4fe305",
-    "title": "Kotlin Coroutines: Part 3 — Structured Concurrency & Lifecycle Mastery",
-    "url": "https://medium.com/@fachrizalmrsln/kotlin-coroutines-part-3-structured-concurrency-lifecycle-mastery-299c278d13b2?source=rss------kotlin-5",
-    "date": "2026-07-24",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "9ea1dfddd1d45bda",
-    "title": "I learned programming from the best books ever written.",
-    "url": "https://medium.com/@mike.salari.dev/i-learned-programming-from-the-best-books-ever-written-6e56c03c8c09?source=rss------android-5",
-    "date": "2026-07-24",
-    "source_id": "medium-android-tag",
-    "excerpt": "I have conducted over 500 technical interviews for mobile engineers. And for years before that, I was the candidate who did everything… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "4ab33513185bc53e",
-    "title": "How Android Smartphones Are Turned into Zombies and Ad-Yield Donors: The Case of mr.Bunn,",
-    "url": "https://0trust0day.medium.com/how-android-smartphones-are-turned-into-zombies-and-ad-yield-donors-the-case-of-mr-bunn-f085c1c13507?source=rss------android-5",
-    "date": "2026-07-24",
-    "source_id": "medium-android-tag",
-    "excerpt": "When people talk about mobile cyber threats, most imagine cinematic scenarios: ransomware locking screens, banking Trojans silently… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Describes how Play Store apps from publishers like mr.Bunn and Hadiz Studio request broad permissions to quietly turn devices into ad-traffic generators, framing policy-compliant but deceptive apps as a bigger everyday risk than classic malware.",
-    "topics": []
-  },
-  {
-    "id": "5788ffd09da35045",
-    "title": "X Android App Update 2026: What’s New, Features & How to Update",
-    "url": "https://medium.com/@abhay.theseobyte/x-android-app-update-2026-whats-new-features-how-to-update-4e5ed1136ddd?source=rss------android-5",
-    "date": "2026-07-24",
-    "source_id": "medium-android-tag",
-    "excerpt": "The X Android App Update 2026 marks one of the biggest improvements to the platform since Twitter became X. Instead of releasing another… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "62fa5a4d1a81c077",
-    "title": "Turn Your Phone Into a Wireless Touchpad for Android TV Browsing",
-    "url": "https://deepakpk.medium.com/turn-your-phone-into-a-wireless-touchpad-for-android-tv-browsing-6abba6073049?source=rss------android-5",
-    "date": "2026-07-24",
-    "source_id": "medium-android-tag",
-    "excerpt": "Have you ever opened a web browser on your Android TV only to give up after a few minutes? Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Promotes BrowsePad, an app that turns a phone into a wireless touchpad and keyboard for browsing the web on Android TV via QR-code pairing over local Wi-Fi, covering gestures, desktop-site switching, tabs, and downloads.",
-    "topics": []
-  },
-  {
-    "id": "088ffad5d95e7d92",
-    "title": "7 Smart Ways to Browse the Web on Android TV Without Fighting Your Remote",
-    "url": "https://deepakpk.medium.com/7-smart-ways-to-browse-the-web-on-android-tv-without-fighting-your-remote-1d41cc7b2959?source=rss------android-5",
-    "date": "2026-07-24",
-    "source_id": "medium-android-tag",
-    "excerpt": "If you’ve ever tried browsing the internet on an Android TV, you probably know the frustration. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Marketing listicle listing seven ways BrowsePad's phone-as-touchpad controller improves Android TV web browsing: cursor gestures, desktop-site rendering, multi-tab browsing, phone-based text input, bookmarks/history, and file downloads.",
-    "topics": []
-  },
-  {
-    "id": "dc05c12c66a7ca8e",
-    "title": "Understanding Activity launch modes in Android",
-    "url": "https://medium.com/@gavleaakash/understanding-activity-launch-modes-in-android-69a3f2f19fc1?source=rss------android-5",
-    "date": "2026-07-24",
-    "source_id": "medium-android-tag",
-    "excerpt": "Activity Launch modes decide how an Activity is instantiated and managed in the back stack. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "7216378ab72167b4",
-    "title": "Yono Live or YONO VIP? How to Tell Similar App Names Apart",
-    "url": "https://medium.com/@playallyonos.com/yono-live-or-yono-vip-how-to-tell-similar-app-names-apart-49e6c5bb39b4?source=rss------android-5",
-    "date": "2026-07-24",
-    "source_id": "medium-android-tag",
-    "excerpt": "Why searches for “yono live” or “no vip” can lead to unrelated services — and what to verify before trusting a listing\nUpdated 24 July 2026 Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "5b4f30434b785553",
-    "title": "Google’s Android XR Is Here: Here’s What Developers Need to Know",
-    "url": "https://proandroiddev.com/googles-android-xr-is-here-here-s-what-developers-need-to-know-81d0245965ae?source=rss------android-5",
-    "date": "2026-07-24",
-    "source_id": "medium-android-tag",
-    "excerpt": "From spatial multitasking on headsets to glanceable HUDs on smart glasses, spatial computing is officially coming to the Android ecosystem. Continue reading on ProAndroidDev »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Overviews Android XR for developers: Home Space vs Full Space app modes, declarative spatial UI via Jetpack Compose for XR (panels, depth, 3D entities), the Compose Glimmer toolkit for smart-glasses micro-UIs, Gemini Live API voice integration, and the built-in Android Studio XR emulator.",
-    "topics": [
-      "compose",
-      "jetpack",
-      "android-api"
-    ]
-  },
-  {
-    "id": "c82d698dea87857c",
-    "title": "What Is a Context Window? Why Every Mobile Developer Should Understand It",
-    "url": "https://medium.com/@anandgaur2207/what-is-a-context-window-why-every-mobile-developer-should-understand-it-b189b1b55e5b?source=rss------android-5",
-    "date": "2026-07-24",
-    "source_id": "medium-android-tag",
-    "excerpt": "If you have ever added an AI chat feature to your app and noticed that the AI suddenly “forgets” what the user said ten messages ago, you… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "b1056c8ad1da3b3b",
-    "title": "v1.12.10-alpha01+dev4541: Details",
-    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4541",
-    "date": "2026-07-24",
-    "source_id": "lib-compose-multiplatform",
-    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4541 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4541 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4541 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4541",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "GitHub release notes for Compose Multiplatform v1.12.10-alpha01+dev4541, a nightly dev build bumping the org.jetbrains.compose, material3, lifecycle, and navigation3 artifact coordinates in lockstep. No changelog text is provided beyond the version bump itself.",
-    "topics": [
-      "compose-multiplatform",
-      "kmp"
-    ]
-  },
-  {
-    "id": "99a60097ce3d45b3",
-    "title": "Navigation 3: Keep entryProvider from Becoming a Giant Switchboard",
-    "url": "https://proandroiddev.com/navigation-3-keep-entryprovider-from-becoming-a-giant-switchboard-ffaafc720156?source=rss----c72404660798---4",
-    "date": "2026-07-24",
-    "source_id": "proandroiddev",
-    "excerpt": "Organize Related Screens with EntryProviderScope Image created by AI One of the first things you’ll probably do when adopting Navigation 3 is register every destination directly inside entryProvider. For small projects, that’s a perfectly reasonable place to start. NavDisplay( backStack = backStack, entryProvider = entryProvider { entry<HomeRoute> { HomeScreen() } entry<DetailRoute> { DetailScreen() } entry<LoginRoute> { LoginScreen() } entry<SignupRoute> { SignupScreen() } entry<SettingsRoute> ",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Shows how registering every destination directly inside Navigation 3's entryProvider turns it into an unmaintainable switchboard as an app grows. Proposes grouping related screens into EntryProviderScope extension functions per feature, so the root NavDisplay just composes feature entry points.",
-    "topics": [
-      "navigation",
-      "architecture",
-      "compose"
-    ],
-    "code_snippet": "fun EntryProviderScope<NavKey>.authFeature(\n    onAuthSuccess: () -> Unit,\n    onNavigateToSignup: () -> Unit\n) {\n    entry<LoginRoute> {\n        LoginScreen(\n            onLoginSuccess = onAuthSuccess,\n            onSignupClick = onNavigateToSignup\n        )\n    }\n}",
-    "snippet_label": "SCOPE NAV BY FEATURE"
-  },
-  {
     "id": "c68cec86f249c4fb",
     "title": "Building a 100% Jetpack Compose Library for iOS-Style Emoji Rendering",
     "url": "https://medium.com/@abbas.ha.1378/building-a-100-jetpack-compose-library-for-ios-style-emoji-rendering-4353272744b3?source=rss------kotlin-5",
@@ -1601,98 +1446,6 @@
     "date": "2026-07-25",
     "source_id": "medium-kotlin-tag",
     "excerpt": "A practical guide for experienced Android developers deciding when Google’s opinionated defaults are enough — and when custom Dagger… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "b41db16e981a9e31",
-    "title": "Android Ransomware: When Storage Access Meets Disaster",
-    "url": "https://medium.com/@jacksonfdam/android-ransomware-when-storage-access-meets-disaster-d79e12ec89e3?source=rss------kotlin-5",
-    "date": "2026-07-24",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "You already know the Android permission model is broken. You probably joke about it. What you might not realise is that it’s not just… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "f7fd861b0f9fd593",
-    "title": "Best Practices for Creating UI States in Jetpack Compose in 2026",
-    "url": "https://halilozel1903.medium.com/best-practices-for-creating-ui-states-in-jetpack-compose-in-2026-a18aab59d9ca?source=rss------kotlin-5",
-    "date": "2026-07-24",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "Build predictable, lifecycle-aware, and testable Compose screens without turning every interaction into another event wrapper. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Argues Jetpack Compose screens need more than Loading/Success/Error booleans, covering cached content shown during refresh, filters retained across process recreation, and retryable errors that don't hide existing data. Recommends separating business-driven screen state from transient UI element state.",
-    "topics": [
-      "compose",
-      "mvvm",
-      "architecture"
-    ]
-  },
-  {
-    "id": "3b1924ea2d697f50",
-    "title": "Migrating Legacy Android Java + XML Applications to Kotlin",
-    "url": "https://medium.com/@riyaspullurofficial/migrating-legacy-android-java-xml-applications-to-kotlin-a5956f984498?source=rss------kotlin-5",
-    "date": "2026-07-24",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "Description Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "e98cdc402b677fbe",
-    "title": "Stop Reaching for Canvas: Mastering the Compose Drawing Phase with drawBehind, drawWithContent, and…",
-    "url": "https://medium.com/@shivaniaakanksha/compose-drawing-phase-canvas-drawbehind-drawwithcache-c6b4f95cc368?source=rss------kotlin-5",
-    "date": "2026-07-24",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "The rendering pipeline most Android developers misunderstand — and the three modifiers that make custom UI cleaner, faster, and more… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "d5801c874d80b8c2",
-    "title": "Properties and Backing Fields in Kotlin: A Complete Guide",
-    "url": "https://techdynasty.medium.com/properties-and-backing-fields-in-kotlin-a-complete-guide-f523d295c35d?source=rss------kotlin-5",
-    "date": "2026-07-24",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "Every Kotlin class stores data. Whether it’s a user’s name, a product’s price, or a login state, that data is represented using properties… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Walks through Kotlin property fundamentals: default getters/setters, custom getters for computed values, custom setters using the field backing keyword for validation, private setters, and lateinit. Includes Android-flavored examples like trimming email input and rejecting negative prices.",
-    "topics": [
-      "kotlin"
-    ],
-    "code_snippet": "var salary = 0\n    set(value) {\n        field = if (value >= 0) value else 0\n    }",
-    "snippet_label": "VALIDATE VIA BACKING FIELD"
-  },
-  {
-    "id": "44fc7314b9d9ea2c",
-    "title": "Part 1: Testability Is an Architecture Decision, Not a Testing One",
-    "url": "https://medium.com/@sivavishnu0705/part-1-testability-is-an-architecture-decision-not-a-testing-one-ed0dea378d22?source=rss------kotlin-5",
-    "date": "2026-07-24",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "Why untestable Android code isn’t a mocking problem — it’s a boundary problem hiding in your architecture. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "5dc81ddf86a18a3d",
-    "title": "Building High-Performance Text Editors in Kotlin Multiplatform with Krope",
-    "url": "https://medium.com/@numq/building-high-performance-text-editors-in-kotlin-multiplatform-with-krope-9f4b110314d6?source=rss------kotlin-5",
-    "date": "2026-07-24",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "If you have ever tried building a text editor, an IDE, or a collaborative document tool, you quickly run into a fundamental wall: how do… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "7cd8ce47f784eda8",
-    "title": "Klocale: the locale-aware number formatting Kotlin Multiplatform was missing",
-    "url": "https://medium.com/@dellaporta.andrea01/klocale-the-locale-aware-number-formatting-kotlin-multiplatform-was-missing-c0d6f5710be9?source=rss------kotlin-5",
-    "date": "2026-07-24",
-    "source_id": "medium-kotlin-tag",
-    "excerpt": "How I found a real gap in the KMP ecosystem, and what it took to fill it consistently across six platforms. Continue reading on Medium »",
     "date_uncertain": false,
     "summarized": false
   },
@@ -1787,28 +1540,6 @@
     "summarized": false
   },
   {
-    "id": "e5f6e978402e773a",
-    "title": "From Broke to Informed: How I Found Reliable Gaming Guides in Pakistan",
-    "url": "https://medium.com/@motivationgamer350/from-broke-to-informed-how-i-found-reliable-gaming-guides-in-pakistan-d3529b0003e3?source=rss------android-5",
-    "date": "2026-07-24",
-    "source_id": "medium-android-tag",
-    "excerpt": "It was the middle of the semester, his bank account was scraping empty, and his part-time job at the local café just wasn’t cutting it… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "fd3d9dd243c40591",
-    "title": "From Script to Finished Video: A Complete Guide to Teleprompter Automatic",
-    "url": "https://teleprompterautomatic.medium.com/from-script-to-finished-video-a-complete-guide-to-teleprompter-automatic-71a833db0241?source=rss------android-5",
-    "date": "2026-07-24",
-    "source_id": "medium-android-tag",
-    "excerpt": "How to prepare scripts, choose the right scrolling mode, record video or audio, stream live, edit the result, and keep your projects… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Promotional guide for a cross-platform teleprompter app covering script prep, four scrolling modes, and recording/editing across iPhone, Android, and web. Not Kotlin/Android development content.",
-    "topics": []
-  },
-  {
     "id": "574d98650e01ac00",
     "title": "v1.12.10-alpha01+dev4546: Details",
     "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4546",
@@ -1826,52 +1557,12 @@
     ]
   },
   {
-    "id": "fec620ed42d95da2",
-    "title": "Reaching the limits of Jetpack Compose Canvas: Moving my RPG engine to Google Filament (8x performance gain)",
-    "url": "https://www.reddit.com/r/androiddev/comments/1v5a23f/reaching_the_limits_of_jetpack_compose_canvas/",
-    "date": "2026-07-24",
-    "source_id": "reddit-androiddev",
-    "excerpt": "Hey r/androiddev A couple of months ago, I made a post about scaling my solo RPG ( Adventurers Guild RPG Sim ) built 100% in Jetpack Compose Canvas with a custom single threaded ECS. While Compose Canvas was incredible for getting the engine off the ground, scaling the world map and visual effects eventually pushed me into a hard bottleneck. To solve this without breaking the live game, I decided to shift the world rendering backend over to Google Filament . Here is how moving to Filament, while",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
     "id": "533ae4621ce40bd3",
     "title": "A Fully Compose Android Library for iOS Emoji Rendering",
     "url": "https://www.reddit.com/r/androiddev/comments/1v5yy1g/a_fully_compose_android_library_for_ios_emoji/",
     "date": "2026-07-25",
     "source_id": "reddit-androiddev",
     "excerpt": "I built an Android library that renders iOS-style emojis in Jetpack Compose . Unlike most existing solutions, this library is 100% Compose —no TextView , AndroidView , or View-based implementation behind the scenes. GitHub: https://github.com/abbas-esfandiair/EmojiTextLibrary submitted by /u/Available_Visual_687 [link] [comments]",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "effb11ee3fd16653",
-    "title": "Android May Soon Restrict On-Device ADB, Affecting Shizuku, libadb and Developers",
-    "url": "https://www.reddit.com/r/androiddev/comments/1v5jv18/android_may_soon_restrict_ondevice_adb_affecting/",
-    "date": "2026-07-24",
-    "source_id": "reddit-androiddev",
-    "excerpt": "This is a blog post. TLDR: This is about a conversation in the Google Issue Tracker about potential future changes. Depending on how they are implemented, these changes could impact Shizuku and other power-user tools. More details and explanations are available in the blog post. 8-minute read. This is not an official announcement and nothing is 100% confirmed yet. submitted by /u/kitsumed [link] [comments]",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "e52b89cb504a95fb",
-    "title": "Android VpnService stays connected, but all traffic fails with networksUnknownHostException",
-    "url": "https://www.reddit.com/r/androiddev/comments/1v5gw1d/android_vpnservice_stays_connected_but_all/",
-    "date": "2026-07-24",
-    "source_id": "reddit-androiddev",
-    "excerpt": "I’m developing an Android VPN app that uses Xray with VLESS + REALITY . I live in Russia, and my mobile provider sometimes enables an LTE whitelist mode: only a limited number of websites remain accessible, while most other websites are blocked. My VPN used to work correctly in this situation. However, around two weeks ago it suddenly stopped working most of the time, even though neither the application code nor the Xray configuration had changed. The VPN appears to connect successfully: VPN ico",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "2324c7f60bde715d",
-    "title": "DAEX- Android Native- On Device Agent",
-    "url": "https://www.reddit.com/r/androiddev/comments/1v5g0en/daex_android_native_on_device_agent/",
-    "date": "2026-07-24",
-    "source_id": "reddit-androiddev",
-    "excerpt": "I seen locallyAI was pretty popular on IOS and Google Ai Edge gallery is a bit lacking in terms of actual use case features. So Im building DAEX; using litert I'm attempting to mimic features from popular agent harnesses like Hermes agent/ Openclaw etc. but bring it down completely on your mobile device. There is a lot more too it but this is just a high level overview. Its open source feel free to gander: https://github.com/DIIZZYFPS/DAEX/ submitted by /u/DIIZZYSNIPEZ [link] [comments]",
     "date_uncertain": false,
     "summarized": false
   },
@@ -3251,17 +2942,6 @@
     "summarized": false
   },
   {
-    "id": "30a9e1c93d9089f2",
-    "title": "Evolving my Pure Kotlin & Compose RPG Engine: Migrating world rendering to Filament for an 8x performance boost",
-    "url": "https://www.reddit.com/r/Kotlin/comments/1v5afcz/evolving_my_pure_kotlin_compose_rpg_engine/",
-    "date": "2026-07-24",
-    "source_id": "reddit-kotlin",
-    "author": "/u/iOSHades",
-    "excerpt": "Hey r/Kotlin A few months ago, I shared a technical breakdown of my solo project, Adventurers Guild RPG Sim, an isometric RPG built using Kotlin coroutines, Jetpack Compose Canvas, and a custom single threaded ECS. While pure Compose Canvas was an incredible playground for prototyping the engine and keeping everything strictly in Kotlin, expanding the tilemap, weather, and dynamic lighting eventually pushed me into a hard bottleneck on the CPU. To fix this without breaking the live game or throw",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
     "id": "de0858ef05a4f090",
     "title": "E2E Testing for Compose Multiplatform",
     "url": "https://www.reddit.com/r/Kotlin/comments/1v641d5/e2e_testing_for_compose_multiplatform/",
@@ -3291,17 +2971,6 @@
     "source_id": "reddit-kotlin",
     "author": "/u/aryapreetam",
     "excerpt": "I built Parikshan , an E2E testing framework for Compose Multiplatform. It has built-in support for standalone Android. Testing shared UI across targets has been one of the most painful parts of building multiplatform apps. Parikshan attempts to solve that problem . You can write your UI tests in Kotlin inside commonTest and run them on a single target or across all targets (Android, iOS Simulator, Desktop JVM, and Web WasmJs) at once. class SampleE2ETest { @Test fun testGreeting() = e2eTest { i",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "0a52767cc7d29c80",
-    "title": "Klocale — comprehensive locale-aware number/value formatting for Kotlin Multiplatform (my first OSS library, feedback very welcome)",
-    "url": "https://www.reddit.com/r/Kotlin/comments/1v59i69/klocale_comprehensive_localeaware_numbervalue/",
-    "date": "2026-07-24",
-    "source_id": "reddit-kotlin",
-    "author": "/u/andread01",
-    "excerpt": "There's good tooling for parts of this already. Human-Readable (~230★) does locale-aware decimal separators, compact abbreviations (K/M), durations, file sizes and relative time — it's display / \"human-friendly\" oriented and rolls its own formatting logic. Kurrency handles currency only. What I couldn't find was a library covering the full formatting surface — currency (symbol / ISO / accounting), percent, scientific, ordinal, spellout, measure, on top of decimal / compact / relative-time — that",
     "date_uncertain": false,
     "summarized": false
   },
@@ -31511,6 +31180,395 @@
     "source_id": "reddit-androiddev",
     "author": "/u/Version-Agreeable",
     "excerpt": "I've been building WormaCeptor for a while. It's an open source debug toolkit that lives inside your debug build: network inspector for OkHttp and Ktor, crash log, logcat viewer, database and SharedPreferences browser, file browser, WebSocket monitor, CPU/memory/FPS overlay, GPS mocking, push simulator and more. It's all debugImplementation , so none of it ends up in your release APK. Lately most of my debugging happens with an agent in the terminal, and the annoying part was always the same: th",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "38f5ebc4226befb1",
+    "title": "allEqual and allDistinct",
+    "url": "https://www.youtube.com/shorts/lRneS3XyVTo",
+    "date": "2026-10-21",
+    "source_id": "kotlin-youtube",
+    "author": "Kotlin by JetBrains",
+    "excerpt": "New features from Kotlin 2.4.20",
+    "date_uncertain": false,
+    "summarized": false,
+    "media_type": "video",
+    "video_id": "lRneS3XyVTo",
+    "thumbnail": "https://i1.ytimg.com/vi/lRneS3XyVTo/hqdefault.jpg",
+    "is_short": true
+  },
+  {
+    "id": "e3e7e625ac59ad6c",
+    "title": "A more reliable way to add and edit contacts on Android",
+    "url": "https://developer.android.com/blog/posts/reliable-way-to-add-and-edit-contacts-android",
+    "date": "2026-10-21",
+    "source_id": "android-developers-blog",
+    "author": "Roxanna Aliabadi Walker",
+    "excerpt": "Apps that target the upcoming Android release will no longer be able to directly write to contacts with the WRITE_CONTACTS permission.",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ff9900bd431963cf",
+    "title": "Daily Kotlin: Collections Framework",
+    "url": "https://jasonobject.medium.com/daily-kotlin-collections-framework-9b674a4f3da0?source=rss------kotlin-5",
+    "date": "2026-10-22",
+    "source_id": "medium-kotlin-tag",
+    "author": "Jason Kwon",
+    "excerpt": "Mastering List, Set, Map, Read-Only vs. Mutable interfaces, and defensive copying in Kotlin Multiplatform Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f756e6dbecd2a0bc",
+    "title": "Debugging R8 Keep Rules With the Files It Already Writes for You",
+    "url": "https://medium.com/@rajkavadia78/debugging-r8-keep-rules-with-the-files-it-already-writes-for-you-969465572fdf?source=rss------kotlin-5",
+    "date": "2026-10-22",
+    "source_id": "medium-kotlin-tag",
+    "author": "raj kavadia",
+    "excerpt": "missing_rules.txt, configuration.txt, -whyareyoukeeping and -checkdiscard, and which one to open for which problem. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "316ebebb2706719d",
+    "title": "How Do Activity, AMS, and WMS Work Together in AOSP to Manage the Android Activity Lifecycle at…",
+    "url": "https://medium.com/@ajay4android/how-do-activity-ams-and-wms-work-together-in-aosp-to-manage-the-android-activity-lifecycle-at-e06b2a0089fe?source=rss------kotlin-5",
+    "date": "2026-10-22",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ajay Prajapati",
+    "excerpt": "An architectural deep dive into Android system services, lifecycle transitions, process management, and performance optimization. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "683e3973ea3b83fd",
+    "title": "TTID vs TTFD: Measuring the Android Startup Your Users Actually See",
+    "url": "https://medium.com/@rajkavadia78/ttid-vs-ttfd-measuring-the-android-startup-your-users-actually-see-5ba8c89822a0?source=rss------kotlin-5",
+    "date": "2026-10-22",
+    "source_id": "medium-kotlin-tag",
+    "author": "raj kavadia",
+    "excerpt": "The first frame is easy to measure. The frame that matters needs one extra call, and Compose makes it almost free. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f6af46c0854a6cbd",
+    "title": "Building a CapCut-style video timeline on Android",
+    "url": "https://medium.com/@akashshahriar55/capcut-style-video-timeline-android-b68b60a6ba29?source=rss------kotlin-5",
+    "date": "2026-10-22",
+    "source_id": "medium-kotlin-tag",
+    "author": "Akashshahriar",
+    "excerpt": "MediaCodec, an offscreen OpenGL renderer and a nearest-frame cache. How I made a zoomable filmstrip that never shows an empty tile. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "87663d535859bb2d",
+    "title": "Merging Videos in Android Using MediaExtractor and MediaMuxer",
+    "url": "https://medium.com/@amalalbert238/merging-videos-in-android-using-mediaextractor-and-mediamuxer-86a9100b895f?source=rss------kotlin-5",
+    "date": "2026-10-22",
+    "source_id": "medium-kotlin-tag",
+    "author": "Amal Albert",
+    "excerpt": "A practical look at concatenating video and audio samples on Android, managing timestamps, and understanding the limitations of direct… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "fc8b531740bbaf79",
+    "title": "Compose’un Derinlikleri #1: Modifier.Node ile Custom Modifier Yazmak",
+    "url": "https://medium.com/@tugbacevizci/composeun-derinlikleri-1-modifier-node-ile-custom-modifier-yazmak-b16a1ac67fc1?source=rss------kotlin-5",
+    "date": "2026-10-22",
+    "source_id": "medium-kotlin-tag",
+    "author": "Tuğba Cevizci",
+    "excerpt": "Compose’da her gün modifier yazıyoruz, ama çoğumuz arka planda ne olduğunu hiç düşünmüyoruz. padding, background, clickable… Hepsi bir… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e8871da16e9a27b5",
+    "title": "Kotlin Multiplatform vs Flutter vs React Native in 2026: Choose by What You Share, Not by…",
+    "url": "https://medium.com/@anshul.nema23/kotlin-multiplatform-vs-flutter-vs-react-native-in-2026-choose-by-what-you-share-not-by-7c2756887324?source=rss------kotlin-5",
+    "date": "2026-10-22",
+    "source_id": "medium-kotlin-tag",
+    "author": "Good Opportunity",
+    "excerpt": "All three are production-ready now. The real decision is how much of your app you want to share, and which skills your team already has. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "38d543a43598137f",
+    "title": "Diagnosing ANRs from First Principles: Input Dispatch, Main-Thread Budgets and Traces",
+    "url": "https://medium.com/@gangulysourik/diagnosing-anrs-from-first-principles-input-dispatch-main-thread-budgets-and-traces-e9cc0493cb40?source=rss------kotlin-5",
+    "date": "2026-10-22",
+    "source_id": "medium-kotlin-tag",
+    "author": "Sourik",
+    "excerpt": "What actually trips an ANR in Android, which thread to blame for each type, and how to find the cause in a Perfetto trace. Kotlin and SQL… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b418a80bd43c99a2",
+    "title": "KMP and AI: Designing a Mobile Architecture that is readable by Humans and Agents",
+    "url": "https://medium.com/@santimattius/kmp-and-ai-designing-a-mobile-architecture-that-is-readable-by-humans-and-agents-6f5d0f9b4a53?source=rss------kotlin-5",
+    "date": "2026-10-21",
+    "source_id": "medium-kotlin-tag",
+    "author": "Santiago Mattiauda",
+    "excerpt": "Why a single source of truth, explicit contracts, and semantic tools matter even more when AI begins to modify code in production. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "207ec7f4ec8f169e",
+    "title": "Android Professional Recovery v7.8: Features, Compatibility, and User Guide",
+    "url": "https://medium.com/@masti24bd/android-professional-recovery-v7-8-features-compatibility-and-user-guide-1c7503f5f18d?source=rss------android-5",
+    "date": "2026-10-22",
+    "source_id": "medium-android-tag",
+    "author": "needsrom",
+    "excerpt": "Android devices store many important things, including personal photos, contacts, documents, messages, and app data. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "020fd901a7f2b9ca",
+    "title": "UnlockTool Offline Free Download: 100% Working & Latest Setup",
+    "url": "https://medium.com/@deepakpotalwad12/unlocktool-offline-free-download-100-working-latest-setup-47325b5edb82?source=rss------android-5",
+    "date": "2026-10-22",
+    "source_id": "medium-android-tag",
+    "author": "Daarvi.Tech",
+    "excerpt": "HomeUnlock ToolsUnlockTool Offline Free Download: 100% Working & Latest Setup Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e9c112311f12f8f3",
+    "title": "I Was Tired of Hearing the Same Ringtone — So I Made My Own in Less Than a Minute",
+    "url": "https://medium.com/@sonali_45216/i-was-tired-of-hearing-the-same-ringtone-so-i-made-my-own-in-less-than-a-minute-7703216d2ad9?source=rss------android-5",
+    "date": "2026-10-22",
+    "source_id": "medium-android-tag",
+    "author": "Sonali Singh",
+    "excerpt": "I didn’t need a new phone. I just needed it to stop sounding like everyone else’s. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b47d931dda44cc2c",
+    "title": "WhatsApp Dynamic Navigation Bar Beta: نیا فیچر کیا ہے؟",
+    "url": "https://medium.com/@mahnoorasfia121/whatsapp-dynamic-navigation-bar-beta-%D9%86%DB%8C%D8%A7-%D9%81%DB%8C%DA%86%D8%B1-%DA%A9%DB%8C%D8%A7-%DB%81%DB%92-93bea2dcb95b?source=rss------android-5",
+    "date": "2026-10-22",
+    "source_id": "medium-android-tag",
+    "author": "Mahnoorasfia",
+    "excerpt": "WhatsApp Dynamic Navigation Bar Beta: نیا فیچر کیا ہے؟ Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "02225fdeff364b2d",
+    "title": "From a User Goal to a Testable Mobile AI Case",
+    "url": "https://medium.com/@armarray/from-a-user-goal-to-a-testable-mobile-ai-case-f5af8afe9dd8?source=rss------android-5",
+    "date": "2026-10-22",
+    "source_id": "medium-android-tag",
+    "author": "ARMARRAY",
+    "excerpt": "Define the outcome, starting context, completion rule, and evidence — without prescribing every action an agent takes. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "dd3b0ac8fd3c85a6",
+    "title": "Want Less Screen Time? Start with Your Apps, Not a Dumbphone",
+    "url": "https://medium.com/@fwang2422/want-less-screen-time-start-with-your-apps-not-a-dumbphone-686497b6a23b?source=rss------android-5",
+    "date": "2026-10-22",
+    "source_id": "medium-android-tag",
+    "author": "Fiona Wang",
+    "excerpt": "The CUBOT KingKong Mini 4 raises an interesting question: can a smartphone fit a simpler routine without giving up useful tools? Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "25d26fe87c3d8460",
+    "title": "Review Jurnal : YOLO26-Based ASL Sign Language Gesture Detection on Android",
+    "url": "https://medium.com/@alfauzi.andik/review-jurnal-yolo26-based-asl-sign-language-gesture-detection-on-android-1a166106d6bb?source=rss------android-5",
+    "date": "2026-10-22",
+    "source_id": "medium-android-tag",
+    "author": "Andik Alfauzi",
+    "excerpt": "Latar Belakang Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0cdf3ed90c45c4fc",
+    "title": "21 October 2026 Artifact Wave",
+    "url": "https://commonsware.com/blog/2026/10/21/jetpack-artifact-wave.html",
+    "date": "2026-10-21",
+    "source_id": "commonsware",
+    "author": "CommonsWare",
+    "excerpt": "Here is what we got as new Jetpack artifacts this week!",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "bfb7e7b3e7089de5",
+    "title": "parent-5.5.1",
+    "url": "https://github.com/lysine-dev/okhttp/releases/tag/parent-5.5.1",
+    "date": "2026-10-22",
+    "source_id": "lib-okhttp",
+    "author": "swankjesse",
+    "excerpt": "Version 5.5.1",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1d94daa85f65b117",
+    "title": "parent-4.12.1",
+    "url": "https://github.com/lysine-dev/okhttp/releases/tag/parent-4.12.1",
+    "date": "2026-10-22",
+    "source_id": "lib-okhttp",
+    "author": "swankjesse",
+    "excerpt": "Version 4.12.1",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "da7c8e2e999376cf",
+    "title": "Reviewing agent written Compose PRs takes more effort than it used to",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xccih7/reviewing_agent_written_compose_prs_takes_more/",
+    "date": "2026-10-22",
+    "source_id": "reddit-androiddev",
+    "author": "/u/ParticularFan1122",
+    "excerpt": "Our team is 5 Android devs and since summer most of our PRs are written by Claude Code or Codex, mostly Compose UI and some Room migrations. Review time per PR is about the same as before, around 25 minutes, but it's a lot more tiring. The code looks finished. Naming is consistent, previews are there, tests pass. What's missing is why it did things the way it did. Last month one PR hoisted some state two levels up so a whole screen recomposed on every keystroke, and nothing in the diff or the de",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d27153e76cb02684",
+    "title": "How can I run ONNX Runtime inference on the 8 A100 AI cores of a SpacemiT K3 COM260 board running Android/AOSP?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xc9icv/how_can_i_run_onnx_runtime_inference_on_the_8/",
+    "date": "2026-10-22",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Practical_Emm4600",
+    "excerpt": "Hi everyone, I’m working on an AI application running on a SpacemiT K3 COM260 RISC-V board with a custom-built Android/AOSP environment. Currently, my application performs AI inference using the general-purpose CPU cores (X100). I want to move the inference workload to the board’s 8 dedicated A100 AI cores to improve performance. Current setup Hardware : SpacemiT K3 COM260 RISC-V board OS : Custom-built Android/AOSP Inference framework: ONNX Runtime Access : ADB shell available Current execution",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "646e496642a1a318",
+    "title": "Event Box: on-device overlay to see and validate Firebase Analytics events (no cable, no logcat)",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xcazoz/event_box_ondevice_overlay_to_see_and_validate/",
+    "date": "2026-10-22",
+    "source_id": "reddit-androiddev",
+    "author": "/u/JaydeepOriginJP",
+    "excerpt": "Hi all, I'm the author of Event Box, a small open-source library I built for my own QA workflow. I'd like your feedback. The problem: checking analytics events means plugging in a cable, filtering logcat, or setting up Firebase DebugView. Testers can't easily do it on their own phones, and wrong events (bad names, too many params) often get found after release. What it does: Floating bubble on top of your app. Tap it to open a panel that shows events as they fire (number, time, name, params). ⚠ ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "708c911d1f22b2bc",
+    "title": "Google Android interview",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xc9gl4/google_android_interview/",
+    "date": "2026-10-22",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Acrobatic_Revenue675",
+    "excerpt": "Hii, I have an upcoming Google android + dsa interview for L4. I have a few doubts around it: How will the interviewer cover android + dsa in mere 45 ins ? Will the dsa ques be based on android stuff, or will it be pure dsa, basically are android and dsa in this round dependant on each other ? Can I be asked to write code for an android app? For anyone who has taken this interview, please share your insights on the android + dsa rounds. Thanks in advance :) submitted by /u/Acrobatic_Revenue675 [",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d9c246133702351f",
+    "title": "I built a Gradle-free APK builder (aapt2 + d8 pipeline as a CLI) — looking for brutal feedback",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xc8ewj/i_built_a_gradlefree_apk_builder_aapt2_d8/",
+    "date": "2026-10-22",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Current-Mobile-5033",
+    "excerpt": "Hey r/androiddev — I kept hitting the same wall: tiny Android apps that take Gradle minutes to build. So I built Gradleless, a small CLI that compiles a simple project folder straight to a signed APK using only the SDK build-tools (aapt2, d8, zipalign, apksigner) + a JDK. No Gradle, no Android Studio, no network access at all. What's in it: - One shell script, 5 pipeline stages (compile → link → javac → d8 → package/sign) - Starter template + a WebView-wrapper example (\"URL do, APK lo\" style) - ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f6056d0b4ebe6177",
+    "title": "Armor Mayhem (.swf) to Android: WebView + Ruffle performance issue",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xc2gpd/armor_mayhem_swf_to_android_webview_ruffle/",
+    "date": "2026-10-21",
+    "source_id": "reddit-androiddev",
+    "author": "/u/DFKurokawa",
+    "excerpt": "Hi everyone! I’m currently working on porting the Flash game Armor Mayhem (.swf) to Android. My previous background is in web development and building test apps in Expo (React Native). That’s why I initially chose the WebView + Ruffle approach, thinking a web-based environment would feel more familiar. However, I’ve hit a critical performance wall. Build Status & Architecture: Current Route: Native Android Studio ( WebView ) + Ruffle (WebAssembly player). Configuration: hardwareAccelerated=\"true",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2eb6608bdaadd104",
+    "title": "Android Studio Rabbit 2 RC 1 now available",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xbr1xu/android_studio_rabbit_2_rc_1_now_available/",
+    "date": "2026-10-21",
+    "source_id": "reddit-androiddev",
+    "author": "/u/androidtoolsbot",
+    "excerpt": "submitted by /u/androidtoolsbot [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8a4873e817f0e092",
+    "title": "Android phones can transfer at speeds of 32+ Mbps",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xbrv6f/android_phones_can_transfer_at_speeds_of_32_mbps/",
+    "date": "2026-10-21",
+    "source_id": "reddit-androiddev",
+    "author": "/u/failingapbio",
+    "excerpt": "submitted by /u/failingapbio [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "bcc5ade3d89cdeb2",
+    "title": "Have anyone used fastlane? is there any way to publish android app through api?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xbqeso/have_anyone_used_fastlane_is_there_any_way_to/",
+    "date": "2026-10-21",
+    "source_id": "reddit-androiddev",
+    "author": "/u/harricodes",
+    "excerpt": "Can anyone know me right way of publishing android apps using fastlane or any other tool you use? submitted by /u/harricodes [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d0d898245033604d",
+    "title": "DEX code optimization deadline, but R8 triggers \"Unresponsive App\" rejection",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xbpugc/dex_code_optimization_deadline_but_r8_triggers/",
+    "date": "2026-10-21",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Pitiful-Squirrel4562",
+    "excerpt": "The Play Console is flagging my app with the DEX code optimization warning (requiring R8 shrinkage and obfuscation on release builds). Here's the catch-22: Whenever I enable R8 for a release build, the app runs completely fine locally across my physical and virtual test devices. However, as soon as I submit it to Play Console (even on Closed Testing), the automated review bot rejects it for \"Unresponsive app / Broken Functionality.\" Telemetry Gap - Neither Android Vital nor Firebase Crashlytics ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "92a3a5e26cda8932",
+    "title": "Android Webview autocorrects word on website",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xbkgy6/android_webview_autocorrects_word_on_website/",
+    "date": "2026-10-21",
+    "source_id": "reddit-androiddev",
+    "author": "/u/syvid",
+    "excerpt": "We use Fully Kiosk app on an Android Tablet (Lenovo) and we have an issue where text on our website is auto corrected to something completely different to what is on the website. When we test it on Chrome on the same tablet, it does not happen. It seems to be specific to the Fully Kiosk app. When asking their support they say that Fully Kiosk uses Android Webview provided by the device and it’s most likely caused by it. Does anyone has any experience with similar issue and how to update/stop Web",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6afde05675c8107c",
+    "title": "Preventing screenshots in recording and recent thumbnails or task switcher and showing black screen",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xbkahm/preventing_screenshots_in_recording_and_recent/",
+    "date": "2026-10-21",
+    "source_id": "reddit-androiddev",
+    "author": "/u/Green-Campaign101",
+    "excerpt": "Hi, I’ve been working on an app that has one main Activity and uses other Composables as screens. I need to prevent screenshots and ensure that the app content is hidden or replaced with a black screen when it appears in the Recent Apps thumbnails or task switcher. \"FLAG_SECURE\" \"FLAG_SECURE\" helps prevent screenshots and screen recordings, but it doesn't seem to solve the issue with Recent Apps thumbnails on all Android versions. Android 13 (API 33) and above I was able to make the Recent Apps ",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "326cdebf841b58a4",
+    "title": "Claude Code Mods for Android Developers- Have you experimented with them?",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xbv058/claude_code_mods_for_android_developers_have_you/",
+    "date": "2026-10-21",
+    "source_id": "reddit-androiddev",
+    "author": "/u/NathanJasper",
+    "excerpt": "I created some that should be helpful for Android and made this demo with them. I'm interested in hearing other ideas. submitted by /u/NathanJasper [link] [comments]",
     "date_uncertain": false,
     "summarized": false
   }
