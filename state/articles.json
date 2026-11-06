@@ -1440,183 +1440,6 @@
     "summarized": false
   },
   {
-    "id": "eb18ae5a72de3089",
-    "title": "Why My Flutter Timer Needed a Native Android Service",
-    "url": "https://medium.com/@vogel_tom/why-my-flutter-timer-needed-a-native-android-service-887133d5ab21?source=rss------kotlin-5",
-    "date": "2026-08-08",
-    "source_id": "medium-kotlin-tag",
-    "author": "Tom",
-    "excerpt": "How I combined a smooth Flutter UI with a Kotlin foreground service, monotonic time, and state snapshots. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Describes how a Flutter timer app added a native Kotlin foreground service to keep countdown state accurate while the Flutter engine is paused. Uses SystemClock.elapsedRealtime() for monotonic timing, a MethodChannel bridge, and state snapshots restored on resume.",
-    "topics": [
-      "android-api"
-    ],
-    "code_snippet": "val now = SystemClock.elapsedRealtime()\nlastAccountingMs = now\ndeadlineMs = now + remainingMs",
-    "snippet_label": "MONOTONIC DEADLINE CLOCK"
-  },
-  {
-    "id": "60feddcc148044d7",
-    "title": "Common Mistakes Android Developers Make When Learning Jetpack Compose (and How to Avoid Them)",
-    "url": "https://medium.com/@stevenfaster13/common-mistakes-android-developers-make-when-learning-jetpack-compose-and-how-to-avoid-them-cc2bf11e8894?source=rss------kotlin-5",
-    "date": "2026-08-08",
-    "source_id": "medium-kotlin-tag",
-    "author": "Steven",
-    "excerpt": "Introduction Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Walks through common mistakes Android developers make when learning Jetpack Compose, rooted in carrying an XML/View mental model into declarative UI. Covers state-as-source-of-truth, recomposition, side-effect handling (LaunchedEffect), and unidirectional data flow, with before/after code examples.",
-    "topics": [
-      "compose",
-      "android-developers"
-    ],
-    "code_snippet": "@Composable\nfun Greeting(username: String, isLoading: Boolean, canSubmit: Boolean) {\n    if (isLoading) {\n        CircularProgressIndicator()\n    } else {\n        Text(\"Hello, $username\")\n        Button(onClick = { }, enabled = canSubmit) { Text(\"Submit\") }\n    }\n}",
-    "snippet_label": "STATE-DRIVEN UI"
-  },
-  {
-    "id": "a1d209b67640b75c",
-    "title": "Kotlin const val, val, and var: What’s the Difference?",
-    "url": "https://nikunj9.medium.com/kotlin-const-val-val-and-var-whats-the-difference-894fa970b985?source=rss------kotlin-5",
-    "date": "2026-08-08",
-    "source_id": "medium-kotlin-tag",
-    "author": "halo",
-    "excerpt": "When learning Kotlin, you’ll quickly encounter three ways to declare values: Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Beginner explainer distinguishing Kotlin's const val, val, and var: compile-time constant, read-only reference, and mutable reference respectively. Clarifies that val only locks the reference, not the underlying object, and that const val values get inlined at compile time.",
-    "topics": [
-      "kotlin"
-    ]
-  },
-  {
-    "id": "49c5630dba973cf9",
-    "title": "Android Engineering From Scratch",
-    "url": "https://badrinathdora.medium.com/android-engineering-from-scratch-b2567cfd6ab7?source=rss------kotlin-5",
-    "date": "2026-08-08",
-    "source_id": "medium-kotlin-tag",
-    "author": "Dora Badrinath",
-    "excerpt": "#001 — Why Kotlin Prefers val Over var (and Why Android Developers Should Too) Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "First entry in a beginner Android series arguing Kotlin developers should default to val over var, since read-only references communicate intent and prevent accidental mutation. Notes MVVM/Compose UI state models rely on val plus copy() rather than in-place mutation.",
-    "topics": [
-      "kotlin",
-      "android-developers"
-    ]
-  },
-  {
-    "id": "11cd47ca64e2042b",
-    "title": "One SDK for Android, iOS, Flutter, React Native and KMP: A Deep Dive Into Measure, the Open Source…",
-    "url": "https://medium.com/@anandgaur2207/one-sdk-for-android-ios-flutter-react-native-and-kmp-a-deep-dive-into-measure-the-open-source-7b237fbabe8f?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "Anand Gaur",
-    "excerpt": "Crashlytics tells you what broke. It rarely tells you why. And if your team ships on more than one stack, it tells you that in five… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Measure is an open-source, self-hosted alternative to Crashlytics covering Android, iOS, Flutter, React Native and KMP with a single SDK and backend. It auto-captures gestures, navigation and network calls, attaches full session replays to every crash/ANR, and de-minifies stack traces per platform, including shared KMP code.",
-    "topics": [
-      "kmp",
-      "android-developers"
-    ]
-  },
-  {
-    "id": "74eed0b85277c768",
-    "title": "10 Best Story Games for Low-End PC You Should Play in 2026",
-    "url": "https://livegameryt.medium.com/10-best-story-games-for-low-end-pc-you-should-play-in-2026-bd776190fdf0?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "Live Gamer yt",
-    "excerpt": "Best story game for low-end PC Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "A listicle of ten narrative-driven PC games playable on low-end hardware, covering titles like Undertale, Firewatch and Disco Elysium. Not related to Android or Kotlin development.",
-    "topics": []
-  },
-  {
-    "id": "87d674e4a5881634",
-    "title": "How We Moved 1,500 Android Screenshot Tests to Roborazzi",
-    "url": "https://medium.com/thumbtack-engineering/how-we-moved-1-500-android-screenshot-tests-to-roborazzi-9a5247d61340?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "Zachary Wander",
-    "excerpt": "The porting process and the challenges we faced along the way Continue reading on Thumbtack Engineering »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Thumbtack's Android team describes porting 1,500 Firebase Test Lab screenshot tests to Roborazzi, a JVM-local, Robolectric-based screenshot testing framework for Compose apps. Covers batch-porting steps, a font-cache test-isolation bug across parallel Robolectric runs, and cross-OS shadow-rendering mismatches between macOS and CI.",
-    "topics": [
-      "testing",
-      "compose"
-    ]
-  },
-  {
-    "id": "937ebf63d863257c",
-    "title": "Android System Design: Pagination",
-    "url": "https://medium.com/@nematengg/android-system-design-pagination-c030bbc1f359?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "Nemat",
-    "excerpt": "Imagine an e-commerce application with 100,000 products. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Explains Android pagination strategies — offset-based, cursor-based and keyset — for large datasets like product catalogs and feeds, covering consistency trade-offs as data changes and query-performance costs of large offsets. Frames pagination as a system-design concern spanning API, architecture, caching and Paging 3 implementation.",
-    "topics": [
-      "architecture"
-    ]
-  },
-  {
-    "id": "3bbf38ef9ce727e9",
-    "title": "Building Redoubt Analytics: A Counter-UAS Risk Intelligence Platform",
-    "url": "https://medium.com/@alfinohatta/building-redoubt-analytics-a-counter-uas-risk-intelligence-platform-ac79cf441006?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "Alfino Hatta",
-    "excerpt": "Airports, ports, data centers, and energy grids all share a growing vulnerability: low-cost, high-capability drones. A few years ago, a… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Describes building Redoubt Analytics, a counter-UAS risk platform with a Kotlin/Jetpack Compose Android client, a Spring Boot backend handling auth and access control, and a separate Monte Carlo simulation engine. Focuses on splitting responsibilities across the three services to serve security officers, risk officers and SOC operators differently.",
-    "topics": [
-      "architecture",
-      "spring-kotlin"
-    ]
-  },
-  {
-    "id": "1de431677fd5cf7e",
-    "title": "Use Wi-Fi or USB to Connect Your Android Phone as a Computer Microphone",
-    "url": "https://githubdaily.medium.com/use-wi-fi-or-usb-to-connect-your-android-phone-as-a-computer-microphone-ee14712c95cc?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "Chimin",
-    "excerpt": "In video conferences, podcast recordings, or gaming voice chats, you might not have a good microphone on hand. Your phone, however, does… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "fb1c82fed4885b47",
-    "title": "Como realizar Root en un Xiaomi Note 11.",
-    "url": "https://ethicalhcop.medium.com/como-realizar-root-en-un-xiaomi-note-11-1809788f42f5?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "EthicalHCOP",
-    "excerpt": "Hacer root en Android es el proceso para obtener el control total y permisos de superusuario sobre el sistema operativo. Esto elimina los… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "f217d24b8c4259a9",
-    "title": "---",
-    "url": "https://medium.com/@marializsanchezpeguero69/-15f5a2e3eaed?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "Marializ Sánchez Peguero",
-    "excerpt": "Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Spanish-language promotional post for Earnne, a rewards app offering surveys, games and tasks for cash payouts, including the author's personal referral link. Not developer content.",
-    "topics": []
-  },
-  {
     "id": "397f65c815418c7c",
     "title": "Scanning bus stop codes with ML Kit and Vision in the GalwayBus Compose Multiplatform app",
     "url": "https://johnoreilly.dev/posts/galwaybus-scan-stop-kmp/",
@@ -1625,85 +1448,6 @@
     "excerpt": "",
     "date_uncertain": true,
     "summarized": false
-  },
-  {
-    "id": "2b6e2f5f97e1e88d",
-    "title": "v1.12.10-alpha01+dev4616: Details",
-    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.12.10-alpha01%2Bdev4616",
-    "date": "2026-08-08",
-    "source_id": "lib-compose-multiplatform",
-    "author": "olonho",
-    "excerpt": "org.jetbrains.compose. : :1.12.10-alpha01+dev4616 org.jetbrains.compose.material3:material3*:1.12.10-alpha01+dev4616 org.jetbrains.androidx.lifecycle:lifecycle- :2.11.10-alpha01+dev4616 org.jetbrains.androidx.navigation3:navigation3- :1.2.0-alpha03+dev4616",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "4210fe05378eaae0",
-    "title": "🗡️ Pokedex KMP demonstrates modern Kotlin Multiplatform development with Compose Multiplatform, running from one shared codebase on Android, iOS, desktop, and the web.",
-    "url": "https://www.reddit.com/r/androiddev/comments/1vinrob/pokedex_kmp_demonstrates_modern_kotlin/",
-    "date": "2026-08-08",
-    "source_id": "reddit-androiddev",
-    "author": "/u/skydoves",
-    "excerpt": "submitted by /u/skydoves [link] [comments]",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "6a22542ca25e6d61",
-    "title": "Reliable Android alarms require a lot of manual permission enabling — anyone found a way to streamline this?",
-    "url": "https://www.reddit.com/r/androiddev/comments/1vikupw/reliable_android_alarms_require_a_lot_of_manual/",
-    "date": "2026-08-08",
-    "source_id": "reddit-androiddev",
-    "author": "/u/Wide-Pause-2052",
-    "excerpt": "Working on a reminder app and hit a UX wall I'd love input on. Since our reminders rely on full-screen alerts + background activity to fire reliably, we currently have users manually enable a handful of permissions on first run: notifications, alarms, full-screen intents, background activity, display over other apps. It works, but it's a clunky first-run experience compared to a simple tap-allow flow. Anyone here built something alarm/reminder-heavy on Android and found a way to streamline this?",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "58335a1f6d7307df",
-    "title": "COMPLETE BEGINNER NEEDING GUIDANCE",
-    "url": "https://www.reddit.com/r/androiddev/comments/1vijrim/complete_beginner_needing_guidance/",
-    "date": "2026-08-08",
-    "source_id": "reddit-androiddev",
-    "author": "/u/baramDeBoramians",
-    "excerpt": "Now Im completely new to development In these type of apps, and before I used to see the development of them(and even now) as whole different realms compared to being able to make the GUIs for computers(which this I also see as a whole different realm as well LOL) So for those who are very expierenced In development for android, what are some tips that you can give to a beginner like me, and also others as well who are also just starting to want to develop apps of good use to everyday people. If",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "76020a6f4942b55d",
-    "title": "On-Device AI Series (Part 4): LiteRT",
-    "url": "https://proandroiddev.com/on-device-ai-series-part-4-litert-79a41a3d0c56?source=rss----c72404660798---4",
-    "date": "2026-08-08",
-    "source_id": "proandroiddev",
-    "author": "Oğuzhan Aslan",
-    "excerpt": "Full tensor-level control for custom machine learning models on Android. Every team building on-device AI eventually reaches a point where pre-packaged task pipelines no longer suffice. You might need to deploy a custom-trained model, implement a specialized quantization strategy, or pipe raw tensor outputs directly from one neural network into another. That’s where LiteRT operates. It is the core runtime engine that powers MediaPipe Tasks and handles low-level model execution on Android. Introd",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Part four of an on-device AI series covering LiteRT (formerly TensorFlow Lite), Google's edge runtime for classical ML and quantized generative models like Gemma and Llama on Android. Walks through the CompiledModel API's tensor-buffer lifecycle for image classification and BERT text classification with manual int8 quantization handling.",
-    "topics": [
-      "android-api"
-    ],
-    "code_snippet": "compiledModel = CompiledModel.create(\n    context.assets,\n    \"efficientnet_lite0.tflite\",\n    CompiledModel.Options(Accelerator.CPU),\n    null\n)\nval inputBuffers = compiledModel.createInputBuffers()\nval outputBuffers = compiledModel.createOutputBuffers()\ninputBuffers[0].writeInt8(extractPixelBytes(bitmap))\ncompiledModel.run(inputBuffers, outputBuffers)",
-    "snippet_label": "COMPILED MODEL API"
-  },
-  {
-    "id": "b315461b76f21c57",
-    "title": "Your Compose App Isn’t Slow — Your State Is",
-    "url": "https://proandroiddev.com/your-compose-app-isnt-slow-your-state-is-0af6f46fdb20?source=rss----c72404660798---4",
-    "date": "2026-08-08",
-    "source_id": "proandroiddev",
-    "author": "Subhankar Bag",
-    "excerpt": "You’ve done everything right. You bumped the BOM. Pausable composition is on. Your shadows are real dropShadow() calls now, not three stacked gradients. (If none of that sounds familiar, start with [ Stop Writing Compose Like It's 2024 ] — this article picks up where that one left off.) And your screen still stutters when you drag it. Here’s the uncomfortable truth I’ve learned debugging Compose performance in production: the framework is rarely the bottleneck anymore. In almost every janky scre",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Walks through seven Compose recomposition mistakes — reading state too high in the tree, reading animated values during composition instead of layout/draw, monolithic UiState objects — each with a before/after fix using lambda-overload modifiers and derivedStateOf to shrink the invalidation blast radius.",
-    "topics": [
-      "compose",
-      "animation"
-    ],
-    "code_snippet": "val offset by animateDpAsState(targetValue = targetOffset)\nBox(\n    Modifier\n        .offset { IntOffset(x = offset.roundToPx(), y = 0) }\n        .size(80.dp)\n)",
-    "snippet_label": "DEFER OFFSET READ"
   },
   {
     "id": "b17a72383efd5267",
@@ -1722,295 +1466,6 @@
     ],
     "code_snippet": "val newStudent = Student(name = \"Alex\", scores = listOf(15, 25, 30))\nprintln(\"Scores: $newStudent.scores\")\nprintln(\"Scores: ${newStudent.scores}\")",
     "snippet_label": "INTERPOLATION GOTCHA"
-  },
-  {
-    "id": "9c03fce43e037764",
-    "title": "Building Type-Safe Navigation for Android & iOS in Kotlin Multiplatform (Part 6)",
-    "url": "https://medium.com/@kaushikkumarlabs/building-type-safe-navigation-for-android-ios-in-kotlin-multiplatform-part-6-8bded875043a?source=rss------kotlin-5",
-    "date": "2026-08-08",
-    "source_id": "medium-kotlin-tag",
-    "author": "Kaushik Kumar",
-    "excerpt": "Designing clean, type-safe navigation with shared ViewModel intents while keeping Jetpack Compose and SwiftUI navigation fully native. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Part 6 of a KMP series proposes sharing only navigation intent between Android and iOS while keeping execution native: a shared ViewModel emits sealed NavigationDestination/Effect values via SharedFlow, mapped to NavController routes on Compose and NavigationStack on SwiftUI.",
-    "topics": [
-      "kmp",
-      "navigation",
-      "ios-interop",
-      "compose-multiplatform"
-    ],
-    "code_snippet": "sealed interface NavigationDestination {\n    data object ShowList : NavigationDestination\n    data class ShowDetail(val showId: Long) : NavigationDestination\n}",
-    "snippet_label": "SHARED NAV INTENT"
-  },
-  {
-    "id": "b3684023cde700ed",
-    "title": "Android Keystore in Practice: Key Generation, StrongBox, and Biometric Binding",
-    "url": "https://medium.com/@legenda4250/android-keystore-in-practice-key-generation-strongbox-and-biometric-binding-4f4fa48a2a8a?source=rss------kotlin-5",
-    "date": "2026-08-08",
-    "source_id": "medium-kotlin-tag",
-    "author": "Alim Reshitov",
-    "excerpt": "Everything you need to know to stop treating the Keystore as a black box — with a working, biometric-gated encryption example Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Explains what the Android Keystore actually guarantees — hardware-backed key material via TEE or StrongBox versus software fallback — and gives a working pattern for generating an AES-256 GCM key with KeyGenParameterSpec, plus pitfalls like ECB mode or reused key aliases.",
-    "topics": [
-      "android-api"
-    ],
-    "code_snippet": "val spec = KeyGenParameterSpec.Builder(\n    KEY_ALIAS,\n    KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT\n)\n    .setBlockModes(KeyProperties.BLOCK_MODE_GCM)\n    .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)\n    .setKeySize(256)\n    .build()",
-    "snippet_label": "HARDWARE BACKED AES KEY"
-  },
-  {
-    "id": "de9155fa3b1eef5f",
-    "title": "Coil vs Glide vs Picasso: Which Image Loader Should Modern Android Apps Use?",
-    "url": "https://halilozel1903.medium.com/coil-vs-glide-vs-picasso-which-image-loader-should-modern-android-apps-use-94683fa50c1c?source=rss------kotlin-5",
-    "date": "2026-08-08",
-    "source_id": "medium-kotlin-tag",
-    "author": "Halil Özel",
-    "excerpt": "If you are starting a modern Android app, the short answer is simple: Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "b97fb52f31a3845d",
-    "title": "MVI Architecture in Android with Kotlin and Jetpack Compose: A Practical Guide with Clean…",
-    "url": "https://medium.com/@bodhadeakhil/mvi-architecture-in-android-with-kotlin-and-jetpack-compose-a-practical-guide-with-clean-8c989a5310eb?source=rss------kotlin-5",
-    "date": "2026-08-08",
-    "source_id": "medium-kotlin-tag",
-    "author": "Akhil Bodhade",
-    "excerpt": "Building a predictable, testable login screen with StateFlow, ViewModel, and a three-layer Clean Architecture — no third-party MVI library… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Builds a login screen using MVI on top of Unidirectional Data Flow with a three-layer Clean Architecture (Presentation/Domain/Data), comparing a flat UiState data class against a sealed UiState hierarchy, and clarifies that MVI and Clean Architecture are independent, complementary choices.",
-    "topics": [
-      "mvi",
-      "compose",
-      "clean-architecture",
-      "viewmodel"
-    ],
-    "code_snippet": "sealed interface LoginUiState {\n    data object Idle : LoginUiState\n    data object Loading : LoginUiState\n    data object Success : LoginUiState\n    data class Error(val message: String) : LoginUiState\n}",
-    "snippet_label": "SEALED UI STATE"
-  },
-  {
-    "id": "8df5a56d923215df",
-    "title": "Use Compose Multiplatform Components in a UIKit Scroll View (Without Losing Your Mind)",
-    "url": "https://vincenzopascarella.medium.com/use-compose-multiplatform-components-in-a-uikit-scroll-view-without-losing-your-mind-eb158d21b64a?source=rss------kotlin-5",
-    "date": "2026-08-08",
-    "source_id": "medium-kotlin-tag",
-    "author": "Vincenzo Pascarella",
-    "excerpt": "Embed self-sizing Compose Multiplatform components in native UIKit and Objective-C scroll views on iOS, with a height-measuring pattern. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Solves Compose Multiplatform components rendering at zero height inside a UIKit/Objective-C scroll view, since Compose has no intrinsicContentSize: the Kotlin side reports its measured height via onGloballyPositioned, and Swift turns that report into an Auto Layout constraint.",
-    "topics": [
-      "compose-multiplatform",
-      "ios-interop",
-      "kmp"
-    ],
-    "code_snippet": "Column(\n    modifier = Modifier\n        .fillMaxWidth()\n        .onGloballyPositioned { coordinates ->\n            val heightDp = with(density) { coordinates.size.height.toDp().value }\n            onHeightChanged(heightDp)\n        }\n) { }",
-    "snippet_label": "REPORT HEIGHT TO UIKIT"
-  },
-  {
-    "id": "f44a0e6aac2d70ed",
-    "title": "Lazy initialization in Kotlin",
-    "url": "https://medium.com/@muhammadalidev18/lazy-initialization-in-kotlin-5a86aceb7d4d?source=rss------kotlin-5",
-    "date": "2026-08-08",
-    "source_id": "medium-kotlin-tag",
-    "author": "Muhammad Ali Dev",
-    "excerpt": "In Kotlin, lazy initialization is a design pattern that delays the creation of an object or computation of a value until the exact moment… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Explains Kotlin's by lazy delegate: single-execution, cached initialization on first access, the three LazyThreadSafetyMode options (SYNCHRONIZED, PUBLICATION, NONE), how it differs from lateinit, and a memory-leak pitfall when a lazy property captures a short-lived context.",
-    "topics": [
-      "kotlin",
-      "kotlin-stdlib"
-    ],
-    "code_snippet": "val heavyResource: HeavyClass by lazy {\n    HeavyClass()\n}",
-    "snippet_label": "LAZY PROPERTY DELEGATE"
-  },
-  {
-    "id": "1f33dbfe269ced01",
-    "title": "Stop Instantiating What You Don’t Use: Lazy DI in Hilt",
-    "url": "https://medium.com/@sivavishnu0705/stop-instantiating-what-you-dont-use-lazy-di-in-hilt-e4d7cb8c2d47?source=rss------kotlin-5",
-    "date": "2026-08-08",
-    "source_id": "medium-kotlin-tag",
-    "author": "Android Expert",
-    "excerpt": "How dagger.Lazy<T> turns a 78ms cold-start hit into under 1ms — and where it quietly backfires in production. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "5bef038296a5feb4",
-    "title": "We Tested the 3uTools Android App — Here’s What Every Android User Should Know",
-    "url": "https://medium.com/@3utools.one/we-tested-the-3utools-android-app-heres-what-every-android-user-should-know-e6d2e84f3914?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "The 3uTools Desk",
-    "excerpt": "For most users, when you mention 3uTools, the first response is managing iPhones on a Windows device. For years, we felt the same way… Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Reviews the 3uTools Android companion app's device-management features — data migration, device info, storage cleanup, and a memory booster — as a consumer utility app, not a Kotlin or Android development topic.",
-    "topics": []
-  },
-  {
-    "id": "d8e9f7d11b5abf88",
-    "title": "Will My Summertime Saga Save Work After an Update? A Simple Compatibility Check",
-    "url": "https://medium.com/@ethanclarke.dev/will-my-summertime-saga-save-work-after-an-update-a-simple-compatibility-check-75e79c9a0300?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "Ethan Clarke",
-    "excerpt": "Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "A save-compatibility checker and backup checklist for the Summertime Saga game before installing updates. Not related to Android/Kotlin/KMP development.",
-    "topics": []
-  },
-  {
-    "id": "7ab2c777c54c92cd",
-    "title": "OnePlus Rollback Firmware Downloader V1.0 by GSMYOGESH Free Download",
-    "url": "https://medium.com/@fullygamingupdate/oneplus-rollback-firmware-downloader-v1-0-by-gsmyogesh-free-download-ebcf4a3f2901?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "Tech GSM Softwares",
-    "excerpt": "Download Link: https://unluckytool.com/oneplus-rollback-firmware-downloader/ Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Promotional listing for a third-party OnePlus firmware rollback download tool. Not developer content; spam/software-download promotion.",
-    "topics": []
-  },
-  {
-    "id": "7a333518d8816930",
-    "title": "MJT ADB Tool Pro v1.2.7 Latest Version (Tested 100%)",
-    "url": "https://medium.com/@fullygamingupdate/mjt-adb-tool-pro-v1-2-7-latest-version-tested-100-3524a2646ee2?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "Tech GSM Softwares",
-    "excerpt": "Download Link: https://unluckytool.com/mjt-adb-tool-pro-v1–2–7/ Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Promotional listing for an ADB-based phone-unlocking utility (MJT ADB Tool Pro). Not developer content; spam/software-download promotion.",
-    "topics": []
-  },
-  {
-    "id": "00868b07f3934605",
-    "title": "KEY-Tool 9.4 Update — Samsung Carrier ReLock New Security Patch",
-    "url": "https://medium.com/@uch0686/key-tool-9-4-update-samsung-carrier-relock-new-security-patch-d11b4c338d91?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "GSM Toolkit Blog",
-    "excerpt": "Download Link: https://unluckytool.com/key-tool-9–4-update/ Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Promotional listing for a Samsung carrier-unlock tool update. Not developer content; spam/software-download promotion.",
-    "topics": []
-  },
-  {
-    "id": "b15ad061b20783cd",
-    "title": "EFT Pro Dongle Update V5.5.6 Build 001 — Apple A12/A13 Ramdisk Passcode Backup & Restore Support",
-    "url": "https://medium.com/@uch0686/eft-pro-dongle-update-v5-5-6-build-001-apple-a12-a13-ramdisk-passcode-backup-restore-support-99dd9fb5d92e?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "GSM Toolkit Blog",
-    "excerpt": "Download Link: https://unluckytool.com/eft-pro-dongle-update-v5–5–6/ Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Promotional listing for an EFT Pro Dongle firmware update adding Apple ramdisk passcode backup/restore features. Not developer content; spam/software-download promotion.",
-    "topics": []
-  },
-  {
-    "id": "960477042e1b2dd8",
-    "title": "Moto Pad 70 Launches in India at ₹36,999: 6.29mm Design, 5G and Moto Pen Included",
-    "url": "https://medium.com/@unboxdailyhq/moto-pad-70-launches-in-india-at-36-999-6-29mm-design-5g-and-moto-pen-included-0cc828051527?source=rss------android-5",
-    "date": "2026-08-08",
-    "source_id": "medium-android-tag",
-    "author": "Unbox Daily HQ",
-    "excerpt": "Motorola’s new tablet combines a 12.1-inch 2.5K display, 5G connectivity, a 10,200mAh battery and an AI-powered stylus. Continue reading on Medium »",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "Consumer hardware announcement for Motorola's Moto Pad 70 tablet, covering price, display, chipset, battery and included stylus. Phone/tablet spec news, not development content.",
-    "topics": []
-  },
-  {
-    "id": "b2687edf6eb71a6e",
-    "title": "From Wear to Pebble",
-    "url": "https://commonsware.com/blog/2026/08/08/from-wear-to-pebble.html",
-    "date": "2026-08-08",
-    "source_id": "commonsware",
-    "author": "CommonsWare",
-    "excerpt": "I have moved off of Wear OS and onto a Pebble watch!",
-    "date_uncertain": false,
-    "summarized": true,
-    "summary": "CommonsWare's Mark Murphy recounts leaving Wear OS for an open-source Pebble Time 2 after growing frustrated with Google's wearable stack, and plans to start writing Pebble apps alongside his Kotlin Multiplatform work.",
-    "topics": [
-      "wear-os",
-      "kmp"
-    ]
-  },
-  {
-    "id": "c6162ea0fe33dd17",
-    "title": "Android developers: What are you working on these days, and where do you see Android going?",
-    "url": "https://www.reddit.com/r/androiddev/comments/1vj5jpj/android_developers_what_are_you_working_on_these/",
-    "date": "2026-08-08",
-    "source_id": "reddit-androiddev",
-    "author": "/u/Historical_Buddy7166",
-    "excerpt": "I’ve been thinking a lot about how the Android development landscape is changing, especially with AI becoming a bigger part of software development. I’d love to hear from other Android developers about what you’re actually doing in your day-to-day work and how you’re thinking about the future. A few things I’m curious about: What kind of Android work are you doing currently? Are you mostly working on UI/features, architecture, SDKs/frameworks, performance, or something else? How much are you usi",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "ed486b0bf6b45a14",
-    "title": "I built an Compose accessibility linter :)",
-    "url": "https://www.reddit.com/r/androiddev/comments/1vj6kwb/i_built_an_compose_accessibility_linter/",
-    "date": "2026-08-08",
-    "source_id": "reddit-androiddev",
-    "author": "/u/Live_Jellyfish_9024",
-    "excerpt": "Built a dual-engine accessibility checker for Jetpack Compose. Engine 1 — Lint (no emulator): Catches missing contentDescription, hardcoded dp font sizes, clickable without role. Engine 2 — TestRule (runtime): Checks touch targets (48dp min with exemptions), color contrast, duplicate clickable bounds, text field semantics. Every rule maps to a WCAG 2.1 criterion. Both engines are on Maven Central. Repo: https://github.com/lehan0328/touchstone Would love some feedback from the community, especial",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "d94f381796d283f2",
-    "title": "Kotlin with jetpack compose",
-    "url": "https://www.reddit.com/r/androiddev/comments/1vjaw9y/kotlin_with_jetpack_compose/",
-    "date": "2026-08-08",
-    "source_id": "reddit-androiddev",
-    "author": "/u/RootOverclock",
-    "excerpt": "Is there any YouTube or udemy course that teaches kotlin android development with jetpack compose from the very ground up for absolute beginners? I searched everywhere but didn't found any best course yet. Most of them are just video where they type and don't explain anything. There are millions of courses for web development but not many for app development. If you know any course that teaches from the ground up and explains everything, please let me know or leave a link here. Your help would b",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "f9c4787b3879f359",
-    "title": "Claude skills for Native Android Development (Kotlin)..?",
-    "url": "https://www.reddit.com/r/androiddev/comments/1vixl71/claude_skills_for_native_android_development/",
-    "date": "2026-08-08",
-    "source_id": "reddit-androiddev",
-    "author": "/u/RayFar19",
-    "excerpt": "I’ve recently shifted from Cursor to Claude Code, and now I am looking to learn how others have set Claude up for native Android development with Kotlin. What skills, workflows, rules, or setups have you found useful for Android projects? submitted by /u/RayFar19 [link] [comments]",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "9f08b83ef1d0d31d",
-    "title": "log4k 2.3.0 — a Kotlin IR compiler plugin that instruments your functions with tracing, logging and metrics",
-    "url": "https://www.reddit.com/r/androiddev/comments/1viqc3f/log4k_230_a_kotlin_ir_compiler_plugin_that/",
-    "date": "2026-08-08",
-    "source_id": "reddit-androiddev",
-    "author": "/u/smyrgeorge",
-    "excerpt": "submitted by /u/smyrgeorge [link] [comments]",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "128c604c8efaf642",
-    "title": "Should I learn Android Development with KOTLIN, JETPACK COMPOSE or go with XML AND JAVA nowdays ?",
-    "url": "https://www.reddit.com/r/androiddev/comments/1vip07i/should_i_learn_android_development_with_kotlin/",
-    "date": "2026-08-08",
-    "source_id": "reddit-androiddev",
-    "author": "/u/Sharp_Vast1942",
-    "excerpt": "So I wanted to know that is, android development using kotlin and jetpack compose is worth starting my career ? I looked at the market outside India and it feels like its in demand but I don't know if it needed in India. actually I already made my mind for this but wanted to know from real android developers please answer folks... submitted by /u/Sharp_Vast1942 [link] [comments]",
-    "date_uncertain": false,
-    "summarized": false
   },
   {
     "id": "e0965474015e2fad",
@@ -3032,28 +2487,6 @@
     "source_id": "reddit-kotlin",
     "author": "/u/try_Numination",
     "excerpt": "I kept working on my Android AI app — fixed a critical login bug Hey everyone! I've continued working on Numination, my AI platform built with Kotlin + Jetpack Compose. One of the biggest things I worked on recently was a critical bug in the login flow. The app was having problems during authentication, so I went through the flow and fixed the issue. I also continued improving the Android side of the project, including the Compose UI, authentication flow, local data handling, and overall archite",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "85d504b9f09b35bf",
-    "title": "Open sourced accessibility library for jetpack composed",
-    "url": "https://www.reddit.com/r/Kotlin/comments/1vj9vay/open_sourced_accessibility_library_for_jetpack/",
-    "date": "2026-08-08",
-    "source_id": "reddit-kotlin",
-    "author": "/u/Live_Jellyfish_9024",
-    "excerpt": "Hello all, I recently shipped a dual-engine accessibility checker for Jetpack Compose. Engine 1 — Lint (no emulator): Catches missing contentDescription, hardcoded dp font sizes, clickable without role. Engine 2 — TestRule (runtime): Checks touch targets (48dp min with exemptions), color contrast, duplicate clickable bounds, text field semantics. Every rule maps to a WCAG 2.1 criterion. Both engines are on Maven Central. Repo: https://github.com/lehan0328/touchstone Would love some feedback from",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
-    "id": "add69f365fc23434",
-    "title": "GitHub - miwayomi/miwayomi: Self-contained JVM server that runs Aniyomi/Tachiyomi-format catalog extensions without Android",
-    "url": "https://www.reddit.com/r/Kotlin/comments/1vj733m/github_miwayomimiwayomi_selfcontained_jvm_server/",
-    "date": "2026-08-08",
-    "source_id": "reddit-kotlin",
-    "author": "/u/AttitudeFast1855",
-    "excerpt": "Hi everyone! I wanted to share a project I’ve been working on called Miwayomi . It’s built for anyone who enjoys reading manga and wants a clean, lightweight, self-hosted option to keep everything organized on their own server or PC. The core idea behind Miwayomi was to create a clean service capable of running those familiar catalog extensions—the classic Aniyomi extension format—without needing to spin up an Android emulator or heavy mobile runtimes. To make this happen natively on a pure JVM,",
     "date_uncertain": false,
     "summarized": false
   },
@@ -30450,17 +29883,6 @@
     "summarized": false
   },
   {
-    "id": "93b6d185f7e8a264",
-    "title": "v2.0.0-alpha.6",
-    "url": "https://github.com/detekt/detekt/releases/tag/v2.0.0-alpha.6",
-    "date": "2026-08-08",
-    "source_id": "lib-detekt",
-    "author": "cortinico",
-    "excerpt": "2.0.0-alpha.6 - 2026-08-04 This is an alpha release of Detekt 2.0.0. It's built against Kotlin 2.4.10, Gradle 9.6.1, AGP 9.3.1 and is tested against JDK 25. Notable Changes detekt-rules-ktlint-wrapper now targets JVM 17, in preparation for the next ktlint major release which requires JVM 17+, the rest of detekt still targets JVM 8+ - #9453 Changelog feat(rules): add ignoreSealedClasses option to AbstractClassCanBeInterface - #9557 docs: drop stale Android compile classpath warning note - #9550 R",
-    "date_uncertain": false,
-    "summarized": false
-  },
-  {
     "id": "defcc2a372a113ff",
     "title": "ICYMI: Every Android Dev Summit 2026 VOD is now live, and it’s now easier than ever to get caught up!",
     "url": "https://www.reddit.com/r/androiddev/comments/1xm59v9/icymi_every_android_dev_summit_2026_vod_is_now/",
@@ -31242,6 +30664,395 @@
     "source_id": "reddit-androiddev",
     "author": "/u/lokesh1729",
     "excerpt": "Hi all, I have a 2021 MacBook Pro with 16 GB RAM. Performance is fine for me, but internal storage is the bottleneck. I got vexed up in cleaning up everyday. I use mole for cleaning and it's handy, but the grunt work is so heavy. I’m considering buying an external SSD to move android emulators off the internal drive Has anyone done this long term? I’d love to hear: Does it run smoothly, or do you notice slow builds, laggy simulators, or slow container startup? Which SSD and connection (Thunderbo",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "2e92d8d7a0a80330",
+    "title": "The Kotlin Multiplatform Contest Is Open: Win a Trip to KotlinConf",
+    "url": "https://blog.jetbrains.com/kotlin/2026/11/kotlin-multiplatform-contest-2027/",
+    "date": "2026-11-05",
+    "source_id": "kotlin-blog",
+    "author": "Ksenia Shneyveys",
+    "excerpt": "The Kotlin Multiplatform Contest is back!  Students and recent graduates, turn your idea into a cross-platform project with Kotlin Multiplatform (KMP).  The authors of the top three projects will each win a trip to KotlinConf 2027 in Kraków, Poland, with conference tickets, travel, and accommodation covered by the Kotlin Foundation. Authors of all other valid […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1c10640ba41238a0",
+    "title": "kotlin is now kotlinr",
+    "url": "https://www.youtube.com/shorts/yjvTmiJlTJE",
+    "date": "2026-11-05",
+    "source_id": "kotlin-youtube",
+    "author": "Kotlin by JetBrains",
+    "excerpt": "New features from Kotlin 2.4.20",
+    "date_uncertain": false,
+    "summarized": false,
+    "media_type": "video",
+    "video_id": "yjvTmiJlTJE",
+    "thumbnail": "https://i2.ytimg.com/vi/yjvTmiJlTJE/hqdefault.jpg",
+    "is_short": true
+  },
+  {
+    "id": "4e62dd342954a800",
+    "title": "From in-app agents to the Android intelligence system: What’s new in intelligent apps at the Android Developer Summit",
+    "url": "https://developer.android.com/blog/posts/android-intelligence-system-in-app-agents-ads",
+    "date": "2026-11-05",
+    "source_id": "android-developers-blog",
+    "author": "Jingyu Shi",
+    "excerpt": "In the intelligence era, users are no longer just tapping through apps, they express high-level goals and expect AI agents like Gemini to complete multi-step workflows, sometimes across multiple apps on their devices.",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4daf6dadf9c46066",
+    "title": "Java Annotated Monthly – November 2026",
+    "url": "https://blog.jetbrains.com/idea/2026/11/java-annotated-monthly-november-2026/",
+    "date": "2026-11-06",
+    "source_id": "jetbrains-blog",
+    "author": "Irina Mariasova",
+    "excerpt": "October kept the Java world busy, with JDK news, fresh tutorials, Kotlin updates, AI experiments, and plenty more from across the wider ecosystem. We’ve gathered the best of it in one place, so you can skip the scrolling and get straight to the good stuff. To top it all off, Piotr Przybył joins us as […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "22187611d9d4b2e4",
+    "title": "RustRover 2026.3 Is Out: JetBrains Air, Clearer Debugger Views, and Agents That Debug With You",
+    "url": "https://blog.jetbrains.com/rust/2026/11/05/new-in-rustrover-2026-3/",
+    "date": "2026-11-05",
+    "source_id": "jetbrains-blog",
+    "author": "Irina Mihajlovic",
+    "excerpt": "Fixing a bug starts with understanding what your code is doing at runtime: reading the program state, following the call stack, or tracking down a slow function. RustRover 2026.3 makes that work easier to follow, whether you do it yourself or with an AI agent. It also ships with JetBrains Air, a new layer for […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "eb2357f0e369fd3c",
+    "title": "What’s New in PyCharm 2026.3",
+    "url": "https://blog.jetbrains.com/pycharm/2026/11/what-s-new-in-pycharm-2026-3/",
+    "date": "2026-11-05",
+    "source_id": "jetbrains-blog",
+    "author": "Ilia Afanasiev",
+    "excerpt": "At the center of this release is JetBrains Air – a new layer for agentic development. It lets you run, track, and verify multi-agent workflows directly inside your IDE, with code intelligence keeping agents on track and complete review tools in your hands. This release also brings workspaces that adapt terminals and consoles to individual […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c73d5d469180761e",
+    "title": "DataGrip 2026.3: Agentic Development With JetBrains Air, Cross-Database Queries, DuckDB Support, and Major UX Improvements",
+    "url": "https://blog.jetbrains.com/datagrip/2026/11/05/datagrip-2026-3-agentic-development-with-jetbrains-air-cross-database-queries-duckdb-support-and-major-ux-improvements/",
+    "date": "2026-11-05",
+    "source_id": "jetbrains-blog",
+    "author": "Richie Mitish",
+    "excerpt": "DataGrip 2026.3, the third major update of the year, is here! Let’s take a look at what’s inside. AI JetBrains Air is now available by default in DataGrip. You can run SQL, explore data, and reference database objects directly in chats with AI agents. SQL snippets use your IDE’s syntax highlighting and formatting settings. You […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "abe4459bf83dc714",
+    "title": "What’s New in PhpStorm 2026.3",
+    "url": "https://blog.jetbrains.com/phpstorm/2026/11/whats-new-in-phpstorm-2026-3/",
+    "date": "2026-11-05",
+    "source_id": "jetbrains-blog",
+    "author": "Hanna Yakush",
+    "excerpt": "PhpStorm 2026.3, the third major update of the year, is here! This release includes a new workspace for agentic development and multi-agent setups, support for PHP 8.6, improvements to remote development and WSL scenarios, and PHP code insight enhancements. Download PhpStorm 2026.3 JetBrains Air – one place to run your agents and verify their work […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "da2a962c46f1dd4a",
+    "title": "RubyMine 2026.3: JetBrains Air, Native Mode for WSL and Dev Containers, and More",
+    "url": "https://blog.jetbrains.com/ruby/2026/11/rubymine-2026-3-jetbrains-air-native-mode-for-wsl-and-dev-containers-and-more/",
+    "date": "2026-11-05",
+    "source_id": "jetbrains-blog",
+    "author": "Alexey Varfolomeev",
+    "excerpt": "RubyMine 2026.3 is out! This release brings JetBrains Air for working with your preferred coding agents, native access to WSL and Dev Container projects, and smarter Ruby and Rails support. You’ll also find easier interpreter setup, improved navigation and refactoring, and updates that make everyday development more comfortable. Download RubyMine 2026.3 from our website or […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4ab695861299d0f8",
+    "title": "WebStorm 2026.3: New Design-Code-Production Workflow, JetBrains Air in WebStorm, and More",
+    "url": "https://blog.jetbrains.com/webstorm/2026/11/webstorm-2026-3/",
+    "date": "2026-11-05",
+    "source_id": "jetbrains-blog",
+    "author": "Valeriya Masyachenko",
+    "excerpt": "WebStorm 2026.3 is now available! Building a UI feature with an AI agent often involves more switching between tools than actual coding. You copy values out of Figma, hunt for the right story in Storybook, write the prompt, wait for the agent, and then check the result in the browser and find yourself starting the […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "611eaa424a2ea349",
+    "title": "GoLand 2026.3 Is Now Available!",
+    "url": "https://blog.jetbrains.com/go/2026/11/05/goland-2026-3-is-now-available/",
+    "date": "2026-11-05",
+    "source_id": "jetbrains-blog",
+    "author": "Artem Pronichev",
+    "excerpt": "GoLand 2026.3 brings JetBrains Air into your Go workflow. You can run coding agents inside GoLand, review their changes alongside your code, and guide them with feedback tied to specific lines. A new GoLand skill helps agents use the profiler to investigate performance problems. Additionally, this release improves Git worktrees, GoLand’s responsiveness, and support for […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "8350286a7c816752",
+    "title": "Small Talk With Phan Manh Hung, CEO of Omi Health Tech",
+    "url": "https://blog.jetbrains.com/startups/2026/11/small-talk-omi-health-tech/",
+    "date": "2026-11-05",
+    "source_id": "jetbrains-blog",
+    "author": "Marija Rakonjac",
+    "excerpt": "What is Small Talk? Small Talk is our short Q&A with founders from the JetBrains Startup Program. They answer a handful of questions in their own words about what they’re building, why they started, and what they’ve figured out along the way. No pitch, no polish – just a two-minute read to meet the person […]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "f533ab2f9a26ec81",
+    "title": "Looking for an IntelliJ Alternative Led to My First Open Source Contribution",
+    "url": "https://medium.com/@egasa/looking-for-an-intellij-alternative-led-to-my-first-open-source-contribution-04bf66682481?source=rss------kotlin-5",
+    "date": "2026-11-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ega Saputra",
+    "excerpt": "Hola, buongiorno. So, recently I started exploring alternatives to the JetBrains tools I use every day since our JetBrains subs expire… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6b86b92458cc81d8",
+    "title": "Kotlin 2.5 vs 2.4 — What’s changed?",
+    "url": "https://medium.com/@androidlab/kotlin-2-5-vs-2-4-whats-changed-de63b1addbdb?source=rss------kotlin-5",
+    "date": "2026-11-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "AndroidLab by Andre",
+    "excerpt": "What is stable in 2.4? What changes in the 2.5 betas? Should I upgrade? Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "4995a69a95ee6796",
+    "title": "Room Database in Compose Multiplatform (Android & iOS) Without the Boilerplate",
+    "url": "https://medium.com/@aslam.iit.ju41/room-database-in-compose-multiplatform-android-ios-without-the-boilerplate-b56c670a8db4?source=rss------kotlin-5",
+    "date": "2026-11-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "Aslam Hossin",
+    "excerpt": "Setting up Room KMP with `BundledSQLiteDriver` and Koin in under 60 lines of shared code. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "81f9713b714b4fec",
+    "title": "Performance in Jetpack Compose",
+    "url": "https://omerrdurmaz.medium.com/performance-in-jetpack-compose-6ecb83aa9763?source=rss------kotlin-5",
+    "date": "2026-11-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ömer Durmaz",
+    "excerpt": "Hi everyone! In this article, we’ll go over some things worth paying attention to in the projects we build, because they have a positive… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c7f3bfe3b6017d04",
+    "title": "Accessibility in Jetpack Compose",
+    "url": "https://omerrdurmaz.medium.com/accessibility-in-jetpack-compose-8048c5bdea2d?source=rss------kotlin-5",
+    "date": "2026-11-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ömer Durmaz",
+    "excerpt": "Hi! In this article, we’ll look at accessibility, which can help people with disabilities or people who have difficulty using apps, so… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "0a089583a11adb27",
+    "title": "Side Effects in Jetpack Compose",
+    "url": "https://omerrdurmaz.medium.com/side-effects-in-jetpack-compose-753b12bb1df6?source=rss------kotlin-5",
+    "date": "2026-11-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ömer Durmaz",
+    "excerpt": "Hi! In this article, we’ll talk about the side effects we should know about before developing any Jetpack Compose app. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "fd96b6d7579112c7",
+    "title": "Local Database with Room and Kotlin Flow",
+    "url": "https://medium.com/@pranjal.3vyas/local-database-with-room-and-kotlin-flow-721f4c5c9988?source=rss------kotlin-5",
+    "date": "2026-11-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "Pranjal Vyas",
+    "excerpt": "Persist entities with Room, observe changes with Flow, and drive a Compose screen — DAO, migrations, and tests included. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e878bd00ada67878",
+    "title": "Gestures in Jetpack Compose",
+    "url": "https://omerrdurmaz.medium.com/gestures-in-jetpack-compose-8b27655d80b5?source=rss------kotlin-5",
+    "date": "2026-11-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ömer Durmaz",
+    "excerpt": "Hi! In this article, we’ll talk about the general and advanced uses of touch gestures on the screen with Jetpack Compose. Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b3be8b9b083e8cf3",
+    "title": "Working with Images in Jetpack Compose",
+    "url": "https://omerrdurmaz.medium.com/working-with-images-in-jetpack-compose-600e9cc1a005?source=rss------kotlin-5",
+    "date": "2026-11-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ömer Durmaz",
+    "excerpt": "Showing an Image Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "5c1cdb1357f9ccae",
+    "title": "Animation in Jetpack Compose II",
+    "url": "https://omerrdurmaz.medium.com/animation-in-jetpack-compose-ii-04333fed1647?source=rss------kotlin-5",
+    "date": "2026-11-06",
+    "source_id": "medium-kotlin-tag",
+    "author": "Ömer Durmaz",
+    "excerpt": "Hi, in this article we’ll continue talking about Jetpack Compose animations. In the previous article we covered the high-level animations… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "1cbf9a06e51c3195",
+    "title": "Why Your Android Has No Record Button (and What to Do About It)",
+    "url": "https://amalamin2288.medium.com/why-your-android-has-no-record-button-and-what-to-do-about-it-fcc4bcd31494?source=rss------android-5",
+    "date": "2026-11-06",
+    "source_id": "medium-android-tag",
+    "author": "Amal Amin",
+    "excerpt": "At nine in the morning, my mother would lie down on the bed and switch on the morning shows. Many channels had them. There were skin and… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "44919f64ec5160ff",
+    "title": "How to Free Phone Storage from Downloaded Videos (iPhone and Android)",
+    "url": "https://medium.com/@shrabonmohsin1/how-to-free-phone-storage-from-downloaded-videos-iphone-and-android-3e322d71a713?source=rss------android-5",
+    "date": "2026-11-06",
+    "source_id": "medium-android-tag",
+    "author": "Shrabon Mohsin",
+    "excerpt": "Omar’s phone said Storage Almost Full right when he tried to save his sister’s graduation Reel. Here is how he found the real space hogs… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d342c8c64ee24aa2",
+    "title": "How to Save Your Own Instagram Reels on iPhone: A Simple 2026 Guide",
+    "url": "https://medium.com/@saveitbro498/how-to-save-your-own-instagram-reels-on-iphone-a-simple-2026-guide-75c5f1be4cc2?source=rss------android-5",
+    "date": "2026-11-06",
+    "source_id": "medium-android-tag",
+    "author": "Saveitbro",
+    "excerpt": "*Learn where your Instagram videos go, how to save them, and what to do when audio or downloads are missing.* Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "ee399809ab055f87",
+    "title": "RCS: the worthy successor to SMS",
+    "url": "https://medium.com/@andret2344/rcs-the-worthy-successor-to-sms-b283abb2a310?source=rss------android-5",
+    "date": "2026-11-06",
+    "source_id": "medium-android-tag",
+    "author": "Andret2344",
+    "excerpt": "SMS, the Short Message Service, has been part of mobile phones almost from the very beginning, and it is so deeply rooted that many of us… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "a7ee9b2fa950f5a5",
+    "title": "Linux IPC Explained Part 2: Shared Memory, Synchronization, Signals and Choosing the Right Tool",
+    "url": "https://medium.com/@bhargavamandapati/linux-ipc-explained-part-2-shared-memory-synchronization-signals-and-choosing-the-right-tool-e4dee4ce7215?source=rss------android-5",
+    "date": "2026-11-06",
+    "source_id": "medium-android-tag",
+    "author": "Mandapati Bhargava",
+    "excerpt": "From Passing Notes to Breaking the Wall Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "b2e600ba4a46141f",
+    "title": "Why the wood changes every 10 stages: small goals in a 100-stage puzzle",
+    "url": "https://medium.com/@runwith2026/why-the-wood-changes-every-10-stages-small-goals-in-a-100-stage-puzzle-7036df6c6b26?source=rss------android-5",
+    "date": "2026-11-06",
+    "source_id": "medium-android-tag",
+    "author": "Runwith",
+    "excerpt": "A hundred stages is a long road. When I made Timber Drop, a falling block puzzle, one question kept coming back: what makes a player want… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c58e1f412d7e36f0",
+    "title": "Flutter’s GenUI Is Coming to A2UI 1.0: Build Your Widget Catalogue Now",
+    "url": "https://medium.com/@flutter-app/flutters-genui-is-coming-to-a2ui-1-0-build-your-widget-catalogue-now-3bb218f7c6b1?source=rss------android-5",
+    "date": "2026-11-06",
+    "source_id": "medium-android-tag",
+    "author": "Nicolas",
+    "excerpt": "This is still an alpha feature that allows agents to create screens using your widgets. This article covers what the prompt first approach… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "e151efd3d896a26c",
+    "title": "How Do Parking Apps Make Money? Business Models and Revenue Strategies",
+    "url": "https://medium.com/@harshathTechBlogs/how-do-parking-apps-make-money-business-models-and-revenue-strategies-6e6de6027a9d?source=rss------android-5",
+    "date": "2026-11-06",
+    "source_id": "medium-android-tag",
+    "author": "HarshathTechBlogs",
+    "excerpt": "Parking apps have improved the way customers park their vehicles by providing increased convenience and enhancing the overall parking… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "6710b796ef2b618e",
+    "title": "Harness Engineering for Android: Making AI Agents Reliable",
+    "url": "https://ravirawal13.medium.com/building-ai-agent-harnesses-for-android-5db5944df815?source=rss------android-5",
+    "date": "2026-11-06",
+    "source_id": "medium-android-tag",
+    "author": "Ravi Rawal",
+    "excerpt": "Why reliable Android agent workflows depend on repository context, architectural guardrails, Gradle tooling, and executable verification —… Continue reading on Medium »",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "146cc5173cafa6e5",
+    "title": "Stop Sending Tall PR Stacks",
+    "url": "https://www.zacsweers.dev/stop-sending-tall-pr-stacks/",
+    "date": "2026-11-06",
+    "source_id": "zac-sweers",
+    "author": "Zac Sweers",
+    "excerpt": "I've long held the belief that it's always possible to write perfectly readable medium, even large sized PRs that are super reviewable if you abide by the following two simple rules: Use small, logical commits Review commit by commit This approach works phenomenally well. Small commits",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "29dab2a0cdc81a44",
+    "title": "v1.13.10-alpha01+dev5124: Details",
+    "url": "https://github.com/JetBrains/compose-multiplatform/releases/tag/v1.13.10-alpha01%2Bdev5124",
+    "date": "2026-11-06",
+    "source_id": "lib-compose-multiplatform",
+    "author": "olonho",
+    "excerpt": "org.jetbrains.compose. : :1.13.10-alpha01+dev5124 org.jetbrains.compose.material3:material3*:1.13.10-alpha01+dev5124 org.jetbrains.compose.material3.adaptive:adaptive- :1.4.0-alpha02+dev5124 org.jetbrains.androidx.navigation:navigation- :2.10.10-alpha01+dev5124 org.jetbrains.androidx.navigation3:navigation3-*:1.2.10-alpha01+dev5124",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "d95dd933a3f649d5",
+    "title": "Android Studio Rabbit 3 Canary 3 now available",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xopgup/android_studio_rabbit_3_canary_3_now_available/",
+    "date": "2026-11-05",
+    "source_id": "reddit-androiddev",
+    "author": "/u/androidtoolsbot",
+    "excerpt": "submitted by /u/androidtoolsbot [link] [comments]",
+    "date_uncertain": false,
+    "summarized": false
+  },
+  {
+    "id": "c19e90eaf6d93b8b",
+    "title": "Android Studio Rabbit 2 Patch 1 now available",
+    "url": "https://www.reddit.com/r/androiddev/comments/1xomamb/android_studio_rabbit_2_patch_1_now_available/",
+    "date": "2026-11-05",
+    "source_id": "reddit-androiddev",
+    "author": "/u/androidtoolsbot",
+    "excerpt": "submitted by /u/androidtoolsbot [link] [comments]",
     "date_uncertain": false,
     "summarized": false
   }
