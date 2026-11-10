@@ -1,11 +1,11 @@
 [
   {
-    "term": "game",
+    "term": "mobile",
     "count": 3,
     "seen_in": [
-      "ORBIT TWIN: 2D RUSH — A Fast-Paced Neon Arcade Game for Android",
-      "How I Built an Offline-First Party Game with Next.js and Capacitor (and Shipped It to Google Play)",
-      "Planet Merge 2048: Space Drop — A Cosmic Merge Puzzle Game for Android"
+      "Flutter vs Kotlin vs Swift in 2026: Which to Choose for Your Mobile App",
+      "How I Deploy a Mobile App as a Solo Developer Without a Mac",
+      "Failed, Timed Out, or Unobserved? Classifying Mobile Agent Outcomes"
     ]
   }
 ]
