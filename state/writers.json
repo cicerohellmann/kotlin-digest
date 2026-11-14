@@ -1299,9 +1299,9 @@
     ]
   },
   "androidlab-by-andre": {
-    "articles": 57,
+    "articles": 58,
     "first_seen": "2026-07-29",
-    "last_seen": "2026-11-13",
+    "last_seen": "2026-11-14",
     "name": "AndroidLab by Andre",
     "photo": null,
     "profile": null,
@@ -1610,9 +1610,9 @@
     ]
   },
   "armarray": {
-    "articles": 16,
+    "articles": 17,
     "first_seen": "2026-09-30",
-    "last_seen": "2026-11-10",
+    "last_seen": "2026-11-14",
     "name": "ARMARRAY",
     "photo": null,
     "profile": null,
@@ -1786,9 +1786,9 @@
     ]
   },
   "ashirumermalik": {
-    "articles": 15,
+    "articles": 17,
     "first_seen": "2026-09-28",
-    "last_seen": "2026-11-13",
+    "last_seen": "2026-11-14",
     "name": "Ashirumermalik",
     "photo": null,
     "profile": null,
@@ -2066,7 +2066,7 @@
     ]
   },
   "bcorso": {
-    "articles": 41,
+    "articles": 42,
     "first_seen": "2026-07-06",
     "last_seen": "2026-07-06",
     "name": "bcorso",
@@ -2297,9 +2297,9 @@
     ]
   },
   "can-dizdar": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-10-16",
-    "last_seen": "2026-10-16",
+    "last_seen": "2026-11-14",
     "name": "Can Dizdar",
     "photo": null,
     "profile": null,
@@ -2430,9 +2430,9 @@
     ]
   },
   "chetan-gupta": {
-    "articles": 6,
+    "articles": 7,
     "first_seen": "2026-08-07",
-    "last_seen": "2026-11-01",
+    "last_seen": "2026-11-14",
     "name": "Chetan Gupta",
     "photo": null,
     "profile": null,
@@ -2662,7 +2662,7 @@
     ]
   },
   "cortinico": {
-    "articles": 9,
+    "articles": 10,
     "first_seen": "2026-08-04",
     "last_seen": "2026-08-08",
     "name": "cortinico",
@@ -3312,9 +3312,9 @@
     ]
   },
   "droidactor-dotori": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-09-17",
-    "last_seen": "2026-09-17",
+    "last_seen": "2026-11-14",
     "name": "DroidActor Dotori",
     "photo": null,
     "profile": null,
@@ -5445,6 +5445,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "juan-toro": {
+    "articles": 1,
+    "first_seen": "2026-11-14",
+    "last_seen": "2026-11-14",
+    "name": "Juan Toro",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "just-story": {
     "articles": 1,
     "first_seen": "2026-11-03",
@@ -5993,6 +6004,17 @@
     "first_seen": "2026-08-20",
     "last_seen": "2026-08-20",
     "name": "Kundan Kuldeep",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "labariaziz": {
+    "articles": 1,
+    "first_seen": "2026-11-14",
+    "last_seen": "2026-11-14",
+    "name": "Labariaziz",
     "photo": null,
     "profile": null,
     "sources": [
@@ -6563,9 +6585,9 @@
     ]
   },
   "mastertrend-info": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-08-28",
-    "last_seen": "2026-10-07",
+    "last_seen": "2026-11-14",
     "name": "MasterTrend info",
     "photo": null,
     "profile": null,
@@ -6896,9 +6918,9 @@
     ]
   },
   "mkmuir0": {
-    "articles": 3,
+    "articles": 4,
     "first_seen": "2026-07-09",
-    "last_seen": "2026-10-30",
+    "last_seen": "2026-11-13",
     "name": "mkmuir0",
     "photo": null,
     "profile": null,
@@ -7496,9 +7518,9 @@
     ]
   },
   "nishanth-selvaraju": {
-    "articles": 3,
+    "articles": 5,
     "first_seen": "2026-11-04",
-    "last_seen": "2026-11-11",
+    "last_seen": "2026-11-14",
     "name": "Nishanth Selvaraju",
     "photo": null,
     "profile": null,
@@ -7581,6 +7603,17 @@
     "profile": null,
     "sources": [
       "medium-android-tag"
+    ]
+  },
+  "nookesh-karri": {
+    "articles": 1,
+    "first_seen": "2026-11-14",
+    "last_seen": "2026-11-14",
+    "name": "Nookesh Karri",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
     ]
   },
   "novaknox": {
@@ -8648,9 +8681,9 @@
     ]
   },
   "ravi-rawal": {
-    "articles": 26,
+    "articles": 27,
     "first_seen": "2026-09-16",
-    "last_seen": "2026-11-12",
+    "last_seen": "2026-11-14",
     "name": "Ravi Rawal",
     "photo": null,
     "profile": null,
@@ -9753,6 +9786,17 @@
       "medium-android-tag"
     ]
   },
+  "shraddha-patel": {
+    "articles": 1,
+    "first_seen": "2026-11-13",
+    "last_seen": "2026-11-13",
+    "name": "Shraddha Patel",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "shreewin": {
     "articles": 2,
     "first_seen": "2026-09-04",
@@ -10183,6 +10227,17 @@
       "medium-android-tag"
     ]
   },
+  "srishti-roy": {
+    "articles": 1,
+    "first_seen": "2026-11-14",
+    "last_seen": "2026-11-14",
+    "name": "Srishti Roy",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "stanislav-tikhomirov": {
     "articles": 1,
     "first_seen": "2026-09-18",
@@ -10405,14 +10460,15 @@
     ]
   },
   "swatiomar": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-11-12",
-    "last_seen": "2026-11-12",
+    "last_seen": "2026-11-13",
     "name": "Swatiomar",
     "photo": null,
     "profile": null,
     "sources": [
-      "medium-kotlin-tag"
+      "medium-kotlin-tag",
+      "proandroiddev"
     ]
   },
   "switch-your-coding-life": {
@@ -11123,9 +11179,9 @@
     ]
   },
   "u-abhaysood": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-10-23",
-    "last_seen": "2026-10-23",
+    "last_seen": "2026-11-14",
     "name": "/u/abhaysood",
     "photo": null,
     "profile": null,
@@ -12406,9 +12462,9 @@
     ]
   },
   "u-coltanium131": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-08-03",
-    "last_seen": "2026-08-03",
+    "last_seen": "2026-11-13",
     "name": "/u/Coltanium131",
     "photo": null,
     "profile": null,
@@ -13288,9 +13344,9 @@
     ]
   },
   "u-eren447": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-09-11",
-    "last_seen": "2026-09-11",
+    "last_seen": "2026-11-14",
     "name": "/u/Eren447",
     "photo": null,
     "profile": null,
@@ -15243,14 +15299,15 @@
     ]
   },
   "u-lovespeedtest": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-10-31",
-    "last_seen": "2026-10-31",
+    "last_seen": "2026-11-14",
     "name": "/u/lovespeedtest",
     "photo": null,
     "profile": null,
     "sources": [
-      "reddit-kotlin"
+      "reddit-kotlin",
+      "reddit-androiddev"
     ]
   },
   "u-lppedd": {
@@ -16060,6 +16117,17 @@
       "reddit-androiddev"
     ]
   },
+  "u-no-management-4769": {
+    "articles": 1,
+    "first_seen": "2026-11-14",
+    "last_seen": "2026-11-14",
+    "name": "/u/No-Management-4769",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
   "u-no-more-fail": {
     "articles": 1,
     "first_seen": "2026-08-20",
@@ -16142,6 +16210,17 @@
     "first_seen": "2026-10-16",
     "last_seen": "2026-10-16",
     "name": "/u/NorthArder",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-not-sure0101": {
+    "articles": 1,
+    "first_seen": "2026-11-14",
+    "last_seen": "2026-11-14",
+    "name": "/u/not-sure0101",
     "photo": null,
     "profile": null,
     "sources": [
@@ -16545,6 +16624,17 @@
     "profile": null,
     "sources": [
       "reddit-kotlin"
+    ]
+  },
+  "u-pickcreation": {
+    "articles": 1,
+    "first_seen": "2026-11-14",
+    "last_seen": "2026-11-14",
+    "name": "/u/PickCreation",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
     ]
   },
   "u-pimterry": {
@@ -17103,6 +17193,17 @@
     "first_seen": "2026-08-05",
     "last_seen": "2026-08-05",
     "name": "/u/s168501",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "reddit-androiddev"
+    ]
+  },
+  "u-s7e11ar": {
+    "articles": 1,
+    "first_seen": "2026-11-13",
+    "last_seen": "2026-11-13",
+    "name": "/u/S7e11ar",
     "photo": null,
     "profile": null,
     "sources": [
@@ -19640,9 +19741,9 @@
     ]
   },
   "will-vincent": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-08-20",
-    "last_seen": "2026-08-20",
+    "last_seen": "2026-11-13",
     "name": "Will Vincent",
     "photo": null,
     "profile": null,
