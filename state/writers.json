@@ -1321,7 +1321,7 @@
     ]
   },
   "androidlab-by-andre": {
-    "articles": 62,
+    "articles": 63,
     "first_seen": "2026-07-29",
     "last_seen": "2026-11-17",
     "name": "AndroidLab by Andre",
@@ -1808,9 +1808,9 @@
     ]
   },
   "ashirumermalik": {
-    "articles": 20,
+    "articles": 21,
     "first_seen": "2026-09-28",
-    "last_seen": "2026-11-15",
+    "last_seen": "2026-11-18",
     "name": "Ashirumermalik",
     "photo": null,
     "profile": null,
@@ -2009,6 +2009,17 @@
       "medium-android-tag"
     ]
   },
+  "b-carter": {
+    "articles": 1,
+    "first_seen": "2026-11-18",
+    "last_seen": "2026-11-18",
+    "name": "B. Carter",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "b-nyamin-ba-o-lu": {
     "articles": 1,
     "first_seen": "2026-11-16",
@@ -2099,7 +2110,7 @@
     ]
   },
   "bcorso": {
-    "articles": 45,
+    "articles": 46,
     "first_seen": "2026-07-06",
     "last_seen": "2026-07-06",
     "name": "bcorso",
@@ -2219,6 +2230,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "bitcot-insider": {
+    "articles": 1,
+    "first_seen": "2026-11-18",
+    "last_seen": "2026-11-18",
+    "name": "Bitcot Insider",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "blackhat": {
     "articles": 1,
     "first_seen": "2026-10-02",
@@ -2261,6 +2283,17 @@
     "profile": null,
     "sources": [
       "medium-kotlin-tag"
+    ]
+  },
+  "breana-tate": {
+    "articles": 1,
+    "first_seen": "2026-11-17",
+    "last_seen": "2026-11-17",
+    "name": "Breana Tate",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "android-developers-blog"
     ]
   },
   "brian-bae": {
@@ -2385,9 +2418,9 @@
     ]
   },
   "cem-d-rman": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-08-23",
-    "last_seen": "2026-09-18",
+    "last_seen": "2026-11-18",
     "name": "Cem Dırman",
     "photo": null,
     "profile": null,
@@ -2695,7 +2728,7 @@
     ]
   },
   "cortinico": {
-    "articles": 13,
+    "articles": 14,
     "first_seen": "2026-08-04",
     "last_seen": "2026-08-08",
     "name": "cortinico",
@@ -2871,9 +2904,9 @@
     ]
   },
   "daniel-voko": {
-    "articles": 3,
+    "articles": 4,
     "first_seen": "2026-10-29",
-    "last_seen": "2026-11-09",
+    "last_seen": "2026-11-17",
     "name": "Daniel Voko",
     "photo": null,
     "profile": null,
@@ -3013,6 +3046,17 @@
       "medium-android-tag"
     ]
   },
+  "deepcraft-app": {
+    "articles": 1,
+    "first_seen": "2026-11-18",
+    "last_seen": "2026-11-18",
+    "name": "Deepcraft App",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "dejan-milicic": {
     "articles": 1,
     "first_seen": "2026-10-30",
@@ -3112,6 +3156,17 @@
       "medium-android-tag"
     ]
   },
+  "deximo-apps": {
+    "articles": 2,
+    "first_seen": "2026-11-18",
+    "last_seen": "2026-11-18",
+    "name": "Deximo Apps",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "dheerendra-chaturvedi": {
     "articles": 1,
     "first_seen": "2026-11-16",
@@ -3177,6 +3232,17 @@
     "profile": null,
     "sources": [
       "medium-kotlin-tag"
+    ]
+  },
+  "dinesh-balaji": {
+    "articles": 1,
+    "first_seen": "2026-11-18",
+    "last_seen": "2026-11-18",
+    "name": "Dinesh Balaji",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
     ]
   },
   "divij-gupta": {
@@ -4063,9 +4129,9 @@
     ]
   },
   "freerave": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-11-12",
-    "last_seen": "2026-11-12",
+    "last_seen": "2026-11-18",
     "name": "FreeRave",
     "photo": null,
     "profile": null,
@@ -5246,9 +5312,9 @@
     ]
   },
   "jb-compose-bot": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-07-28",
-    "last_seen": "2026-09-10",
+    "last_seen": "2026-11-18",
     "name": "jb-compose-bot",
     "photo": null,
     "profile": null,
@@ -5657,9 +5723,9 @@
     ]
   },
   "kamaldeep-kakkar": {
-    "articles": 3,
+    "articles": 4,
     "first_seen": "2026-08-01",
-    "last_seen": "2026-08-10",
+    "last_seen": "2026-11-18",
     "name": "Kamaldeep Kakkar",
     "photo": null,
     "profile": null,
@@ -5966,6 +6032,17 @@
       "medium-android-tag"
     ]
   },
+  "kirill-likhodedov": {
+    "articles": 1,
+    "first_seen": "2026-11-17",
+    "last_seen": "2026-11-17",
+    "name": "Kirill Likhodedov",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "kotlin-blog"
+    ]
+  },
   "kirill-skrygan": {
     "articles": 1,
     "first_seen": "2026-09-22",
@@ -6011,9 +6088,9 @@
     ]
   },
   "kotlin-by-jetbrains": {
-    "articles": 8,
+    "articles": 9,
     "first_seen": "2026-08-04",
-    "last_seen": "2026-11-05",
+    "last_seen": "2026-11-18",
     "name": "Kotlin by JetBrains",
     "photo": null,
     "profile": null,
@@ -6772,9 +6849,9 @@
     ]
   },
   "mayank-kumar": {
-    "articles": 3,
+    "articles": 4,
     "first_seen": "2026-10-30",
-    "last_seen": "2026-11-16",
+    "last_seen": "2026-11-17",
     "name": "Mayank Kumar",
     "photo": null,
     "profile": null,
@@ -7273,9 +7350,9 @@
     ]
   },
   "muhammad-azhar": {
-    "articles": 16,
+    "articles": 17,
     "first_seen": "2026-09-12",
-    "last_seen": "2026-11-14",
+    "last_seen": "2026-11-18",
     "name": "Muhammad Azhar",
     "photo": null,
     "profile": null,
@@ -7904,9 +7981,9 @@
     ]
   },
   "olonho": {
-    "articles": 127,
+    "articles": 130,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-11-15",
+    "last_seen": "2026-11-18",
     "name": "olonho",
     "photo": null,
     "profile": null,
@@ -8858,9 +8935,9 @@
     ]
   },
   "ravi-rawal": {
-    "articles": 28,
+    "articles": 29,
     "first_seen": "2026-09-16",
-    "last_seen": "2026-11-14",
+    "last_seen": "2026-11-17",
     "name": "Ravi Rawal",
     "photo": null,
     "profile": null,
@@ -9244,6 +9321,17 @@
     "profile": null,
     "sources": [
       "medium-kotlin-tag"
+    ]
+  },
+  "roman-prokashev": {
+    "articles": 1,
+    "first_seen": "2026-11-17",
+    "last_seen": "2026-11-17",
+    "name": "Roman Prokashev",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "jetbrains-blog"
     ]
   },
   "roman-rashkovskiy": {
@@ -9644,6 +9732,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "saravanan-subramaniyan": {
+    "articles": 1,
+    "first_seen": "2026-11-18",
+    "last_seen": "2026-11-18",
+    "name": "Saravanan Subramaniyan",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "sargis-avagyan": {
     "articles": 2,
     "first_seen": "2026-08-03",
@@ -9953,9 +10052,9 @@
     ]
   },
   "shiva-thapa": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-10-06",
-    "last_seen": "2026-10-06",
+    "last_seen": "2026-11-18",
     "name": "Shiva Thapa",
     "photo": null,
     "profile": null,
@@ -10226,6 +10325,17 @@
     "profile": null,
     "sources": [
       "medium-android-tag"
+    ]
+  },
+  "skarimov": {
+    "articles": 1,
+    "first_seen": "2026-11-18",
+    "last_seen": "2026-11-18",
+    "name": "Skarimov",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
     ]
   },
   "sm-tasker": {
@@ -11301,14 +11411,15 @@
     ]
   },
   "trent-linden": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-11-16",
-    "last_seen": "2026-11-16",
+    "last_seen": "2026-11-18",
     "name": "Trent Linden",
     "photo": null,
     "profile": null,
     "sources": [
-      "medium-kotlin-tag"
+      "medium-kotlin-tag",
+      "medium-android-tag"
     ]
   },
   "trishit-majumdar": {
@@ -19977,6 +20088,17 @@
     "first_seen": "2026-10-24",
     "last_seen": "2026-10-24",
     "name": "Virtual Camera Android Root",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "vishamber-lal": {
+    "articles": 1,
+    "first_seen": "2026-11-18",
+    "last_seen": "2026-11-18",
+    "name": "Vishamber Lal",
     "photo": null,
     "profile": null,
     "sources": [
