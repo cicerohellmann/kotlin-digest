@@ -489,9 +489,9 @@
     ]
   },
   "ahmed-salih-ac": {
-    "articles": 3,
+    "articles": 4,
     "first_seen": "2026-09-04",
-    "last_seen": "2026-10-17",
+    "last_seen": "2026-11-22",
     "name": "AHMED SALIH AC",
     "photo": null,
     "profile": null,
@@ -567,9 +567,9 @@
     ]
   },
   "ajmal": {
-    "articles": 2,
+    "articles": 4,
     "first_seen": "2026-10-29",
-    "last_seen": "2026-10-31",
+    "last_seen": "2026-11-22",
     "name": "Ajmal",
     "photo": null,
     "profile": null,
@@ -1841,9 +1841,9 @@
     ]
   },
   "ashirumermalik": {
-    "articles": 21,
+    "articles": 24,
     "first_seen": "2026-09-28",
-    "last_seen": "2026-11-18",
+    "last_seen": "2026-11-22",
     "name": "Ashirumermalik",
     "photo": null,
     "profile": null,
@@ -2176,7 +2176,7 @@
     ]
   },
   "bcorso": {
-    "articles": 49,
+    "articles": 50,
     "first_seen": "2026-07-06",
     "last_seen": "2026-07-06",
     "name": "bcorso",
@@ -2407,14 +2407,15 @@
     ]
   },
   "burak-karaduman": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-10-20",
-    "last_seen": "2026-10-20",
+    "last_seen": "2026-11-21",
     "name": "Burak Karaduman",
     "photo": null,
     "profile": null,
     "sources": [
-      "proandroiddev"
+      "proandroiddev",
+      "medium-kotlin-tag"
     ]
   },
   "buy-premium-smartphones-with-crypto": {
@@ -2547,6 +2548,17 @@
     "profile": null,
     "sources": [
       "proandroiddev",
+      "medium-android-tag"
+    ]
+  },
+  "charles-fournel": {
+    "articles": 1,
+    "first_seen": "2026-11-22",
+    "last_seen": "2026-11-22",
+    "name": "charles fournel",
+    "photo": null,
+    "profile": null,
+    "sources": [
       "medium-android-tag"
     ]
   },
@@ -2816,7 +2828,7 @@
     ]
   },
   "cortinico": {
-    "articles": 17,
+    "articles": 18,
     "first_seen": "2026-08-04",
     "last_seen": "2026-08-08",
     "name": "cortinico",
@@ -3985,6 +3997,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "fabio-liccardo": {
+    "articles": 1,
+    "first_seen": "2026-11-22",
+    "last_seen": "2026-11-22",
+    "name": "Fabio Liccardo",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "fachrizal-mursalin": {
     "articles": 1,
     "first_seen": "2026-07-31",
@@ -4251,9 +4274,9 @@
     ]
   },
   "freerave": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-11-12",
-    "last_seen": "2026-11-18",
+    "last_seen": "2026-11-21",
     "name": "FreeRave",
     "photo": null,
     "profile": null,
@@ -5455,6 +5478,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "jayvinz": {
+    "articles": 2,
+    "first_seen": "2026-11-22",
+    "last_seen": "2026-11-22",
+    "name": "Jayvinz",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "jb-compose-bot": {
     "articles": 5,
     "first_seen": "2026-07-28",
@@ -6231,6 +6265,17 @@
       "jetbrains-blog"
     ]
   },
+  "kishor-ramani": {
+    "articles": 1,
+    "first_seen": "2026-11-22",
+    "last_seen": "2026-11-22",
+    "name": "Kishor Ramani",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "klynechrysler": {
     "articles": 1,
     "first_seen": "2026-07-31",
@@ -6265,9 +6310,9 @@
     ]
   },
   "kotlin-by-jetbrains": {
-    "articles": 11,
+    "articles": 12,
     "first_seen": "2026-08-04",
-    "last_seen": "2026-11-20",
+    "last_seen": "2026-11-21",
     "name": "Kotlin by JetBrains",
     "photo": null,
     "profile": null,
@@ -7048,9 +7093,9 @@
     ]
   },
   "mayank-kumar": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-10-30",
-    "last_seen": "2026-11-17",
+    "last_seen": "2026-11-21",
     "name": "Mayank Kumar",
     "photo": null,
     "profile": null,
@@ -7145,6 +7190,17 @@
     "profile": null,
     "sources": [
       "android-developers-blog"
+    ]
+  },
+  "mehdi-sekoba": {
+    "articles": 1,
+    "first_seen": "2026-11-22",
+    "last_seen": "2026-11-22",
+    "name": "Mehdi Sekoba",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
     ]
   },
   "mehul-harry": {
@@ -7881,6 +7937,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "nichsedge": {
+    "articles": 1,
+    "first_seen": "2026-11-21",
+    "last_seen": "2026-11-21",
+    "name": "Nichsedge",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "nicolas": {
     "articles": 14,
     "first_seen": "2026-08-07",
@@ -7924,6 +7991,17 @@
     "profile": null,
     "sources": [
       "medium-kotlin-tag"
+    ]
+  },
+  "nikhil-bajpai": {
+    "articles": 1,
+    "first_seen": "2026-11-22",
+    "last_seen": "2026-11-22",
+    "name": "Nikhil Bajpai",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
     ]
   },
   "nikita-khramov": {
@@ -10503,6 +10581,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "siarhei-krupenich": {
+    "articles": 1,
+    "first_seen": "2026-11-21",
+    "last_seen": "2026-11-21",
+    "name": "Siarhei Krupenich",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "siavashhamiri": {
     "articles": 1,
     "first_seen": "2026-09-03",
@@ -11086,6 +11175,17 @@
     "profile": null,
     "sources": [
       "lib-okhttp"
+    ]
+  },
+  "swapnil-kshirsagar": {
+    "articles": 1,
+    "first_seen": "2026-11-22",
+    "last_seen": "2026-11-22",
+    "name": "Swapnil Kshirsagar",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
     ]
   },
   "swaran-singh-aulakh": {
