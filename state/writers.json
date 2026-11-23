@@ -144,9 +144,9 @@
     ]
   },
   "abdelhamid-ramadan": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-11-15",
-    "last_seen": "2026-11-15",
+    "last_seen": "2026-11-23",
     "name": "Abdelhamid Ramadan",
     "photo": null,
     "profile": null,
@@ -976,9 +976,9 @@
     ]
   },
   "alyona-chernyaeva": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-07-08",
-    "last_seen": "2026-07-08",
+    "last_seen": "2026-11-23",
     "name": "Alyona Chernyaeva",
     "photo": null,
     "profile": null,
@@ -1064,9 +1064,9 @@
     ]
   },
   "amitgupta": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-09-26",
-    "last_seen": "2026-11-16",
+    "last_seen": "2026-11-23",
     "name": "AmitGupta",
     "photo": null,
     "profile": null,
@@ -1896,9 +1896,9 @@
     ]
   },
   "aslam-hossin": {
-    "articles": 8,
+    "articles": 9,
     "first_seen": "2026-10-03",
-    "last_seen": "2026-11-07",
+    "last_seen": "2026-11-23",
     "name": "Aslam Hossin",
     "photo": null,
     "profile": null,
@@ -2176,7 +2176,7 @@
     ]
   },
   "bcorso": {
-    "articles": 50,
+    "articles": 51,
     "first_seen": "2026-07-06",
     "last_seen": "2026-07-06",
     "name": "bcorso",
@@ -2585,9 +2585,9 @@
     ]
   },
   "chetan-gupta": {
-    "articles": 7,
+    "articles": 8,
     "first_seen": "2026-08-07",
-    "last_seen": "2026-11-14",
+    "last_seen": "2026-11-23",
     "name": "Chetan Gupta",
     "photo": null,
     "profile": null,
@@ -2618,9 +2618,9 @@
     ]
   },
   "christian-bergmann": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-10-28",
-    "last_seen": "2026-11-13",
+    "last_seen": "2026-11-22",
     "name": "Christian Bergmann",
     "photo": null,
     "profile": null,
@@ -2828,7 +2828,7 @@
     ]
   },
   "cortinico": {
-    "articles": 18,
+    "articles": 19,
     "first_seen": "2026-08-04",
     "last_seen": "2026-08-08",
     "name": "cortinico",
@@ -4529,9 +4529,9 @@
     ]
   },
   "gsm-world": {
-    "articles": 85,
+    "articles": 86,
     "first_seen": "2026-08-29",
-    "last_seen": "2026-11-21",
+    "last_seen": "2026-11-23",
     "name": "GSM World",
     "photo": null,
     "profile": null,
@@ -4683,9 +4683,9 @@
     ]
   },
   "harrison-melton": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-10-08",
-    "last_seen": "2026-10-08",
+    "last_seen": "2026-11-23",
     "name": "Harrison Melton",
     "photo": null,
     "profile": null,
@@ -5956,9 +5956,9 @@
     ]
   },
   "karishma-agrawal": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-09-04",
-    "last_seen": "2026-09-04",
+    "last_seen": "2026-11-23",
     "name": "Karishma Agrawal",
     "photo": null,
     "profile": null,
@@ -6266,14 +6266,25 @@
     ]
   },
   "kishor-ramani": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-11-22",
-    "last_seen": "2026-11-22",
+    "last_seen": "2026-11-23",
     "name": "Kishor Ramani",
     "photo": null,
     "profile": null,
     "sources": [
       "medium-kotlin-tag"
+    ]
+  },
+  "kishore-tanwar": {
+    "articles": 1,
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "name": "Kishore Tanwar",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
     ]
   },
   "klynechrysler": {
@@ -6310,9 +6321,9 @@
     ]
   },
   "kotlin-by-jetbrains": {
-    "articles": 12,
+    "articles": 14,
     "first_seen": "2026-08-04",
-    "last_seen": "2026-11-21",
+    "last_seen": "2026-11-23",
     "name": "Kotlin by JetBrains",
     "photo": null,
     "profile": null,
@@ -6611,6 +6622,17 @@
     "first_seen": "2026-10-06",
     "last_seen": "2026-10-06",
     "name": "Luiza Marns",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "lukoh-nam": {
+    "articles": 1,
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "name": "Lukoh Nam",
     "photo": null,
     "profile": null,
     "sources": [
@@ -6965,6 +6987,17 @@
     "first_seen": "2026-09-23",
     "last_seen": "2026-09-23",
     "name": "Marketing Logixcontact",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "martin-cron": {
+    "articles": 1,
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "name": "Martin Cron",
     "photo": null,
     "profile": null,
     "sources": [
@@ -7593,9 +7626,9 @@
     ]
   },
   "muhamad-syafii": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-07-29",
-    "last_seen": "2026-11-10",
+    "last_seen": "2026-11-23",
     "name": "Muhamad Syafii",
     "photo": null,
     "profile": null,
@@ -8246,6 +8279,17 @@
       "proandroiddev"
     ]
   },
+  "offeranchor": {
+    "articles": 1,
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "name": "OfferAnchor",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "ogungbolamayowa": {
     "articles": 1,
     "first_seen": "2026-11-12",
@@ -8291,9 +8335,9 @@
     ]
   },
   "olga-bedrina": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-07-28",
-    "last_seen": "2026-11-19",
+    "last_seen": "2026-11-23",
     "name": "Olga Bedrina",
     "photo": null,
     "profile": null,
@@ -8576,6 +8620,17 @@
     "profile": null,
     "sources": [
       "medium-android-tag"
+    ]
+  },
+  "pelumiogundipe": {
+    "articles": 1,
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "name": "Pelumiogundipe",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
     ]
   },
   "per-erik-bergman": {
@@ -8921,14 +8976,15 @@
     ]
   },
   "prikshit": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-11-17",
-    "last_seen": "2026-11-17",
+    "last_seen": "2026-11-23",
     "name": "Prikshit",
     "photo": null,
     "profile": null,
     "sources": [
-      "medium-android-tag"
+      "medium-android-tag",
+      "medium-kotlin-tag"
     ]
   },
   "prince-vala": {
@@ -9567,6 +9623,17 @@
       "medium-android-tag"
     ]
   },
+  "roan-brasil-monteiro": {
+    "articles": 1,
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "name": "Roan Brasil Monteiro",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "roben-hosan": {
     "articles": 1,
     "first_seen": "2026-08-11",
@@ -9653,6 +9720,17 @@
     "profile": null,
     "sources": [
       "medium-android-tag"
+    ]
+  },
+  "rohith-gaddam": {
+    "articles": 1,
+    "first_seen": "2026-11-22",
+    "last_seen": "2026-11-22",
+    "name": "Rohith Gaddam",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "proandroiddev"
     ]
   },
   "roman-bekov": {
@@ -10274,9 +10352,9 @@
     ]
   },
   "serras": {
-    "articles": 9,
+    "articles": 10,
     "first_seen": "2026-07-09",
-    "last_seen": "2026-10-27",
+    "last_seen": "2026-11-23",
     "name": "serras",
     "photo": null,
     "profile": null,
