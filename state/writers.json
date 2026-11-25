@@ -1208,6 +1208,17 @@
       "proandroiddev"
     ]
   },
+  "anatolii-simakov": {
+    "articles": 1,
+    "first_seen": "2026-11-25",
+    "last_seen": "2026-11-25",
+    "name": "Anatolii Simakov",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "jetbrains-blog"
+    ]
+  },
   "andik-alfauzi": {
     "articles": 1,
     "first_seen": "2026-10-22",
@@ -1319,9 +1330,9 @@
     ]
   },
   "android-developers": {
-    "articles": 77,
+    "articles": 78,
     "first_seen": "2026-07-06",
-    "last_seen": "2026-11-23",
+    "last_seen": "2026-11-24",
     "name": "Android Developers",
     "photo": null,
     "profile": null,
@@ -1354,9 +1365,9 @@
     ]
   },
   "androidlab-by-andre": {
-    "articles": 70,
+    "articles": 72,
     "first_seen": "2026-07-29",
-    "last_seen": "2026-11-24",
+    "last_seen": "2026-11-25",
     "name": "AndroidLab by Andre",
     "photo": null,
     "profile": null,
@@ -1918,9 +1929,9 @@
     ]
   },
   "aslam-hossin": {
-    "articles": 9,
+    "articles": 10,
     "first_seen": "2026-10-03",
-    "last_seen": "2026-11-23",
+    "last_seen": "2026-11-25",
     "name": "Aslam Hossin",
     "photo": null,
     "profile": null,
@@ -2198,7 +2209,7 @@
     ]
   },
   "bcorso": {
-    "articles": 52,
+    "articles": 53,
     "first_seen": "2026-07-06",
     "last_seen": "2026-07-06",
     "name": "bcorso",
@@ -2606,6 +2617,17 @@
       "medium-android-tag"
     ]
   },
+  "chebel-seif": {
+    "articles": 1,
+    "first_seen": "2026-11-25",
+    "last_seen": "2026-11-25",
+    "name": "Chebel Seif",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "chetan-gupta": {
     "articles": 8,
     "first_seen": "2026-08-07",
@@ -2850,7 +2872,7 @@
     ]
   },
   "cortinico": {
-    "articles": 20,
+    "articles": 21,
     "first_seen": "2026-08-04",
     "last_seen": "2026-08-08",
     "name": "cortinico",
@@ -3301,9 +3323,9 @@
     ]
   },
   "deximo-apps": {
-    "articles": 2,
+    "articles": 4,
     "first_seen": "2026-11-18",
-    "last_seen": "2026-11-18",
+    "last_seen": "2026-11-25",
     "name": "Deximo Apps",
     "photo": null,
     "profile": null,
@@ -3578,9 +3600,9 @@
     ]
   },
   "dorian-ch-vez": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-11-21",
-    "last_seen": "2026-11-21",
+    "last_seen": "2026-11-25",
     "name": "Dorian Chávez",
     "photo": null,
     "profile": null,
@@ -4760,9 +4782,9 @@
     ]
   },
   "harshathtechblogs": {
-    "articles": 9,
+    "articles": 10,
     "first_seen": "2026-08-28",
-    "last_seen": "2026-11-19",
+    "last_seen": "2026-11-25",
     "name": "HarshathTechBlogs",
     "photo": null,
     "profile": null,
@@ -5154,6 +5176,17 @@
     "profile": null,
     "sources": [
       "medium-android-tag"
+    ]
+  },
+  "irem-tufekci": {
+    "articles": 1,
+    "first_seen": "2026-11-25",
+    "last_seen": "2026-11-25",
+    "name": "Irem Tufekci",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
     ]
   },
   "irina-mariasova": {
@@ -5666,6 +5699,17 @@
       "medium-android-tag"
     ]
   },
+  "jhon-smith": {
+    "articles": 1,
+    "first_seen": "2026-11-25",
+    "last_seen": "2026-11-25",
+    "name": "Jhon Smith",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "jiahao-liu-liu": {
     "articles": 1,
     "first_seen": "2026-08-15",
@@ -6043,6 +6087,17 @@
       "medium-android-tag"
     ]
   },
+  "karthik-upadrasta": {
+    "articles": 1,
+    "first_seen": "2026-11-25",
+    "last_seen": "2026-11-25",
+    "name": "Karthik Upadrasta",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "karthikeyan-nagaraj": {
     "articles": 1,
     "first_seen": "2026-07-30",
@@ -6376,9 +6431,9 @@
     ]
   },
   "kotlin-by-jetbrains": {
-    "articles": 15,
+    "articles": 16,
     "first_seen": "2026-08-04",
-    "last_seen": "2026-11-24",
+    "last_seen": "2026-11-25",
     "name": "Kotlin by JetBrains",
     "photo": null,
     "profile": null,
@@ -6960,6 +7015,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "margaux-careje": {
+    "articles": 1,
+    "first_seen": "2026-11-25",
+    "last_seen": "2026-11-25",
+    "name": "Margaux Careje",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "jetbrains-blog"
+    ]
+  },
   "maria-goldade": {
     "articles": 1,
     "first_seen": "2026-09-10",
@@ -7180,6 +7246,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "maxim-dokuchaev": {
+    "articles": 1,
+    "first_seen": "2026-11-25",
+    "last_seen": "2026-11-25",
+    "name": "Maxim Dokuchaev",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "jetbrains-blog"
+    ]
+  },
   "maya-trend": {
     "articles": 1,
     "first_seen": "2026-08-29",
@@ -7230,6 +7307,17 @@
     "first_seen": "2026-11-17",
     "last_seen": "2026-11-17",
     "name": "Mbaziira Ronald",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
+  "md-hamid-hosen": {
+    "articles": 1,
+    "first_seen": "2026-11-25",
+    "last_seen": "2026-11-25",
+    "name": "Md.Hamid Hosen",
     "photo": null,
     "profile": null,
     "sources": [
@@ -8434,9 +8522,9 @@
     ]
   },
   "olonho": {
-    "articles": 136,
+    "articles": 139,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-11-24",
+    "last_seen": "2026-11-25",
     "name": "olonho",
     "photo": null,
     "profile": null,
@@ -10572,9 +10660,9 @@
     ]
   },
   "shiva-thapa": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-10-06",
-    "last_seen": "2026-11-18",
+    "last_seen": "2026-11-25",
     "name": "Shiva Thapa",
     "photo": null,
     "profile": null,
@@ -10896,6 +10984,17 @@
     "first_seen": "2026-08-25",
     "last_seen": "2026-09-21",
     "name": "Smart Apps Studio",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "smarty-trend": {
+    "articles": 1,
+    "first_seen": "2026-11-25",
+    "last_seen": "2026-11-25",
+    "name": "SMARTY Trend",
     "photo": null,
     "profile": null,
     "sources": [
@@ -11908,6 +12007,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "tonygnk": {
+    "articles": 1,
+    "first_seen": "2026-11-25",
+    "last_seen": "2026-11-25",
+    "name": "TonyGnk",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "tori-chan-from-capgo": {
     "articles": 1,
     "first_seen": "2026-11-10",
@@ -11952,10 +12062,21 @@
       "medium-android-tag"
     ]
   },
-  "trendzbetagames": {
+  "trending-news": {
     "articles": 1,
+    "first_seen": "2026-11-25",
+    "last_seen": "2026-11-25",
+    "name": "Trending News",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
+  "trendzbetagames": {
+    "articles": 2,
     "first_seen": "2026-11-01",
-    "last_seen": "2026-11-01",
+    "last_seen": "2026-11-25",
     "name": "TrendzBetaGames",
     "photo": null,
     "profile": null,
@@ -21230,6 +21351,17 @@
     "profile": null,
     "sources": [
       "medium-android-tag"
+    ]
+  },
+  "yuriy-artamonov": {
+    "articles": 1,
+    "first_seen": "2026-11-24",
+    "last_seen": "2026-11-24",
+    "name": "Yuriy Artamonov",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "jetbrains-blog"
     ]
   },
   "yves-kalume": {
