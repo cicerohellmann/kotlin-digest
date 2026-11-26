@@ -144,9 +144,9 @@
     ]
   },
   "abdelhamid-ramadan": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-11-15",
-    "last_seen": "2026-11-23",
+    "last_seen": "2026-11-26",
     "name": "Abdelhamid Ramadan",
     "photo": null,
     "profile": null,
@@ -645,14 +645,15 @@
     ]
   },
   "akshay-nandwana": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-07-27",
-    "last_seen": "2026-09-27",
+    "last_seen": "2026-11-26",
     "name": "Akshay Nandwana",
     "photo": null,
     "profile": null,
     "sources": [
-      "proandroiddev"
+      "proandroiddev",
+      "medium-kotlin-tag"
     ]
   },
   "akshaysavanoor": {
@@ -722,9 +723,9 @@
     ]
   },
   "alex-turner": {
-    "articles": 1,
+    "articles": 2,
     "first_seen": "2026-10-18",
-    "last_seen": "2026-10-18",
+    "last_seen": "2026-11-26",
     "name": "Alex Turner",
     "photo": null,
     "profile": null,
@@ -1176,9 +1177,9 @@
     ]
   },
   "anastasia-kudlay": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-09-20",
-    "last_seen": "2026-10-18",
+    "last_seen": "2026-11-26",
     "name": "Anastasia Kudlay",
     "photo": null,
     "profile": null,
@@ -1330,9 +1331,9 @@
     ]
   },
   "android-developers": {
-    "articles": 78,
+    "articles": 79,
     "first_seen": "2026-07-06",
-    "last_seen": "2026-11-24",
+    "last_seen": "2026-11-25",
     "name": "Android Developers",
     "photo": null,
     "profile": null,
@@ -1929,9 +1930,9 @@
     ]
   },
   "aslam-hossin": {
-    "articles": 10,
+    "articles": 11,
     "first_seen": "2026-10-03",
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "name": "Aslam Hossin",
     "photo": null,
     "profile": null,
@@ -2209,7 +2210,7 @@
     ]
   },
   "bcorso": {
-    "articles": 53,
+    "articles": 54,
     "first_seen": "2026-07-06",
     "last_seen": "2026-07-06",
     "name": "bcorso",
@@ -2573,15 +2574,16 @@
     ]
   },
   "chanzmao": {
-    "articles": 13,
+    "articles": 14,
     "first_seen": "2026-07-31",
-    "last_seen": "2026-11-14",
+    "last_seen": "2026-11-26",
     "name": "chanzmao",
     "photo": null,
     "profile": null,
     "sources": [
       "proandroiddev",
-      "medium-android-tag"
+      "medium-android-tag",
+      "medium-kotlin-tag"
     ]
   },
   "charles-fournel": {
@@ -2727,6 +2729,17 @@
       "medium-android-tag"
     ]
   },
+  "ck444-official": {
+    "articles": 1,
+    "first_seen": "2026-11-26",
+    "last_seen": "2026-11-26",
+    "name": "CK444 OFFICIAL",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "ck44onlinenews": {
     "articles": 1,
     "first_seen": "2026-10-09",
@@ -2827,9 +2840,9 @@
     ]
   },
   "commonsware": {
-    "articles": 18,
+    "articles": 19,
     "first_seen": "2026-07-08",
-    "last_seen": "2026-11-18",
+    "last_seen": "2026-11-25",
     "name": "CommonsWare",
     "photo": null,
     "profile": null,
@@ -2872,7 +2885,7 @@
     ]
   },
   "cortinico": {
-    "articles": 21,
+    "articles": 22,
     "first_seen": "2026-08-04",
     "last_seen": "2026-08-08",
     "name": "cortinico",
@@ -5355,6 +5368,17 @@
       "medium-kotlin-tag"
     ]
   },
+  "iyanbithi": {
+    "articles": 1,
+    "first_seen": "2026-11-26",
+    "last_seen": "2026-11-26",
+    "name": "Iyanbithi",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "j-revanth-kumar-kumar": {
     "articles": 1,
     "first_seen": "2026-08-01",
@@ -5556,14 +5580,15 @@
     ]
   },
   "jayvinz": {
-    "articles": 2,
+    "articles": 4,
     "first_seen": "2026-11-22",
-    "last_seen": "2026-11-22",
+    "last_seen": "2026-11-26",
     "name": "Jayvinz",
     "photo": null,
     "profile": null,
     "sources": [
-      "medium-kotlin-tag"
+      "medium-kotlin-tag",
+      "medium-android-tag"
     ]
   },
   "jb-compose-bot": {
@@ -6254,6 +6279,17 @@
       "medium-android-tag"
     ]
   },
+  "khaled-kamal": {
+    "articles": 1,
+    "first_seen": "2026-11-26",
+    "last_seen": "2026-11-26",
+    "name": "khaled kamal",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-kotlin-tag"
+    ]
+  },
   "khaledabumurtada": {
     "articles": 1,
     "first_seen": "2026-09-04",
@@ -6431,9 +6467,9 @@
     ]
   },
   "kotlin-by-jetbrains": {
-    "articles": 16,
+    "articles": 17,
     "first_seen": "2026-08-04",
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "name": "Kotlin by JetBrains",
     "photo": null,
     "profile": null,
@@ -6475,9 +6511,9 @@
     ]
   },
   "ksenia-shneyveys": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-10-15",
-    "last_seen": "2026-11-05",
+    "last_seen": "2026-11-25",
     "name": "Ksenia Shneyveys",
     "photo": null,
     "profile": null,
@@ -6706,9 +6742,9 @@
     ]
   },
   "luca-fioravanti": {
-    "articles": 11,
+    "articles": 12,
     "first_seen": "2026-07-26",
-    "last_seen": "2026-11-12",
+    "last_seen": "2026-11-25",
     "name": "Luca Fioravanti",
     "photo": null,
     "profile": null,
@@ -7269,9 +7305,9 @@
     ]
   },
   "mayank-kumar": {
-    "articles": 5,
+    "articles": 6,
     "first_seen": "2026-10-30",
-    "last_seen": "2026-11-21",
+    "last_seen": "2026-11-26",
     "name": "Mayank Kumar",
     "photo": null,
     "profile": null,
@@ -8002,9 +8038,9 @@
     ]
   },
   "nav-singh": {
-    "articles": 4,
+    "articles": 5,
     "first_seen": "2026-08-30",
-    "last_seen": "2026-11-07",
+    "last_seen": "2026-11-25",
     "name": "Nav Singh",
     "photo": null,
     "profile": null,
@@ -8522,9 +8558,9 @@
     ]
   },
   "olonho": {
-    "articles": 139,
+    "articles": 140,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-11-25",
+    "last_seen": "2026-11-26",
     "name": "olonho",
     "photo": null,
     "profile": null,
@@ -9141,9 +9177,9 @@
     ]
   },
   "prikshit": {
-    "articles": 2,
+    "articles": 3,
     "first_seen": "2026-11-17",
-    "last_seen": "2026-11-23",
+    "last_seen": "2026-11-26",
     "name": "Prikshit",
     "photo": null,
     "profile": null,
@@ -10527,6 +10563,17 @@
       "lib-arrow"
     ]
   },
+  "seungwoo-hyun-winders": {
+    "articles": 1,
+    "first_seen": "2026-11-26",
+    "last_seen": "2026-11-26",
+    "name": "Seungwoo Hyun (Winders)",
+    "photo": null,
+    "profile": null,
+    "sources": [
+      "medium-android-tag"
+    ]
+  },
   "shab-saifi": {
     "articles": 1,
     "first_seen": "2026-07-26",
@@ -11123,9 +11170,9 @@
     ]
   },
   "sourik": {
-    "articles": 5,
+    "articles": 6,
     "first_seen": "2026-10-22",
-    "last_seen": "2026-11-24",
+    "last_seen": "2026-11-26",
     "name": "Sourik",
     "photo": null,
     "profile": null,
